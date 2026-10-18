@@ -49,3 +49,18 @@
 - **Fase 7.** Queda en espera hasta la decisión.
 - **Al margen, sin cuantificar.** En IV2 de M5, los flujos ausentes se ponen a 0 antes de diferenciar. Afecta al choque, no a la cuota, y las cifras H8-7 tienen F = 0,05 sin respaldo tras Holm, así que su capa no cambiaría.
 
+## B-4. Parada: la réplica ciega de cifras de la 1.0 encuentra errores que cambiarían cifras publicadas (2026-10-18)
+- **Qué.** Réplica ciega de las 31 cifras de una_pagina.md (incluye las 7 C1 y dh_2125), en cuatro lotes, con reconciliación de las que discrepaban. Detalle en K19.
+- **Errores del original que cambian valores publicados (GSADF de V7.2; src/v5/r1b_gsadf.py).**
+  - E1: el BIC compara modelos con distinto n.
+  - E2: Navarra queda truncada por un `dropna` conjunto.
+  - Efecto corregido: V72-GSADF-ccaa-bh 7 → 0, niveles-bh 2 → 0, ratios-p05 3 → 1. ratios-bh sigue en 0 con la familia de 8, pero es inestable con 499 réplicas.
+  - Son cifras de una_pagina.md. Ninguna capa cambia (C4) y el veredicto de la ficha de burbuja tampoco.
+- **Correcciones de texto en V8, sin cambio de valor.** El periodo de V8-H8-9-est, el rótulo de la media y la banda de V8-QNA-pp-c-P5, y la regla Y10 de V8-VOTOS-c-P5.
+- **Registro.** Entradas en ERRATA.md, «pendiente de decisión del autor». No se ha tocado nada publicado.
+- **Relación con K15.** La lectura de Q9-g se apoyaba en «0 cocientes tras BH». Con E1 corregido sigue siendo 0 con la familia de 8, pero el 0 publicado no es estable a la semilla con 499 réplicas.
+- **Qué se necesita del autor.**
+  - (1) Si se corrigen E1 y E2 y se regenera V7.2 → cifras_clave → una_pagina → publicacion. Hace falta orden expresa: cambia valores publicados. Hay que decidir además el número de réplicas (499 o más) y la familia de BH.
+  - (2) Si se aplican las correcciones de texto de V8.
+- **Fase 7.** Queda en espera.
+

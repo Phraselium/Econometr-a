@@ -275,3 +275,30 @@ Todas las cifras que se citen tienen réplica ciega coincidente o resuelta:
 
 Lo que no se cita como pista (H2, Q1c, Q6-v, Q5, Q10, Q2c) se nombra en el informe sin cifra, solo con el motivo.
 
+## K19. Réplica ciega de las cifras de una_pagina y de las C1 de la 1.0 (2026-10-18, encargo del autor)
+31 cifras en cuatro lotes (output/v16/replica/v10_{a,b,b2,c,d}/), con reconciliación de las que discrepaban.
+
+**Cegado parcial.** En varios lotes el replicador vio los valores publicados antes de estimar, por fallos al leer cifras_clave o porque la documentación los cita. Consta en cada resultado.json.
+
+**Lote a: coinciden las 9**, entre ellas las 7 C1 (A23-A10, A23-A2, A23-A9, A23-P2, R1C-001, dh_2125 y terminadas_1924) y E-T7-*. Hubo que deducir dos detalles comparando con lo publicado:
+- el filtro de celdas sin renta de A23-A9;
+- el parque de E-T7-demol-2024.
+
+**Lote b: coinciden 7.**
+- L3-DEF-2124-SENS, L3-DEF-2124-SINBAJAS, E-B1-F y V10-ATL-A1 coinciden.
+- T3-H5b y T4-H3 coinciden en la segunda pasada.
+- T4-H2 coincide en la central y el máximo. El mínimo se explica por una convención del original no escrita, que se ha documentado en el anexo: en cuanto y − L > 2025, la cartera toma el relleno sin interpolar. La cifra no cambia.
+
+**Lote c (GSADF de V7.2 y V7.1).**
+- Coinciden V72-GSADF-ccaa-v6, V72-GSADF-tipos-p05, V71-S3-comun-r2-compra y V71-S3-largo-confirmadas (esta solo en el recuento).
+- V71-S3-R6 es correcta, reproducida al bit, pero su ficha omite supuestos.
+- **Los recuentos GSADF tienen dos errores de código del original** (E1 y E2; B-4 y ERRATA): ccaa-bh, niveles-bh y ratios-p05 cambiarían.
+
+**Lote d (V8).**
+- Coinciden OBS-a y OBS-c.
+- H8-9 y VOTOS: el error era de la réplica; el original es correcto.
+- M1 (mínimo) y QNA: elecciones que la ficha deja abiertas.
+- Quedan correcciones de texto (ERRATA, B-4).
+
+**Lectura.** Las cifras C1 y las de déficit y necesidad se sostienen. Las cifras de exuberancia (GSADF) de una_pagina tienen errores que cambian recuentos publicados, aunque no la capa ni el veredicto «no concluyente». Varias fichas del anexo no bastaban para reproducir la cifra: se han completado las de T4 y quedan por completar las de GSADF y R6 (lista en las reconciliaciones).
+

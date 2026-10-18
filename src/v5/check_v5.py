@@ -112,6 +112,9 @@ EXENTOS = {("src/v3/c1_geo.py", "Cartografia_secc.zip"): "caché versionada outp
            ("src/v10/geo.py", "seccionado_2025.zip"): "geometrías versionadas data/base/geo/",
            # V15: auditoría de microdatos INE (ECEPOV 2021 y diseño de registro de la EPA), fuera del índice por tamaño y
            # licencia, como los microdatos de src/v12/b6_condiciones.py; la auditoría solo publica recuentos agregados (n ≥ 10)
+           # V16: réplica ciega de V10-ATL-A1 (K19) con los microdatos ECV 2025, registrados con sha256 en data/raw/v9/_manifest.csv;
+           # la réplica solo publica el agregado que compara con la cifra
+           ("src/v16/replica/v10_b.py", "datos_2025.zip"): "microdatos INE ECV; salida agregada en output/v16/replica/v10_b",
            ("src/v15/auditoria/renta_microdatos.py", "datos_2021.zip"): "microdatos INE; salida agregada en output/v15/auditoria/renta_microdatos",
            ("src/v15/auditoria/renta_microdatos.py", "dr_EPA_2021.xlsx"): "solo comprueba si existe el diseño de registro"}
 

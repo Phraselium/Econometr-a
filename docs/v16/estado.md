@@ -108,6 +108,8 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - K18 aclara el q de Q9-g (0,153 → 0,306) y el rango de H5 (1,15-1,51).
   - Réplicas ciegas: Q2a y H3 coinciden; Q6-p tenía un error, ya corregido.
   - Alcance de los errores en v1-V12: docs/v16/alcance_errores_k16.md.
+- **PARADA B-4 (2026-10-18).** La réplica ciega de las cifras de la 1.0 (K19) encuentra dos errores en el GSADF de V7.2 que cambian recuentos de una_pagina, y correcciones de texto en V8. Entradas en ERRATA, pendientes del autor. La fase 7 espera.
+- **B-3 aplicada:** errata V8-M5 (4121165) y guarda de subagentes.
 - **Fase 7: informe integral.** Redactor, verificador de cifras y árbitro final; integrar en cifras_clave las cifras V16-* citables (K17); tablas_v16.xlsx, web y make v16.
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;
@@ -178,6 +180,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F6 | replicador-ciego | replica_1_0_lote_c | 99.252 | src/v16/replica/v10_c.py;output/v16/replica/v10_c |
 | 2026-10-18 | F6 | replicador-ciego | replica_1_0_lote_b2 | 43.632 | src/v16/replica/v10_b2.py;output/v16/replica/v10_b2 |
 | 2026-10-18 | F6 | econometrician | reconciliacion_1_0_v8 | 149.141 | output/v16/replica/v10_d/reconciliacion.md |
+| 2026-10-18 | F6 | econometrician | reconciliacion_1_0_gsadf_r6 | 157.336 | output/v16/replica/v10_c/reconciliacion.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -186,8 +189,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 2.555.477 |
+| F6 | 2.712.813 |
 
-Total V16: 7.686.059 tokens
+Total V16: 7.843.395 tokens
 
 <!-- fin subagentes -->

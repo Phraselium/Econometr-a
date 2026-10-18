@@ -17,3 +17,5 @@ Sin p-valor (NO APTO): 13; no reportadas: 6.
 |---|---|---|---|
 
 Sin p-valor (NO APTO): 83; no reportadas: 0.
+
+<a id="by"></a>Ficha: q_BY = mín. sobre j ≥ rango de p_(j) · m · Σ_{i≤m} 1/i / j, con m fijo por rama; reproducible con `python3 src/v16/f6_fdr.py` desde los p de cada resultado.json.

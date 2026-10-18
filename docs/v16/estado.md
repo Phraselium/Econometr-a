@@ -75,7 +75,7 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Q3-b es el único resultado con inferencia válida.
   - Grupo C (Q5, Q9, Q10 y la rejilla de 83 celdas) estimado. Desviaciones D4.
   - Control BY (src/v16/f6_fdr.py): solo Q3-b cumple la condición (a); Q9-g tiene q = 0,153.
-  - **PARADA D (B-2):** Q9-g queda retenido a la espera del autor.
+  - Parada D (B-2) por Q9-g, resuelta por el autor el 2026-10-18: pista no confirmada C4 (K15).
   - V15 en entrenamiento (K14): H1-H5 y E1-E4 estimados, todo C4 y `pendiente_sellada`.
     - Con inferencia válida: H5 (DM-HLN p = 0,894; el AR(4) no se supera) y E3 (ρ SAR = 0,39).
     - El resto solo con estimación puntual.
@@ -83,8 +83,13 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - make check en solitario, 0 errores, sin cambios en git (2026-10-17). Se corrigió una colisión de importación en src/v15/montecarlo/honest_did.py: ahora importa src.v9.herramientas por paquete.
 
 ## Siguiente
-- **Detenido en la parada D (B-2).** Hasta que decida el autor: sin réplica ciega, sin abogado del diablo, sin fase 7 y sin publicar Q9-g.
-- Se terminan y versionan los grupos V15-A y V15-B, que ya estaban en marcha (estimación sin publicar).
+- Parada D (B-2) resuelta con K15.
+- Fase 6, resto:
+  - réplica ciega de los resultados citados;
+  - doble implementación (solo C3/C3s: no hay);
+  - abogado del diablo;
+  - evaluate_v16, solo si alguna pregunta cumple (a) y (b);
+  - triangulación con los metaanálisis.
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;
   - fase 6: estimación exploratoria con la rejilla fija y los diseños de la adenda;

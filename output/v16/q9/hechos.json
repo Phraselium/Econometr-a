@@ -1,5 +1,33 @@
 [
  {
+  "id": "V16-Q9-g",
+  "indicador": "Q9-g: estadístico GSADF del factor común de ln(valor tasado/IPC alquiler) (pista no confirmada, C4; min y max = valor crítico bootstrap del 95 %)",
+  "valor": 5.918697291453831,
+  "min": 3.3400553385047043,
+  "max": 3.3400553385047043,
+  "unidad": "estadístico",
+  "periodo": "2002T1-2026T2",
+  "cobertura": "33 provincias, factor",
+  "fuentes": "MIVAU; INE",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q9/informe.md#q9g"
+ },
+ {
+  "id": "V16-Q9-gp",
+  "indicador": "Q9-g: p-valor bootstrap del GSADF del factor común, sin ajuste múltiple (pista no confirmada, C4)",
+  "valor": 0.004,
+  "min": 0.004,
+  "max": 0.004,
+  "unidad": "p-valor",
+  "periodo": "2002T1-2026T2",
+  "cobertura": "33 provincias, factor",
+  "fuentes": "MIVAU; INE",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/q9/informe.md#q9g"
+ },
+ {
   "id": "V16-Q9-c",
   "indicador": "Q9-c: elasticidad de largo plazo del valor tasado respecto al IPC de alquiler (CS-ARDL p=2, media entre provincias; puntual)",
   "valor": 0.8384096582693705,

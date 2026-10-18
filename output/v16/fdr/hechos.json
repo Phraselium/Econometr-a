@@ -1,0 +1,30 @@
+[
+ {
+  "id": "V16-FDR-Q3-b-q",
+  "indicador": "Q3-b: q-valor de Benjamini-Yekutieli en la rama diseños (m = 21)",
+  "valor": 5.800505182687048e-07,
+  "min": 5.800505182687048e-07,
+  "max": 5.800505182687048e-07,
+  "unidad": "q-valor",
+  "periodo": "fase 6 de V16",
+  "cobertura": "rama diseños",
+  "fuentes": "cálculo propio sobre output/v16/*/resultado.json",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/fdr/informe.md#by"
+ },
+ {
+  "id": "V16-FDR-Q9-g-q",
+  "indicador": "Q9-g: q-valor de Benjamini-Yekutieli en la rama diseños (m = 21)",
+  "valor": 0.15310506560003465,
+  "min": 0.15310506560003465,
+  "max": 0.15310506560003465,
+  "unidad": "q-valor",
+  "periodo": "fase 6 de V16",
+  "cobertura": "rama diseños",
+  "fuentes": "cálculo propio sobre output/v16/*/resultado.json",
+  "capa": "C4",
+  "fecha_dato": "2026-10-17",
+  "ficha": "output/v16/fdr/informe.md#by"
+ }
+]

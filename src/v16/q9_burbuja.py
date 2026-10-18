@@ -150,12 +150,18 @@ def main():
     Q.jdump(r, OUT / "resultado.json")
     Q.jdump({"estim": estim, "multiverso_q9c": mv, "cips": ci, "provincias": prov, "factor": fac.tolist()}, OUT / "q9_detalle.json")
     f = C.f
-    contra = bool(g["stat"] > g["cv95"])
-    if contra:
-        (OUT / "contradiccion.md").write_text("# Q9-g: posible contradicción con V7.2\nEl GSADF del factor supera el valor crítico bootstrap al 5 %. La conclusión publicada de V7.2 es «sin exuberancia de los cocientes tras el ajuste múltiple». "
-                                              "Es el factor agregado (no el GSADF por CCAA de V7.2) y no ha pasado BY ni réplica sellada; la tendencia del cociente puede producir rechazos del GSADF sin deriva. Se retiene aquí y no va a hechos.json hasta decisión del orquestador (parada D).\n", encoding="utf-8")
-    hs = [] if contra else [C.hecho("g", "Q9", "Q9-g: estadístico GSADF del factor común de ln(valor tasado/IPC alquiler) frente a su valor crítico bootstrap del 95 %", g["stat"], g["cv95"], g["cv95"],
-                                    "estadístico", "2002T1-2026T2", f"{len(prov)} provincias, factor", "MIVAU; INE", "q9g")]
+    # Q9-g por encima del vc: pista no confirmada (C4), coherente con V7.2 tras Benjamini-Yekutieli (q en output/v16/fdr; decisión K15 y B-2).
+    if g["stat"] > g["cv95"]:
+        (OUT / "contradiccion.md").write_text("# Q9-g: parada D resuelta (decisión K15 de docs/v16/decisiones.md)\n"
+                                              "El GSADF del factor supera su valor crítico bootstrap al 5 % sin ajuste, pero no supera el control Benjamini-Yekutieli "
+                                              "de la rama de diseños (q en output/v16/fdr/) y no tiene magnitud de referencia: es una pista no confirmada (C4), "
+                                              "coherente con la conclusión de V7.2 y de la 1.0. No contradice ninguna conclusión publicada. Va a la Parte VII del "
+                                              "informe («lo que no se puede afirmar») y a la ficha del verificador sobre la burbuja; no va al resumen ejecutivo.\n",
+                                              encoding="utf-8")
+    hs = [C.hecho("g", "Q9", "Q9-g: estadístico GSADF del factor común de ln(valor tasado/IPC alquiler) (pista no confirmada, C4; min y max = valor crítico bootstrap del 95 %)",
+                  g["stat"], g["cv95"], g["cv95"], "estadístico", "2002T1-2026T2", f"{len(prov)} provincias, factor", "MIVAU; INE", "q9g"),
+          C.hecho("gp", "Q9", "Q9-g: p-valor bootstrap del GSADF del factor común, sin ajuste múltiple (pista no confirmada, C4)",
+                  g["p_bootstrap"], g["p_bootstrap"], g["p_bootstrap"], "p-valor", "2002T1-2026T2", f"{len(prov)} provincias, factor", "MIVAU; INE", "q9g")]
     hs.append(C.hecho("c", "Q9", "Q9-c: elasticidad de largo plazo del valor tasado respecto al IPC de alquiler (CS-ARDL p=2, media entre provincias; puntual)", float(pr.theta),
                       float(nop.theta.min()), float(nop.theta.max()), "elasticidad", "2002T1-2026T2", f"{len(prov)} provincias", "MIVAU; INE", "q9c"))
     Q.jdump(hs, OUT / "hechos.json")

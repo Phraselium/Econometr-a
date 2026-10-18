@@ -141,3 +141,18 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **H5.** El BVAR se corrigió de escala después de ver su primera ejecución; está registrado en DV15-B-3. Ningún modelo bate al AR(4) ni antes ni después de la corrección.
 - **H4.** Solo es puntual. Al quitar los 5 orígenes de mayor peso Rotemberg cambia de signo; se declara como fragilidad.
 
+## K15. Q9-g: pista no confirmada; se levanta la parada D (2026-10-18, decisión del autor)
+- **Cifras.** El GSADF del factor común de ln(valor tasado / IPC de alquiler) da 5,92, frente a un valor crítico bootstrap del 95 % de 3,34, con p = 0,004 sin ajuste. Con Benjamini-Yekutieli en la rama de diseños (m = 21) el q es 0,153 (output/v16/fdr/).
+- **Por qué no es hallazgo.** El umbral pre-registrado es q ≤ 0,10 (adenda V16, punto 9a) y Q9 no tiene magnitud de referencia (punto 3: «no aplica»), así que la condición (b) no se cumple.
+- **Lectura.** Pista no confirmada (C4), coherente con la conclusión de V7.2 y de la 1.0 («no hay exuberancia de los cocientes tras el ajuste múltiple»). No contradice ninguna conclusión publicada y no se aplica la parada D (B-2 queda resuelto).
+- **En el informe:**
+  - Va solo a la Parte VII («lo que no se puede afirmar»), con los dos números (p = 0,004 y q = 0,153).
+  - Lleva tres advertencias:
+    - corrección múltiple;
+    - el valor tasado está suavizado y retrasado;
+    - una exuberancia estadística no identifica una burbuja.
+  - Va también a la ficha del verificador sobre «hay / no hay burbuja».
+  - No va al resumen ejecutivo.
+- **Revisión.** abogado-del-diablo lo revisa como las demás pistas citadas.
+- **Cifras citables.** V16-Q9-g, V16-Q9-gp y V16-FDR-Q9-g-q, todas C4.
+

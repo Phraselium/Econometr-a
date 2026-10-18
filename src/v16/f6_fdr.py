@@ -68,7 +68,15 @@ def main() -> int:
         for k, v in sorted(r["pruebas_con_p"].items(), key=lambda kv: kv[1]["p"]):
             L.append(f"| {k.replace('|', ' · ')} | {v['p']:.3g} | {v['q_BY']:.3g} | {'cumple' if v['rechaza'] else 'no cumple'} |")
         L += ["", f"Sin p-valor (NO APTO): {len(r['pruebas_sin_p_NO_APTO'])}; no reportadas: {r['pruebas_no_reportadas']}.", ""]
+    L += ["<a id=\"by\"></a>Ficha: q_BY = mín. sobre j ≥ rango de p_(j) · m · Σ_{i≤m} 1/i / j, con m fijo por rama; reproducible con "
+          "`python3 src/v16/f6_fdr.py` desde los p de cada resultado.json.", ""]
     (OUT / "informe.md").write_text("\n".join(L), encoding="utf-8")
+    hechos = [{"id": f"V16-FDR-{k.split('|')[0]}-q", "indicador": f"{k.split('|')[0]}: q-valor de Benjamini-Yekutieli en la rama {rama} (m = {M[rama]})",
+               "valor": v["q_BY"], "min": v["q_BY"], "max": v["q_BY"], "unidad": "q-valor", "periodo": "fase 6 de V16",
+               "cobertura": f"rama {rama}", "fuentes": "cálculo propio sobre output/v16/*/resultado.json", "capa": "C4",
+               "fecha_dato": "2026-10-17", "ficha": "output/v16/fdr/informe.md#by"}
+              for rama, r in res.items() for k, v in sorted(r["pruebas_con_p"].items())]
+    (OUT / "hechos.json").write_text(json.dumps(hechos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print("f6_fdr:", {k: {kk: round(vv["q_BY"], 4) for kk, vv in v["pruebas_con_p"].items()} for k, v in res.items()})
     return 0
 

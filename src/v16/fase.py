@@ -24,7 +24,12 @@ FASES: dict[str, list[str]] = {
     "f3": ["src/v16/f3_verificar_referencias.py", "src/v16/f3_metaanalisis.py", "src/v16/f3_cuatro_cuadrantes.py"],
     "f4": ["src/v16/f4_potencia.py", "src/v16/f4_rejilla.py", "src/v16/f4_sellado.py"],
     "f5": ["src/v16/f5_validacion.py todas"],
-    "f6": [],
+    "f6": ["src/v16/q1_zonas.py", "src/v16/q2_turismo.py", "src/v16/q7_bono.py", "src/v16/q8_no_residentes.py", "src/v16/q_salidas.py",
+           "src/v16/q3_shiftshare.py", "src/v16/q3_seccion.py", "src/v16/q4_oferta.py", "src/v16/q6_itp.py", "src/v16/qb_informe.py",
+           "src/v16/q5_proyecciones.py", "src/v16/q9_burbuja.py", "src/v16/q10_prediccion.py", "src/v16/q_rejilla.py",
+           "src/v15/p6_zonas.py", "src/v15/p6_informe.py", "src/v15/p5_turismo.py", "src/v15/p5_informe.py", "src/v15/p5cv_exposicion.py",
+           "src/v15/p4_inmigracion.py", "src/v15/p9_prediccion.py", "src/v15/p2_fundamentales.py", "src/v15/p7_demografia.py",
+           "src/v15/p10_espacial.py", "src/v15/pb_informe.py", "src/v16/f6_fdr.py"],
     "f7": [],
 }
 

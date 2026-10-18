@@ -31,3 +31,5 @@
   - (1) tratarlo como «pista no confirmada tras BY, coherente con V7.2» y seguir con la fase 6 (réplica ciega, abogado del diablo) y la fase 7;
   - (2) mantener la parada.
 
+- **B-2 resuelto (2026-10-18).** El autor eligió la opción 1: pista no confirmada (C4), coherente con V7.2; no aplica la parada D (decisión K15).
+

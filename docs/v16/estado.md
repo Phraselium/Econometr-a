@@ -202,6 +202,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F7 | arbitro-final | arbitraje_informe_integral_2 | 154.372 | - |
 | 2026-10-18 | F7 | verificador-cifras | verificacion_informe_integral_2 | 174.825 | - |
 | 2026-10-18 | F7 | redactor | correccion_ronda_2 | 268.061 | output/v16/informe/plantilla/ |
+| 2026-10-18 | F7 | arbitro-final | arbitraje_informe_integral_3 | 60.408 | - |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -211,8 +212,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F4 | 555.674 |
 | F5 | 771.025 |
 | F6 | 2.712.813 |
-| F7 | 2.117.156 |
+| F7 | 2.177.564 |
 
-Total V16: 9.960.551 tokens
+Total V16: 10.020.959 tokens
 
 <!-- fin subagentes -->

@@ -1,0 +1,25 @@
+{
+  "id": "q9g",
+  "semilla": 20261010,
+  "N_provincias": 33,
+  "T": 98,
+  "r0": 18,
+  "B": 499,
+  "gsadf": 5.9186972914538085,
+  "vc95_bootstrap": 3.3428630916524846,
+  "p_bootstrap": 0.004,
+  "rechaza_5pct": true,
+  "var_explicada_pc1": null,
+  "referencia": {
+    "provincias": 33,
+    "T": 98,
+    "gsadf": 5.92,
+    "vc95": 3.34,
+    "B": 499,
+    "p": 0.004
+  },
+  "dif_abs": -0.0013027085461914112,
+  "dif_rel": -0.00022005211928908974,
+  "veredicto": "COINCIDE",
+  "notas": "ratio ln valor_tasado - ln ipc_alquiler_indice, provincias con 98 trimestres completos 2002T1-2026T2; PC1 estandarizada; GSADF constante sin rezagos; bootstrap salvaje bajo raiz unitaria sin deriva."
+}

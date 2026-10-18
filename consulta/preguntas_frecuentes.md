@@ -45,8 +45,8 @@ No se sostiene. La cuota mínima entre periodos es 45,27 % y el p ajustado por H
 
 Hay asociación: la correlación del factor común español con el precio de la zona euro es 0,598  (0,135 a 0,858) (p de Holm 0,02). Es la única hipótesis confirmatoria de V8 que se sostiene; es C4, sin lectura causal.
 
-- `V8-H8-9-est` = 0,598  (0,135 a 0,858); capa C4; periodo 1999-último dato; dato 2026T2. Origen: [hechos.json](../output/v8/F6/hechos.json).
-- `V8-H8-9-pholm` = 0,02; capa C4; periodo 1999-último dato; dato 2026T2. Origen: [hechos.json](../output/v8/F6/hechos.json).
+- `V8-H8-9-est` = 0,598  (0,135 a 0,858); capa C4; periodo 2006T1-2026T2; dato 2026T2. Origen: [hechos.json](../output/v8/F6/hechos.json).
+- `V8-H8-9-pholm` = 0,02; capa C4; periodo 2006T1-2026T2; dato 2026T2. Origen: [hechos.json](../output/v8/F6/hechos.json).
 - Fuente: [docs/v8/cierre_proyecto.md](../docs/v8/cierre_proyecto.md)
 
 ### 7. ¿Qué parte del precio de compra en la crisis se asocia al precio europeo?
@@ -409,17 +409,17 @@ En la simulación, es robusta en 17 CCAA de 17. Robusta significa que el esfuerz
 
 ### 56. ¿Hay burbuja en el precio nacional?
 
-El GSADF no encuentra exuberancia en los cocientes precio/renta y precio/alquiler tras BH: 0 series. Sí en 2 series de niveles, que no controlan fundamentales (C4).
+Cocientes precio/renta y precio/alquiler con exuberancia GSADF tras BH: 0 series. Niveles de precio, que no controlan fundamentales: 0 series. Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta (C4).
 
 - `V72-GSADF-ratios-bh` = 0 series; capa C4; periodo 2007T1-2026T2; dato 2026-10-13. Origen: [hechos.json](../output/v7_2/gsadf/hechos.json).
-- `V72-GSADF-niveles-bh` = 2 series; capa C4; periodo 2007T1-2026T2; dato 2026-10-13. Origen: [hechos.json](../output/v7_2/gsadf/hechos.json).
+- `V72-GSADF-niveles-bh` = 0 series; capa C4; periodo 2007T1-2026T2; dato 2026-10-13. Origen: [hechos.json](../output/v7_2/gsadf/hechos.json).
 - Fuente: [output/v7_2/gsadf/ficha_burbuja.md](../output/v7_2/gsadf/ficha_burbuja.md)
 
 ### 57. ¿Y en las comunidades autónomas?
 
-Tras BH hay exuberancia en 7 series regionales (17 CCAA); en las provincias de entrenamiento de v6, en 0 CCAA. Es exploratorio (C4): detecta aceleración, no sobrevaloración.
+Series regionales (17 CCAA) con exuberancia tras BH: 0 series; en las provincias de entrenamiento de v6: 0 CCAA. Es exploratorio (C4): el contraste detecta aceleración, no sobrevaloración.
 
-- `V72-GSADF-ccaa-bh` = 7 series; capa C4; periodo 2007T1-2026T2; dato 2026-10-13. Origen: [hechos.json](../output/v7_2/gsadf/hechos.json).
+- `V72-GSADF-ccaa-bh` = 0 series; capa C4; periodo 2007T1-2026T2; dato 2026-10-13. Origen: [hechos.json](../output/v7_2/gsadf/hechos.json).
 - `V72-GSADF-ccaa-v6` = 0 CCAA; capa C4; periodo 2015T1-2024T4; dato 2026-10-13. Origen: [hechos.json](../output/v7_2/gsadf/hechos.json).
 - Fuente: [output/v7_2/gsadf/ficha_burbuja.md](../output/v7_2/gsadf/ficha_burbuja.md)
 

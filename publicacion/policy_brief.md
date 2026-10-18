@@ -94,7 +94,7 @@ Las solicitudes de docs/v5/solicitudes.md, por orden de prioridad:
 
 - No atribuye la subida de precios a un factor principal: turísticos, inmigración, oferta, tipos, compradores extranjeros o empresas.
 - No afirma que los topes al alquiler reduzcan precios u oferta: su resultado queda en [C4].
-- No afirma que haya una burbuja ni que no la haya: la exuberancia de los cocientes nacionales no sobrevive al ajuste múltiple, los niveles sí son explosivos y algunas series regionales también (ficha V72-BURBUJA del verificador).
+- No afirma que haya una burbuja ni que no la haya: la exuberancia de los cocientes nacionales no sobrevive al ajuste múltiple, y tras la errata de V16 tampoco la de los niveles ni la de las series regionales; que el contraste no rechace no demuestra que el precio esté alineado con sus fundamentales (ficha V72-BURBUJA del verificador).
 - No afirma que la inmigración suba o baje los precios: el signo de la asociación cambia con el control de población, la medida de precio y el nivel territorial [C4]. El signo negativo a igual población no indica que la inmigración abarate la vivienda: controlar por población, que crece por la propia inmigración, es un mal control.
 - No afirma que ninguna variable determine el alquiler o el precio de compra: las importancias de los modelos de predicción de v6 son descriptivas.
 

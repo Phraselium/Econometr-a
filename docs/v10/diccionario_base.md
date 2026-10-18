@@ -36,7 +36,7 @@ Generado por `src/v10/base.py` (`make base`); no editar a mano.
 
 - filas_publica: 14467304
 - territorios: 56579
-- filas_posterior_prereg: 341759
+- filas_posterior_prereg: 334149
 - variables_publicas: 322
 - filas públicas por nivel: barrio 83353, ccaa 54657, distrito 606496, municipio 5473323, nacional 9181, nuts3 1440, pais 53350, provincia 313047, seccion 7872457
 
@@ -218,7 +218,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 | `monitor_tipo_hip_tae` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
 | `monitor_tipo_hip_variable` | BCE, MIR | % anual | C4 | BCE, MIR | sí | nacional | 2022-01–2026-08 |
 | `monitor_vut_viviendas` | INE, VUT (VTE71) | viviendas | C4 | INE, VUT (VTE71) | sí | nacional | 2020-08–2026-05 |
-| `obra_nueva_neta_catastro` | Catastro, estadística URBANA: diferencia anual (cálculo propio); el año es el de la obra (fichero t = stock a 31-12-(t−1); corregido en V15, ERRATA) | unidades urbanas residenciales | C4 | Catastro, estadística URBANA: diferencia anual (cálculo propio) | sí | municipio | 2012–2025 |
+| `obra_nueva_neta_catastro` | Catastro, estadística URBANA: diferencia anual (cálculo propio) | unidades urbanas residenciales | C4 | Catastro, estadística URBANA: diferencia anual (cálculo propio) | sí | municipio | 2012–2025 |
 | `obra_nueva_viviendas_inspire` | Catastro INSPIRE: viviendas por año de construcción (stock superviviente; agregado propio) | viviendas | C4 | Catastro INSPIRE: viviendas por año de construcción (stock superviviente; agregado propio) | sí | municipio | 1900–2026 |
 | `ocupados` | Ocupados EPA, total nacional (media del trimestre) | miles de personas | C4 | ine_epa_ocupados.csv (EPA387796) | sí | ccaa,nacional | 2002T1–2026T2 |
 | `ocupados_epa` |  | miles de personas | C4 | INE, EPA por provincia | sí | provincia | 2002–2026T2 |

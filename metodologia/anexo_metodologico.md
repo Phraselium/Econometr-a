@@ -404,6 +404,10 @@ Formato de cada ficha: fuente y filtro · fórmula · script → salida · recon
     - Para cada año t de la ventana se busca el instante x en el que las iniciadas acumuladas a fin de año igualan las terminadas acumuladas de t. Las iniciadas acumuladas valen 0 a fin de 1990 y se interpolan linealmente entre fines de año.
     - El retardo es la media de t − x en la ventana.
   - **Cartera de un año y.** Las iniciadas provinciales del instante y − L, interpoladas linealmente entre los valores anuales, que se sitúan en el propio año, no a mitad de año. En cuanto y − L > 2025, aunque sea por una fracción (p. ej. 2025,03), se usa directamente el relleno del escenario, sin interpolar entre 2025 y el relleno. Esta convención explica el mínimo de la rejilla: en el escenario optimista, el relleno es el máximo de 2021-2025, y solo en Madrid la diferencia con interpolar es de unas 10.000 viviendas en cinco años. La comprobó la réplica ciega de V16 (output/v16/replica/v10_b2).
+  - **Dos versiones del mínimo** (orden del autor de 2026-10-18; la convención no cambia).
+    - Con la convención original («tras 2025 = relleno»), el mínimo es **87.247** viviendas. Es la cifra publicada.
+    - Con interpolación lineal entre 2025 y el relleno, el mínimo sería **≈ 103.800** (103.788; output/v16/replica/v10_b2/resultado.json).
+    - La convención original hace más favorable el escenario optimista: adelanta las terminadas del relleno a 2026-2030 y baja el extremo inferior del déficit. El central (585.609) no depende de ella; el máximo de la réplica con interpolación difiere un 0,06 % (946.278 frente a 946.852).
   - **Cartera.** Iniciadas en el instante y − L, por interpolación lineal entre años.
   - **Bajas.** Tasa de T1 (0, central o máxima) × el parque del último año disponible × H.
   - **Liberadas que no llegan (X), 2026-2030.** El acumulado 2026-2035 de T2, por provincia, × la cuota de las defunciones de 75 años o más de 2026-2030 sobre las de 2026-2035.

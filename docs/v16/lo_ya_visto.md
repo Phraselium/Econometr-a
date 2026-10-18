@@ -25,11 +25,12 @@ Generado por `python3 src/v16/f0_lo_ya_visto.py` desde output/v5/cifras_clave.cs
 
 | id | Indicador | Valor | Rango | Periodo | Capa |
 |---|---|---|---|---|---|
-| V72-GSADF-ccaa-bh | Series de CCAA (precio/alquiler, IPV y valor tasado; 17 CCAA) con exuberancia tras BH | 7 |  | 2007T1-2026T2 | C4 |
+| V72-GSADF-ccaa-bh | Series de CCAA (precio/alquiler, IPV y valor tasado; 17 CCAA) con exuberancia tras BH | 0 |  | 2007T1-2026T2 | C4 |
 | V72-GSADF-ccaa-v6 | CCAA con exuberancia (p<0,05) en el ratio precio/alquiler, provincias de entrenamiento v6 | 0 |  | 2015T1-2024T4 | C4 |
-| V72-GSADF-niveles-bh | Niveles de precio nacionales (IPV y valor tasado, sin fundamentales) con exuberancia tras BH | 2 |  | 2007T1-2026T2 | C4 |
+| V72-GSADF-niveles-bh | Niveles de precio nacionales (IPV y valor tasado, sin fundamentales) con exuberancia tras BH | 0 |  | 2007T1-2026T2 | C4 |
 | V72-GSADF-ratios-bh | Cocientes precio/renta y precio/alquiler nacionales con exuberancia tras BH | 0 |  | 2007T1-2026T2 | C4 |
-| V72-GSADF-ratios-p05 | Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05) | 3 |  | 2007T1-2026T2 | C4 |
+| V72-GSADF-ratios-bh4-sens | SENSIBILIDAD: cocientes precio/renta y precio/alquiler nacionales con exuberancia tras BH en la familia de los 4 cocientes (la principal es la de 8) | 1 |  | 2007T1-2026T2 | C4 |
+| V72-GSADF-ratios-p05 | Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05) | 1 |  | 2007T1-2026T2 | C4 |
 | V72-GSADF-rev | Series nacionales del GSADF de v5 que se reproducen exactamente con el mismo método y la misma semilla | 14 |  | 2007T1-2026T2 | C4 |
 | V72-GSADF-tipos-p05 | Precio frente a valores de referencia con tipos de interés (descuento del alquiler y cuota sobre renta) con exuberancia sin ajuste | 0 |  | 2007T1-2026T2 | C4 |
 
@@ -48,11 +49,11 @@ Generado por `python3 src/v16/f0_lo_ya_visto.py` desde output/v5/cifras_clave.cs
 
 | id | Indicador | Valor | Rango | Periodo | Capa |
 |---|---|---|---|---|---|
-| V8-H8-9-est | H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; intervalo al 95 %) | 0,5976 | 0,135 a 0,8578 | 1999-último dato | C4 |
+| V8-H8-9-est | H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; intervalo al 95 %) | 0,5976 | 0,135 a 0,8578 | 2006T1-2026T2 | C4 |
 | V8-M1-cuota-c-P5 | Cuota del primer componente común de las 17 CCAA en la varianza del crecimiento interanual de precio real de compra en P5 (banda del 68 %; resumen de comovimiento, sin lectura causal) | 92,79 | 86,65 a 94,92 | P5 (2022T3-último dato) | C4 |
 | V8-OBS-a-P5 | Variación observada de alquiler real en P5 (pp, log×100; unidad común R0) | -1,846 |  | P5 (2022T3-último dato) | C4 |
 | V8-OBS-c-P5 | Variación observada de precio real de compra en P5 (pp, log×100; unidad común R0) | 18,42 |  | P5 (2022T3-último dato) | C4 |
-| V8-QNA-pp-c-P5 | Cuota no atribuida de precio real de compra en P5 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero de M2) | 9,516 | -14,56 a 24,14 | P5 (2022T3-último dato) | C3s |
+| V8-QNA-pp-c-P5 | Cuota no atribuida de precio real de compra en P5 en puntos: media posterior (mediana 3,4; cola derecha pesada, con el tipo hipotecario del Banco de España en lugar del BCE la media sería 20,7 y la mediana 3,5); banda del 68 % exacta (cuantiles de la suma); condicionado a las restricciones de signo y de cero de M2 | 9,516 | -7,762 a 16,44 | P5 (2022T3-último dato) | C3s |
 | V8-VOTOS-c-P5 | Votos máximos (de 4 métodos) a un mismo factor en precio real de compra en P5: crédito y tipos | 2 |  | P5 (2022T3-último dato) | C4 |
 
 ## V9-D1 · Topes y zonas tensionadas (Incasòl)

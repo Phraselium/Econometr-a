@@ -12,7 +12,7 @@
   "gsadf_T": 78,
   "gsadf_series": 48
  },
- "metodo": "Donut: diferencia de pendientes de Δ(crecimiento anual) sobre distancia con FE de área, EE agrupados por área; multiverso 320 especificaciones (fuente, centro, radio, periodo, forma, centro incluido); Holm. Sensibilidad: Oster (Rmax=1,3·R²) y Cinelli-Hazlett (RV, RV_alfa; fórmula propia en src/v5/r1b_sens.py); multiverso BI (160) y BP H5 (216); Holm. GSADF: vc por bootstrap recursivo de residuos con AR(p) por BIC bajo raíz unitaria, 499 réplicas; BH y Holm por familia; tamaño por Monte Carlo.",
+ "metodo": "Donut: diferencia de pendientes de Δ(crecimiento anual) sobre distancia con FE de área, EE agrupados por área; multiverso 320 especificaciones (fuente, centro, radio, periodo, forma, centro incluido); Holm. Sensibilidad: Oster (Rmax=1,3·R²) y Cinelli-Hazlett (RV, RV_alfa; fórmula propia en src/v5/r1b_sens.py); multiverso BI (160) y BP H5 (216); Holm. GSADF: vc por bootstrap recursivo de residuos con AR(p) por BIC (muestra común) bajo raíz unitaria, 4.999 réplicas (V16 B-4; 499 hasta la 1.0); BH y Holm por familia (sensibilidad: BH de los 4 cocientes); tamaño por Monte Carlo.",
  "estimacion": {
   "donut": {
    "serpavi_VC": {
@@ -259,7 +259,7 @@
    },
    "phi0.3": {
     "rechazo_vc_iid": 0.08,
-    "rechazo_bootstrap_AR": 0.04
+    "rechazo_bootstrap_AR": 0.035
    },
    "phi0.5": {
     "rechazo_vc_iid": 0.15,

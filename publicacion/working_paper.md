@@ -179,16 +179,16 @@ La prueba GSADF de exuberancia con valores críticos para errores independientes
 
 | Razón | Estadístico (valor crítico, p y p ajustado BH) | Capa |
 |---|---|---|
-| Precio/renta (IPV) | 3,4 estadístico (min = vc 95 %; p=0.012; BH familia=0.080) | C4 |
-| Precio/alquiler (IPV) | 3,1 estadístico (min = vc 95 %; p=0.036; BH familia=0.096) | C4 |
-| Precio frente al valor de descuento del alquiler (IPV) | 0,90 estadístico (min = vc 95 %; p=0.762; BH familia=0.948) | C4 |
-| Precio frente a la cuota hipotecaria (IPV) | 0,91 estadístico (min = vc 95 %; p=0.604; BH familia=0.948) | C4 |
-| Precio/renta (valor tasado) | 0,22 estadístico (min = vc 95 %; p=0.932; BH familia=0.948) | C4 |
-| Precio/alquiler (valor tasado) | 4,3 estadístico (min = vc 95 %; p=0.020; BH familia=0.080) | C4 |
-| Precio frente al valor de descuento del alquiler (valor tasado) | 0,16 estadístico (min = vc 95 %; p=0.948; BH familia=0.948) | C4 |
-| Precio frente a la cuota hipotecaria (valor tasado) | 0,52 estadístico (min = vc 95 %; p=0.838; BH familia=0.948) | C4 |
+| Precio/renta (IPV) | 3,4 estadístico (min = vc 95 %; p=0.010; BH familia=0.078) | C4 |
+| Precio/alquiler (IPV) | 3,1 estadístico (min = vc 95 %; p=0.522; BH familia=0.937) | C4 |
+| Precio frente al valor de descuento del alquiler (IPV) | 0,90 estadístico (min = vc 95 %; p=0.519; BH familia=0.937) | C4 |
+| Precio frente a la cuota hipotecaria (IPV) | 0,91 estadístico (min = vc 95 %; p=0.605; BH familia=0.937) | C4 |
+| Precio/renta (valor tasado) | 0,22 estadístico (min = vc 95 %; p=0.937; BH familia=0.937) | C4 |
+| Precio/alquiler (valor tasado) | 4,3 estadístico (min = vc 95 %; p=0.053; BH familia=0.211) | C4 |
+| Precio frente al valor de descuento del alquiler (valor tasado) | 0,16 estadístico (min = vc 95 %; p=0.838; BH familia=0.937) | C4 |
+| Precio frente a la cuota hipotecaria (valor tasado) | 0,52 estadístico (min = vc 95 %; p=0.836; BH familia=0.937) | C4 |
 
-Ninguna razón supera el ajuste por comparaciones múltiples en la familia nacional; por comunidades autónomas, 7 series (max = significativas sin ajuste) de las combinaciones muestran exuberancia tras BH [C4]. Las razones que comparan el precio con fundamentales (valor de descuento del alquiler, cuota hipotecaria) no muestran exuberancia. Una exuberancia estadística no es una burbuja.
+Ninguna razón supera el ajuste por comparaciones múltiples en la familia nacional; por comunidades autónomas, 0 series (max = significativas sin ajuste) de las combinaciones muestran exuberancia tras BH [C4]. Las razones que comparan el precio con fundamentales (valor de descuento del alquiler, cuota hipotecaria) no muestran exuberancia. Una exuberancia estadística no es una burbuja.
 
 ### 5.4 Pre-registro `prereg-v5` y desviaciones
 

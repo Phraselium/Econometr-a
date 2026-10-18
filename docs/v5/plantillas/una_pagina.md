@@ -53,7 +53,7 @@ Son datos oficiales y fiables en su definición, pero no hay una segunda fuente 
 > - Que un solo factor sea la causa principal de la subida. Ni los pisos turísticos, ni la inmigración, ni la falta de oferta, ni los tipos de interés, ni los compradores extranjeros, ni las empresas.
 > - Qué parte de las viviendas tienen empresas o grandes propietarios: no hay datos de titularidad suficientes.
 > - Que los topes al alquiler bajen los precios o reduzcan la oferta.
-> - Que haya una burbuja, ni que no la haya [C4]. Con ajuste por comparaciones múltiples, {{V72-GSADF-ratios-bh:num}} de cuatro cocientes nacionales son exuberantes. Sin ajuste son {{V72-GSADF-ratios-p05:num}}, y frente a los tipos de interés, {{V72-GSADF-tipos-p05:num}}.
+> - Que haya una burbuja, ni que no la haya [C4]. Con ajuste por comparaciones múltiples, {{V72-GSADF-ratios-bh:num}} de cuatro cocientes nacionales son exuberantes. Sin ajuste, {{V72-GSADF-ratios-p05:num}} (y otro en el borde de la significación), y frente a los tipos de interés, {{V72-GSADF-tipos-p05:num}}.
 > - Tras el mismo ajuste, los niveles de precio son explosivos en {{V72-GSADF-niveles-bh:num}} de dos series, y las comunidades en {{V72-GSADF-ccaa-bh:num}} de 34 series ({{V72-GSADF-ccaa-v6:num}} de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. [Ficha de la burbuja](../v7_2/gsadf/ficha_burbuja.md) <!-- check:cifra-libre (número de series del diseño) -->
 > - Qué variable mueve el alquiler o el precio: ninguna supera las pruebas exigidas. Que un modelo prediga bien no dice por qué sube el precio [C4].
 > - Cuántas viviendas harán falta entre 2026 y 2035: depende de supuestos y es exploratorio. La estimación central es de {{T3-H5b:breve}} [C4].

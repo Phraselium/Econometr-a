@@ -110,6 +110,13 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Alcance de los errores en v1-V12: docs/v16/alcance_errores_k16.md.
 - **PARADA B-4 (2026-10-18).** La réplica ciega de las cifras de la 1.0 (K19) encuentra dos errores en el GSADF de V7.2 que cambian recuentos de una_pagina, y correcciones de texto en V8. Entradas en ERRATA, pendientes del autor. La fase 7 espera.
 - **B-3 aplicada:** errata V8-M5 (4121165) y guarda de subagentes.
+- **B-4 aplicada (K20, 2026-10-18).**
+  - GSADF de V7.2 con E1 y E2 corregidos y 4.999 réplicas (estabilidad en output/v16/b4_gsadf/). Cambios: cocientes sin ajuste 3 → 1, niveles tras BH 2 → 0, CCAA tras BH 7 → 0; cocientes tras BH siguen en 0 (sensibilidad con familia de 4: 1).
+  - V8: periodo de H8-9; banda exacta, mediana y sensibilidad de QNA; Y10; L = 8 en M1.
+  - T4-H2 con los dos mínimos en el anexo.
+  - ERRATA aplicadas, una_pagina, publicacion/, base, consulta y web regenerados. Ninguna conclusión de la 1.0 cambia; ninguna capa sube.
+  - Pendiente de decisión del autor: el mismo error E1 en v6 M1B (sin cambio de recuento; ERRATA).
+  - Fase 7: la Parte VII incorpora la revisión de K15 (K20).
 - **Fase 7: informe integral.** Redactor, verificador de cifras y árbitro final; integrar en cifras_clave las cifras V16-* citables (K17); tablas_v16.xlsx, web y make v16.
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;

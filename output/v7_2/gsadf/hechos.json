@@ -8,7 +8,7 @@
   "unidad": "series",
   "periodo": "2007T1-2026T2",
   "cobertura": "Nacional",
-  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
   "capa": "C4",
   "fecha_dato": "2026-10-13",
   "sentido_min_max": "sin min/max"
@@ -16,13 +16,13 @@
  {
   "id": "V72-GSADF-ratios-p05",
   "indicador": "Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05)",
-  "valor": 3.0,
+  "valor": 1.0,
   "min": null,
   "max": null,
   "unidad": "series",
   "periodo": "2007T1-2026T2",
   "cobertura": "Nacional",
-  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
   "capa": "C4",
   "fecha_dato": "2026-10-13",
   "sentido_min_max": "sin min/max"
@@ -36,7 +36,21 @@
   "unidad": "series",
   "periodo": "2007T1-2026T2",
   "cobertura": "Nacional",
-  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
+  "capa": "C4",
+  "fecha_dato": "2026-10-13",
+  "sentido_min_max": "sin min/max"
+ },
+ {
+  "id": "V72-GSADF-ratios-bh4-sens",
+  "indicador": "SENSIBILIDAD: cocientes precio/renta y precio/alquiler nacionales con exuberancia tras BH en la familia de los 4 cocientes (la principal es la de 8)",
+  "valor": 1.0,
+  "min": null,
+  "max": null,
+  "unidad": "series",
+  "periodo": "2007T1-2026T2",
+  "cobertura": "Nacional",
+  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
   "capa": "C4",
   "fecha_dato": "2026-10-13",
   "sentido_min_max": "sin min/max"
@@ -50,7 +64,7 @@
   "unidad": "series",
   "periodo": "2007T1-2026T2",
   "cobertura": "Nacional",
-  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
   "capa": "C4",
   "fecha_dato": "2026-10-13",
   "sentido_min_max": "sin min/max"
@@ -58,13 +72,13 @@
  {
   "id": "V72-GSADF-niveles-bh",
   "indicador": "Niveles de precio nacionales (IPV y valor tasado, sin fundamentales) con exuberancia tras BH",
-  "valor": 2.0,
+  "valor": 0.0,
   "min": null,
   "max": null,
   "unidad": "series",
   "periodo": "2007T1-2026T2",
   "cobertura": "Nacional",
-  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
   "capa": "C4",
   "fecha_dato": "2026-10-13",
   "sentido_min_max": "sin min/max"
@@ -72,13 +86,13 @@
  {
   "id": "V72-GSADF-ccaa-bh",
   "indicador": "Series de CCAA (precio/alquiler, IPV y valor tasado; 17 CCAA) con exuberancia tras BH",
-  "valor": 7.0,
+  "valor": 0.0,
   "min": null,
   "max": null,
   "unidad": "series",
   "periodo": "2007T1-2026T2",
   "cobertura": "17 CCAA",
-  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+  "fuentes": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
   "capa": "C4",
   "fecha_dato": "2026-10-13",
   "sentido_min_max": "sin min/max"

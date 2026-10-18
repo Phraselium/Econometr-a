@@ -100,3 +100,14 @@ Anotadas el 2026-10-17 **antes** de ejecutar ninguna estimación de Q5, Q9, Q10 
 ## D7. Q6: diferencias solo entre años consecutivos (2026-10-18; K18)
 Error de implementación detectado por la réplica ciega de Q6-p. Con un año sin dato, la diferencia por provincia saltaba el hueco. Corregido: Q6-p pasa de −0,0157 a −0,0020; Q6-v no cambia.
 
+
+## D8. GSADF de V7.2 corregido; 4.999 réplicas en lugar de 499 (2026-10-18; B-4, orden del autor; K20)
+- **Errores de código** (detectados por la réplica ciega de las cifras de la 1.0):
+  - **E1.** El BIC que elige el AR(p) del proceso generador del bootstrap comparaba ajustes con distinto número de observaciones. Ahora se compara en la muestra común.
+  - **E2.** Un `dropna` conjunto truncaba el IPV de Navarra a 2007T1-2014T4. Ahora cada serie tiene su propio `dropna`, en 2007T1-2026T2.
+- **Réplicas.** Con 499 réplicas (hasta la 1.0), el p tiene un error típico de Monte Carlo de ≈ 0,01 cerca de 0,05. Los recuentos cambiaban con la semilla: cocientes tras BH 0 o 1, y CCAA sin ajuste 5 o 6.
+  - Se probaron 1.999 y 4.999 réplicas con 5 semillas (src/v16/b4_gsadf_estabilidad.py → output/v16/b4_gsadf/).
+  - Con 1.999 no es estable la sensibilidad de la familia de 4. Con 4.999 todos los recuentos ajustados son idénticos en las 5 semillas: es el menor número estable y se adopta.
+  - El recuento sin ajuste de los cocientes (1 o 2) no se estabiliza con ningún número finito de réplicas: la serie valor tasado/IPC alquiler tiene un p medio de 0,052. Se publica el de la semilla original (1) y se declara el borde.
+- **Familias de BH.** La de los cocientes sigue siendo la de 8 (4 cocientes y 4 referencias con tipos). La de los 4 cocientes se publica solo como sensibilidad (V72-GSADF-ratios-bh4-sens).
+- **Cambios de valor:** en ERRATA.md.

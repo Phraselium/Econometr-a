@@ -15,7 +15,7 @@
   "C3s",
   "C4"
  ],
- "n": 1355,
+ "n": 1358,
  "hallazgos": [
   {
    "id": "compradores_extranjeros",
@@ -9067,7 +9067,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio/renta: IPV / renta del hogar",
    "cifra": 3.416,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.012; BH familia=0.080)",
+   "unidad": "estadístico (min = vc 95 %; p=0.010; BH familia=0.078)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "compra",
@@ -9081,7 +9081,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "3,42",
    "min_max": [
-    2.478,
+    2.564,
     3.416,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9091,7 +9091,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio/alquiler: IPV / IPC alquiler",
    "cifra": 3.097,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.036; BH familia=0.096)",
+   "unidad": "estadístico (min = vc 95 %; p=0.522; BH familia=0.937)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "ambos",
@@ -9105,7 +9105,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "3,1",
    "min_max": [
-    2.986,
+    5.424,
     3.097,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9115,7 +9115,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV",
    "cifra": 0.895,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.762; BH familia=0.948)",
+   "unidad": "estadístico (min = vc 95 %; p=0.519; BH familia=0.937)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "ambos",
@@ -9129,7 +9129,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "0,895",
    "min_max": [
-    3.13,
+    2.627,
     0.895,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9139,7 +9139,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio frente a valor de cuota hipotecaria constante sobre renta: IPV",
    "cifra": 0.909,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.604; BH familia=0.948)",
+   "unidad": "estadístico (min = vc 95 %; p=0.605; BH familia=0.937)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "compra",
@@ -9153,7 +9153,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "0,909",
    "min_max": [
-    2.477,
+    2.655,
     0.909,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9163,7 +9163,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio/renta: valor tasado / renta del hogar",
    "cifra": 0.224,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.932; BH familia=0.948)",
+   "unidad": "estadístico (min = vc 95 %; p=0.937; BH familia=0.937)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "compra",
@@ -9177,7 +9177,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "0,224",
    "min_max": [
-    3.088,
+    2.961,
     0.224,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9187,7 +9187,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio/alquiler: valor tasado / IPC alquiler",
    "cifra": 4.344,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.020; BH familia=0.080)",
+   "unidad": "estadístico (min = vc 95 %; p=0.053; BH familia=0.211)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "ambos",
@@ -9201,7 +9201,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "4,34",
    "min_max": [
-    3.537,
+    4.381,
     4.344,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9211,7 +9211,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado",
    "cifra": 0.161,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.948; BH familia=0.948)",
+   "unidad": "estadístico (min = vc 95 %; p=0.838; BH familia=0.937)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "ambos",
@@ -9225,7 +9225,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "0,161",
    "min_max": [
-    3.175,
+    2.637,
     0.161,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9235,7 +9235,7 @@
    "enunciado": "GSADF (vc bootstrap AR): precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado",
    "cifra": 0.516,
    "rango": null,
-   "unidad": "estadístico (min = vc 95 %; p=0.838; BH familia=0.948)",
+   "unidad": "estadístico (min = vc 95 %; p=0.836; BH familia=0.937)",
    "periodo": "2007Q1-2026Q2",
    "ambito": "Nacional",
    "mercado": "compra",
@@ -9249,7 +9249,7 @@
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
    "cifra_texto": "0,516",
    "min_max": [
-    2.949,
+    2.946,
     0.516,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
@@ -9257,7 +9257,7 @@
   {
    "id": "R1B-G-ccaa",
    "enunciado": "CCAA-medida con exuberancia tras BH (vc corregidos) de 34",
-   "cifra": 7.0,
+   "cifra": 0.0,
    "rango": null,
    "unidad": "series (max = significativas sin ajuste)",
    "periodo": "2007Q1-2026Q2",
@@ -9271,10 +9271,10 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-10 (MIVAU valor tasado hasta 2026T2; SERPAVI hasta 2024; IPV/IPC alquiler hasta 2026T2)",
-   "cifra_texto": "7 series",
+   "cifra_texto": "0 series",
    "min_max": [
-    7.0,
-    19.0,
+    0.0,
+    6.0,
     "min = valor crítico al 95 %; max = estadístico observado (GSADF)"
    ]
   },
@@ -19784,12 +19784,12 @@
    "tipo": "ficha",
    "veredicto": "ANALIZADA, NO CONCLUYENTE",
    "ids_cifras": [],
-   "magnitud": "NACIONAL (2007T1-2026T2; reverificado: 14 de 14 series idénticas a v5). Los cocientes precio/renta y precio/alquiler muestran exuberancia sin ajuste en 3 de 4, pero en 0 tras BH. Frente a valores de referencia con tipos de interés (descuento del alquiler, cuota sobre renta): 0 de 4. Los niveles de precio, sin fundamentales, sí son explosivos tras BH (2 de 2). REGIONAL: 7 de 34 series de CCAA con exuberancia tras BH (19 sin ajuste; panel 2007-2026); en v6, con otra muestra (provincias de entrenamiento, 2015-2024, T=40), 0 de 11 CCAA."
+   "magnitud": "NACIONAL (2007T1-2026T2; reverificado: 14 de 14 series idénticas a v5). Los cocientes precio/renta y precio/alquiler muestran exuberancia sin ajuste en 1 de 4 (y 1 más con p en el borde de 0,05, a menos de dos errores típicos de Monte Carlo), y en 0 tras BH en la familia de 8 (sensibilidad con la familia de 4 cocientes: 1). Frente a valores de referencia con tipos de interés (descuento del alquiler, cuota sobre renta): 0 de 4. Los niveles de precio, sin fundamentales, son explosivos tras BH en 0 de 2. REGIONAL: 0 de 34 series de CCAA con exuberancia tras BH (6 sin ajuste; panel 2007-2026); en v6, con otra muestra (provincias de entrenamiento, 2015-2024, T=40), 0 de 11 CCAA."
   },
   {
    "id": "V72-GSADF-ccaa-bh",
    "enunciado": "Series de CCAA (precio/alquiler, IPV y valor tasado; 17 CCAA) con exuberancia tras BH",
-   "cifra": 7.0,
+   "cifra": 0.0,
    "rango": null,
    "unidad": "series",
    "periodo": "2007T1-2026T2",
@@ -19797,13 +19797,13 @@
    "mercado": "ambos",
    "capa": "C4",
    "metodo": "GSADF (exuberancia)",
-   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
    "ruta": "output/v7_2/gsadf/hechos.json",
    "version": "v7.2",
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-13",
-   "cifra_texto": "7 series",
+   "cifra_texto": "0 series",
    "min_max": [
     null,
     null,
@@ -19837,7 +19837,7 @@
   {
    "id": "V72-GSADF-niveles-bh",
    "enunciado": "Niveles de precio nacionales (IPV y valor tasado, sin fundamentales) con exuberancia tras BH",
-   "cifra": 2.0,
+   "cifra": 0.0,
    "rango": null,
    "unidad": "series",
    "periodo": "2007T1-2026T2",
@@ -19845,13 +19845,13 @@
    "mercado": "compra",
    "capa": "C4",
    "metodo": "GSADF (exuberancia)",
-   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
    "ruta": "output/v7_2/gsadf/hechos.json",
    "version": "v7.2",
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-13",
-   "cifra_texto": "2 series",
+   "cifra_texto": "0 series",
    "min_max": [
     null,
     null,
@@ -19869,7 +19869,7 @@
    "mercado": "ambos",
    "capa": "C4",
    "metodo": "GSADF (exuberancia)",
-   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
    "ruta": "output/v7_2/gsadf/hechos.json",
    "version": "v7.2",
    "estado": "vigente",
@@ -19883,9 +19883,9 @@
    ]
   },
   {
-   "id": "V72-GSADF-ratios-p05",
-   "enunciado": "Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05)",
-   "cifra": 3.0,
+   "id": "V72-GSADF-ratios-bh4-sens",
+   "enunciado": "SENSIBILIDAD: cocientes precio/renta y precio/alquiler nacionales con exuberancia tras BH en la familia de los 4 cocientes (la principal es la de 8)",
+   "cifra": 1.0,
    "rango": null,
    "unidad": "series",
    "periodo": "2007T1-2026T2",
@@ -19893,13 +19893,37 @@
    "mercado": "ambos",
    "capa": "C4",
    "metodo": "GSADF (exuberancia)",
-   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
    "ruta": "output/v7_2/gsadf/hechos.json",
    "version": "v7.2",
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-13",
-   "cifra_texto": "3 series",
+   "cifra_texto": "1 series",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V72-GSADF-ratios-p05",
+   "enunciado": "Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05)",
+   "cifra": 1.0,
+   "rango": null,
+   "unidad": "series",
+   "periodo": "2007T1-2026T2",
+   "ambito": "Nacional",
+   "mercado": "ambos",
+   "capa": "C4",
+   "metodo": "GSADF (exuberancia)",
+   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
+   "ruta": "output/v7_2/gsadf/hechos.json",
+   "version": "v7.2",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-13",
+   "cifra_texto": "1 series",
    "min_max": [
     null,
     null,
@@ -19917,7 +19941,7 @@
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "GSADF (exuberancia)",
-   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
    "ruta": "output/v7_2/gsadf/hechos.json",
    "version": "v7.2",
    "estado": "vigente",
@@ -19941,7 +19965,7 @@
    "mercado": "ambos",
    "capa": "C4",
    "metodo": "GSADF (exuberancia)",
-   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 499 réplicas, BH por familia (v5 R1B, reverificado en v7.2)",
+   "fuente": "GSADF con valores críticos por bootstrap AR(p) estimado, 4.999 réplicas, BH por familia (v5 R1B, corregido en V16)",
    "ruta": "output/v7_2/gsadf/hechos.json",
    "version": "v7.2",
    "estado": "vigente",
@@ -20431,7 +20455,7 @@
     0.8578289285
    ],
    "unidad": "proporción",
-   "periodo": "1999-último dato",
+   "periodo": "2006T1-2026T2",
    "ambito": "España y zona euro",
    "mercado": "compra",
    "capa": "C4",
@@ -20455,7 +20479,7 @@
    "cifra": 0.02,
    "rango": null,
    "unidad": "p-valor",
-   "periodo": "1999-último dato",
+   "periodo": "2006T1-2026T2",
    "ambito": "España y zona euro",
    "mercado": "no aplica",
    "capa": "C4",
@@ -25863,11 +25887,11 @@
   },
   {
    "id": "V8-QNA-pp-c-P5",
-   "enunciado": "Cuota no atribuida de precio real de compra en P5 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero de M2)",
+   "enunciado": "Cuota no atribuida de precio real de compra en P5 en puntos: media posterior (mediana 3,4; cola derecha pesada, con el tipo hipotecario del Banco de España en lugar del BCE la media sería 20,7 y la mediana 3,5); banda del 68 % exacta (cuantiles de la suma); condicionado a las restricciones de signo y de cero de M2",
    "cifra": 9.51611,
    "rango": [
-    -14.5598,
-    24.136
+    -7.7624,
+    16.4365
    ],
    "unidad": "pp",
    "periodo": "P5 (2022T3-último dato)",
@@ -25881,10 +25905,61 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026T1",
-   "cifra_texto": "9,52 pp (-14,56 a 24,14)",
+   "cifra_texto": "9,52 pp (-7,76 a 16,44)",
    "min_max": [
-    -14.5598,
-    24.136,
+    -7.7624,
+    16.4365,
+    "rango"
+   ]
+  },
+  {
+   "id": "V8-QNA-pp-c-P5-bde",
+   "enunciado": "SENSIBILIDAD: cuota no atribuida de precio real de compra en P5 en puntos con el tipo hipotecario del Banco de España en lugar del BCE: media posterior (mediana 3,5; banda del 68 % exacta -7,7 a 16,9: la media queda fuera de la banda por la cola derecha; condicionado a las restricciones de signo y de cero de M2)",
+   "cifra": 20.6662,
+   "rango": null,
+   "unidad": "pp",
+   "periodo": "P5 (2022T3-último dato)",
+   "ambito": "España (nacional); compra",
+   "mercado": "compra",
+   "capa": "C3s",
+   "metodo": "SVAR bayesiano con restricciones de signo y de cero (descomposición histórica)",
+   "fuente": "F5 (regla del §9 sobre M2, M6, M5, M4, M7); nacional_q_v8; errata V16 (src/v16/b4_qna_exacta.py)",
+   "ruta": "output/v8/F6/hechos.json",
+   "version": "V8",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026T1",
+   "cifra_texto": "20,67 pp",
+   "min_max": [
+    null,
+    null,
+    "rango"
+   ]
+  },
+  {
+   "id": "V8-QNA-pp-c-P5-med",
+   "enunciado": "Cuota no atribuida de precio real de compra en P5 en puntos: mediana posterior (la media, 9,5, la eleva la cola derecha; banda del 68 % exacta; condicionado a las restricciones de signo y de cero de M2)",
+   "cifra": 3.4222,
+   "rango": [
+    -7.7624,
+    16.4365
+   ],
+   "unidad": "pp",
+   "periodo": "P5 (2022T3-último dato)",
+   "ambito": "España (nacional); compra",
+   "mercado": "compra",
+   "capa": "C3s",
+   "metodo": "SVAR bayesiano con restricciones de signo y de cero (descomposición histórica)",
+   "fuente": "F5 (regla del §9 sobre M2, M6, M5, M4, M7); nacional_q_v8; errata V16 (src/v16/b4_qna_exacta.py)",
+   "ruta": "output/v8/F6/hechos.json",
+   "version": "V8",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026T1",
+   "cifra_texto": "3,42 pp (-7,76 a 16,44)",
+   "min_max": [
+    -7.7624,
+    16.4365,
     "rango"
    ]
   },

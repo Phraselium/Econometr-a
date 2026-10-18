@@ -42,8 +42,9 @@ def main():
     nb = 4999
     et = (0.05 * 0.95 / nb) ** 0.5   # error típico de Monte Carlo de un p cercano a 0,05
     k["rat_bh4"] = int((r[(r.familia == "fundamentales") & r.medida.str.startswith(("precio/renta", "precio/alquiler"))].p_bh_sens_cocientes4 < .05).sum())
-    k["rat_borde"] = int(((ratios.p - .05).abs() < 2 * et).sum())
-    fn = f"GSADF con valores críticos por bootstrap AR(p) estimado, {nb:,} réplicas".replace(",", ".") + ", BH por familia (v5 R1B, corregido en V16)"
+    k["rat_borde"] = int(((ratios.p >= .05) & ((ratios.p - .05).abs() < 2 * et)).sum())   # no significativas, pero en el borde
+    nbt = f"{nb:,}".replace(",", ".")
+    fn = f"GSADF con valores críticos por bootstrap AR(p) estimado, {nbt} réplicas, BH por familia (v5 R1B, corregido en V16)"
     H = [h("V72-GSADF-rev", "Series nacionales del GSADF de v5 que se reproducen exactamente con el mismo método y la misma semilla", k["coinciden"], "series", "2007T1-2026T2", "Nacional", fn),
          h("V72-GSADF-ratios-p05", "Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05)", k["rat_p"], "series", "2007T1-2026T2", "Nacional", fn),
          h("V72-GSADF-ratios-bh", "Cocientes precio/renta y precio/alquiler nacionales con exuberancia tras BH", k["rat_bh"], "series", "2007T1-2026T2", "Nacional", fn),
@@ -58,7 +59,7 @@ def main():
     (OUT / "hechos.json").write_text(json.dumps(H, ensure_ascii=False, indent=1), encoding="utf-8")
     mag = (f"NACIONAL (2007T1-2026T2; reverificado: {k['coinciden']} de {k['total']} series idénticas a v5). "
            f"Los cocientes precio/renta y precio/alquiler muestran exuberancia sin ajuste en {k['rat_p']} de {k['rat_n']} "
-           f"({k['rat_borde']} con p en el borde de 0,05, a menos de dos errores típicos de Monte Carlo), y en {k['rat_bh']} tras BH en la familia de 8 "
+           f"(y {k['rat_borde']} más con p en el borde de 0,05, a menos de dos errores típicos de Monte Carlo), y en {k['rat_bh']} tras BH en la familia de 8 "
            f"(sensibilidad con la familia de 4 cocientes: {k['rat_bh4']}). "
            f"Frente a valores de referencia con tipos de interés (descuento del alquiler, cuota sobre renta): {k['tip_p']} de {k['tip_n']}. "
            f"Los niveles de precio, sin fundamentales, son explosivos tras BH en {k['niv_bh']} de {k['niv_n']}. "
@@ -76,8 +77,9 @@ def main():
                            "T=78 y hay series exuberantes sin ajuste), ")
                         + "el valor fundamental usado es una referencia simple con supuestos propios y la muestra es corta para el ciclo."),
                  limites=(f"T=78 (T=40 en v6); ADF con un rezago; sin renta por CCAA; los resultados regionales de v5 y v6 usan muestras distintas y no son comparables entre sí. "
-                          f"{nb:,} réplicas".replace(",", ".") + " (con 499, hasta la 1.0, los recuentos cambiaban con la semilla: output/v16/b4_gsadf/); "
-                          "un p en el borde de 0,05 no se estabiliza con ningún número finito de réplicas."),
+                          f"{nbt} réplicas (con 499, hasta la 1.0, los recuentos cambiaban con la semilla: output/v16/b4_gsadf/); "
+                          "un p en el borde de 0,05 no se estabiliza con ningún número finito de réplicas. El valor tasado de Navarra falta en 2015-2018: "
+                          "su serie usa el tramo continuo más largo (2007T1-2014T4, T=32); el IPV de Navarra usa 2007T1-2026T2 desde la errata de V16."),
                  evidencia=["output/v7_2/gsadf/reverificacion.csv", "output/v5/R1B/tablas/gsadf_corregido.csv", "output/v5/E/hechos.json (E-V6-M1B-GSADF-*)"],
                  version="v7.2")
     (OUT / "ficha_burbuja.json").write_text(json.dumps([ficha], ensure_ascii=False, indent=1), encoding="utf-8")

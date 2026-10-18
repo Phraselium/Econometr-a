@@ -56,3 +56,18 @@
 - **Qué cambia.** Solo las 8 filas IV3_bartik_h1-2 de la atribución (tablas_v8.xlsx, hoja «Atribucion»), entre un 1 % y un 11 %.
 - **Qué no cambia.** Ninguna cifra de cifras_clave, ninguna capa (C4; F efectivo < 3,4), ninguna prueba de hipotesis_m5.csv, la regla §9 ni las designaciones (esas filas no votan).
 
+
+## Errata y precisiones posteriores (V16, 2026-10-18; ERRATA.md, B-4 de docs/v16/bloqueos.md)
+Detectadas por la réplica ciega de las cifras de la 1.0 (output/v16/replica/v10_d/reconciliacion.md). Orden expresa del autor. Ninguna capa ni designación cambia.
+- **Regla Y10 (voto del SVAR en la regla del §9).** El voto de `svar_hd` usa P(f es el mayor), calculada sorteo a sorteo, y no el factor de mayor media posterior (lectura literal de R2 en docs/v8/revision_F4.md). Si los dos no coinciden, se rotula «ranking incierto (media y mediana discrepan)» y vota el de mayor P(f*). Está en docs/v8/decisiones.md (Y10), anotada en el mismo commit que output/v8/M2/prob_mayor.csv (K15 de la revisión final), y faltaba en esta tabla.
+  - Efecto en V8-VOTOS-c-P5: con Y10, el SVAR vota crédito y tipos (P(f*) = 0,297) y el máximo es 2 votos de 4. Con la lectura literal de R2 votaría actividad y renta (mayor media, 7,16) y el máximo sería 1.
+  - En los dos casos no hay designación: la regla exige 3.
+- **H8-9: periodo.** La correlación del factor común español con el precio de la zona euro se calcula en 2006T1-2026T2, como dice la fila de §7 de esta tabla. En cifras_clave figuraba «1999-último dato». Se corrige el campo periodo de V8-H8-9-est y V8-H8-9-pholm; los valores no cambian.
+- **V8-QNA-pp-c-P5: banda exacta, mediana y sensibilidad.**
+  - La banda del 68 % publicada era la suma de los límites de las bandas de las dos partes (determinista y no identificada): [−14,6; 24,1], una aproximación conservadora (fila de §9 de esta tabla, punto 3). Se publica la banda exacta, con los cuantiles 16 y 84 ponderados de la suma: [−7,8; 16,4].
+  - El punto sigue siendo la media posterior, 9,5, porque es la única medida aditiva (Y10). La mediana es 3,4: la posterior tiene una cola derecha pesada (cifra V8-QNA-pp-c-P5-med).
+  - Con el tipo hipotecario del Banco de España en lugar del BCE, la media sería 20,7 y la mediana 3,5 (cifra V8-QNA-pp-c-P5-bde, sensibilidad).
+  - Cálculo: src/v16/b4_qna_exacta.py, con el posterior de M2 V3 reproducido con su configuración original. Las bandas de las demás celdas siguen siendo aproximadas (suma de límites).
+- **M1 (H8-8): longitud del bloque del bootstrap.** La fila de §7 dice «bootstrap por bloques circulares de filas» sin fijar la longitud. El código usa L = max(2, min(4, T // 3)), es decir L = 4 en todos los periodos con T ≥ 12; el L = 8 de la fila de H8-9 es de otro contraste.
+  - Con L = 8 en H8-8 (copia de src/v8/m1_factor_comun.py, misma semilla y B = 999), la cuota de la compra en P5 (V8-M1-cuota-c-P5) es 92,8 [85,7; 95,1], frente a la publicada con L = 4, 92,8 [86,7; 94,9]. El p de Holm de H8-8 pasa de 0,669 a 0,872.
+  - El punto no depende de L, la banda apenas, y H8-8 no se rechaza con ninguna de las dos. Se mantiene L = 4, que es la que se usó.

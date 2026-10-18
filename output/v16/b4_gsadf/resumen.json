@@ -1,0 +1,323 @@
+{
+ "nboots": [
+  499,
+  1999,
+  4999
+ ],
+ "semillas": 5,
+ "semilla_serie": "SEED + 500 + k + 100000·j (j = 0: la original)",
+ "estable": {
+  "499": {
+   "ratios_p05": false,
+   "ratios_bh_fam8": false,
+   "ratios_bh_fam4_sens": false,
+   "tipos_p05": true,
+   "niveles_bh": true,
+   "ccaa_bh": true,
+   "ccaa_p05": false
+  },
+  "1999": {
+   "ratios_p05": false,
+   "ratios_bh_fam8": true,
+   "ratios_bh_fam4_sens": false,
+   "tipos_p05": true,
+   "niveles_bh": true,
+   "ccaa_bh": true,
+   "ccaa_p05": true
+  },
+  "4999": {
+   "ratios_p05": false,
+   "ratios_bh_fam8": true,
+   "ratios_bh_fam4_sens": true,
+   "tipos_p05": true,
+   "niveles_bh": true,
+   "ccaa_bh": true,
+   "ccaa_p05": true
+  }
+ },
+ "rango": {
+  "499": {
+   "ratios_p05": [
+    1,
+    2
+   ],
+   "ratios_bh_fam8": [
+    0,
+    1
+   ],
+   "ratios_bh_fam4_sens": [
+    0,
+    1
+   ],
+   "tipos_p05": [
+    0,
+    0
+   ],
+   "niveles_bh": [
+    0,
+    0
+   ],
+   "ccaa_bh": [
+    0,
+    0
+   ],
+   "ccaa_p05": [
+    5,
+    6
+   ]
+  },
+  "1999": {
+   "ratios_p05": [
+    1,
+    2
+   ],
+   "ratios_bh_fam8": [
+    0,
+    0
+   ],
+   "ratios_bh_fam4_sens": [
+    0,
+    1
+   ],
+   "tipos_p05": [
+    0,
+    0
+   ],
+   "niveles_bh": [
+    0,
+    0
+   ],
+   "ccaa_bh": [
+    0,
+    0
+   ],
+   "ccaa_p05": [
+    6,
+    6
+   ]
+  },
+  "4999": {
+   "ratios_p05": [
+    1,
+    2
+   ],
+   "ratios_bh_fam8": [
+    0,
+    0
+   ],
+   "ratios_bh_fam4_sens": [
+    1,
+    1
+   ],
+   "tipos_p05": [
+    0,
+    0
+   ],
+   "niveles_bh": [
+    0,
+    0
+   ],
+   "ccaa_bh": [
+    0,
+    0
+   ],
+   "ccaa_p05": [
+    6,
+    6
+   ]
+  }
+ },
+ "p_rango_nacional": {
+  "499": {
+   "nivel: IPV": [
+    0.562,
+    0.618
+   ],
+   "nivel: valor tasado": [
+    0.042,
+    0.068
+   ],
+   "precio frente a valor de cuota hipotecaria constante sobre renta: IPV": [
+    0.574,
+    0.636
+   ],
+   "precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado": [
+    0.816,
+    0.838
+   ],
+   "precio frente a valor de descuento del alquiler (prima 2 pp): IPV": [
+    0.934,
+    0.954
+   ],
+   "precio frente a valor de descuento del alquiler (prima 2 pp): valor tasado": [
+    0.928,
+    0.942
+   ],
+   "precio frente a valor de descuento del alquiler (prima 4 pp): IPV": [
+    0.342,
+    0.366
+   ],
+   "precio frente a valor de descuento del alquiler (prima 4 pp): valor tasado": [
+    0.866,
+    0.89
+   ],
+   "precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV": [
+    0.502,
+    0.564
+   ],
+   "precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado": [
+    0.832,
+    0.864
+   ],
+   "precio/alquiler: IPV / IPC alquiler": [
+    0.512,
+    0.552
+   ],
+   "precio/alquiler: valor tasado / IPC alquiler": [
+    0.046,
+    0.06
+   ],
+   "precio/renta: IPV / renta del hogar": [
+    0.004,
+    0.016
+   ],
+   "precio/renta: valor tasado / renta del hogar": [
+    0.932,
+    0.954
+   ]
+  },
+  "1999": {
+   "nivel: IPV": [
+    0.5845,
+    0.6025
+   ],
+   "nivel: valor tasado": [
+    0.0445,
+    0.0535
+   ],
+   "precio frente a valor de cuota hipotecaria constante sobre renta: IPV": [
+    0.602,
+    0.62
+   ],
+   "precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado": [
+    0.825,
+    0.839
+   ],
+   "precio frente a valor de descuento del alquiler (prima 2 pp): IPV": [
+    0.9275,
+    0.9495
+   ],
+   "precio frente a valor de descuento del alquiler (prima 2 pp): valor tasado": [
+    0.927,
+    0.9375
+   ],
+   "precio frente a valor de descuento del alquiler (prima 4 pp): IPV": [
+    0.335,
+    0.3485
+   ],
+   "precio frente a valor de descuento del alquiler (prima 4 pp): valor tasado": [
+    0.8655,
+    0.8855
+   ],
+   "precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV": [
+    0.52,
+    0.5435
+   ],
+   "precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado": [
+    0.836,
+    0.8465
+   ],
+   "precio/alquiler: IPV / IPC alquiler": [
+    0.512,
+    0.531
+   ],
+   "precio/alquiler: valor tasado / IPC alquiler": [
+    0.0485,
+    0.0525
+   ],
+   "precio/renta: IPV / renta del hogar": [
+    0.007,
+    0.013
+   ],
+   "precio/renta: valor tasado / renta del hogar": [
+    0.934,
+    0.939
+   ]
+  },
+  "4999": {
+   "nivel: IPV": [
+    0.5914,
+    0.6018
+   ],
+   "nivel: valor tasado": [
+    0.0434,
+    0.0498
+   ],
+   "precio frente a valor de cuota hipotecaria constante sobre renta: IPV": [
+    0.605,
+    0.6156
+   ],
+   "precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado": [
+    0.8312,
+    0.8356
+   ],
+   "precio frente a valor de descuento del alquiler (prima 2 pp): IPV": [
+    0.934,
+    0.9488
+   ],
+   "precio frente a valor de descuento del alquiler (prima 2 pp): valor tasado": [
+    0.9304,
+    0.9376
+   ],
+   "precio frente a valor de descuento del alquiler (prima 4 pp): IPV": [
+    0.3338,
+    0.3472
+   ],
+   "precio frente a valor de descuento del alquiler (prima 4 pp): valor tasado": [
+    0.8676,
+    0.88
+   ],
+   "precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV": [
+    0.5194,
+    0.5394
+   ],
+   "precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado": [
+    0.8346,
+    0.8424
+   ],
+   "precio/alquiler: IPV / IPC alquiler": [
+    0.5202,
+    0.5288
+   ],
+   "precio/alquiler: valor tasado / IPC alquiler": [
+    0.0492,
+    0.058
+   ],
+   "precio/renta: IPV / renta del hogar": [
+    0.0074,
+    0.0098
+   ],
+   "precio/renta: valor tasado / renta del hogar": [
+    0.9358,
+    0.9398
+   ]
+  }
+ },
+ "series_en_borde": {
+  "499": [
+   "nivel: valor tasado",
+   "precio/alquiler: valor tasado / IPC alquiler"
+  ],
+  "1999": [
+   "nivel: valor tasado",
+   "precio/alquiler: valor tasado / IPC alquiler"
+  ],
+  "4999": [
+   "nivel: valor tasado",
+   "precio/alquiler: valor tasado / IPC alquiler"
+  ]
+ },
+ "nboot_elegido": 4999,
+ "regla": "el menor B entre 1.999 y 4.999 con todos los recuentos idénticos en las 5 semillas, salvo un recuento sin ajuste cuya serie tiene un p medio a menos de 2 errores típicos de Monte Carlo de 0,05 (ningún B finito lo estabiliza: se publica con su rango)",
+ "capa": "C4"
+}

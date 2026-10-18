@@ -44,7 +44,7 @@ Son datos oficiales y fiables en su definición, pero no hay una segunda fuente 
 ## Por qué ha subido (versión interna V8) [C4]
 
 - Ningún factor destaca como el principal en ninguno de los diez casos estudiados. Como mucho coinciden 2,0 métodos de cuatro, y la regla exige tres.
-- Desde mediados de 2022 el precio real de compra subió 18 pp. De esa subida, 9,5 pp (-15 a 24) no se atribuye a ningún factor identificado [C3s: vale solo bajo las restricciones del modelo]. <!-- check:cifra-libre (umbral pre-registrado) -->
+- Desde mediados de 2022 el precio real de compra subió 18 pp. De esa subida, 9,5 pp (-7,8 a 16) de media no se atribuye a ningún factor identificado; la mediana es 3,4, porque la distribución tiene una cola larga [C3s: vale solo bajo las restricciones del modelo]. <!-- check:cifra-libre (umbral pre-registrado) -->
 - El alquiler real del conjunto de contratos varió -1,8 pp. Los contratos nuevos subieron más: Cataluña 16,9 % (16,6-17,2) y Comunitat Valenciana 29 % (26-31) [C1].
 - La subida reciente es común a casi todas las comunidades: un 93 % (87-95) de lo que varían. Acompaña a la de la zona euro, con correlación 0,60 (0,14-0,86). Es una asociación.
 - Ningún modelo predice mejor que una regla sencilla basada en los últimos trimestres.
@@ -55,8 +55,8 @@ Son datos oficiales y fiables en su definición, pero no hay una segunda fuente 
 > - Que un solo factor sea la causa principal de la subida. Ni los pisos turísticos, ni la inmigración, ni la falta de oferta, ni los tipos de interés, ni los compradores extranjeros, ni las empresas.
 > - Qué parte de las viviendas tienen empresas o grandes propietarios: no hay datos de titularidad suficientes.
 > - Que los topes al alquiler bajen los precios o reduzcan la oferta.
-> - Que haya una burbuja, ni que no la haya [C4]. Con ajuste por comparaciones múltiples, 0 de cuatro cocientes nacionales son exuberantes. Sin ajuste son 3, y frente a los tipos de interés, 0.
-> - Los niveles de precio sí son explosivos en 2 de dos series. Por comunidades lo son 7 de 34 series, y 0 de 11 en otra muestra. [Ficha de la burbuja](../output/v7_2/gsadf/ficha_burbuja.md) <!-- check:cifra-libre (número de series del diseño) -->
+> - Que haya una burbuja, ni que no la haya [C4]. Con ajuste por comparaciones múltiples, 0 de cuatro cocientes nacionales son exuberantes. Sin ajuste, 1 (y otro en el borde de la significación), y frente a los tipos de interés, 0.
+> - Tras el mismo ajuste, los niveles de precio son explosivos en 0 de dos series, y las comunidades en 0 de 34 series (0 de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. [Ficha de la burbuja](../output/v7_2/gsadf/ficha_burbuja.md) <!-- check:cifra-libre (número de series del diseño) -->
 > - Qué variable mueve el alquiler o el precio: ninguna supera las pruebas exigidas. Que un modelo prediga bien no dice por qué sube el precio [C4].
 > - Cuántas viviendas harán falta entre 2026 y 2035: depende de supuestos y es exploratorio. La estimación central es de 210 mil viviendas/año (99,4-292 mil) [C4].
 > - Las viviendas que quedan libres no se restan de esa necesidad: la proyección de hogares del INE ya las tiene en cuenta.

@@ -63,4 +63,5 @@
   - (1) Si se corrigen E1 y E2 y se regenera V7.2 → cifras_clave → una_pagina → publicacion. Hace falta orden expresa: cambia valores publicados. Hay que decidir además el número de réplicas (499 o más) y la familia de BH.
   - (2) Si se aplican las correcciones de texto de V8.
 - **Fase 7.** Queda en espera.
+- **Resuelta (2026-10-18).** El autor decidió corregir y regenerar (K20). Cifras: ERRATA.md. Ninguna conclusión de la 1.0 cambia; ninguna capa sube. Queda pendiente de decisión la fila de v6 M1B (mismo error E1, sin cambio de recuento).
 

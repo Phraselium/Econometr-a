@@ -302,3 +302,55 @@ Lo que no se cita como pista (H2, Q1c, Q6-v, Q5, Q10, Q2c) se nombra en el infor
 
 **Lectura.** Las cifras C1 y las de déficit y necesidad se sostienen. Las cifras de exuberancia (GSADF) de una_pagina tienen errores que cambian recuentos publicados, aunque no la capa ni el veredicto «no concluyente». Varias fichas del anexo no bastaban para reproducir la cifra: se han completado las de T4 y quedan por completar las de GSADF y R6 (lista en las reconciliaciones).
 
+
+## K20. Decisiones del autor sobre B-4, aplicadas (2026-10-18)
+Órdenes expresas del autor. Detalle: ERRATA.md, D8 de docs/v16/desviaciones.md, docs/v16/errata_v72_gsadf.md y la errata V16 de docs/v8/desviaciones.md.
+
+**1. GSADF de V7.2.**
+- Se corrigen E1 y E2 y se usan 4.999 réplicas (estabilidad entre semillas en output/v16/b4_gsadf/). La familia BH de los cocientes sigue siendo la de 8; la de 4, solo como sensibilidad.
+- Cifras finales:
+
+| Cifra | Antes | Después |
+|---|---|---|
+| Cocientes sin ajuste | 3 | 1 (más 1 en el borde) |
+| Cocientes tras BH | 0 | 0 |
+| Sensibilidad con la familia de 4 | — | 1 |
+| Tipos | 0 | 0 |
+| Niveles tras BH | 2 | 0 |
+| CCAA tras BH | 7 | 0 |
+| v6 | 0 | 0 |
+
+- Como el recuento de cocientes tras el ajuste sigue en 0, el texto «0 tras el ajuste» no cambia. Sí cambia «los niveles sí son explosivos», que ya no es cierto: se reescribe en una_pagina, lo_que_sabemos, policy_brief, la ficha de burbuja y consulta.
+- La conclusión no cambia: no se puede afirmar que haya una burbuja ni que no la haya (ANALIZADA, NO CONCLUYENTE, C4). Por eso no se aplica la parada por conclusión de la 1.0.
+- Mismo error en v6 (src/v6/m1b_lib.py): no cambia el recuento; cambiarían los valores críticos de 4 CCAA. Queda pendiente de decisión del autor (ERRATA).
+
+**Revisión de K15 (Q9-g).**
+- K15 se apoyaba en «no hay exuberancia de los cocientes tras el ajuste múltiple» (V7.2). Con el código corregido y 4.999 réplicas:
+  - con la familia de 8 sigue siendo 0, y ahora es estable entre semillas, cosa que con 499 no ocurría;
+  - con la familia de 4 (sensibilidad) es 1: IPV/renta nacional, p = 0,010, q de BH 0,039.
+- La lectura de Q9-g no cambia:
+  - sigue siendo una pista no confirmada (C4), con p = 0,004 y q = 0,306 (BY, m = 21);
+  - es coherente con la conclusión de V7.2, que se mantiene;
+  - no sube ninguna capa.
+- **Ajuste de la Parte VII del informe** (fase 7). Junto a Q9-g y sus tres advertencias, se dirá lo siguiente:
+  - con el GSADF corregido de V7.2, ningún cociente nacional es exuberante tras el ajuste en la familia publicada (8 contrastes);
+  - el de IPV/renta sí lo es si el ajuste se limita a los 4 cocientes, solo como sensibilidad;
+  - los niveles y las series regionales tampoco lo son tras el ajuste;
+  - nada de esto identifica una burbuja ni la descarta.
+
+**2. V8.**
+- H8-9: el periodo pasa a 2006T1-2026T2.
+- QNA:
+  - banda exacta [−7,8; 16,4];
+  - mediana 3,4 junto a la media 9,5, con la nota de cola pesada;
+  - sensibilidad al tipo del Banco de España: media 20,7, mediana 3,5.
+  - Nuevas cifras V8-QNA-pp-c-P5-med y V8-QNA-pp-c-P5-bde.
+- Y10 pasa a las desviaciones publicadas.
+- M1: L = 4 no estaba fijada en la ficha. Con L = 8, 92,8 [85,7; 95,1]. Se mantiene L = 4.
+- Ninguna capa ni designación cambia.
+
+**3. T4-H2.** La convención no cambia. La ficha (output/v6_2/anexo_metodologico.md) muestra los dos mínimos:
+- 87.247 con «tras 2025 = relleno»;
+- ≈ 103.800 con interpolación lineal (103.788).
+
+La primera hace más favorable el escenario optimista. El informe integral los citará igual (fase 7).

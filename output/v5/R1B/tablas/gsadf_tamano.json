@@ -9,7 +9,7 @@
  },
  "phi0.3": {
   "rechazo_vc_iid": 0.08,
-  "rechazo_bootstrap_AR": 0.04
+  "rechazo_bootstrap_AR": 0.035
  },
  "phi0.5": {
   "rechazo_vc_iid": 0.15,

@@ -60,6 +60,7 @@ En cada caso se dice cuál fue la razón.
 - **Construcción adicional.** Dosis no nula por comunidad (ver arriba). La rebaja de impuestos y costes de construcción deja de difundirse: su escenario sobrestima el efecto por diseño.
 - **Predicción regional.** Cada tabla indica su comparador: base fuerte (AR con factor común) o base más exigente.
 - **Burbuja.** El GSADF nacional se reverificó con el mismo método y la misma semilla (14 de 14 series idénticas). No se puede afirmar que haya una burbuja ni que no la haya (ficha V72-BURBUJA). <!-- check:cifra-libre (número de series del diseño) -->
+- **Errata del GSADF (V16, 2026-10-18; ERRATA.md).** Dos errores de código corregidos: el BIC del bootstrap comparaba modelos con distinto número de observaciones, y el IPV de Navarra quedaba truncado en 2014. Además, 4.999 réplicas en lugar de 499, porque con 499 los recuentos cambiaban con la semilla. Tras la corrección, ninguna serie de niveles ni de comunidades es explosiva tras el ajuste múltiple. El veredicto de la ficha no cambia.
 
 ## v8 y v8.1: por qué ha subido, y coherencia de la versión
 

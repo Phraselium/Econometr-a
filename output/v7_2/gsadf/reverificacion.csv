@@ -1,15 +1,15 @@
 familia,medida,T,gsadf,cv95,p,p_bh,gsadf_v5,cv95_v5,p_v5,p_bh_v5,coincide,exuberancia_bh05
-fundamentales,precio/renta: IPV / renta del hogar,78,3.415608,2.478186,0.012,0.08,3.415608,2.478186,0.012,0.08,True,False
-fundamentales,precio/alquiler: IPV / IPC alquiler,78,3.096506,2.986456,0.036,0.096,3.096506,2.986456,0.036,0.096,True,False
-fundamentales,"precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV",78,0.895002,3.129774,0.762,0.948,0.895002,3.129774,0.762,0.948,True,False
-fundamentales,precio frente a valor de cuota hipotecaria constante sobre renta: IPV,78,0.909408,2.477492,0.604,0.948,0.909408,2.477492,0.604,0.948,True,False
-referencia,nivel: IPV,78,3.22719,3.038499,0.036,0.036,3.22719,3.038499,0.036,0.036,True,True
-fundamentales,precio/renta: valor tasado / renta del hogar,78,0.224062,3.088467,0.932,0.948,0.224062,3.088467,0.932,0.948,True,False
-fundamentales,precio/alquiler: valor tasado / IPC alquiler,78,4.344184,3.53696,0.02,0.08,4.344184,3.53696,0.02,0.08,True,False
-fundamentales,"precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado",78,0.161037,3.174515,0.948,0.948,0.161037,3.174515,0.948,0.948,True,False
-fundamentales,precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado,78,0.516146,2.948612,0.838,0.948,0.516146,2.948612,0.838,0.948,True,False
-referencia,nivel: valor tasado,78,4.815412,3.667551,0.012,0.024,4.815412,3.667551,0.012,0.024,True,True
-sensibilidad,precio frente a valor de descuento del alquiler (prima 2 pp): IPV,78,0.220781,3.267055,0.952,0.968,0.220781,3.267055,0.952,0.968,True,False
-sensibilidad,precio frente a valor de descuento del alquiler (prima 2 pp): valor tasado,78,0.269637,3.344784,0.932,0.968,0.269637,3.344784,0.932,0.968,True,False
-sensibilidad,precio frente a valor de descuento del alquiler (prima 4 pp): IPV,78,1.331748,3.255456,0.584,0.968,1.331748,3.255456,0.584,0.968,True,False
-sensibilidad,precio frente a valor de descuento del alquiler (prima 4 pp): valor tasado,78,0.038658,3.058681,0.968,0.968,0.038658,3.058681,0.968,0.968,True,False
+fundamentales,precio/renta: IPV / renta del hogar,78,3.415608,2.564409,0.0098,0.0784,3.415608,2.564409,0.0098,0.0784,True,False
+fundamentales,precio/alquiler: IPV / IPC alquiler,78,3.096506,5.42433,0.5224,0.9368,3.096506,5.42433,0.5224,0.9368,True,False
+fundamentales,"precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): IPV",78,0.895002,2.626604,0.5194,0.9368,0.895002,2.626604,0.5194,0.9368,True,False
+fundamentales,precio frente a valor de cuota hipotecaria constante sobre renta: IPV,78,0.909408,2.65476,0.605,0.9368,0.909408,2.65476,0.605,0.9368,True,False
+referencia,nivel: IPV,78,3.22719,5.834469,0.6018,0.6018,3.22719,5.834469,0.6018,0.6018,True,False
+fundamentales,precio/renta: valor tasado / renta del hogar,78,0.224062,2.96131,0.9368,0.9368,0.224062,2.96131,0.9368,0.9368,True,False
+fundamentales,precio/alquiler: valor tasado / IPC alquiler,78,4.344184,4.381158,0.0528,0.2112,4.344184,4.381158,0.0528,0.2112,True,False
+fundamentales,"precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado",78,0.161037,2.637211,0.838,0.9368,0.161037,2.637211,0.838,0.9368,True,False
+fundamentales,precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado,78,0.516146,2.945882,0.8356,0.9368,0.516146,2.945882,0.8356,0.9368,True,False
+referencia,nivel: valor tasado,78,4.815412,4.735237,0.0454,0.0908,4.815412,4.735237,0.0454,0.0908,True,False
+sensibilidad,precio frente a valor de descuento del alquiler (prima 2 pp): IPV,78,0.220781,3.267443,0.9486,0.9486,0.220781,3.267443,0.9486,0.9486,True,False
+sensibilidad,precio frente a valor de descuento del alquiler (prima 2 pp): valor tasado,78,0.269637,3.276522,0.9306,0.9486,0.269637,3.276522,0.9306,0.9486,True,False
+sensibilidad,precio frente a valor de descuento del alquiler (prima 4 pp): IPV,78,1.331748,2.644418,0.3438,0.9486,1.331748,2.644418,0.3438,0.9486,True,False
+sensibilidad,precio frente a valor de descuento del alquiler (prima 4 pp): valor tasado,78,0.038658,2.649528,0.8688,0.9486,0.038658,2.649528,0.8688,0.9486,True,False

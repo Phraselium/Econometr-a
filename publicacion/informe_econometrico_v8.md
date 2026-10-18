@@ -47,7 +47,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | Crédito y tipos | 3,0 pp (-7,2 a 14,0 pp) | -8,6 pp (-18,9 a 0,54 pp) | -1,6 pp (-9,8 a 7,1 pp) | -1,3 pp (-4,7 a 4,4 pp) | -0,47 pp (-2,8 a 12,8 pp) |
 | Demanda de vivienda | — | -7,4 pp (-17,9 a 2,0 pp) | -0,41 pp (-7,2 a 9,0 pp) | -2,6 pp (-6,0 a 2,4 pp) | -0,30 pp (-2,9 a 11,0 pp) |
 | Oferta | — | -4,8 pp (-13,3 a 2,5 pp) | 0,38 pp (-7,3 a 8,0 pp) | -0,80 pp (-4,8 a 3,3 pp) | 1,9 pp (-3,3 a 9,0 pp) |
-| No atribuido (banda aproximada) | 31,6 pp (-6,0 a 74,1 pp) | -9,6 pp (-35,2 a 15,5 pp) | 1,9 pp (-25,2 a 27,6 pp) | -0,75 pp (-16,1 a 12,0 pp) | 9,5 pp (-14,6 a 24,1 pp) |
+| No atribuido (banda aproximada; en P5, exacta desde la errata de V16) | 31,6 pp (-6,0 a 74,1 pp) | -9,6 pp (-35,2 a 15,5 pp) | 1,9 pp (-25,2 a 27,6 pp) | -0,75 pp (-16,1 a 12,0 pp) | 9,5 pp (-7,8 a 16,4 pp) |
 | Observado | 75,4 pp | -44,0 pp | 8,2 pp | -5,5 pp | 18,4 pp |
 
 **Alquiler real:**
@@ -62,7 +62,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | No atribuido (banda aproximada) | -1,2 pp (-7,5 a 5,2 pp) | -4,6 pp (-11,6 a 2,9 pp) | -3,2 pp (-8,1 a 1,4 pp) | -2,0 pp (-7,9 a 3,6 pp) |
 | Observado | -2,7 pp | -1,1 pp | -9,3 pp | -1,8 pp |
 
-En síntesis, en la compra de 2022-2026 9,5 pp de los 18,4 pp observados quedan sin atribuir a los shocks identificados (banda del 68 %: -14,6 a 24,1 pp, que incluye el cero) [C3s, condicionado a las restricciones de signo y de cero]. La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es 3,4 pp y la de actividad y renta 1,1 pp. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
+En síntesis, en la compra de 2022-2026 9,5 pp de los 18,4 pp observados quedan sin atribuir a los shocks identificados de media (banda del 68 % exacta: -7,8 a 16,4 pp, que incluye el cero; mediana 3,4; con el tipo hipotecario del Banco de España, media 20,7) [C3s, condicionado a las restricciones de signo y de cero]. La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es 3,4 pp y la de actividad y renta 1,1 pp. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
 
 ## 4. Instrumentos externos (M5)
 

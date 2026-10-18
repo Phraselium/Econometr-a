@@ -17,7 +17,7 @@ Lo que sí se sostiene es más modesto:
 - La subida reciente es **muy común a todas las comunidades autónomas**: el componente común explica 92,8 % (86,7-94,9 %) de la varianza del crecimiento interanual del precio de compra en 2022-2026, frente a 45,3 % (42,0-54,2 %) en 2008-2013 [C4].
 - El factor común español **acompaña** al precio de la vivienda de la zona euro: correlación 0,60 (0,14-0,86), p ajustado por Holm 0,020 [C4, asociación].
 - Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
-- En la compra de 2022-2026, 9,5 pp de los 18,4 pp observados quedan sin atribuir a los shocks identificados (banda del 68 %: -14,6 a 24,1 pp; la banda incluye el cero y la parte no atribuida no es un factor más) [C3s, condicionado a las restricciones de signo y de cero].
+- En la compra de 2022-2026, 9,5 pp de los 18,4 pp observados quedan sin atribuir a los shocks identificados de media (banda del 68 % exacta: -7,8 a 16,4 pp; la banda incluye el cero y la parte no atribuida no es un factor más). La mediana es 3,4: la media la eleva una cola derecha pesada, y con el tipo hipotecario del Banco de España en lugar del BCE la media sería 20,7 [C3s, condicionado a las restricciones de signo y de cero].
 - El multiverso se lee de dos maneras que no deben confundirse. Por familias de factores, 2 de 74 combinaciones cumplen la regla (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %). Por variables, 18 de 200 combinaciones de mercado, periodo y variable la cumplen (apartado «Lectura por variables del multiverso»); son asociaciones, sin identificación [C4].
 
 ## Abstract (English)
@@ -129,7 +129,7 @@ El precio real de compra ha subido 18,4 pp y el alquiler real ha variado -1,8 pp
 - **Actividad y renta.** Media 7,2 pp (-4,7 a 11,2 pp), mediana 1,1 pp.
 - **Demografía.** En el precio de compra, 0,65 pp (-4,1 a 5,8 pp). En el alquiler, 0,07 pp (-1,9 a 2,1 pp). La hipótesis H8-1 (el shock demográfico empujó el alquiler en P5) no se sostiene (p de Holm 0,987). La contabilidad hogares-viviendas sí vota por demografía en la compra: en P5 se formaron más hogares que viviendas libres terminadas (la serie no incluye las protegidas).
 - **Oferta.** 1,9 pp (-3,3 a 9,0 pp) en la compra.
-- **Parte no atribuida.** 9,5 pp (-14,6 a 24,1 pp) en la compra (banda aproximada).
+- **Parte no atribuida.** 9,5 pp (-7,8 a 16,4 pp) en la compra, de media (banda exacta; mediana 3,4).
 
 El empuje migratorio, instrumentado con la emigración de cada país de origen hacia el resto de la UE, es demasiado débil para estimar su efecto sobre el alquiler (H8-7, F efectivo 0,05).
 

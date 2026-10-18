@@ -4,12 +4,12 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 
 | Fichero | Fuente | sha256 |
 |---|---|---|
-| anexo_metodologico.md | output/v6_2/anexo_metodologico.md | `f1c0de50854ecf03eb19890748816688773f31c08798673ca40fbee89a314454` |
+| anexo_metodologico.md | output/v6_2/anexo_metodologico.md | `880a4c145cf4f75e7d23c787f3ee59bad96c74a92eec12e6a827d0c8e9ca3a6e` |
 | capas.md | docs/v7_1/capas.md | `15e70c6bc6553acd487a3f2ad0708ea80b7d9fc7c40061559b22f43b59b39fea` |
 | decisiones_v12.md | docs/v12/decisiones.md | `d3ae3b10840f348d5536811aad44013e84e343bf71fb4e403271f0679003dedb` |
 | desviaciones_preregistros.md | docs/preregistros_desviaciones.md | `0a65ae7a892583f52fc4847c0342dc3541cf0a8ad4b094e465a8f69b075dfb03` |
-| desviaciones_v16.md | docs/v16/desviaciones.md | `748238b10bd9687ec77ba55d9841c9ce4274019fe02d17684e15321b2b7d3eb4` |
-| desviaciones_v8.md | docs/v8/desviaciones.md | `3bde17affe2adac4a0f190605f40528b98c7f106a3c08782d65cb6b2a280b6c9` |
+| desviaciones_v16.md | docs/v16/desviaciones.md | `a4f3875ad25e13a3c804d4a0441c37af209abc2e9c9c0736dd79dff09f1f7107` |
+| desviaciones_v8.md | docs/v8/desviaciones.md | `13521b27d87cb37965209e51de5d90dc270fb2732cb967d793ce2c31996ac9ec` |
 | dosis_coste.md | output/v7_1/S1/resumen.md | `a68795fea92cb1ff1bfa94c12bf578bcb06a464be65f11a06e7bdf67e0fb6e39` |
 | guia_revisor.md | docs/v7_1/guia_revisor.md | `10a8b83466534b7769e66e4a078cb894767a4acec6c5045261cfb5ad1362cdc8` |
 | historial_conclusiones.md | docs/v6_1/historial_conclusiones.md | `1e63701eb9a439ecabd30660526b9033e0d18fa55a253999e0368c980ab22525` |

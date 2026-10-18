@@ -18,6 +18,7 @@
 - **X5. R5.** Se añade la columna comparador_tipo a dm_permutacion.csv y h7_p1_mejor_regional.csv, junto con los rótulos en resumen.md, hechos.json y la hoja de Excel. Se volvió a ejecutar r5_prediccion: congelación sin cambios (sha256 93795a94…) y valores numéricos idénticos (comprobado).
 - **X6. GSADF.**
   - La reverificación usa src/v5/r1b_gsadf.py: mismas funciones, NBOOT = 499, SEED + 500 + k y BH por familia. Coinciden 14 de 14.
+  - Errata de V16 (B-4, 2026-10-18): E1 y E2 corregidos y NBOOT = 4.999 (ERRATA.md; docs/v16/errata_v72_gsadf.md). La reverificación vuelve a coincidir 14 de 14 con el código corregido.
   - Necesita el panel completo de `make clean` (holdout.load_full); por eso va en `make v7_2`, y su salida versionada alimenta `make v7_1`.
   - La ficha V72-BURBUJA reúne el resultado nacional (cocientes 0 de 4 tras BH; niveles 2 de 2) y el regional (7 de 34 en v5; 0 de 11 en v6, con otra muestra).
 - **X7.** gsadf_reverifica importa src/v5/r1b_gsadf.py, cuyo Registry se escribe al salir (atexit) y vaciaba output/v5/R1B/registro_gsadf.csv. Se redirige a output/v7_2/gsadf/registro_reverificacion.csv, donde quedan registradas las 14 especificaciones reverificadas; output/v5 no cambia.

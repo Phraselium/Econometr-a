@@ -34,4 +34,39 @@ Lista obtenida buscando en src/, tests/ y las plantillas quién lee output/v5/R1
 
 ## Estudio de estabilidad (src/v16/b4_gsadf_estabilidad.py → output/v16/b4_gsadf/)
 
-Resultados en la sección «Resultado», tras regenerar.
+| Réplicas | Semillas | Cocientes sin ajuste | Cocientes tras BH (familia de 8) | Cocientes tras BH (familia de 4, sensibilidad) | Tipos sin ajuste | Niveles tras BH | CCAA tras BH | CCAA sin ajuste |
+|---|---|---|---|---|---|---|---|---|
+| 499 | 5 | 1-2 | **0-1** | **0-1** | 0 | 0 | 0 | 5-6 |
+| 1.999 | 5 | 1-2 | 0 | **0-1** | 0 | 0 | 0 | 6 |
+| 4.999 | 5 | 1-2 | 0 | 1 | 0 | 0 | 0 | 6 |
+
+- **Elegido: 4.999**, el menor número con todos los recuentos ajustados idénticos en las 5 semillas.
+- El recuento de cocientes sin ajuste no se estabiliza con ningún número de réplicas, porque la serie valor tasado/IPC alquiler tiene p ≈ 0,052, en el borde. Se publica el de la semilla original y se declara.
+
+## Resultado (regeneración con 4.999 réplicas y la semilla original)
+
+| Cifra | Antes (1.0) | Después |
+|---|---|---|
+| V72-GSADF-ratios-p05 | 3 | 1 (IPV/renta, p = 0,010; valor tasado/IPC alquiler en el borde, p = 0,053) |
+| V72-GSADF-ratios-bh (familia de 8) | 0 | 0 |
+| V72-GSADF-ratios-bh4-sens (nueva, sensibilidad) | — | 1 |
+| V72-GSADF-tipos-p05 | 0 | 0 |
+| V72-GSADF-niveles-bh | 2 | 0 (valor tasado p = 0,045; BH 0,091) |
+| V72-GSADF-ccaa-bh | 7 | 0 (6 sin ajuste) |
+| V72-GSADF-ccaa-v6 | 0 | 0 (no se regenera; ver ERRATA, fila v6) |
+| V72-GSADF-rev | 14 | 14 |
+| R1B-G-ccaa | 7 [7; 19] | 0 [0; 6] |
+| R1B-G-0 … G-8 (valor crítico en min) | ver ERRATA.md | estadísticos sin cambio |
+
+**Comprobación de alcance.** Se comparó cifras_clave con la copia de antes de B-4.
+- Solo cambian estas filas:
+  - las R1B-G-* (valor crítico y rótulo con p y BH);
+  - las V72-GSADF-* (valor y fuente: «4.999 réplicas»);
+  - una fila nueva, V72-GSADF-ratios-bh4-sens;
+  - las de V8 del punto 2 de B-4.
+- No cambia ninguna otra cifra, capa ni periodo.
+- Tamaño del contraste (R1B-G-tam, R1B-G-tam-corr): sin cambio.
+- Textos regenerados: una_pagina, lo_que_sabemos, policy_brief, que_cambio, working_paper, las fichas de burbuja de v5 y de V7.2, el verificador V7.1, consulta y lo ya visto de V16.
+
+**Conclusión.** «No se puede afirmar que haya una burbuja ni que no la haya» (ANALIZADA, NO CONCLUYENTE, C4) se mantiene. Pierde apoyo la frase «los niveles y algunas series regionales son explosivos tras BH», que se retira. El «tampoco que no la haya» se apoya ahora en que no rechazar no demuestra alineación con los fundamentales: la potencia es baja con T = 78 y hay series exuberantes sin ajuste.
+- Navarra: el IPV usa ya 2007T1-2026T2. El valor tasado falta en 2015-2018 y usa el tramo continuo más largo (2007T1-2014T4), como antes.

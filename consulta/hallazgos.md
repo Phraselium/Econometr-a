@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 7; V8: 366; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3; v15: 5. Total vigentes: 1322.
+Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 8; V8: 368; v10: 28; v12: 60; v9: 69; v1: 8; v2: 7; v3: 3; v15: 5. Total vigentes: 1325.
 
 ## Versión v4
 
@@ -378,7 +378,7 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `R1B-G-6` | GSADF (vc bootstrap AR): precio/alquiler: valor tasado / IPC alquiler | 4,34 | C4 | 2007Q1-2026Q2 | [hechos.json](../output/v5/R1B/hechos.json) |
 | `R1B-G-7` | GSADF (vc bootstrap AR): precio frente a valor de descuento del alquiler (tipo, g=2 %, prima 3 pp): valor tasado | 0,161 | C4 | 2007Q1-2026Q2 | [hechos.json](../output/v5/R1B/hechos.json) |
 | `R1B-G-8` | GSADF (vc bootstrap AR): precio frente a valor de cuota hipotecaria constante sobre renta: valor tasado | 0,516 | C4 | 2007Q1-2026Q2 | [hechos.json](../output/v5/R1B/hechos.json) |
-| `R1B-G-ccaa` | CCAA-medida con exuberancia tras BH (vc corregidos) de 34 | 7 series | C4 | 2007Q1-2026Q2 | [hechos.json](../output/v5/R1B/hechos.json) |
+| `R1B-G-ccaa` | CCAA-medida con exuberancia tras BH (vc corregidos) de 34 | 0 series | C4 | 2007Q1-2026Q2 | [hechos.json](../output/v5/R1B/hechos.json) |
 | `R1B-G-tam` | Tamaño empírico del GSADF con vc iid cuando Δy es AR(1) con phi=0,5 (nominal 5 %) | 0,15 % | C4 | simulación T=78, R=200 | [hechos.json](../output/v5/R1B/hechos.json) |
 | `R1B-G-tam-corr` | Tamaño empírico con vc por bootstrap de AR(p) estimado, phi=0,5 | 0,04 % | C4 | simulación T=78, R=200 | [hechos.json](../output/v5/R1B/hechos.json) |
 | `R1B-S-BI-RV` | Valor de robustez Cinelli-Hazlett RV (q=1) de la forma reducida BI, gl=G-1 | 0,347 R² parcial | C4 | 2009-2021 | [hechos.json](../output/v5/R1B/hechos.json) |
@@ -824,11 +824,12 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 
 | id | enunciado | cifra | capa | periodo | origen |
 |---|---|---|---|---|---|
-| `V72-GSADF-ccaa-bh` | Series de CCAA (precio/alquiler, IPV y valor tasado; 17 CCAA) con exuberancia tras BH | 7 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
+| `V72-GSADF-ccaa-bh` | Series de CCAA (precio/alquiler, IPV y valor tasado; 17 CCAA) con exuberancia tras BH | 0 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
 | `V72-GSADF-ccaa-v6` | CCAA con exuberancia (p<0,05) en el ratio precio/alquiler, provincias de entrenamiento v6 | 0 CCAA | C4 | 2015T1-2024T4 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
-| `V72-GSADF-niveles-bh` | Niveles de precio nacionales (IPV y valor tasado, sin fundamentales) con exuberancia tras BH | 2 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
+| `V72-GSADF-niveles-bh` | Niveles de precio nacionales (IPV y valor tasado, sin fundamentales) con exuberancia tras BH | 0 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
 | `V72-GSADF-ratios-bh` | Cocientes precio/renta y precio/alquiler nacionales con exuberancia tras BH | 0 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
-| `V72-GSADF-ratios-p05` | Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05) | 3 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
+| `V72-GSADF-ratios-bh4-sens` | SENSIBILIDAD: cocientes precio/renta y precio/alquiler nacionales con exuberancia tras BH en la familia de los 4 cocientes (la pr… | 1 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
+| `V72-GSADF-ratios-p05` | Cocientes precio/renta y precio/alquiler nacionales con exuberancia sin ajuste múltiple (p<0,05) | 1 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
 | `V72-GSADF-rev` | Series nacionales del GSADF de v5 que se reproducen exactamente con el mismo método y la misma semilla | 14 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
 | `V72-GSADF-tipos-p05` | Precio frente a valores de referencia con tipos de interés (descuento del alquiler y cuota sobre renta) con exuberancia sin ajuste | 0 series | C4 | 2007T1-2026T2 | [hechos.json](../output/v7_2/gsadf/hechos.json) |
 
@@ -855,8 +856,8 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V8-H8-7-tFR` | H8-7: t de la forma reducida (signo esperado +1) | -0,091 | C4 | ver hipótesis | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-H8-8-est` | H8-8: cuota mínima del componente común de las 17 CCAA en la varianza del crecimiento interanual del precio real de compra (mínim… | 45,27 % | C4 | P1-P5 | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-H8-8-pholm` | H8-8: p ajustado por Holm | 0,669 | C4 | P1-P5 | [hechos.json](../output/v8/F6/hechos.json) |
-| `V8-H8-9-est` | H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; interva… | 0,598  (0,135 a 0,858) | C4 | 1999-último dato | [hechos.json](../output/v8/F6/hechos.json) |
-| `V8-H8-9-pholm` | H8-9: p ajustado por Holm | 0,02 | C4 | 1999-último dato | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-H8-9-est` | H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; interva… | 0,598  (0,135 a 0,858) | C4 | 2006T1-2026T2 | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-H8-9-pholm` | H8-9: p ajustado por Holm | 0,02 | C4 | 2006T1-2026T2 | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M0-bh` | Coeficientes de M0 significativos tras BH (q = 0,10) | 35 coeficientes | C4 | P1-P5 | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M0-coef` | Coeficientes por periodo y variable estimados en M0 | 70 coeficientes | C4 | P1-P5 | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-M0-cumplen` | Efectos por periodo que cumplen la regla de §8 de M0 (ninguno sobrevive a BH; exploratorio) | 2 efectos | C4 | P1-P5 | [hechos.json](../output/v8/F6/hechos.json) |
@@ -1077,7 +1078,9 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V8-QNA-pp-c-P2` | Cuota no atribuida de precio real de compra en P2 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero… | -9,62 pp (-35,21 a 15,54) | C3s | P2 (2008T3-2013T4) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-QNA-pp-c-P3` | Cuota no atribuida de precio real de compra en P3 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero… | 1,93 pp (-25,19 a 27,64) | C3s | P3 (2014T1-2019T4) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-QNA-pp-c-P4` | Cuota no atribuida de precio real de compra en P4 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero… | -0,753 pp (-16,08 a 12) | C3s | P4 (2020T2-2022T2) | [hechos.json](../output/v8/F6/hechos.json) |
-| `V8-QNA-pp-c-P5` | Cuota no atribuida de precio real de compra en P5 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero… | 9,52 pp (-14,56 a 24,14) | C3s | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-QNA-pp-c-P5` | Cuota no atribuida de precio real de compra en P5 en puntos: media posterior (mediana 3,4; cola derecha pesada, con el tipo hipot… | 9,52 pp (-7,76 a 16,44) | C3s | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-QNA-pp-c-P5-bde` | SENSIBILIDAD: cuota no atribuida de precio real de compra en P5 en puntos con el tipo hipotecario del Banco de España en lugar de… | 20,67 pp | C3s | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
+| `V8-QNA-pp-c-P5-med` | Cuota no atribuida de precio real de compra en P5 en puntos: mediana posterior (la media, 9,5, la eleva la cola derecha; banda de… | 3,42 pp (-7,76 a 16,44) | C3s | P5 (2022T3-último dato) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-REGLA-a-P1` | Resultado de la regla del §9 en alquiler real en P1: no designado (factor evaluado: factor europeo); 1 = designado, 0 = no design… | 0 designado | C4 | P1 (sin datos de alquiler) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-REGLA-a-P2` | Resultado de la regla del §9 en alquiler real en P2: no designado (factor evaluado: empleo y renta); 1 = designado, 0 = no design… | 0 designado | C4 | P2 (2008T3-2013T4) | [hechos.json](../output/v8/F6/hechos.json) |
 | `V8-REGLA-a-P3` | Resultado de la regla del §9 en alquiler real en P3: no designado (factor evaluado: demografía); 1 = designado, 0 = no designado | 0 designado | C4 | P3 (2014T1-2019T4) | [hechos.json](../output/v8/F6/hechos.json) |

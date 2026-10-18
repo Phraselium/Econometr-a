@@ -33,3 +33,19 @@
 
 - **B-2 resuelto (2026-10-18).** El autor eligió la opción 1: pista no confirmada (C4), coherente con V7.2; no aplica la parada D (decisión K15).
 - **Nota (2026-10-18).** Tras K16 el q de Q9-g es 0,306, no 0,153. La lectura no cambia.
+
+## B-3. Parada: un error corregido en V16 afecta a una tabla publicada de la 1.0 (2026-10-18)
+- **Qué.** La auditoría docs/v16/alcance_errores_k16.md busca en v1-V12 los cinco errores corregidos en V15/V16. Solo E4 (cuotas del año base imputadas a 0) aparece en código que alimenta material publicado: V8-M5, el IV3 Bartik.
+- **Efecto.**
+  - Cambian 8 filas de publicacion/tablas_v8.xlsx, hoja «Atribucion»: entre un 1 % y un 11 %.
+  - No cambia ninguna cifra de cifras_clave.
+  - No cambia ninguna capa ni ninguna conclusión. Las filas no votan en la regla §9 y el F efectivo sigue por debajo de 3,4.
+- **Registro.** Entrada en ERRATA.md con «pendiente de decisión del autor».
+- **Por qué se para.** El encargo del autor del 2026-10-18 lo pide: «Si afecta a algo publicado en la 1.0, entrada en ERRATA y para».
+- **Qué se necesita del autor.** Elegir una de tres opciones:
+  - (a) Corregir en una versión posterior: excluir las dos CCAA, regenerar M5 → F5 → F6 → publicación con orden expresa y fijar la errata como aplicada.
+  - (b) Dejar la errata como aviso sin regenerar, porque no cambia ninguna cifra de cifras_clave ni ninguna conclusión.
+  - (c) Imputar la celda con años vecinos y reportar ambas versiones.
+- **Fase 7.** Queda en espera hasta la decisión.
+- **Al margen, sin cuantificar.** En IV2 de M5, los flujos ausentes se ponen a 0 antes de diferenciar. Afecta al choque, no a la cuota, y las cifras H8-7 tienen F = 0,05 sin respaldo tras Holm, así que su capa no cambiaría.
+

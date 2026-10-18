@@ -103,6 +103,11 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
 - **Fase 6 cerrada (2026-10-18)** con make check en solitario: 0 errores, git sin cambios.
 - **evaluate_v16:** no aplica; ninguna pregunta cumple (a) y (b).
 - **evaluate_v15:** según su calendario.
+- **PARADA B-3 (2026-10-18).** La auditoría de alcance de los errores K16 encuentra que E4 afecta a 8 filas de publicacion/tablas_v8.xlsx (V8-M5, IV3). Entrada en ERRATA, pendiente de decisión del autor. No cambia ninguna cifra de cifras_clave ni ninguna capa. La fase 7 espera.
+- Antes de la fase 7 (encargo del 2026-10-18):
+  - K18 aclara el q de Q9-g (0,153 → 0,306) y el rango de H5 (1,15-1,51).
+  - Réplicas ciegas: Q2a y H3 coinciden; Q6-p tenía un error, ya corregido.
+  - Alcance de los errores en v1-V12: docs/v16/alcance_errores_k16.md.
 - **Fase 7: informe integral.** Redactor, verificador de cifras y árbitro final; integrar en cifras_clave las cifras V16-* citables (K17); tablas_v16.xlsx, web y make v16.
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;
@@ -165,6 +170,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F6 | replicador-ciego | replica_q2a | 24.882 | src/v16/replica/q2a.py;output/v16/replica/q2a |
 | 2026-10-18 | F6 | replicador-ciego | replica_h3 | 26.933 | src/v16/replica/h3.py;output/v16/replica/h3 |
 | 2026-10-18 | F6 | replicador-ciego | replica_q6p | 34.809 | src/v16/replica/q6p.py;output/v16/replica/q6p |
+| 2026-10-18 | F6 | general-purpose | alcance_errores_k16 | 319.642 | docs/v16/alcance_errores_k16.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -173,8 +179,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 1.614.006 |
+| F6 | 1.933.648 |
 
-Total V16: 6.744.588 tokens
+Total V16: 7.064.230 tokens
 
 <!-- fin subagentes -->

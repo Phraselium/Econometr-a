@@ -1,6 +1,6 @@
 ## Resumen ejecutivo
 
-**Alcance.** Entran solo los resultados que superan todas sus pruebas: hechos [C1], con dos fuentes independientes, y cotas [C2], con supuestos explícitos. Todo lo de V15 y V16 es [C4] (exploratorio o descriptivo). Ningún resultado alcanza C3. Los rangos [C1] son mínimo y máximo entre fuentes, no intervalos de confianza.
+**Alcance.** Entran solo los resultados que superan todas sus pruebas: hechos [C1], con dos fuentes independientes, y cotas [C2], con supuestos explícitos. Todo lo de V15 y V16 es [C4] (exploratorio o descriptivo). Ningún resultado alcanza C3. Los rangos [C1] son mínimo y máximo entre fuentes, no intervalos de confianza. <!-- check:cifra-libre (nombres de capa y de versión) -->
 
 **Pre-registros.** Los de V15 y V16 son pre-registros internos sin sello de tiempo externo. V15: etiqueta prereg-v15 en el remoto, commit 542b4fd, 2026-10-17. V16: etiqueta prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiquetas, hashes y fechas del registro de pre-registros) -->
 
@@ -29,33 +29,33 @@ Valen dentro de la rejilla de escenarios del autor. Se cita la rejilla junto con
 
 Cada línea da la razón. Sin cifras salvo en las pistas citables.
 
-- **H1** (zonas tensionadas, renta de contratos nuevos, Cataluña). Pista [C4] solo en el signo, negativo. Sin magnitud: falla pretendencias y placebo temporal, y no hay inferencia válida.
-- **H2** (número de contratos). Sin señal estable. No se cita.
-- **H3** (vivienda turística, alquiler por sección). No concluyente, no nula: la medida varía poco y el coeficiente queda por debajo del efecto mínimo detectable.
-- **H4** (inmigración, alquiler municipal). Correlación frágil [C4]: {{V15-H4-beta}}. Cambia de signo al quitar los cinco orígenes de mayor peso. [FALTA CIFRA: mediana del multiverso de H4]
-- **H5** (predicción del valor tasado). Pista [C4]: la combinación no supera al AR(4). Razón del ECM {{V15-H5-razon-ecm:valor}} en la implementación pre-registrada; la réplica ciega da una razón menor [FALTA CIFRA: razón de H5 en la réplica ciega]. La conclusión es la misma en todas las implementaciones.
-- **E1, E2, E4.** Descriptivas: herramientas sin validar, sin intervalos o pretendencias incumplidas.
-- **E3** (dependencia espacial del alquiler municipal). Correlación espacial descriptiva [C4]: ρ = {{V15-E3-rho:num}}, con rango de multiverso {{V15-E3-rho:rango}}. No es contagio: puede recoger una tendencia regional común.
-- **Q1** (zonas tensionadas). Q1b no es estimable: no hay periodo posterior al tratamiento. Q1c tiene pocas provincias tratadas y rupturas previas.
-- **Q2** (turismo). Q2a, no concluyente. Q2c, de signo inestable. Q2b, solo robustez.
-- **Q3** (inmigración, escalas provincial y de sección). Q3-b, correlación frágil [C4]: {{V16-Q3-b-beta}}, con una pretendencia del mismo orden ({{V16-Q3-b-pretendencia}}). [FALTA CIFRA: mediana del multiverso de Q3-b]
-- **Q4** (oferta). La Red Natura no es exógena y los residuos tienen dependencia espacial.
-- **Q5** (tipos de interés). El multiverso no apoya el signo.
-- **Q6** (ITP). Q6-p, no concluyente. Q6-v, con placebo mayor y de signo contrario.
-- **Q7** (ayudas al alquiler joven). Descriptiva, sin intervalo, con potencia en el límite.
-- **Q8** (compras de no residentes). Descriptiva: la fuente no separa UE de extra-UE.
-- **Q9** (burbuja). Pista no confirmada: va a la Parte VII.
-- **Q10** (predicción). Sin mejora sobre el AR(4) fuera de 2020.
+- **H1** (zonas tensionadas, renta de contratos nuevos, Cataluña). Pista [C4] solo en el signo, negativo. Sin magnitud: falla pretendencias y placebo temporal, y no hay inferencia válida. <!-- check:cifra-libre (id de hipótesis) -->
+- **H2** (número de contratos). Sin señal estable. No se cita. <!-- check:cifra-libre (id de hipótesis) -->
+- **H3** (vivienda turística, alquiler por sección). No concluyente, no nula: la medida varía poco y el coeficiente queda por debajo del efecto mínimo detectable. <!-- check:cifra-libre (id de hipótesis) -->
+- **H4** (inmigración, alquiler municipal). Correlación frágil [C4]: {{V15-H4-beta}}. Cambia de signo al quitar los cinco orígenes de mayor peso. [FALTA CIFRA: mediana del multiverso de H4] <!-- check:cifra-libre (id de hipótesis) -->
+- **H5** (predicción del valor tasado). Pista [C4]: la combinación no supera al AR(4). Razón del ECM {{V15-H5-razon-ecm:valor}} en la implementación pre-registrada; la réplica ciega da una razón menor [FALTA CIFRA: razón de H5 en la réplica ciega]. La conclusión es la misma en todas las implementaciones. <!-- check:cifra-libre (id de hipótesis y del AR(4)) -->
+- **E1, E2, E4.** Descriptivas: herramientas sin validar, sin intervalos o pretendencias incumplidas. <!-- check:cifra-libre (ids de análisis exploratorio) -->
+- **E3** (dependencia espacial del alquiler municipal). Correlación espacial descriptiva [C4]: ρ = {{V15-E3-rho:num}}, con rango de multiverso {{V15-E3-rho:rango}}. No es contagio: puede recoger una tendencia regional común. <!-- check:cifra-libre (id de análisis exploratorio) -->
+- **Q1** (zonas tensionadas). Q1b no es estimable: no hay periodo posterior al tratamiento. Q1c tiene pocas provincias tratadas y rupturas previas. <!-- check:cifra-libre (ids de pregunta) -->
+- **Q2** (turismo). Q2a, no concluyente. Q2c, de signo inestable. Q2b, solo robustez. <!-- check:cifra-libre (ids de pregunta) -->
+- **Q3** (inmigración, escalas provincial y de sección). Q3-b, correlación frágil [C4]: {{V16-Q3-b-beta}}, con una pretendencia del mismo orden ({{V16-Q3-b-pretendencia}}). [FALTA CIFRA: mediana del multiverso de Q3-b] <!-- check:cifra-libre (ids de pregunta) -->
+- **Q4** (oferta). La Red Natura no es exógena y los residuos tienen dependencia espacial. <!-- check:cifra-libre (id de pregunta) -->
+- **Q5** (tipos de interés). El multiverso no apoya el signo. <!-- check:cifra-libre (id de pregunta) -->
+- **Q6** (ITP). Q6-p, no concluyente. Q6-v, con placebo mayor y de signo contrario. <!-- check:cifra-libre (ids de pregunta) -->
+- **Q7** (ayudas al alquiler joven). Descriptiva, sin intervalo, con potencia en el límite. <!-- check:cifra-libre (id de pregunta) -->
+- **Q8** (compras de no residentes). Descriptiva: la fuente no separa UE de extra-UE. <!-- check:cifra-libre (id de pregunta) -->
+- **Q9** (burbuja). Pista no confirmada: va a la Parte VII. <!-- check:cifra-libre (id de pregunta y de parte) -->
+- **Q10** (predicción). Sin mejora sobre el AR(4) fuera de 2020. <!-- check:cifra-libre (id de pregunta, AR(4) y año) -->
 - **Rejilla multiescala.** Ninguna de las 83 celdas tiene un p válido. <!-- check:cifra-libre (número de celdas del diseño) -->
 
 ### Pendientes de la evaluación sellada (V15)
 
-Las cinco hipótesis de V15 no están confirmadas: están pendientes. Fecha límite: 31-12-2027. Lo que no se evalúe entonces queda «no evaluable» y no alcanza C3. <!-- check:cifra-libre (fecha límite) -->
+Las cinco hipótesis de V15 no están confirmadas: están pendientes. Fecha límite: 31-12-2027. Lo que no se evalúe entonces queda «no evaluable» y no alcanza C3. <!-- check:cifra-libre (fecha límite del calendario y nombre de capa) -->
 
-- **H1 y H2:** primera fecha posible, hacia marzo de 2027.
-- **H5:** hacia octubre de 2027.
-- **H4:** último trimestre de 2027, con riesgo de no llegar a la fecha límite.
-- **H3** (réplica, no confirmatoria): último trimestre de 2027. <!-- check:cifra-libre (fechas del calendario, adenda de V15, sección C) -->
+- **H1 y H2:** primera fecha posible, hacia marzo de 2027. <!-- check:cifra-libre (ids de hipótesis y fecha del calendario) -->
+- **H5:** hacia octubre de 2027. <!-- check:cifra-libre (id de hipótesis y fecha del calendario) -->
+- **H4:** último trimestre de 2027, con riesgo de no llegar a la fecha límite. <!-- check:cifra-libre (id de hipótesis y fecha del calendario) -->
+- **H3** (réplica, no confirmatoria): último trimestre de 2027. <!-- check:cifra-libre (id de hipótesis y fecha del calendario) -->
 
 ### Summary
 
@@ -65,6 +65,6 @@ Las cinco hipótesis de V15 no están confirmadas: están pendientes. Fecha lím
 
 **Bounds [C2]**, valid within the scenario grid. Deficit 2021-2024 without dwelling losses: {{L3-DEF-2124-SINBAJAS}}. Projected household growth, 2026-2035: {{B1-H4}}. Deficit worsens to 2030 in every scenario. Tourist dwellings: at most {{B4-v3-vut-cantidad}} of the rental stock. <!-- check:cifra-libre (periodos) -->
 
-**No robust finding.** For H1 only the sign (negative) is citable. H5: the combination does not beat the AR(4); ECM ratio {{V15-H5-razon-ecm:valor}} in the pre-registered implementation, lower in the blind replication. E3 is a descriptive spatial correlation, not contagion. H4 and Q3-b are fragile correlations. H3, Q2a and Q6-p are inconclusive. All other questions are descriptive, lack valid inference, or fail pre-trends and placebos. Q9 (bubble) is an unconfirmed lead, discussed in Part VII.
+**No robust finding.** For H1 only the sign (negative) is citable. H5: the combination does not beat the AR(4); ECM ratio {{V15-H5-razon-ecm:valor}} in the pre-registered implementation, lower in the blind replication. E3 is a descriptive spatial correlation, not contagion. H4 and Q3-b are fragile correlations. H3, Q2a and Q6-p are inconclusive. All other questions are descriptive, lack valid inference, or fail pre-trends and placebos. Q9 (bubble) is an unconfirmed lead, discussed in Part VII. <!-- check:cifra-libre (ids de hipótesis y pregunta, AR(4), número de parte) -->
 
 **Pending.** The V15 hypotheses await the sealed evaluation: H1 and H2 from about March 2027, H5 about October 2027, H4 and H3 in the last quarter of 2027. Deadline: 31-12-2027. <!-- check:cifra-libre (fechas del calendario) -->

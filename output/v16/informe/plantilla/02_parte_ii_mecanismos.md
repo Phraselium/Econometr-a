@@ -21,7 +21,7 @@ El modelo de stock y flujo de cuatro cuadrantes conecta cuatro relaciones:
 3. la construcción: el precio frente al coste fija la obra nueva;
 4. el stock: la obra nueva, menos las bajas, cambia el parque.
 
-En V16 se calibra para España con rangos declarados y se simula cada shock con Monte Carlo sobre esos rangos (`output/v16/f3/cuatro_cuadrantes.md`, generado por `src/v16/f3_cuatro_cuadrantes.py`). Es un marco teórico calibrado, no una estimación. Dice qué respuesta cabe esperar si el mercado funcionara como el modelo. Capa [C4].
+En V16 se calibra para España con rangos declarados y se simula cada shock con Monte Carlo sobre esos rangos (`output/v16/f3/cuatro_cuadrantes.md`, generado por `src/v16/f3_cuatro_cuadrantes.py`). Es un marco teórico calibrado, no una estimación. Dice qué respuesta cabe esperar si el mercado funcionara como el modelo. Capa [C4]. <!-- check:cifra-libre (cuatro cuadrantes: nombre del marco) -->
 
 #### Parámetros: de dónde salen
 
@@ -29,7 +29,7 @@ En V16 se calibra para España con rangos declarados y se simula cada shock con 
 |---|---|---|
 | Elasticidad de la oferta nueva al precio | Literatura: una estimación por CCAA (Taltavull de la Paz, 2014, VERIFICADA, leída en resumen) | Rango de la ficha L3 |
 | Elasticidad-precio de la demanda | Supuesto del autor; no hay estimación española leída | Rango amplio a propósito |
-| Elasticidad-renta de la demanda | Supuesto del autor; hay una referencia española sin leer en profundidad (Fernández-Kranz y Hon, 2006, VERIFICADA) | Rango amplio a propósito |
+| Elasticidad-renta de la demanda | Supuesto del autor; hay una referencia española (Fernández-Kranz y Hon, 2006, VERIFICADA) que no se usó para fijar el rango | Rango amplio a propósito |
 | Rentabilidad inicial (inversa del cociente precio/alquiler) | `cifras_clave` | Ratio precio/alquiler 2023: {{K3-RATIO-2023:rango}} [C4] |
 | Obra nueva sobre el parque cada año | Supuesto del autor; orden de magnitud de las terminadas | Terminadas por año 2019-2024: {{E-T7-prod:rango}} [C4] |
 | Retardo entre inicio y fin de obra | `cifras_clave` | {{B2-H5:rango}} [C4]. Solo informativo: el estado estacionario no depende de él |
@@ -49,7 +49,7 @@ Los multiplicadores numéricos (mediana y banda P5-P95) están en `output/v16/f3
 
 Tres lecturas, todas dentro del marco:
 
-- **El stock tarda décadas en ajustarse.** La semivida del ajuste del stock sale de varias décadas con los rangos declarados, porque la obra nueva anual es una fracción pequeña del parque. A corto plazo el peso del ajuste recae en el precio y el alquiler. <!-- check:cifra-libre (semivida: ver FALTA CIFRA de multiplicadores) -->
+- **El stock tarda décadas en ajustarse.** La semivida del ajuste del stock sale de varias décadas con los rangos declarados, porque la obra nueva anual es una fracción pequeña del parque. A corto plazo el ajuste recae en el precio y el alquiler. (Cifra de semivida: véase la cifra pendiente de arriba.)
 - **Los shocks de tipos y de demanda tienen firmas distintas.** Un shock solo de tipos baja precio y obra nueva y deja el alquiler. Un shock solo de demanda sube alquiler, obra nueva y precio.
 - **El «tipo exigido» no es el tipo hipotecario.** Es la rentabilidad que pide el comprador. Una subida del hipotecario no se traslada uno a uno.
 
@@ -69,9 +69,9 @@ Comparación descriptiva de las medias de 2024 frente a las de 2022. Es una lect
 
 Los valores de la variación de cada serie están en `output/v16/f3/cuatro_cuadrantes.md`: [FALTA CIFRA: variación 2024 frente a 2022 de tipo hipotecario, IPV, IPC de alquiler, compraventas, visados, renta real y hogares]. <!-- check:cifra-libre (años de la comparación) -->
 
-El patrón de un shock solo de tipos no aparece: precio, alquiler y obra nueva suben. El marco es compatible con un shock de demanda simultáneo (hogares, renta) que compense la subida de tipos. Con estos datos no se pueden separar los dos shocks. El intento de separarlos (Q5, sorpresas de política monetaria) no dio señal estable: la primera etapa tiene el signo contrario al esperado y el placebo es comparable a la respuesta. Q5 queda «no concluyente» y no se cita con cifras.
+El patrón de un shock solo de tipos no aparece: precio, alquiler y obra nueva suben. El marco es compatible con un shock de demanda simultáneo (hogares, renta) que compense la subida de tipos. Con estos datos no se pueden separar los dos shocks. El intento de separarlos (Q5, sorpresas de política monetaria) no dio señal estable: la primera etapa tiene el signo contrario al esperado y el placebo es comparable a la respuesta. Q5 queda «no concluyente» y no se cita con cifras. <!-- check:cifra-libre (identificador de pregunta) -->
 
-#### Dónde falta el marco
+#### Dónde falla el marco
 
 - No hay elasticidad municipal de la oferta identificada para España. Q4 (restricción física, Red Natura) no produjo ningún hallazgo: la inferencia con agrupación provincial no es apta y el placebo de choque adelantado es del mismo signo y de mayor tamaño que la estimación. Queda «sin hallazgo».
 - Los parámetros españoles de la demanda quedan como supuestos.
@@ -99,15 +99,15 @@ La «cuota no atribuida» es la parte de la variación observada que el SVAR no 
 - banda del 68 % exacta, calculada con los cuantiles de la suma: {{V8-QNA-pp-c-P5:rango}} [C3s];
 - sensibilidad, con el tipo hipotecario del Banco de España en lugar del del BCE: media {{V8-QNA-pp-c-P5-bde:num}} pp [C3s].
 
-La media está muy por encima de la mediana porque la cola derecha es pesada. Por eso se dan las dos y la banda. La sensibilidad al tipo hipotecario elegido es grande en la media y pequeña en la mediana: se reportan ambas. Esta cifra se corrigió en V16 (errata de la banda exacta, aplicada en ERRATA.md): la banda de la versión anterior se calculaba de otro modo.
+La media está muy por encima de la mediana porque la cola derecha es pesada. Por eso se dan las dos y la banda. La sensibilidad al tipo hipotecario elegido es grande en la media y pequeña en la mediana: se reportan ambas. Esta cifra se corrigió en V16 (errata de la banda exacta, aplicada en ERRATA.md).
 
 Como proporción de la variación observada, la parte no atribuida del precio de compra en el último periodo es {{V8-QNA-c-P5}} [C3s]. Para el alquiler real, en puntos, es {{V8-QNA-pp-a-P5:valor}} con banda {{V8-QNA-pp-a-P5:rango}} [C3s].
 
-**Lectura.** La descomposición no permite decir qué factor ha pesado más en la subida. Una parte grande y de signo incierto queda sin atribuir, y ninguna contribución se separa de cero con el control de múltiples contrastes. Esto no dice que los factores no importen: dice que esta descomposición, con estos datos, no los separa.
+**Lectura.** La descomposición no permite decir qué factor ha pesado más en la subida. Una parte grande y de signo incierto queda sin atribuir, y ninguna contribución se separa de cero tras el control de múltiples contrastes. Esto no dice que los factores no importen: dice que esta descomposición, con estos datos, no los separa.
 
 #### Lo que V16 añade: comovimiento y contabilidad (descriptivo)
 
-V16 no repite la descomposición. Añade dos descripciones que ayudan a leerla [C4]:
+V16 no repite la descomposición. Añade tres descripciones que ayudan a leerla [C4]:
 
 - **Una parte grande del crecimiento del valor tasado es común a las provincias.** La cuota del primer factor común en la varianza del crecimiento interanual de 33 provincias es {{V16-CON-PRECIO-CUOTA-PC1-2007-2013:valor}} en 2007-2013, {{V16-CON-PRECIO-CUOTA-PC1-2014-2019:valor}} en 2014-2019 y {{V16-CON-PRECIO-CUOTA-PC1-2020-2026:valor}} en 2020-2026 [C4]. La correlación media de los residuos locales entre provincias de la misma comunidad es baja: {{V16-CON-PRECIO-LOCAL-CCAA:valor}} [C4]. Con provincias en lugar de comunidades, la cuota común es menor que la de V8: diferencia media {{V16-CON-PRECIO-V8-DIF-PP:valor}} [C4]. Esto describe el comovimiento. No dice qué lo mueve. <!-- check:cifra-libre (33 provincias, periodos) -->
 - **Contabilidad del número de hogares, 2021-2025.** El cambio observado es {{V16-CON-HOG-CAMBIO:valor}} [C4], con rango entre ECP y EPA {{V16-CON-HOG-CAMBIO:rango}} [C4]. Según la descomposición de Shapley, el tamaño de la población aporta {{V16-CON-HOG-POBLACION:valor}} [C4], la estructura por edad {{V16-CON-HOG-ESTRUCTURA-EDAD:valor}} [C4], el residuo de jefatura {{V16-CON-HOG-JEFATURA:valor}} [C4] y la composición por nacionalidad {{V16-CON-HOG-COMPOSICION-NACIONALIDAD:valor}} [C4]. Es contabilidad, no una estimación de efectos. La diferencia entre ECP y EPA en el cambio de hogares es {{V16-CON-HOG-ECP-EPA-DISCREPANCIA:valor}} [C4]: se dan las dos fuentes. <!-- check:cifra-libre (periodo) -->
@@ -115,7 +115,7 @@ V16 no repite la descomposición. Añade dos descripciones que ayudan a leerla [
 
 ### II.4 Triangulación de V16
 
-La fase 6 compara cada resultado con la literatura y con otros diseños del mismo proyecto (`output/v16/triangulacion/informe.md`). Reglas: se compara el signo y, solo si la unidad coincide, el orden de magnitud. No hay metaanálisis, porque ningún grupo de resultados reúne estudios suficientes con error estándar y la misma unidad (decisión K7). Los 88 grupos de la literatura se quedan en rangos sin agregar. Ningún resultado sube de capa por coincidir con la literatura. <!-- check:cifra-libre (88 grupos: diseño del metaanálisis) -->
+La fase 6 compara cada resultado con la literatura y con otros diseños del mismo proyecto (`output/v16/triangulacion/informe.md`). Reglas: se compara el signo y, solo si la unidad coincide, el orden de magnitud. No hay metaanálisis, porque ningún grupo de resultados reúne estudios suficientes con error estándar y la misma unidad (decisión K7). Los 88 grupos de la literatura se quedan en rangos sin agregar. Ningún resultado sube de capa por coincidir con la literatura. <!-- check:cifra-libre (88 grupos y decisión K7: diseño del metaanálisis) -->
 
 #### Entre diseños del propio proyecto
 
@@ -136,8 +136,8 @@ Que dos diseños coincidan en el signo no los convierte en independientes: compa
 | H1 (zonas tensionadas, renta de contratos nuevos) | Pista, solo el signo [C4] | Mismo signo. Las unidades no son comparables: solo se compara el signo |
 | H2 y Q1c (zonas tensionadas, contratos y compraventas) | Ruido previo; no se citan | Sin señal estable |
 | H3 y Q2a (vivienda turística) | No concluyente [C4] | Mismo signo; unidades no comparables |
-| Q2c (vivienda turística, IPVA municipal) | No se cita | Se aparta de la signo de la literatura, sin inferencia válida; se lee como robustez nula de H3 |
-| H4 y Q3-b (inmigración) | Correlaciones frágiles [C4] | La literatura leída de V15 no tiene unidades comparables |
+| Q2c (vivienda turística, IPVA municipal) | No se cita | Signo opuesto al de la literatura, sin inferencia válida; se lee como robustez nula de H3 |
+| H4 y Q3-b (inmigración) | Correlaciones frágiles [C4] | Sin comparación numérica con la literatura leída |
 | Q6-v (ITP y compraventas) | Descriptivo | Se aparta de la literatura: el placebo con el resultado retardado es de signo contrario y mayor que la estimación, y los cambios de tipo se concentran en la crisis. El diseño no separa el ITP del ciclo |
 | Q6-p (ITP y valor tasado) | No concluyente [C4] | Mismo signo; unidades no comparables |
 | Q5-p (sorpresas monetarias y valor tasado) | No se cita | Sin comparación |
@@ -148,12 +148,12 @@ Que dos diseños coincidan en el signo no los convierte en independientes: compa
 
 **H5 de V15: la combinación no supera al AR(4).** La razón del error cuadrático medio de la combinación frente al AR(4), en el valor tasado a un trimestre, es {{V15-H5-razon-ecm:valor}} en la implementación pre-registrada [C4]. En las otras implementaciones la razón es distinta pero queda por encima de uno: [FALTA CIFRA: razón mínima entre implementaciones de H5]. Se dice «la combinación no supera al AR(4)». No se dice «el AR(4) es mejor». El contraste de Diebold-Mariano no se cita como prueba. La evaluación sellada está pendiente.
 
-**E3 de V15: correlación espacial descriptiva, no contagio.** El parámetro autorregresivo espacial (contigüidad, variación de la renta de alquiler de 1.124 municipios en 2015-2024) es {{V15-E3-rho:valor}}, con rango {{V15-E3-rho:rango}} [C4]. Puede reflejar una tendencia regional común. El intervalo no recoge la incertidumbre de especificación: se cita el rango del multiverso. <!-- check:cifra-libre (1.124 municipios y periodo: diseño de E3, ya en la ficha) -->
+**E3 de V15: correlación espacial descriptiva, no contagio.** El parámetro autorregresivo espacial (contigüidad, variación de la renta de alquiler de 1.124 municipios en 2015-2024) es {{V15-E3-rho:valor}}, con rango {{V15-E3-rho:rango}} [C4]. Puede reflejar una tendencia regional común. El intervalo no recoge la incertidumbre de especificación: se cita el rango del multiverso. <!-- check:cifra-libre (1.124 municipios y periodo: diseño de E3) -->
 
 **H4 de V15 y Q3-b de V16: correlaciones frágiles.** Ambas son asociaciones entre la presencia de población extranjera y el alquiler. No se leen como el efecto de la inmigración.
-- **H4.** La asociación (2SLS) entre población extranjera predicha y alquiler municipal es {{V15-H4-beta:valor}}, con rango del multiverso {{V15-H4-beta:rango}} [C4]. El rango contiene el cero y cambia de signo al quitar los orígenes principales. Hay pocos orígenes efectivos: {{V15-H4-neff}} [C4]. El 2SLS es varias veces el MCO. La mediana del multiverso: [FALTA CIFRA: mediana del multiverso de H4].
+- **H4.** La asociación (2SLS) entre población extranjera predicha y alquiler municipal es {{V15-H4-beta:valor}}, con rango del multiverso {{V15-H4-beta:rango}} [C4]. El rango contiene el cero y el signo cambia al quitar los orígenes principales. Hay pocos orígenes efectivos: {{V15-H4-neff}} [C4]. El 2SLS es varias veces el MCO. La mediana del multiverso: [FALTA CIFRA: mediana del multiverso de H4].
 - **Q3-b.** La asociación transversal del alquiler por sección con la cuota de extranjeros es {{V16-Q3-b-beta:valor}}, con rango {{V16-Q3-b-beta:rango}} [C4]. El coeficiente de pretendencia (variación previa) es {{V16-Q3-b-pretendencia:valor}} [C4], más de la mitad del coeficiente principal. Puede haber reversión a la media o convergencia, y la exposición de 2022 cae dentro de la ventana del resultado. La mediana del multiverso: [FALTA CIFRA: mediana del multiverso de Q3-b].
-- La literatura verificada sobre inmigración (Saiz, 2007; González y Ortega, 2013; Sanchis-Guarner, 2023; todas VERIFICADA) asocia más población extranjera con más precio y más alquiler. Mide en unidades distintas, con otras muestras. El signo coincide; no se compara la magnitud.
+- **Literatura.** La literatura verificada sobre inmigración y vivienda no tiene un signo único. Mussa, Nwaogu y Pozo (2017) asocian más entradas con alquileres y precios más altos. El metaanálisis de Larkin et al. (2019) halla que la inmigración sube los precios en conjunto, más a escala provincial. Sá (2015) y Saiz y Wachter (2011) hallan, en cambio, precios más bajos o una apreciación más lenta. Para España, Torres-Téllez y Montero-Soler (2023) asocian la llegada de inmigrantes con alquileres más altos. Las cinco referencias son VERIFICADAS (ficha P4 de V15). Miden en unidades distintas y con otras muestras: no se compara la magnitud.
 
 **H3, Q2a y Q6-p: no concluyentes.** No concluyente no es «nulo». H3 (vivienda turística y alquiler por sección) tiene un coeficiente principal que es el mínimo de su multiverso y no tiene error estándar válido. Q2a (provincial) depende de los controles. Q6-p (ITP y valor tasado) fue pista hasta su réplica ciega, que corrigió un error de diferencias entre años no consecutivos.
 
@@ -166,13 +166,13 @@ Cada canal se juzga con lo que la evidencia permite. «Literatura» es la ficha 
 | Canal | Mecanismo | Literatura | Nuestro dato | Estado |
 |---|---|---|---|---|
 | Demanda: hogares y renta | Más hogares o más renta suben alquiler y precio a corto plazo | Marco de cuatro cuadrantes; Fernández-Kranz y Hon (2006, VERIFICADA) sobre la elasticidad-renta | Contabilidad de hogares; V8 no designa ningún factor | Compatible, no separado |
-| Demanda: inmigración | Más hogares en alquiler y compra | Saiz (2007); González y Ortega (2013); Sanchis-Guarner (2023), todas VERIFICADA | H4 y Q3-b, correlaciones frágiles | Correlación frágil [C4] |
+| Demanda: inmigración | Más hogares en alquiler y compra | Signo no unívoco (Mussa et al., 2017; Larkin et al., 2019; Sá, 2015; Torres-Téllez y Montero-Soler, 2023, todas VERIFICADAS) | H4 y Q3-b, correlaciones frágiles | Correlación frágil [C4] |
 | Tipos de interés | Más tipo exigido, menos precio y menos obra | Marco de cuatro cuadrantes | V8 no designa crédito y tipos; Q5 no concluyente | No separado de la demanda |
-| Oferta y suelo | Oferta rígida, más precio ante un shock de demanda | Saiz (2010); Hilber y Vermeulen (2016); Caldera Sánchez y Johansson (2013), todas VERIFICADA | Q4 sin hallazgo; elasticidad municipal sin identificar | No evaluable con los datos |
-| Vivienda turística | Cambio de uso: menos oferta residencial, más alquiler | García-López et al. (2020, Barcelona); Barron et al. (2021), ambas VERIFICADA | H3 y Q2a no concluyentes; Q2c no se cita | No concluyente [C4] |
+| Oferta y suelo | Oferta rígida, más precio ante un shock de demanda | Saiz (2010); Hilber y Vermeulen (2016); Caldera Sánchez y Johansson (2013), todas VERIFICADAS | Q4 sin hallazgo; elasticidad municipal sin identificar | No evaluable con los datos |
+| Vivienda turística | Cambio de uso: menos oferta residencial, más alquiler | García-López et al. (2020, Barcelona); Barron et al. (2021), ambas VERIFICADAS | H3 y Q2a no concluyentes; Q2c no se cita | No concluyente [C4] |
 | Regulación del alquiler | Tope en el contrato regulado, posibles desbordamientos | Ver Parte III | H1: signo | Pista, solo el signo [C4] |
-| Fiscalidad de la compra | Un impuesto sobre la transmisión cambia volumen y, en parte, precio | Best y Kleven (2018); Besley et al. (2014), ambas VERIFICADA | Q6-v descriptivo; Q6-p no concluyente | No evaluable |
-| Compradores no residentes | Más demanda de compra | Badarinza y Ramadorai (2018); Cvijanović y Spaenjers (2021), ambas VERIFICADA | Q8 descriptivo | No evaluable |
+| Fiscalidad de la compra | Un impuesto sobre la transmisión cambia volumen y, en parte, precio | Best y Kleven (2018); Besley et al. (2014), ambas VERIFICADAS | Q6-v descriptivo; Q6-p no concluyente | No evaluable |
+| Compradores no residentes | Más demanda de compra | Badarinza y Ramadorai (2018); Cvijanović y Spaenjers (2021), ambas VERIFICADAS | Q8 descriptivo | No evaluable |
 | Fundamentales y burbuja | Precio frente a alquiler y renta | — | Q9-g en la Parte VII | Ver Parte VII |
 
 ### II.6 Qué no sabemos

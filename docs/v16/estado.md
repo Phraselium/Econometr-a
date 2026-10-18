@@ -192,6 +192,7 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F6 | econometrician | reconciliacion_1_0_gsadf_r6 | 157.336 | output/v16/replica/v10_c/reconciliacion.md |
 | 2026-10-18 | F7 | redactor | informe_partes_I_IV | 119.813 | output/v16/informe/plantilla/01_parte_i_diagnostico.md;output/v16/informe/plantilla/04_parte_iv_territorios.md |
 | 2026-10-18 | F7 | redactor | informe_partes_V_VI | 136.793 | output/v16/informe/plantilla/05_parte_v_escenarios.md;output/v16/informe/plantilla/06_parte_vi_manual_verificacion.md |
+| 2026-10-18 | F7 | redactor | informe_partes_II_III | 234.351 | output/v16/informe/plantilla/02_parte_ii_mecanismos.md;output/v16/informe/plantilla/03_parte_iii_medidas.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -201,8 +202,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F4 | 555.674 |
 | F5 | 771.025 |
 | F6 | 2.712.813 |
-| F7 | 256.606 |
+| F7 | 490.957 |
 
-Total V16: 8.100.001 tokens
+Total V16: 8.334.352 tokens
 
 <!-- fin subagentes -->

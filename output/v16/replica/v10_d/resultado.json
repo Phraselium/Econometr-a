@@ -1,0 +1,230 @@
+{
+ "semilla": 20261010,
+ "resultados": [
+  {
+   "id": "V8-H8-9-est",
+   "publicado": {
+    "valor": 0.5975793821,
+    "min": 0.1350105821,
+    "max": 0.8578289285
+   },
+   "replica": {
+    "valor": 0.5342006443429956,
+    "min": 0.08896386702010892,
+    "max": 0.8217143395813135
+   },
+   "dif_relativa": {
+    "valor": 0.10605911056415665,
+    "min": 0.3410600440622134,
+    "max": 0.04209998954201342
+   },
+   "veredicto": "DISCREPA",
+   "diagnostico": "PCA de 1 factor sobre 17 CCAA (precio tasado real, tasa interanual log, estandarizado), correlacion con HPI EA19 nominal interanual 2006T1-2026T2 (74 trimestres con panel completo), IC95 por bootstrap de bloques circulares L=8, B=2000. Navarra no tiene valor tasado 2015T1-2018T4: interpolacion lineal (supuesto propio). Variantes (covarianza, nominal, IPV, quitar Navarra) dan 0,51-0,71, ninguna reproduce el publicado: la diferencia es de definicion de la serie del factor (real/nominal, tratamiento del hueco de Navarra, muestra); la ficha no fija esos detalles."
+  },
+  {
+   "id": "V8-M1-cuota-c-P5",
+   "publicado": {
+    "valor": 92.79333005,
+    "min": 86.65370326,
+    "max": 94.92472184
+   },
+   "replica": {
+    "valor": 92.79333005090103,
+    "min": 85.7134638563936,
+    "max": 94.93031719295182
+   },
+   "dif_relativa": {
+    "valor": 9.710172517053483e-12,
+    "min": 0.010850539194906165,
+    "max": 5.8945160368719625e-05
+   },
+   "veredicto": "DISCREPA (marginal: valor y max coinciden; min 1,09 %)",
+   "diagnostico": "PCA dentro de P5 (2022T3-2026T2, T=16, 17 CCAA, tasa interanual real log), estandarizado; banda 68 % por bootstrap de bloques L=8. Con PCA sobre covarianzas: 93,68 (-1,3 %). Otras definiciones de cuota (R2 medio del factor de muestra completa en P5: 92,8; reconstruccion rango 1: 88,9-93,4) tampoco dan 94,92. La ficha no precisa estandarizacion ni si el factor se estima en P5 o en la muestra completa."
+  },
+  {
+   "id": "V8-OBS-a-P5",
+   "publicado": {
+    "valor": -1.84566,
+    "min": null,
+    "max": null
+   },
+   "replica": {
+    "valor": -1.8456559364917986,
+    "min": -1.8456559364917986,
+    "max": -1.8456559364917986
+   },
+   "dif_relativa": {
+    "valor": 2.201655885417408e-06,
+    "min": null,
+    "max": null
+   },
+   "veredicto": "COINCIDE",
+   "diagnostico": "100*(ln(ipc_alquiler/ipc_general)_2026T1 - ln(...)_2022T2), suma de tasas trimestrales de 2022T3-2026T1."
+  },
+  {
+   "id": "V8-OBS-c-P5",
+   "publicado": {
+    "valor": 18.4203,
+    "min": null,
+    "max": null
+   },
+   "replica": {
+    "valor": 18.420287408056026,
+    "min": 18.420287408056026,
+    "max": 18.420287408056026
+   },
+   "dif_relativa": {
+    "valor": 6.835906024672198e-07,
+    "min": null,
+    "max": null
+   },
+   "veredicto": "COINCIDE",
+   "diagnostico": "100*(ln(p_tasado/ipc_general)_2026T1 - ln(...)_2022T2), suma de tasas trimestrales de 2022T3-2026T1."
+  },
+  {
+   "id": "V8-QNA-pp-c-P5",
+   "publicado": {
+    "valor": 9.51611,
+    "min": -14.5598,
+    "max": 24.136
+   },
+   "replica": {
+    "valor": 4.318252383069096,
+    "min": -6.607175321870596,
+    "max": 15.96363556077905
+   },
+   "dif_relativa": {
+    "valor": 0.5462166386192366,
+    "min": 0.5462042526771936,
+    "max": 0.33859647162831247
+   },
+   "veredicto": "DISCREPA",
+   "diagnostico": "BVAR normal-Wishart conjugado (Minnesota con delta=0/1, lambda por verosimilitud marginal solo en lambda: 0.383, plug-in), p=2, constante+covid+impulso EPA2021 en las 7 ecuaciones, muestra 2004T2-2026T1, V3 (impacto h=0, ceros de n en 4 shocks, sin restriccion de q), 1000 sorteos con rotacion aceptada (exactos, algoritmo de ceros por complemento ortogonal). Cuota no atribuida = determinista + 2 shocks no identificados, acumulado en 2022T3-2026T1 (pp): mediana 4.32, banda 68 % [-6.61; 15.96], media 4.30. Muy lejos del publicado (9,52). No esta fijado en la ficha: GLP completo (hiperparametros adicionales), numero de sorteos, definicion exacta de determinista (aqui, trayectoria libre desde las condiciones iniciales con constante y ficticias), mapeo de shocks no identificados, suma de limites de bandas (la ficha dice que la banda de la suma se aproxima sumando limites de las dos bandas: esa suma de limites da -13.32-22.79) ni ordenacion de shocks en la rotacion. Causa: estimador/especificacion no recuperable desde la ficha."
+  },
+  {
+   "id": "V8-VOTOS-c-P5",
+   "publicado": {
+    "valor": 2.0,
+    "min": null,
+    "max": null
+   },
+   "replica": {
+    "valor": 1,
+    "min": null,
+    "max": null
+   },
+   "dif_relativa": {
+    "valor": 0.5,
+    "min": null,
+    "max": null
+   },
+   "veredicto": "NO REPRODUCIBLE DESDE LA FICHA",
+   "diagnostico": "Replica parcial: svar_hd (media posterior de c*sign(dY) entre shocks identificados) vota credito_tipos (4.68 pp frente a 3.88 de demanda_vivienda y 2.81 de actividad); dominancia LMG en P5 (T=15, 7 regresores, R2=0.98, sobreajustada) vota demografia; lpiv no replicable (requiere IV1/JK con AR 68 %, ficha sin detalle operativo suficiente: horizontes, controles); contabilidad solo puede votar demografia. Votos a credito_tipos en la replica: 1 (publicado 2). NO REPRODUCIBLE DESDE LA FICHA: falta la especificacion de M6 (transformacion, controles, ventana, variable principal por familia con cobertura) y la de M5 (LP-IV) para decidir el segundo voto; la replica de svar_hd tampoco coincide con M2 original (ver QNA)."
+  }
+ ],
+ "detalle_replica": {
+  "h89": {
+   "valor": 0.5342006443429956,
+   "min": 0.08896386702010892,
+   "max": 0.8217143395813135,
+   "T": 74
+  },
+  "m1": {
+   "valor": 92.79333005090103,
+   "min": 85.7134638563936,
+   "max": 94.93031719295182,
+   "T": 16,
+   "N": 17
+  },
+  "obs": {
+   "compra": 18.420287408056026,
+   "alquiler": -1.8456559364917986
+  },
+  "qna": {
+   "lam": 0.38289639523399166,
+   "aceptadas": 1000,
+   "dY": 18.420287408056033,
+   "noattr_q16_50_84": [
+    -6.607175321870596,
+    4.318252383069096,
+    15.96363556077905
+   ],
+   "noattr_mean": 4.298359405822403,
+   "ident_mean": {
+    "actividad": 2.8079833305246633,
+    "demografico": 1.1130537281457813,
+    "demanda_vivienda": 3.8773113665631986,
+    "oferta": 1.6415754125721183,
+    "credito_tipos": 4.682004164427867
+   },
+   "ident_q": {
+    "actividad": [
+     -4.216436998166274,
+     1.339480149115864,
+     10.781176100653871
+    ],
+    "demografico": [
+     -4.2356105266949005,
+     0.587992419603725,
+     7.062222078415081
+    ],
+    "demanda_vivienda": [
+     -2.578581980256828,
+     2.842089727184209,
+     11.474673561290302
+    ],
+    "oferta": [
+     -4.323403590863127,
+     1.256846354549873,
+     8.150053840552207
+    ],
+    "credito_tipos": [
+     -2.383756678740117,
+     2.8373044571357795,
+     12.958943327274799
+    ]
+   },
+   "det_q": [
+    -7.91550308139855,
+    2.0386279502323443,
+    11.819102331286128
+   ],
+   "noid_q": [
+    -5.40754885989525,
+    2.195345842854435,
+    10.968665572755445
+   ]
+  },
+  "dominancia": {
+   "usadas": [
+    "demografia",
+    "empleo_renta",
+    "credito_tipos",
+    "oferta",
+    "demanda_externa",
+    "turismo",
+    "factor_europeo"
+   ],
+   "lmg": {
+    "demografia": 0.05292980888613856,
+    "empleo_renta": 0.1789391027873569,
+    "credito_tipos": 0.08431417856034108,
+    "oferta": 0.004954480734672963,
+    "demanda_externa": 0.07546597845041164,
+    "turismo": 0.28438153179392395,
+    "factor_europeo": 0.2977688754538234
+   },
+   "parcial": {
+    "demografia": 2.8956828980679763,
+    "empleo_renta": -3.1947915250836134,
+    "credito_tipos": -0.3863146108025187,
+    "oferta": -0.002009941435659405,
+    "demanda_externa": -0.337431189157333,
+    "turismo": -1.2986922824844145,
+    "factor_europeo": -0.8213601356876633
+   },
+   "r2": 0.9787539566666685,
+   "voto": "demografia"
+  }
+ }
+}

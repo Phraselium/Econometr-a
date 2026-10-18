@@ -5,8 +5,8 @@
 ## Resultado (dCDH, dosis continua, por punto de tipo; sin p-valor ni IC: aleatorización NO APTA)
 | Resultado | Estimación | Referencia de la adenda | Rango del multiverso (8) | Con el mismo signo |
 |---|---|---|---|---|
-| Q6-v log compraventas (N = 504) | 0,0251 | -0,07 | -0,0484 a 0,0251 | 75 % |
-| Q6-p log valor tasado (N = 485) | -0,0157 | -0,01 | -0,0157 a 0,0064 | 88 % |
+| Q6-v log compraventas (N = 504) | 0,0251 | -0,07 | 0,0025 a 0,0251 | 100 % |
+| Q6-p log valor tasado (N = 485) | -0,0157 | -0,01 | -0,0157 a 0,0064 | 83 % |
 
 TWFE de referencia: Q6-v 0,0157; Q6-p -0,0047. Subidas/bajadas por separado: Q6-v 0,0055 / -0,0279; Q6-p -0,0116 / -0,0043.
 

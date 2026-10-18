@@ -200,7 +200,7 @@ Multiverso: 64 especificaciones (4 resultados x 4 horizontes x 2 choques x 2 rez
 ## Resultados puntuales
 <a id="q5p"></a>**Q5-p (valor tasado), h = 4:** {f(p['beta_h4_pct_por_DT'], 2)} % por DT de sorpresa (n = {p['n']}, {p['muestra']}). Respuesta puntual: {lin(p)}.
 Referencia de la literatura (P3 de V15): −0,6 % por DT; cociente estimación/referencia = {f(p['cociente_estimacion_sobre_referencia'], 2)}; mismo signo: {p['mismo_signo_que_referencia']}.
-Multiverso (63 restantes): mediana {f(p['multiverso']['mediana'], 2)}, rango [{f(p['multiverso']['min'], 2)}; {f(p['multiverso']['max'], 2)}], proporción con el mismo signo {f(p['multiverso']['proporcion_mismo_signo_que_principal'], 2)}.
+Multiverso ({p['multiverso']['n']} especificaciones de valor tasado, horizonte × rezagos × resultado; el resto del registro es de otros resultados): mediana {f(p['multiverso']['mediana'], 2)}, rango [{f(p['multiverso']['min'], 2)}; {f(p['multiverso']['max'], 2)}], proporción con el mismo signo {f(p['multiverso']['proporcion_mismo_signo_que_principal'], 2)}.
 El MDE del valor tasado a h = 4 (1,47 %) supera la referencia: sin potencia aunque la inferencia fuera válida.
 
 <a id="q5a"></a>**Q5-a (IPC de alquiler), h = 4:** {f(a['beta_h4_pct_por_DT'], 2)} % por DT (n = {a['n']}, {a['muestra']}). Respuesta puntual: {lin(a)}.

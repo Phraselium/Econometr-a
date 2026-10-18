@@ -11,10 +11,10 @@ Q2b-05,Q2b,robustez de Q2a,"y_ipva ~ dosis_pc + EF municipio y año, 2016-2024",
 Q2b-06,Q2b,robustez de Q2a,"y_ipva ~ dosis_pc + EF municipio y año, 2019-2024",90 municipios de Andalucía,498,0.00027482470488954063,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
 Q2b-07,Q2b,robustez de Q2a,"y_ipva ~ dosis_ln + EF municipio y año, 2016-2024",90 municipios de Andalucía,650,-0.0016649216336800908,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
 Q2b-08,Q2b,robustez de Q2a,"y_ipva ~ dosis_ln + EF municipio y año, 2019-2024",90 municipios de Andalucía,498,0.0009760340101341282,Δlog por unidad de dosis,ninguna,dosis reconstruida (sesgo de supervivencia); solo robustez
-Q2c-P,Q2c,principal,"log IPVA-TAM municipal ~ z(log %VUT INE) + EF municipio y año, 2021-2024",388 municipios,1524,-0.009540549202998893,Δlog por DT del log de la exposición,ninguna (did_intensidad_webb NO APTO; agrupación por provincia no se calcula),"referencia 0.0633 (= 0,04 × DT log = 1.582)"
-Q2c-V1,Q2c,variante declarada (exposición),exposición en nivel estandarizado (incluye 0 %),389 municipios,1538,0.00784869647536347,Δlog por DT del nivel,ninguna,
-Q2c-V2,Q2c,variante declarada (resultado),Δlog IPVA-TAM (2022-2024) ~ z(log %VUT),383 municipios,1140,-0.0005276729676975037,Δlog por DT del log,ninguna,
-Q2c-V3,Q2c,variante declarada (resultado × exposición),Δlog IPVA-TAM ~ z(nivel %VUT),384 municipios,1149,-0.005376098190979581,Δlog por DT del nivel,ninguna,
-Q2c-X1,Q2c,robustez (punto 14),"sin Barcelona, València, Sevilla y Málaga",384 municipios,1508,-0.009493027048588884,Δlog por DT,ninguna,islas no selladas: ninguna
-Q2c-C1,Q2c,robustez (controles),principal + renta y población 2019 × tendencia,388 municipios,1524,-0.00907072377833834,Δlog por DT,ninguna,base de Oster/CH
-Q2c-PL1,Q2c,placebo temporal (exposición adelantada),log IPVA-TAM ~ z(t+1),383 municipios,1136,-0.004819544362950854,Δlog por DT,ninguna,la exposición futura no debería explicar el presente si no hay tendencia previa
+Q2c-P,Q2c,principal,"Δlog IPVA-TAM municipal ~ z(%VUT INE, nivel) + EF municipio y año, 2021-2024",384 municipios,1149,-0.005376098190979581,Δlog por DT de la exposición,ninguna (did_intensidad_webb NO APTO; agrupación por provincia no se calcula),"referencia 0.0633 (= 0,04 × DT log = 1.582)"
+Q2c-V1,Q2c,variante (resultado en log del nivel),"log IPVA-TAM ~ z(%VUT, nivel)",389 municipios,1538,0.00784869647536347,log por DT del nivel,ninguna,
+Q2c-V2,Q2c,variante (exposición en log),Δlog IPVA-TAM ~ z(log %VUT),383 municipios,1140,-0.0005276729676975037,Δlog por DT del log,ninguna,
+Q2c-V3,Q2c,variante (versión inicial: log del nivel y exposición en log),log IPVA-TAM ~ z(log %VUT),388 municipios,1524,-0.009540549202998893,log por DT del log,ninguna,principal antes de K17
+Q2c-X1,Q2c,robustez (punto 14),"sin Barcelona, València, Sevilla y Málaga",380 municipios,1137,-0.005598533153778583,Δlog por DT,ninguna,islas no selladas: ninguna
+Q2c-C1,Q2c,robustez (controles),principal + renta y población 2019 × tendencia,384 municipios,1149,-0.007337848557983375,Δlog por DT,ninguna,base de Oster/CH
+Q2c-PL1,Q2c,placebo temporal (exposición adelantada),Δlog IPVA-TAM ~ z(t+1),384 municipios,765,0.0018630548472701076,Δlog por DT,ninguna,la exposición futura no debería explicar el presente si no hay tendencia previa

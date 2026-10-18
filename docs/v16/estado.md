@@ -74,7 +74,7 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Q1b no es estimable en el entrenamiento.
   - Q3-b es el único resultado con inferencia válida.
   - Grupo C (Q5, Q9, Q10 y la rejilla de 83 celdas) estimado. Desviaciones D4.
-  - Control BY (src/v16/f6_fdr.py): solo Q3-b cumple la condición (a); Q9-g tiene q = 0,153.
+  - Control BY (src/v16/f6_fdr.py): ninguna prueba cumple la condición (a). Q3-b la cumplía antes de K16; Q9-g tiene q = 0,306 (era 0,153 antes de K16).
   - Parada D (B-2) por Q9-g, resuelta por el autor el 2026-10-18: pista no confirmada C4 (K15).
   - V15 en entrenamiento (K14): H1-H5 y E1-E4 estimados, todo C4 y `pendiente_sellada`.
     - Con inferencia válida: H5 (DM-HLN p = 0,894; el AR(4) no se supera) y E3 (ρ SAR = 0,39).
@@ -95,6 +95,10 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Ningún grupo de la literatura admite metaanálisis, así que se compara el signo.
   - Se apartan Q2c y Q6-v, explicados y descriptivos.
   - Entre diseños, el único par con signo distinto es H3 frente a Q2c.
+- **Revisión adversarial (K17).** Tres revisiones, con respuesta en output/v16/critica/respuestas.md.
+  - Correcciones: la principal de Q2c y el multiverso de Q6.
+  - Pistas citables: H1 (solo signo), H5, E3 y Q6-p. Correlaciones frágiles: Q3-b y H4.
+  - Q9-g va solo a la Parte VII.
 - **Doble implementación:** no aplica; ninguna cifra es candidata a C3 o C3s.
 - **evaluate_v16:** no aplica; ninguna pregunta cumple (a) y (b).
 - **evaluate_v15:** según su calendario.
@@ -159,6 +163,9 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | 2026-10-18 | F6 | replicador-ciego | replica_h1 | 35.255 | src/v16/replica/h1.py;output/v16/replica/h1 |
 | 2026-10-18 | F6 | replicador-ciego | replica_h4 | 38.087 | src/v16/replica/h4.py;output/v16/replica/h4 |
 | 2026-10-18 | F6 | econometrician | reconciliacion_h5 | 76.212 | output/v16/replica/h5/reconciliacion.md |
+| 2026-10-18 | F6 | abogado-del-diablo | critica_inmigracion_burbuja | 65.836 | output/v16/critica/respuestas.md |
+| 2026-10-18 | F6 | abogado-del-diablo | critica_regulacion_turismo | 84.297 | output/v16/critica/respuestas.md |
+| 2026-10-18 | F6 | abogado-del-diablo | critica_macro_fiscal | 99.404 | output/v16/critica/respuestas.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -167,8 +174,8 @@ Generada por src/v16/registro_subagentes.py (fuente: docs/v16/subagentes.csv). T
 | F3 | 1.160.356 |
 | F4 | 555.674 |
 | F5 | 771.025 |
-| F6 | 1.277.845 |
+| F6 | 1.527.382 |
 
-Total V16: 6.408.427 tokens
+Total V16: 6.657.964 tokens
 
 <!-- fin subagentes -->

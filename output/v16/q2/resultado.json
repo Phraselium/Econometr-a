@@ -6,15 +6,15 @@
  "N": {
   "Q2a_provincias": 41,
   "Q2a_obs": 287,
-  "Q2c_municipios": 388,
-  "Q2c_obs": 1524
+  "Q2c_municipios": 384,
+  "Q2c_obs": 1149
  },
  "metodo": "Q2a DiD de intensidad en forma reducida (puntual); Q2b robustez; Q2c efectos fijos de municipio y año (puntual); BLP/GATES descriptivo",
  "estimacion": {
   "Q2a_beta_por_DT_log_exposicion": 0.013161806189649688,
   "Q2a_elasticidad": 0.013905254362386,
   "Q2a_referencia_por_DT": 0.037861389217741015,
-  "Q2c_beta_por_DT": -0.009540549202998893,
+  "Q2c_beta_por_DT": -0.005376098190979581,
   "Q2c_referencia_por_DT": 0.06326806615106392,
   "Q2b_mediana_robustez": 0.00020484540157867924
  },
@@ -88,33 +88,33 @@
   },
   {
    "prueba": "Q2c · Oster",
-   "estado": "superada",
-   "detalle": "δ = 8,82"
+   "estado": "fallida",
+   "detalle": "δ = -1,28"
   },
   {
    "prueba": "Q2c · Cinelli-Hazlett",
    "estado": "superada",
-   "detalle": "RV_q=1 = 0,125"
+   "detalle": "RV_q=1 = 0,072"
   },
   {
    "prueba": "Q2c · exposición adelantada (placebo temporal)",
    "estado": "informativa",
-   "detalle": "-0,0048 por DT"
+   "detalle": "0,0019 por DT"
   },
   {
    "prueba": "Q2c · Moran (por provincia, aproximado)",
    "estado": "informativa",
-   "detalle": "I = 0,001, p diagnóstico = 0,061"
+   "detalle": "I = -0,030, p diagnóstico = 0,530"
   },
   {
    "prueba": "Q2c · Breusch-Pagan",
    "estado": "fallida (heterocedasticidad)",
-   "detalle": "p = 4.9e-09"
+   "detalle": "p = 9.0e-14"
   },
   {
    "prueba": "Q2c · exclusión de grandes ciudades",
    "estado": "informativa",
-   "detalle": "-0,0095"
+   "detalle": "-0,0056"
   },
   {
    "prueba": "Controles negativos (población 65+, IPC general provincial)",
@@ -172,30 +172,30 @@
    "nota": "descriptivo; herramienta NO APTA (veredictos.csv): sin p-valor ni IC; subgrupos descriptivos C4"
   },
   "Q2c": {
-   "ATE_beta1_mediana": -0.00976669720119075,
-   "heterogeneidad_beta2_mediana": 1.3883955781860937,
+   "ATE_beta1_mediana": 0.007038924739069632,
+   "heterogeneidad_beta2_mediana": 3.6032039647929346,
    "GATES_pendiente_por_cuartil_mediana": [
-    -0.004997495709673987,
-    -0.013242536165985573,
-    -0.013543607135160608,
-    0.005409471417018577
+    0.005225818330450769,
+    0.0010684816728783245,
+    0.005382155351213502,
+    0.039917514909312724
    ],
-   "GATES_cuartil4_menos_cuartil1": 0.008193406877219953,
+   "GATES_cuartil4_menos_cuartil1": 0.03208137379754919,
    "interaccion_lineal_exposicion_x_moderador": {
-    "ln_renta": 0.01141640170065574,
-    "ln_pob": 0.0017336835185339323,
-    "cuota_extranj": 0.015188042276708322,
-    "pct_vut_2021": 0.010482807101888744,
-    "obra_pc": -0.000972465186756998
+    "ln_renta": 0.007211554998626531,
+    "ln_pob": 0.013860849374090448,
+    "cuota_extranj": -0.0002938250588024435,
+    "pct_vut_2021": -0.0028645738918296726,
+    "obra_pc": -0.0012398500369825152
    },
    "reps": 50,
-   "n": 374,
+   "n": 381,
    "nota": "descriptivo; herramienta NO APTA (veredictos.csv): sin p-valor ni IC; subgrupos descriptivos C4"
   }
  },
  "multiverso_Q2c": {
   "n_especificaciones": 6,
-  "mediana": -0.00722341098465896,
+  "mediana": -0.0054873156723790825,
   "min": -0.009540549202998893,
   "max": 0.00784869647536347,
   "proporcion_mismo_signo_que_principal": 0.8333333333333334,

@@ -3,7 +3,7 @@
     "id": "V16-Q6-v-beta",
     "indicador": "Q6-v: asociación del Δlog compraventas con el cambio del tipo general del ITP (Wald-DID dCDH, por punto)",
     "valor": 0.02508245316199873,
-    "min": -0.04835529878015494,
+    "min": 0.002489803845211047,
     "max": 0.02508245316199873,
     "unidad": "log por punto de tipo",
     "periodo": "2011-2024",

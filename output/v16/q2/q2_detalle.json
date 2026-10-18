@@ -141,64 +141,64 @@
   "nota": "solo robustez de Q2a (adenda, punto 3); sin inferencia; dosis reconstruida con sesgo de supervivencia"
  },
  "q2c": {
-  "beta_por_DT": -0.009540549202998893,
+  "beta_por_DT": -0.005376098190979581,
   "dt_log_exposicion": 1.581701653776598,
   "referencia_b_por_DT": 0.06326806615106392,
-  "n_obs": 1524,
-  "n_municipios": 388,
+  "n_obs": 1149,
+  "n_municipios": 384,
   "beta_variante_nivel": 0.00784869647536347,
   "beta_variante_dlog": -0.0005276729676975037,
-  "beta_variante_dlog_nivel": -0.005376098190979581,
-  "beta_sin_grandes_ciudades": -0.009493027048588884,
-  "beta_con_controles": -0.00907072377833834,
-  "placebo_exposicion_adelantada": -0.004819544362950854,
+  "beta_variante_dlog_nivel": -0.009540549202998893,
+  "beta_sin_grandes_ciudades": -0.005598533153778583,
+  "beta_con_controles": -0.007337848557983375,
+  "placebo_exposicion_adelantada": 0.0018630548472701076,
   "multiverso": {
    "n_especificaciones": 6,
-   "mediana": -0.00722341098465896,
+   "mediana": -0.0054873156723790825,
    "min": -0.009540549202998893,
    "max": 0.00784869647536347,
    "proporcion_mismo_signo_que_principal": 0.8333333333333334,
    "nota": "la proporción con IC95 % que excluye 0 no se calcula: sin inferencia apta"
   },
-  "r2_parcial": 0.0192197960431349,
+  "r2_parcial": 0.0030075866400920766,
   "sensibilidad": {
    "oster": {
-    "delta": 8.818217787164084,
-    "rmax": 0.0728063377763507
+    "delta": -1.281300595110222,
+    "rmax": 0.03147541202117806
    },
-   "cinelli_hazlett_RV_q1": 0.12465294487192727,
+   "cinelli_hazlett_RV_q1": 0.07219389558579772,
    "cinelli_hazlett_frágil_si_RV_menor_0_05": false,
-   "e_value_puntual": 4.669185379490998
+   "e_value_puntual": 4.871419569975004
   },
   "moran_residuos_por_provincia": {
-   "I": 0.0013070558482312078,
+   "I": -0.030265304235879174,
    "E_I": -0.027777777777777776,
-   "p_permutacion_diagnostico": 0.061,
+   "p_permutacion_diagnostico": 0.53,
    "n": 37
   },
   "breusch_pagan": {
-   "LM": 41.597249473998986,
-   "p_diagnostico": 4.884634213116776e-09
+   "LM": 63.802677156178234,
+   "p_diagnostico": 9.04560849093513e-14
   },
   "blp_gates": {
-   "ATE_beta1_mediana": -0.00976669720119075,
-   "heterogeneidad_beta2_mediana": 1.3883955781860937,
+   "ATE_beta1_mediana": 0.007038924739069632,
+   "heterogeneidad_beta2_mediana": 3.6032039647929346,
    "GATES_pendiente_por_cuartil_mediana": [
-    -0.004997495709673987,
-    -0.013242536165985573,
-    -0.013543607135160608,
-    0.005409471417018577
+    0.005225818330450769,
+    0.0010684816728783245,
+    0.005382155351213502,
+    0.039917514909312724
    ],
-   "GATES_cuartil4_menos_cuartil1": 0.008193406877219953,
+   "GATES_cuartil4_menos_cuartil1": 0.03208137379754919,
    "interaccion_lineal_exposicion_x_moderador": {
-    "ln_renta": 0.01141640170065574,
-    "ln_pob": 0.0017336835185339323,
-    "cuota_extranj": 0.015188042276708322,
-    "pct_vut_2021": 0.010482807101888744,
-    "obra_pc": -0.000972465186756998
+    "ln_renta": 0.007211554998626531,
+    "ln_pob": 0.013860849374090448,
+    "cuota_extranj": -0.0002938250588024435,
+    "pct_vut_2021": -0.0028645738918296726,
+    "obra_pc": -0.0012398500369825152
    },
    "reps": 50,
-   "n": 374,
+   "n": 381,
    "nota": "descriptivo; herramienta NO APTA (veredictos.csv): sin p-valor ni IC; subgrupos descriptivos C4"
   },
   "agrupacion_provincia": "no calculada: did_intensidad_webb NO APTO (Q2c: tamaño 0,0975)"

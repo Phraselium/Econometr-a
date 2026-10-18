@@ -205,7 +205,7 @@ def salidas_q2():
         hecho(1, "q2", "Q2a · coeficiente DiD de intensidad (log IPC alquiler por DT del log de la exposición INE-VUT 2020-08)", a["beta_por_DT"], min(a["beta_por_DT"], a["beta_sin_grandes_ciudades"], a["beta_con_controles"]), max(a["beta_por_DT"], a["beta_sin_grandes_ciudades"], a["beta_con_controles"]), "Δlog por DT", "2017-2019 frente a 2022-2025", cobA, "INE IPC alquiler; INE viviendas turísticas", "v16-q2-1"),
         hecho(2, "q2", "Q2a · magnitud de referencia (0,04 × DT del log de la exposición)", a["referencia_b_por_DT"], None, None, "Δlog por DT", "2017-2025", cobA, "literatura L2/P5 (docs/v16/literatura.md)", "v16-q2-1"),
         hecho(3, "q2", "Q2a · placebo de fecha", a["placebo_fecha"], None, None, "Δlog por DT", "2012-2019", cobA, "INE IPC alquiler; INE viviendas turísticas", "v16-q2-2"),
-        hecho(4, "q2", "Q2c · coeficiente (log IPVA-TAM municipal por DT del log del % de vivienda turística)", c["beta_por_DT"], c["multiverso"]["min"], c["multiverso"]["max"], "Δlog por DT", "2021-2024", f"{c['n_municipios']} municipios de entrenamiento", "IPVA-TAM (MIVAU/INE); INE viviendas turísticas", "v16-q2-3"),
+        hecho(4, "q2", "Q2c · coeficiente (Δlog IPVA-TAM municipal por DT del % de vivienda turística)", c["beta_por_DT"], c["multiverso"]["min"], c["multiverso"]["max"], "Δlog por DT", "2021-2024", f"{c['n_municipios']} municipios de entrenamiento", "IPVA-TAM (MIVAU/INE); INE viviendas turísticas", "v16-q2-3"),
         hecho(5, "q2", "Q2c · magnitud de referencia (0,04 × DT del log de la exposición)", c["referencia_b_por_DT"], None, None, "Δlog por DT", "2021-2024", f"{c['n_municipios']} municipios", "literatura L2/P5", "v16-q2-3"),
         hecho(6, "q2", "Q2b · mediana de 8 especificaciones de robustez (Andalucía, dosis reconstruida)", b["mediana"], min(ests), max(ests), "Δlog por unidad de dosis", "2016-2024", "177 municipios (SERPAVI), 90 (IPVA)", "OpenRTA (terceros, agregado propio); SERPAVI; IPVA-TAM", "v16-q2-4"),
         hecho(7, "q2", "Q2a · GATES: pendiente del cuartil superior menos el inferior del CATE proxy (descriptivo)", a["blp_gates"]["GATES_cuartil4_menos_cuartil1"], None, None, "Δlog por DT", "2017-2025", "37 provincias con moderadores", "ADRH; padrón; Catastro/MIVAU", "v16-q2-5"),
@@ -227,8 +227,8 @@ log IPC de alquiler provincial (media anual) ~ exposición × posterior + efecto
 
 <a id="v16-q2-3"></a>
 ## Q2c · exposición INE-VUT municipal frente al IPVA-TAM
-log IPVA-TAM ~ z(log % VUT) + efectos fijos de municipio y año, 2021-2024; {c['n_municipios']} municipios, N = {c['n_obs']} (municipio-años con 0 % fuera).
-- Coeficiente: **{f(c['beta_por_DT'], 4)} por DT** (referencia {f(c['referencia_b_por_DT'], 4)}). Variantes (nivel, Δlog, sin grandes ciudades, controles): {f(c['beta_variante_nivel'], 4)}; {f(c['beta_variante_dlog'], 4)}; {f(c['beta_variante_dlog_nivel'], 4)}; {f(c['beta_sin_grandes_ciudades'], 4)}; {f(c['beta_con_controles'], 4)}.
+Δlog IPVA-TAM ~ z(% VUT en nivel) + efectos fijos de municipio y año, 2021-2024 (especificación de la adenda, punto 3; corregida en K17); {c['n_municipios']} municipios, N = {c['n_obs']}.
+- Coeficiente: **{f(c['beta_por_DT'], 4)} por DT** (referencia {f(c['referencia_b_por_DT'], 4)}). Variantes (log del nivel del IPVA; exposición en log; versión inicial con ambos en log; sin grandes ciudades; controles): {f(c['beta_variante_nivel'], 4)}; {f(c['beta_variante_dlog'], 4)}; {f(c['beta_variante_dlog_nivel'], 4)}; {f(c['beta_sin_grandes_ciudades'], 4)}; {f(c['beta_con_controles'], 4)}.
 - Multiverso (6 especificaciones): mediana {f(c['multiverso']['mediana'], 4)}, rango [{f(c['multiverso']['min'], 4)}; {f(c['multiverso']['max'], 4)}], mismo signo que la principal en {pc(c['multiverso']['proporcion_mismo_signo_que_principal'], 0)}. Se lee como robustez de H3.
 
 <a id="v16-q2-4"></a>

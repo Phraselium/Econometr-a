@@ -137,9 +137,13 @@ def main():
               "honest_did": "no usado: no validado por Monte Carlo (veredictos.csv)", "islas": "ninguna no sellada",
               "magnitud_referencia": REF[q], "razon_estimacion_sobre_referencia": float(pr.beta_por_punto) / REF[q],
               "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"}
-        mult = {"n": len(E), "mediana": float(E.beta_por_punto.median()), "min": float(E.beta_por_punto.min()), "max": float(E.beta_por_punto.max()),
-                "proporcion_mismo_signo": float((np.sign(E.beta_por_punto) == np.sign(pr.beta_por_punto)).mean()),
-                "mediana_solo_dCDH": float(E[E.estimador == "dCDH"].beta_por_punto.median())}
+        # dCDH con la fecha adelantada un año reproduce el placebo de pretendencia (el año previo al cambio queda fuera como anticipación):
+        # no estima el efecto y sale del resumen del multiverso (sigue en el registro; corrección K17 tras la revisión adversarial).
+        Em = E[~((E.estimador == "dCDH") & (E.fecha == -1))]
+        mult = {"n": len(Em), "mediana": float(Em.beta_por_punto.median()), "min": float(Em.beta_por_punto.min()), "max": float(Em.beta_por_punto.max()),
+                "proporcion_mismo_signo": float((np.sign(Em.beta_por_punto) == np.sign(pr.beta_por_punto)).mean()),
+                "mediana_solo_dCDH": float(Em[Em.estimador == "dCDH"].beta_por_punto.median()),
+                "excluidas": "dCDH con fecha adelantada un año (equivale al placebo)"}
         res[q].update({"principal": pr.to_dict(), "diagnosticos": dg, "multiverso": mult})
         reg.log("v16-fase6", f"{q}|excl_grandes", "dCDH sin 08/46/41/29", 2011, 2024, len(d), np.nan, np.nan, np.nan, np.nan, excl["beta"], np.nan, "diagnóstico")
         reg.log("v16-fase6", f"{q}|placebo_dy_retardado", "dCDH con ΔY(t-1)", 2011, 2024, len(d), np.nan, np.nan, np.nan, np.nan, pl["beta"], np.nan, "diagnóstico")

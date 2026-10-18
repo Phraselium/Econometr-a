@@ -43,3 +43,6 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-18,F6,replicador-ciego,replica_h1,35255,src/v16/replica/h1.py;output/v16/replica/h1
 2026-10-18,F6,replicador-ciego,replica_h4,38087,src/v16/replica/h4.py;output/v16/replica/h4
 2026-10-18,F6,econometrician,reconciliacion_h5,76212,output/v16/replica/h5/reconciliacion.md
+2026-10-18,F6,abogado-del-diablo,critica_inmigracion_burbuja,65836,output/v16/critica/respuestas.md
+2026-10-18,F6,abogado-del-diablo,critica_regulacion_turismo,84297,output/v16/critica/respuestas.md
+2026-10-18,F6,abogado-del-diablo,critica_macro_fiscal,99404,output/v16/critica/respuestas.md

@@ -21,7 +21,7 @@ Capa C4 (asociación pre-registrada, entrenamiento). Sin lenguaje causal. `pendi
 - Raíces unitarias, cointegración y rupturas: no aplican (T = 4).
 
 ## Lectura frente a lo ya publicado
-- La 1.0 dice «turísticos: no concluyente» (v3, v6, V8, V9). Un coeficiente pequeño y preciso por sección no contradice esa conclusión; V9-D2 usa otra exposición (viviendas de uso turístico en 2019 × periodos) y otra unidad (municipio, renta de contratos nuevos): no es comparable cifra a cifra.
+- La 1.0 dice «turísticos: no concluyente» (v3, v6, V8, V9). Un coeficiente puntual pequeño por sección, sin inferencia válida y en el extremo inferior de su multiverso (que debe citarse con su mediana y su rango), no contradice esa conclusión ni la precisa: H3 queda «no concluyente», no «nula»; V9-D2 usa otra exposición (viviendas de uso turístico en 2019 × periodos) y otra unidad (municipio, renta de contratos nuevos): no es comparable cifra a cifra.
 - Todo es asociación C4: el alquiler SERPAVI es un stock y se mueve despacio (DT residual del log: 0,030), de modo que un efecto sobre contratos nuevos no se descarta con este resultado.
 
 ## Fichas reproducibles

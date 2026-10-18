@@ -105,7 +105,7 @@
   {
    "id": "Q2c",
    "pregunta": "Vivienda turística e IPVA municipal",
-   "estimacion": -0.009540549202998893,
+   "estimacion": -0.005376098190979581,
    "unidad": "log por DT",
    "fuente": "output/v16/q2/resultado.json#estimacion.Q2c_beta_por_DT",
    "referencia_prereg": 0.06326806615106392,
@@ -118,7 +118,7 @@
    "mismo_signo": false,
    "lectura": "SE APARTA de la literatura: Signo opuesto al de la literatura con una magnitud muy pequeña frente a la referencia (0,063) y sin inferencia válida: no se distingue de cero en ningún sentido operativo; se lee como robustez de H3 (casi nula), no como evidencia en contra.",
    "mismo_signo_que_referencia": false,
-   "cociente_sobre_referencia": -0.1507956506876488
+   "cociente_sobre_referencia": -0.08497332885350371
   },
   {
    "id": "H4",

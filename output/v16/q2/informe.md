@@ -14,9 +14,9 @@ log IPC de alquiler provincial (media anual) ~ exposición × posterior + efecto
 
 <a id="v16-q2-3"></a>
 ## Q2c · exposición INE-VUT municipal frente al IPVA-TAM
-log IPVA-TAM ~ z(log % VUT) + efectos fijos de municipio y año, 2021-2024; 388 municipios, N = 1524 (municipio-años con 0 % fuera).
-- Coeficiente: **-0,0095 por DT** (referencia 0,0633). Variantes (nivel, Δlog, sin grandes ciudades, controles): 0,0078; -0,0005; -0,0054; -0,0095; -0,0091.
-- Multiverso (6 especificaciones): mediana -0,0072, rango [-0,0095; 0,0078], mismo signo que la principal en 83 %. Se lee como robustez de H3.
+Δlog IPVA-TAM ~ z(% VUT en nivel) + efectos fijos de municipio y año, 2021-2024 (especificación de la adenda, punto 3; corregida en K17); 384 municipios, N = 1149.
+- Coeficiente: **-0,0054 por DT** (referencia 0,0633). Variantes (log del nivel del IPVA; exposición en log; versión inicial con ambos en log; sin grandes ciudades; controles): 0,0078; -0,0005; -0,0095; -0,0056; -0,0073.
+- Multiverso (6 especificaciones): mediana -0,0055, rango [-0,0095; 0,0078], mismo signo que la principal en 83 %. Se lee como robustez de H3.
 
 <a id="v16-q2-4"></a>
 ## Q2b · solo robustez (Andalucía)
@@ -25,7 +25,7 @@ Dosis = altas acumuladas de viviendas completas (OpenRTA, reconstruida con sesgo
 <a id="v16-q2-5"></a>
 ## BLP/GATES (descriptivo, NO APTO)
 - Q2a (n = 37): pendiente media 0,0113; GATES por cuartil [0.0116, 0.0139, 0.0097, 0.0044].
-- Q2c (n = 374): pendiente media -0,0098; GATES por cuartil [-0.005, -0.0132, -0.0135, 0.0054].
+- Q2c (n = 381): pendiente media 0,0070; GATES por cuartil [0.0052, 0.0011, 0.0054, 0.0399].
 - Moderadores: renta ADRH, población, cuota de extranjeros, obra nueva per cápita (y % VUT 2021 en Q2c; en Q2a coincide con la exposición). Subgrupos descriptivos C4.
 
 ## Diagnósticos (superados y fallidos)
@@ -43,12 +43,12 @@ Dosis = altas acumuladas de viviendas completas (OpenRTA, reconstruida con sesgo
 | Q2a · ruptura (Bai-Perron) brecha tercil alto − bajo | informativa | 2 rupturas: ['2019Q2', '2023Q1'] |
 | Q2a · balance (terciles de exposición) | informativa | ln_renta 0,14; ln_pob 1,85; cuota_extranj 1,00; obra_pc 0,01 |
 | Q2a · F efectivo de Montiel Olea-Pflueger / AKM / Rotemberg | no aplica | shift-share retirado (no hay pernoctaciones por país en disco): forma reducida |
-| Q2c · Oster | superada | δ = 8,82 |
-| Q2c · Cinelli-Hazlett | superada | RV_q=1 = 0,125 |
-| Q2c · exposición adelantada (placebo temporal) | informativa | -0,0048 por DT |
-| Q2c · Moran (por provincia, aproximado) | informativa | I = 0,001, p diagnóstico = 0,061 |
-| Q2c · Breusch-Pagan | fallida (heterocedasticidad) | p = 4.9e-09 |
-| Q2c · exclusión de grandes ciudades | informativa | -0,0095 |
+| Q2c · Oster | fallida | δ = -1,28 |
+| Q2c · Cinelli-Hazlett | superada | RV_q=1 = 0,072 |
+| Q2c · exposición adelantada (placebo temporal) | informativa | 0,0019 por DT |
+| Q2c · Moran (por provincia, aproximado) | informativa | I = -0,030, p diagnóstico = 0,530 |
+| Q2c · Breusch-Pagan | fallida (heterocedasticidad) | p = 9.0e-14 |
+| Q2c · exclusión de grandes ciudades | informativa | -0,0056 |
 | Controles negativos (población 65+, IPC general provincial) | no evaluable | no están en el entrenamiento |
 | Raíces unitarias / cointegración con dependencia transversal | no aplica | diferencias sobre ventanas cortas |
 | BLP/GATES (adenda, punto 13) | no evaluable como prueba | herramienta NO APTA: solo puntuales, descriptivos (ver detalle) |

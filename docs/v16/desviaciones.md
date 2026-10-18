@@ -91,3 +91,7 @@ Anotadas el 2026-10-17 **antes** de ejecutar ninguna estimación de Q5, Q9, Q10 
 - **Q3-b.** El núcleo de Conley contaba dos veces la diagonal. Con el núcleo corregido, Conley a 2 km es NO APTO en el Monte Carlo, así que Q3-b queda solo con estimación puntual.
 - **Q9-g.** Su q de Benjamini-Yekutieli pasa de 0,153 a 0,306, porque ya es el único p válido de la rama de diseños.
 
+## D6. Correcciones tras la revisión adversarial (2026-10-18; decisión K17)
+- **Q2c.** La principal vuelve a ser la de la adenda (punto 3): Δlog IPVA municipal sobre la exposición estandarizada en nivel. La precisión de D3 («principal: log estandarizado» y log del nivel del IPVA) contradecía la adenda y queda sustituida. La versión inicial se mantiene como variante.
+- **Q6.** El resumen del multiverso excluye las dCDH con la fecha adelantada un año, que equivalen al placebo.
+

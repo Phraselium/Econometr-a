@@ -149,34 +149,34 @@ def q2c(registro: list) -> dict:
     ip = ip.sort_values(["territorio_codigo", "anio"])
     ip["dy"] = ip.groupby("territorio_codigo").y.diff()
     v = vut_municipal()
-    d = ip.merge(v, on=["territorio_codigo", "anio"], how="inner")
-    d = d[d.pct > 0].copy()          # principal: log; municipio-años con 0 % fuera (D3)
-    d["lpct"] = np.log(d.pct)
-    sdl = float(d.lpct.std(ddof=1))
-    d["z"] = (d.lpct - d.lpct.mean()) / sdl
+    # Ficha (adenda V16, punto 3): resultado Δlog IPVA municipal y exposición INE-VUT municipal ESTANDARIZADA (en nivel), EF de municipio y año,
+    # 2021-2024. La primera versión usó log IPVA en nivel y el log de la exposición como principal; se corrige tras la revisión adversarial (K17).
+    dl_ = ip.merge(v, on=["territorio_codigo", "anio"], how="inner")
+    dl_ = dl_[dl_.pct > 0].copy()          # variantes en log de la exposición: municipio-años con 0 % fuera
+    dl_["lpct"] = np.log(dl_.pct)
+    sdl = float(dl_.lpct.std(ddof=1))
+    dl_["z"] = (dl_.lpct - dl_.lpct.mean()) / sdl
     ref = 0.04 * sdl
-    r = Q.twfe(d, "y", "z", "territorio_codigo", "anio")
-    registro.append({"id": "Q2c-P", "pregunta": "Q2c", "rol": "principal", "especificacion": "log IPVA-TAM municipal ~ z(log %VUT INE) + EF municipio y año, 2021-2024",
-                     "muestra": f"{d.territorio_codigo.nunique()} municipios", "n": r["n"], "estimacion": r["beta"], "unidad": "Δlog por DT del log de la exposición",
-                     "inferencia": "ninguna (did_intensidad_webb NO APTO; agrupación por provincia no se calcula)", "nota": f"referencia {ref:.4f} (= 0,04 × DT log = {sdl:.3f})"})
-    # variante E2: nivel estandarizado, incluye ceros
     d2 = ip.merge(v, on=["territorio_codigo", "anio"], how="inner")
     d2["z"] = (d2.pct - d2.pct.mean()) / d2.pct.std(ddof=1)
+    d = d2.dropna(subset=["dy"]).copy()   # principal
+    r = Q.twfe(d, "dy", "z", "territorio_codigo", "anio")
+    registro.append({"id": "Q2c-P", "pregunta": "Q2c", "rol": "principal", "especificacion": "Δlog IPVA-TAM municipal ~ z(%VUT INE, nivel) + EF municipio y año, 2021-2024",
+                     "muestra": f"{d.territorio_codigo.nunique()} municipios", "n": r["n"], "estimacion": r["beta"], "unidad": "Δlog por DT de la exposición",
+                     "inferencia": "ninguna (did_intensidad_webb NO APTO; agrupación por provincia no se calcula)", "nota": f"referencia {ref:.4f} (= 0,04 × DT log = {sdl:.3f})"})
     r2 = Q.twfe(d2, "y", "z", "territorio_codigo", "anio")
-    registro.append({"id": "Q2c-V1", "pregunta": "Q2c", "rol": "variante declarada (exposición)", "especificacion": "exposición en nivel estandarizado (incluye 0 %)", "muestra": f"{d2.territorio_codigo.nunique()} municipios",
-                     "n": r2["n"], "estimacion": r2["beta"], "unidad": "Δlog por DT del nivel", "inferencia": "ninguna", "nota": ""})
-    # variantes de resultado: variación anual
-    d3 = d.dropna(subset=["dy"])
+    registro.append({"id": "Q2c-V1", "pregunta": "Q2c", "rol": "variante (resultado en log del nivel)", "especificacion": "log IPVA-TAM ~ z(%VUT, nivel)", "muestra": f"{d2.territorio_codigo.nunique()} municipios",
+                     "n": r2["n"], "estimacion": r2["beta"], "unidad": "log por DT del nivel", "inferencia": "ninguna", "nota": ""})
+    d3 = dl_.dropna(subset=["dy"])
     r3 = Q.twfe(d3, "dy", "z", "territorio_codigo", "anio")
-    registro.append({"id": "Q2c-V2", "pregunta": "Q2c", "rol": "variante declarada (resultado)", "especificacion": "Δlog IPVA-TAM (2022-2024) ~ z(log %VUT)", "muestra": f"{d3.territorio_codigo.nunique()} municipios",
+    registro.append({"id": "Q2c-V2", "pregunta": "Q2c", "rol": "variante (exposición en log)", "especificacion": "Δlog IPVA-TAM ~ z(log %VUT)", "muestra": f"{d3.territorio_codigo.nunique()} municipios",
                      "n": r3["n"], "estimacion": r3["beta"], "unidad": "Δlog por DT del log", "inferencia": "ninguna", "nota": ""})
-    d4 = d2.dropna(subset=["dy"])
-    r4 = Q.twfe(d4, "dy", "z", "territorio_codigo", "anio")
-    registro.append({"id": "Q2c-V3", "pregunta": "Q2c", "rol": "variante declarada (resultado × exposición)", "especificacion": "Δlog IPVA-TAM ~ z(nivel %VUT)", "muestra": f"{d4.territorio_codigo.nunique()} municipios",
-                     "n": r4["n"], "estimacion": r4["beta"], "unidad": "Δlog por DT del nivel", "inferencia": "ninguna", "nota": ""})
+    r4 = Q.twfe(dl_, "y", "z", "territorio_codigo", "anio")
+    registro.append({"id": "Q2c-V3", "pregunta": "Q2c", "rol": "variante (versión inicial: log del nivel y exposición en log)", "especificacion": "log IPVA-TAM ~ z(log %VUT)",
+                     "muestra": f"{dl_.territorio_codigo.nunique()} municipios", "n": r4["n"], "estimacion": r4["beta"], "unidad": "log por DT del log", "inferencia": "ninguna", "nota": "principal antes de K17"})
     # sin grandes ciudades
     dx = d[~d.territorio_codigo.isin(Q.GRANDES_MUN)]
-    rx = Q.twfe(dx, "y", "z", "territorio_codigo", "anio")
+    rx = Q.twfe(dx, "dy", "z", "territorio_codigo", "anio")
     registro.append({"id": "Q2c-X1", "pregunta": "Q2c", "rol": "robustez (punto 14)", "especificacion": "sin Barcelona, València, Sevilla y Málaga", "muestra": f"{dx.territorio_codigo.nunique()} municipios",
                      "n": rx["n"], "estimacion": rx["beta"], "unidad": "Δlog por DT", "inferencia": "ninguna", "nota": "islas no selladas: ninguna"})
     # controles × tendencia (Oster)
@@ -187,17 +187,17 @@ def q2c(registro: list) -> dict:
     t = dc.anio - 2021
     dc["c1"] = (dc.ln_renta - dc.ln_renta.mean()) * t
     dc["c2"] = (dc.ln_pob - dc.ln_pob.mean()) * t
-    corto = Q.twfe(dc, "y", "z", "territorio_codigo", "anio")
-    largo = Q.twfe(dc, "y", "z", "territorio_codigo", "anio", controles=["c1", "c2"])
+    corto = Q.twfe(dc, "dy", "z", "territorio_codigo", "anio")
+    largo = Q.twfe(dc, "dy", "z", "territorio_codigo", "anio", controles=["c1", "c2"])
     registro.append({"id": "Q2c-C1", "pregunta": "Q2c", "rol": "robustez (controles)", "especificacion": "principal + renta y población 2019 × tendencia", "muestra": f"{dc.territorio_codigo.nunique()} municipios",
                      "n": largo["n"], "estimacion": largo["beta"], "unidad": "Δlog por DT", "inferencia": "ninguna", "nota": "base de Oster/CH"})
     sens = Q.sensibilidad({"beta": corto["beta"], "r2": corto["r2"]}, largo)
     # placebo de fecha: estimar con exposición adelantada (lead) 1 año -> Δ resultado actual sobre exposición futura (no causal; chequeo)
     dl = d.sort_values(["territorio_codigo", "anio"]).copy()
     dl["z_lead"] = dl.groupby("territorio_codigo").z.shift(-1)
-    dl = dl.dropna(subset=["z_lead"])
-    rl = Q.twfe(dl, "y", "z_lead", "territorio_codigo", "anio")
-    registro.append({"id": "Q2c-PL1", "pregunta": "Q2c", "rol": "placebo temporal (exposición adelantada)", "especificacion": "log IPVA-TAM ~ z(t+1)", "muestra": f"{dl.territorio_codigo.nunique()} municipios",
+    dl = dl.dropna(subset=["z_lead", "dy"])
+    rl = Q.twfe(dl, "dy", "z_lead", "territorio_codigo", "anio")
+    registro.append({"id": "Q2c-PL1", "pregunta": "Q2c", "rol": "placebo temporal (exposición adelantada)", "especificacion": "Δlog IPVA-TAM ~ z(t+1)", "muestra": f"{dl.territorio_codigo.nunique()} municipios",
                      "n": rl["n"], "estimacion": rl["beta"], "unidad": "Δlog por DT", "inferencia": "ninguna", "nota": "la exposición futura no debería explicar el presente si no hay tendencia previa"})
     # Moran aproximado por provincia (no hay coordenadas municipales en disco)
     res = pd.Series(largo["residuos"], index=largo["indice"])
@@ -207,7 +207,7 @@ def q2c(registro: list) -> dict:
     mor = Q.moran(pr.values, np.array([cen[p_] for p_ in pr.index]))
     bp = Q.breusch_pagan(largo["residuos"], dc[["z", "c1", "c2"]].values)
     # BLP/GATES municipal en diferencias 2021→2024
-    w = d.pivot_table(index="territorio_codigo", columns="anio", values=["y", "z"])
+    w = d2.pivot_table(index="territorio_codigo", columns="anio", values=["y", "z"])
     ok = w.dropna()
     dy = ok[("y", 2024)] - ok[("y", 2021)]
     dz = ok[("z", 2024)] - ok[("z", 2021)]

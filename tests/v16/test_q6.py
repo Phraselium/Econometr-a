@@ -53,7 +53,7 @@ def test_resultado_q6_solo_puntual():
     r = json.loads((OUT / "resultado.json").read_text(encoding="utf-8"))
     assert r["capa"] == "C4" and r["pendiente_sellada"] is True and r["ic95"] is None and r["p_ajustado"] is None
     assert all(x["p"] is None for x in r["p_valores_para_BY"])
-    assert r["estimacion"]["Q6-v"]["multiverso"]["n"] == 8
+    assert r["estimacion"]["Q6-v"]["multiverso"]["n"] == 6  # 8 especificaciones menos las 2 dCDH con fecha adelantada (= placebo; K17)
     h = json.loads((OUT / "hechos.json").read_text(encoding="utf-8"))
     assert 0 < len(h) <= 10 and all(x["id"].startswith("V16-Q6") for x in h)
     assert "honest_did" in r["diagnosticos"]["Q6-v"]

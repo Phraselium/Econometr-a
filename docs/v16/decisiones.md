@@ -146,7 +146,7 @@ adquisidor-datos, ingeniero-datos, replicador-ciego y redactor (sonnet), abogado
 - **Por qué no es hallazgo.** El umbral pre-registrado es q ≤ 0,10 (adenda V16, punto 9a) y Q9 no tiene magnitud de referencia (punto 3: «no aplica»), así que la condición (b) no se cumple.
 - **Lectura.** Pista no confirmada (C4), coherente con la conclusión de V7.2 y de la 1.0 («no hay exuberancia de los cocientes tras el ajuste múltiple»). No contradice ninguna conclusión publicada y no se aplica la parada D (B-2 queda resuelto).
 - **En el informe:**
-  - Va solo a la Parte VII («lo que no se puede afirmar»), con los dos números (p = 0,004 y q = 0,153).
+  - Va solo a la Parte VII («lo que no se puede afirmar»), con los dos números (p = 0,004 y q = 0,153). Tras K16 el q vigente es 0,306, y ese es el que se cita.
   - Lleva tres advertencias:
     - corrección múltiple;
     - el valor tasado está suavizado y retrasado;
@@ -188,4 +188,36 @@ Regla del plan (fase 6.3): si la réplica discrepa, no se publica hasta resolver
 **Réplicas que coinciden sin cambios:** Q9-g (5,919 frente a 5,92), E3 (ρ 0,392 frente a 0,39) y H1 (−7,18 % frente a −7,2 %).
 
 **Ninguna cifra de la 1.0 cambia.** Son resultados de V15 y V16 todavía no publicados en cifras_clave, así que no hay entrada en ERRATA.
+
+## K17. Revisión adversarial: dos correcciones y la lista de pistas citables (2026-10-18)
+Tres revisiones de abogado-del-diablo; respuesta punto por punto en output/v16/critica/respuestas.md.
+
+**Correcciones (errores frente a la ficha, no elecciones por resultado)**
+- **Q2c.** La principal no era la de la adenda, punto 3. La adenda fija Δlog del IPVA municipal sobre la exposición INE-VUT estandarizada en nivel, con efectos fijos de municipio y año. Se había usado el log del nivel y el log de la exposición.
+  - La principal pasa a ser la de la adenda: −0,0054 por DT, puntual. La anterior (−0,0095) queda como variante.
+  - El placebo, los controles y la exclusión de grandes ciudades se rehacen con la principal.
+- **Q6.** El resumen del multiverso incluía las dCDH con la fecha adelantada un año, que equivalen al placebo. Se quitan del resumen pero siguen en el registro.
+
+**Texto**
+- **H3.** Se quita «preciso». H3 es «no concluyente», no «nula», y se cita la mediana del multiverso.
+- **Q5.** Se da el número real de especificaciones (15).
+
+**Contrastadas con datos**
+- **BY frente a BH.** Lo obliga la adenda (punto 2), porque el BH jerárquico falló en el Monte Carlo.
+- **AR(4) de H5.** No hay fuga. La diferencia con la reconciliación es una convención de ventana.
+
+**Qué se cita y cómo** (solo C4, sin lenguaje causal; siempre con mediana y rango del multiverso cuando la principal está en un extremo)
+- **Pistas citables:**
+  - H1, solo en el signo, con el rango CS-SDID;
+  - H5, «la combinación no supera al AR(4)», con la razón entre 1,15 y 1,51 según la implementación;
+  - E3, como correlación espacial descriptiva, con el rango del multiverso;
+  - Q6-p, puntual.
+- **Correlaciones frágiles:** Q3-b y H4.
+- **No se citan como pista:**
+  - H2, Q1c, Q6-v, Q5 y Q10-3;
+  - Q2c, que tiene el signo inestable;
+  - H3 y Q2a, que son «no concluyentes».
+- **Q9-g:** solo en la Parte VII (K15). La revisión lo lee como artefacto probable: GSADF sobre una tasación suavizada sin rezagos y fechas en tramos bajistas.
+
+**Pendiente de la fase 7:** la coherencia de lo_ya_visto entre «ningún modelo predice mejor» y K1-N-MEJOR (6 de 9), sin cambiar ninguna cifra 1.0.
 

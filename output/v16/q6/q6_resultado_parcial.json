@@ -173,12 +173,13 @@
       "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
     },
     "multiverso": {
-      "n": 8,
-      "mediana": 0.010234167218940158,
-      "min": -0.04835529878015494,
+      "n": 6,
+      "mediana": 0.015357146968596663,
+      "min": 0.002489803845211047,
       "max": 0.02508245316199873,
-      "proporcion_mismo_signo": 0.75,
-      "mediana_solo_dCDH": -0.006947337769361165
+      "proporcion_mismo_signo": 1.0,
+      "mediana_solo_dCDH": 0.015287091585919612,
+      "excluidas": "dCDH con fecha adelantada un año (equivale al placebo)"
     }
   },
   "Q6-p": {
@@ -355,12 +356,13 @@
       "estables_vs_cambios": "ver calendario_cambios; sin errores S y M (sin SE válido)"
     },
     "multiverso": {
-      "n": 8,
-      "mediana": -0.011265992423958938,
+      "n": 6,
+      "mediana": -0.008277273084532837,
       "min": -0.015704563680369415,
       "max": 0.006449532187718039,
-      "proporcion_mismo_signo": 0.875,
-      "mediana_solo_dCDH": -0.013538355765077316
+      "proporcion_mismo_signo": 0.8333333333333334,
+      "mediana_solo_dCDH": -0.01363759717949454,
+      "excluidas": "dCDH con fecha adelantada un año (equivale al placebo)"
     }
   },
   "calendario_cambios": [

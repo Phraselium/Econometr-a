@@ -10,7 +10,7 @@ Generado por `python3 src/v16/f6_triangulacion.py`. comparación de signo y, con
 | Q1c | Zonas tensionadas y compraventas provinciales | -0,0478 | log |  | -0,071 · -0,071 · -0,071; 1 | mismo signo que la literatura |
 | H3 | Vivienda turística y alquiler por sección | 0,002989 | % por DT |  | 0,018 · 0,056 · 1,9; 3 | mismo signo que la literatura (unidades no comparables: solo signo) |
 | Q2a | Vivienda turística y IPC de alquiler provincial | 0,01316 | log por DT | 0,03786 | 0,018 · 0,056 · 1,9; 3 | mismo signo que la literatura (unidades no comparables: solo signo) |
-| Q2c | Vivienda turística e IPVA municipal | -0,009541 | log por DT | 0,06327 | 0,018 · 0,056 · 1,9; 3 | SE APARTA de la literatura: Signo opuesto al de la literatura con una magnitud muy pequeña frente a la referencia (0,063) y sin inferencia válida: no se distingue de cero en ningún sentido operativo; se lee como robustez de H3 (casi nula), no como evidencia en contra. |
+| Q2c | Vivienda turística e IPVA municipal | -0,005376 | log por DT | 0,06327 | 0,018 · 0,056 · 1,9; 3 | SE APARTA de la literatura: Signo opuesto al de la literatura con una magnitud muy pequeña frente a la referencia (0,063) y sin inferencia válida: no se distingue de cero en ningún sentido operativo; se lee como robustez de H3 (casi nula), no como evidencia en contra. |
 | H4 | Inmigración y alquiler municipal (shift-share) | 0,3052 | % por p.p. |  | — | sin comparación con la literatura |
 | Q3-c1 | Inmigración y valor tasado provincial | 0,0119 | log por punto |  | — | sin comparación con la literatura |
 | Q3-b | Inmigración y alquiler por sección | 0,009077 | log por DT |  | — | sin comparación con la literatura |

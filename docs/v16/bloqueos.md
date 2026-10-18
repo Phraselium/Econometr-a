@@ -32,4 +32,4 @@
   - (2) mantener la parada.
 
 - **B-2 resuelto (2026-10-18).** El autor eligió la opción 1: pista no confirmada (C4), coherente con V7.2; no aplica la parada D (decisión K15).
-
+- **Nota (2026-10-18).** Tras K16 el q de Q9-g es 0,306, no 0,153. La lectura no cambia.

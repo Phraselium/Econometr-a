@@ -10,7 +10,7 @@ Multiverso: 64 especificaciones (4 resultados x 4 horizontes x 2 choques x 2 rez
 ## Resultados puntuales
 <a id="q5p"></a>**Q5-p (valor tasado), h = 4:** -0,51 % por DT de sorpresa (n = 101, 2000Q2-2025Q2). Respuesta puntual: h=1: -0,45; h=4: -0,51; h=8: 0,23; h=12: 2,30.
 Referencia de la literatura (P3 de V15): −0,6 % por DT; cociente estimación/referencia = 0,85; mismo signo: True.
-Multiverso (63 restantes): mediana 0,15, rango [-0,64; 2,30], proporción con el mismo signo 0,47.
+Multiverso (15 especificaciones de valor tasado, horizonte × rezagos × resultado; el resto del registro es de otros resultados): mediana 0,15, rango [-0,64; 2,30], proporción con el mismo signo 0,47.
 El MDE del valor tasado a h = 4 (1,47 %) supera la referencia: sin potencia aunque la inferencia fuera válida.
 
 <a id="q5a"></a>**Q5-a (IPC de alquiler), h = 4:** -0,06 % por DT (n = 89, 2003Q2-2025Q2). Respuesta puntual: h=1: 0,02; h=4: -0,06; h=8: -0,26; h=12: -0,30.

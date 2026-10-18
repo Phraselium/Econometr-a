@@ -14,11 +14,11 @@ p AR unilateral con el signo A PRIORI de la primera etapa (pi > 0); beta (cocien
 
 Detalle por hipotesis: H8-5: regresion agregada h=4-8 (la de F y AR): pi=-0.930 (t=-1.35; esperado > 0), F=1.83; forma reducida t_AR(0)=0.60 (signo esperado negativo); n=102; p_perm=0.610; AR acotado=False; no respaldada tras Holm (instrumento no supera C3) / H8-6: regresion agregada h=4-8 (la de F y AR): pi=-0.486 (t=-0.88; esperado > 0), F=0.77; forma reducida t_AR(0)=0.34 (signo esperado negativo); n=88; p_perm=0.798; AR acotado=False; no respaldada tras Holm (instrumento no supera C3) / H8-7: regresion agregada anual h=1-2: pi=0.265 (t=0.22; esperado > 0), F=0.05; forma reducida t_AR(0)=-0.09 (signo esperado positivo); n=20; p_perm=1.000; AR acotado=False; no respaldada tras Holm (instrumento no supera C3)
 
-## IV3 (Bartik, panel 17 CCAA, exploratorio; BH)
+## IV3 (Bartik, panel 15 CCAA sin Navarra ni La Rioja por falta de cuota en 2008, exploratorio; BH)
 
-- Alquiler h=1-2: beta=-0.425, AR95=[-46856.54, 46855.69], F=1.0, p AR=0.197, cumple C3=False.
-- Precio h=1-2: beta=-1.413, AR95=[-310875.88, 310873.05], F=0.6, p AR=0.649, cumple C3=False.
-- Rotemberg (pesos principales): B-E 1.75; G-I -0.41; F -0.30; A -0.25.
+- Alquiler h=1-2: beta=-0.376, AR95=[-45150.66, 45149.90], F=1.0, p AR=0.298, cumple C3=False.
+- Precio h=1-2: beta=-1.304, AR95=[-274315.49, 274312.88], F=0.7, p AR=0.637, cumple C3=False.
+- Rotemberg (pesos principales): B-E 1.37; A -0.32; G-I -0.26; O-Q -0.26.
 
 ## IV2b (instrumento sin normalizar; exploratoria, ANADIDA TRAS CONSTRUIR EL INSTRUMENTO)
 

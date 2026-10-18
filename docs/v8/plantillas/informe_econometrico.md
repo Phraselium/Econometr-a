@@ -68,7 +68,7 @@ Los tres instrumentos son débiles; ninguno alcanza C3 ({{V8-M5-c3:num}} de tres
 
 - **Shocks monetarios del BCE** (Jarociński-Karadi, componente de política monetaria pura): F efectivo {{V8-H8-5-F:num}} para el precio y {{V8-H8-6-F:num}} para el alquiler; primera etapa con signo contrario al esperado; intervalos de Anderson-Rubin no acotados al 95 %. Las pretendencias pasan, por falta de potencia.
 - **Empuje migratorio** (llegadas predichas por la emigración de cada país de origen al resto de la UE, cuotas de 2002): F efectivo {{V8-H8-7-F:num}}.
-- **Bartik sectorial** (cuotas de empleo de 2008 por comunidad): efecto relativo entre comunidades, no comparable con una contribución nacional; F efectivo por debajo de diez.
+- **Bartik sectorial** (cuotas de empleo de 2008 por comunidad): efecto relativo entre comunidades, no comparable con una contribución nacional; F efectivo por debajo de diez. Navarra y La Rioja quedan fuera del instrumento porque Eurostat no publica su empleo del sector inmobiliario en 2008 (dato confidencial): sin cuota del año base, el instrumento no está definido, y no se les asigna cuota cero (errata aplicada en V16; ERRATA.md).
 
 En el alquiler, LP-IV se abstiene en la regla del factor más relevante (F por debajo de diez y Anderson-Rubin al 68 % no acotado). En la compra, el Anderson-Rubin al 68 % está acotado y LP-IV vota cuando supera a todos los factores del SVAR: solo en P4, con una primera etapa de signo contrario al esperado (regla R2). Detalle: `output/v8/M5/resumen.md`.
 

@@ -32,7 +32,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | cifras_no_publicadas_1_0.csv | proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv | `01c846704182f19e7b3297045a0a692fddd10a26920e43a758dd8640a986cd87` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
-| informe_econometrico_v8.md | output/v8/informe_econometrico.md | `d1a2c95f60ca03283fee915e87cc197849e11289c7e558ff5b55a25ccd6652cc` |
+| informe_econometrico_v8.md | output/v8/informe_econometrico.md | `4b7cb4c9393905b8e71383a78e821f7c0d74aa09e147556e10f6869c7a8a7d6e` |
 | informe_tecnico.md | output/v5/informe_tecnico.md | `d8eda75c44f121964107027a12f7a9001e04e69a4c4553fcfbf02c061c9239bb` |
 | informe_v9.md | output/v9/informe_v9.md | `bde71cee9bdaf6f11941c9c703bb7d92bb79bd8c9b2eb6d13a8771f6ae219c35` |
 | lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `21f8763a9868ef966bb7132435ac7efebad8959a9882c600e04f527f9d546bff` |
@@ -47,7 +47,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
 | tablas_modelos_destacados.md | output/v8/tablas_modelos_destacados.md | `650cd6505b65d0e622e2c3916848664cb8c93b4cdb1aac86a1de2e6dc918590c` |
 | tablas_v12.xlsx | output/v12/tablas_v12.xlsx | `da3e41ffa49ac1810e932705a7c8b80c78a570a947e6fe8ca81249dbc48764e2` |
-| tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `14840ac35aca7c0d924cdb62e1791c897a5bc4464c8d331d4361af2c1499ed78` |
+| tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `a2cbd9254fc72ada46060f081bbbcc892a911185181c7b27e73376c02224cd3b` |
 | tablas_v9.xlsx | output/v9/tablas_v9.xlsx | `bb61506b8a3c82233cba7fdf3be83696ca40e5c7da5559e346b83a9e93d3ccb3` |
 | una_pagina.md | output/v5/una_pagina.md | `724df9845fca3ab4e8a077e1d6ac92b1a72407bd97b0253fed22521836ddc5f9` |
 | verificador/fichas_v12.json | output/v12/b5/fichas_verificador_v12.json | `cc9578f802c3c755fc0f0067f17a623eec7247d976d525edbebb0d0003e0ac8f` |

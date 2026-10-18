@@ -7,7 +7,7 @@
   "IV1_compra": 102,
   "IV1_alquiler": 88,
   "IV2": 20,
-  "IV3": 238
+  "IV3": 210
  },
  "metodo": "LP-IV acumulado (2SLS por horizonte, F efectivo Olea-Pflueger, intervalos Anderson-Rubin HAC), agregado h=4-8 (IV1) y h=1-2 anual (IV2, IV3); panel Driscoll-Kraay con AR exacto (IV3); Holm en {H8-5, H8-6, H8-7}; BH (q=0,10) en lo exploratorio",
  "estimacion": {
@@ -231,15 +231,15 @@
   },
   "IV3": {
    "l_precio_h0": {
-    "beta": 0.11341310158165457,
+    "beta": -0.03945281635509095,
     "ar95": [
-     -44347.40548579806,
-     44347.63231200122
+     -49939.9322781032,
+     49939.8533724705
     ],
     "ar_acotado": false,
-    "F_efectivo": 2.3128849146073374,
-    "p_ar_dos": 0.840832245127248,
-    "n": 272,
+    "F_efectivo": 2.8017962527678515,
+    "p_ar_dos": 0.9482859445816508,
+    "n": 240,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -248,15 +248,15 @@
     "c3_laxo": false
    },
    "l_precio_h1": {
-    "beta": -0.0548784889675498,
+    "beta": -0.14261229714912943,
     "ar95": [
-     -104414.11388030542,
-     104414.00412332748
+     -104417.78425716207,
+     104417.49903256778
     ],
     "ar_acotado": false,
-    "F_efectivo": 2.0620313308685168,
-    "p_ar_dos": 0.9659069346432395,
-    "n": 255,
+    "F_efectivo": 2.2539190394213353,
+    "p_ar_dos": 0.9110335735917141,
+    "n": 225,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -265,15 +265,15 @@
     "c3_laxo": false
    },
    "l_precio_h2": {
-    "beta": -1.7589661142547461,
+    "beta": -1.7224951605555616,
     "ar95": [
-     -396097.0204369512,
-     396093.5025047227
+     -347646.8728773626,
+     347643.42788704153
     ],
     "ar_acotado": false,
-    "F_efectivo": 0.578560688521668,
-    "p_ar_dos": 0.6360421350931718,
-    "n": 238,
+    "F_efectivo": 0.7391063605056052,
+    "p_ar_dos": 0.5968861853406009,
+    "n": 210,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -282,15 +282,15 @@
     "c3_laxo": false
    },
    "l_precio_h1-2": {
-    "beta": -1.41276810040932,
+    "beta": -1.3041762443401075,
     "ar95": [
-     -310875.8770143159,
-     310873.05147811514
+     -274315.4929252754,
+     274312.8845727867
     ],
     "ar_acotado": false,
-    "F_efectivo": 0.578560688521668,
-    "p_ar_dos": 0.6490993962077704,
-    "n": 238,
+    "F_efectivo": 0.7391063605056052,
+    "p_ar_dos": 0.6366423833830286,
+    "n": 210,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -299,15 +299,15 @@
     "c3_laxo": false
    },
    "l_alq_h0": {
-    "beta": -0.030761770012491717,
+    "beta": -0.014048644525322795,
     "ar95": [
-     -12215.314779685708,
-     12215.253256145683
+     -12841.203101271438,
+     12841.175003982387
     ],
     "ar_acotado": false,
-    "F_efectivo": 2.746280493339769,
-    "p_ar_dos": 0.8318104634253309,
-    "n": 272,
+    "F_efectivo": 3.015523303214467,
+    "p_ar_dos": 0.9284365616877307,
+    "n": 240,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -316,15 +316,15 @@
     "c3_laxo": false
    },
    "l_alq_h1": {
-    "beta": -0.12295425168917294,
+    "beta": -0.10497209779987084,
     "ar95": [
-     -15351.538480642092,
-     15351.292572138715
+     -18347.51749416864,
+     18347.307549973037
     ],
     "ar_acotado": false,
-    "F_efectivo": 2.553040282830079,
-    "p_ar_dos": 0.4547437083782241,
-    "n": 255,
+    "F_efectivo": 2.531378090486907,
+    "p_ar_dos": 0.6122150534956107,
+    "n": 225,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -333,15 +333,15 @@
     "c3_laxo": false
    },
    "l_alq_h2": {
-    "beta": -0.461065459668051,
+    "beta": -0.4074776393969339,
     "ar95": [
-     -56708.69980764999,
-     56707.77767673065
+     -54547.97386155631,
+     54547.15890627752
     ],
     "ar_acotado": false,
-    "F_efectivo": 0.9858480966865856,
-    "p_ar_dos": 0.3058541943390176,
-    "n": 238,
+    "F_efectivo": 1.0285420461365902,
+    "p_ar_dos": 0.3922559882922517,
+    "n": 210,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -350,15 +350,15 @@
     "c3_laxo": false
    },
    "l_alq_h1-2": {
-    "beta": -0.4254896169269434,
+    "beta": -0.37624764454632875,
     "ar95": [
-     -46856.542416906595,
-     46855.691437672736
+     -45150.65682840497,
+     45149.904333115875
     ],
     "ar_acotado": false,
-    "F_efectivo": 0.9858480966865856,
-    "p_ar_dos": 0.19735183988936134,
-    "n": 238,
+    "F_efectivo": 1.0285420461365902,
+    "p_ar_dos": 0.29798649591138204,
+    "n": 210,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -367,15 +367,15 @@
     "c3_laxo": false
    },
    "l_ipv_h0": {
-    "beta": 0.2707732656883939,
+    "beta": 0.2203022636479456,
     "ar95": [
-     -56718.318312250216,
-     56718.85985878159
+     -48321.42966098964,
+     48321.87026551693
     ],
     "ar_acotado": false,
-    "F_efectivo": 2.839537723672097,
-    "p_ar_dos": 0.6793611110900089,
-    "n": 272,
+    "F_efectivo": 3.3961523897872437,
+    "p_ar_dos": 0.6985795423342177,
+    "n": 240,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -384,15 +384,15 @@
     "c3_laxo": false
    },
    "l_ipv_h1": {
-    "beta": 1.3003165292893395,
+    "beta": 1.2777914376226456,
     "ar95": [
-     -114871.58505101902,
-     114874.1856840776
+     -104213.30624746854,
+     104215.86183034378
     ],
     "ar_acotado": false,
-    "F_efectivo": 2.672767851556951,
-    "p_ar_dos": 0.24179896683547564,
-    "n": 255,
+    "F_efectivo": 2.8706043414497584,
+    "p_ar_dos": 0.2272599825573608,
+    "n": 225,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -401,15 +401,15 @@
     "c3_laxo": false
    },
    "l_ipv_h2": {
-    "beta": 1.8781922036975218,
+    "beta": 1.6749980601171826,
     "ar95": [
-     -205003.24669960048,
-     205007.00308400788
+     -163661.41877229998,
+     163664.76876842024
     ],
     "ar_acotado": false,
-    "F_efectivo": 1.0681745204147504,
-    "p_ar_dos": 0.13664588103690473,
-    "n": 238,
+    "F_efectivo": 1.2271577074230817,
+    "p_ar_dos": 0.12382195669936755,
+    "n": 210,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -418,15 +418,15 @@
     "c3_laxo": false
    },
    "l_ipv_h1-2": {
-    "beta": 2.0403979400599654,
+    "beta": 1.861735460166118,
     "ar95": [
-     -193136.80899049676,
-     193140.88978637688
+     -156541.40630699578,
+     156545.12977791613
     ],
     "ar_acotado": false,
-    "F_efectivo": 1.0681745204147504,
-    "p_ar_dos": 0.08668409238334174,
-    "n": 238,
+    "F_efectivo": 1.2271577074230817,
+    "p_ar_dos": 0.09428899087510617,
+    "n": 210,
     "f_ok": false,
     "ar_excluye_0": false,
     "pretendencias_ok": true,
@@ -437,23 +437,23 @@
    "rotemberg_top": [
     {
      "sector": "B-E",
-     "g_medio": -0.07812506374083417,
-     "alpha": 1.7466338594498612
-    },
-    {
-     "sector": "G-I",
-     "g_medio": 0.16161167119227016,
-     "alpha": -0.40960419242100954
-    },
-    {
-     "sector": "F",
-     "g_medio": -0.354248296038904,
-     "alpha": -0.3026517136467444
+     "g_medio": -0.0711099667962296,
+     "alpha": 1.3700684342917506
     },
     {
      "sector": "A",
-     "g_medio": -0.028077593032690175,
-     "alpha": -0.2549377898426275
+     "g_medio": -0.028698287870325006,
+     "alpha": -0.31836882037436837
+    },
+    {
+     "sector": "G-I",
+     "g_medio": 0.16485543288432183,
+     "alpha": -0.2636727583766216
+    },
+    {
+     "sector": "O-Q",
+     "g_medio": 0.32397090689575075,
+     "alpha": -0.2579922324543755
     }
    ]
   }
@@ -513,5 +513,5 @@
   "dm_vs_ar4": null,
   "nota": "No aplica: modulo de identificacion (efectos), no de prediccion; no se compara con AR(4) ni ECM v1."
  },
- "notas": "Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 17 CCAA 2009-2025. Cuotas IV2 = stock de residentes por ciudadania a 1-1-2002 (no flujo). Eurostat LFS NUTS2: posibles rupturas de serie no tratadas. IV2b (instrumento sin normalizar): anadida tras construir el instrumento, exploratoria, fuera de Holm. Permutacion del instrumento (antes «placebo»): contraste de significacion de la forma reducida, no prueba independiente. Modo rapido=False."
+ "notas": "Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 15 CCAA (sin Navarra ni La Rioja: sin cuota del año base 2008) 2009-2025. Cuotas IV2 = stock de residentes por ciudadania a 1-1-2002 (no flujo). Eurostat LFS NUTS2: posibles rupturas de serie no tratadas. IV2b (instrumento sin normalizar): anadida tras construir el instrumento, exploratoria, fuera de Holm. Permutacion del instrumento (antes «placebo»): contraste de significacion de la forma reducida, no prueba independiente. Modo rapido=False."
 }

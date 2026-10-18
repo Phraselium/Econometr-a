@@ -46,3 +46,11 @@
 | 2026-10-13 | §9 (F5, R3) | **La condición 2 (multiverso) se aplicó sin exigir que el signo estable coincida con el de la contribución del SVAR** (revisión final, K3). En la compra de P1, el signo estable del PIB en el multiverso es negativo, frente a la contribución positiva del SVAR. No cambia ninguna designación (la condición 1 ya falla). | Revisión final (K3). |
 | 2026-10-13 | Y10, R0-R8 | **Anotaciones en el mismo commit que los resultados (no verificable «antes»):** Y10 entró en 7b00215, junto con output/v8/M2/prob_mayor.csv; las dos últimas filas de la regla de F5, en f20ab0d, junto con los resultados de F5; IV2b, en 337ef5e. Se declara aquí; ninguna cambia una designación. | Revisión final (K15). |
 | 2026-10-16 | Sellado (proceso; V13-D3, constatado en V14) | **Regeneración accidental de la muestra sellada v2, sin apertura ni evaluación.** `make clean` (src/holdout.py build) se ejecutó por un heredoc sin comillas durante V13. Los registros de acceso versionados (docs/v2/holdout_accesos.md, docs/v8/evaluate_v8_accesos.md) no tienen entradas nuevas desde a58b426. La partición de entrenamiento versionada es idéntica. No se pudo comparar directamente el sha256 de data/sealed (lectura denegada en el entorno; sin huellas previas). La evaluación diferida de V8 (`make evaluate_v8`) no se ha ejecutado. | Transparencia (ERRATA.md, 2026-10-16). No afecta a ninguna hipótesis pendiente ni a ninguna cifra. |
+
+## Errata posterior (V16, 2026-10-18; ERRATA.md, B-3 de docs/v16/bloqueos.md)
+- **IV3 Bartik de M5.** Navarra (ES22) y La Rioja (ES23) no tienen dato de empleo del sector L (inmobiliario) en 2008 en Eurostat lfst_r_lfe2en2, porque es confidencial.
+  - Hasta V16 se les imponía una cuota 0. Estaba anotado solo en docs/v8/diccionario.md.
+  - Sin cuota del año base el instrumento Bartik no está definido. Desde la errata de V16, las dos CCAA quedan fuera del panel IV3: 15 CCAA en lugar de 17. La decisión es del autor (opción (a)).
+- **Qué cambia.** Solo las 8 filas IV3_bartik_h1-2 de la atribución (tablas_v8.xlsx, hoja «Atribucion»), entre un 1 % y un 11 %.
+- **Qué no cambia.** Ninguna cifra de cifras_clave, ninguna capa (C4; F efectivo < 3,4), ninguna prueba de hipotesis_m5.csv, la regla §9 ni las designaciones (esas filas no votan).
+

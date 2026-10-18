@@ -212,10 +212,15 @@ def construye_bartik(sec: pd.DataFrame, anio_base=2008):
     """Bartik leave-one-out por NUTS2. sec: geo, nace_r2, anio, valor (miles). Devuelve (B total, B por sector, cuotas, E total)."""
     s = sec[sec["geo"].isin(NUTS_TODOS) & sec["nace_r2"].isin(SECTORES)]
     E = s.pivot_table(index=["geo", "nace_r2"], columns="anio", values="valor", aggfunc="sum").reindex(
-        pd.MultiIndex.from_product([NUTS_TODOS, SECTORES], names=["geo", "nace_r2"])).fillna(0.0)
+        pd.MultiIndex.from_product([NUTS_TODOS, SECTORES], names=["geo", "nace_r2"]))
+    sin_base = E[anio_base].isna().groupby(level="geo").any()   # alguna celda sin dato (confidencial) en el año base
+    E = E.fillna(0.0)   # el 0 solo entra en el total nacional del leave-one-out
     anios = sorted(E.columns)
     cuotas = E[anio_base].unstack("nace_r2")[SECTORES]
     cuotas = cuotas.div(cuotas.sum(axis=1), axis=0)
+    # Sin cuota del año base el instrumento no está definido: la unidad queda fuera (NaN), no con cuota 0
+    # (errata V8-M5, B-3 de V16, orden expresa del autor: Navarra ES22 y La Rioja ES23, sector L de 2008).
+    cuotas.loc[sin_base[sin_base].index.intersection(cuotas.index)] = np.nan
     nac = E.groupby(level="nace_r2").sum()   # (sector x anio)
     out = {}
     for c in NUTS_INE:
@@ -534,6 +539,8 @@ def main():
         sec = pd.read_csv(EUR / "lfst_r_lfe2en2_sector.csv")
         B, Bs, cuotas, Etot = construye_bartik(sec)
         P3 = panel_anual(nac, pan, B, Etot)
+        _m3 = P3.reset_index().dropna(subset=["x", "z"])
+        n3 = int(_m3["ent"].nunique())  # CCAA con instrumento definido (sin Navarra ni La Rioja: errata B-3)
         hs3 = {"h0": 0, "h1": 1, "h2": 2, "h3": 3, "h4": 4, "h1-2": [1, 2]}
         resultados3 = {}
         for mercado, col, medida in (("compra", "l_precio", "valor tasado real"), ("alquiler", "l_alq", "IPC alquiler real"),
@@ -549,7 +556,7 @@ def main():
                 resultados3[(mercado, col, "permutacion")] = panel_permutacion(P3, col, [1, 2], 3, n_perm_pan, SEED)
         rot = rotemberg(P3, Bs)
         rot.to_csv(out / "iv3_rotemberg.csv", index=False)
-        iv3 = {"res": resultados3, "rot": rot, "P3": P3}
+        iv3 = {"res": resultados3, "rot": rot, "P3": P3, "n": n3}
         pvals_bh = {}
         for (mercado, col, lab), r in resultados3.items():
             if lab in ("permutacion",) or lab.startswith("h-"):
@@ -572,7 +579,7 @@ def main():
                                         medida, "d_ln_empleo", rr, r["n"], r["F_robusto"], capa, lab.replace("h", "", 1) if lab.startswith("h") else lab,
                                         p_aj=padj.get(mid, np.nan), met_aj="BH" if mid in padj else "", pu=r["ar_p_mayor"],
                                         tipo_ee="Driscoll-Kraay (Bartlett, h+1); IC AR"))
-            reg.log("V8-M5", mid, f"LP-IV panel 17 CCAA {col} ~ d_ln_empleo | Bartik 2008 leave-one-out, FE CCAA+anio, DK, h={lab}", "2009", "2025",
+            reg.log("V8-M5", mid, f"LP-IV panel {n3} CCAA {col} ~ d_ln_empleo | Bartik 2008 leave-one-out, FE CCAA+anio, DK, h={lab}", "2009", "2025",
                     r["n"], np.nan, np.nan, np.nan, np.nan, r["beta"], r["ar_p_dos"], f"{ev}" if lab == "h1-2" else "")
     except Exception as e:  # noqa: BLE001
         iv3_fallo = f"{type(e).__name__}: {e}"
@@ -689,7 +696,7 @@ def main():
                                         f"({dx:.2f} x100.000; anios {an[0]}-{an[-1]}); variacion total del alquiler real en esos anios={dy:.2f} pp; "
                                         f"bandas AR 68/90 (vacias si no acotado); llegadas = total Eurostat (incluye espanoles que retornan)")})
     if iv3:
-        Pm = iv3["P3"]
+        Pm = iv3["P3"].reset_index().dropna(subset=["x", "z"])  # muestra de estimación (sin CCAA sin cuota del año base: errata B-3)
         dlnE = Pm.pivot(index="t", columns="ent", values="x").mean(axis=1)
         for mercado, col in (("compra", "l_precio"), ("alquiler", "l_alq")):
             r = iv3["res"][(mercado, col, "h1-2")]
@@ -708,7 +715,7 @@ def main():
                                   "contribucion_pp": contrib, "pct_total": pct_total(contrib, float(yy)), "b68_lo": l68[0], "b68_hi": l68[1],
                                   "b90_lo": l90[0], "b90_hi": l90[1], "capa": capa,
                                   "variante": "IV3_bartik_h1-2", "principal": "si", "vota_s9": vs, "motivo_vota_s9": vm,
-                                  "notas": (f"IV3 Bartik 2008, panel 17 CCAA, efecto relativo entre CCAA (efectos de anio absorben lo nacional); "
+                                  "notas": (f"IV3 Bartik 2008, panel {iv3['n']} CCAA (sin Navarra ni La Rioja: sin cuota en 2008), efecto relativo entre CCAA (efectos de anio absorben lo nacional); "
                                             f"beta(h=1-2)={r['beta']:.3f} x variacion media acumulada del empleo ({dx:.2f} pp, anios {an[0]}-{an[-1]}); "
                                             f"variacion media observada={yy:.2f} pp; NO es la contribucion nacional del empleo; bandas AR 68/90")})
     atr = pd.DataFrame(filas_atr, columns=COLS_ATR)
@@ -764,7 +771,7 @@ def main():
                                                   "nota": "misma regresion agregada h=4-8 que el F y el AR; signo a priori pi > 0 (shock contractivo sube el Euribor); el p AR unilateral usa ese signo, no el estimado"}, "F_efectivo_agregado": {k: v["F_efectivo"] for k, v in iv1_json.items()}, "iv2_fallo": iv2_fallo, "iv3_fallo": iv3_fallo,
                             "tamano_AR_panel": "AR de panel calculado con 3 ajustes DK exactos (contrastado con lp_panel en beta0=0 en tests). Monte Carlo minimo propio (N=17, T=14, 150 reps, beta=0, instrumento fuerte, factor comun temporal): tamano del AR al 5 % = 0,113 y cobertura del AR95 = 0,887: Driscoll-Kraay con T pequeno es anticonservador; los p de IV3 se leen con ese sesgo"},
            "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None, "nota": "No aplica: modulo de identificacion (efectos), no de prediccion; no se compara con AR(4) ni ECM v1."},
-           "notas": ("Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 17 CCAA 2009-2025. "
+           "notas": ("Fallido = no rechazada en Holm. Muestras: IV1 precio 1999Q2-2025Q3 menos horizontes, alquiler desde 2002Q3; IV2 anual 2003-2024; IV3 " + (f"{iv3['n']} CCAA (sin Navarra ni La Rioja: sin cuota del año base 2008)" if iv3 else "no estimado") + " 2009-2025. "
                      "Cuotas IV2 = stock de residentes por ciudadania a 1-1-2002 (no flujo). Eurostat LFS NUTS2: posibles rupturas de serie no tratadas. "
                      "IV2b (instrumento sin normalizar): anadida tras construir el instrumento, exploratoria, fuera de Holm. "
                      "Permutacion del instrumento (antes «placebo»): contraste de significacion de la forma reducida, no prueba independiente. "
@@ -790,7 +797,7 @@ def main():
     if iv3:
         r = iv3["res"][("alquiler", "l_alq", "h1-2")]
         r2 = iv3["res"][("compra", "l_precio", "h1-2")]
-        L += ["## IV3 (Bartik, panel 17 CCAA, exploratorio; BH)", "",
+        L += [f"## IV3 (Bartik, panel {iv3['n']} CCAA sin Navarra ni La Rioja por falta de cuota en 2008, exploratorio; BH)", "",
               f"- Alquiler h=1-2: beta={r['beta']:.3f}, AR95=[{r['ar_lo95']:.2f}, {r['ar_hi95']:.2f}], F={r['F_robusto']:.1f}, p AR={r['ar_p_dos']:.3f}, cumple C3={r['ev']['cumple_c3']}.",
               f"- Precio h=1-2: beta={r2['beta']:.3f}, AR95=[{r2['ar_lo95']:.2f}, {r2['ar_hi95']:.2f}], F={r2['F_robusto']:.1f}, p AR={r2['ar_p_dos']:.3f}, cumple C3={r2['ev']['cumple_c3']}.",
               "- Rotemberg (pesos principales): " + "; ".join(f"{x['sector']} {x['alpha']:.2f}" for x in iv3["rot"].head(4).to_dict("records")) + ".", ""]

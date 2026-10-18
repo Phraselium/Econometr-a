@@ -1,0 +1,15 @@
+ruta,orden,fecha
+data/base/publica/v8_atribucion.parquet,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+data/base/v8_atribucion.parquet,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/F5/atribucion_combinada.csv,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/F5/tiempos.json,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/F6/resultado.json,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/M5/atribucion.csv,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/M5/coeficientes.csv,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/M5/iv3_rotemberg.csv,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/M5/registro.csv,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/M5/resultado.json,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/M5/resumen.md,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/M5/tiempos.json,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/informe_econometrico.md,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18
+output/v8/tablas_v8.xlsx,B-3 opción (a): orden expresa del autor (errata V8-M5; docs/v16/errata_v8m5.md),2026-10-18

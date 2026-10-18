@@ -1,30 +1,69 @@
 {
   "permissions": {
     "allow": [
-      "Read", "Edit", "Write", "WebFetch",
-      "Bash(make:*)", "Bash(git:*)", "Bash(python:*)", "Bash(python3:*)",
-      "Bash(pip install:*)", "Bash(ruff:*)", "Bash(pytest:*)", "Bash(curl:*)"
+      "Read",
+      "Edit",
+      "Write",
+      "WebFetch",
+      "Bash(make:*)",
+      "Bash(git:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Bash(ruff:*)",
+      "Bash(pytest:*)",
+      "Bash(curl:*)"
     ],
     "deny": [
-      "Read(data/sealed/**)", "Read(./data/sealed/**)",
-      "Edit(data/sealed/**)", "Edit(./data/sealed/**)",
-      "Write(data/sealed/**)", "Write(./data/sealed/**)",
-      "Bash(rm -rf:*)", "Bash(rm -rf data:*)", "Bash(rm -rf output:*)",
-      "Bash(make clean:*)", "Bash(make all:*)", "Bash(make v7)", "Bash(make v7 :*)", "Bash(make evaluate_v7:*)",
-      "Bash(git push --force:*)", "Bash(git push -f:*)", "Bash(git filter-repo:*)"
+      "Read(data/sealed/**)",
+      "Read(./data/sealed/**)",
+      "Edit(data/sealed/**)",
+      "Edit(./data/sealed/**)",
+      "Write(data/sealed/**)",
+      "Write(./data/sealed/**)",
+      "Bash(rm -rf:*)",
+      "Bash(rm -rf data:*)",
+      "Bash(rm -rf output:*)",
+      "Bash(make clean:*)",
+      "Bash(make all:*)",
+      "Bash(make v7)",
+      "Bash(make v7 :*)",
+      "Bash(make evaluate_v7:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git filter-repo:*)"
     ]
   },
   "hooks": {
     "PreToolUse": [
       {
         "matcher": "Bash",
-        "hooks": [ { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/guardas_bash.py\"" } ]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/guardas_bash.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Edit|Write|NotebookEdit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/guarda_salidas_cerradas.py\""
+          }
+        ]
       }
     ],
     "PostToolUse": [
       {
         "matcher": "Edit|Write",
-        "hooks": [ { "type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR\" && ruff check src --quiet || true" } ]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && ruff check src --quiet || true"
+          }
+        ]
       }
     ]
   }

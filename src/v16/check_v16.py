@@ -162,11 +162,39 @@ def fuentes() -> list[str]:
     return m.revisar()[1]
 
 
+def salidas_cerradas() -> list[str]:
+    """Guarda de B-3: toda modificación sin commit en salidas de versiones cerradas (output/<versión cerrada>, ficheros sueltos de output/,
+    data/base) tiene que figurar en docs/v16/escrituras_autorizadas.csv (orden expresa del autor). metodologia/ y publicacion/ se generan
+    con `make publicacion` y no entran aquí (sí en la guarda de subagentes). Autocomprobación de la guarda de subagentes."""
+    import csv
+    import importlib.util
+    import subprocess
+    spec = importlib.util.spec_from_file_location("guarda_salidas", RAIZ / ".claude" / "hooks" / "guarda_salidas_cerradas.py")
+    g = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(g)
+    err = []
+    sub = {"agent_id": "x", "tool_name": "Bash", "tool_input": {"command": "python3 src/v9/d4_inmigracion.py"}}
+    if not g.evaluar(sub):
+        err.append("la guarda de subagentes no bloquea un script de v9")
+    if g.evaluar({**sub, "agent_id": None}):
+        err.append("la guarda de subagentes bloquea al orquestador")
+    reg = RAIZ / "docs" / "v16" / "escrituras_autorizadas.csv"
+    with reg.open(encoding="utf-8") as fh:
+        aut = {r["ruta"] for r in csv.DictReader(fh)}
+    est = subprocess.run(["git", "status", "--porcelain"], cwd=RAIZ, capture_output=True, text=True).stdout.splitlines()
+    for linea in est:
+        ruta = linea[3:].strip().strip('"')
+        if g.ruta_cerrada(ruta) and not ruta.startswith(("metodologia/", "publicacion/")) and ruta not in aut:
+            err.append(f"modificación sin autorizar en una salida cerrada: {ruta} (docs/v16/escrituras_autorizadas.csv)")
+    return err
+
+
 def main() -> int:
     total = 0
     for nombre, f in (("guardas", guardas), ("pre-registro interno", preregistro),
                       ("estimaciones posteriores a su etiqueta", estimaciones_tras_etiqueta), ("cifras V16", cifras_v16),
-                      ("lenguaje causal", causal), ("registro de fuentes", fuentes), ("literatura", literatura), ("registro de pre-registros", preregistros)):
+                      ("lenguaje causal", causal), ("registro de fuentes", fuentes), ("literatura", literatura), ("registro de pre-registros", preregistros),
+                      ("salidas cerradas", salidas_cerradas)):
         e = f()
         print(f"check_v16 · {nombre}: {len(e)} errores")
         for x in e[:30]:

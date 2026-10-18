@@ -17,7 +17,7 @@
  "p_ajustado": null,
  "nivel_evidencia": "C4: sin lenguaje causal",
  "diagnosticos": {
-  "sha256_xlsx": "14840ac35aca7c0d924cdb62e1791c897a5bc4464c8d331d4361af2c1499ed78",
+  "sha256_xlsx": "a2cbd9254fc72ada46060f081bbbcc892a911185181c7b27e73376c02224cd3b",
   "seed": 20261010
  },
  "fuera_muestra": {

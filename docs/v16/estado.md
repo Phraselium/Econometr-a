@@ -100,14 +100,10 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Pistas citables: H1 (solo signo), H5, E3 y Q6-p. Correlaciones frágiles: Q3-b y H4.
   - Q9-g va solo a la Parte VII.
 - **Doble implementación:** no aplica; ninguna cifra es candidata a C3 o C3s.
+- **Fase 6 cerrada (2026-10-18)** con make check en solitario: 0 errores, git sin cambios.
 - **evaluate_v16:** no aplica; ninguna pregunta cumple (a) y (b).
 - **evaluate_v15:** según su calendario.
-- Fase 6, resto:
-  - réplica ciega de los resultados citados;
-  - doble implementación (solo C3/C3s: no hay);
-  - abogado del diablo;
-  - evaluate_v16, solo si alguna pregunta cumple (a) y (b);
-  - triangulación con los metaanálisis.
+- **Fase 7: informe integral.** Redactor, verificador de cifras y árbitro final; integrar en cifras_clave las cifras V16-* citables (K17); tablas_v16.xlsx, web y make v16.
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;
   - fase 6: estimación exploratoria con la rejilla fija y los diseños de la adenda;

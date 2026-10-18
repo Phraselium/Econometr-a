@@ -109,3 +109,22 @@ Error de implementación detectado por la réplica ciega de Q6-p. Con un año si
   - El recuento sin ajuste de los cocientes (1 o 2) no se estabiliza con ningún número finito de réplicas: la serie valor tasado/IPC alquiler tiene un p medio de 0,052. Se publica el de la semilla original (1) y se declara el borde.
 - **Familias de BH.** La de los cocientes sigue siendo la de 8 (4 cocientes y 4 referencias con tipos). La de los 4 cocientes se publica solo como sensibilidad (V72-GSADF-ratios-bh4-sens).
 - **Cambios de valor:** en ERRATA.md.
+
+## D9. Partes del plan que no se ejecutaron tal como estaban escritas (2026-10-18; anotada tras el arbitraje del informe integral)
+El árbitro final (fase 7, hallazgo 14) señaló que estas omisiones solo constaban en docs/v16/decisiones.md y en la adenda. Se numeran aquí, con su motivo:
+- **Metaanálisis con Egger, PET y PEESE** (fase 3).
+  - La regla K7, fijada antes de ejecutarlo, exige al menos 5 estudios con error estándar y la misma unidad.
+  - Ninguno de los 88 grupos de resultado la cumple, así que no hay metaanálisis ni pruebas de sesgo de publicación.
+  - La triangulación compara el signo.
+- **Bayesiano jerárquico con priors de los metaanálisis** (fase 6).
+  - Sin metaanálisis, los priors son poco informativos y centrados en cero (K7).
+  - Además, la herramienta es NO APTA en el Monte Carlo de la fase 5 (K12): solo descriptivo.
+- **GRF y DML** (fase 6).
+  - La adenda (punto 13) los reduce a la prueba conjunta BLP/GATES.
+  - Esa prueba es NO APTA (K12): solo descriptiva, sin p.
+- **BH jerárquico** (adenda, punto 2).
+  - Se sustituye por Benjamini-Yekutieli, la alternativa nombrada en la adenda (punto 11).
+  - Motivo: el Monte Carlo dio una FDR máxima de 0,1216 > 0,10 con el BH jerárquico (docs/v16/validacion_montecarlo.md; K12).
+- **Condición (b) de Gelman-Carlin** (magnitud de referencia y error de tipo M).
+  - No es aplicable donde la pregunta no tiene magnitud de referencia pre-registrada (por ejemplo, Q9; K15).
+  - Ninguna pregunta cumple a la vez (a) y (b), así que no hay evaluación sellada de V16 (evaluate_v16 no aplica).

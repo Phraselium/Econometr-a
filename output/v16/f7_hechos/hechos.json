@@ -40,5 +40,47 @@
   "capa": "C4",
   "fecha_dato": "2026-10-17",
   "ficha": "output/v15/p9/informe.md#razon"
+ },
+ {
+  "id": "V16-HEC-IPV-NOM-2019-2025",
+  "indicador": "Precio de compra, cambio acumulado nominal 2019-2025 (media anual), España; medida: IPV del INE (ajustado por calidad); una sola fuente",
+  "valor": 44.4,
+  "min": null,
+  "max": null,
+  "unidad": "%",
+  "periodo": "2019-2025 (media anual)",
+  "cobertura": "España",
+  "fuentes": "INE IPV; leído de output/v16/f2_hechos/fichas.md («Todas las medidas»)",
+  "capa": "C4",
+  "fecha_dato": "2025 (anual)",
+  "ficha": "output/v16/f2_hechos/fichas.md#v16-hec-precio-nom-2019-2025"
+ },
+ {
+  "id": "V16-HEC-IPV-REAL-2019-2025",
+  "indicador": "Precio de compra, cambio acumulado real (deflactor IPC general) 2019-2025 (media anual), España; medida: IPV del INE (ajustado por calidad); una sola fuente",
+  "valor": 18.7,
+  "min": null,
+  "max": null,
+  "unidad": "%",
+  "periodo": "2019-2025 (media anual)",
+  "cobertura": "España",
+  "fuentes": "INE IPV; leído de output/v16/f2_hechos/fichas.md («Todas las medidas»)",
+  "capa": "C4",
+  "fecha_dato": "2025 (anual)",
+  "ficha": "output/v16/f2_hechos/fichas.md#v16-hec-precio-real-2019-2025"
+ },
+ {
+  "id": "V16-T4-H2-min-interp",
+  "indicador": "T4-H2: mínimo de la rejilla del cambio del déficit 2025-2030 con interpolación lineal entre 2025 y el relleno (el publicado, con la convención «tras 2025 = relleno», es el min de T4-H2)",
+  "valor": 103788.0,
+  "min": null,
+  "max": null,
+  "unidad": "viviendas",
+  "periodo": "2026-2030",
+  "cobertura": "España",
+  "fuentes": "Réplica ciega de V16 (output/v16/replica/v10_b2/resultado.json)",
+  "capa": "C4",
+  "fecha_dato": "2025",
+  "ficha": "output/v6_2/anexo_metodologico.md (T4-H2 / T4-H3, dos versiones del mínimo)"
  }
 ]

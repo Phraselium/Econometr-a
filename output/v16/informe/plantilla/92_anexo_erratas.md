@@ -1,6 +1,6 @@
 # Anexo · Erratas de la 1.0 corregidas en V16 <!-- check:cifra-libre (recuentos del proceso de réplica y de errata, no cifras de resultados) -->
 
-Fuente única: ERRATA.md, con los valores de antes y de después y la huella de cada fila cambiada de cifras_clave. Ninguna corrección sube una capa ni cambia una conclusión de la 1.0. <!-- check:cifra-libre (recuentos del proceso de réplica y de errata, no cifras de resultados) -->
+Fuente única: ERRATA.md, con los valores de antes y de después y la huella de cada fila cambiada de cifras_clave. Ninguna corrección sube una capa ni cambia la conclusión de fondo de la 1.0. Sí cambia una afirmación: la de que los niveles de precio y algunas series autonómicas eran «explosivos». <!-- check:cifra-libre (recuentos del proceso de réplica y de errata, no cifras de resultados) -->
 
 ## La «exuberancia» del precio (GSADF), explicada sin tecnicismos
 

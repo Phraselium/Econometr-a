@@ -52,3 +52,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-18,F6,general-purpose,alcance_errores_k16,319642,docs/v16/alcance_errores_k16.md
 2026-10-18,F6,replicador-ciego,replica_1_0_lote_a,92595,src/v16/replica/v10_a.py;output/v16/replica/v10_a
 2026-10-18,F6,replicador-ciego,replica_1_0_lote_b,83443,src/v16/replica/v10_b.py;output/v16/replica/v10_b
+2026-10-18,F6,replicador-ciego,replica_1_0_lote_b2,65683,src/v16/replica/v10_b2.py;output/v16/replica/v10_b2

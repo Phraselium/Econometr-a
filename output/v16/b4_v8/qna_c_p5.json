@@ -1,0 +1,27 @@
+{
+ "id": "V8-QNA-pp-c-P5",
+ "capa": "C3s",
+ "principal_tipo_bce": {
+  "media": 9.516110290239261,
+  "mediana": 3.4222007939762236,
+  "banda68_exacta": [
+   -7.762443305819111,
+   16.436528829596472
+  ],
+  "n_sorteos": 708,
+  "ess": 657.3701353605808,
+  "delta_y_pp": 18.42028740805599
+ },
+ "sensibilidad_tipo_bde": {
+  "media": 20.666200734279684,
+  "mediana": 3.4684052404886123,
+  "banda68_exacta": [
+   -7.672683500571189,
+   16.911903610611233
+  ],
+  "n_sorteos": 703,
+  "ess": 652.3706926324959,
+  "delta_y_pp": 18.42028740805599
+ },
+ "nota": "Media posterior con cola derecha pesada: la mediana es mucho menor que la media. La banda exacta son los cuantiles 16 y 84 ponderados de la suma; la publicada en la 1.0 era la suma de los límites de las dos bandas (aproximada y más ancha). Con el tipo hipotecario del Banco de España en lugar del BCE, la media cambia mucho; la mediana mucho menos."
+}

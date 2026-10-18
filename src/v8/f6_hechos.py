@@ -109,8 +109,25 @@ def f5_reglas(F: dict) -> None:
             add(f"V8-QNA-{k}", f"Cuota no atribuida de la variación de {MERC[m]} en {p} (parte determinista y no identificada del SVAR, banda del 68 %; "
                 f"{NOTA_C3S}; fracción de la variación observada, puede superar 1 o ser negativa si la variación es pequeña)", r.cuota_no_atribuida, r.cuota_b68_lo,
                 r.cuota_b68_hi, "proporción", pt, cob, fue, "C3s", F["F5"])
-            add(f"V8-QNA-pp-{k}", f"Cuota no atribuida de {MERC[m]} en {p} en puntos (banda del 68 %; {NOTA_C3S})", r.cuota_no_atribuida_pp,
-                r.cuota_b68_lo_pp, r.cuota_b68_hi_pp, "pp", pt, cob, fue, "C3s", F["F5"])
+            qx = RAIZ / "output" / "v16" / "b4_v8" / "qna_c_p5.json"   # errata V16 (B-4, orden del autor): banda exacta y mediana de c-P5
+            if k == "c-P5" and qx.exists():
+                e = json.loads(qx.read_text(encoding="utf-8"))
+                b, s = e["principal_tipo_bce"], e["sensibilidad_tipo_bde"]
+                d1 = lambda x: f"{x:.1f}".replace(".", ",")  # noqa: E731
+                add(f"V8-QNA-pp-{k}", f"Cuota no atribuida de {MERC[m]} en {p} en puntos: media posterior (mediana {d1(b['mediana'])}; cola derecha pesada, "
+                    f"con el tipo hipotecario del Banco de España en lugar del BCE la media sería {d1(s['media'])} y la mediana {d1(s['mediana'])}); "
+                    f"banda del 68 % exacta (cuantiles de la suma); {NOTA_C3S}", r.cuota_no_atribuida_pp, round(b["banda68_exacta"][0], 4), round(b["banda68_exacta"][1], 4),
+                    "pp", pt, cob, fue, "C3s", F["F5"])
+                add(f"V8-QNA-pp-{k}-med", f"Cuota no atribuida de {MERC[m]} en {p} en puntos: mediana posterior (la media, {d1(b['media'])}, la eleva la cola "
+                    f"derecha; banda del 68 % exacta; {NOTA_C3S})", round(b["mediana"], 4), round(b["banda68_exacta"][0], 4), round(b["banda68_exacta"][1], 4),
+                    "pp", pt, cob, fue + "; errata V16 (src/v16/b4_qna_exacta.py)", "C3s", F["F5"])
+                add(f"V8-QNA-pp-{k}-bde", f"SENSIBILIDAD: cuota no atribuida de {MERC[m]} en {p} en puntos con el tipo hipotecario del Banco de España en lugar "
+                    f"del BCE: media posterior (mediana {d1(s['mediana'])}; banda del 68 % exacta {d1(s['banda68_exacta'][0])} a {d1(s['banda68_exacta'][1])}: la "
+                    f"media queda fuera de la banda por la cola derecha; {NOTA_C3S})", round(s["media"], 4), None, None, "pp", pt, cob,
+                    fue + "; errata V16 (src/v16/b4_qna_exacta.py)", "C3s", F["F5"], "sin min/max")
+            else:
+                add(f"V8-QNA-pp-{k}", f"Cuota no atribuida de {MERC[m]} en {p} en puntos (banda del 68 %; {NOTA_C3S})", r.cuota_no_atribuida_pp,
+                    r.cuota_b68_lo_pp, r.cuota_b68_hi_pp, "pp", pt, cob, fue, "C3s", F["F5"])
         if _fin(r.p_fstar):
             add(f"V8-PFSTAR-{k}", f"Probabilidad posterior de que {FACTOR[r.voto_svar_hd]} sea el factor de mayor contribución en {MERC[m]} en {p} "
                 f"(P(f*); {NOTA_C3S})", 100 * r.p_fstar, None, None, "%", pt, cob, fue, "C3s", F["F5"])
@@ -166,8 +183,8 @@ def hipotesis(F: dict) -> None:
     add("V8-H8-8-pholm", "H8-8: p ajustado por Holm", h1.loc["H8-8", "p_holm"], None, None, "p-valor", "P1-P5", "17 CCAA", "M1 factor común", "C4", F["M1"])
     cr = pd.read_csv(OUT / "M1" / "correlaciones_h89.csv").set_index("variante").loc["principal_ea19_nominal"]
     add("V8-H8-9-est", "H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; intervalo al 95 %)",
-        cr.correlacion, cr.ic95_lo, cr.ic95_hi, "proporción", "1999-último dato", "España y zona euro", "M1 factor común; Eurostat (prc_hpi_q)", "C4", F["M1"])
-    add("V8-H8-9-pholm", "H8-9: p ajustado por Holm", h1.loc["H8-9", "p_holm"], None, None, "p-valor", "1999-último dato", "España y zona euro", "M1 factor común; Eurostat",
+        cr.correlacion, cr.ic95_lo, cr.ic95_hi, "proporción", "2006T1-2026T2", "España y zona euro", "M1 factor común; Eurostat (prc_hpi_q)", "C4", F["M1"])
+    add("V8-H8-9-pholm", "H8-9: p ajustado por Holm", h1.loc["H8-9", "p_holm"], None, None, "p-valor", "2006T1-2026T2", "España y zona euro", "M1 factor común; Eurostat",
         "C4", F["M1"])
 
 

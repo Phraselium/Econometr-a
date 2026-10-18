@@ -15,7 +15,7 @@ Lo que sí se sostiene es más modesto:
 - La subida reciente es **muy común a todas las comunidades autónomas**: el componente común explica {{V8-M1-cuota-c-P5}} de la varianza del crecimiento interanual del precio de compra en 2022-2026, frente a {{V8-M1-cuota-c-P2}} en 2008-2013 [C4].
 - El factor común español **acompaña** al precio de la vivienda de la zona euro: correlación {{V8-H8-9-est}}, p ajustado por Holm {{V8-H8-9-pholm:num}} [C4, asociación].
 - Ningún modelo predice mejor fuera de muestra que un AR(4) sencillo.
-- En la compra de 2022-2026, {{V8-QNA-pp-c-P5:valor}} de los {{V8-OBS-c-P5:valor}} observados quedan sin atribuir a los shocks identificados (banda del 68 %: {{V8-QNA-pp-c-P5:rango}}; la banda incluye el cero y la parte no atribuida no es un factor más) [C3s, condicionado a las restricciones de signo y de cero].
+- En la compra de 2022-2026, {{V8-QNA-pp-c-P5:valor}} de los {{V8-OBS-c-P5:valor}} observados quedan sin atribuir a los shocks identificados de media (banda del 68 % exacta: {{V8-QNA-pp-c-P5:rango}}; la banda incluye el cero y la parte no atribuida no es un factor más). La mediana es {{V8-QNA-pp-c-P5-med:num}}: la media la eleva una cola derecha pesada, y con el tipo hipotecario del Banco de España en lugar del BCE la media sería {{V8-QNA-pp-c-P5-bde:num}} [C3s, condicionado a las restricciones de signo y de cero].
 - El multiverso se lee de dos maneras que no deben confundirse. Por familias de factores, {{V8-M7-cumplen:num}} de {{V8-M7-combinaciones:num}} combinaciones cumplen la regla (signo estable en al menos el 80 % y significativo tras BH en al menos el 50 %). Por variables, {{V8-M7-var-cumplen:num}} de {{V8-M7-var-total:num}} combinaciones de mercado, periodo y variable la cumplen (apartado «Lectura por variables del multiverso»); son asociaciones, sin identificación [C4].
 
 ## Abstract (English)
@@ -127,7 +127,7 @@ El precio real de compra ha subido {{V8-OBS-c-P5}} y el alquiler real ha variado
 - **Actividad y renta.** Media {{V8-SVAR-c-P5-empleo_renta-media}}, mediana {{V8-SVAR-c-P5-empleo_renta-mediana:valor}}.
 - **Demografía.** En el precio de compra, {{V8-SVAR-c-P5-demografia-media}}. En el alquiler, {{V8-SVAR-a-P5-demografia-media}}. La hipótesis H8-1 (el shock demográfico empujó el alquiler en P5) no se sostiene (p de Holm {{V8-H8-1-pholm:num}}). La contabilidad hogares-viviendas sí vota por demografía en la compra: en P5 se formaron más hogares que viviendas libres terminadas (la serie no incluye las protegidas).
 - **Oferta.** {{V8-SVAR-c-P5-oferta-media}} en la compra.
-- **Parte no atribuida.** {{V8-QNA-pp-c-P5}} en la compra (banda aproximada).
+- **Parte no atribuida.** {{V8-QNA-pp-c-P5}} en la compra, de media (banda exacta; mediana {{V8-QNA-pp-c-P5-med:num}}).
 
 El empuje migratorio, instrumentado con la emigración de cada país de origen hacia el resto de la UE, es demasiado débil para estimar su efecto sobre el alquiler (H8-7, F efectivo {{V8-H8-7-F:num}}).
 

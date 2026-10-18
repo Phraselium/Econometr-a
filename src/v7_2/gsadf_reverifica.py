@@ -1,7 +1,7 @@
 """V7.2-4 · Reverificación del GSADF NACIONAL de v5 (R1B, BK-023) con el MISMO método y la MISMA semilla.
 
 Recalcula las 14 series nacionales (familias fundamentales, referencia y sensibilidad) con las funciones de src/v5/r1b_gsadf.py
-(bootstrap recursivo AR(p) estimado, 499 réplicas, SEED + 500 + k en el mismo orden) y el BH por familia, y compara con
+(bootstrap recursivo AR(p) estimado, G.NBOOT réplicas: 4.999 desde V16 B-4, 499 hasta la 1.0; SEED + 500 + k en el mismo orden) y el BH por familia, y compara con
 output/v5/R1B/tablas/gsadf_corregido.csv (versionado). No modifica output/v5. Escribe output/v7_2/gsadf/reverificacion.csv.
 Lee el panel nacional por src/holdout.py (load_full, como r1b_gsadf; el sellado v2 ya está evaluado). Capa C4.
 """

@@ -45,7 +45,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | Crédito y tipos | {{V8-SVAR-c-P1-credito_tipos-media}} | {{V8-SVAR-c-P2-credito_tipos-media}} | {{V8-SVAR-c-P3-credito_tipos-media}} | {{V8-SVAR-c-P4-credito_tipos-media}} | {{V8-SVAR-c-P5-credito_tipos-media}} |
 | Demanda de vivienda | — | {{V8-SVAR-c-P2-demanda_vivienda-media}} | {{V8-SVAR-c-P3-demanda_vivienda-media}} | {{V8-SVAR-c-P4-demanda_vivienda-media}} | {{V8-SVAR-c-P5-demanda_vivienda-media}} |
 | Oferta | — | {{V8-SVAR-c-P2-oferta-media}} | {{V8-SVAR-c-P3-oferta-media}} | {{V8-SVAR-c-P4-oferta-media}} | {{V8-SVAR-c-P5-oferta-media}} |
-| No atribuido (banda aproximada) | {{V8-QNA-pp-c-P1}} | {{V8-QNA-pp-c-P2}} | {{V8-QNA-pp-c-P3}} | {{V8-QNA-pp-c-P4}} | {{V8-QNA-pp-c-P5}} |
+| No atribuido (banda aproximada; en P5, exacta desde la errata de V16) | {{V8-QNA-pp-c-P1}} | {{V8-QNA-pp-c-P2}} | {{V8-QNA-pp-c-P3}} | {{V8-QNA-pp-c-P4}} | {{V8-QNA-pp-c-P5}} |
 | Observado | {{V8-OBS-c-P1}} | {{V8-OBS-c-P2}} | {{V8-OBS-c-P3}} | {{V8-OBS-c-P4}} | {{V8-OBS-c-P5}} |
 
 **Alquiler real:**
@@ -60,7 +60,7 @@ Solo H8-9 se sostiene tras Holm, y es una asociación. En H8-5 a H8-7 los p unil
 | No atribuido (banda aproximada) | {{V8-QNA-pp-a-P2}} | {{V8-QNA-pp-a-P3}} | {{V8-QNA-pp-a-P4}} | {{V8-QNA-pp-a-P5}} |
 | Observado | {{V8-OBS-a-P2}} | {{V8-OBS-a-P3}} | {{V8-OBS-a-P4}} | {{V8-OBS-a-P5}} |
 
-En síntesis, en la compra de 2022-2026 {{V8-QNA-pp-c-P5:valor}} de los {{V8-OBS-c-P5:valor}} observados quedan sin atribuir a los shocks identificados (banda del 68 %: {{V8-QNA-pp-c-P5:rango}}, que incluye el cero) [C3s, condicionado a las restricciones de signo y de cero]. La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es {{V8-SVAR-c-P5-credito_tipos-mediana:valor}} y la de actividad y renta {{V8-SVAR-c-P5-empleo_renta-mediana:valor}}. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
+En síntesis, en la compra de 2022-2026 {{V8-QNA-pp-c-P5:valor}} de los {{V8-OBS-c-P5:valor}} observados quedan sin atribuir a los shocks identificados de media (banda del 68 % exacta: {{V8-QNA-pp-c-P5:rango}}, que incluye el cero; mediana {{V8-QNA-pp-c-P5-med:num}}; con el tipo hipotecario del Banco de España, media {{V8-QNA-pp-c-P5-bde:num}}) [C3s, condicionado a las restricciones de signo y de cero]. La media es la única medida aditiva (las contribuciones más la parte no atribuida suman lo observado en cada extracción). La posterior tiene colas largas: en la compra de P5, la mediana de crédito y tipos es {{V8-SVAR-c-P5-credito_tipos-mediana:valor}} y la de actividad y renta {{V8-SVAR-c-P5-empleo_renta-mediana:valor}}. Por eso el voto del SVAR en la regla se basa en la probabilidad, extracción a extracción, de que cada shock sea el mayor (decisión Y10). Magnitudes posiblemente atenuadas por el prior (sesgo documentado en F3).
 
 ## 4. Instrumentos externos (M5)
 

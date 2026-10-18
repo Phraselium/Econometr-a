@@ -41,7 +41,7 @@ con la misma ruta relativa. Cada cifra sale de `output/v5/cifras_clave.csv`; nin
 | `V8-H8-7-tFR` | H8-7: t de la forma reducida (signo esperado +1) | -0,09 | C4 | ver hipótesis |
 | `V8-H8-8-est` | H8-8: cuota mínima del componente común de las 17 CCAA en la varianza del crecimiento interanual del precio real de compra (mínimo de los 5 periodos; prueba de unión-intersección) | 45,3 % | C4 | P1-P5 |
 | `V8-H8-8-pholm` | H8-8: p ajustado por Holm | 0,669 | C4 | P1-P5 |
-| `V8-H8-9-est` | H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; intervalo al 95 %) | 0,60 (0,14-0,86) | C4 | 1999-último dato |
+| `V8-H8-9-est` | H8-9: correlación del factor común español con el crecimiento interanual del precio de la vivienda de la zona euro (EA19; intervalo al 95 %) | 0,60 (0,14-0,86) | C4 | 2006T1-2026T2 (errata V16) |
 | `V8-H8-9-pholm` | H8-9: p ajustado por Holm | 0,020 | C4 | 1999-último dato |
 | `V8-M0-bh` | Coeficientes de M0 significativos tras BH (q = 0,10) | 35 coeficientes | C4 | P1-P5 |
 | `V8-M0-coef` | Coeficientes por periodo y variable estimados en M0 | 70 coeficientes | C4 | P1-P5 |
@@ -263,7 +263,7 @@ con la misma ruta relativa. Cada cifra sale de `output/v5/cifras_clave.csv`; nin
 | `V8-QNA-pp-c-P2` | Cuota no atribuida de precio real de compra en P2 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero de M2) | -9,6 pp (-35,2 a 15,5 pp) | C3s | P2 (2008T3-2013T4) |
 | `V8-QNA-pp-c-P3` | Cuota no atribuida de precio real de compra en P3 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero de M2) | 1,9 pp (-25,2 a 27,6 pp) | C3s | P3 (2014T1-2019T4) |
 | `V8-QNA-pp-c-P4` | Cuota no atribuida de precio real de compra en P4 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero de M2) | -0,75 pp (-16,1 a 12,0 pp) | C3s | P4 (2020T2-2022T2) |
-| `V8-QNA-pp-c-P5` | Cuota no atribuida de precio real de compra en P5 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero de M2) | 9,5 pp (-14,6 a 24,1 pp) | C3s | P5 (2022T3-último dato) |
+| `V8-QNA-pp-c-P5` | Cuota no atribuida de precio real de compra en P5 en puntos (banda del 68 %; condicionado a las restricciones de signo y de cero de M2) | 9,5 pp de media (-7,8 a 16,4 pp, banda exacta; mediana 3,4; errata V16) | C3s | P5 (2022T3-último dato) |
 | `V8-REGLA-a-P1` | Resultado de la regla del §9 en alquiler real en P1: no designado (factor evaluado: factor europeo); 1 = designado, 0 = no designado | 0 designado (0/1) | C4 | P1 (sin datos de alquiler) |
 | `V8-REGLA-a-P2` | Resultado de la regla del §9 en alquiler real en P2: no designado (factor evaluado: empleo y renta); 1 = designado, 0 = no designado | 0 designado (0/1) | C4 | P2 (2008T3-2013T4) |
 | `V8-REGLA-a-P3` | Resultado de la regla del §9 en alquiler real en P3: no designado (factor evaluado: demografía); 1 = designado, 0 = no designado | 0 designado (0/1) | C4 | P3 (2014T1-2019T4) |

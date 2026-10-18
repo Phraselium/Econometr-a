@@ -104,7 +104,7 @@ def main():
         "N": {"donut_tasado_principal": P["tasado"]["n"], "donut_serpavi_principal": P["serpavi_VC"]["n"], "BI": 621, "BP_tratadas": 4, "BP_donantes": 45, "gsadf_T": 78, "gsadf_series": int(len(gs))},
         "metodo": ("Donut: diferencia de pendientes de Δ(crecimiento anual) sobre distancia con FE de área, EE agrupados por área; multiverso 320 especificaciones (fuente, centro, radio, periodo, forma, centro incluido); Holm. "
                    "Sensibilidad: Oster (Rmax=1,3·R²) y Cinelli-Hazlett (RV, RV_alfa; fórmula propia en src/v5/r1b_sens.py); multiverso BI (160) y BP H5 (216); Holm. "
-                   "GSADF: vc por bootstrap recursivo de residuos con AR(p) por BIC bajo raíz unitaria, 499 réplicas; BH y Holm por familia; tamaño por Monte Carlo."),
+                   "GSADF: vc por bootstrap recursivo de residuos con AR(p) por BIC (muestra común) bajo raíz unitaria, 4.999 réplicas (V16 B-4; 499 hasta la 1.0); BH y Holm por familia (sensibilidad: BH de los 4 cocientes); tamaño por Monte Carlo."),
         "estimacion": {"donut": dn["resumen"], "donut_principal": {k: {"dif": v["dif"], "ee": v["ee"], "p": v["p"], "p_holm_320": v["p_holm"], "areas": v["areas"]} for k, v in P.items()},
                        "donut_placebo_tasado": dn["placebo"], "sensibilidad_BI": sm["BI"]["sensibilidad"], "multiverso_BI": sm["BI"]["multiverso"], "multiverso_BI_dif": sm["BI"]["multiverso_dif"],
                        "sens_BP_H5_colapsada": sm["BP"]["sens_H5_colapsada"], "sens_BP_H6_publicado": sm["BP"]["sens_H6_publicado"], "multiverso_BP_H5": sm["BP"]["multiverso_H5"],

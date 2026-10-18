@@ -42,7 +42,7 @@ Son datos oficiales y fiables en su definición, pero no hay una segunda fuente 
 ## Por qué ha subido (versión interna V8) [C4]
 
 - Ningún factor destaca como el principal en ninguno de los diez casos estudiados. Como mucho coinciden {{V8-VOTOS-c-P5:num}} métodos de cuatro, y la regla exige tres.
-- Desde mediados de 2022 el precio real de compra subió {{V8-OBS-c-P5:breve}}. De esa subida, {{V8-QNA-pp-c-P5:breve}} no se atribuye a ningún factor identificado [C3s: vale solo bajo las restricciones del modelo]. <!-- check:cifra-libre (umbral pre-registrado) -->
+- Desde mediados de 2022 el precio real de compra subió {{V8-OBS-c-P5:breve}}. De esa subida, {{V8-QNA-pp-c-P5:breve}} de media no se atribuye a ningún factor identificado; la mediana es {{V8-QNA-pp-c-P5-med:num}}, porque la distribución tiene una cola larga [C3s: vale solo bajo las restricciones del modelo]. <!-- check:cifra-libre (umbral pre-registrado) -->
 - El alquiler real del conjunto de contratos varió {{V8-OBS-a-P5:breve}}. Los contratos nuevos subieron más: Cataluña {{A23-A9:breve}} y Comunitat Valenciana {{A23-A10:breve}} [C1].
 - La subida reciente es común a casi todas las comunidades: un {{V8-M1-cuota-c-P5:breve}} de lo que varían. Acompaña a la de la zona euro, con correlación {{V8-H8-9-est:breve}}. Es una asociación.
 - Ningún modelo predice mejor que una regla sencilla basada en los últimos trimestres.
@@ -54,7 +54,7 @@ Son datos oficiales y fiables en su definición, pero no hay una segunda fuente 
 > - Qué parte de las viviendas tienen empresas o grandes propietarios: no hay datos de titularidad suficientes.
 > - Que los topes al alquiler bajen los precios o reduzcan la oferta.
 > - Que haya una burbuja, ni que no la haya [C4]. Con ajuste por comparaciones múltiples, {{V72-GSADF-ratios-bh:num}} de cuatro cocientes nacionales son exuberantes. Sin ajuste son {{V72-GSADF-ratios-p05:num}}, y frente a los tipos de interés, {{V72-GSADF-tipos-p05:num}}.
-> - Los niveles de precio sí son explosivos en {{V72-GSADF-niveles-bh:num}} de dos series. Por comunidades lo son {{V72-GSADF-ccaa-bh:num}} de 34 series, y {{V72-GSADF-ccaa-v6:num}} de 11 en otra muestra. [Ficha de la burbuja](../v7_2/gsadf/ficha_burbuja.md) <!-- check:cifra-libre (número de series del diseño) -->
+> - Tras el mismo ajuste, los niveles de precio son explosivos en {{V72-GSADF-niveles-bh:num}} de dos series, y las comunidades en {{V72-GSADF-ccaa-bh:num}} de 34 series ({{V72-GSADF-ccaa-v6:num}} de 11 en otra muestra). Una exuberancia estadística no identifica una burbuja, y su ausencia tampoco la descarta. [Ficha de la burbuja](../v7_2/gsadf/ficha_burbuja.md) <!-- check:cifra-libre (número de series del diseño) -->
 > - Qué variable mueve el alquiler o el precio: ninguna supera las pruebas exigidas. Que un modelo prediga bien no dice por qué sube el precio [C4].
 > - Cuántas viviendas harán falta entre 2026 y 2035: depende de supuestos y es exploratorio. La estimación central es de {{T3-H5b:breve}} [C4].
 > - Las viviendas que quedan libres no se restan de esa necesidad: la proyección de hogares del INE ya las tiene en cuenta.

@@ -7,6 +7,10 @@ Corrección de tamaño: valores críticos por bootstrap recursivo de residuos ba
 dinámica de Δy ESTIMADA (AR(p) por BIC, p<=4, intercepto), en lugar del paseo aleatorio iid de M7 (que sobre-rechazaba
 con Δy autocorrelacionada: 12,7 % con phi=0,5). El tamaño del procedimiento corregido se comprueba por Monte Carlo.
 Sin red. SEED=20261010.
+
+Errata V16 (B-4, orden del autor de 2026-10-18): E1 (BIC en muestra común, ar_fit), E2 (dropna por serie en las CCAA) y 4.999 réplicas
+en lugar de 499 (estabilidad entre semillas: src/v16/b4_gsadf_estabilidad.py). La familia BH de los cocientes sigue siendo la de 8
+(cocientes + tipos); la de 4 cocientes se añade solo como sensibilidad (p_bh_sens_cocientes4).
 """
 import os
 
@@ -30,7 +34,7 @@ import warnings  # noqa: E402
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 SEED = 20261010
 SMOKE = "--smoke" in sys.argv
-NBOOT = 49 if SMOKE else 499
+NBOOT = 49 if SMOKE else 4999   # V16 B-4: 499 hasta la 1.0
 OUT = RAIZ / "output/v5/R1B" / ("smoke" if SMOKE else "")
 (OUT / "tablas").mkdir(parents=True, exist_ok=True)
 REG = econ_utils.Registry(OUT / "registro_gsadf.csv")
@@ -70,18 +74,25 @@ def parametros(T):
     return r0, w0, T - 2, math.ceil(math.log(T))
 
 
+def _ajuste_ar(dy, p, ini):
+    yy = dy[ini:]
+    X = np.column_stack([np.ones(len(yy))] + [dy[ini - j - 1: len(dy) - j - 1] for j in range(p)])
+    b = np.linalg.lstsq(X, yy, rcond=None)[0]
+    return b, yy - X @ b
+
+
 def ar_fit(dy, pmax=4):
-    """AR(p) con intercepto para Δy; p por BIC. Devuelve (const, phi, residuos centrados, p)."""
-    best = None
+    """AR(p) con intercepto para Δy; p por BIC. Devuelve (const, phi, residuos centrados, p).
+
+    Errata V16 (E1, B-4): el BIC se compara en la muestra común dy[pmax:] (mismo n para todo p); el p elegido se estima después
+    con toda su muestra dy[p:]. Hasta la 1.0 cada p usaba su propia muestra y el criterio dependía de la escala de la serie."""
+    n = len(dy) - pmax
+    bic = []
     for p in range(0, pmax + 1):
-        yy = dy[p:]
-        X = np.column_stack([np.ones(len(yy))] + [dy[p - j - 1: len(dy) - j - 1] for j in range(p)])
-        b = np.linalg.lstsq(X, yy, rcond=None)[0]
-        e = yy - X @ b
-        bic = len(yy) * math.log((e ** 2).mean()) + (p + 1) * math.log(len(yy))
-        if best is None or bic < best[0]:
-            best = (bic, p, b, e)
-    _, p, b, e = best
+        _, e = _ajuste_ar(dy, p, pmax)
+        bic.append(n * math.log((e ** 2).mean()) + (p + 1) * math.log(n))
+    p = int(np.argmin(bic))
+    b, e = _ajuste_ar(dy, p, p)
     return b[0], b[1:], e - e.mean(), p
 
 
@@ -203,11 +214,13 @@ def construir_series(nq, pan):
             S.append(("Nacional", "sensibilidad", f"precio frente a valor de descuento del alquiler (prima {prima:.0f} pp): {pn}",
                       np.log(P / nb.ipc_alquiler) + np.log(c)))
     for c_ in sorted(pan.ccaa.unique()):
-        p = pan[pan.ccaa == c_].set_index("trimestre")[["ipv", "p_tasado", "ipc_alquiler"]].dropna()
-        p = tramo_continuo(p)
-        pb = p / p.mean() * 100
-        S.append((c_, "ccaa", "precio/alquiler: IPV / IPC alquiler", np.log(pb.ipv / pb.ipc_alquiler)))
-        S.append((c_, "ccaa", "precio/alquiler: valor tasado / IPC alquiler", np.log(pb.p_tasado / pb.ipc_alquiler)))
+        # Errata V16 (E2, B-4): cada serie con su propio dropna, en 2007T1-2026T2. El dropna conjunto de la 1.0 truncaba el IPV de
+        # Navarra a 2007T1-2014T4 por el hueco del valor tasado en 2015-2018.
+        q = pan[pan.ccaa == c_].set_index("trimestre").loc["2007Q1":"2026Q2"]
+        for pr, med in (("ipv", "precio/alquiler: IPV / IPC alquiler"), ("p_tasado", "precio/alquiler: valor tasado / IPC alquiler")):
+            p = tramo_continuo(q[[pr, "ipc_alquiler"]].dropna())
+            pb = p / p.mean() * 100
+            S.append((c_, "ccaa", med, np.log(pb[pr] / pb.ipc_alquiler)))
     return S, interp
 
 
@@ -243,6 +256,10 @@ def main():
         df.loc[m, "p_holm"] = [h[str(i)] for i in df.index[m]]
         df.loc[m, "p_bh"] = bh(df.p_corr[m].to_numpy())
     df["exuberancia_bh05"] = df.p_bh < 0.05
+    # sensibilidad (V16 B-4): BH solo sobre los 4 cocientes nacionales precio/renta y precio/alquiler; no sustituye a la familia de 8
+    rat = (df.familia == "fundamentales") & df.medida.str.startswith(("precio/renta", "precio/alquiler"))
+    df["p_bh_sens_cocientes4"] = np.nan
+    df.loc[rat, "p_bh_sens_cocientes4"] = bh(df.p_corr[rat].to_numpy())
     df.to_csv(OUT / "tablas/gsadf_corregido.csv", index=False)
     for _, f in df.iterrows():
         REG.log("gsadf-corr", f"gsadf_{f.territorio}_{f.medida}", "GSADF ADF(1); vc bootstrap AR(p) estimado", f.ini, f.fin, int(f["T"]),

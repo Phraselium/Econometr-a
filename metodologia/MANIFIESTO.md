@@ -7,7 +7,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | anexo_metodologico.md | output/v6_2/anexo_metodologico.md | `880a4c145cf4f75e7d23c787f3ee59bad96c74a92eec12e6a827d0c8e9ca3a6e` |
 | capas.md | docs/v7_1/capas.md | `15e70c6bc6553acd487a3f2ad0708ea80b7d9fc7c40061559b22f43b59b39fea` |
 | decisiones_v12.md | docs/v12/decisiones.md | `d3ae3b10840f348d5536811aad44013e84e343bf71fb4e403271f0679003dedb` |
-| decisiones_v16.md | docs/v16/decisiones.md | `9c986c64a49a5d61239eccf5d046d42032590b3a5579be281dd3c8a102ebfcd4` |
+| decisiones_v16.md | docs/v16/decisiones.md | `7345ec3988f8f839e1e8738e774f471749074c88a2db61e2cda02019eed7bd87` |
 | desviaciones_preregistros.md | docs/preregistros_desviaciones.md | `0a65ae7a892583f52fc4847c0342dc3541cf0a8ad4b094e465a8f69b075dfb03` |
 | desviaciones_v16.md | docs/v16/desviaciones.md | `beaabc1f6a9ce44a5fca8c94975577bbd52e8c279067f3ff10a843cf04239af9` |
 | desviaciones_v8.md | docs/v8/desviaciones.md | `13521b27d87cb37965209e51de5d90dc270fb2732cb967d793ce2c31996ac9ec` |

@@ -363,7 +363,7 @@ def escribir_informe(out: Path, h: dict, pr: dict, hechos: list[dict]) -> str:
     L.append("**Contraste con V8 (17 CCAA, precio real, interanual, `precio_puente_v8.csv`).** " + "; ".join(partes) + ". ")
     x = pt[pt.panel.str.startswith("33")]
     n_f = int(x.fuera_banda68_v8.sum())
-    L.append(f"{A('v16-con-precio-v8-dif-pp')}Con 33 provincias la cuota difiere de V8 entre {x.diferencia_pp.min():.0f} y {x.diferencia_pp.max():.0f} pp; {n_f} de {len(x)} caen fuera de la banda del 68 % de V8. "
+    L.append(f"{A('v16-con-precio-v8-dif-puntos')}Con 33 provincias la cuota difiere de V8 entre {x.diferencia_pp.min():.0f} y {x.diferencia_pp.max():.0f} pp; {n_f} de {len(x)} caen fuera de la banda del 68 % de V8. "
              "Discrepan: se informan ambas. Con 9 CCAA agregadas la cuota es parecida a la de V8; con 33 provincias es menor. Una explicación posible, no contrastada, es que las CCAA agregan provincias y promedian parte del residuo local.\n")
     L.append("## Límites\n- Contabilidad, no causalidad: ni la composición por nacionalidad ni el factor común admiten lectura causal. "
              "- Jefatura: residuo agregado; la tasa de referencia es la del Censo 2021 (2011 como sensibilidad). - Las 8 CCAA con provincias selladas (K8) no se calculan en hogares; el panel de precios no incluye las 11 provincias v6. "

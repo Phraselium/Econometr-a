@@ -51,7 +51,7 @@ Se descompone la tasa anual de ln precio (valor tasado MIVAU, nominal, provincia
 <!-- check:cifra-libre (periodos y nivel de confianza en la tabla) -->
 
 - **Sesgo de la cuota.** Con pocas series y pocos periodos, la cuota queda sesgada al alza incluso sin factor. Por eso se lee como cota superior de la parte común y no como su valor. Este informe no cuantifica ese sesgo.
-- **Contraste con V8.** V8 estimó el factor común sobre CCAA. Con provincias, la cuota difiere de V8 en {{V16-CON-PRECIO-V8-DIF-PP}} [C4]. Discrepan y se informan ambas. Una explicación posible, no contrastada, es que las CCAA agregan provincias y promedian parte del residuo local. <!-- check:cifra-libre (versión V8) -->
+- **Contraste con V8.** V8 estimó el factor común sobre CCAA. Con provincias, la cuota difiere de V8 en {{V16-CON-PRECIO-V8-DIF-PUNTOS}} [C4]. Discrepan y se informan ambas. Una explicación posible, no contrastada, es que las CCAA agregan provincias y promedian parte del residuo local. <!-- check:cifra-libre (versión V8) -->
 - **Factor dinámico.** Un factor dinámico de una sola componente da R² medio con el factor de {{V16-CON-PRECIO-DFM-R2}} [C4].
 - **Residuo local.** Tras quitar el factor, las correlaciones entre provincias de la misma CCAA son {{V16-CON-PRECIO-LOCAL-CCAA}} [C4]. Son pequeñas: el residuo es sobre todo específico de cada provincia.
 - **Dispersión provincial.** El cociente P90/P10 del valor tasado por m² entre provincias no selladas es {{V16-ATL-DISP-PRECIO-PROV:num}} [C4] en 2026T2. <!-- check:cifra-libre (periodo, P90/P10 en el texto) -->

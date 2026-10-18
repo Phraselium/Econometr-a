@@ -264,7 +264,7 @@ def construir_hechos(h: dict, pr: dict) -> list[dict]:
                  "correlación", "2014-2019", "provincias de la misma CCAA", "MIVAU valor tasado (data/base)", "2019-12-31"))
     pt = pr["puente"]
     x = pt[pt.panel.str.startswith("33")]
-    hs.append(_h("PRECIO-V8-DIF-PP", "Diferencia de la cuota del PC1 (33 provincias, precio real) con la de V8 (17 CCAA) en P2, P3 y P5 (valor: media; rango: mín. y máx.)",
+    hs.append(_h("PRECIO-V8-DIF-PUNTOS", "Diferencia de la cuota del PC1 (33 provincias, precio real) con la de V8 (17 CCAA) en P2, P3 y P5 (valor: media; rango: mín. y máx.)",
                  float(x.diferencia_pp.mean()), float(x.diferencia_pp.min()), float(x.diferencia_pp.max()), "pp", "P2, P3, P5 de V8", "33 provincias frente a 17 CCAA", "V8-M1; MIVAU valor tasado", "2026-06-30"))
     assert len(hs) <= 30, len(hs)
     return hs

@@ -28,7 +28,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
 | atlas_v12.md | output/v12/atlas_v12.md | `ee7f40631a403531230053edeb8c5a3710d511068ad58b746004e75f53f24ec8` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `564d2c1c52d02a0390920989d5fa9e1b20c3449ee5fda1e9eacb5c576781cf5d` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `97eeabf00cefa8e6bdda64d3795015b0a72711c974c1201b32761df7a6cb69f6` |
 | cifras_no_publicadas_1_0.csv | proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv | `01c846704182f19e7b3297045a0a692fddd10a26920e43a758dd8640a986cd87` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
@@ -48,7 +48,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | tablas_modelos_destacados.csv | output/v8/tablas_modelos_destacados.csv | `b70730be9a7924f4ea71426a2ef04a50287c82b8a45dfd802ea61b2480277495` |
 | tablas_modelos_destacados.md | output/v8/tablas_modelos_destacados.md | `650cd6505b65d0e622e2c3916848664cb8c93b4cdb1aac86a1de2e6dc918590c` |
 | tablas_v12.xlsx | output/v12/tablas_v12.xlsx | `da3e41ffa49ac1810e932705a7c8b80c78a570a947e6fe8ca81249dbc48764e2` |
-| tablas_v16.xlsx | output/v16/tablas_v16.xlsx | `61ad5f97de87fded85e34598e678aea638d78b842b743a7cde9cebe49b5161f1` |
+| tablas_v16.xlsx | output/v16/tablas_v16.xlsx | `021415fb8818a55e35546b2bec58231c8ad6c903c75224c329c6077851e611db` |
 | tablas_v8.xlsx | output/v8/tablas_v8.xlsx | `a2cbd9254fc72ada46060f081bbbcc892a911185181c7b27e73376c02224cd3b` |
 | tablas_v9.xlsx | output/v9/tablas_v9.xlsx | `bb61506b8a3c82233cba7fdf3be83696ca40e5c7da5559e346b83a9e93d3ccb3` |
 | una_pagina.md | output/v5/una_pagina.md | `be867c44cd3b9613bbe447e32372b59a8ea27396e2b5a65876bf1322382c58b2` |

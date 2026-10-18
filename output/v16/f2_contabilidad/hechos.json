@@ -322,7 +322,7 @@
   "ficha": "output/v16/f2_contabilidad/informe.md#v16-con-precio-local-ccaa"
  },
  {
-  "id": "V16-CON-PRECIO-V8-DIF-PP",
+  "id": "V16-CON-PRECIO-V8-DIF-PUNTOS",
   "indicador": "Diferencia de la cuota del PC1 (33 provincias, precio real) con la de V8 (17 CCAA) en P2, P3 y P5 (valor: media; rango: mín. y máx.)",
   "valor": -7.6853,
   "min": -14.5319,
@@ -333,6 +333,6 @@
   "fuentes": "V8-M1; MIVAU valor tasado",
   "capa": "C4",
   "fecha_dato": "2026-06-30",
-  "ficha": "output/v16/f2_contabilidad/informe.md#v16-con-precio-v8-dif-pp"
+  "ficha": "output/v16/f2_contabilidad/informe.md#v16-con-precio-v8-dif-puntos"
  }
 ]

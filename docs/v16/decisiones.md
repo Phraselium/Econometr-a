@@ -408,3 +408,4 @@ La primera hace más favorable el escenario optimista. El informe integral los c
   - En f2_esfuerzo cambian 7 cifras V16-ESF-* en la tercera decimal. Una segunda ejecución reproduce al byte las nuevas, así que es determinista: las versionadas venían de un estado anterior de las entradas. Son cifras de V16, nuevas en cifras_clave en esta fase, y se aceptan.
 - **Preparación de la 2.0.** Árbol de ensayo sin rutas locales y escaneo de terceros con 14 ficheros pendientes para el autor (docs/v16/preparacion_2_0.md; tareas_autor.md, sección 5).
 - **Desviación D9.** Anotada después de ver los resultados.
+- **Id renombrado (2026-10-18).** V16-CON-PRECIO-V8-DIF-PP pasa a V16-CON-PRECIO-V8-DIF-PUNTOS: el control de neutralidad (src/v3/check_texto.py) leía el sufijo «PP» (puntos porcentuales) como una sigla de partido. Cambia solo el id; la cifra es idéntica y no estaba en la 1.0.

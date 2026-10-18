@@ -161,6 +161,14 @@ En 18 países de la zona euro, la asociación del precio con los shocks del BCE 
 
 La discontinuidad en los 35 años (@calonico2014) no se puede estimar: la ECV no publica el mes de nacimiento. En la contabilidad de hogares, el componente población supone `{python} c9("V9-D7-ES-2225-cuota-pob", 0)` % del aumento de hogares entre el 1 de enero de 2022 y el de 2025.
 
+## 6 bis. V15 y V16: pre-registros internos y resultados exploratorios
+
+V15 y V16 tienen pre-registro interno, sin sello de tiempo externo: etiqueta `prereg-v15` (commit 542b4fd) y `prereg-v16` (commit a8304ec), ambas en el remoto desde el 17-10-2026. Las hipótesis confirmatorias de V15 tienen la evaluación sellada pendiente (fecha límite, 31-12-2027), así que **ningún resultado de V15 o V16 alcanza C3 o C3s**. Todo es C4 y se describe como asociación o descripción. Informe completo: `publicacion/informe_integral/informe_integral.md`.
+
+- **Predicción (H5 de V15).** La combinación de modelos no supera al AR(4). La razón de ECM pre-registrada es `{python} c9("V15-H5-razon-ecm", 2)`, y la DM-HLN unilateral da p = `{python} c9("V15-H5-p-dm", 3)`.
+- **Alquiler y vecindad (E3 de V15).** El parámetro autorregresivo espacial es ρ = `{python} c9("V15-E3-rho", 2)` (IC `{python} ic9("V15-E3-rho", 2)`). Es una correlación espacial descriptiva, no contagio.
+- **Exuberancia (Q9-g de V16).** Es una pista no confirmada: p = `{python} c9("V16-Q9-gp", 3)` sin ajuste, y q = `{python} c9("V16-FDR-Q9-g-q", 3)` con Benjamini-Yekutieli. El GSADF de V7.2, corregido en V16 (ERRATA.md), no encuentra cocientes nacionales exuberantes tras el ajuste múltiple. Una exuberancia estadística no identifica una burbuja.
+
 ## 7. Discusión y límites
 
 - **Intervalos.** Los de los microdatos son algo estrechos, porque los ficheros públicos no traen el diseño muestral completo.

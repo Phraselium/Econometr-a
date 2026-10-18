@@ -65,3 +65,13 @@ def test_admite_cambio_de_valor_con_huella(tmp_path, monkeypatch):
     a, a2 = _fila("X-1", "1"), _fila("X-1", "1.5")
     _repo(tmp_path, monkeypatch, [a], [a2], f"| X-1 | {_huella(a2)} |\n")
     assert C.cifras_sin_cambios() == []
+
+
+def test_cifras_de_la_20_solo_desde_output_v15_v16(tmp_path, monkeypatch):
+    """K22 (fase 7 de V16): una cifra V15-/V16- nueva se admite solo si su origen es output/v15 u output/v16."""
+    a = _fila("X-1", "1")
+    b = dict(_fila("V16-Q9-g", "5.9"), origen="output/v16/q9/hechos.json:V16-Q9-g")
+    c = dict(_fila("V16-FALSA", "1"), origen="output/v5/X/hechos.json:V16-FALSA")
+    _repo(tmp_path, monkeypatch, [a], [dict(a, origen="output/v5/X/hechos.json:X-1"), b, c], "# Fe de erratas\n")
+    pd.DataFrame([dict(a, origen="o"), b, c]).to_csv(tmp_path / "output/v5/cifras_clave.csv", index=False)
+    assert C.cifras_sin_cambios() == ["cifra nueva en V13 (sin análisis nuevo): V16-FALSA"]

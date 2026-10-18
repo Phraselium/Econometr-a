@@ -30,7 +30,7 @@ FASES: dict[str, list[str]] = {
            "src/v15/p6_zonas.py", "src/v15/p6_informe.py", "src/v15/p5_turismo.py", "src/v15/p5_informe.py", "src/v15/p5cv_exposicion.py",
            "src/v15/p4_inmigracion.py", "src/v15/p9_prediccion.py", "src/v15/p2_fundamentales.py", "src/v15/p7_demografia.py",
            "src/v15/p10_espacial.py", "src/v15/pb_informe.py", "src/v16/f6_fdr.py", "src/v16/f6_triangulacion.py"],
-    "f7": [],
+    "f7": ["src/v16/f7_tablas.py", "src/v16/f7_informe.py"],
 }
 
 

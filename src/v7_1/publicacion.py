@@ -64,6 +64,10 @@ FUENTES: dict[str, str] = {
     "publicacion/tablas_v12.xlsx": "output/v12/tablas_v12.xlsx",
     "publicacion/verificador/fichas_v12.json": "output/v12/b5/fichas_verificador_v12.json",
     "metodologia/decisiones_v12.md": "docs/v12/decisiones.md",
+    # V16 (fase 7): informe integral (src/v16/f7_informe.py) y tablas (src/v16/f7_tablas.py); decisiones y desviaciones de V16
+    "publicacion/informe_integral/informe_integral.md": "output/v16/informe/informe_integral.md",
+    "publicacion/tablas_v16.xlsx": "output/v16/tablas_v16.xlsx",
+    "metodologia/decisiones_v16.md": "docs/v16/decisiones.md",
     "metodologia/preregistro_v9.md": "docs/v9/hipotesis.md",
     "metodologia/preregistro_v9_addendum_a1.md": "docs/v9/hipotesis_addendum_a1.md",
     "metodologia/revision_v9_F2.md": "docs/v9/revision_f2.md",

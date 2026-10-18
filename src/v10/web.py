@@ -49,6 +49,7 @@ PAGINAS = [
     {"url": "monitor.html", "es": "Monitor", "va": "Monitor"},
     {"url": "metodologia.html", "es": "Metodología y datos", "va": "Metodologia i dades"},
     {"url": "historial.html", "es": "Historial", "va": "Historial"},
+    {"url": "informe.html", "es": "Informe integral (V16)", "va": "Informe integral (V16)"},   # V16, fase 7
 ]
 
 # Indicadores del panel (nivel, variable, desagregación, etiqueta)
@@ -742,6 +743,10 @@ document.getElementById("buscarV").addEventListener("input", e => { const q = e.
 <h1>Historial de versiones <span class="meta" lang="ca-valencia">· Historial de versions</span></h1>
 <div>{{ historial|safe }}</div>
 {% endblock %}""",
+"informe.html": """{% extends "base.html" %}{% block contenido %}
+<p class="lema">Informe integral de V16. Todas las cifras salen de cifras_clave.csv con su capa; los resultados de V15 y V16 tienen pre-registro interno, sin sello de tiempo externo. Se evalúan afirmaciones e instrumentos, nunca a quién los propone.</p>
+<div>{{ informe|safe }}</div>
+{% endblock %}""",
 }
 
 
@@ -818,6 +823,10 @@ def construir() -> dict:
         "ia": md((RAIZ / "DECLARACION_IA.md").read_text(encoding="utf-8"), ""),
         "errata": md((RAIZ / "ERRATA.md").read_text(encoding="utf-8"), "")}
     paginas["historial.html"] = {"historial": md((RAIZ / "CHANGELOG.md").read_text(encoding="utf-8"), "")}
+    inf = RAIZ / "publicacion" / "informe_integral" / "informe_integral.md"   # V16 (fase 7; make publicacion)
+    if inf.exists():
+        t = inf.read_text(encoding="utf-8")
+        paginas["informe.html"] = {"informe": md(t.split("\n", 2)[-1] if t.startswith("<!--") else t, "publicacion/informe_integral/")}
     fichas = fichas_territoriales(env)
     paginas["fichas.html"] = {"fichas": fichas}
     paginas.setdefault("indicadores.html", {})

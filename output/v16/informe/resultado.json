@@ -1,0 +1,16 @@
+{
+ "rama": "V16-F7",
+ "pregunta": "Informe integral (fase 7)",
+ "capa": "C1-C4 (la de cada cifra)",
+ "partes": [
+  "92_anexo_erratas.md",
+  "93_anexo_reproducibilidad.md"
+ ],
+ "marcadores": 4,
+ "ids_por_capa": {
+  "C4": 4
+ },
+ "marcadores_sin_cifra": [],
+ "falta_cifra": [],
+ "notas": "Ensamblado determinista; las cifras vienen de cifras_clave."
+}

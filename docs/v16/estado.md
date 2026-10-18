@@ -124,6 +124,7 @@ Plan: docs/v16/plan.md (íntegro). Pre-registros internos sin sello de tiempo ex
   - Cifras V15/V16 en cifras_clave (219), tablas_v16.xlsx, página web «Informe integral», sección del manuscrito y anexos de erratas y reproducibilidad.
   - Tres rondas de arbitraje respondidas, dos verificaciones de cifras y make v16 completo.
   - Preparación de la 2.0: árbol de ensayo limpio; 14 ficheros de terceros pendientes del autor.
+  - make check en solitario: 673 tests, 0 errores, git sin cambios (2026-10-18).
 - Fases 5-7 de V16:
   - fase 5: Monte Carlo de las herramientas;
   - fase 6: estimación exploratoria con la rejilla fija y los diseños de la adenda;

@@ -32199,10 +32199,7 @@
    "id": "V16-ATL-DISP-ALQUILER-M2",
    "enunciado": "Cociente P90/P10 de «Alquiler mediano €/m² y mes (SERPAVI)» entre municipios no sellados",
    "cifra": 2.493,
-   "rango": [
-    1.837,
-    13.99
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: €/m² y mes)",
    "periodo": "2024",
    "ambito": "1390 unidades con dato de 1394 filas del periodo (el resto, suprimidas)",
@@ -32215,21 +32212,18 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "2,49 cociente P90/P10 (1,84 a 13,99)",
+   "cifra_texto": "2,49 cociente P90/P10",
    "min_max": [
     1.837,
     13.99,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-ECV40-CCAA",
    "enunciado": "Cociente P90/P10 de «Sobreesfuerzo del 40 % (ECV), entre CCAA» entre ccaas no sellados",
    "cifra": 2.012,
-   "rango": [
-    3.478,
-    13.813
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la población)",
    "periodo": "2025",
    "ambito": "19 unidades con dato de 19 filas del periodo (el resto, suprimidas)",
@@ -32246,17 +32240,14 @@
    "min_max": [
     3.478,
     13.813,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-ESFUERZO",
    "enunciado": "Cociente P90/P10 de «Ratio alquiler anual de 80 m² / renta neta media del hogar» entre municipios no sellados",
    "cifra": 1.912,
-   "rango": [
-    5.146,
-    32.853
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la renta neta media del hogar)",
    "periodo": "2023",
    "ambito": "1338 unidades con dato de 1340 filas del periodo (el resto, suprimidas)",
@@ -32273,17 +32264,14 @@
    "min_max": [
     5.146,
     32.853,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-ESFUERZO-SECCION",
    "enunciado": "Cociente P90/P10 de «Ratio alquiler anual de 80 m² / renta neta media del hogar, entre secciones» entre seccions no sellados",
    "cifra": 2.495,
-   "rango": [
-    3.851,
-    70.779
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la renta neta media del hogar)",
    "periodo": "2023",
    "ambito": "10773 unidades con dato de 10773 filas del periodo (el resto, suprimidas)",
@@ -32300,17 +32288,14 @@
    "min_max": [
     3.851,
     70.779,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-EXTRANJERA",
    "enunciado": "Cociente P90/P10 de «Población de nacionalidad extranjera, % (censo anual)» entre municipios no sellados",
    "cifra": 17.804,
-   "rango": [
-    0.0,
-    88.403
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de la población (censo anual))",
    "periodo": "2025",
    "ambito": "4857 unidades con dato de 4868 filas del periodo (el resto, suprimidas)",
@@ -32323,21 +32308,18 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "17,8 cociente P90/P10 (0 a 88,4)",
+   "cifra_texto": "17,8 cociente P90/P10",
    "min_max": [
     0.0,
     88.403,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-LANZ-PJ",
    "enunciado": "Cociente P90/P10 de «Lanzamientos por 10.000 viviendas, suma 2013-2024, entre partidos judiciales» entre partido judicials no sellados",
    "cifra": 8.491,
-   "rango": [
-    7.098,
-    594.342
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: por 10.000 viviendas (Censo 2021), suma 2013-2024)",
    "periodo": "2013-2024",
    "ambito": "330 unidades con dato de 330 filas del periodo (el resto, suprimidas)",
@@ -32350,21 +32332,18 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2013-2024",
-   "cifra_texto": "8,49 cociente P90/P10 (7,1 a 594,3)",
+   "cifra_texto": "8,49 cociente P90/P10",
    "min_max": [
     7.098,
     594.342,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-NO-PRINCIPALES",
    "enunciado": "Cociente P90/P10 de «Viviendas no principales, % (Censo 2021)» entre municipios no sellados",
    "cifra": 2.961,
-   "rango": [
-    4.822,
-    96.117
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas)",
    "periodo": "2021",
    "ambito": "4867 unidades con dato de 4868 filas del periodo (el resto, suprimidas)",
@@ -32381,17 +32360,14 @@
    "min_max": [
     4.822,
     96.117,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-PRECIO-PROV",
    "enunciado": "Cociente P90/P10 de «Valor tasado €/m², entre provincias» entre provincias no sellados",
    "cifra": 2.709,
-   "rango": [
-    854.2,
-    3514.6
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: €/m²)",
    "periodo": "2026T2",
    "ambito": "38 unidades con dato de 38 filas del periodo (el resto, suprimidas)",
@@ -32408,17 +32384,14 @@
    "min_max": [
     854.2,
     3514.6,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-RENTA-HOGAR",
    "enunciado": "Cociente P90/P10 de «Renta neta media del hogar (ADRH)» entre municipios no sellados",
    "cifra": 1.756,
-   "rango": [
-    17450.0,
-    85692.0
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: € por hogar y año)",
    "periodo": "2023",
    "ambito": "3986 unidades con dato de 4820 filas del periodo (el resto, suprimidas)",
@@ -32435,17 +32408,14 @@
    "min_max": [
     17450.0,
     85692.0,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-RENTA-UC-SECCION",
    "enunciado": "Cociente P90/P10 de «Renta mediana por unidad de consumo (ADRH), entre secciones» entre seccions no sellados",
    "cifra": 1.78,
-   "rango": [
-    7350.0,
-    44450.0
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: € por unidad de consumo y año)",
    "periodo": "2023",
    "ambito": "16593 unidades con dato de 16593 filas del periodo (el resto, suprimidas)",
@@ -32462,17 +32432,14 @@
    "min_max": [
     7350.0,
     44450.0,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-VACIAS",
    "enunciado": "Cociente P90/P10 de «Viviendas vacías por consumo eléctrico, % (Censo 2021)» entre municipios no sellados",
    "cifra": 4.817,
-   "rango": [
-    2.28,
-    76.789
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas)",
    "periodo": "2021",
    "ambito": "1830 unidades con dato de 1830 filas del periodo (el resto, suprimidas)",
@@ -32485,21 +32452,18 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2021",
-   "cifra_texto": "4,82 cociente P90/P10 (2,28 a 76,79)",
+   "cifra_texto": "4,82 cociente P90/P10",
    "min_max": [
     2.28,
     76.789,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
    "id": "V16-ATL-DISP-VT-PCT",
    "enunciado": "Cociente P90/P10 de «Viviendas turísticas, % de las viviendas (INE VTE)» entre municipios no sellados",
    "cifra": 23.608,
-   "rango": [
-    0.05,
-    18.24
-   ],
+   "rango": null,
    "unidad": "cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas)",
    "periodo": "2026-05",
    "ambito": "1104 unidades con dato de 4850 filas del periodo (el resto, suprimidas)",
@@ -32516,7 +32480,7 @@
    "min_max": [
     0.05,
     18.24,
-    "rango"
+    "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador"
    ]
   },
   {
@@ -36660,10 +36624,7 @@
    "id": "V16-Q8-4",
    "enunciado": "Compras de no residentes (número), 2025",
    "cifra": 41239.0,
-   "rango": [
-    45087.0,
-    49157.0
-   ],
+   "rango": null,
    "unidad": "transacciones",
    "periodo": "2025",
    "ambito": "ídem (mínimo y máximo: 2024 y 2022)",
@@ -36680,7 +36641,7 @@
    "min_max": [
     45087.0,
     49157.0,
-    "rango"
+    "min y max = mínimo y máximo anual de 2022-2024 (contexto; no es un rango del valor de 2025)"
    ]
   },
   {
@@ -36741,10 +36702,7 @@
    "id": "V16-Q9-g",
    "enunciado": "Q9-g: estadístico GSADF del factor común de ln(valor tasado/IPC alquiler) (pista no confirmada, C4; min y max = valor crítico bootstrap del 95 %)",
    "cifra": 5.918697291,
-   "rango": [
-    3.340055339,
-    3.340055339
-   ],
+   "rango": null,
    "unidad": "estadístico",
    "periodo": "2002T1-2026T2",
    "ambito": "33 provincias, factor",
@@ -36761,7 +36719,7 @@
    "min_max": [
     3.340055339,
     3.340055339,
-    "rango"
+    "min = max = valor crítico bootstrap del 95 %; valor = estadístico GSADF observado"
    ]
   },
   {

@@ -18,6 +18,11 @@ COLS = ["id", "indicador", "valor", "min", "max", "unidad", "periodo", "cobertur
 # v6.3 (R0 de V7, pendiente K4a-04): sentido de min/max cuando NO es un rango del valor. Las cifras no cambian; la columna
 # «sentido_min_max» lo declara y los tests exigen min <= valor <= max solo cuando es «rango».
 SENTIDO_MIN_MAX = {
+    # V16 (fase 7): cifras de la 2.0 cuyo min/max no es un rango del valor
+    "V16-ATL-DISP-": "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador",
+    "V16-Q8-4": "min y max = mínimo y máximo anual de 2022-2024 (contexto; no es un rango del valor de 2025)",
+    "V16-Q9-gp": "rango",   # el p de Q9-g (min = max = valor), antes que la clave de su estadístico
+    "V16-Q9-g": "min = max = valor crítico bootstrap del 95 %; valor = estadístico GSADF observado",
     "CA-EU-": "min = mediana de la UE-27; max = percentil 75 de la UE-27 (referencia, no rango del valor)",
     "R1B-G-": "min = valor crítico al 95 %; max = estadístico observado (GSADF)",
     "R1B-S-": "min = umbral de referencia; max = valor observado (Cinelli-Hazlett)",

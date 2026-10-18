@@ -1,0 +1,671 @@
+[
+ {
+  "id": "V72-GSADF-ccaa-bh",
+  "publicado": {
+   "valor": 7.0,
+   "min": NaN,
+   "max": NaN
+  },
+  "replica": {
+   "valor": 23,
+   "min": 23,
+   "max": 23
+  },
+  "extra": {
+   "sin_ajuste": 26
+  },
+  "detalle": {
+   "Andalucía|ipv": [
+    2.8428907712404046,
+    0.072,
+    2.9761521622975304,
+    1
+   ],
+   "Aragón|ipv": [
+    3.763341652018208,
+    0.018,
+    2.9767221968189714,
+    1
+   ],
+   "Asturias|ipv": [
+    4.3702597258599845,
+    0.002,
+    2.5683717738065583,
+    1
+   ],
+   "Canarias|ipv": [
+    5.0538782158177655,
+    0.002,
+    2.8891983631803697,
+    1
+   ],
+   "Cantabria|ipv": [
+    3.309258377645273,
+    0.032,
+    2.7725295697816525,
+    1
+   ],
+   "Castilla y León|ipv": [
+    3.90910432216392,
+    0.006,
+    2.8792492992964998,
+    1
+   ],
+   "Castilla-La Mancha|ipv": [
+    4.173967640969607,
+    0.008,
+    2.5939720695947006,
+    1
+   ],
+   "Cataluña|ipv": [
+    3.352666667230624,
+    0.048,
+    3.2761966174064776,
+    1
+   ],
+   "Comunidad Foral de Navarra|ipv": [
+    3.8295579055186746,
+    0.006,
+    2.7295536459379077,
+    1
+   ],
+   "Comunidad de Madrid|ipv": [
+    3.0869272671008603,
+    0.078,
+    3.374637939879121,
+    1
+   ],
+   "Comunitat Valenciana|ipv": [
+    3.26119731869236,
+    0.026,
+    2.944574515015209,
+    1
+   ],
+   "Extremadura|ipv": [
+    3.2534872952512908,
+    0.018,
+    2.7785605367956934,
+    1
+   ],
+   "Galicia|ipv": [
+    4.964524918849798,
+    0.002,
+    2.6330018090134506,
+    1
+   ],
+   "Illes Balears|ipv": [
+    2.127415957576185,
+    0.172,
+    2.918589027760046,
+    1
+   ],
+   "La Rioja|ipv": [
+    3.4268607536228246,
+    0.016,
+    2.615885687937391,
+    1
+   ],
+   "País Vasco|ipv": [
+    3.333765312942276,
+    0.02,
+    2.8222354162170182,
+    1
+   ],
+   "Región de Murcia|ipv": [
+    3.340692221657573,
+    0.036,
+    3.0940967245861914,
+    1
+   ],
+   "Andalucía|p_tasado": [
+    5.284944478798755,
+    0.004,
+    3.3422198724873473,
+    1
+   ],
+   "Aragón|p_tasado": [
+    3.5324045294076303,
+    0.024,
+    2.9645283676806446,
+    1
+   ],
+   "Asturias|p_tasado": [
+    3.014353619051616,
+    0.022,
+    2.5558103116832167,
+    1
+   ],
+   "Canarias|p_tasado": [
+    3.5131971963689796,
+    0.024,
+    3.023599522682207,
+    1
+   ],
+   "Cantabria|p_tasado": [
+    3.331764310302977,
+    0.008,
+    2.5850473956258173,
+    1
+   ],
+   "Castilla y León|p_tasado": [
+    3.7334605884701784,
+    0.026,
+    3.2438915230862637,
+    1
+   ],
+   "Castilla-La Mancha|p_tasado": [
+    3.126432227479219,
+    0.058,
+    3.166618488638362,
+    1
+   ],
+   "Cataluña|p_tasado": [
+    3.3787059095345024,
+    0.018,
+    3.0269006484223433,
+    1
+   ],
+   "Comunidad Foral de Navarra|p_tasado|interp": [
+    1.698409494768703,
+    0.208,
+    2.4588992071743134,
+    1
+   ],
+   "Comunidad de Madrid|p_tasado": [
+    3.7363414445079135,
+    0.02,
+    3.2449946365988436,
+    1
+   ],
+   "Comunitat Valenciana|p_tasado": [
+    3.5921573930514885,
+    0.022,
+    2.992231499456189,
+    1
+   ],
+   "Extremadura|p_tasado": [
+    2.0318005232305265,
+    0.16,
+    2.6163969344845404,
+    1
+   ],
+   "Galicia|p_tasado": [
+    5.461073415898025,
+    0.004,
+    2.9134418250399903,
+    1
+   ],
+   "Illes Balears|p_tasado": [
+    3.5566988858009196,
+    0.026,
+    2.992081804980416,
+    1
+   ],
+   "La Rioja|p_tasado": [
+    2.5032413377347296,
+    0.046,
+    2.412037061825263,
+    1
+   ],
+   "País Vasco|p_tasado": [
+    2.1446417033773164,
+    0.138,
+    2.649060686333086,
+    1
+   ],
+   "Región de Murcia|p_tasado": [
+    2.016778491636423,
+    0.23,
+    2.77884015125481,
+    1
+   ]
+  },
+  "veredicto": "DISCREPA",
+  "diagnostico": "Estimador: la ficha no fija retardos de la ADF, el tratamiento del termino constante en el bootstrap ni el tamano de familia de BH. Con p=1 (que reproduce los estadisticos nacionales documentados 3,097 y 4,344) la replica da 26 series con p<0,05 y 23 tras BH sobre las 34; con p por BIC, 13 sin ajuste y 0 tras BH. El recuento es muy sensible a la especificacion y no converge a 7. Navarra (valor tasado con huecos 2015-2018) interpolada log-linealmente en la replica."
+ },
+ {
+  "id": "V72-GSADF-ccaa-v6",
+  "publicado": {
+   "valor": 0.0,
+   "min": NaN,
+   "max": NaN
+  },
+  "replica": {
+   "valor": 0,
+   "min": 0,
+   "max": 0
+  },
+  "extra": {
+   "n_ccaa": 9,
+   "n_con_17_ccaa": 0
+  },
+  "detalle": {
+   "Andalucía": [
+    2.255826820837979,
+    0.26,
+    3.169758888975925,
+    1
+   ],
+   "Cantabria": [
+    0.531002166908098,
+    0.63,
+    2.2601034115160616,
+    1
+   ],
+   "Castilla y León": [
+    0.8987556591946045,
+    0.508,
+    2.4872574298848966,
+    1
+   ],
+   "Castilla-La Mancha": [
+    1.4915536136521306,
+    0.182,
+    2.3262889416460077,
+    1
+   ],
+   "Cataluña": [
+    1.165043907356407,
+    0.788,
+    3.7985177404584656,
+    1
+   ],
+   "Comunitat Valenciana": [
+    1.2709073909107098,
+    0.526,
+    2.8955766849323874,
+    1
+   ],
+   "Extremadura": [
+    0.296557077922247,
+    0.708,
+    2.259080327602207,
+    1
+   ],
+   "Galicia": [
+    1.897159286809846,
+    0.146,
+    2.6349533419198563,
+    1
+   ],
+   "País Vasco": [
+    -0.6173602384099901,
+    0.976,
+    2.0525325056632164,
+    1
+   ]
+  },
+  "veredicto": "COINCIDE",
+  "diagnostico": "Coincide en el recuento (0) con la muestra de entrenamiento v6 reconstruida (9 CCAA sin provincias selladas, no 11: la cobertura de 11 CCAA no es derivable de la ficha); con las 17 CCAA tambien 0 (Navarra sin tasado en 2015-2018 excluida). Coincidencia debil: ninguna serie se acerca al VC."
+ },
+ {
+  "id": "V72-GSADF-niveles-bh",
+  "publicado": {
+   "valor": 2.0,
+   "min": NaN,
+   "max": NaN
+  },
+  "replica": {
+   "valor": 1,
+   "min": 1,
+   "max": 1
+  },
+  "extra": {
+   "sens_p_bic": {
+    "p05": 1,
+    "bh": 0
+   }
+  },
+  "detalle": {
+   "ipv": [
+    3.227190077369435,
+    0.072,
+    3.362461215722564,
+    1
+   ],
+   "tasado": [
+    4.815412462209925,
+    0.016,
+    3.8720525834701642,
+    1
+   ]
+  },
+  "veredicto": "DISCREPA",
+  "diagnostico": "Estimador/bootstrap: con p=1 el valor tasado rechaza (p~0,01) y el IPV no (p~0,06-0,07 en varias semillas); con p=0 ambos rechazan, con p=2 o BIC solo el tasado. La cifra publicada (2) solo se obtiene con p=0; no se puede fijar desde la ficha."
+ },
+ {
+  "id": "V72-GSADF-ratios-bh",
+  "publicado": {
+   "valor": 0.0,
+   "min": NaN,
+   "max": NaN
+  },
+  "replica": {
+   "valor": 2,
+   "min": 2,
+   "max": 2
+  },
+  "extra": {
+   "sens_p_bic": {
+    "p05": 1,
+    "bh": 0
+   }
+  },
+  "detalle": {
+   "ipv/renta": [
+    3.4156080652223584,
+    0.018,
+    2.5110987329049164,
+    1
+   ],
+   "tasado/renta": [
+    0.38684708705694126,
+    0.96,
+    3.206306302652371,
+    1
+   ],
+   "ipv/alquiler": [
+    3.0965058933318503,
+    0.06,
+    3.1902269552169185,
+    1
+   ],
+   "tasado/alquiler": [
+    4.344184055984418,
+    0.014,
+    3.512403529134079,
+    1
+   ]
+  },
+  "veredicto": "DISCREPA",
+  "diagnostico": "Estimador: con p=1, IPV/renta (p~0,01) y valor tasado/alquiler (p~0,015) sobreviven a BH de 4; con BIC 0 (coincide); con p=0 serian 3. El resultado cambia con el retardo de la ADF; la ficha no lo fija. Posible diferencia tambien en el definicion de renta (renta_hog nominal nacional de nacional_q)."
+ },
+ {
+  "id": "V72-GSADF-ratios-p05",
+  "publicado": {
+   "valor": 3.0,
+   "min": NaN,
+   "max": NaN
+  },
+  "replica": {
+   "valor": 2,
+   "min": 2,
+   "max": 2
+  },
+  "extra": {
+   "sens_p_bic": {
+    "p05": 1,
+    "bh": 0
+   }
+  },
+  "detalle": {
+   "ipv/renta": [
+    3.4156080652223584,
+    0.018,
+    2.5110987329049164,
+    1
+   ],
+   "tasado/renta": [
+    0.38684708705694126,
+    0.96,
+    3.206306302652371,
+    1
+   ],
+   "ipv/alquiler": [
+    3.0965058933318503,
+    0.06,
+    3.1902269552169185,
+    1
+   ],
+   "tasado/alquiler": [
+    4.344184055984418,
+    0.014,
+    3.512403529134079,
+    1
+   ]
+  },
+  "veredicto": "DISCREPA",
+  "diagnostico": "Estimador: con p=1, 2 de 4 (IPV/renta y tasado/alquiler; IPV/alquiler p=0,05-0,07 queda en el limite); publicado 3. Con BIC 1, con p=0 3 (IPV/renta no, p=0,09). Sensible al retardo; no determinable desde la ficha."
+ },
+ {
+  "id": "V72-GSADF-tipos-p05",
+  "publicado": {
+   "valor": 0.0,
+   "min": NaN,
+   "max": NaN
+  },
+  "replica": {
+   "valor": 0,
+   "min": 0,
+   "max": 0
+  },
+  "extra": {
+   "sens_p_bic": {
+    "p05": 0,
+    "bh": 0
+   }
+  },
+  "detalle": {
+   "ipv/(alquiler/tipo)": [
+    1.355707521089089,
+    0.678,
+    3.5576737936062277,
+    1
+   ],
+   "tasado/(alquiler/tipo)": [
+    0.7190110263903132,
+    0.88,
+    3.4660034023928348,
+    1
+   ],
+   "cuota(ipv)/renta": [
+    1.528636139313394,
+    0.38,
+    2.703949050173184,
+    1
+   ],
+   "cuota(tasado)/renta": [
+    0.5237315210000503,
+    0.906,
+    3.3074423145165297,
+    1
+   ]
+  },
+  "veredicto": "COINCIDE",
+  "diagnostico": "Coincide (0 de 4) con tipo hipotecario nacional (nacional_q.tipo_hip), valor de referencia alquiler/tipo y cuota de anualidad a 25 anos sobre renta. Definicion exacta de las 2 'series' de la ficha no fijada (la replica usa 2 precios x 2 referencias); el 0 se obtiene con p=1 y con BIC (no probado con otros p)."
+ },
+ {
+  "id": "V71-S3-R6-e_ayuda_demanda-compra-precio10a",
+  "publicado": {
+   "valor": 4.3654,
+   "min": 4.1407,
+   "max": 8.0876
+  },
+  "replica": {
+   "valor": null,
+   "min": null,
+   "max": null
+  },
+  "veredicto": "NO REPRODUCIBLE DESDE LA FICHA",
+  "diagnostico": "La fila de cifras_clave solo da el indicador y las fuentes ('R6 v7; rejilla A4 v5; T3 v5.1; R4 v7'); no hay ficha en el anexo. Faltan: dosis de la ayuda por CCAA, regla de incidencia/traslado al precio (elasticidades), extracciones de la rejilla A4 y semilla, y el vinculo con T3 y R4 (documentado solo en output/v7/R6/metodo.md, fuera del alcance permitido)."
+ },
+ {
+  "id": "V71-S3-comun-r2-compra",
+  "publicado": {
+   "valor": 93.61116133,
+   "min": 81.04154439,
+   "max": 97.83483729
+  },
+  "replica": {
+   "valor": 93.61116133386226,
+   "min": 81.04154439381554,
+   "max": 97.83483728567457
+  },
+  "extra": {
+   "variante_tasa_pct": {
+    "valor": 93.71417332991744,
+    "min": 82.0842886488122,
+    "max": 97.76398444199596
+   },
+   "n_trim": 74
+  },
+  "detalle": {
+   "Andalucía": 97.83483728567457,
+   "Aragón": 96.79822993512637,
+   "Asturias": 93.9597916699857,
+   "Canarias": 96.38551336119026,
+   "Cantabria": 93.61116133386226,
+   "Castilla y León": 95.14233115514632,
+   "Castilla-La Mancha": 92.27854417160863,
+   "Cataluña": 87.3388852901283,
+   "Comunidad Foral de Navarra": 91.67233986630825,
+   "Comunidad de Madrid": 85.00583084724363,
+   "Comunitat Valenciana": 97.40214848562093,
+   "Extremadura": 81.04154439381554,
+   "Galicia": 94.49138769521063,
+   "Illes Balears": 90.92324284512958,
+   "La Rioja": 97.50704308358951,
+   "País Vasco": 91.49956523020059,
+   "Región de Murcia": 89.84321105679591
+  },
+  "veredicto": "COINCIDE",
+  "diagnostico": "Coincide: R2 de la regresion de d4 ln IPV de cada CCAA sobre la media de las 17 CCAA (incluida ella), 2008T1-2026T2 (74 trimestres), mediana y rango entre CCAA, en %. Variante con tasa % en vez de log-diferencias: 93,7 (82,1-97,8)."
+ },
+ {
+  "id": "V71-S3-largo-confirmadas",
+  "publicado": {
+   "valor": 0.0,
+   "min": NaN,
+   "max": NaN
+  },
+  "replica": {
+   "valor": 0,
+   "min": 0,
+   "max": 0
+  },
+  "extra": {},
+  "detalle": [
+   {
+    "id": "H7-A1",
+    "fam": "F-A",
+    "pq": [
+     1,
+     1
+    ],
+    "mg": -0.2927664632952633,
+    "mg_se": 0.8839746720909842,
+    "p": 0.6276017273023116,
+    "pmg": 0.06958571221680776,
+    "csdl": -0.029273241999330162,
+    "csdl_p": 0.770678656383013,
+    "signo": 1,
+    "holm_rechaza": false,
+    "confirmada": false
+   },
+   {
+    "id": "H7-A2",
+    "fam": "F-A",
+    "pq": [
+     1,
+     1
+    ],
+    "mg": -0.7474256282780627,
+    "mg_se": 1.7133036486606197,
+    "p": 0.6657570530619812,
+    "pmg": 0.0730001207582358,
+    "csdl": 0.23009539930337938,
+    "csdl_p": 0.21181834680128273,
+    "signo": 1,
+    "holm_rechaza": false,
+    "confirmada": false
+   },
+   {
+    "id": "H7-A3",
+    "fam": "F-A",
+    "pq": [
+     1,
+     1
+    ],
+    "mg": 0.012697997474328301,
+    "mg_se": 0.019043894274106122,
+    "p": 0.7427915816936335,
+    "pmg": 0.0181720173191371,
+    "csdl": 0.0004304889404718877,
+    "csdl_p": 0.5914528788838987,
+    "signo": -1,
+    "holm_rechaza": false,
+    "confirmada": false
+   },
+   {
+    "id": "H7-C1",
+    "fam": "F-C",
+    "pq": [
+     1,
+     1
+    ],
+    "mg": -0.12599410464013125,
+    "mg_se": 0.2517091053728135,
+    "p": 0.6882500621091538,
+    "pmg": -0.7457405350828067,
+    "csdl": -0.022622922464211086,
+    "csdl_p": 0.574463408895193,
+    "signo": 1,
+    "holm_rechaza": false,
+    "confirmada": false
+   },
+   {
+    "id": "H7-C2",
+    "fam": "F-C",
+    "pq": [
+     1,
+     1
+    ],
+    "mg": 0.05178062885371835,
+    "mg_se": 0.03928928654602092,
+    "p": 0.1030425097768588,
+    "pmg": 0.2070458971638352,
+    "csdl": 0.051536460770733865,
+    "csdl_p": 0.019030198195800947,
+    "signo": 1,
+    "holm_rechaza": false,
+    "confirmada": false
+   },
+   {
+    "id": "H7-C3",
+    "fam": "F-C",
+    "pq": [
+     1,
+     1
+    ],
+    "mg": 1.1932100180694851,
+    "mg_se": 0.6545992066414854,
+    "p": 0.04353653247903999,
+    "pmg": 1.8281479497716309,
+    "csdl": 2.1881643803198143,
+    "csdl_p": 0.00415464401620235,
+    "signo": 1,
+    "holm_rechaza": false,
+    "confirmada": false
+   },
+   {
+    "id": "H7-C4",
+    "fam": "F-C",
+    "pq": [
+     1,
+     1
+    ],
+    "mg": 0.009987201680225634,
+    "mg_se": 0.012187168116075616,
+    "p": 0.7877254027093517,
+    "pmg": -0.0070364095791966026,
+    "csdl": 0.0034269742474358988,
+    "csdl_p": 0.9094202908285322,
+    "signo": -1,
+    "holm_rechaza": false,
+    "confirmada": false
+   }
+  ],
+  "veredicto": "COINCIDE",
+  "diagnostico": "Coincide en 0 de 7: MG con demeaning transversal, ECM no restringido ARDL(1,1) por SBC comun (rejilla 1-4), p unilateral t(16) y Holm por familia; solo H7-C3 es significativa sin ajuste (p=0,044), no tras Holm. PMG de verosimilitud concentrada y CS-DL (pT=4) simplificados; sin bootstrap del PMG (solo el signo). Coincidencia en el recuento, no en las magnitudes (no publicadas)."
+ }
+]

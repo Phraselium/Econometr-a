@@ -13,7 +13,7 @@ Esta parte evalúa afirmaciones sobre ocho instrumentos de política de vivienda
   - **Evidencia en contra.** Al menos dos estudios con diseño, leídos completos, en sentido contrario al objetivo declarado.
   - **No evaluable con los datos disponibles.** Ni la literatura ni nuestros datos permiten juzgar el instrumento en España.
 - **Resultado de aplicar la regla.** Casi toda la literatura de `docs/v16/literatura/` se leyó en resumen o en versión de trabajo. Por eso ninguna ficha llega a «eficacia probada» ni a «evidencia en contra». Cuando los estudios con diseño coinciden, el veredicto es «prometedora» y la ficha lo dice.
-- **Regla de capa.** Todas nuestras estimaciones (V15, V16 y los escenarios de la 1.0) son [C4]. Ningún veredicto de este catálogo se apoya en una estimación propia de capa superior a [C4]. Los veredictos que no son «no evaluable» vienen de la literatura con DOI verificado, de otros países o periodos, y no de una estimación nuestra sobre España.
+- **Regla de capa.** Todas nuestras estimaciones de V15 y V16 son [C4]. De la 1.0 entran dos cosas. Las magnitudes de los escenarios simulados son [C4]. El signo de cuatro actuaciones es [C2], dentro de la rejilla simulada: movilización de vacías y más construcción donde hay presión (signo estable); vivienda pública (signo débil: no positivo o nulo si desplaza a la promoción privada); ayudas a la demanda (el beneficiario paga igual o menos como grupo). Ese signo [C2] es el publicado en la 1.0, no sube ni baja de capa, vale solo dentro de la rejilla de supuestos y no es una estimación sobre España. Ningún veredicto de este catálogo se apoya en una estimación propia de capa superior a [C4]. Los veredictos que no son «no evaluable» vienen de la literatura con DOI verificado, de otros países o periodos, y no de una estimación nuestra sobre España; el signo [C2] de la rejilla se cita junto a ellos, donde corresponde, sin sustituirlos. <!-- check:cifra-libre (versión 1.0; número de actuaciones: diseño) -->
 - **Literatura.** Solo entran las referencias de `docs/v16/literatura/` y `docs/v15/literatura/`, con la etiqueta de su ficha: «DOI verificado; cuartil no verificado» (existe en Crossref o DataCite) o NO VERIFICADA (sin DOI localizado). Las magnitudes de los autores no están en `cifras_clave`, así que aquí se da el signo y la ficha donde está la cifra.
 - **Pre-registro.** Los resultados de V15 y V16 que se citan tienen un pre-registro interno, sin sello de tiempo externo. V15: etiqueta `prereg-v15` en el remoto, commit 542b4fd, 2026-10-17. V16: etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17. No son pre-registros depositados. <!-- check:cifra-libre (etiquetas, commit y fecha de pre-registro) -->
 - **Evaluación sellada.** Las hipótesis de V15 (H1 a H5) tienen la evaluación sellada pendiente (calendario en `docs/v15/preregistro_v15_adenda.md`, sección C; fecha límite 31-12-2027). `evaluate_v16` no aplica: ninguna pregunta de V16 cumple las condiciones para una evaluación sellada confirmatoria, así que V16 no tiene evaluación sellada pendiente. <!-- check:cifra-libre (números de hipótesis, sección y fecha) -->
@@ -94,6 +94,7 @@ No hay evaluación del Bono Alquiler Joven ni de sus convocatorias autonómicas 
 
 - **Q7a (V16): descriptivo, sin separación entre señal y ruido.** Se compara el alquiler de los inquilinos de mercado a uno y otro lado del corte de edad del bono, antes y después de su entrada en vigor, con la ECV. La diferencia en discontinuidades del logaritmo del alquiler es {{V16-Q7-1:valor}} [C4]. Los umbrales placebo de edad dan diferencias del mismo orden: {{V16-Q7-4:rango}} [C4]. No se muestra ningún intervalo.
 - **Lo que mide.** El Plan Estatal 2018-2021 ya tenía un programa para menores de 35 años. La diferencia mide un cambio de generosidad entre ese plan y el bono, no un programa nuevo. El corte legal difiere en un año del de la ECV. La potencia está en el límite. <!-- check:cifra-libre (edad de corte, plan 2018-2021) -->
+- **Signo de la 1.0 [C2].** Para las ayudas a la demanda en general, la 1.0 da un signo [C2] en la rejilla simulada (véase III.8). No es una evaluación del bono. <!-- check:cifra-libre (apartado III.8, versión 1.0) -->
 - **Conclusión.** No se cita ninguna magnitud como efecto del bono. V16 no tiene evaluación sellada para Q7a (véase III.1). <!-- check:cifra-libre (apartado III.1) -->
 
 #### Coste
@@ -106,7 +107,7 @@ Traslación a la renta en mercados de oferta rígida (literatura). Efectos de um
 
 #### Veredicto
 
-**No evaluable con los datos disponibles.** La literatura internacional apunta a una traslación al alquiler de tamaño muy variable. En España no hay evaluación, y nuestro diseño descriptivo no distingue señal de ruido.
+**No evaluable con los datos disponibles.** La literatura internacional apunta a una traslación al alquiler de tamaño muy variable. En España no hay evaluación del bono, y nuestro diseño descriptivo no distingue señal de ruido. Para las ayudas a la demanda en general, véase el veredicto de III.8.
 
 ### III.4 Impuesto de transmisiones patrimoniales (ITP)
 
@@ -164,9 +165,9 @@ Las fichas con DOI verificado de L2 y P5 (entre ellas Barron, Kung y Proserpio, 
 
 #### Nuestra estimación
 
-- **H3 (V15), Q2a (V16): no concluyentes.** La asociación entre la densidad de vivienda turística y el alquiler tiene signo positivo en los dos diseños (sección censal y provincia) [C4]. El coeficiente principal de H3 es el mínimo de su multiverso y no tiene error estándar válido. El efecto mínimo detectable de H3, {{V15-H3-mde:num}} % por desviación típica [C4], es mayor que el coeficiente principal, {{V15-H3-beta:num}} % por desviación típica [C4]. No concluyente no significa nulo: el diseño no distingue entre efecto pequeño y ausencia de efecto. Q2a depende de los controles y de la fecha de la exposición. Las escalas «por desviación típica» no son comparables entre diseños.
+- **H3 (V15), Q2a (V16): no concluyentes.** La asociación entre la densidad de vivienda turística y el alquiler tiene signo positivo en los dos diseños (sección censal y provincia) [C4]. El coeficiente principal de H3 es el mínimo de su multiverso y no tiene error estándar válido. El efecto mínimo detectable de H3, {{V15-H3-mde:sig}} % por desviación típica [C4], es mayor que el coeficiente principal, {{V15-H3-beta:sig}} % por desviación típica [C4]. No concluyente no significa nulo: el diseño no distingue entre efecto pequeño y ausencia de efecto. Q2a depende de los controles y de la fecha de la exposición. Las escalas «por desviación típica» no son comparables entre diseños.
 - **Q2c (V16).** No se cita: tiene signo inestable.
-- **Atlas.** La vivienda turística (INE, medición experimental) se concentra: el cociente entre el percentil 90 y el 10 de su peso municipal es {{V16-ATL-DISP-VT-PCT:valor}} [C4], con dato en una parte de los municipios (el resto, suprimidos). La media nacional esconde la concentración. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
+- **Atlas.** La vivienda turística (INE, medición experimental) se concentra: el cociente entre el percentil 90 y el 10 de su peso municipal es {{V16-ATL-DISP-VT-PCT:num}} [C4], con dato en una parte de los municipios (el resto, suprimidos). La media nacional esconde la concentración. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
 - **Triangulación.** H3 y Q2a coinciden en el signo; H3 y Q2c no. Con la literatura: mismo signo, unidades no comparables. H3 (V15) está pendiente de su evaluación sellada; Q2a (V16) no tiene evaluación sellada.
 
 #### Coste
@@ -200,7 +201,8 @@ No hay estudio con diseño sobre el recargo del IBI a la vivienda vacía (ficha 
 #### Nuestra estimación
 
 - **Hecho de partida [C4].** El Censo 2021 cuenta {{V16-HEC-PARQUE-NOPRINCIPALES-2021:valor}} no principales (secundarias y vacías) [C4]. Por consumo eléctrico, hay {{V16-HEC-VACIAS-CONSUMO-2021:valor}} vacías, un {{V16-HEC-VACIAS-PCT-2021:valor}} de las viviendas familiares [C4]. Son medidas con definiciones distintas; no se suman ni se identifican con vivienda disponible.
-- **Dispersión.** El cociente entre percentil 90 y percentil 10 del porcentaje municipal de viviendas vacías por consumo eléctrico es {{V16-ATL-DISP-VACIAS:valor}} [C4]. La media nacional esconde que la vacancia se concentra en unos municipios. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
+- **Dispersión.** El cociente entre percentil 90 y percentil 10 del porcentaje municipal de viviendas vacías por consumo eléctrico es {{V16-ATL-DISP-VACIAS:num}} [C4]. La media nacional esconde que la vacancia se concentra en unos municipios. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
+- **Signo de la 1.0 [C2].** En la rejilla simulada de la 1.0, la movilización de vacías donde hay presión tiene signo estable [C2]. Es el signo, no la magnitud. No es un estudio con diseño sobre España. <!-- check:cifra-libre (versión 1.0) -->
 - **Escenario de la 1.0.** En la simulación de la versión 7.1, movilizar vivienda vacía se asocia con una variación del precio del alquiler de {{V71-S1-b_vacias-alquiler-efecto_10k:valor}} por cada 10.000 viviendas en 10 años (mediana entre comunidades), con rango {{V71-S1-b_vacias-alquiler-efecto_10k:rango}} [C4]. Es un escenario condicional sobre coeficientes de panel de la versión 7, no un resultado de V15 ni de V16. En compra, las cuatro actuaciones de oferta de la simulación (construcción, vacías, vivienda pública y turísticas) tienen el mismo valor: {{V71-S1-b_vacias-compra-efecto_10k:valor}}, rango {{V71-S1-b_vacias-compra-efecto_10k:rango}} [C4]. En la simulación, el precio de compra no distingue entre ellas. <!-- check:cifra-libre (versiones 7 y 7.1, 10.000 viviendas y 10 años: unidad y horizonte de la cifra de cifras_clave; cuatro actuaciones: diseño) -->
 - Ninguna estimación de V15 ni de V16 cubre este instrumento.
 
@@ -214,7 +216,7 @@ Recaudación adicional si el recargo se aplica. Traslado del uso de la vivienda 
 
 #### Veredicto
 
-**Prometedora** para reducir la vacancia (Segú, 2020, DOI verificado: un solo estudio con diseño, en un país). **Sin evidencia** de que reduzca el alquiler o el precio: no hay estudio con diseño sobre ese resultado, y el escenario de la 1.0 es una simulación de capa [C4]. En España, no evaluable con los datos disponibles.
+**Prometedora** para reducir la vacancia (Segú, 2020, DOI verificado: un solo estudio con diseño, en un país). **Sin evidencia** de que reduzca el alquiler o el precio: no hay estudio con diseño sobre ese resultado. El escenario de la 1.0 da un signo estable [C2] en la rejilla y magnitudes [C4], pero una simulación no es un estudio con diseño y no cambia este veredicto. En España, no evaluable con los datos disponibles.
 
 ### III.7 Oferta pública y suelo
 
@@ -240,7 +242,8 @@ La ficha agrupa dos instrumentos con mecanismos distintos: más oferta libre (su
 #### Nuestra estimación
 
 - **Q4 (V16): sin hallazgo.** La asociación de la obra nueva neta con el porcentaje de Red Natura municipal es {{V16-Q4a-beta:valor}} [C4], pero la inferencia con agrupación provincial no es apta, los residuos tienen dependencia espacial y la Red Natura no es exógena (restricción de uso correlacionada con el medio rural). La interacción con el choque de demanda, Q4b, es {{V16-Q4b-beta:valor}} [C4] y su placebo de choque adelantado tiene el mismo signo y mayor tamaño. No se concluye nada sobre la elasticidad municipal.
-- **Producción de vivienda.** En 2025 se terminaron {{V16-HEC-OBRA-TERMINADAS-2025:valor}} libres [C4]. Entre 2021 y 2025 se terminaron {{V16-HEC-OBRA-SOBRE-HOGARES-2125:valor}} libres por hogar nuevo [C4]. Son flujos, no una medida de necesidad. <!-- check:cifra-libre (años) -->
+- **Producción de vivienda.** En 2025 se terminaron {{V16-HEC-OBRA-TERMINADAS-2025:valor}} libres [C4]. Entre 2021 y 2025, las viviendas libres terminadas por hogar nuevo (ECP) son {{V16-HEC-OBRA-SOBRE-HOGARES-2125:valor}} [C4]. Son flujos, no una medida de necesidad. <!-- check:cifra-libre (años) -->
+- **Signo de la 1.0 [C2], en la rejilla simulada.** Más construcción donde hay presión tiene signo estable. La vivienda pública tiene un signo débil: no positivo o nulo si desplaza a la promoción privada. El verificador de la 1.0 (ficha V11) da PARCIALMENTE [C2] para el esfuerzo de acceso. Para el precio de compra no hay signo [C2]: las magnitudes de la simulación son [C4]. Es el signo de una simulación, no un estudio con diseño sobre España. <!-- check:cifra-libre (versión 1.0, ficha V11) -->
 - **Escenarios de la 1.0 (V7.1).** En la simulación, por cada 10.000 viviendas adicionales en 10 años: <!-- check:cifra-libre (versión 7.1, 10.000 viviendas y 10 años: unidad y horizonte de las cifras de cifras_clave) -->
   - construcción adicional: alquiler {{V71-S1-a_construccion-alquiler-efecto_10k:valor}}, rango {{V71-S1-a_construccion-alquiler-efecto_10k:rango}} [C4];
   - vivienda pública o asequible: alquiler {{V71-S1-c_vivienda_publica-alquiler-efecto_10k:valor}}, rango {{V71-S1-c_vivienda_publica-alquiler-efecto_10k:rango}} [C4];
@@ -258,8 +261,8 @@ Desplazamiento de vivienda privada por la pública. Plazos largos (el retardo me
 
 #### Veredicto
 
-- **Oferta libre (más suelo, más obra nueva):** **prometedora**. Las referencias con DOI verificado, leídas en resumen, asocian más oferta con rentas cercanas más bajas, y las restricciones de oferta con precios más altos. En España no hay estimación identificada de la elasticidad municipal, y Q4 queda sin hallazgo.
-- **Vivienda pública o asequible:** **sin evidencia** en España; **no evaluable con los datos disponibles**. La literatura de EE. UU. documenta desplazamiento parcial, y el efecto en el precio depende de la renta del barrio.
+- **Oferta libre (más suelo, más obra nueva):** **prometedora**. Las referencias con DOI verificado, leídas en resumen, asocian más oferta con rentas cercanas más bajas, y las restricciones de oferta con precios más altos. La 1.0 añade un signo estable [C2] en la rejilla simulada para más construcción donde hay presión. En España no hay estimación identificada de la elasticidad municipal, y Q4 queda sin hallazgo.
+- **Vivienda pública o asequible:** **sin evidencia** en España; **no evaluable con los datos disponibles**. La literatura de EE. UU. documenta desplazamiento parcial, y el efecto en el precio depende de la renta del barrio. En la rejilla simulada de la 1.0, el signo es débil [C2] (no positivo o nulo si desplaza a la promoción privada) y el veredicto de la ficha V11 es PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2].
 
 ### III.8 Ayudas a la demanda (compra y alquiler en general)
 
@@ -282,15 +285,16 @@ No hay evaluación de los avales ICO ni de las ayudas del plan estatal (ficha L5
 #### Nuestra estimación
 
 Ninguna estimación de V15 ni de V16 cubre este instrumento. Escenario de la 1.0, en la simulación:
+- **Signo [C2].** En la rejilla simulada, el beneficiario paga igual o menos como grupo y el no beneficiario paga más (ficha D1-V1 del verificador de la 1.0, PARCIALMENTE [C2]). El signo es C2; la magnitud del traslado al precio es [C4];
 - coste fiscal anual aproximado de una ayuda a la demanda en compra: {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:valor}}, rango entre comunidades {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur:rango}} [C4];
 - coste anual por punto de reducción del precio neto pagado por el comprador: {{V71-S1-e_ayuda_demanda-compra-coste_por_punto_meur:valor}}, rango {{V71-S1-e_ayuda_demanda-compra-coste_por_punto_meur:rango}} [C4];
-- variación del precio de mercado por cada 100 M€ anuales: {{V71-S1-e_ayuda_demanda-compra-efecto_100meur_mercado:valor}}, rango {{V71-S1-e_ayuda_demanda-compra-efecto_100meur_mercado:rango}} [C4].
+- variación del precio de mercado por cada 100 M€ anuales: {{V71-S1-e_ayuda_demanda-compra-efecto_100meur_mercado:valor}}, rango {{V71-S1-e_ayuda_demanda-compra-efecto_100meur_mercado:rango}} [C4]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
-Es una simulación condicional sobre coeficientes de panel de la versión 7. <!-- check:cifra-libre (100 M€: unidad de la cifra de cifras_clave; versión 7) -->
+Es una simulación condicional sobre coeficientes de panel de la versión 7. <!-- check:cifra-libre (100 M€: unidad de la cifra de cifras_clave; versión 7; versión 1.0) -->
 
 #### Coste
 
-Los tres valores anteriores. Son el coste de la simulación, no un presupuesto.
+Los tres valores de coste y de variación del precio anteriores. Son el coste de la simulación, no un presupuesto.
 
 #### Efectos secundarios
 
@@ -298,8 +302,8 @@ Capitalización en el precio, con beneficio parcial para el vendedor. Mayor ende
 
 #### Veredicto
 
-- **Asequibilidad del beneficiario (objetivo declarado):** **no evaluable con los datos disponibles** en España. No hay evaluación local, y nuestro escenario es una simulación [C4].
-- **Traslación al precio o a la renta de mercado (resultado distinto):** las referencias con DOI verificado, leídas en resumen, describen capitalización parcial donde la oferta es rígida. Es una advertencia sobre el precio de mercado, no un veredicto sobre el instrumento. Con la regla de umbral no alcanza «evidencia en contra» (estudios no leídos completos). Eso no afirma que el comprador no se beneficie: afirma que parte de la ayuda llega al precio, según esos estudios y, en la simulación, según los coeficientes de panel.
+- **Asequibilidad del beneficiario (objetivo declarado):** **prometedora** (signo [C2] de la simulación de la 1.0, sin estudio empírico español). La 1.0 da, en la rejilla simulada, el signo [C2] de que el beneficiario paga igual o menos como grupo. No hay evaluación empírica española. Con la regla de umbral de III.1, «prometedora» pide al menos un estudio con diseño en el sentido del objetivo, leído en resumen: las referencias de L5 con DOI verificado describen una traslación parcial, que deja al beneficiario con parte de la ayuda, y eso es compatible con el signo de la simulación. No llega a «eficacia probada»: no se leyeron completas y ninguna es española.
+- **Traslación al precio o a la renta de mercado (resultado distinto):** las referencias con DOI verificado, leídas en resumen, describen capitalización parcial donde la oferta es rígida. Es una advertencia sobre el precio de mercado, no un veredicto sobre el instrumento. La magnitud del traslado en la 1.0 es [C4]. Con la regla de umbral no alcanza «evidencia en contra» (estudios no leídos completos). Eso no afirma que el comprador no se beneficie: afirma que parte de la ayuda llega al precio, según esos estudios y, en la simulación, según los coeficientes de panel.
 
 ### III.9 Compradores no residentes
 
@@ -342,15 +346,15 @@ Menor entrada de capital. Efectos sobre el mercado turístico y de segunda resid
 | Bono Alquiler Joven | No evaluable con los datos disponibles | Q7a descriptivo |
 | ITP | No evaluable con los datos disponibles | Q6-v descriptivo; Q6-p no concluyente |
 | Vivienda turística | Prometedora (literatura internacional); no evaluable en España | H3 y Q2a no concluyentes |
-| Movilización de vacías | Prometedora para la vacancia; sin evidencia para alquiler y precio | Un solo estudio verificado |
-| Oferta libre y suelo | Prometedora | Q4 sin hallazgo |
-| Vivienda pública | Sin evidencia; no evaluable con los datos disponibles | Desplazamiento parcial en la literatura de EE. UU. |
-| Ayudas a la demanda | Asequibilidad del beneficiario: no evaluable en España. Traslación al precio: capitalización parcial en la literatura (resumen) | Escenario de la 1.0 |
+| Movilización de vacías | Prometedora para la vacancia; sin evidencia para alquiler y precio | Un solo estudio verificado; signo estable [C2] solo en la rejilla simulada de la 1.0 |
+| Oferta libre y suelo | Prometedora | Q4 sin hallazgo; signo estable [C2] en la rejilla simulada de la 1.0 para más construcción donde hay presión |
+| Vivienda pública | Sin evidencia; no evaluable con los datos disponibles | Desplazamiento parcial en la literatura de EE. UU.; signo débil [C2] en la rejilla de la 1.0 (no positivo o nulo); PARCIALMENTE [C2] para el esfuerzo en la ficha V11; el precio de compra no tiene signo [C2] |
+| Ayudas a la demanda | Asequibilidad del beneficiario: prometedora (signo [C2] de simulación, sin estudio empírico español). Traslación al precio: capitalización parcial en la literatura (resumen) | Escenario de la 1.0; magnitud del traslado [C4] |
 | Compradores no residentes | No evaluable con los datos disponibles | Q8 descriptivo |
 
 #### Qué dice la regla de capa sobre esta tabla
 
-- Con todas nuestras estimaciones en [C4], ninguna fila se apoya en un resultado propio de capa superior. Con la regla de umbral de III.1, ninguna fila alcanza «eficacia probada» ni «evidencia en contra». Las filas «prometedora» vienen de la literatura con DOI verificado, de otros países o periodos, y solo para el resultado que se indica. <!-- check:cifra-libre (apartado III.1) -->
+- Con todas nuestras estimaciones de V15 y V16 en [C4], ninguna fila se apoya en un resultado propio de capa superior. La única capa superior es el signo [C2] de la rejilla simulada de la 1.0 (vacías, construcción, vivienda pública y ayudas a la demanda): es un signo de simulación, no un estudio con diseño sobre España. Con la regla de umbral de III.1, ninguna fila alcanza «eficacia probada» ni «evidencia en contra». Las filas «prometedora» vienen de la literatura con DOI verificado, de otros países o periodos, y solo para el resultado que se indica. <!-- check:cifra-libre (apartado III.1, versión 1.0) -->
 - Para ningún instrumento hay una evaluación española con identificación y diseño creíble, salvo los topes de la Ley 11/2020 de Cataluña. La validez externa de la literatura depende de la elasticidad de la oferta y de la tenencia, que en España son distintas: mucha propiedad, poco parque social y una hipoteca mayoritariamente variable hasta 2022. <!-- check:cifra-libre (Ley 11/2020) -->
 - La evaluación sellada de V15 puede cambiar las filas de la tabla. V16 no tiene evaluación sellada pendiente. Hasta entonces, las hipótesis de V15 están pendientes.
 

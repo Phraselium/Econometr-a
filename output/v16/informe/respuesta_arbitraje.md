@@ -48,3 +48,19 @@ Cada hallazgo se corrige o se rebate. Ninguna corrección cambia una cifra de la
 
 ## Estado
 Tras las correcciones, `make v16_f7` ensambla el informe sin marcadores sin cifra ni «[FALTA CIFRA]», y check_v16 no da errores (lenguaje causal incluido). La segunda ronda de verificación se anota en docs/v16/decisiones.md (K23).
+
+## Segunda ronda (2026-10-18)
+El árbitro dio **REVISAR (menor)**: 14 hallazgos resueltos, 5 en parte y 2 sin resolver, más 4 problemas nuevos (N1-N4). El verificador encontró 12 discrepancias menores y ninguna en ids, capas ni lista citable. Respuesta:
+
+| Punto | Respuesta |
+|---|---|
+| 12 (p del DM-HLN) | **Corregido.** Se quita de VII.10 y del anexo B; solo queda la frase de estado. |
+| 19 (redondeo) | **Corregido.** Nuevo formato `{{id:sig}}` (3 cifras significativas) en src/v5/render.py, aplicado a Q3-b, H3, Q6-p y al p y la q de Q9-g. |
+| 8 / N4 (hogares) | **Corregido.** El 8,2 % se atribuye a la ventana alineada al 1 de enero (V16-CON-HOG-CAMBIO). dh_2125 se describe en el cuerpo y en el Summary como combinación de la ECP a 1 de enero y la EPA en media anual. |
+| N1 (Parte III frente a las cotas C2 de la 1.0) | **Corregido.** III.1, III.6, III.7, III.8, III.10, V.2 y el verificador de la VI recogen los signos [C2] vigentes de la 1.0 en la rejilla simulada: vacías y construcción con signo estable; vivienda pública con signo débil (V11 PARCIALMENTE para el esfuerzo, sin signo C2 en el precio de compra); y ayudas a la demanda con mejora del beneficiario como grupo (D1-V1). III.8 pasa a «Prometedora». Ninguna capa sube ni baja. |
+| 14 (D9) | **Corregido.** D9 se declara anotada después de ver los resultados e incluye la calibración de los cuatro cuadrantes por área urbana, que no se hizo. `make publicacion` la lleva a metodologia/desviaciones_v16.md. |
+| 6 y 18 (formatos y restos) | **Corregido.** Rangos degenerados con `:valor`, Q7 con valor y rango por separado, duplicaciones eliminadas («del del», «de de»), Summary sin unidades en español, id R1A-H4 añadido y «9 tareas» de v6 tomado de cifras_clave (K1-N-MEJOR). **Rebatido en parte:** el formato por defecto «valor (min-max unidad)» repite la unidad dentro del paréntesis. Es el formato de todos los entregables de la 1.0 (src/v5/render.py) y se mantiene por coherencia. |
+| N2 (VI.7) | **Corregido.** Se quita la frase sin dato. |
+| Menores | **Corregido.** El alcance del resumen admite las cifras [C4] necesarias para dar ambas medidas. La sobrecarga de la UE se rotula como extremo del rango del indicador, porque no tiene id propio. Las líneas con números del diseño llevan `check:cifra-libre`. |
+| Verificador, periodo de B2-H3 | Notación distinta de la misma ventana («1-ene-2026 a 1-ene-2031» frente a «2026-2030»). No cambia la cifra y se mantiene. |
+| Verificador, etiquetas «H2»/«R1A-H1» | Son T4-H2 (déficit) y R1A-H1 (no residentes) de la 1.0, no H2 y H1 de V15. Aparecen siempre con su prefijo completo. |

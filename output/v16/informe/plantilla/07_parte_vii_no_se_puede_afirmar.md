@@ -13,13 +13,13 @@ Tres reglas de lectura:
 
 **La pista de V16 (Q9-g), no confirmada [C4].**
 - Q9-g mide la exuberancia estadística (GSADF) del factor común del cociente entre el valor tasado y el IPC de alquiler. El estadístico es {{V16-Q9-g:num}}; el valor crítico bootstrap del 95 % es {{V16-Q9-g:min}}. <!-- check:cifra-libre (id de pregunta y nivel del 95 % del diseño) -->
-- El p sin ajuste es {{V16-Q9-gp:num}}. <!-- check:cifra-libre (id de pregunta) -->
-- Con el control de falsos descubrimientos de Benjamini-Yekutieli sobre la rama de diseños (m = 21), el q es {{V16-FDR-Q9-g-q:num}}. El umbral pre-registrado es q ≤ 0,10 y no se alcanza. Por eso es una pista y no un hallazgo. <!-- check:cifra-libre (m = 21 y umbral q ≤ 0,10 del diseño) -->
+- El p sin ajuste es {{V16-Q9-gp:sig}}. <!-- check:cifra-libre (id de pregunta) -->
+- Con el control de falsos descubrimientos de Benjamini-Yekutieli sobre la rama de diseños (m = 21), el q es {{V16-FDR-Q9-g-q:sig}}. El umbral pre-registrado es q ≤ 0,10 y no se alcanza. Por eso es una pista y no un hallazgo. <!-- check:cifra-libre (m = 21 y umbral q ≤ 0,10 del diseño) -->
 - Q9 no tiene magnitud de referencia pre-registrada, así que tampoco se cumple la condición de tamaño. <!-- check:cifra-libre (id de pregunta) -->
 
 **Tres advertencias.**
-1. **Corrección múltiple.** El p sin ajuste no es el que cuenta. Tras el ajuste, el q queda por encima del umbral. Las pruebas sin p válido, por herramienta no apta, cuentan en el denominador y no pueden rechazarse.
-2. **Valor tasado suavizado y con retraso.** La tasación se suaviza y llega tarde. Eso puede generar un patrón explosivo aparente. La revisión adversarial lo lee como artefacto probable: la mayoría de las fechas marcadas caen en tramos en que el cociente baja o está plano. Además, la prueba de calibración no cubre este proceso generador, porque la variación del factor es persistente y heterocedástica.
+1. **Corrección múltiple.** El p sin ajuste no es el que cuenta. Tras el ajuste, el q queda por encima del umbral. Las pruebas sin p válido, por herramienta no apta, cuentan en el denominador y no pueden rechazarse. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+2. **Valor tasado suavizado y con retraso.** La tasación se suaviza y llega tarde. Eso puede generar un patrón explosivo aparente. La revisión adversarial lo lee como artefacto probable: la mayoría de las fechas marcadas caen en tramos en que el cociente baja o está plano. Además, la prueba de calibración no cubre este proceso generador, porque la variación del factor es persistente y heterocedástica. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 3. **Una exuberancia estadística no identifica una burbuja.** Un resultado explosivo es compatible con cambios en los fundamentales, en los tipos de interés o en la composición de lo que se mide. Con tipos de interés, V7.2 no rechaza. La alternativa con SERPAVI anual no rechaza, pero tiene muy pocos periodos y no tiene potencia. <!-- check:cifra-libre (nombre de versión) -->
 
 **El GSADF de V7.2, corregido (K20) [C4].**
@@ -64,11 +64,11 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 
 **Por qué.**
 - **Datos.** El INE publica la vivienda turística como estadística experimental, con pocas ediciones. El SERPAVI mide el stock de contratos declarados, no los contratos nuevos. Las exposiciones de los registros autonómicos se reconstruyen con supuestos de fecha.
-- **Potencia.** En H3 (V15), el coeficiente principal ({{V15-H3-beta}}) está por debajo del efecto mínimo detectable ({{V15-H3-mde}}). La mediana de su multiverso es {{V15-H3-rango}}. H3 es no concluyente, no nula. <!-- check:cifra-libre (ids de hipótesis y versión) -->
+- **Potencia.** En H3 (V15), el coeficiente principal ({{V15-H3-beta:sig}} % por desviación típica) está por debajo del efecto mínimo detectable ({{V15-H3-mde:sig}} % por desviación típica). La mediana de su multiverso es {{V15-H3-rango:sig}} % por desviación típica. H3 es no concluyente, no nula. <!-- check:cifra-libre (ids de hipótesis y versión) -->
 - **Diseño.** Q2a (provincias) es no concluyente. Q2c (IPVA municipal) cambia de signo según la especificación, falla la prueba de Oster y tiene heterocedasticidad. En E4 (Cataluña y Comunitat Valenciana), la regla puntual de pretendencias la cumplen {{V15-E4-compat:num}} de {{V15-E4-compat:max}}. El BLP/GATES no pasó el Monte Carlo. <!-- check:cifra-libre (ids de pregunta) -->
 - **Triangulación.** H3 y Q2a tienen el mismo signo; Q2c, el contrario. Las escalas «por desviación típica» no son comparables entre diseños, así que no se comparan magnitudes. <!-- check:cifra-libre (ids de pregunta) -->
 
-**Qué sí hay.** Una cota [C2]: el aumento de viviendas turísticas entre 2020 y 2024 equivale como máximo a {{B4-v3-vut-cantidad}}. En viviendas, con sustitución uno a uno, {{VER-B4-V2-1}} [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (años) -->
+**Qué sí hay.** Una cota [C2]: el aumento de viviendas turísticas entre 2020 y 2024 equivale como máximo a {{B4-v3-vut-cantidad}}. En viviendas, con sustitución uno a uno, {{VER-B4-V2-1:valor}} [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (años) -->
 
 ### VII.4 «La inmigración sube (o no sube) los precios y el alquiler»
 
@@ -78,7 +78,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 - **Instrumentos débiles.** En V9, el F efectivo del instrumento por cuotas de origen es {{V9-D4-ipc-ampliacion-F:num}} (alquiler) y {{V9-D4-tasado-ampliacion-F:num}} (valor tasado). Está muy por debajo del umbral de 10 que fija el diseño de V8 para C3. En V8, el del empuje migratorio es {{V8-H8-7-F:num}}. <!-- check:cifra-libre (versiones y umbral F ≥ 10 del diseño) -->
 - **Pocos orígenes efectivos.** En H4, el número efectivo de choques es {{V15-H4-neff:num}}. En Q3-c, el origen de mayor peso aporta una fracción {{V16-Q3-rotemberg-1:num}} del estimador. <!-- check:cifra-libre (ids de hipótesis y pregunta) -->
 - **Fragilidad de H4.** Estimación principal: {{V15-H4-beta:num}} % por punto porcentual de población extranjera predicha [C4]. Cambia de signo al quitar los cinco orígenes de mayor peso, y la AKM no pasó el Monte Carlo. Mediana del multiverso: {{V15-H4-mediana:num}} % por punto porcentual [C4]. <!-- check:cifra-libre (id de hipótesis y número de orígenes del diseño) -->
-- **Pretendencia de Q3-b.** Estimación principal: {{V16-Q3-b-beta:num}} (log por desviación típica) [C4]. El placebo con el periodo anterior da {{V16-Q3-b-pretendencia:num}}, del mismo orden. La inferencia de Conley no pasó el Monte Carlo. Mediana del multiverso: {{V16-Q3-b-mediana:num}} [C4]. <!-- check:cifra-libre (id de pregunta) -->
+- **Pretendencia de Q3-b.** Estimación principal: {{V16-Q3-b-beta:sig}} (log por desviación típica) [C4]. El placebo con el periodo anterior da {{V16-Q3-b-pretendencia:sig}}, del mismo orden. La inferencia de Conley no pasó el Monte Carlo. Mediana del multiverso: {{V16-Q3-b-mediana:sig}} [C4], menor que la estimación principal. <!-- check:cifra-libre (id de pregunta) -->
 - **Signos que dependen de la medida.** En el valor tasado provincial, la asociación es {{V16-Q3-c1-beta}}; en las compraventas, {{V16-Q3-c2-beta}}. Ninguna tiene inferencia válida.
 - **Controles.** El signo cambia con el control de población, la medida de precio, el método y la escala. Controlar por población es un mal control, porque la población crece por la propia inmigración.
 - **Datos.** El padrón por nacionalidad no recoge las nacionalizaciones y termina en 2022. <!-- check:cifra-libre (año) -->
@@ -108,9 +108,9 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 - **Datos.** La fuente (MIVAU) da el total de no residentes, sin separar UE de extra-UE. La cuota total no identifica los visados de oro. No hay autorizaciones por programa.
 - **Dos categorías distintas.** «Extranjero (residente o no)» y «no residente» no son lo mismo. La cifra de compraventas con comprador extranjero, residente o no, viene de Ministerio y Notariado: {{compradores_extranjeros}} [C4]. La cifra de no residentes, de MIVAU (tabla 1.6, España, 2025): {{R1A-H1:valor}} [C4]. Son categorías distintas, no dos medidas de la misma.
 - **Dos cuotas de no residentes.** La de R1A-H1 es nacional, de la tabla 1.6 del Boletín del MIVAU. La de Q8 para 2025 es {{V16-Q8-5:valor}} [C4]. Q8 usa otra tabla (Boletín en línea, tabla 340101d0) y otro ámbito: el agregado de entrenamiento (nueve comunidades más Ceuta y Melilla). Por eso difieren; son fuentes y ventanas distintas. <!-- check:cifra-libre (tabla de la fuente y número de comunidades del diseño) -->
-- **Diseño de Q8.** Es descriptiva: sin estimador, sin placebo, sin diferencias en diferencias. La cuota de no residentes en el agregado de entrenamiento pasa de {{V16-Q8-2:valor}} (2024T2-2025T1) a {{V16-Q8-1:valor}} (2025T2-2026T1), una variación de {{V16-Q8-3:valor}} [C4]. El año anterior ya había bajado: su variación fue {{V16-Q8-3:max}} puntos porcentuales. <!-- check:cifra-libre (id de pregunta y ventanas de trimestres) -->
+- **Diseño de Q8.** Es descriptiva: sin estimador, sin placebo, sin diferencias en diferencias. La cuota de no residentes en el agregado de entrenamiento pasa de {{V16-Q8-2:valor}} (2024T2-2025T1) a {{V16-Q8-1:valor}} (2025T2-2026T1), una variación de {{V16-Q8-3:valor}} [C4]. El año anterior ya había bajado: su variación fue {{V16-Q8-3:max}}. <!-- check:cifra-libre (id de pregunta y ventanas de trimestres) -->
 - **Hecho de la 1.0.** Compraventas con comprador extranjero (residente o no): {{compradores_extranjeros}} [C4]. Compraventas con comprador no residente: {{compradores_no_residentes}} [C4]. Ministerio y Notariado no son independientes, así que no llega a C1. <!-- check:cifra-libre (nombres de capa y versión) -->
-- **Asociación bivariada.** La asociación bivariada del precio 2015-2025 con el peso inicial de no residentes ({{R1A-H4}}) es una correlación entre provincias, no una identificación. Con controles de renta, población, costa e islas (R1A-H5), la asociación es {{R1A-H5}}: no se distingue de cero. <!-- check:cifra-libre (id de resultado, periodo) -->
+- **Asociación bivariada.** La asociación bivariada del precio 2015-2025 con el peso inicial de no residentes (id R1A-H4) es {{R1A-H4:valor}}, con rango {{R1A-H4:rango}} [C4]. Es una correlación entre provincias, no una identificación. Con controles de renta, población, costa e islas (id R1A-H5), la asociación es {{R1A-H5:valor}}, con rango {{R1A-H5:rango}}: no se distingue de cero [C4]. <!-- check:cifra-libre (ids de resultado, periodo) -->
 
 ### VII.7 «Los grandes tenedores controlan el alquiler»
 
@@ -118,7 +118,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 
 **Por qué.**
 - **Datos.** El Catastro da la titularidad por tramos de inmuebles (V12), pero cuenta viviendas, no contratos de alquiler. En España sin País Vasco ni Navarra, en 2026, las viviendas de titulares con más de diez viviendas son {{V12-B5-pct_mas10}} y las de titulares con más de cien son {{V12-B5-pct_mas100}} [C4]. No dicen cuántas están alquiladas, vacías o en venta. <!-- check:cifra-libre (versión, tramos de titularidad del Catastro y año) -->
-- **Compraventas.** Las compraventas con comprador persona jurídica son {{R1C-004}} [C4]. La persona jurídica no equivale a gran tenedor.
+- **Compraventas.** Las compraventas con comprador persona jurídica son {{R1C-004:valor}} [C4]. La persona jurídica no equivale a gran tenedor.
 - **Diseño.** Ningún diseño de V15-V16 contrasta conductas de precio por tipo de titular. Las solicitudes de datos de titularidad del alquiler figuran como pendientes en la 1.0 (S1, S3 y S4). <!-- check:cifra-libre (versiones e ids de solicitud) -->
 
 ### VII.8 «Bajar el ITP abarata (o no abarata) la compra»
@@ -127,7 +127,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 
 **Por qué.**
 - **Datos.** Las compraventas provinciales de entrenamiento son el total de vivienda, sin separar usada y nueva. Hay {{V16-Q6-cambios:num}} cambios de tipo en pocas comunidades, concentrados en 2012-2013, en plena crisis. El diseño no separa el ITP del ciclo. <!-- check:cifra-libre (años del calendario) -->
-- **Q6-p (valor tasado).** {{V16-Q6-p-beta}} [C4]. No concluyente: sin inferencia válida y por debajo de la referencia de diseño. <!-- check:cifra-libre (id de pregunta) -->
+- **Q6-p (valor tasado).** {{V16-Q6-p-beta:sig}} log por punto de tipo [C4]. No concluyente: sin inferencia válida y por debajo de la referencia de diseño. <!-- check:cifra-libre (id de pregunta) -->
 - **Q6-v (compraventas).** El placebo es mayor que la estimación y de signo contrario. No se cita con cifra. <!-- check:cifra-libre (id de pregunta) -->
 - **Herramientas.** dCDH, Honest DiD y la inferencia por aleatorización no pasaron el Monte Carlo.
 - **Exclusiones.** País Vasco, Ceuta y Melilla quedan fuera por falta de tipo general comparable.
@@ -149,7 +149,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 **Qué no se puede afirmar.** Que algún modelo del proyecto prediga el precio nacional mejor que un AR(4) sencillo, ni que las variables que ayudan a predecir sean las que lo mueven. <!-- check:cifra-libre (AR(4): nombre del modelo) -->
 
 **Por qué.**
-- **H5 (V15).** La combinación de DFM, BVAR, LASSO y ARDL no supera al AR(4). La razón del ECM frente al AR(4) es mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): {{V15-H5-razon-replica:rango}} [C4]. La pre-registrada es {{V15-H5-razon-ecm:num}} [C4]. La conclusión es la misma en todas. El DM-HLN dio {{V15-H5-p-dm:valor}}. Estado del DM-HLN: apto bajo el proceso generador de V15 y no apto bajo el de V16; no se usa como prueba. <!-- check:cifra-libre (ids de hipótesis, versiones y AR(4)) -->
+- **H5 (V15).** La combinación de DFM, BVAR, LASSO y ARDL no supera al AR(4). La razón del ECM frente al AR(4) es mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): {{V15-H5-razon-replica:rango}} [C4]. La pre-registrada es {{V15-H5-razon-ecm:num}} [C4]. La conclusión es la misma en todas. Estado del DM-HLN: apto bajo el proceso generador de V15 y no apto bajo el de V16; no se usa como prueba. <!-- check:cifra-libre (ids de hipótesis, versiones y AR(4)) -->
 - **Q10 (V16).** MIDAS y el nowcasting no mejoran al AR(4) en el IPV ni en el IPC de alquiler. En las compraventas, la mejora aparente desaparece al excluir 2020. En el IPV, los intervalos conformes de MIDAS y del AR(4) cubren menos que su nivel nominal. Las cifras de Q10 no se citan. <!-- check:cifra-libre (id de pregunta, versión, AR(4) y año) -->
 - **Datos.** Las series son revisadas, no en tiempo real.
 - **Alcance de estos resultados.** H5, Q10 y las pruebas de V8 se refieren al agregado nacional trimestral. <!-- check:cifra-libre (nombres de versión) -->

@@ -62,9 +62,9 @@ Las viviendas que quedan libres por fallecimiento o traslado a residencia son un
 
 ### V.2 Simulaciones condicionales
 
-Una simulación aplica una medida a un modelo con supuestos y devuelve una variación. Todas las de esta sección son [C4]. En la simulación, cada medida se asocia con un cambio de precio o de esfuerzo. La simulación no mide lo que ocurriría en la realidad. Los resultados dependen de elasticidades de oferta que no se han estimado con datos de España.
+Una simulación aplica una medida a un modelo con supuestos y devuelve una variación. Las magnitudes de todas las simulaciones de esta sección son [C4]. De la 1.0 solo es [C2] el signo de algunas actuaciones en la rejilla simulada (se enumeran en la lectura al final del apartado). En la simulación, cada medida se asocia con un cambio de precio o de esfuerzo. La simulación no mide lo que ocurriría en la realidad. Los resultados dependen de elasticidades de oferta que no se han estimado con datos de España.
 
-Cada resultado declara su medida de precio: precio de compra o de alquiler de mercado, y esfuerzo del hogar. El horizonte es de 10 años. El ámbito son 17 comunidades autónomas. Las cifras son la mediana entre comunidades, con el rango entre comunidades. <!-- check:cifra-libre (horizonte de 10 años y 17 comunidades, números de diseño) -->
+Cada resultado declara su medida de precio: precio de compra o de alquiler de mercado, y esfuerzo del hogar. El horizonte es de 10 años. El ámbito son 17 comunidades autónomas. Las cifras son la mediana entre comunidades, con el rango entre comunidades. <!-- check:cifra-libre (horizonte de 10 años y 17 comunidades, números de diseño; versión 1.0) -->
 
 #### V71-S1 y V71-S3: rejilla de medidas
 
@@ -74,7 +74,14 @@ Cada resultado declara su medida de precio: precio de compra o de alquiler de me
 - **Regulación local de turísticos.** En la simulación, alquiler a 10 años: {{V71-S3-R6-d_turisticos-alquiler-precio10a}} [C4]. Compra: {{V71-S3-R6-d_turisticos-compra-precio10a}} [C4]. Es robusta en {{V71-S3-R6-d_turisticos-alquiler-robustas:num}} CCAA de 17 en alquiler y en {{V71-S3-R6-d_turisticos-compra-robustas:num}} CCAA de 17 en compra. <!-- check:cifra-libre (horizonte de 10 años, 17 CCAA) -->
 - **Ayudas a la demanda (compra).** Coste fiscal anual aproximado: {{V71-S1-e_ayuda_demanda-compra-coste_anual_meur}} [C4]. En la simulación, cada 100 M€ anuales se asocian con una variación del precio de mercado de {{V71-S1-e_ayuda_demanda-compra-efecto_100meur_mercado}} [C4]. El signo es al alza. <!-- check:cifra-libre (unidad de 100 M€, diseño) -->
 
-Lectura. Con dosis de 10.000 a 25.000 viviendas al año, la vivienda pública queda lejos de la brecha de la sección V.1. Que «resuelva» el problema depende del volumen y del desplazamiento de la construcción privada. En la simulación, la ayuda a la demanda baja el precio neto para quien la recibe y sube el de mercado. En la simulación, quien no la recibe paga más. Ese reparto por grupos es el único resultado de signo que la ficha del verificador de la 1.0 sitúa en [C2]. Las cifras de esta sección son [C4]; el C2 no se apoya en ellas. <!-- check:cifra-libre (dosis de 10.000 y 25.000 viviendas al año de la ficha V11 del verificador; versión 1.0) -->
+Lectura. Con dosis de 10.000 a 25.000 viviendas al año, la vivienda pública queda lejos de la brecha de la sección V.1. Que «resuelva» el problema depende del volumen y del desplazamiento de la construcción privada. En la simulación, la ayuda a la demanda baja el precio neto para quien la recibe y sube el de mercado. En la simulación, quien no la recibe paga más. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+
+La 1.0 sitúa en [C2], en la rejilla simulada, solo el signo de tres resultados:
+- movilización de vacías y más construcción donde hay presión: signo estable;
+- vivienda pública: signo débil (no positivo o nulo si desplaza a la promoción privada). La ficha V11 del verificador da PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2];
+- ayudas a la demanda: mejoran al beneficiario como grupo y el no beneficiario paga más (ficha D1-V1, PARCIALMENTE [C2]).
+
+Las cifras de esta sección son [C4]; el C2 no se apoya en ellas. <!-- check:cifra-libre (tres resultados de signo de la 1.0; fichas V11 y D1-V1; dosis de 10.000 y 25.000 viviendas al año de la ficha V11 del verificador; versión 1.0) -->
 
 #### Límites de la rejilla
 
@@ -108,7 +115,7 @@ Las hipótesis de V15 tienen la evaluación sellada pendiente (`evaluate_v15`, f
 
 H5 combinaba varios modelos para predecir el valor tasado un trimestre adelante. El diseño contrastaba si la combinación supera al AR(4). No lo supera. <!-- check:cifra-libre (identificadores H5, AR(4); horizonte de un trimestre) -->
 
-- La razón del error cuadrático medio de la combinación frente al AR(4), pre-registrada, es {{V15-H5-razon-ecm:valor}} [C4]. Una razón mayor que uno quiere decir que la combinación se equivoca más.
+- La razón del error cuadrático medio de la combinación frente al AR(4), pre-registrada, es {{V15-H5-razon-ecm:valor}} [C4]. Una razón mayor que uno quiere decir que la combinación se equivoca más. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - Según la implementación, la razón va de {{V15-H5-razon-replica:rango}} (de la réplica ciega a la producción pre-registrada). Se cita el rango entre implementaciones, no solo la cifra pre-registrada. En las dos la razón es mayor que uno.
 - No se cita un valor p: el DM-HLN no se usa como prueba (véase arriba su estado). La conclusión descansa en la razón de error.
 - La STL por origen se eligió por la regla «sin datos posteriores al origen», no por su valor. Se decidió después de ver la reconciliación entre implementaciones, y así consta. <!-- check:cifra-libre (identificador STL; «mayor que uno» como umbral de la razón) -->
@@ -119,18 +126,18 @@ La evaluación sellada de V15 sigue pendiente.
 
 Q10 prueba un modelo más elaborado contra el AR(4) en tres series nacionales: el índice de precios, el IPC de alquiler y las compraventas. Los resultados son descriptivos. El DM-HLN no se usa como prueba (véase arriba) y el contraste de Clark-West no superó la calibración. No hay valor p. Solo se informa de la reducción puntual del error. Se usan los datos en su última edición, no en tiempo real. <!-- check:cifra-libre (identificadores Q10 y AR(4); horizonte de un trimestre) -->
 
-| Serie | Modelo | Frente al AR(4) | Frente al ECM v1 reducido |
+| Serie | Modelo | Frente al AR(4) | Frente al ECM v1 reducido | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 |---|---|---|---|
-| Q10-1, precio (IPV) | MIDAS | empeora | el ECM v1 reducido también empeora frente al AR(4); MIDAS comete menos error que el ECM v1 reducido |
+| Q10-1, precio (IPV) | MIDAS | empeora | el ECM v1 reducido también empeora frente al AR(4); MIDAS comete menos error que el ECM v1 reducido | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | Q10-2, IPC de alquiler | Nowcast | empeora | no existe ECM v1 para esta serie |
 | Q10-3, compraventas | MIDAS | sin mejora fuera de 2020 | no existe ECM v1 para esta serie |
 
 <!-- check:cifra-libre (identificadores Q10-1 a Q10-3, AR(4), ECM v1 y año 2020) -->
 
-- **Q10-1 y Q10-2 empeoran frente al AR(4).** El modelo elaborado comete más error que el AR(4) en las dos series. Esto se mantiene al excluir 2020.
+- **Q10-1 y Q10-2 empeoran frente al AR(4).** El modelo elaborado comete más error que el AR(4) en las dos series. Esto se mantiene al excluir 2020. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Q10-3 sin mejora fuera de 2020.** La mejora aparente en compraventas procede de 2020 y 2021, el periodo de caída y rebote. Al excluir 2020 desaparece. No se cita como pista.
 - **ECM v1 reducido.** El ECM v1 de Q10 es una versión reducida, reproducida en el conjunto de entrenamiento sin la variable de costes. No equivale al modelo completo de la 1.0. Solo existe para el precio.
-- **Cobertura.** Los intervalos conformes del 90 % quedan en torno o por debajo del nivel nominal en las tres series, tanto con el modelo elaborado como con el AR(4).
+- **Cobertura.** Los intervalos conformes del 90 % quedan en torno o por debajo del nivel nominal en las tres series, tanto con el modelo elaborado como con el AR(4). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (años 2020 y 2021; ECM v1; versión 1.0; nivel nominal del 90 %) -->
 
@@ -138,7 +145,7 @@ Las cifras de Q10 no se citan. El motivo es que la comparación se apoya en un �
 
 #### Qué se puede decir de la predicción
 
-1. Un modelo más complejo no supera al AR(4) en las series nacionales probadas, salvo en una comparación que depende de un año atípico. El alcance es el agregado nacional trimestral.
-2. La capacidad de predecir un trimestre adelante es limitada en precio y en alquiler.
-3. Estos resultados no dicen nada sobre qué medidas bajan o suben los precios. Esa pregunta es de la sección V.2, con sus supuestos.
+1. Un modelo más complejo no supera al AR(4) en las series nacionales probadas, salvo en una comparación que depende de un año atípico. El alcance es el agregado nacional trimestral. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+2. La capacidad de predecir un trimestre adelante es limitada en precio y en alquiler. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+3. Estos resultados no dicen nada sobre qué medidas bajan o suben los precios. Esa pregunta es de la sección V.2, con sus supuestos. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 4. Cuando la 1.0 afirma que un modelo «predice mejor», la afirmación se limita a las tareas en que supera a la línea base más exigente. Está en el verificador (K1-V1) y tiene otro alcance: la validación sellada de v6, sobre provincias y municipios. <!-- check:cifra-libre (numeración de la lista, AR(4), versiones 1.0 y v6, ficha K1-V1) -->

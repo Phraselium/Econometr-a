@@ -8,7 +8,7 @@ Aquí se resume lo esencial. El detalle está en metodologia/ y en la ficha de c
 
 **Capas y escala de evidencia.** Cada cifra lleva una capa: [C1] hecho con al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C3] y [C3s] resultado con identificación; [C4] exploratorio o descriptivo. Una capa nunca sube. La escala de evidencia va de mayor a menor: identificación (C3 y C3s), asociación robusta, exploratorio, descriptivo. Todo V15 y V16 es [C4]. Definiciones en metodologia/capas.md. <!-- check:cifra-libre (nombres de capa y de versión) -->
 
-**Pre-especificación.** Las especificaciones principales, el multiverso y las pruebas se fijan antes de estimar, en un pre-registro interno (apartado C). Ningún modelo se elige por su p-valor. Toda especificación probada va al registro del proyecto. Las desviaciones se anotan antes de ver el resultado afectado.
+**Pre-especificación.** Las especificaciones principales, el multiverso y las pruebas se fijan antes de estimar, en un pre-registro interno (apartado C). Ningún modelo se elige por su p-valor. Toda especificación probada va al registro del proyecto. La regla es anotar las desviaciones antes de ver el resultado afectado; la desviación D9 no la cumple y así se declara en el apartado C. <!-- check:cifra-libre (desviación D9) -->
 
 **Validación de herramientas por Monte Carlo.** Una herramienta de inferencia solo se usa si pasa la validación con el proceso generador del proyecto: pocos clusters, dependencia transversal, T corto, adopción escalonada y correlación espacial. Casi ninguna herramienta de inferencia la pasó. Los resultados están en metodologia/validacion_montecarlo_v16.md y metodologia/validacion_montecarlo_v15.md. <!-- check:cifra-libre (nombres de versión) -->
 
@@ -67,7 +67,7 @@ Todos los resultados de esta sección son [C4]. «Superada» y «fallida» se re
 | Diseño | MCO con efectos fijos de sección y de municipio × año. Exposición estandarizada por la desviación típica intra-sección. Puntual. |
 | Capa | [C4], descriptivo. No concluyente, no nula. |
 | Superadas | El signo se mantiene al excluir las grandes ciudades y el uno por ciento superior de exposición. La réplica ciega coincide. |
-| Fallidas o no evaluables | Coeficiente principal ({{V15-H3-beta}}) por debajo del efecto mínimo detectable ({{V15-H3-mde}}). Mediana del multiverso: {{V15-H3-rango}}. Conley a dos kilómetros: no apto. Error agrupado por municipio en panel corto: sin validar. Placebo de adelanto sin inferencia válida. Muchas secciones sin variación intra-sección. Valor de Cinelli-Hazlett prácticamente nulo. |
+| Fallidas o no evaluables | Coeficiente principal ({{V15-H3-beta:sig}} % por desviación típica) por debajo del efecto mínimo detectable ({{V15-H3-mde:sig}} % por desviación típica). Mediana del multiverso: {{V15-H3-rango:sig}} % por desviación típica. Conley a dos kilómetros: no apto. Error agrupado por municipio en panel corto: sin validar. Placebo de adelanto sin inferencia válida. Muchas secciones sin variación intra-sección. Valor de Cinelli-Hazlett prácticamente nulo. |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v15, commit 542b4fd, 2026-10-17. Réplica, no confirmatoria. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### H4 · Inmigración y alquiler municipal <!-- check:cifra-libre (id de hipótesis) -->
@@ -89,7 +89,7 @@ Todos los resultados de esta sección son [C4]. «Superada» y «fallida» se re
 | Diseño | Ventana expansiva, h = 1. Combinación de DFM, BVAR, LASSO y ARDL. DM-HLN unilateral. <!-- check:cifra-libre (horizonte h = 1 del diseño) --> |
 | Capa | [C4], predictivo. Pista: la combinación no supera al AR(4). <!-- check:cifra-libre (nombre de modelo) --> |
 | Superadas | La réplica ciega, tras corregir tres errores, coincide en la conclusión. Ninguna fila posterior al origen entra en la estimación. En error cuadrático, la combinación queda por delante del ECM v1. <!-- check:cifra-libre (nombre de modelo y número de errores corregidos) --> |
-| Fallidas o no evaluables | Razón del ECM frente al AR(4): mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): {{V15-H5-razon-replica:rango}} [C4]. La pre-registrada: {{V15-H5-razon-ecm:num}} [C4]. DM-HLN: {{V15-H5-p-dm:valor}}; sin valor probatorio (estado en el apartado A). Clark-West y Giacomini-White: no aptos. MCS: descriptivo. Potencia inferior a la pre-registrada (menos errores). <!-- check:cifra-libre (nombres de modelo) --> |
+| Fallidas o no evaluables | Razón del ECM frente al AR(4): mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): {{V15-H5-razon-replica:rango}} [C4]. La pre-registrada: {{V15-H5-razon-ecm:num}} [C4]. DM-HLN: sin valor probatorio (estado en el apartado A). Clark-West y Giacomini-White: no aptos. MCS: descriptivo. Potencia inferior a la pre-registrada (menos errores). <!-- check:cifra-libre (nombres de modelo) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v15, commit 542b4fd, 2026-10-17. Evaluación sellada hacia octubre de 2027. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### E1 · Largo plazo entre valor tasado y alquiler (panel provincial) <!-- check:cifra-libre (id de análisis) -->
@@ -168,9 +168,9 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 |---|---|
 | Pregunta | ¿Se asocia la población extranjera con el valor tasado, las compraventas y el alquiler por sección? |
 | Diseño | Shift-share de forma reducida en provincias (Q3-c) y correlación transversal por sección con efectos de municipio (Q3-b). Puntual. <!-- check:cifra-libre (ids de pregunta) --> |
-| Capa | [C4]. Q3-b, correlación frágil: {{V16-Q3-b-beta:num}} (log por desviación típica). <!-- check:cifra-libre (id de pregunta) --> |
+| Capa | [C4]. Q3-b, correlación frágil: {{V16-Q3-b-beta:sig}} (log por desviación típica). <!-- check:cifra-libre (id de pregunta) --> |
 | Superadas | Q3-b: Oster y Cinelli-Hazlett no indican fragilidad; el signo se mantiene al excluir las grandes ciudades; la réplica ciega queda resuelta tras corregir Conley. Q3-c: mismo signo en todo el multiverso. <!-- check:cifra-libre (ids de pregunta) --> |
-| Fallidas o no evaluables | Q3-b: pretendencia del mismo orden ({{V16-Q3-b-pretendencia:num}}); Conley, no apto; Moran de residuos con señal; desequilibrio de renta. Q3-c: AKM y AKM0, no aptos; el origen de mayor peso aporta una fracción {{V16-Q3-rotemberg-1:num}} del estimador; los signos de Q3-c1 y Q3-c2 son opuestos. BLP/GATES: no apto ({{V16-Q3-blp-gates:num}}). Mediana del multiverso de Q3-b: {{V16-Q3-b-mediana:num}} [C4]. <!-- check:cifra-libre (ids de pregunta) --> |
+| Fallidas o no evaluables | Q3-b: pretendencia del mismo orden ({{V16-Q3-b-pretendencia:sig}}); Conley, no apto; Moran de residuos con señal; desequilibrio de renta. Q3-c: AKM y AKM0, no aptos; el origen de mayor peso aporta una fracción {{V16-Q3-rotemberg-1:num}} del estimador; los signos de Q3-c1 y Q3-c2 son opuestos. BLP/GATES: no apto ({{V16-Q3-blp-gates:num}}). Mediana del multiverso de Q3-b: {{V16-Q3-b-mediana:sig}} [C4], menor que el coeficiente principal. <!-- check:cifra-libre (ids de pregunta) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Q4 · Oferta y restricción física (Q4a, Q4b) <!-- check:cifra-libre (ids de pregunta) -->
@@ -200,8 +200,8 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 | Campo | Contenido |
 |---|---|
 | Pregunta | ¿Se asocian los cambios del tipo general del ITP con las compraventas y el valor tasado? |
-| Diseño | Wald-DID de de Chaisemartin-D'Haultfœuille con dosis continua, panel provincial anual. Solo puntual. Diferencias entre años consecutivos (corregido en la réplica ciega). |
-| Capa | [C4]. Q6-p, no concluyente: {{V16-Q6-p-beta}}. Q6-v, descriptivo, sin cifra. <!-- check:cifra-libre (ids de pregunta) --> |
+| Diseño | Wald-DID (de Chaisemartin y D'Haultfœuille) con dosis continua, panel provincial anual. Solo puntual. Diferencias entre años consecutivos (corregido en la réplica ciega). |
+| Capa | [C4]. Q6-p, no concluyente: {{V16-Q6-p-beta:sig}} log por punto de tipo. Q6-v, descriptivo, sin cifra. <!-- check:cifra-libre (ids de pregunta) --> |
 | Superadas | Q6-p: placebo de ΔY retardado pequeño y signo estable sin las grandes ciudades. Control negativo con la población, cercano a cero. <!-- check:cifra-libre (id de pregunta) --> |
 | Fallidas o no evaluables | Q6-v: placebo mayor y de signo contrario; signo opuesto a la referencia. Los {{V16-Q6-cambios:num}} cambios se concentran en 2012-2013. Inferencia por aleatorización, Honest DiD, Cinelli-Hazlett y TOST: no evaluables. Compraventas = total de vivienda. <!-- check:cifra-libre (id de pregunta y años) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
@@ -212,9 +212,9 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 |---|---|
 | Pregunta | ¿Cambió en el corte de edad del bono la diferencia de alquiler pagado entre inquilinos de mercado, entre dos periodos? |
 | Diseño | Diferencia en discontinuidades lineal local con pesos de la encuesta, anchos de tres, cinco y siete años. Sin intervalo. |
-| Capa | [C4], descriptivo: {{V16-Q7-1}}. Sin hallazgo ni pista. |
+| Capa | [C4], descriptivo: valor {{V16-Q7-1:valor}}; rango de especificaciones {{V16-Q7-1:rango}}. Sin hallazgo ni pista. |
 | Superadas | Los anchos de tres, cinco y siete años dan el mismo signo. |
-| Fallidas o no evaluables | Los umbrales placebo dan resultados del mismo orden ({{V16-Q7-4}}), así que el resultado no se lee como específico del corte. Potencia en el límite. Sin intervalo (Kolesár-Rothe no mostrado). Edad discreta: sin rdrobust. El Plan Estatal 2018-2021 ya tenía un programa para menores de 35 años: se mide un cambio de generosidad, no un programa nuevo. Oster, Cinelli-Hazlett y exclusión de grandes ciudades: no aplican o no son evaluables. <!-- check:cifra-libre (periodo del plan y umbral de edad) --> |
+| Fallidas o no evaluables | Los umbrales placebo dan resultados del mismo orden (valor {{V16-Q7-4:valor}}; rango {{V16-Q7-4:rango}}), así que el resultado no se lee como específico del corte. Potencia en el límite. Sin intervalo (Kolesár-Rothe no mostrado). Edad discreta: sin rdrobust. El Plan Estatal 2018-2021 ya tenía un programa para menores de 35 años: se mide un cambio de generosidad, no un programa nuevo. Oster, Cinelli-Hazlett y exclusión de grandes ciudades: no aplican o no son evaluables. <!-- check:cifra-libre (periodo del plan y umbral de edad) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Q8 · Compras de no residentes <!-- check:cifra-libre (id de pregunta) -->
@@ -236,7 +236,7 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 | Diseño | Q9-g: GSADF con bootstrap salvaje. Q9-c: CS-ARDL, MG, PMG y CIPS, puntuales. <!-- check:cifra-libre (ids de pregunta) --> |
 | Capa | [C4], pista no confirmada. Solo en la Parte VII. <!-- check:cifra-libre (número de parte) --> |
 | Superadas | Calibración del GSADF del factor con bootstrap salvaje (tamaño aceptable). Réplica ciega: coincide. |
-| Fallidas o no evaluables | Q9-g: estadístico {{V16-Q9-g:num}}; valor crítico del 95 % {{V16-Q9-g:min}}. q de Benjamini-Yekutieli: {{V16-FDR-Q9-g-q:num}}, por encima del umbral. Heterocedasticidad de la variación del factor. Potencia limitada. Fechas marcadas en tramos en que el cociente baja o está plano. La alternativa con SERPAVI anual no rechaza y no tiene potencia. Q9-c: CS-ARDL no apto; el rango del multiverso incluye ambos signos (estimación {{V16-Q9-c:num}}, rango {{V16-Q9-c:rango}}). CIPS: descriptivo, sin valor crítico. <!-- check:cifra-libre (ids de pregunta y nivel del 95 %) --> |
+| Fallidas o no evaluables | Q9-g: estadístico {{V16-Q9-g:num}}; valor crítico del 95 % {{V16-Q9-g:min}}; p sin ajuste {{V16-Q9-gp:sig}}. q de Benjamini-Yekutieli: {{V16-FDR-Q9-g-q:sig}}, por encima del umbral. Heterocedasticidad de la variación del factor. Potencia limitada. Fechas marcadas en tramos en que el cociente baja o está plano. La alternativa con SERPAVI anual no rechaza y no tiene potencia. Q9-c: CS-ARDL no apto; el rango del multiverso incluye ambos signos (estimación {{V16-Q9-c:num}}, rango {{V16-Q9-c:rango}}). CIPS: descriptivo, sin valor crítico. <!-- check:cifra-libre (ids de pregunta y nivel del 95 %) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Q10 · Predicción nacional (Q10-1, Q10-2, Q10-3) <!-- check:cifra-libre (ids de pregunta) -->
@@ -269,7 +269,7 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 | Diseño | Benjamini-Yekutieli por rama. Comparación de signo entre diseños y con la literatura. Potencia por aleatorización placebo. |
 | Capa | [C4], descriptivo. |
 | Superadas | Solo una prueba de la rama de diseños tiene p válido (Q9-g). H1-CS y H1-SDID coinciden en signo, y H3 con Q2a. <!-- check:cifra-libre (ids de análisis) --> |
-| Fallidas o no evaluables | Q9-g no pasa el control ({{V16-FDR-Q9-g-q:num}}). Q2c y Q6-v se apartan de la literatura y quedan descriptivos. H4, Q3-c1 y Q3-b no tienen grupo comparable en la literatura. Ningún grupo permite metaanálisis. Ningún resultado sube de capa por coincidir con la literatura. <!-- check:cifra-libre (ids de análisis) --> |
+| Fallidas o no evaluables | Q9-g no pasa el control ({{V16-FDR-Q9-g-q:sig}}). Q2c y Q6-v se apartan de la literatura y quedan descriptivos. H4, Q3-c1 y Q3-b no tienen grupo comparable en la literatura. Ningún grupo permite metaanálisis. Ningún resultado sube de capa por coincidir con la literatura. <!-- check:cifra-libre (ids de análisis) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Fase de hechos y contabilidad (hechos, esfuerzo, contabilidad, atlas)
@@ -298,8 +298,9 @@ Registro completo, con fechas en UTC y la huella de cada fichero: docs/preregist
 - **V15.** Cinco hipótesis (H1 a H5) y cuatro análisis exploratorios (E1 a E4). H1, H2 y H4 forman la familia Holm; H3 es una réplica; H5 es predictiva. Las hipótesis no se modifican ni se reformulan. Sus evaluaciones selladas están pendientes (calendario: docs/v15/preregistro_v15_adenda.md, sección C; fecha límite 31-12-2027). <!-- check:cifra-libre (ids de hipótesis y análisis, fecha límite) -->
 - **V16.** Diez preguntas (Q1 a Q10) y una rejilla fija de 83 celdas. No añade hipótesis confirmatorias. Todo es [C4] como máximo. La adenda es vinculante. No tiene evaluación sellada pendiente: evaluate_v16 no aplica. <!-- check:cifra-libre (ids de pregunta, celdas y nombre de función) -->
 
-**Desviaciones.** Se anotan antes de ver el resultado afectado. Se citan por su número, tal como figuran en el fichero de desviaciones.
-- **V16** (metodologia/desviaciones_v16.md, D1 a D9): D1, sin preguntas confirmatorias nuevas; D2, operacionalización forzada por los datos en Q3, Q4 y Q6; D3, precisiones en Q1, Q2, Q7 y Q8; D4, Q5, Q9, Q10 y rejilla; D5, correcciones tras la réplica ciega; D6, correcciones tras la revisión adversarial; D7, Q6 con años consecutivos; D8, GSADF de V7.2 corregido y 4.999 simulaciones; D9, omisiones frente al plan: metaanálisis con Egger y PET-PEESE, modelo bayesiano jerárquico con priors de metaanálisis, GRF y DML, BH jerárquico sustituido por BY, y condición (b) de Gelman-Carlin. <!-- check:cifra-libre (ids de desviación D1 a D9, de pregunta y simulaciones) -->
+**Desviaciones.** La regla es anotarlas antes de ver el resultado afectado. Se citan por su número, tal como figuran en el fichero de desviaciones.
+- **V16** (fuente: docs/v16/desviaciones.md; se publicará en metodologia/desviaciones_v16.md con `make publicacion`; D1 a D9): D1, sin preguntas confirmatorias nuevas; D2, operacionalización forzada por los datos en Q3, Q4 y Q6; D3, precisiones en Q1, Q2, Q7 y Q8; D4, Q5, Q9, Q10 y rejilla; D5, correcciones tras la réplica ciega; D6, correcciones tras la revisión adversarial; D7, Q6 con años consecutivos; D8, GSADF de V7.2 corregido y 4.999 simulaciones; D9, omisiones frente al plan: metaanálisis con Egger y PET-PEESE, modelo bayesiano jerárquico con priors de metaanálisis, GRF y DML, BH jerárquico sustituido por BY, calibración de los cuatro cuadrantes para las grandes áreas urbanas y condición (b) de Gelman-Carlin. <!-- check:cifra-libre (ids de desviación D1 a D9, de pregunta y simulaciones) -->
+- **D9 se anotó después de ver los resultados**, el 2026-10-18, tras el arbitraje del informe integral. Incumple, por tanto, la regla de anotar antes. Recoge las omisiones frente al plan que antes solo constaban en docs/v16/decisiones.md y en la adenda. Incluye la calibración de los cuatro cuadrantes para las grandes áreas urbanas, que no se hizo: el marco se calibró solo para España porque no hay series de parque, terminadas y coste de uso por área urbana con la cobertura necesaria. <!-- check:cifra-libre (desviación D9, fecha del registro, cuatro cuadrantes: nombre del marco) -->
 - **V15** (docs/v15/desviaciones.md): DV15-A (H1, H2, H3, E4), DV15-B (H4, H5, E1, E2, E3) y DV15-K16 (correcciones tras la réplica ciega). <!-- check:cifra-libre (ids de desviación e hipótesis) -->
 - **Versiones cerradas anteriores.** Cambios posteriores a algunos commits de pre-registro: metodologia/desviaciones_preregistros.md. Ninguno cambia una hipótesis ni una cifra de la 1.0. <!-- check:cifra-libre (versión) -->
 
@@ -312,5 +313,5 @@ No se inventa ninguna licencia: cada una se toma del registro de la fuente.
 - **Condiciones de uso de Registradores, Notariado y AEAT.** docs/v14/licencias.md, con las cláusulas literales y la clave CLARO, AMBIGUO o NO CONSTA. Es un informe, no una decisión. Atribución exigida para el conjunto abierto de Registradores (compraventas de uso residencial por provincia): Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. <!-- check:cifra-libre (versión de la licencia ODbL y de documento) -->
 - **Fuentes nuevas de V16.** docs/v16/inventario_fuentes.csv recoge, por fichero, la edición, la licencia declarada por el proveedor, si es redistribuible (sí, no o dudoso), la huella sha256 y si está versionado. Lo marcado «dudoso» o «no» no se redistribuye. <!-- check:cifra-libre (versión) -->
 - **Incasòl (fianzas).** Marcada como no redistribuible en las fuentes de las cifras de V9; solo se publican agregados propios. <!-- check:cifra-libre (versión) -->
-- **Huellas de los datos de origen.** data/CHECKSUMS.sha256.
+- **Huellas de los datos de origen.** data/CHECKSUMS.sha256. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Literatura.** Las fichas de docs/v16/literatura.md llevan la etiqueta «DOI verificado; cuartil no verificado» (existe en Crossref o DataCite) o «NO VERIFICADA» (sin DOI localizado). Casi todas se leyeron en resumen o en versión de trabajo y son orientativas. <!-- check:cifra-libre (versión) -->

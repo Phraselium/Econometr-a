@@ -6,11 +6,11 @@ Cada apartado tiene tres partes: cómo es el truco, cómo se comprueba y un ejem
 
 ### Cinco preguntas antes de creer una cifra
 
-1. ¿Qué periodo cubre y por qué ese?
-2. ¿Es un valor nominal o real?
-3. ¿Mide contratos vigentes o contratos nuevos?
-4. ¿Es una media, un índice o un caso concreto?
-5. ¿Compara dos cosas que ocurren a la vez o muestra un efecto?
+1. ¿Qué periodo cubre y por qué ese? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+2. ¿Es un valor nominal o real? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+3. ¿Mide contratos vigentes o contratos nuevos? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+4. ¿Es una media, un índice o un caso concreto? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+5. ¿Compara dos cosas que ocurren a la vez o muestra un efecto? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (numeración de la lista) -->
 
@@ -52,7 +52,7 @@ Cada apartado tiene tres partes: cómo es el truco, cómo se comprueba y un ejem
 
 **Cómo se comprueba.** Busca si la asociación ya existía antes de que ocurriera lo que se invoca (pretendencia). Mira si desaparece con controles. Mira si el rango de las especificaciones incluye el cero.
 
-**Ejemplo, Q3-b de V16.** Entre las secciones censales, la subida del alquiler 2021-2024 se asocia con la cuota de extranjeros: {{V16-Q3-b-beta:num}} (log por desviación típica) [C4]. Pero el mismo cálculo sobre 2018-2021, antes del periodo, da {{V16-Q3-b-pretendencia:num}} [C4]. La asociación ya estaba. Es una pista descriptiva y frágil, no un efecto. Pre-registro interno sin sello de tiempo externo (etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17).
+**Ejemplo, Q3-b de V16.** Entre las secciones censales, la subida del alquiler 2021-2024 se asocia con la cuota de extranjeros: {{V16-Q3-b-beta:sig}} (log por desviación típica) [C4]. Pero el mismo cálculo sobre 2018-2021, antes del periodo, da {{V16-Q3-b-pretendencia:sig}} [C4]. La asociación ya estaba. Es una pista descriptiva y frágil, no un efecto. Pre-registro interno sin sello de tiempo externo (etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17).
 
 **Ejemplo, H4 de V15.** La asociación entre la población extranjera predicha y el alquiler municipal es {{V15-H4-beta:valor}} en la estimación principal [C4]. El rango del multiverso de especificaciones va de {{V15-H4-beta:min}} a {{V15-H4-beta:max}} e incluye el cero. No se puede leer como un efecto. Pre-registro interno sin sello de tiempo externo (etiqueta `prereg-v15` en el remoto, commit 542b4fd, 2026-10-17); evaluación sellada pendiente. <!-- check:cifra-libre (periodos 2018-2021 y 2021-2024; commits y fechas de los pre-registros) -->
 
@@ -76,7 +76,7 @@ Que un cálculo salga con el signo esperado no lo vuelve un efecto. Solo lo vuel
 
 **Ejemplo, déficit por provincias.** A escala nacional, el déficit 2025-2030 empeora en todos los escenarios de la rejilla [C2]. Por provincias, {{T4-H3:num}} empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} quedan indeterminadas [C2]. La dirección nacional es robusta. La provincial queda sin determinar en la mayoría de las provincias. <!-- check:cifra-libre (periodo 2025-2030 y rejilla de escenarios) -->
 
-**Ejemplo, viviendas turísticas.** La cota nacional del alquiler que las viviendas turísticas podrían desplazar es de {{B4-v3-vut-cantidad:rango}} [C2], entre 2020 y 2024. En una ciudad concreta la cota es mayor: el repositorio no tiene una cota por ciudad, así que el ejemplo se queda en la escala nacional. Una cifra nacional baja no excluye una concentración local alta. Una cifra local alta tampoco se extiende al país. <!-- check:cifra-libre (periodo 2020-2024 y supuesto de sustitución 1:1) -->
+**Ejemplo, viviendas turísticas.** La cota nacional del alquiler que las viviendas turísticas podrían desplazar es de {{B4-v3-vut-cantidad:rango}} [C2], entre 2020 y 2024. El repositorio no tiene una cota por ciudad, así que el ejemplo se queda en la escala nacional. Una cifra nacional baja no excluye una concentración local alta. Una cifra local alta tampoco se extiende al país. <!-- check:cifra-libre (periodo 2020-2024 y supuesto de sustitución 1:1) -->
 
 ### VI.8 Anuncios frente a entregas
 
@@ -94,7 +94,7 @@ Esta tabla recoge afirmaciones que el estudio permite evaluar. Usa la escala del
 
 | Afirmación | Veredicto | Capa | Cifra | Por qué |
 |---|---|---|---|---|
-| El alquiler se ha duplicado (contratos vigentes) | CONTRADICHA | C1 | {{A23-A2:rango}} [C1] | Ninguna fuente llega a +100 %. Las dos fuentes del núcleo coinciden. |
+| El alquiler se ha duplicado (contratos vigentes) | CONTRADICHA | C1 | {{A23-A2:rango}} [C1] | Ninguna fuente llega a +100 %. Las dos fuentes del núcleo coinciden. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | El alquiler se ha duplicado (contratos nuevos) | ANALIZADA, NO CONCLUYENTE | C4 | {{A23-A3:valor}} [C4] | La cuantía nacional de contratos nuevos es de fuente única. |
 | Al ritmo actual el déficit se cerrará en pocos años | NO RESPALDADA | C2 | {{T4-H3:num}} provincias empeoran, {{T4-H3:min}} mejoran y {{T4-H3:max}} indeterminadas [C2] | La dirección empeora en toda la rejilla. La magnitud, {{T4-H2:rango}} [C4], es solo C4. |
 | Faltan cientos de miles de viviendas | PARCIALMENTE | C2 | {{L3-DEF-2124-SINBAJAS:rango}} [C2] | Dos fuentes confirman el signo. La cuantía es una cota por la corrección de la encuesta de hogares. |
@@ -104,11 +104,11 @@ Esta tabla recoge afirmaciones que el estudio permite evaluar. Usa la escala del
 | La subida de alquileres es atribuible a las viviendas turísticas | ANALIZADA, NO CONCLUYENTE | C4 | {{B4-v3-vut-cantidad:rango}} [C2] (cota de cantidad) | La cota de cantidad limita el desplazamiento nacional. El paso a precio depende de una elasticidad no verificada. |
 | Los compradores no residentes encarecen la vivienda | ANALIZADA, NO CONCLUYENTE | C4 | Peso de no residentes en las compraventas de 2025 (R1A-H1): {{R1A-H1:valor}} [C4] | Hay un peso descriptivo. Asociación bivariada con el precio 2015-2025 (R1A-H4): {{R1A-H4:valor}}, rango {{R1A-H4:rango}} [C4]. Con controles (R1A-H5): {{R1A-H5:valor}}, rango {{R1A-H5:rango}}, que incluye cero [C4]. |
 | La población extranjera se asocia con subidas del alquiler municipal | ANALIZADA, NO CONCLUYENTE | C4 | {{V15-H4-beta:valor}} en la estimación principal [C4] | Correlación frágil: el rango del multiverso, de {{V15-H4-beta:min}} a {{V15-H4-beta:max}}, incluye cero. Evaluación sellada de V15 pendiente. |
-| La vivienda pública resolvería el problema | ANALIZADA, NO CONCLUYENTE | C4 | En la simulación, precio de compra a 10 años: {{V71-S3-R6-c_vivienda_publica-compra-precio10a}} [C4] | Las cifras de la simulación son C4. «Resolver» depende del volumen y del desplazamiento. La ficha V11 del verificador de la 1.0 la sitúa en PARCIALMENTE (C2) para el esfuerzo de acceso, no para el precio de compra. |
-| Las ayudas a la demanda abaratan el acceso | PARCIALMENTE | C2 | En la simulación, {{V71-S1-e_ayuda_demanda-compra-efecto_100meur_mercado}} por 100 M€ en el precio de mercado [C4] | El beneficiario paga igual o menos (C2, ficha del verificador de la 1.0). En la simulación, parte de la ayuda llega al precio. |
+| La vivienda pública resolvería el problema | ANALIZADA, NO CONCLUYENTE | C4 | En la simulación, precio de compra a 10 años: {{V71-S3-R6-c_vivienda_publica-compra-precio10a}} [C4] | Las cifras de la simulación son C4. «Resolver» depende del volumen y del desplazamiento. En la rejilla simulada de la 1.0, el signo para el esfuerzo es débil [C2] (no positivo o nulo si desplaza a la promoción privada), y la ficha V11 del verificador la sitúa en PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2]. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+| Las ayudas a la demanda abaratan el acceso | PARCIALMENTE | C2 | En la simulación, {{V71-S1-e_ayuda_demanda-compra-efecto_100meur_mercado}} por 100 M€ en el precio de mercado [C4] | El beneficiario paga igual o menos (C2, ficha del verificador de la 1.0). En la simulación, parte de la ayuda llega al precio. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | La rebaja del ITP o del IVA abarata la compra | NO ANALIZADA: FALTAN DATOS | C4 | — | Falta una serie armonizada de tipos. La incidencia depende de la elasticidad de oferta. |
-| Las empresas y fondos dominan el alquiler | ANALIZADA, NO CONCLUYENTE | C4 | {{CB-C6-05:rango}} [C4] del stock (residuo de personas jurídicas, sector público y no declarado) | Los dos métodos discrepan. Ninguno llega al 50 %, pero no miden el peso por zonas. |
-| Los modelos más complejos predicen mejor que uno sencillo | ANALIZADA, NO CONCLUYENTE | C4 | {{V15-H5-razon-ecm:valor}} [C4] pre-registrada, razón de error frente al AR(4); entre implementaciones, {{V15-H5-razon-replica:rango}} | Alcance: agregado nacional trimestral. Una razón mayor que uno es peor. La combinación no supera al AR(4). Q10-1 y Q10-2 empeoran y Q10-3 no mejora fuera de 2020. La validación sellada de v6 ({{K1-N-MEJOR:num}} de 9 tareas) tenía otro alcance (provincias y municipios) y no se traslada aquí. El DM-HLN es apto bajo el proceso generador de V15 y no apto bajo el de V16: no se usa como prueba. |
+| Las empresas y fondos dominan el alquiler | ANALIZADA, NO CONCLUYENTE | C4 | {{CB-C6-05:rango}} [C4] (residuo de personas jurídicas, sector público y no declarado) | Los dos métodos discrepan. Ninguno llega al 50 %, pero no miden el peso por zonas. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+| Los modelos más complejos predicen mejor que uno sencillo | ANALIZADA, NO CONCLUYENTE | C4 | {{V15-H5-razon-ecm:valor}} [C4] pre-registrada, razón de error frente al AR(4); entre implementaciones, {{V15-H5-razon-replica:rango}} | Alcance: agregado nacional trimestral. Una razón mayor que uno es peor. La combinación no supera al AR(4). Q10-1 y Q10-2 empeoran y Q10-3 no mejora fuera de 2020. La validación sellada de v6 ({{K1-N-MEJOR:num}} de {{K1-N-MEJOR:cobertura}}) tenía otro alcance (provincias y municipios) y no se traslada aquí. El DM-HLN es apto bajo el proceso generador de V15 y no apto bajo el de V16: no se usa como prueba. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (identificadores de hipótesis R1A, V11 y Q10; umbrales de +100 % y 50 %; 2020; 2025; AR(4); 9 tareas del diseño; v6; DM-HLN) -->
 

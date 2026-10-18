@@ -20,20 +20,20 @@ Esta parte presenta el atlas multiescala y lo que sobrevive a escala local. Todo
 
 Una media nacional esconde la dispersión. La tabla da el cociente entre el percentil 90 y el percentil 10 (P90/P10) de cada magnitud entre las unidades no selladas. Un cociente de 1 significa que no hay dispersión; cuanto mayor, más dispersión. <!-- check:cifra-libre (percentiles 90 y 10 y cociente de referencia 1, definición) -->
 
-| Magnitud | Escala | Periodo | Cociente P90/P10 |
+| Magnitud | Escala | Periodo | Cociente P90/P10 | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 |---|---|---|---|
 | Renta neta media del hogar (ADRH) | municipio | 2023 | {{V16-ATL-DISP-RENTA-HOGAR:num}} |
 | Renta mediana por unidad de consumo (ADRH) | sección | 2023 | {{V16-ATL-DISP-RENTA-UC-SECCION:num}} |
 | Alquiler mediano €/m² y mes (SERPAVI) | municipio | 2024 | {{V16-ATL-DISP-ALQUILER-M2:num}} |
-| Ratio alquiler anual de 80 m² sobre renta del hogar | municipio | 2023 | {{V16-ATL-DISP-ESFUERZO:num}} |
+| Ratio alquiler anual de 80 m² sobre renta del hogar | municipio | 2023 | {{V16-ATL-DISP-ESFUERZO:num}} | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | Misma ratio | sección | 2023 | {{V16-ATL-DISP-ESFUERZO-SECCION:num}} |
 | Valor tasado €/m² | provincia | 2026T2 | {{V16-ATL-DISP-PRECIO-PROV:num}} |
-| Sobreesfuerzo del 40 % (ECV) | CCAA | 2025 | {{V16-ATL-DISP-ECV40-CCAA:num}} |
+| Sobreesfuerzo del 40 % (ECV) | CCAA | 2025 | {{V16-ATL-DISP-ECV40-CCAA:num}} | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | Viviendas no principales, % (Censo 2021) | municipio | 2021 | {{V16-ATL-DISP-NO-PRINCIPALES:num}} |
 | Viviendas vacías por consumo eléctrico, % (Censo 2021) | municipio | 2021 | {{V16-ATL-DISP-VACIAS:num}} |
 | Viviendas turísticas, % de las viviendas (INE VTE) | municipio | 2026-05 | {{V16-ATL-DISP-VT-PCT:num}} |
 | Población de nacionalidad extranjera, % (censo anual) | municipio | 2025 | {{V16-ATL-DISP-EXTRANJERA:num}} |
-| Lanzamientos por 10.000 viviendas, suma 2013-2024 | partido judicial | 2013-2024 | {{V16-ATL-DISP-LANZ-PJ:num}} |
+| Lanzamientos por 10.000 viviendas, suma 2013-2024 | partido judicial | 2013-2024 | {{V16-ATL-DISP-LANZ-PJ:num}} | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (80 m², 40 %, 10.000 viviendas, periodos y escalas en la tabla) -->
 
@@ -41,7 +41,7 @@ Una media nacional esconde la dispersión. La tabla da el cociente entre el perc
 - La renta tiene un cociente menor que las magnitudes de turismo, de población extranjera y de lanzamientos.
 - Las viviendas turísticas se miden solo en los municipios con dato del INE; la cifra no es comparable con las de cobertura completa.
 - El cociente de la ratio de esfuerzo en secciones ({{V16-ATL-DISP-ESFUERZO-SECCION:num}}) supera al de municipios ({{V16-ATL-DISP-ESFUERZO:num}}): dentro de un mismo municipio hay secciones más distintas entre sí que los municipios entre sí.
-- Los mínimos y máximos de cada magnitud están en `output/v16/f2_atlas/hechos.json`.
+- Los mínimos y máximos de cada magnitud están en `output/v16/f2_atlas/hechos.json`. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 ### IV.3 Esfuerzo de alquiler por territorio
 
@@ -83,9 +83,9 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 #### Q3-b (V16): población extranjera y alquiler por sección. Correlación frágil
 
 - **Qué es.** Asociación transversal entre la variación del alquiler mediano SERPAVI 2021-2024 (contratos vigentes) y la cuota de población extranjera de 2022, por desviación típica, con efectos fijos de municipio.
-- **Resultado.** Las seis variantes pre-registradas dan el mismo signo. La principal es {{V16-Q3-b-beta:num}} y es la mayor de las variantes, no la mediana. Las variantes van de {{V16-Q3-b-beta:min}} a {{V16-Q3-b-beta:max}}, y su mediana es {{V16-Q3-b-mediana:num}} [C4] (unidad: log por desviación típica).
+- **Resultado.** Las seis variantes pre-registradas dan el mismo signo. La principal es {{V16-Q3-b-beta:sig}} y es la mayor de las variantes. La mediana de las variantes es {{V16-Q3-b-mediana:sig}}, menor que la principal [C4] (unidad: log por desviación típica).
 - **Limitaciones.**
-  - La pretendencia (el mismo ajuste con la variación 2018-2021) da {{V16-Q3-b-pretendencia:num}} [C4]. Es más de la mitad del coeficiente principal. Una asociación previa a la exposición no se distingue de una tendencia anterior.
+  - La pretendencia (el mismo ajuste con la variación 2018-2021) da {{V16-Q3-b-pretendencia:sig}} [C4]. Es más de la mitad del coeficiente principal. Una asociación previa a la exposición no se distingue de una tendencia anterior.
   - Puede haber reversión a la media o convergencia, y desbalance de renta.
   - La exposición de 2022 cae dentro de la ventana del resultado.
   - Hay un posible confusor turístico.
@@ -98,14 +98,14 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 #### H4 (V15): población extranjera predicha y alquiler municipal. Correlación frágil
 
 - **Qué es.** Asociación entre la variación de la población extranjera, predicha con un instrumento de tipo shift-share, y el alquiler municipal SERPAVI. Se lee como asociación descriptiva.
-- **Resultado.** La estimación principal es {{V15-H4-beta:valor}} [C4]. El multiverso de 64 especificaciones va de {{V15-H4-beta:min}} a {{V15-H4-beta:max}}, e incluye el cero. Su mediana es {{V15-H4-mediana:valor}} [C4].
+- **Resultado.** La estimación principal es {{V15-H4-beta:valor}} [C4]. El multiverso de 64 especificaciones va de {{V15-H4-beta:min}} a {{V15-H4-beta:max}}, e incluye el cero. Su mediana es {{V15-H4-mediana:valor}} [C4]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Limitaciones.**
   - La principal está en la cola alta del multiverso.
   - El signo cambia al quitar los cinco orígenes principales.
   - El número efectivo de choques es {{V15-H4-neff:num}} [C4]: pocos orígenes pesan en el resultado.
   - El F robusto de primera etapa ({{V15-H4-F:valor}} [C4]) es descriptivo.
   - El padrón por nacionalidad no recoge las nacionalizaciones.
-  - La estimación 2SLS es varias veces la de mínimos cuadrados.
+  - La estimación 2SLS es varias veces la de mínimos cuadrados. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Estado.** Evaluación sellada pendiente.
 - **Lectura.** Correlación frágil. Los dos diseños (Q3-b y H4) coinciden en el signo; eso no los convierte en un efecto.
 
@@ -141,7 +141,7 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 
 - **Fichas territoriales de la web.** Una ficha por territorio, con el indicador, su periodo, su fuente, su capa y su marca de calidad. Se accede desde la página de fichas de la web del proyecto.
 - **Descargas.** `territorios.csv` y `territorios.parquet`, más los ficheros `atlas_*.csv` de V10.
-- **Fichas del anexo.** Cada cifra `V16-ATL-*` tiene ficha en `output/v16/f2_atlas/` y en el anexo metodológico.
-- **Atlas de la 1.0.** `publicacion/atlas_descriptivo.md`, `publicacion/atlas_v12.md` y `publicacion/atlas_regional/atlas_resumen.md`.
+- **Fichas del anexo.** Cada cifra `V16-ATL-*` tiene ficha en `output/v16/f2_atlas/` y en el anexo metodológico. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- **Atlas de la 1.0.** `publicacion/atlas_descriptivo.md`, `publicacion/atlas_v12.md` y `publicacion/atlas_regional/atlas_resumen.md`. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (versiones V10, V12, V16 y 1.0) -->

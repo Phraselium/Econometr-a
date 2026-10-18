@@ -34,7 +34,7 @@ Esta parte recoge los hechos de la fase 2 de V16 a todas las escalas: nacional, 
 
 #### Comunidades autónomas
 
-- Por CCAA se publican las tres medidas en `output/v16/f2_hechos/precios_ccaa.csv`. El deflactor es nacional: no hay IPC autonómico en el repositorio.
+- Por CCAA se publican las tres medidas en `output/v16/f2_hechos/precios_ccaa.csv`. El deflactor es nacional: no hay IPC autonómico en el repositorio. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - Las medidas coinciden en el cambio real 2019-2025 en {{V16-HEC-PRECIO-CCAA-NCOINC-2019-2025:num}} CCAA de las 17 [C4]. En 2007-2025, en {{V16-HEC-PRECIO-CCAA-NCOINC-2007-2025:num}} [C4]. En 2013-2025, en {{V16-HEC-PRECIO-CCAA-NCOINC-2013-2025:num}} [C4]. Fuera de esas comunidades, la medida elegida cambia la cuantía. <!-- check:cifra-libre (17 comunidades, periodos) -->
 - Las ocho CCAA de la decisión K8 aparecen solo a escala de CCAA y nación. Nunca por provincia ni por debajo. <!-- check:cifra-libre (ocho CCAA del diseño) -->
 
@@ -42,7 +42,7 @@ Esta parte recoge los hechos de la fase 2 de V16 a todas las escalas: nacional, 
 
 Se descompone la tasa anual de ln precio (valor tasado MIVAU, nominal, provincias no selladas) en un factor común y un residuo local. Es contabilidad, no causalidad.
 
-| Periodo | Cuota del factor común (IC 95 % bootstrap) | R² mediano por provincia (mín.-máx.) |
+| Periodo | Cuota del factor común (IC 95 % bootstrap) | R² mediano por provincia (mín.-máx.) | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 |---|---|---|
 | 2007-2013 | {{V16-CON-PRECIO-CUOTA-PC1-2007-2013}} [C4] | {{V16-CON-PRECIO-R2-PROV-2007-2013}} [C4] |
 | 2014-2019 | {{V16-CON-PRECIO-CUOTA-PC1-2014-2019}} [C4] | {{V16-CON-PRECIO-R2-PROV-2014-2019}} [C4] |
@@ -93,17 +93,17 @@ A escala municipal solo València tiene valor tasado: el MIVAU publica los munic
 
 Fuente: ECV 2004-2025 (microdatos) con intervalos bootstrap aproximados. Todo es [C4]: fuente única. ECV y Eurostat son la misma encuesta; la coincidencia con Eurostat valida la implementación, no forma un C1. Entre 2013 y 2025 coincide con Eurostat; entre 2004 y 2012 no coincide en casi todos los años y esos años se tratan como no validados. <!-- check:cifra-libre (periodos de validación) -->
 
-**España.** La sobrecarga del coste de la vivienda (gasto neto superior al 40 % de la renta neta) es {{V16-ESF-ESP-S40-2025}} [C4] de la población en 2025. Con el umbral del 30 %: {{V16-ESF-ESP-S30-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-ESP-S40-2019_2025}} [C4]; 2015-2025: {{V16-ESF-ESP-S40-2015_2025}} [C4]; 2008-2025: {{V16-ESF-ESP-S40-2008_2025}} [C4]. Personas que quedan por debajo del umbral de pobreza tras pagar la vivienda: {{V16-ESF-ESP-RES-2025}} [C4]. <!-- check:cifra-libre (umbrales del 40 % y del 30 % del diseño, periodos) -->
+**España.** La sobrecarga del coste de la vivienda (gasto neto superior al 40 % de la renta neta) en 2025 es {{V16-ESF-ESP-S40-2025}} [C4]. Con el umbral del 30 %: {{V16-ESF-ESP-S30-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-ESP-S40-2019_2025}} [C4]; 2015-2025: {{V16-ESF-ESP-S40-2015_2025}} [C4]; 2008-2025: {{V16-ESF-ESP-S40-2008_2025}} [C4]. Personas que quedan por debajo del umbral de pobreza tras pagar la vivienda: {{V16-ESF-ESP-RES-2025}} [C4]. <!-- check:cifra-libre (umbrales del 40 % y del 30 % del diseño, periodos) -->
 
 **Esfuerzo de compra.** Se mide en propietarios con hipoteca. Sobrecarga 2025: {{V16-ESF-TEN-prop_con_hipoteca-S40-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-TEN-prop_con_hipoteca-S40-2019_2025}} [C4]. Propietarios sin hipoteca: {{V16-ESF-TEN-prop_sin_hipoteca-S40-2025}} [C4]. El gasto recoge intereses, no amortización, en esta variable; no es el precio de compra. No hay en el repositorio una cifra de años de renta por vivienda tipo. La más cercana es el cambio del cociente precio/renta disponible del índice OCDE en 2019-2025: España {{V16-HEC-INTL-HPI_YDH-ES-2019-2025}} [C4], mediana UE {{V16-HEC-INTL-HPI_YDH-MED-2019-2025:valor}} [C4]. <!-- check:cifra-libre (periodos) -->
 
 **Esfuerzo de alquiler.** Alquiler a precio de mercado, sobrecarga 2025: {{V16-ESF-TEN-alquiler_mercado-S40-2025}} [C4]. Cambio 2019-2025: {{V16-ESF-TEN-alquiler_mercado-S40-2019_2025}} [C4]; 2015-2025: {{V16-ESF-TEN-alquiler_mercado-S40-2015_2025}} [C4]. Alquiler reducido o cesión: {{V16-ESF-TEN-alquiler_reducido_cesion-S40-2025}} [C4]. La 1.0, en la misma medida para alquiler de mercado, da {{V10-ATL-A1}} [C4]. Son la misma encuesta con implementaciones distintas. <!-- check:cifra-libre (periodos, versión 1.0) -->
 
-**Por grupo (sobrecarga del 40 %, 2025).**
-- Quintil de renta: Q1 {{V16-ESF-QUI-Q1-S40-2025}} [C4]; Q2 {{V16-ESF-QUI-Q2-S40-2025}} [C4]; Q3 {{V16-ESF-QUI-Q3-S40-2025}} [C4]; Q4 {{V16-ESF-QUI-Q4-S40-2025}} [C4]. El quintil 5 queda suprimido por muestra insuficiente.
-- Edad del sustentador: 16-34 años {{V16-ESF-EDA-16-34-S40-2025}} [C4]; 35-49 {{V16-ESF-EDA-35-49-S40-2025}} [C4]; 50-64 {{V16-ESF-EDA-50-64-S40-2025}} [C4]; 65 o más {{V16-ESF-EDA-65+-S40-2025}} [C4].
+**Por grupo (sobrecarga del 40 %, 2025).** <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- Quintil de renta: Q1 {{V16-ESF-QUI-Q1-S40-2025}} [C4]; Q2 {{V16-ESF-QUI-Q2-S40-2025}} [C4]; Q3 {{V16-ESF-QUI-Q3-S40-2025}} [C4]; Q4 {{V16-ESF-QUI-Q4-S40-2025}} [C4]. El quintil 5 queda suprimido por muestra insuficiente. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- Edad del sustentador: 16-34 años {{V16-ESF-EDA-16-34-S40-2025}} [C4]; 35-49 {{V16-ESF-EDA-35-49-S40-2025}} [C4]; 50-64 {{V16-ESF-EDA-50-64-S40-2025}} [C4]; 65 o más {{V16-ESF-EDA-65+-S40-2025}} [C4]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - Nacionalidad del sustentador: española {{V16-ESF-NAC-Espana-S40-2025}} [C4]; otra de la UE {{V16-ESF-NAC-UE-S40-2025}} [C4]; de fuera de la UE {{V16-ESF-NAC-Resto-S40-2025}} [C4].
-- Región (NUTS2): la ECV no tiene provincia. Los valores por región, con intervalos, están en `output/v16/f2_esfuerzo/esfuerzo_por_anio.csv`. El cociente P90/P10 entre CCAA es {{V16-ATL-DISP-ECV40-CCAA:num}} [C4] en 2025; el atlas (Parte IV) lo muestra por territorio.
+- Región (NUTS2): la ECV no tiene provincia. Los valores por región, con intervalos, están en `output/v16/f2_esfuerzo/esfuerzo_por_anio.csv`. El cociente P90/P10 entre CCAA es {{V16-ATL-DISP-ECV40-CCAA:num}} [C4] en 2025; el atlas (Parte IV) lo muestra por territorio. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (umbral del 40 %, quintiles, tramos de edad, P90/P10 en el texto) -->
 
@@ -115,7 +115,7 @@ Fuente: ECV 2004-2025 (microdatos) con intervalos bootstrap aproximados. Todo es
 
 #### Hogares
 
-**Aumento 2021-2025 (1.0).** El aumento del número de hogares es {{dh_2125}} [C1]. Los dos extremos son ECP y EPA, sin corrección. La ECP sola da {{V16-HEC-HOGARES-ECP-2125}} [C4]; la EPA da un cambio mayor en {{V16-CON-HOG-ECP-EPA-DISCREPANCIA}} [C4]. Se dan ambas. <!-- check:cifra-libre (versión 1.0) -->
+**Aumento 2021-2025 (1.0).** El aumento del número de hogares es {{dh_2125}} [C1]. Los dos extremos son ECP y EPA, sin corrección, con ventanas distintas: stock a 1 de enero en la ECP y media anual en la EPA. La ECP sola da {{V16-HEC-HOGARES-ECP-2125}} [C4]; es el extremo bajo del rango [C1]. Con las dos fuentes alineadas al 1 de enero de 2021 y de 2025 (`V16-CON-HOG-CAMBIO`, [C4]), la EPA da un cambio mayor que la ECP en {{V16-CON-HOG-ECP-EPA-DISCREPANCIA}} [C4]. Esa diferencia es de la ventana a 1 de enero y no forma parte de `dh_2125`. Se dan ambas. <!-- check:cifra-libre (versión 1.0, identificadores, 1 de enero) -->
 
 **Dos cifras de hogares, dos ventanas.** `dh_2125` compara la ECP, que es un stock a 1 de enero, con la EPA, que es una media anual. Sus dos extremos son posteriores a la ruptura de la EPA de 2021. `V16-CON-HOG-CAMBIO` mide el cambio del 1 de enero de 2021 al 1 de enero de 2025 en ambas fuentes, con otra ventana para la EPA. El C1 usa la primera porque cumple la regla de la 1.0: extremos posteriores a la ruptura y dos fuentes dentro de la tolerancia. La segunda queda en C4. Por eso el máximo de {{V16-CON-HOG-CAMBIO:max}} no se contradice con el rango de `dh_2125`: son ventanas distintas. <!-- check:cifra-libre (identificadores, 1 de enero, versión 1.0) -->
 
@@ -137,8 +137,8 @@ La composición resta porque las tasas de jefatura por edad del Censo 2021 son m
 
 #### Viviendas terminadas
 
-- **Territorio común, 2019-2024 (1.0).** Las viviendas terminadas al año son {{terminadas_1924}} [C1] (Ministerio y Catastro, dentro de ±15 %; sin País Vasco ni Navarra).
-- **Ampliación a 2025 (MIVAU, solo libres).** En 2025: {{V16-HEC-OBRA-TERMINADAS-2025}} [C4]. Acumulado 2021-2025: {{V16-HEC-OBRA-TERMINADAS-2125}} [C4]. Por hogar nuevo (ECP): {{V16-HEC-OBRA-SOBRE-HOGARES-2125}} [C4]. Esta ampliación no sustituye a `terminadas_1924` ni a `dh_2125`; las terminadas de la 1.0 incluyen protegidas.
+- **Territorio común, 2019-2024 (1.0).** Las viviendas terminadas al año son {{terminadas_1924}} [C1] (Ministerio y Catastro, dentro de ±15 %; sin País Vasco ni Navarra). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- **Ampliación a 2025 (MIVAU, solo libres).** En 2025: {{V16-HEC-OBRA-TERMINADAS-2025}} [C4]. Acumulado 2021-2025: {{V16-HEC-OBRA-TERMINADAS-2125}} [C4]. Por hogar nuevo (ECP): {{V16-HEC-OBRA-SOBRE-HOGARES-2125}} [C4]. Esta ampliación no sustituye a `terminadas_1924` ni a `dh_2125`; las terminadas de la 1.0 incluyen protegidas. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (periodos, tolerancia del diseño, identificadores, versión 1.0) -->
 
@@ -155,8 +155,8 @@ Los rangos recogen el desacuerdo entre fuentes y correcciones, no una incertidum
 ### I.6 Demografía
 
 - **Población y migración.** Saldo migratorio exterior (EMCR) 2021-2024: {{V16-CON-MIG-EMCR-SALDO}} [C4]. La población extranjera de la ECP crece en un importe que incluye cambios de nacionalidad; no se concilian las dos cifras. EMCR solo se usa desde 2021 por la ruptura de nivel anterior.
-- **Dónde se concentra.** Entre municipios no sellados, el cociente P90/P10 de la población de nacionalidad extranjera es {{V16-ATL-DISP-EXTRANJERA:num}} [C4] (censo anual 2025). El de la renta es {{V16-ATL-DISP-RENTA-HOGAR:num}} [C4] (2023).
-- **Jóvenes en el hogar de origen.** Personas de 30 a 34 años que viven con al menos uno de sus padres: {{V10-ATL-A10}} [C4] en 2018 y {{V10-ATL-A11}} [C4] en 2025 (EPA).
+- **Dónde se concentra.** Entre municipios no sellados, el cociente P90/P10 de la población de nacionalidad extranjera es {{V16-ATL-DISP-EXTRANJERA:num}} [C4] (censo anual 2025). El de la renta es {{V16-ATL-DISP-RENTA-HOGAR:num}} [C4] (2023). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- **Jóvenes en el hogar de origen.** Personas de 30 a 34 años que viven con al menos uno de sus padres: {{V10-ATL-A10}} [C4] en 2018 y {{V10-ATL-A11}} [C4] en 2025 (EPA). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Demanda latente de jóvenes [C2].** Por convivencia con los padres, frente a 2008: {{latente_convivencia:rango}} [C2]. Es una cota con supuestos explícitos, no una proyección.
 - **Titularidad y acceso.** Entre adultos de renta y edad iguales, la brecha de alquiler a precio de mercado entre nacionalidad extranjera y española es {{V12-B6-brecha-tenencia_3}} [C4] (V12).
 
@@ -168,7 +168,7 @@ Los rangos recogen el desacuerdo entre fuentes y correcciones, no una incertidum
 
 **Vacías y esporádicas.** Vacías por consumo eléctrico: {{V16-HEC-VACIAS-CONSUMO-2021}} [C4], {{V16-HEC-VACIAS-PCT-2021}} [C4] de las viviendas familiares. Uso esporádico: {{V16-HEC-ESPORADICO-2021}} [C4]. Las «vacías del Censo» y las «vacías por consumo» son la misma cifra: la tabla 59531 es del propio Censo, con el mismo universo. No son dos fuentes. Por municipio, el cociente P90/P10 de las vacías es {{V16-ATL-DISP-VACIAS:num}} [C4]. <!-- check:cifra-libre (tabla 59531, P90/P10 en el texto) -->
 
-**Viviendas turísticas [C2].** El aumento 2020-2024 equivale como máximo a {{B4-v3-vut-cantidad}} [C2], con el supuesto de sustitución uno a uno; en viviendas, {{VER-B4-V2-1}} [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (periodo, supuesto de sustitución uno a uno) -->
+**Viviendas turísticas [C2].** El aumento 2020-2024 equivale como máximo a {{B4-v3-vut-cantidad}} [C2], con el supuesto de sustitución uno a uno; en viviendas, {{VER-B4-V2-1:valor}} [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (periodo, supuesto de sustitución uno a uno) -->
 
 **Lanzamientos (CGPJ, fuente única).** 2013: {{V16-HEC-LANZ-2013}} [C4]. Máximo, en 2014: {{V16-HEC-LANZ-PICO}} [C4]. 2025: {{V16-HEC-LANZ-2025}} [C4]. Últimos cuatro trimestres: {{V16-HEC-LANZ-UM4T}} [C4]. Por tipo en 2025: hipotecaria {{V16-HEC-LANZ-TIPO-HIPOTECARIA-2025}} [C4]; arrendamientos (LAU) {{V16-HEC-LANZ-TIPO-LAU-2025}} [C4]; otros {{V16-HEC-LANZ-TIPO-OTROS-2025}} [C4]. El total nacional es el de los tribunales superiores, no la suma de provincias. <!-- check:cifra-libre (periodos, cuatro trimestres) -->
 
@@ -176,7 +176,7 @@ Los rangos recogen el desacuerdo entre fuentes y correcciones, no una incertidum
 - Precio real 2019-2025: España {{V16-HEC-INTL-RHP-ES-2019-2025:valor}}; mediana UE {{V16-HEC-INTL-RHP-MED-2019-2025:valor}}.
 - Precio real 2007-2025: España {{V16-HEC-INTL-RHP-ES-2007-2025:valor}}; mediana UE {{V16-HEC-INTL-RHP-MED-2007-2025:valor}}.
 - Precio/alquiler 2019-2025: España {{V16-HEC-INTL-HPI_RPI-ES-2019-2025:valor}}; mediana UE {{V16-HEC-INTL-HPI_RPI-MED-2019-2025:valor}}.
-- Sobrecarga del coste de la vivienda 2025 (Eurostat, ECV): España {{V16-HEC-INTL-SOBRECARGA-ES-2025:valor}}; UE {{V16-HEC-INTL-SOBRECARGA-ES-2025:max}}.
+- Sobrecarga del coste de la vivienda 2025 (Eurostat, ECV): España {{V16-HEC-INTL-SOBRECARGA-ES-2025:valor}}. Para la UE no hay un id propio en cifras_clave: el extremo máximo del rango del indicador, que su descripción asigna a la UE, es {{V16-HEC-INTL-SOBRECARGA-ES-2025:max}}.
 
 Vivienda pública por habitante frente a la UE: sin dato (la descarga de la OCDE, tabla PH4.2, está pendiente en docs/v16/tareas_autor.md). No se estima con otra fuente. <!-- check:cifra-libre (periodos, código de tabla) -->
 

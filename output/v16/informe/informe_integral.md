@@ -8,7 +8,7 @@ no se edita a mano.
 
 ## Resumen ejecutivo
 
-**Alcance.** Entran solo los resultados que superan todas sus pruebas: hechos [C1], con dos fuentes independientes, y cotas [C2], con supuestos explícitos. Todo lo de V15 y V16 es [C4] (exploratorio o descriptivo). Ningún resultado alcanza C3. Los rangos [C1] son mínimo y máximo entre fuentes, no intervalos de confianza. <!-- check:cifra-libre (nombres de capa y de versión) -->
+**Alcance.** Entran solo los resultados que superan todas sus pruebas: hechos [C1], con dos fuentes independientes, y cotas [C2], con supuestos explícitos. Se añaden las cifras [C4] que hacen falta para dar ambas medidas cuando discrepan (por ejemplo, el IPV del INE junto a las medidas por m²). Todo lo de V15 y V16 es [C4] (exploratorio o descriptivo). Ningún resultado alcanza C3. Los rangos [C1] son mínimo y máximo entre fuentes, no intervalos de confianza. <!-- check:cifra-libre (nombres de capa y de versión) -->
 
 **Límites de las herramientas.** Casi ninguna herramienta de inferencia pasó la validación por Monte Carlo; los resultados con herramienta no apta se dan como estimación puntual, sin p ni intervalo. El cegado de las réplicas fue parcial (decisión K19): en varios lotes el replicador vio los valores publicados antes de estimar. <!-- check:cifra-libre (decisión K19) -->
 
@@ -35,7 +35,8 @@ Valen dentro de la rejilla de escenarios del autor. Se cita la rejilla junto con
 - **Hogares proyectados por el INE.** 2026-2035: 1.720.537 hogares (1.308.531-1.772.410 hogares) [C2]. 2026-2030: 1.024.156 hogares (819.421-1.060.364 hogares) [C2]. <!-- check:cifra-libre (periodos) -->
 - **Déficit hasta 2030.** Empeora en todos los escenarios de la rejilla a escala nacional [C2]. Por provincias, en 15 provincias empeora, en 0 provincias mejora y en 37 provincias queda indeterminado [C2]. <!-- check:cifra-libre (año) -->
 - **Demanda latente de jóvenes**, por convivencia con los padres, frente a 2008: 188.000-506.000 hogares [C2]. <!-- check:cifra-libre (año) -->
-- **Vivienda turística.** El aumento 2020-2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) [C2]. Es una cota de cantidad (sustitución uno a uno): 81.771 viviendas (81.771-81.771 viviendas) [C2]. <!-- check:cifra-libre (periodo) -->
+- **Vivienda turística.** El aumento 2020-2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) [C2]. Es una cota de cantidad (sustitución uno a uno): 81.771 viviendas [C2]. <!-- check:cifra-libre (periodo) -->
+- **Signo de las medidas en la rejilla simulada de la 1.0 [C2].** Movilización de vacías y más construcción donde hay presión: signo estable. Vivienda pública: signo débil (no positivo o nulo si desplaza a la promoción privada). Ayudas a la demanda: mejoran al beneficiario como grupo. Solo es C2 el signo; las magnitudes de la simulación son [C4]. <!-- check:cifra-libre (versión 1.0) -->
 
 ### Sin hallazgo robusto en V15 y V16
 
@@ -71,11 +72,11 @@ Las cinco hipótesis de V15 no están confirmadas: están pendientes. Fecha lím
 
 ### Summary
 
-**Scope.** Only results that pass all their tests are reported: facts [C1] backed by two independent sources, and bounds [C2] with explicit assumptions. Everything from V15 and V16 is [C4] (exploratory or descriptive); nothing reaches C3. Almost no inference tool passed the Monte Carlo validation, and the blinding of the replications was partial (decision K19). evaluate_v16 does not apply, so V16 has no sealed evaluation pending; the V15 ones are pending. The V15 and V16 pre-registrations are internal, with no external timestamp: prereg-v15 (commit 542b4fd) and prereg-v16 (commit a8304ec), both dated 2026-10-17. <!-- check:cifra-libre (etiquetas, hashes, fechas y decisión K19) -->
+**Scope.** Only results that pass all their tests are reported: facts [C1] backed by two independent sources, and bounds [C2] with explicit assumptions, plus the [C4] figures needed to give both measures when they differ. Everything from V15 and V16 is [C4] (exploratory or descriptive); nothing reaches C3. Almost no inference tool passed the Monte Carlo validation, and the blinding of the replications was partial (decision K19). evaluate_v16 does not apply, so V16 has no sealed evaluation pending; the V15 ones are pending. The V15 and V16 pre-registrations are internal, with no external timestamp: prereg-v15 (commit 542b4fd) and prereg-v16 (commit a8304ec), both dated 2026-10-17. <!-- check:cifra-libre (etiquetas, hashes, fechas y decisión K19) -->
 
-**Facts [C1].** Households rose by 997.586 in 2021-2025 (annual-average window; the 1 January window is reported separately as [C4]). Annual completions in the common territory are 72.264-94.426 viviendas/año dwellings per year. Purchase prices rose 47,2 % over 2015-2025 (core of registers). In 2019-2025 two measures differ and both are given. Average price per m² without quality adjustment: nominal 30,4 %, real 7,1 %. Quality-adjusted INE index (single source) [C4]: nominal 44,4 %, real 18,7 %. Rents of existing contracts, 2015-2024: 10,9-22,9 % %. New contracts, 2021-2024: Catalonia 16,9 %, Comunitat Valenciana 28,5 %. The growth gap between new and existing contracts in Catalonia is 10,8 percentage points. Home ownership: 74,5 % of households. <!-- check:cifra-libre (periodos) -->
+**Facts [C1].** Households rose by 997.586 households in 2021-2025. The figure combines the 1 January stock (ECP) and the annual average (EPA); the window aligned to 1 January is reported separately as [C4]. Annual completions in the common territory range between sources from 72.264-94.426 viviendas/año. Purchase prices rose 47,2 % over 2015-2025 (core of registers). In 2019-2025 two measures differ and both are given. Average price per m² without quality adjustment: nominal 30,4 %, real 7,1 %. Quality-adjusted INE index (single source) [C4]: nominal 44,4 %, real 18,7 %. Rents of existing contracts, 2015-2024: 10,9-22,9 %. New contracts, 2021-2024: Catalonia 16,9 %, Comunitat Valenciana 28,5 %. The growth gap between new and existing contracts in Catalonia is 10,8 percentage points. Home ownership: 74,5 % of households. <!-- check:cifra-libre (periodos) -->
 
-**Bounds [C2]**, valid within the scenario grid. Deficit 2021-2024 without dwelling losses: 549.952 dwellings. Projected household growth, 2026-2035: 1.720.537 households. Deficit worsens to 2030 in every scenario. Tourist dwellings: at most 2,7 % of the rental stock. <!-- check:cifra-libre (periodos) -->
+**Bounds [C2]**, valid within the scenario grid. Deficit 2021-2024 without dwelling losses: 549.952 dwellings. Projected household growth, 2026-2035: 1.720.537 households. Deficit worsens to 2030 in every scenario. Tourist dwellings: at most 2,7 % of the rental stock. In the simulated grid of the 1.0, only the sign of some measures is [C2]: mobilising vacant dwellings and more construction where pressure is high (stable), public housing (weak: not positive, or null if it displaces private building) and demand aids (the beneficiary group pays the same or less); the simulated magnitudes are [C4]. <!-- check:cifra-libre (periodos) -->
 
 **No robust finding.** For H1 only the sign (negative) is citable; the magnitude is not cited. H5: the combination does not beat the AR(4), in every implementation. E3 is a descriptive spatial correlation, not contagion. H4 and Q3-b are fragile correlations. H3, Q2a and Q6-p are inconclusive. All other questions are descriptive, lack valid inference, or fail pre-trends and placebos. Q9 (bubble) is an unconfirmed lead, discussed in Part VII. <!-- check:cifra-libre (ids de hipótesis y pregunta, AR(4), número de parte) -->
 
@@ -122,7 +123,7 @@ Esta parte recoge los hechos de la fase 2 de V16 a todas las escalas: nacional, 
 
 #### Comunidades autónomas
 
-- Por CCAA se publican las tres medidas en `output/v16/f2_hechos/precios_ccaa.csv`. El deflactor es nacional: no hay IPC autonómico en el repositorio.
+- Por CCAA se publican las tres medidas en `output/v16/f2_hechos/precios_ccaa.csv`. El deflactor es nacional: no hay IPC autonómico en el repositorio. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - Las medidas coinciden en el cambio real 2019-2025 en 10 CCAA de las 17 [C4]. En 2007-2025, en 10 [C4]. En 2013-2025, en 1 [C4]. Fuera de esas comunidades, la medida elegida cambia la cuantía. <!-- check:cifra-libre (17 comunidades, periodos) -->
 - Las ocho CCAA de la decisión K8 aparecen solo a escala de CCAA y nación. Nunca por provincia ni por debajo. <!-- check:cifra-libre (ocho CCAA del diseño) -->
 
@@ -130,7 +131,7 @@ Esta parte recoge los hechos de la fase 2 de V16 a todas las escalas: nacional, 
 
 Se descompone la tasa anual de ln precio (valor tasado MIVAU, nominal, provincias no selladas) en un factor común y un residuo local. Es contabilidad, no causalidad.
 
-| Periodo | Cuota del factor común (IC 95 % bootstrap) | R² mediano por provincia (mín.-máx.) |
+| Periodo | Cuota del factor común (IC 95 % bootstrap) | R² mediano por provincia (mín.-máx.) | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 |---|---|---|
 | 2007-2013 | 71,4 % (40,0-82,9 %) [C4] | 76,0 % (16,3-93,5 %) [C4] |
 | 2014-2019 | 52,9 % (24,8-63,1 %) [C4] | 53,2 % (1,1-88,0 %) [C4] |
@@ -181,17 +182,17 @@ A escala municipal solo València tiene valor tasado: el MIVAU publica los munic
 
 Fuente: ECV 2004-2025 (microdatos) con intervalos bootstrap aproximados. Todo es [C4]: fuente única. ECV y Eurostat son la misma encuesta; la coincidencia con Eurostat valida la implementación, no forma un C1. Entre 2013 y 2025 coincide con Eurostat; entre 2004 y 2012 no coincide en casi todos los años y esos años se tratan como no validados. <!-- check:cifra-libre (periodos de validación) -->
 
-**España.** La sobrecarga del coste de la vivienda (gasto neto superior al 40 % de la renta neta) es 7,2 % de la población (6,8-7,7 % de la población) [C4] de la población en 2025. Con el umbral del 30 %: 12,0 % de la población (11,4-12,7 % de la población) [C4]. Cambio 2019-2025: -1,4 puntos porcentuales (-2,2 a -0,43 puntos porcentuales) [C4]; 2015-2025: -3,2 puntos porcentuales (-4,2 a -2,2 puntos porcentuales) [C4]; 2008-2025: -2,9 puntos porcentuales (-3,8 a -2,0 puntos porcentuales) [C4]. Personas que quedan por debajo del umbral de pobreza tras pagar la vivienda: 9,3 % de la población (8,7-9,9 % de la población) [C4]. <!-- check:cifra-libre (umbrales del 40 % y del 30 % del diseño, periodos) -->
+**España.** La sobrecarga del coste de la vivienda (gasto neto superior al 40 % de la renta neta) en 2025 es 7,2 % de la población (6,8-7,7 % de la población) [C4]. Con el umbral del 30 %: 12,0 % de la población (11,4-12,7 % de la población) [C4]. Cambio 2019-2025: -1,4 puntos porcentuales (-2,2 a -0,43 puntos porcentuales) [C4]; 2015-2025: -3,2 puntos porcentuales (-4,2 a -2,2 puntos porcentuales) [C4]; 2008-2025: -2,9 puntos porcentuales (-3,8 a -2,0 puntos porcentuales) [C4]. Personas que quedan por debajo del umbral de pobreza tras pagar la vivienda: 9,3 % de la población (8,7-9,9 % de la población) [C4]. <!-- check:cifra-libre (umbrales del 40 % y del 30 % del diseño, periodos) -->
 
 **Esfuerzo de compra.** Se mide en propietarios con hipoteca. Sobrecarga 2025: 3,4 % de la población (2,8-4,2 % de la población) [C4]. Cambio 2019-2025: -0,24 puntos porcentuales (-1,5 a 0,95 puntos porcentuales) [C4]. Propietarios sin hipoteca: 1,9 % de la población (1,6-2,1 % de la población) [C4]. El gasto recoge intereses, no amortización, en esta variable; no es el precio de compra. No hay en el repositorio una cifra de años de renta por vivienda tipo. La más cercana es el cambio del cociente precio/renta disponible del índice OCDE en 2019-2025: España 13,7 % [C4], mediana UE 3,2 % [C4]. <!-- check:cifra-libre (periodos) -->
 
 **Esfuerzo de alquiler.** Alquiler a precio de mercado, sobrecarga 2025: 26,8 % de la población (24,6-29,3 % de la población) [C4]. Cambio 2019-2025: -10,6 puntos porcentuales (-14,7 a -6,0 puntos porcentuales) [C4]; 2015-2025: -16,5 puntos porcentuales (-21,0 a -11,5 puntos porcentuales) [C4]. Alquiler reducido o cesión: 8,4 % de la población (6,8-10,1 % de la población) [C4]. La 1.0, en la misma medida para alquiler de mercado, da 26,8 % (24,4-29,2 %) [C4]. Son la misma encuesta con implementaciones distintas. <!-- check:cifra-libre (periodos, versión 1.0) -->
 
-**Por grupo (sobrecarga del 40 %, 2025).**
-- Quintil de renta: Q1 27,7 % de la población (25,7-29,9 % de la población) [C4]; Q2 5,2 % de la población (4,5-6,0 % de la población) [C4]; Q3 1,9 % de la población (1,5-2,3 % de la población) [C4]; Q4 0,89 % de la población (0,60-1,2 % de la población) [C4]. El quintil 5 queda suprimido por muestra insuficiente.
-- Edad del sustentador: 16-34 años 12,8 % de la población (10,8-15,2 % de la población) [C4]; 35-49 8,6 % de la población (7,7-9,5 % de la población) [C4]; 50-64 5,9 % de la población (5,1-6,9 % de la población) [C4]; 65 o más 4,6 % de la población (4,1-5,1 % de la población) [C4].
+**Por grupo (sobrecarga del 40 %, 2025).** <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- Quintil de renta: Q1 27,7 % de la población (25,7-29,9 % de la población) [C4]; Q2 5,2 % de la población (4,5-6,0 % de la población) [C4]; Q3 1,9 % de la población (1,5-2,3 % de la población) [C4]; Q4 0,89 % de la población (0,60-1,2 % de la población) [C4]. El quintil 5 queda suprimido por muestra insuficiente. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- Edad del sustentador: 16-34 años 12,8 % de la población (10,8-15,2 % de la población) [C4]; 35-49 8,6 % de la población (7,7-9,5 % de la población) [C4]; 50-64 5,9 % de la población (5,1-6,9 % de la población) [C4]; 65 o más 4,6 % de la población (4,1-5,1 % de la población) [C4]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - Nacionalidad del sustentador: española 4,6 % de la población (4,3-5,0 % de la población) [C4]; otra de la UE 18,5 % de la población (15,5-22,2 % de la población) [C4]; de fuera de la UE 25,4 % de la población (22,1-29,4 % de la población) [C4].
-- Región (NUTS2): la ECV no tiene provincia. Los valores por región, con intervalos, están en `output/v16/f2_esfuerzo/esfuerzo_por_anio.csv`. El cociente P90/P10 entre CCAA es 2,0 [C4] en 2025; el atlas (Parte IV) lo muestra por territorio.
+- Región (NUTS2): la ECV no tiene provincia. Los valores por región, con intervalos, están en `output/v16/f2_esfuerzo/esfuerzo_por_anio.csv`. El cociente P90/P10 entre CCAA es 2,0 [C4] en 2025; el atlas (Parte IV) lo muestra por territorio. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (umbral del 40 %, quintiles, tramos de edad, P90/P10 en el texto) -->
 
@@ -203,7 +204,7 @@ Fuente: ECV 2004-2025 (microdatos) con intervalos bootstrap aproximados. Todo es
 
 #### Hogares
 
-**Aumento 2021-2025 (1.0).** El aumento del número de hogares es 997.586 hogares (981.823-1.013.350 hogares) [C1]. Los dos extremos son ECP y EPA, sin corrección. La ECP sola da 981.823 hogares [C4]; la EPA da un cambio mayor en 8,2 % [C4]. Se dan ambas. <!-- check:cifra-libre (versión 1.0) -->
+**Aumento 2021-2025 (1.0).** El aumento del número de hogares es 997.586 hogares (981.823-1.013.350 hogares) [C1]. Los dos extremos son ECP y EPA, sin corrección, con ventanas distintas: stock a 1 de enero en la ECP y media anual en la EPA. La ECP sola da 981.823 hogares [C4]; es el extremo bajo del rango [C1]. Con las dos fuentes alineadas al 1 de enero de 2021 y de 2025 (`V16-CON-HOG-CAMBIO`, [C4]), la EPA da un cambio mayor que la ECP en 8,2 % [C4]. Esa diferencia es de la ventana a 1 de enero y no forma parte de `dh_2125`. Se dan ambas. <!-- check:cifra-libre (versión 1.0, identificadores, 1 de enero) -->
 
 **Dos cifras de hogares, dos ventanas.** `dh_2125` compara la ECP, que es un stock a 1 de enero, con la EPA, que es una media anual. Sus dos extremos son posteriores a la ruptura de la EPA de 2021. `V16-CON-HOG-CAMBIO` mide el cambio del 1 de enero de 2021 al 1 de enero de 2025 en ambas fuentes, con otra ventana para la EPA. El C1 usa la primera porque cumple la regla de la 1.0: extremos posteriores a la ruptura y dos fuentes dentro de la tolerancia. La segunda queda en C4. Por eso el máximo de 1.062.300 hogares no se contradice con el rango de `dh_2125`: son ventanas distintas. <!-- check:cifra-libre (identificadores, 1 de enero, versión 1.0) -->
 
@@ -225,8 +226,8 @@ La composición resta porque las tasas de jefatura por edad del Censo 2021 son m
 
 #### Viviendas terminadas
 
-- **Territorio común, 2019-2024 (1.0).** Las viviendas terminadas al año son 72.264-94.426 viviendas/año [C1] (Ministerio y Catastro, dentro de ±15 %; sin País Vasco ni Navarra).
-- **Ampliación a 2025 (MIVAU, solo libres).** En 2025: 80.792 viviendas [C4]. Acumulado 2021-2025: 411.900 viviendas [C4]. Por hogar nuevo (ECP): 0,42 viviendas por hogar [C4]. Esta ampliación no sustituye a `terminadas_1924` ni a `dh_2125`; las terminadas de la 1.0 incluyen protegidas.
+- **Territorio común, 2019-2024 (1.0).** Las viviendas terminadas al año son 72.264-94.426 viviendas/año [C1] (Ministerio y Catastro, dentro de ±15 %; sin País Vasco ni Navarra). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- **Ampliación a 2025 (MIVAU, solo libres).** En 2025: 80.792 viviendas [C4]. Acumulado 2021-2025: 411.900 viviendas [C4]. Por hogar nuevo (ECP): 0,42 viviendas por hogar [C4]. Esta ampliación no sustituye a `terminadas_1924` ni a `dh_2125`; las terminadas de la 1.0 incluyen protegidas. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (periodos, tolerancia del diseño, identificadores, versión 1.0) -->
 
@@ -243,8 +244,8 @@ Los rangos recogen el desacuerdo entre fuentes y correcciones, no una incertidum
 ### I.6 Demografía
 
 - **Población y migración.** Saldo migratorio exterior (EMCR) 2021-2024: 2.186.663 personas (1.482.129-2.186.663 personas) [C4]. La población extranjera de la ECP crece en un importe que incluye cambios de nacionalidad; no se concilian las dos cifras. EMCR solo se usa desde 2021 por la ruptura de nivel anterior.
-- **Dónde se concentra.** Entre municipios no sellados, el cociente P90/P10 de la población de nacionalidad extranjera es 17,8 [C4] (censo anual 2025). El de la renta es 1,8 [C4] (2023).
-- **Jóvenes en el hogar de origen.** Personas de 30 a 34 años que viven con al menos uno de sus padres: 27,1 % (26,5-27,7 %) [C4] en 2018 y 31,7 % (30,8-32,5 %) [C4] en 2025 (EPA).
+- **Dónde se concentra.** Entre municipios no sellados, el cociente P90/P10 de la población de nacionalidad extranjera es 17,8 [C4] (censo anual 2025). El de la renta es 1,8 [C4] (2023). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- **Jóvenes en el hogar de origen.** Personas de 30 a 34 años que viven con al menos uno de sus padres: 27,1 % (26,5-27,7 %) [C4] en 2018 y 31,7 % (30,8-32,5 %) [C4] en 2025 (EPA). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Demanda latente de jóvenes [C2].** Por convivencia con los padres, frente a 2008: 188.000-506.000 hogares [C2]. Es una cota con supuestos explícitos, no una proyección.
 - **Titularidad y acceso.** Entre adultos de renta y edad iguales, la brecha de alquiler a precio de mercado entre nacionalidad extranjera y española es 41,8 puntos (40,0-43,8 puntos) [C4] (V12).
 
@@ -256,7 +257,7 @@ Los rangos recogen el desacuerdo entre fuentes y correcciones, no una incertidum
 
 **Vacías y esporádicas.** Vacías por consumo eléctrico: 3.828.307 viviendas [C4], 14,4 % [C4] de las viviendas familiares. Uso esporádico: 2.517.628 viviendas [C4]. Las «vacías del Censo» y las «vacías por consumo» son la misma cifra: la tabla 59531 es del propio Censo, con el mismo universo. No son dos fuentes. Por municipio, el cociente P90/P10 de las vacías es 4,8 [C4]. <!-- check:cifra-libre (tabla 59531, P90/P10 en el texto) -->
 
-**Viviendas turísticas [C2].** El aumento 2020-2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) [C2], con el supuesto de sustitución uno a uno; en viviendas, 81.771 viviendas (81.771-81.771 viviendas) [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (periodo, supuesto de sustitución uno a uno) -->
+**Viviendas turísticas [C2].** El aumento 2020-2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler) [C2], con el supuesto de sustitución uno a uno; en viviendas, 81.771 viviendas [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (periodo, supuesto de sustitución uno a uno) -->
 
 **Lanzamientos (CGPJ, fuente única).** 2013: 67.189 lanzamientos [C4]. Máximo, en 2014: 68.091 lanzamientos [C4]. 2025: 24.540 lanzamientos [C4]. Últimos cuatro trimestres: 18.731 lanzamientos [C4]. Por tipo en 2025: hipotecaria 17,7 % [C4]; arrendamientos (LAU) 74,6 % [C4]; otros 7,6 % [C4]. El total nacional es el de los tribunales superiores, no la suma de provincias. <!-- check:cifra-libre (periodos, cuatro trimestres) -->
 
@@ -264,7 +265,7 @@ Los rangos recogen el desacuerdo entre fuentes y correcciones, no una incertidum
 - Precio real 2019-2025: España 19,6 %; mediana UE 15,6 %.
 - Precio real 2007-2025: España -12,8 %; mediana UE 9,1 %.
 - Precio/alquiler 2019-2025: España 31,5 %; mediana UE 16,2 %.
-- Sobrecarga del coste de la vivienda 2025 (Eurostat, ECV): España 7,2 % de la población; UE 7,7 % de la población.
+- Sobrecarga del coste de la vivienda 2025 (Eurostat, ECV): España 7,2 % de la población. Para la UE no hay un id propio en cifras_clave: el extremo máximo del rango del indicador, que su descripción asigna a la UE, es 7,7 % de la población.
 
 Vivienda pública por habitante frente a la UE: sin dato (la descarga de la OCDE, tabla PH4.2, está pendiente en docs/v16/tareas_autor.md). No se estima con otra fuente. <!-- check:cifra-libre (periodos, código de tabla) -->
 
@@ -283,11 +284,11 @@ Vivienda pública por habitante frente a la UE: sin dato (la descarga de la OCDE
 
 ## Parte II · Mecanismos
 
-Esta parte responde a una pregunta: qué se asocia con el precio de compra y con el alquiler, qué sabemos de ello y qué no. Usa un marco teórico (cuatro cuadrantes), la descomposición «por qué ha subido» de la versión 8, la triangulación de V16 y las pistas de V15 y V16 que superan la revisión adversarial. No hay en ella ninguna conclusión sobre una medida concreta: eso va en la Parte III.
+Esta parte responde a una pregunta: qué se asocia con el precio de compra y con el alquiler, qué sabemos de ello y qué no. Usa un marco teórico (cuatro cuadrantes), la descomposición «por qué ha subido» de la versión 8, la triangulación de V16 y las pistas de V15 y V16 que superan la revisión adversarial. No hay en ella ninguna conclusión sobre una medida concreta: eso va en la Parte III. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 ### II.1 Cómo leer esta parte
 
-- **Capas.** Todo lo de V15 y V16 es [C4] (exploratorio o descriptivo). Lo de V8 es [C3s] cuando se dice, y está condicionado a las restricciones de signo que se declaran. Una coincidencia con la literatura no sube la capa.
+- **Capas.** Todo lo de V15 y V16 es [C4] (exploratorio o descriptivo). Lo de V8 es [C3s] cuando se dice, y está condicionado a las restricciones de signo que se declaran. Una coincidencia con la literatura no sube la capa. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Lenguaje.** Se escribe «se asocia», «coincide con» y «en la simulación». Nada de lo que sigue identifica un efecto.
 - **Pre-registro.** Los resultados de V15 y V16 citados aquí tienen un pre-registro interno, sin sello de tiempo externo. V15: etiqueta `prereg-v15` en el remoto, commit 542b4fd, 2026-10-17. V16: etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17. No es un pre-registro depositado. <!-- check:cifra-libre (etiquetas, commit y fecha de pre-registro) -->
 - **Evaluación sellada de V15.** Las hipótesis H1 a H5 de V15 tienen la evaluación sellada pendiente. El calendario está en `docs/v15/preregistro_v15_adenda.md`, sección C, con fecha límite 31-12-2027. Aquí son pistas pendientes, nunca confirmaciones. <!-- check:cifra-libre (números de hipótesis, sección y fecha límite del calendario) -->
@@ -299,10 +300,10 @@ Esta parte responde a una pregunta: qué se asocia con el precio de compra y con
 
 El modelo de stock y flujo de cuatro cuadrantes conecta cuatro relaciones:
 
-1. el mercado del uso: la demanda de servicios de vivienda fija el alquiler para un stock dado;
-2. el mercado de activos: el alquiler y la rentabilidad exigida fijan el precio;
-3. la construcción: el precio frente al coste fija la obra nueva;
-4. el stock: la obra nueva, menos las bajas, cambia el parque.
+1. el mercado del uso: la demanda de servicios de vivienda fija el alquiler para un stock dado; <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+2. el mercado de activos: el alquiler y la rentabilidad exigida fijan el precio; <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+3. la construcción: el precio frente al coste fija la obra nueva; <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+4. el stock: la obra nueva, menos las bajas, cambia el parque. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 En V16 se calibra para España con rangos declarados y se simula cada shock con Monte Carlo sobre esos rangos (`output/v16/f3/cuatro_cuadrantes.md`, generado por `src/v16/f3_cuatro_cuadrantes.py`). Es un marco teórico calibrado, no una estimación. Dice qué respuesta cabe esperar si el mercado funcionara como el modelo. Capa [C4]. <!-- check:cifra-libre (cuatro cuadrantes: nombre del marco) -->
 
@@ -332,7 +333,7 @@ Los multiplicadores numéricos (mediana y banda entre los percentiles 5 y 95) es
 
 Tres lecturas, todas dentro del marco:
 
-- **El stock tarda décadas en ajustarse.** La semivida del ajuste del stock sale de varias décadas con los rangos declarados, porque la obra nueva anual es una fracción pequeña del parque. A corto plazo el ajuste recae en el precio y el alquiler. El valor de la semivida está en output/v16/f3/cuatro_cuadrantes.md y no se cita aquí, porque no tiene id en cifras_clave.
+- **El stock tarda décadas en ajustarse.** La semivida del ajuste del stock sale de varias décadas con los rangos declarados, porque la obra nueva anual es una fracción pequeña del parque. A corto plazo el ajuste recae en el precio y el alquiler. El valor de la semivida está en output/v16/f3/cuatro_cuadrantes.md y no se cita aquí, porque no tiene id en cifras_clave. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Los shocks de tipos y de demanda tienen firmas distintas.** Un shock solo de tipos baja precio y obra nueva y deja el alquiler. Un shock solo de demanda sube alquiler, obra nueva y precio.
 - **El «tipo exigido» no es el tipo hipotecario.** Es la rentabilidad que pide el comprador. Una subida del hipotecario no se traslada uno a uno.
 
@@ -344,11 +345,11 @@ Comparación descriptiva de las medias de 2024 frente a las de 2022. Es una lect
 |---|---|---|
 | Tipo hipotecario | + | + |
 | Precio de compra (IPV) | + | − |
-| Alquiler (IPC) | + | 0 o + |
+| Alquiler (IPC) | + | 0 o + | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | Compraventas | − | − |
 | Visados de obra nueva | + | − |
-| Renta real de los hogares | + | 0 |
-| Hogares (EPA) | + | 0 |
+| Renta real de los hogares | + | 0 | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+| Hogares (EPA) | + | 0 | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 Los valores de la variación de cada serie están en `output/v16/f3/cuatro_cuadrantes.md`: se consultan allí; no tienen id en cifras_clave. <!-- check:cifra-libre (años de la comparación) -->
 
@@ -359,6 +360,7 @@ El patrón de un shock solo de tipos no aparece: precio, alquiler y obra nueva s
 - No hay elasticidad municipal de la oferta identificada para España. Q4 (restricción física, Red Natura) no produjo ningún hallazgo: la inferencia con agrupación provincial no es apta y el placebo de choque adelantado es del mismo signo y de mayor tamaño que la estimación. Queda «sin hallazgo». <!-- check:cifra-libre (identificador de pregunta) -->
 - Los parámetros españoles de la demanda quedan como supuestos.
 - El marco es de equilibrio y de un solo mercado. No modela la segmentación entre contratos nuevos y vigentes, ni el alquiler de temporada, ni los cambios de uso.
+- No se calibró para las grandes áreas urbanas, aunque el plan lo preveía: no hay series de parque, terminadas y coste de uso por área urbana con la cobertura necesaria. Está declarado en la desviación D9 (anexo C), anotada después de ver los resultados. <!-- check:cifra-libre (desviación D9 y anexo C) -->
 
 ### II.3 La descomposición «por qué ha subido» de V8
 
@@ -370,21 +372,21 @@ V8 descompuso la variación del precio real de compra y del alquiler real en cin
 
 - **Ningún factor queda designado.** La regla del apartado 9 no designa a ningún factor en ninguno de los periodos, ni en compra ni en alquiler. En el último periodo (P5, desde 2022T3) la regla da 0,00 en compra y 0,00 en alquiler (1 = designado, 0 = no designado) [C4]. <!-- check:cifra-libre (P5 es el nombre del periodo; codificación 1 y 0) -->
 - **La contribución de cada factor tiene una banda que contiene el cero.** Ejemplos del último periodo, con el intervalo del 95 %: <!-- check:cifra-libre (nivel del intervalo) -->
-  - demografía y alquiler real: 0,07 pp, intervalo -4,5 a 4,7 pp [C3s]; p ajustado por Holm 0,99 [C3s]. No respaldada;
-  - crédito y tipos y precio real de compra: -0,47 pp, intervalo -15,4 a 27,4 pp [C3s]; p ajustado por Holm 0,99 [C3s]. No respaldada.
+  - demografía y alquiler real: 0,07 pp, intervalo -4,5 a 4,7 pp [C3s]; p ajustado por Holm 0,99 [C3s]. No respaldada; <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+  - crédito y tipos y precio real de compra: -0,47 pp, intervalo -15,4 a 27,4 pp [C3s]; p ajustado por Holm 0,99 [C3s]. No respaldada. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 #### La parte no atribuida
 
 La «cuota no atribuida» es la parte de la variación observada que el SVAR no asigna a ningún factor identificado: su componente determinista y lo no identificado. Para el precio real de compra en el último periodo:
 
-- media posterior: 9,5 pp [C3s];
-- mediana posterior: 3,4 pp [C3s];
+- media posterior: 9,5 pp [C3s]; <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- mediana posterior: 3,4 pp [C3s]; <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - banda del 68 % exacta, calculada con los cuantiles de la suma: -7,8 a 16,4 pp [C3s]; <!-- check:cifra-libre (nivel de la banda) -->
-- sensibilidad, con el tipo hipotecario del Banco de España en lugar del del BCE: media 20,7 pp [C3s].
+- sensibilidad, con el tipo hipotecario del Banco de España en lugar del BCE: media 20,7 pp [C3s]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 La media está muy por encima de la mediana porque la cola derecha es pesada. Por eso se dan las dos y la banda. La sensibilidad al tipo hipotecario elegido es grande en la media y pequeña en la mediana: se reportan ambas. Esta cifra se corrigió en V16 (errata de la banda exacta, aplicada en ERRATA.md).
 
-Como proporción de la variación observada, la parte no atribuida del precio de compra en el último periodo es 0,52 (-0,79 a 1,3) [C3s]. Para el alquiler real, en puntos, es -2,0 pp con banda -7,9 a 3,6 pp [C3s].
+Como proporción de la variación observada, la parte no atribuida del precio de compra en el último periodo es 0,52 (-0,79 a 1,3) [C3s]. Para el alquiler real, en puntos, es -2,0 pp con banda -7,9 a 3,6 pp [C3s]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 **Lectura.** La descomposición no permite decir qué factor ha pesado más en la subida. Una parte grande y de signo incierto queda sin atribuir, y ninguna contribución se separa de cero tras el control de múltiples contrastes. Esto no dice que los factores no importen: dice que esta descomposición, con estos datos, no los separa.
 
@@ -393,7 +395,7 @@ Como proporción de la variación observada, la parte no atribuida del precio de
 V16 no repite la descomposición. Añade tres descripciones que ayudan a leerla [C4]:
 
 - **Una parte grande del crecimiento del valor tasado es común a las provincias.** La cuota del primer factor común en la varianza del crecimiento interanual de 33 provincias es 71,4 % en 2007-2013, 52,9 % en 2014-2019 y 80,9 % en 2020-2026 [C4]. La correlación media de los residuos locales entre provincias de la misma comunidad es baja: 0,02 correlación [C4]. Con provincias en lugar de comunidades, la cuota común es menor que la de V8: diferencia media -7,7 pp [C4]. Esto describe el comovimiento. No dice qué lo mueve. <!-- check:cifra-libre (33 provincias, periodos) -->
-- **Contabilidad del número de hogares, 2021-2025.** El cambio observado es 981.823 hogares [C4], con rango entre ECP y EPA 981.823-1.062.300 hogares [C4]. Según la descomposición de Shapley, el tamaño de la población aporta 670.187 hogares [C4], la estructura por edad 371.922 hogares [C4], el residuo de jefatura 20.478 hogares [C4] y la composición por nacionalidad -80.764 hogares [C4]. Es contabilidad, no una estimación de efectos. La diferencia entre ECP y EPA en el cambio de hogares es 8,2 % [C4]: se dan las dos fuentes. <!-- check:cifra-libre (periodo) -->
+- **Contabilidad del número de hogares, 2021-2025.** El cambio observado, con las dos fuentes alineadas al 1 de enero, es 981.823 hogares [C4], con rango entre ECP y EPA 981.823-1.062.300 hogares [C4]. Según la descomposición de Shapley, el tamaño de la población aporta 670.187 hogares [C4], la estructura por edad 371.922 hogares [C4], el residuo de jefatura 20.478 hogares [C4] y la composición por nacionalidad -80.764 hogares [C4]. Es contabilidad, no una estimación de efectos. En esa ventana, la EPA da un cambio mayor que la ECP en 8,2 % [C4]: se dan las dos fuentes. <!-- check:cifra-libre (periodo, 1 de enero) -->
 - **Obra frente a hogares.** Las viviendas libres terminadas en 2021-2025 por hogar nuevo son 0,42 viviendas por hogar [C4], con 411.900 viviendas terminadas en el periodo [C4]. Es un cociente de flujos. No dice cuánta vivienda falta: la necesidad de vivienda se trata en la Parte V. <!-- check:cifra-libre (periodo) -->
 
 ### II.4 Triangulación de V16
@@ -435,7 +437,7 @@ Que dos diseños coincidan en el signo no los convierte en independientes: compa
 
 **H4 de V15 y Q3-b de V16: correlaciones frágiles.** Ambas son asociaciones entre la presencia de población extranjera y el alquiler. No se leen como el efecto de la inmigración.
 - **H4.** La asociación (2SLS) entre población extranjera predicha y alquiler municipal es 0,30 % por p.p., con rango del multiverso -0,14 a 0,39 % por p.p. [C4]. El rango contiene el cero y el signo cambia al quitar los orígenes principales. Hay pocos orígenes efectivos: 5,5 choques efectivos [C4]. El 2SLS es varias veces el MCO. La mediana del multiverso es 0,08 % por p.p. [C4]. <!-- check:cifra-libre (2SLS: nombre del estimador) -->
-- **Q3-b.** La asociación transversal del alquiler por sección con la cuota de extranjeros es 0,01 log por desviación típica, con rango del multiverso de 0,00 log por desviación típica a 0,01 log por desviación típica [C4]. El coeficiente de pretendencia (variación previa) es 0,01 [C4], más de la mitad del coeficiente principal. Puede haber reversión a la media o convergencia, y la exposición de 2022 cae dentro de la ventana del resultado. La mediana del multiverso es 0,01 [C4].
+- **Q3-b.** La asociación transversal del alquiler por sección con la cuota de extranjeros es 0,00908 log por desviación típica [C4]; es la mayor de las seis variantes del multiverso. El coeficiente de pretendencia (variación previa) es 0,00511 [C4], más de la mitad del coeficiente principal. Puede haber reversión a la media o convergencia, y la exposición de 2022 cae dentro de la ventana del resultado. La mediana del multiverso es 0,00575 [C4], menor que el coeficiente principal. <!-- check:cifra-libre (seis variantes del diseño, «más de la mitad») -->
 - **Literatura.** La literatura con DOI verificado sobre inmigración y vivienda no tiene un signo único. Mussa, Nwaogu y Pozo (2017) asocian más entradas con alquileres y precios más altos. El metaanálisis de Larkin et al. (2019) halla que la inmigración sube los precios en conjunto, más a escala provincial. Sá (2015) y Saiz y Wachter (2011) hallan, en cambio, precios más bajos o una apreciación más lenta. Para España, Torres-Téllez y Montero-Soler (2023) asocian la llegada de inmigrantes con alquileres más altos. Las cinco referencias tienen DOI verificado y cuartil no verificado (ficha P4 de V15). Miden en unidades distintas y con otras muestras: no se compara la magnitud. <!-- check:cifra-libre (ficha P4) -->
 
 **H3, Q2a y Q6-p: no concluyentes.** No concluyente no es «nulo». H3 (vivienda turística y alquiler por sección) tiene un coeficiente principal que es el mínimo de su multiverso y no tiene error estándar válido. Q2a (provincial) depende de los controles. Q6-p (ITP y valor tasado) fue pista hasta su réplica ciega, que corrigió un error de diferencias entre años no consecutivos.
@@ -451,7 +453,7 @@ Cada canal se juzga con lo que la evidencia permite. «Literatura» es la ficha 
 | Demanda: hogares y renta | Más hogares o más renta suben alquiler y precio a corto plazo | Marco de cuatro cuadrantes; Fernández-Kranz y Hon (2006, DOI verificado) sobre la elasticidad-renta | Contabilidad de hogares; V8 no designa ningún factor | Compatible, no separado |
 | Demanda: inmigración | Más hogares en alquiler y compra | Signo no unívoco (Mussa et al., 2017; Larkin et al., 2019; Sá, 2015; Torres-Téllez y Montero-Soler, 2023, todas con DOI verificado) | H4 y Q3-b, correlaciones frágiles | Correlación frágil [C4] |
 | Tipos de interés | Más tipo exigido, menos precio y menos obra | Marco de cuatro cuadrantes | V8 no designa crédito y tipos; Q5 no concluyente | No separado de la demanda |
-| Oferta y suelo | Oferta rígida, más precio ante un shock de demanda | Saiz (2010); Hilber y Vermeulen (2016); Caldera Sánchez y Johansson (2013), todas con DOI verificado | Q4 sin hallazgo; elasticidad municipal sin identificar | No evaluable con los datos |
+| Oferta y suelo | Oferta rígida, más precio ante un shock de demanda | Saiz (2010); Hilber y Vermeulen (2016); Caldera Sánchez y Johansson (2013), todas con DOI verificado | Q4 sin hallazgo; elasticidad municipal sin identificar | No evaluable con los datos disponibles |
 | Vivienda turística | Cambio de uso: menos oferta residencial, más alquiler | García-López et al. (2020, Barcelona); Barron et al. (2021), ambas con DOI verificado | H3 y Q2a no concluyentes; Q2c no se cita | No concluyente [C4] |
 | Regulación del alquiler | Tope en el contrato regulado, posibles desbordamientos | Ver Parte III | H1: signo | Pista, solo el signo [C4] |
 | Fiscalidad de la compra | Un impuesto sobre la transmisión cambia volumen y, en parte, precio | Best y Kleven (2018); Besley et al. (2014), ambas con DOI verificado | Q6-v descriptivo; Q6-p no concluyente | No evaluable |
@@ -489,7 +491,7 @@ Esta parte evalúa afirmaciones sobre ocho instrumentos de política de vivienda
   - **Evidencia en contra.** Al menos dos estudios con diseño, leídos completos, en sentido contrario al objetivo declarado.
   - **No evaluable con los datos disponibles.** Ni la literatura ni nuestros datos permiten juzgar el instrumento en España.
 - **Resultado de aplicar la regla.** Casi toda la literatura de `docs/v16/literatura/` se leyó en resumen o en versión de trabajo. Por eso ninguna ficha llega a «eficacia probada» ni a «evidencia en contra». Cuando los estudios con diseño coinciden, el veredicto es «prometedora» y la ficha lo dice.
-- **Regla de capa.** Todas nuestras estimaciones (V15, V16 y los escenarios de la 1.0) son [C4]. Ningún veredicto de este catálogo se apoya en una estimación propia de capa superior a [C4]. Los veredictos que no son «no evaluable» vienen de la literatura con DOI verificado, de otros países o periodos, y no de una estimación nuestra sobre España.
+- **Regla de capa.** Todas nuestras estimaciones de V15 y V16 son [C4]. De la 1.0 entran dos cosas. Las magnitudes de los escenarios simulados son [C4]. El signo de cuatro actuaciones es [C2], dentro de la rejilla simulada: movilización de vacías y más construcción donde hay presión (signo estable); vivienda pública (signo débil: no positivo o nulo si desplaza a la promoción privada); ayudas a la demanda (el beneficiario paga igual o menos como grupo). Ese signo [C2] es el publicado en la 1.0, no sube ni baja de capa, vale solo dentro de la rejilla de supuestos y no es una estimación sobre España. Ningún veredicto de este catálogo se apoya en una estimación propia de capa superior a [C4]. Los veredictos que no son «no evaluable» vienen de la literatura con DOI verificado, de otros países o periodos, y no de una estimación nuestra sobre España; el signo [C2] de la rejilla se cita junto a ellos, donde corresponde, sin sustituirlos. <!-- check:cifra-libre (versión 1.0; número de actuaciones: diseño) -->
 - **Literatura.** Solo entran las referencias de `docs/v16/literatura/` y `docs/v15/literatura/`, con la etiqueta de su ficha: «DOI verificado; cuartil no verificado» (existe en Crossref o DataCite) o NO VERIFICADA (sin DOI localizado). Las magnitudes de los autores no están en `cifras_clave`, así que aquí se da el signo y la ficha donde está la cifra.
 - **Pre-registro.** Los resultados de V15 y V16 que se citan tienen un pre-registro interno, sin sello de tiempo externo. V15: etiqueta `prereg-v15` en el remoto, commit 542b4fd, 2026-10-17. V16: etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17. No son pre-registros depositados. <!-- check:cifra-libre (etiquetas, commit y fecha de pre-registro) -->
 - **Evaluación sellada.** Las hipótesis de V15 (H1 a H5) tienen la evaluación sellada pendiente (calendario en `docs/v15/preregistro_v15_adenda.md`, sección C; fecha límite 31-12-2027). `evaluate_v16` no aplica: ninguna pregunta de V16 cumple las condiciones para una evaluación sellada confirmatoria, así que V16 no tiene evaluación sellada pendiente. <!-- check:cifra-libre (números de hipótesis, sección y fecha) -->
@@ -570,6 +572,7 @@ No hay evaluación del Bono Alquiler Joven ni de sus convocatorias autonómicas 
 
 - **Q7a (V16): descriptivo, sin separación entre señal y ruido.** Se compara el alquiler de los inquilinos de mercado a uno y otro lado del corte de edad del bono, antes y después de su entrada en vigor, con la ECV. La diferencia en discontinuidades del logaritmo del alquiler es -0,12 Δlog [C4]. Los umbrales placebo de edad dan diferencias del mismo orden: -0,14 a -0,05 Δlog [C4]. No se muestra ningún intervalo.
 - **Lo que mide.** El Plan Estatal 2018-2021 ya tenía un programa para menores de 35 años. La diferencia mide un cambio de generosidad entre ese plan y el bono, no un programa nuevo. El corte legal difiere en un año del de la ECV. La potencia está en el límite. <!-- check:cifra-libre (edad de corte, plan 2018-2021) -->
+- **Signo de la 1.0 [C2].** Para las ayudas a la demanda en general, la 1.0 da un signo [C2] en la rejilla simulada (véase III.8). No es una evaluación del bono. <!-- check:cifra-libre (apartado III.8, versión 1.0) -->
 - **Conclusión.** No se cita ninguna magnitud como efecto del bono. V16 no tiene evaluación sellada para Q7a (véase III.1). <!-- check:cifra-libre (apartado III.1) -->
 
 #### Coste
@@ -582,7 +585,7 @@ Traslación a la renta en mercados de oferta rígida (literatura). Efectos de um
 
 #### Veredicto
 
-**No evaluable con los datos disponibles.** La literatura internacional apunta a una traslación al alquiler de tamaño muy variable. En España no hay evaluación, y nuestro diseño descriptivo no distingue señal de ruido.
+**No evaluable con los datos disponibles.** La literatura internacional apunta a una traslación al alquiler de tamaño muy variable. En España no hay evaluación del bono, y nuestro diseño descriptivo no distingue señal de ruido. Para las ayudas a la demanda en general, véase el veredicto de III.8.
 
 ### III.4 Impuesto de transmisiones patrimoniales (ITP)
 
@@ -640,9 +643,9 @@ Las fichas con DOI verificado de L2 y P5 (entre ellas Barron, Kung y Proserpio, 
 
 #### Nuestra estimación
 
-- **H3 (V15), Q2a (V16): no concluyentes.** La asociación entre la densidad de vivienda turística y el alquiler tiene signo positivo en los dos diseños (sección censal y provincia) [C4]. El coeficiente principal de H3 es el mínimo de su multiverso y no tiene error estándar válido. El efecto mínimo detectable de H3, 0,10 % por desviación típica [C4], es mayor que el coeficiente principal, 0,00 % por desviación típica [C4]. No concluyente no significa nulo: el diseño no distingue entre efecto pequeño y ausencia de efecto. Q2a depende de los controles y de la fecha de la exposición. Las escalas «por desviación típica» no son comparables entre diseños.
+- **H3 (V15), Q2a (V16): no concluyentes.** La asociación entre la densidad de vivienda turística y el alquiler tiene signo positivo en los dos diseños (sección censal y provincia) [C4]. El coeficiente principal de H3 es el mínimo de su multiverso y no tiene error estándar válido. El efecto mínimo detectable de H3, 0,0972 % por desviación típica [C4], es mayor que el coeficiente principal, 0,003 % por desviación típica [C4]. No concluyente no significa nulo: el diseño no distingue entre efecto pequeño y ausencia de efecto. Q2a depende de los controles y de la fecha de la exposición. Las escalas «por desviación típica» no son comparables entre diseños.
 - **Q2c (V16).** No se cita: tiene signo inestable.
-- **Atlas.** La vivienda turística (INE, medición experimental) se concentra: el cociente entre el percentil 90 y el 10 de su peso municipal es 23,6 cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas) [C4], con dato en una parte de los municipios (el resto, suprimidos). La media nacional esconde la concentración. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
+- **Atlas.** La vivienda turística (INE, medición experimental) se concentra: el cociente entre el percentil 90 y el 10 de su peso municipal es 23,6 [C4], con dato en una parte de los municipios (el resto, suprimidos). La media nacional esconde la concentración. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
 - **Triangulación.** H3 y Q2a coinciden en el signo; H3 y Q2c no. Con la literatura: mismo signo, unidades no comparables. H3 (V15) está pendiente de su evaluación sellada; Q2a (V16) no tiene evaluación sellada.
 
 #### Coste
@@ -676,7 +679,8 @@ No hay estudio con diseño sobre el recargo del IBI a la vivienda vacía (ficha 
 #### Nuestra estimación
 
 - **Hecho de partida [C4].** El Censo 2021 cuenta 8.087.092 viviendas no principales (secundarias y vacías) [C4]. Por consumo eléctrico, hay 3.828.307 viviendas vacías, un 14,4 % de las viviendas familiares [C4]. Son medidas con definiciones distintas; no se suman ni se identifican con vivienda disponible.
-- **Dispersión.** El cociente entre percentil 90 y percentil 10 del porcentaje municipal de viviendas vacías por consumo eléctrico es 4,8 cociente P90/P10 (min y max en la unidad del indicador: % de las viviendas) [C4]. La media nacional esconde que la vacancia se concentra en unos municipios. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
+- **Dispersión.** El cociente entre percentil 90 y percentil 10 del porcentaje municipal de viviendas vacías por consumo eléctrico es 4,8 [C4]. La media nacional esconde que la vacancia se concentra en unos municipios. <!-- check:cifra-libre (percentiles 90 y 10: definición del cociente) -->
+- **Signo de la 1.0 [C2].** En la rejilla simulada de la 1.0, la movilización de vacías donde hay presión tiene signo estable [C2]. Es el signo, no la magnitud. No es un estudio con diseño sobre España. <!-- check:cifra-libre (versión 1.0) -->
 - **Escenario de la 1.0.** En la simulación de la versión 7.1, movilizar vivienda vacía se asocia con una variación del precio del alquiler de -1,7 puntos % por cada 10.000 viviendas en 10 años (mediana entre comunidades), con rango -6,8 a -0,31 puntos % [C4]. Es un escenario condicional sobre coeficientes de panel de la versión 7, no un resultado de V15 ni de V16. En compra, las cuatro actuaciones de oferta de la simulación (construcción, vacías, vivienda pública y turísticas) tienen el mismo valor: -0,61 puntos %, rango -2,4 a -0,11 puntos % [C4]. En la simulación, el precio de compra no distingue entre ellas. <!-- check:cifra-libre (versiones 7 y 7.1, 10.000 viviendas y 10 años: unidad y horizonte de la cifra de cifras_clave; cuatro actuaciones: diseño) -->
 - Ninguna estimación de V15 ni de V16 cubre este instrumento.
 
@@ -690,7 +694,7 @@ Recaudación adicional si el recargo se aplica. Traslado del uso de la vivienda 
 
 #### Veredicto
 
-**Prometedora** para reducir la vacancia (Segú, 2020, DOI verificado: un solo estudio con diseño, en un país). **Sin evidencia** de que reduzca el alquiler o el precio: no hay estudio con diseño sobre ese resultado, y el escenario de la 1.0 es una simulación de capa [C4]. En España, no evaluable con los datos disponibles.
+**Prometedora** para reducir la vacancia (Segú, 2020, DOI verificado: un solo estudio con diseño, en un país). **Sin evidencia** de que reduzca el alquiler o el precio: no hay estudio con diseño sobre ese resultado. El escenario de la 1.0 da un signo estable [C2] en la rejilla y magnitudes [C4], pero una simulación no es un estudio con diseño y no cambia este veredicto. En España, no evaluable con los datos disponibles.
 
 ### III.7 Oferta pública y suelo
 
@@ -716,7 +720,8 @@ La ficha agrupa dos instrumentos con mecanismos distintos: más oferta libre (su
 #### Nuestra estimación
 
 - **Q4 (V16): sin hallazgo.** La asociación de la obra nueva neta con el porcentaje de Red Natura municipal es -0,13 log por desviación típica [C4], pero la inferencia con agrupación provincial no es apta, los residuos tienen dependencia espacial y la Red Natura no es exógena (restricción de uso correlacionada con el medio rural). La interacción con el choque de demanda, Q4b, es -0,00 log por punto de choque y DT de RN [C4] y su placebo de choque adelantado tiene el mismo signo y mayor tamaño. No se concluye nada sobre la elasticidad municipal.
-- **Producción de vivienda.** En 2025 se terminaron 80.792 viviendas libres [C4]. Entre 2021 y 2025 se terminaron 0,42 viviendas por hogar libres por hogar nuevo [C4]. Son flujos, no una medida de necesidad. <!-- check:cifra-libre (años) -->
+- **Producción de vivienda.** En 2025 se terminaron 80.792 viviendas libres [C4]. Entre 2021 y 2025, las viviendas libres terminadas por hogar nuevo (ECP) son 0,42 viviendas por hogar [C4]. Son flujos, no una medida de necesidad. <!-- check:cifra-libre (años) -->
+- **Signo de la 1.0 [C2], en la rejilla simulada.** Más construcción donde hay presión tiene signo estable. La vivienda pública tiene un signo débil: no positivo o nulo si desplaza a la promoción privada. El verificador de la 1.0 (ficha V11) da PARCIALMENTE [C2] para el esfuerzo de acceso. Para el precio de compra no hay signo [C2]: las magnitudes de la simulación son [C4]. Es el signo de una simulación, no un estudio con diseño sobre España. <!-- check:cifra-libre (versión 1.0, ficha V11) -->
 - **Escenarios de la 1.0 (V7.1).** En la simulación, por cada 10.000 viviendas adicionales en 10 años: <!-- check:cifra-libre (versión 7.1, 10.000 viviendas y 10 años: unidad y horizonte de las cifras de cifras_clave) -->
   - construcción adicional: alquiler -0,70 puntos %, rango -2,7 a -0,12 puntos % [C4];
   - vivienda pública o asequible: alquiler -3,2 puntos %, rango -12,2 a -0,56 puntos % [C4];
@@ -734,8 +739,8 @@ Desplazamiento de vivienda privada por la pública. Plazos largos (el retardo me
 
 #### Veredicto
 
-- **Oferta libre (más suelo, más obra nueva):** **prometedora**. Las referencias con DOI verificado, leídas en resumen, asocian más oferta con rentas cercanas más bajas, y las restricciones de oferta con precios más altos. En España no hay estimación identificada de la elasticidad municipal, y Q4 queda sin hallazgo.
-- **Vivienda pública o asequible:** **sin evidencia** en España; **no evaluable con los datos disponibles**. La literatura de EE. UU. documenta desplazamiento parcial, y el efecto en el precio depende de la renta del barrio.
+- **Oferta libre (más suelo, más obra nueva):** **prometedora**. Las referencias con DOI verificado, leídas en resumen, asocian más oferta con rentas cercanas más bajas, y las restricciones de oferta con precios más altos. La 1.0 añade un signo estable [C2] en la rejilla simulada para más construcción donde hay presión. En España no hay estimación identificada de la elasticidad municipal, y Q4 queda sin hallazgo.
+- **Vivienda pública o asequible:** **sin evidencia** en España; **no evaluable con los datos disponibles**. La literatura de EE. UU. documenta desplazamiento parcial, y el efecto en el precio depende de la renta del barrio. En la rejilla simulada de la 1.0, el signo es débil [C2] (no positivo o nulo si desplaza a la promoción privada) y el veredicto de la ficha V11 es PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2].
 
 ### III.8 Ayudas a la demanda (compra y alquiler en general)
 
@@ -758,15 +763,16 @@ No hay evaluación de los avales ICO ni de las ayudas del plan estatal (ficha L5
 #### Nuestra estimación
 
 Ninguna estimación de V15 ni de V16 cubre este instrumento. Escenario de la 1.0, en la simulación:
+- **Signo [C2].** En la rejilla simulada, el beneficiario paga igual o menos como grupo y el no beneficiario paga más (ficha D1-V1 del verificador de la 1.0, PARCIALMENTE [C2]). El signo es C2; la magnitud del traslado al precio es [C4];
 - coste fiscal anual aproximado de una ayuda a la demanda en compra: 378,2 M€/año, rango entre comunidades 68,0-2.915 M€/año [C4];
 - coste anual por punto de reducción del precio neto pagado por el comprador: 76,4 M€/año por punto, rango 12,2-515,9 M€/año por punto [C4];
-- variación del precio de mercado por cada 100 M€ anuales: 1,4 puntos %, rango 0,16-7,6 puntos % [C4].
+- variación del precio de mercado por cada 100 M€ anuales: 1,4 puntos %, rango 0,16-7,6 puntos % [C4]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
-Es una simulación condicional sobre coeficientes de panel de la versión 7. <!-- check:cifra-libre (100 M€: unidad de la cifra de cifras_clave; versión 7) -->
+Es una simulación condicional sobre coeficientes de panel de la versión 7. <!-- check:cifra-libre (100 M€: unidad de la cifra de cifras_clave; versión 7; versión 1.0) -->
 
 #### Coste
 
-Los tres valores anteriores. Son el coste de la simulación, no un presupuesto.
+Los tres valores de coste y de variación del precio anteriores. Son el coste de la simulación, no un presupuesto.
 
 #### Efectos secundarios
 
@@ -774,8 +780,8 @@ Capitalización en el precio, con beneficio parcial para el vendedor. Mayor ende
 
 #### Veredicto
 
-- **Asequibilidad del beneficiario (objetivo declarado):** **no evaluable con los datos disponibles** en España. No hay evaluación local, y nuestro escenario es una simulación [C4].
-- **Traslación al precio o a la renta de mercado (resultado distinto):** las referencias con DOI verificado, leídas en resumen, describen capitalización parcial donde la oferta es rígida. Es una advertencia sobre el precio de mercado, no un veredicto sobre el instrumento. Con la regla de umbral no alcanza «evidencia en contra» (estudios no leídos completos). Eso no afirma que el comprador no se beneficie: afirma que parte de la ayuda llega al precio, según esos estudios y, en la simulación, según los coeficientes de panel.
+- **Asequibilidad del beneficiario (objetivo declarado):** **prometedora** (signo [C2] de la simulación de la 1.0, sin estudio empírico español). La 1.0 da, en la rejilla simulada, el signo [C2] de que el beneficiario paga igual o menos como grupo. No hay evaluación empírica española. Con la regla de umbral de III.1, «prometedora» pide al menos un estudio con diseño en el sentido del objetivo, leído en resumen: las referencias de L5 con DOI verificado describen una traslación parcial, que deja al beneficiario con parte de la ayuda, y eso es compatible con el signo de la simulación. No llega a «eficacia probada»: no se leyeron completas y ninguna es española.
+- **Traslación al precio o a la renta de mercado (resultado distinto):** las referencias con DOI verificado, leídas en resumen, describen capitalización parcial donde la oferta es rígida. Es una advertencia sobre el precio de mercado, no un veredicto sobre el instrumento. La magnitud del traslado en la 1.0 es [C4]. Con la regla de umbral no alcanza «evidencia en contra» (estudios no leídos completos). Eso no afirma que el comprador no se beneficie: afirma que parte de la ayuda llega al precio, según esos estudios y, en la simulación, según los coeficientes de panel.
 
 ### III.9 Compradores no residentes
 
@@ -818,15 +824,15 @@ Menor entrada de capital. Efectos sobre el mercado turístico y de segunda resid
 | Bono Alquiler Joven | No evaluable con los datos disponibles | Q7a descriptivo |
 | ITP | No evaluable con los datos disponibles | Q6-v descriptivo; Q6-p no concluyente |
 | Vivienda turística | Prometedora (literatura internacional); no evaluable en España | H3 y Q2a no concluyentes |
-| Movilización de vacías | Prometedora para la vacancia; sin evidencia para alquiler y precio | Un solo estudio verificado |
-| Oferta libre y suelo | Prometedora | Q4 sin hallazgo |
-| Vivienda pública | Sin evidencia; no evaluable con los datos disponibles | Desplazamiento parcial en la literatura de EE. UU. |
-| Ayudas a la demanda | Asequibilidad del beneficiario: no evaluable en España. Traslación al precio: capitalización parcial en la literatura (resumen) | Escenario de la 1.0 |
+| Movilización de vacías | Prometedora para la vacancia; sin evidencia para alquiler y precio | Un solo estudio verificado; signo estable [C2] solo en la rejilla simulada de la 1.0 |
+| Oferta libre y suelo | Prometedora | Q4 sin hallazgo; signo estable [C2] en la rejilla simulada de la 1.0 para más construcción donde hay presión |
+| Vivienda pública | Sin evidencia; no evaluable con los datos disponibles | Desplazamiento parcial en la literatura de EE. UU.; signo débil [C2] en la rejilla de la 1.0 (no positivo o nulo); PARCIALMENTE [C2] para el esfuerzo en la ficha V11; el precio de compra no tiene signo [C2] |
+| Ayudas a la demanda | Asequibilidad del beneficiario: prometedora (signo [C2] de simulación, sin estudio empírico español). Traslación al precio: capitalización parcial en la literatura (resumen) | Escenario de la 1.0; magnitud del traslado [C4] |
 | Compradores no residentes | No evaluable con los datos disponibles | Q8 descriptivo |
 
 #### Qué dice la regla de capa sobre esta tabla
 
-- Con todas nuestras estimaciones en [C4], ninguna fila se apoya en un resultado propio de capa superior. Con la regla de umbral de III.1, ninguna fila alcanza «eficacia probada» ni «evidencia en contra». Las filas «prometedora» vienen de la literatura con DOI verificado, de otros países o periodos, y solo para el resultado que se indica. <!-- check:cifra-libre (apartado III.1) -->
+- Con todas nuestras estimaciones de V15 y V16 en [C4], ninguna fila se apoya en un resultado propio de capa superior. La única capa superior es el signo [C2] de la rejilla simulada de la 1.0 (vacías, construcción, vivienda pública y ayudas a la demanda): es un signo de simulación, no un estudio con diseño sobre España. Con la regla de umbral de III.1, ninguna fila alcanza «eficacia probada» ni «evidencia en contra». Las filas «prometedora» vienen de la literatura con DOI verificado, de otros países o periodos, y solo para el resultado que se indica. <!-- check:cifra-libre (apartado III.1, versión 1.0) -->
 - Para ningún instrumento hay una evaluación española con identificación y diseño creíble, salvo los topes de la Ley 11/2020 de Cataluña. La validez externa de la literatura depende de la elasticidad de la oferta y de la tenencia, que en España son distintas: mucha propiedad, poco parque social y una hipoteca mayoritariamente variable hasta 2022. <!-- check:cifra-libre (Ley 11/2020) -->
 - La evaluación sellada de V15 puede cambiar las filas de la tabla. V16 no tiene evaluación sellada pendiente. Hasta entonces, las hipótesis de V15 están pendientes.
 
@@ -871,20 +877,20 @@ Esta parte presenta el atlas multiescala y lo que sobrevive a escala local. Todo
 
 Una media nacional esconde la dispersión. La tabla da el cociente entre el percentil 90 y el percentil 10 (P90/P10) de cada magnitud entre las unidades no selladas. Un cociente de 1 significa que no hay dispersión; cuanto mayor, más dispersión. <!-- check:cifra-libre (percentiles 90 y 10 y cociente de referencia 1, definición) -->
 
-| Magnitud | Escala | Periodo | Cociente P90/P10 |
+| Magnitud | Escala | Periodo | Cociente P90/P10 | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 |---|---|---|---|
 | Renta neta media del hogar (ADRH) | municipio | 2023 | 1,8 |
 | Renta mediana por unidad de consumo (ADRH) | sección | 2023 | 1,8 |
 | Alquiler mediano €/m² y mes (SERPAVI) | municipio | 2024 | 2,5 |
-| Ratio alquiler anual de 80 m² sobre renta del hogar | municipio | 2023 | 1,9 |
+| Ratio alquiler anual de 80 m² sobre renta del hogar | municipio | 2023 | 1,9 | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | Misma ratio | sección | 2023 | 2,5 |
 | Valor tasado €/m² | provincia | 2026T2 | 2,7 |
-| Sobreesfuerzo del 40 % (ECV) | CCAA | 2025 | 2,0 |
+| Sobreesfuerzo del 40 % (ECV) | CCAA | 2025 | 2,0 | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | Viviendas no principales, % (Censo 2021) | municipio | 2021 | 3,0 |
 | Viviendas vacías por consumo eléctrico, % (Censo 2021) | municipio | 2021 | 4,8 |
 | Viviendas turísticas, % de las viviendas (INE VTE) | municipio | 2026-05 | 23,6 |
 | Población de nacionalidad extranjera, % (censo anual) | municipio | 2025 | 17,8 |
-| Lanzamientos por 10.000 viviendas, suma 2013-2024 | partido judicial | 2013-2024 | 8,5 |
+| Lanzamientos por 10.000 viviendas, suma 2013-2024 | partido judicial | 2013-2024 | 8,5 | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (80 m², 40 %, 10.000 viviendas, periodos y escalas en la tabla) -->
 
@@ -892,7 +898,7 @@ Una media nacional esconde la dispersión. La tabla da el cociente entre el perc
 - La renta tiene un cociente menor que las magnitudes de turismo, de población extranjera y de lanzamientos.
 - Las viviendas turísticas se miden solo en los municipios con dato del INE; la cifra no es comparable con las de cobertura completa.
 - El cociente de la ratio de esfuerzo en secciones (2,5) supera al de municipios (1,9): dentro de un mismo municipio hay secciones más distintas entre sí que los municipios entre sí.
-- Los mínimos y máximos de cada magnitud están en `output/v16/f2_atlas/hechos.json`.
+- Los mínimos y máximos de cada magnitud están en `output/v16/f2_atlas/hechos.json`. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 ### IV.3 Esfuerzo de alquiler por territorio
 
@@ -934,9 +940,9 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 #### Q3-b (V16): población extranjera y alquiler por sección. Correlación frágil
 
 - **Qué es.** Asociación transversal entre la variación del alquiler mediano SERPAVI 2021-2024 (contratos vigentes) y la cuota de población extranjera de 2022, por desviación típica, con efectos fijos de municipio.
-- **Resultado.** Las seis variantes pre-registradas dan el mismo signo. La principal es 0,01 y es la mayor de las variantes, no la mediana. Las variantes van de 0,00 log por desviación típica a 0,01 log por desviación típica, y su mediana es 0,01 [C4] (unidad: log por desviación típica).
+- **Resultado.** Las seis variantes pre-registradas dan el mismo signo. La principal es 0,00908 y es la mayor de las variantes. La mediana de las variantes es 0,00575, menor que la principal [C4] (unidad: log por desviación típica).
 - **Limitaciones.**
-  - La pretendencia (el mismo ajuste con la variación 2018-2021) da 0,01 [C4]. Es más de la mitad del coeficiente principal. Una asociación previa a la exposición no se distingue de una tendencia anterior.
+  - La pretendencia (el mismo ajuste con la variación 2018-2021) da 0,00511 [C4]. Es más de la mitad del coeficiente principal. Una asociación previa a la exposición no se distingue de una tendencia anterior.
   - Puede haber reversión a la media o convergencia, y desbalance de renta.
   - La exposición de 2022 cae dentro de la ventana del resultado.
   - Hay un posible confusor turístico.
@@ -949,14 +955,14 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 #### H4 (V15): población extranjera predicha y alquiler municipal. Correlación frágil
 
 - **Qué es.** Asociación entre la variación de la población extranjera, predicha con un instrumento de tipo shift-share, y el alquiler municipal SERPAVI. Se lee como asociación descriptiva.
-- **Resultado.** La estimación principal es 0,30 % por p.p. [C4]. El multiverso de 64 especificaciones va de -0,14 % por p.p. a 0,39 % por p.p., e incluye el cero. Su mediana es 0,08 % por p.p. [C4].
+- **Resultado.** La estimación principal es 0,30 % por p.p. [C4]. El multiverso de 64 especificaciones va de -0,14 % por p.p. a 0,39 % por p.p., e incluye el cero. Su mediana es 0,08 % por p.p. [C4]. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Limitaciones.**
   - La principal está en la cola alta del multiverso.
   - El signo cambia al quitar los cinco orígenes principales.
   - El número efectivo de choques es 5,5 [C4]: pocos orígenes pesan en el resultado.
   - El F robusto de primera etapa (70,2 F [C4]) es descriptivo.
   - El padrón por nacionalidad no recoge las nacionalizaciones.
-  - La estimación 2SLS es varias veces la de mínimos cuadrados.
+  - La estimación 2SLS es varias veces la de mínimos cuadrados. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Estado.** Evaluación sellada pendiente.
 - **Lectura.** Correlación frágil. Los dos diseños (Q3-b y H4) coinciden en el signo; eso no los convierte en un efecto.
 
@@ -992,8 +998,8 @@ Todas son [C4]. Su pre-registro es interno, sin sello de tiempo externo: V16, et
 
 - **Fichas territoriales de la web.** Una ficha por territorio, con el indicador, su periodo, su fuente, su capa y su marca de calidad. Se accede desde la página de fichas de la web del proyecto.
 - **Descargas.** `territorios.csv` y `territorios.parquet`, más los ficheros `atlas_*.csv` de V10.
-- **Fichas del anexo.** Cada cifra `V16-ATL-*` tiene ficha en `output/v16/f2_atlas/` y en el anexo metodológico.
-- **Atlas de la 1.0.** `publicacion/atlas_descriptivo.md`, `publicacion/atlas_v12.md` y `publicacion/atlas_regional/atlas_resumen.md`.
+- **Fichas del anexo.** Cada cifra `V16-ATL-*` tiene ficha en `output/v16/f2_atlas/` y en el anexo metodológico. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+- **Atlas de la 1.0.** `publicacion/atlas_descriptivo.md`, `publicacion/atlas_v12.md` y `publicacion/atlas_regional/atlas_resumen.md`. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (versiones V10, V12, V16 y 1.0) -->
 
@@ -1062,9 +1068,9 @@ Las viviendas que quedan libres por fallecimiento o traslado a residencia son un
 
 ### V.2 Simulaciones condicionales
 
-Una simulación aplica una medida a un modelo con supuestos y devuelve una variación. Todas las de esta sección son [C4]. En la simulación, cada medida se asocia con un cambio de precio o de esfuerzo. La simulación no mide lo que ocurriría en la realidad. Los resultados dependen de elasticidades de oferta que no se han estimado con datos de España.
+Una simulación aplica una medida a un modelo con supuestos y devuelve una variación. Las magnitudes de todas las simulaciones de esta sección son [C4]. De la 1.0 solo es [C2] el signo de algunas actuaciones en la rejilla simulada (se enumeran en la lectura al final del apartado). En la simulación, cada medida se asocia con un cambio de precio o de esfuerzo. La simulación no mide lo que ocurriría en la realidad. Los resultados dependen de elasticidades de oferta que no se han estimado con datos de España.
 
-Cada resultado declara su medida de precio: precio de compra o de alquiler de mercado, y esfuerzo del hogar. El horizonte es de 10 años. El ámbito son 17 comunidades autónomas. Las cifras son la mediana entre comunidades, con el rango entre comunidades. <!-- check:cifra-libre (horizonte de 10 años y 17 comunidades, números de diseño) -->
+Cada resultado declara su medida de precio: precio de compra o de alquiler de mercado, y esfuerzo del hogar. El horizonte es de 10 años. El ámbito son 17 comunidades autónomas. Las cifras son la mediana entre comunidades, con el rango entre comunidades. <!-- check:cifra-libre (horizonte de 10 años y 17 comunidades, números de diseño; versión 1.0) -->
 
 #### V71-S1 y V71-S3: rejilla de medidas
 
@@ -1074,7 +1080,14 @@ Cada resultado declara su medida de precio: precio de compra o de alquiler de me
 - **Regulación local de turísticos.** En la simulación, alquiler a 10 años: -0,50 % (-3,0 a -0,18 %) [C4]. Compra: -0,09 % (-0,53 a -0,03 %) [C4]. Es robusta en 8 CCAA de 17 en alquiler y en 1 CCAA de 17 en compra. <!-- check:cifra-libre (horizonte de 10 años, 17 CCAA) -->
 - **Ayudas a la demanda (compra).** Coste fiscal anual aproximado: 378,2 M€/año (68,0-2.915 M€/año) [C4]. En la simulación, cada 100 M€ anuales se asocian con una variación del precio de mercado de 1,4 puntos % (0,16-7,6 puntos %) [C4]. El signo es al alza. <!-- check:cifra-libre (unidad de 100 M€, diseño) -->
 
-Lectura. Con dosis de 10.000 a 25.000 viviendas al año, la vivienda pública queda lejos de la brecha de la sección V.1. Que «resuelva» el problema depende del volumen y del desplazamiento de la construcción privada. En la simulación, la ayuda a la demanda baja el precio neto para quien la recibe y sube el de mercado. En la simulación, quien no la recibe paga más. Ese reparto por grupos es el único resultado de signo que la ficha del verificador de la 1.0 sitúa en [C2]. Las cifras de esta sección son [C4]; el C2 no se apoya en ellas. <!-- check:cifra-libre (dosis de 10.000 y 25.000 viviendas al año de la ficha V11 del verificador; versión 1.0) -->
+Lectura. Con dosis de 10.000 a 25.000 viviendas al año, la vivienda pública queda lejos de la brecha de la sección V.1. Que «resuelva» el problema depende del volumen y del desplazamiento de la construcción privada. En la simulación, la ayuda a la demanda baja el precio neto para quien la recibe y sube el de mercado. En la simulación, quien no la recibe paga más. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+
+La 1.0 sitúa en [C2], en la rejilla simulada, solo el signo de tres resultados:
+- movilización de vacías y más construcción donde hay presión: signo estable;
+- vivienda pública: signo débil (no positivo o nulo si desplaza a la promoción privada). La ficha V11 del verificador da PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2];
+- ayudas a la demanda: mejoran al beneficiario como grupo y el no beneficiario paga más (ficha D1-V1, PARCIALMENTE [C2]).
+
+Las cifras de esta sección son [C4]; el C2 no se apoya en ellas. <!-- check:cifra-libre (tres resultados de signo de la 1.0; fichas V11 y D1-V1; dosis de 10.000 y 25.000 viviendas al año de la ficha V11 del verificador; versión 1.0) -->
 
 #### Límites de la rejilla
 
@@ -1108,7 +1121,7 @@ Las hipótesis de V15 tienen la evaluación sellada pendiente (`evaluate_v15`, f
 
 H5 combinaba varios modelos para predecir el valor tasado un trimestre adelante. El diseño contrastaba si la combinación supera al AR(4). No lo supera. <!-- check:cifra-libre (identificadores H5, AR(4); horizonte de un trimestre) -->
 
-- La razón del error cuadrático medio de la combinación frente al AR(4), pre-registrada, es 1,5 razón [C4]. Una razón mayor que uno quiere decir que la combinación se equivoca más.
+- La razón del error cuadrático medio de la combinación frente al AR(4), pre-registrada, es 1,5 razón [C4]. Una razón mayor que uno quiere decir que la combinación se equivoca más. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - Según la implementación, la razón va de 1,2-1,5 razón (de la réplica ciega a la producción pre-registrada). Se cita el rango entre implementaciones, no solo la cifra pre-registrada. En las dos la razón es mayor que uno.
 - No se cita un valor p: el DM-HLN no se usa como prueba (véase arriba su estado). La conclusión descansa en la razón de error.
 - La STL por origen se eligió por la regla «sin datos posteriores al origen», no por su valor. Se decidió después de ver la reconciliación entre implementaciones, y así consta. <!-- check:cifra-libre (identificador STL; «mayor que uno» como umbral de la razón) -->
@@ -1119,18 +1132,18 @@ La evaluación sellada de V15 sigue pendiente.
 
 Q10 prueba un modelo más elaborado contra el AR(4) en tres series nacionales: el índice de precios, el IPC de alquiler y las compraventas. Los resultados son descriptivos. El DM-HLN no se usa como prueba (véase arriba) y el contraste de Clark-West no superó la calibración. No hay valor p. Solo se informa de la reducción puntual del error. Se usan los datos en su última edición, no en tiempo real. <!-- check:cifra-libre (identificadores Q10 y AR(4); horizonte de un trimestre) -->
 
-| Serie | Modelo | Frente al AR(4) | Frente al ECM v1 reducido |
+| Serie | Modelo | Frente al AR(4) | Frente al ECM v1 reducido | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 |---|---|---|---|
-| Q10-1, precio (IPV) | MIDAS | empeora | el ECM v1 reducido también empeora frente al AR(4); MIDAS comete menos error que el ECM v1 reducido |
+| Q10-1, precio (IPV) | MIDAS | empeora | el ECM v1 reducido también empeora frente al AR(4); MIDAS comete menos error que el ECM v1 reducido | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | Q10-2, IPC de alquiler | Nowcast | empeora | no existe ECM v1 para esta serie |
 | Q10-3, compraventas | MIDAS | sin mejora fuera de 2020 | no existe ECM v1 para esta serie |
 
 <!-- check:cifra-libre (identificadores Q10-1 a Q10-3, AR(4), ECM v1 y año 2020) -->
 
-- **Q10-1 y Q10-2 empeoran frente al AR(4).** El modelo elaborado comete más error que el AR(4) en las dos series. Esto se mantiene al excluir 2020.
+- **Q10-1 y Q10-2 empeoran frente al AR(4).** El modelo elaborado comete más error que el AR(4) en las dos series. Esto se mantiene al excluir 2020. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Q10-3 sin mejora fuera de 2020.** La mejora aparente en compraventas procede de 2020 y 2021, el periodo de caída y rebote. Al excluir 2020 desaparece. No se cita como pista.
 - **ECM v1 reducido.** El ECM v1 de Q10 es una versión reducida, reproducida en el conjunto de entrenamiento sin la variable de costes. No equivale al modelo completo de la 1.0. Solo existe para el precio.
-- **Cobertura.** Los intervalos conformes del 90 % quedan en torno o por debajo del nivel nominal en las tres series, tanto con el modelo elaborado como con el AR(4).
+- **Cobertura.** Los intervalos conformes del 90 % quedan en torno o por debajo del nivel nominal en las tres series, tanto con el modelo elaborado como con el AR(4). <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (años 2020 y 2021; ECM v1; versión 1.0; nivel nominal del 90 %) -->
 
@@ -1138,9 +1151,9 @@ Las cifras de Q10 no se citan. El motivo es que la comparación se apoya en un �
 
 #### Qué se puede decir de la predicción
 
-1. Un modelo más complejo no supera al AR(4) en las series nacionales probadas, salvo en una comparación que depende de un año atípico. El alcance es el agregado nacional trimestral.
-2. La capacidad de predecir un trimestre adelante es limitada en precio y en alquiler.
-3. Estos resultados no dicen nada sobre qué medidas bajan o suben los precios. Esa pregunta es de la sección V.2, con sus supuestos.
+1. Un modelo más complejo no supera al AR(4) en las series nacionales probadas, salvo en una comparación que depende de un año atípico. El alcance es el agregado nacional trimestral. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+2. La capacidad de predecir un trimestre adelante es limitada en precio y en alquiler. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+3. Estos resultados no dicen nada sobre qué medidas bajan o suben los precios. Esa pregunta es de la sección V.2, con sus supuestos. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 4. Cuando la 1.0 afirma que un modelo «predice mejor», la afirmación se limita a las tareas en que supera a la línea base más exigente. Está en el verificador (K1-V1) y tiene otro alcance: la validación sellada de v6, sobre provincias y municipios. <!-- check:cifra-libre (numeración de la lista, AR(4), versiones 1.0 y v6, ficha K1-V1) -->
 
 
@@ -1152,11 +1165,11 @@ Cada apartado tiene tres partes: cómo es el truco, cómo se comprueba y un ejem
 
 ### Cinco preguntas antes de creer una cifra
 
-1. ¿Qué periodo cubre y por qué ese?
-2. ¿Es un valor nominal o real?
-3. ¿Mide contratos vigentes o contratos nuevos?
-4. ¿Es una media, un índice o un caso concreto?
-5. ¿Compara dos cosas que ocurren a la vez o muestra un efecto?
+1. ¿Qué periodo cubre y por qué ese? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+2. ¿Es un valor nominal o real? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+3. ¿Mide contratos vigentes o contratos nuevos? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+4. ¿Es una media, un índice o un caso concreto? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+5. ¿Compara dos cosas que ocurren a la vez o muestra un efecto? <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (numeración de la lista) -->
 
@@ -1198,7 +1211,7 @@ Cada apartado tiene tres partes: cómo es el truco, cómo se comprueba y un ejem
 
 **Cómo se comprueba.** Busca si la asociación ya existía antes de que ocurriera lo que se invoca (pretendencia). Mira si desaparece con controles. Mira si el rango de las especificaciones incluye el cero.
 
-**Ejemplo, Q3-b de V16.** Entre las secciones censales, la subida del alquiler 2021-2024 se asocia con la cuota de extranjeros: 0,01 (log por desviación típica) [C4]. Pero el mismo cálculo sobre 2018-2021, antes del periodo, da 0,01 [C4]. La asociación ya estaba. Es una pista descriptiva y frágil, no un efecto. Pre-registro interno sin sello de tiempo externo (etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17).
+**Ejemplo, Q3-b de V16.** Entre las secciones censales, la subida del alquiler 2021-2024 se asocia con la cuota de extranjeros: 0,00908 (log por desviación típica) [C4]. Pero el mismo cálculo sobre 2018-2021, antes del periodo, da 0,00511 [C4]. La asociación ya estaba. Es una pista descriptiva y frágil, no un efecto. Pre-registro interno sin sello de tiempo externo (etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17).
 
 **Ejemplo, H4 de V15.** La asociación entre la población extranjera predicha y el alquiler municipal es 0,30 % por p.p. en la estimación principal [C4]. El rango del multiverso de especificaciones va de -0,14 % por p.p. a 0,39 % por p.p. e incluye el cero. No se puede leer como un efecto. Pre-registro interno sin sello de tiempo externo (etiqueta `prereg-v15` en el remoto, commit 542b4fd, 2026-10-17); evaluación sellada pendiente. <!-- check:cifra-libre (periodos 2018-2021 y 2021-2024; commits y fechas de los pre-registros) -->
 
@@ -1222,7 +1235,7 @@ Que un cálculo salga con el signo esperado no lo vuelve un efecto. Solo lo vuel
 
 **Ejemplo, déficit por provincias.** A escala nacional, el déficit 2025-2030 empeora en todos los escenarios de la rejilla [C2]. Por provincias, 15 empeoran, 0 provincias mejoran y 37 provincias quedan indeterminadas [C2]. La dirección nacional es robusta. La provincial queda sin determinar en la mayoría de las provincias. <!-- check:cifra-libre (periodo 2025-2030 y rejilla de escenarios) -->
 
-**Ejemplo, viviendas turísticas.** La cota nacional del alquiler que las viviendas turísticas podrían desplazar es de 2,4-2,7 % del stock de alquiler [C2], entre 2020 y 2024. En una ciudad concreta la cota es mayor: el repositorio no tiene una cota por ciudad, así que el ejemplo se queda en la escala nacional. Una cifra nacional baja no excluye una concentración local alta. Una cifra local alta tampoco se extiende al país. <!-- check:cifra-libre (periodo 2020-2024 y supuesto de sustitución 1:1) -->
+**Ejemplo, viviendas turísticas.** La cota nacional del alquiler que las viviendas turísticas podrían desplazar es de 2,4-2,7 % del stock de alquiler [C2], entre 2020 y 2024. El repositorio no tiene una cota por ciudad, así que el ejemplo se queda en la escala nacional. Una cifra nacional baja no excluye una concentración local alta. Una cifra local alta tampoco se extiende al país. <!-- check:cifra-libre (periodo 2020-2024 y supuesto de sustitución 1:1) -->
 
 ### VI.8 Anuncios frente a entregas
 
@@ -1240,7 +1253,7 @@ Esta tabla recoge afirmaciones que el estudio permite evaluar. Usa la escala del
 
 | Afirmación | Veredicto | Capa | Cifra | Por qué |
 |---|---|---|---|---|
-| El alquiler se ha duplicado (contratos vigentes) | CONTRADICHA | C1 | 10,9-22,9 % [C1] | Ninguna fuente llega a +100 %. Las dos fuentes del núcleo coinciden. |
+| El alquiler se ha duplicado (contratos vigentes) | CONTRADICHA | C1 | 10,9-22,9 % [C1] | Ninguna fuente llega a +100 %. Las dos fuentes del núcleo coinciden. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | El alquiler se ha duplicado (contratos nuevos) | ANALIZADA, NO CONCLUYENTE | C4 | 37,0 % [C4] | La cuantía nacional de contratos nuevos es de fuente única. |
 | Al ritmo actual el déficit se cerrará en pocos años | NO RESPALDADA | C2 | 15 provincias empeoran, 0 provincias mejoran y 37 provincias indeterminadas [C2] | La dirección empeora en toda la rejilla. La magnitud, 87.246-946.852 viviendas [C4], es solo C4. |
 | Faltan cientos de miles de viviendas | PARCIALMENTE | C2 | 389.361-710.542 viviendas [C2] | Dos fuentes confirman el signo. La cuantía es una cota por la corrección de la encuesta de hogares. |
@@ -1250,11 +1263,11 @@ Esta tabla recoge afirmaciones que el estudio permite evaluar. Usa la escala del
 | La subida de alquileres es atribuible a las viviendas turísticas | ANALIZADA, NO CONCLUYENTE | C4 | 2,4-2,7 % del stock de alquiler [C2] (cota de cantidad) | La cota de cantidad limita el desplazamiento nacional. El paso a precio depende de una elasticidad no verificada. |
 | Los compradores no residentes encarecen la vivienda | ANALIZADA, NO CONCLUYENTE | C4 | Peso de no residentes en las compraventas de 2025 (R1A-H1): 6,8 % [C4] | Hay un peso descriptivo. Asociación bivariada con el precio 2015-2025 (R1A-H4): 0,96 % de precio por punto de peso inicial, rango 0,46-1,5 % de precio por punto de peso inicial [C4]. Con controles (R1A-H5): 0,02 % de precio por punto de peso inicial, rango -0,55 a 0,59 % de precio por punto de peso inicial, que incluye cero [C4]. |
 | La población extranjera se asocia con subidas del alquiler municipal | ANALIZADA, NO CONCLUYENTE | C4 | 0,30 % por p.p. en la estimación principal [C4] | Correlación frágil: el rango del multiverso, de -0,14 % por p.p. a 0,39 % por p.p., incluye cero. Evaluación sellada de V15 pendiente. |
-| La vivienda pública resolvería el problema | ANALIZADA, NO CONCLUYENTE | C4 | En la simulación, precio de compra a 10 años: -0,57 % (-1,0 a -0,13 %) [C4] | Las cifras de la simulación son C4. «Resolver» depende del volumen y del desplazamiento. La ficha V11 del verificador de la 1.0 la sitúa en PARCIALMENTE (C2) para el esfuerzo de acceso, no para el precio de compra. |
-| Las ayudas a la demanda abaratan el acceso | PARCIALMENTE | C2 | En la simulación, 1,4 puntos % (0,16-7,6 puntos %) por 100 M€ en el precio de mercado [C4] | El beneficiario paga igual o menos (C2, ficha del verificador de la 1.0). En la simulación, parte de la ayuda llega al precio. |
+| La vivienda pública resolvería el problema | ANALIZADA, NO CONCLUYENTE | C4 | En la simulación, precio de compra a 10 años: -0,57 % (-1,0 a -0,13 %) [C4] | Las cifras de la simulación son C4. «Resolver» depende del volumen y del desplazamiento. En la rejilla simulada de la 1.0, el signo para el esfuerzo es débil [C2] (no positivo o nulo si desplaza a la promoción privada), y la ficha V11 del verificador la sitúa en PARCIALMENTE [C2] para el esfuerzo de acceso. El precio de compra no tiene signo [C2]. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+| Las ayudas a la demanda abaratan el acceso | PARCIALMENTE | C2 | En la simulación, 1,4 puntos % (0,16-7,6 puntos %) por 100 M€ en el precio de mercado [C4] | El beneficiario paga igual o menos (C2, ficha del verificador de la 1.0). En la simulación, parte de la ayuda llega al precio. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 | La rebaja del ITP o del IVA abarata la compra | NO ANALIZADA: FALTAN DATOS | C4 | — | Falta una serie armonizada de tipos. La incidencia depende de la elasticidad de oferta. |
-| Las empresas y fondos dominan el alquiler | ANALIZADA, NO CONCLUYENTE | C4 | 16,9-38,1 % del stock [C4] del stock (residuo de personas jurídicas, sector público y no declarado) | Los dos métodos discrepan. Ninguno llega al 50 %, pero no miden el peso por zonas. |
-| Los modelos más complejos predicen mejor que uno sencillo | ANALIZADA, NO CONCLUYENTE | C4 | 1,5 razón [C4] pre-registrada, razón de error frente al AR(4); entre implementaciones, 1,2-1,5 razón | Alcance: agregado nacional trimestral. Una razón mayor que uno es peor. La combinación no supera al AR(4). Q10-1 y Q10-2 empeoran y Q10-3 no mejora fuera de 2020. La validación sellada de v6 (6 de 9 tareas) tenía otro alcance (provincias y municipios) y no se traslada aquí. El DM-HLN es apto bajo el proceso generador de V15 y no apto bajo el de V16: no se usa como prueba. |
+| Las empresas y fondos dominan el alquiler | ANALIZADA, NO CONCLUYENTE | C4 | 16,9-38,1 % del stock [C4] (residuo de personas jurídicas, sector público y no declarado) | Los dos métodos discrepan. Ninguno llega al 50 %, pero no miden el peso por zonas. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+| Los modelos más complejos predicen mejor que uno sencillo | ANALIZADA, NO CONCLUYENTE | C4 | 1,5 razón [C4] pre-registrada, razón de error frente al AR(4); entre implementaciones, 1,2-1,5 razón | Alcance: agregado nacional trimestral. Una razón mayor que uno es peor. La combinación no supera al AR(4). Q10-1 y Q10-2 empeoran y Q10-3 no mejora fuera de 2020. La validación sellada de v6 (6 de 9 tareas) tenía otro alcance (provincias y municipios) y no se traslada aquí. El DM-HLN es apto bajo el proceso generador de V15 y no apto bajo el de V16: no se usa como prueba. | <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 
 <!-- check:cifra-libre (identificadores de hipótesis R1A, V11 y Q10; umbrales de +100 % y 50 %; 2020; 2025; AR(4); 9 tareas del diseño; v6; DM-HLN) -->
 
@@ -1285,13 +1298,13 @@ Tres reglas de lectura:
 
 **La pista de V16 (Q9-g), no confirmada [C4].**
 - Q9-g mide la exuberancia estadística (GSADF) del factor común del cociente entre el valor tasado y el IPC de alquiler. El estadístico es 5,9; el valor crítico bootstrap del 95 % es 3,3 estadístico. <!-- check:cifra-libre (id de pregunta y nivel del 95 % del diseño) -->
-- El p sin ajuste es 0,00. <!-- check:cifra-libre (id de pregunta) -->
-- Con el control de falsos descubrimientos de Benjamini-Yekutieli sobre la rama de diseños (m = 21), el q es 0,31. El umbral pre-registrado es q ≤ 0,10 y no se alcanza. Por eso es una pista y no un hallazgo. <!-- check:cifra-libre (m = 21 y umbral q ≤ 0,10 del diseño) -->
+- El p sin ajuste es 0,004. <!-- check:cifra-libre (id de pregunta) -->
+- Con el control de falsos descubrimientos de Benjamini-Yekutieli sobre la rama de diseños (m = 21), el q es 0,306. El umbral pre-registrado es q ≤ 0,10 y no se alcanza. Por eso es una pista y no un hallazgo. <!-- check:cifra-libre (m = 21 y umbral q ≤ 0,10 del diseño) -->
 - Q9 no tiene magnitud de referencia pre-registrada, así que tampoco se cumple la condición de tamaño. <!-- check:cifra-libre (id de pregunta) -->
 
 **Tres advertencias.**
-1. **Corrección múltiple.** El p sin ajuste no es el que cuenta. Tras el ajuste, el q queda por encima del umbral. Las pruebas sin p válido, por herramienta no apta, cuentan en el denominador y no pueden rechazarse.
-2. **Valor tasado suavizado y con retraso.** La tasación se suaviza y llega tarde. Eso puede generar un patrón explosivo aparente. La revisión adversarial lo lee como artefacto probable: la mayoría de las fechas marcadas caen en tramos en que el cociente baja o está plano. Además, la prueba de calibración no cubre este proceso generador, porque la variación del factor es persistente y heterocedástica.
+1. **Corrección múltiple.** El p sin ajuste no es el que cuenta. Tras el ajuste, el q queda por encima del umbral. Las pruebas sin p válido, por herramienta no apta, cuentan en el denominador y no pueden rechazarse. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
+2. **Valor tasado suavizado y con retraso.** La tasación se suaviza y llega tarde. Eso puede generar un patrón explosivo aparente. La revisión adversarial lo lee como artefacto probable: la mayoría de las fechas marcadas caen en tramos en que el cociente baja o está plano. Además, la prueba de calibración no cubre este proceso generador, porque la variación del factor es persistente y heterocedástica. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 3. **Una exuberancia estadística no identifica una burbuja.** Un resultado explosivo es compatible con cambios en los fundamentales, en los tipos de interés o en la composición de lo que se mide. Con tipos de interés, V7.2 no rechaza. La alternativa con SERPAVI anual no rechaza, pero tiene muy pocos periodos y no tiene potencia. <!-- check:cifra-libre (nombre de versión) -->
 
 **El GSADF de V7.2, corregido (K20) [C4].**
@@ -1336,11 +1349,11 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 
 **Por qué.**
 - **Datos.** El INE publica la vivienda turística como estadística experimental, con pocas ediciones. El SERPAVI mide el stock de contratos declarados, no los contratos nuevos. Las exposiciones de los registros autonómicos se reconstruyen con supuestos de fecha.
-- **Potencia.** En H3 (V15), el coeficiente principal (0,00 % por DT) está por debajo del efecto mínimo detectable (0,10 % por DT). La mediana de su multiverso es 0,07 % por DT (0,00-0,22 % por DT). H3 es no concluyente, no nula. <!-- check:cifra-libre (ids de hipótesis y versión) -->
+- **Potencia.** En H3 (V15), el coeficiente principal (0,003 % por desviación típica) está por debajo del efecto mínimo detectable (0,0972 % por desviación típica). La mediana de su multiverso es 0,0706 % por desviación típica. H3 es no concluyente, no nula. <!-- check:cifra-libre (ids de hipótesis y versión) -->
 - **Diseño.** Q2a (provincias) es no concluyente. Q2c (IPVA municipal) cambia de signo según la especificación, falla la prueba de Oster y tiene heterocedasticidad. En E4 (Cataluña y Comunitat Valenciana), la regla puntual de pretendencias la cumplen 6 de 16 especificaciones. El BLP/GATES no pasó el Monte Carlo. <!-- check:cifra-libre (ids de pregunta) -->
 - **Triangulación.** H3 y Q2a tienen el mismo signo; Q2c, el contrario. Las escalas «por desviación típica» no son comparables entre diseños, así que no se comparan magnitudes. <!-- check:cifra-libre (ids de pregunta) -->
 
-**Qué sí hay.** Una cota [C2]: el aumento de viviendas turísticas entre 2020 y 2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler). En viviendas, con sustitución uno a uno, 81.771 viviendas (81.771-81.771 viviendas) [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (años) -->
+**Qué sí hay.** Una cota [C2]: el aumento de viviendas turísticas entre 2020 y 2024 equivale como máximo a 2,7 % del stock de alquiler (2,4-2,7 % del stock de alquiler). En viviendas, con sustitución uno a uno, 81.771 viviendas [C2]. Es una cota de cantidad, no de precio. <!-- check:cifra-libre (años) -->
 
 ### VII.4 «La inmigración sube (o no sube) los precios y el alquiler»
 
@@ -1350,7 +1363,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 - **Instrumentos débiles.** En V9, el F efectivo del instrumento por cuotas de origen es 2,8 (alquiler) y 3,4 (valor tasado). Está muy por debajo del umbral de 10 que fija el diseño de V8 para C3. En V8, el del empuje migratorio es 0,05. <!-- check:cifra-libre (versiones y umbral F ≥ 10 del diseño) -->
 - **Pocos orígenes efectivos.** En H4, el número efectivo de choques es 5,5. En Q3-c, el origen de mayor peso aporta una fracción 0,48 del estimador. <!-- check:cifra-libre (ids de hipótesis y pregunta) -->
 - **Fragilidad de H4.** Estimación principal: 0,30 % por punto porcentual de población extranjera predicha [C4]. Cambia de signo al quitar los cinco orígenes de mayor peso, y la AKM no pasó el Monte Carlo. Mediana del multiverso: 0,08 % por punto porcentual [C4]. <!-- check:cifra-libre (id de hipótesis y número de orígenes del diseño) -->
-- **Pretendencia de Q3-b.** Estimación principal: 0,01 (log por desviación típica) [C4]. El placebo con el periodo anterior da 0,01, del mismo orden. La inferencia de Conley no pasó el Monte Carlo. Mediana del multiverso: 0,01 [C4]. <!-- check:cifra-libre (id de pregunta) -->
+- **Pretendencia de Q3-b.** Estimación principal: 0,00908 (log por desviación típica) [C4]. El placebo con el periodo anterior da 0,00511, del mismo orden. La inferencia de Conley no pasó el Monte Carlo. Mediana del multiverso: 0,00575 [C4], menor que la estimación principal. <!-- check:cifra-libre (id de pregunta) -->
 - **Signos que dependen de la medida.** En el valor tasado provincial, la asociación es 0,01 log por punto de población (0,01-0,05 log por punto de población); en las compraventas, -0,03 log por punto de población (-0,08 a -0,02 log por punto de población). Ninguna tiene inferencia válida.
 - **Controles.** El signo cambia con el control de población, la medida de precio, el método y la escala. Controlar por población es un mal control, porque la población crece por la propia inmigración.
 - **Datos.** El padrón por nacionalidad no recoge las nacionalizaciones y termina en 2022. <!-- check:cifra-libre (año) -->
@@ -1380,9 +1393,9 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 - **Datos.** La fuente (MIVAU) da el total de no residentes, sin separar UE de extra-UE. La cuota total no identifica los visados de oro. No hay autorizaciones por programa.
 - **Dos categorías distintas.** «Extranjero (residente o no)» y «no residente» no son lo mismo. La cifra de compraventas con comprador extranjero, residente o no, viene de Ministerio y Notariado: 16,9 % (16,9-18,8 %) [C4]. La cifra de no residentes, de MIVAU (tabla 1.6, España, 2025): 6,8 % [C4]. Son categorías distintas, no dos medidas de la misma.
 - **Dos cuotas de no residentes.** La de R1A-H1 es nacional, de la tabla 1.6 del Boletín del MIVAU. La de Q8 para 2025 es 7,6 % de las transacciones [C4]. Q8 usa otra tabla (Boletín en línea, tabla 340101d0) y otro ámbito: el agregado de entrenamiento (nueve comunidades más Ceuta y Melilla). Por eso difieren; son fuentes y ventanas distintas. <!-- check:cifra-libre (tabla de la fuente y número de comunidades del diseño) -->
-- **Diseño de Q8.** Es descriptiva: sin estimador, sin placebo, sin diferencias en diferencias. La cuota de no residentes en el agregado de entrenamiento pasa de 8,7 % de las transacciones (2024T2-2025T1) a 7,4 % de las transacciones (2025T2-2026T1), una variación de -1,3 puntos porcentuales [C4]. El año anterior ya había bajado: su variación fue -0,68 puntos porcentuales puntos porcentuales. <!-- check:cifra-libre (id de pregunta y ventanas de trimestres) -->
+- **Diseño de Q8.** Es descriptiva: sin estimador, sin placebo, sin diferencias en diferencias. La cuota de no residentes en el agregado de entrenamiento pasa de 8,7 % de las transacciones (2024T2-2025T1) a 7,4 % de las transacciones (2025T2-2026T1), una variación de -1,3 puntos porcentuales [C4]. El año anterior ya había bajado: su variación fue -0,68 puntos porcentuales. <!-- check:cifra-libre (id de pregunta y ventanas de trimestres) -->
 - **Hecho de la 1.0.** Compraventas con comprador extranjero (residente o no): 16,9 % (16,9-18,8 %) [C4]. Compraventas con comprador no residente: 6,8 % [C4]. Ministerio y Notariado no son independientes, así que no llega a C1. <!-- check:cifra-libre (nombres de capa y versión) -->
-- **Asociación bivariada.** La asociación bivariada del precio 2015-2025 con el peso inicial de no residentes (0,96 % de precio por punto de peso inicial (0,46-1,5 % de precio por punto de peso inicial)) es una correlación entre provincias, no una identificación. Con controles de renta, población, costa e islas (R1A-H5), la asociación es 0,02 % de precio por punto de peso inicial (-0,55 a 0,59 % de precio por punto de peso inicial): no se distingue de cero. <!-- check:cifra-libre (id de resultado, periodo) -->
+- **Asociación bivariada.** La asociación bivariada del precio 2015-2025 con el peso inicial de no residentes (id R1A-H4) es 0,96 % de precio por punto de peso inicial, con rango 0,46-1,5 % de precio por punto de peso inicial [C4]. Es una correlación entre provincias, no una identificación. Con controles de renta, población, costa e islas (id R1A-H5), la asociación es 0,02 % de precio por punto de peso inicial, con rango -0,55 a 0,59 % de precio por punto de peso inicial: no se distingue de cero [C4]. <!-- check:cifra-libre (ids de resultado, periodo) -->
 
 ### VII.7 «Los grandes tenedores controlan el alquiler»
 
@@ -1390,7 +1403,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 
 **Por qué.**
 - **Datos.** El Catastro da la titularidad por tramos de inmuebles (V12), pero cuenta viviendas, no contratos de alquiler. En España sin País Vasco ni Navarra, en 2026, las viviendas de titulares con más de diez viviendas son 4,2 % y las de titulares con más de cien son 2,1 % [C4]. No dicen cuántas están alquiladas, vacías o en venta. <!-- check:cifra-libre (versión, tramos de titularidad del Catastro y año) -->
-- **Compraventas.** Las compraventas con comprador persona jurídica son 11,3 % de compraventas (11,3-11,3 % de compraventas) [C4]. La persona jurídica no equivale a gran tenedor.
+- **Compraventas.** Las compraventas con comprador persona jurídica son 11,3 % de compraventas [C4]. La persona jurídica no equivale a gran tenedor.
 - **Diseño.** Ningún diseño de V15-V16 contrasta conductas de precio por tipo de titular. Las solicitudes de datos de titularidad del alquiler figuran como pendientes en la 1.0 (S1, S3 y S4). <!-- check:cifra-libre (versiones e ids de solicitud) -->
 
 ### VII.8 «Bajar el ITP abarata (o no abarata) la compra»
@@ -1399,7 +1412,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 
 **Por qué.**
 - **Datos.** Las compraventas provinciales de entrenamiento son el total de vivienda, sin separar usada y nueva. Hay 14,0 cambios de tipo en pocas comunidades, concentrados en 2012-2013, en plena crisis. El diseño no separa el ITP del ciclo. <!-- check:cifra-libre (años del calendario) -->
-- **Q6-p (valor tasado).** -0,00 log por punto de tipo (-0,02 a 0,01 log por punto de tipo) [C4]. No concluyente: sin inferencia válida y por debajo de la referencia de diseño. <!-- check:cifra-libre (id de pregunta) -->
+- **Q6-p (valor tasado).** −0,00204 log por punto de tipo [C4]. No concluyente: sin inferencia válida y por debajo de la referencia de diseño. <!-- check:cifra-libre (id de pregunta) -->
 - **Q6-v (compraventas).** El placebo es mayor que la estimación y de signo contrario. No se cita con cifra. <!-- check:cifra-libre (id de pregunta) -->
 - **Herramientas.** dCDH, Honest DiD y la inferencia por aleatorización no pasaron el Monte Carlo.
 - **Exclusiones.** País Vasco, Ceuta y Melilla quedan fuera por falta de tipo general comparable.
@@ -1421,7 +1434,7 @@ El detalle, con los valores de antes y de después, está en el anexo de erratas
 **Qué no se puede afirmar.** Que algún modelo del proyecto prediga el precio nacional mejor que un AR(4) sencillo, ni que las variables que ayudan a predecir sean las que lo mueven. <!-- check:cifra-libre (AR(4): nombre del modelo) -->
 
 **Por qué.**
-- **H5 (V15).** La combinación de DFM, BVAR, LASSO y ARDL no supera al AR(4). La razón del ECM frente al AR(4) es mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): 1,2-1,5 razón [C4]. La pre-registrada es 1,5 [C4]. La conclusión es la misma en todas. El DM-HLN dio 0,87 p. Estado del DM-HLN: apto bajo el proceso generador de V15 y no apto bajo el de V16; no se usa como prueba. <!-- check:cifra-libre (ids de hipótesis, versiones y AR(4)) -->
+- **H5 (V15).** La combinación de DFM, BVAR, LASSO y ARDL no supera al AR(4). La razón del ECM frente al AR(4) es mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): 1,2-1,5 razón [C4]. La pre-registrada es 1,5 [C4]. La conclusión es la misma en todas. Estado del DM-HLN: apto bajo el proceso generador de V15 y no apto bajo el de V16; no se usa como prueba. <!-- check:cifra-libre (ids de hipótesis, versiones y AR(4)) -->
 - **Q10 (V16).** MIDAS y el nowcasting no mejoran al AR(4) en el IPV ni en el IPC de alquiler. En las compraventas, la mejora aparente desaparece al excluir 2020. En el IPV, los intervalos conformes de MIDAS y del AR(4) cubren menos que su nivel nominal. Las cifras de Q10 no se citan. <!-- check:cifra-libre (id de pregunta, versión, AR(4) y año) -->
 - **Datos.** Las series son revisadas, no en tiempo real.
 - **Alcance de estos resultados.** H5, Q10 y las pruebas de V8 se refieren al agregado nacional trimestral. <!-- check:cifra-libre (nombres de versión) -->
@@ -1439,7 +1452,7 @@ Aquí se resume lo esencial. El detalle está en metodologia/ y en la ficha de c
 
 **Capas y escala de evidencia.** Cada cifra lleva una capa: [C1] hecho con al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C3] y [C3s] resultado con identificación; [C4] exploratorio o descriptivo. Una capa nunca sube. La escala de evidencia va de mayor a menor: identificación (C3 y C3s), asociación robusta, exploratorio, descriptivo. Todo V15 y V16 es [C4]. Definiciones en metodologia/capas.md. <!-- check:cifra-libre (nombres de capa y de versión) -->
 
-**Pre-especificación.** Las especificaciones principales, el multiverso y las pruebas se fijan antes de estimar, en un pre-registro interno (apartado C). Ningún modelo se elige por su p-valor. Toda especificación probada va al registro del proyecto. Las desviaciones se anotan antes de ver el resultado afectado.
+**Pre-especificación.** Las especificaciones principales, el multiverso y las pruebas se fijan antes de estimar, en un pre-registro interno (apartado C). Ningún modelo se elige por su p-valor. Toda especificación probada va al registro del proyecto. La regla es anotar las desviaciones antes de ver el resultado afectado; la desviación D9 no la cumple y así se declara en el apartado C. <!-- check:cifra-libre (desviación D9) -->
 
 **Validación de herramientas por Monte Carlo.** Una herramienta de inferencia solo se usa si pasa la validación con el proceso generador del proyecto: pocos clusters, dependencia transversal, T corto, adopción escalonada y correlación espacial. Casi ninguna herramienta de inferencia la pasó. Los resultados están en metodologia/validacion_montecarlo_v16.md y metodologia/validacion_montecarlo_v15.md. <!-- check:cifra-libre (nombres de versión) -->
 
@@ -1498,7 +1511,7 @@ Todos los resultados de esta sección son [C4]. «Superada» y «fallida» se re
 | Diseño | MCO con efectos fijos de sección y de municipio × año. Exposición estandarizada por la desviación típica intra-sección. Puntual. |
 | Capa | [C4], descriptivo. No concluyente, no nula. |
 | Superadas | El signo se mantiene al excluir las grandes ciudades y el uno por ciento superior de exposición. La réplica ciega coincide. |
-| Fallidas o no evaluables | Coeficiente principal (0,00 % por DT) por debajo del efecto mínimo detectable (0,10 % por DT). Mediana del multiverso: 0,07 % por DT (0,00-0,22 % por DT). Conley a dos kilómetros: no apto. Error agrupado por municipio en panel corto: sin validar. Placebo de adelanto sin inferencia válida. Muchas secciones sin variación intra-sección. Valor de Cinelli-Hazlett prácticamente nulo. |
+| Fallidas o no evaluables | Coeficiente principal (0,003 % por desviación típica) por debajo del efecto mínimo detectable (0,0972 % por desviación típica). Mediana del multiverso: 0,0706 % por desviación típica. Conley a dos kilómetros: no apto. Error agrupado por municipio en panel corto: sin validar. Placebo de adelanto sin inferencia válida. Muchas secciones sin variación intra-sección. Valor de Cinelli-Hazlett prácticamente nulo. |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v15, commit 542b4fd, 2026-10-17. Réplica, no confirmatoria. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### H4 · Inmigración y alquiler municipal <!-- check:cifra-libre (id de hipótesis) -->
@@ -1520,7 +1533,7 @@ Todos los resultados de esta sección son [C4]. «Superada» y «fallida» se re
 | Diseño | Ventana expansiva, h = 1. Combinación de DFM, BVAR, LASSO y ARDL. DM-HLN unilateral. <!-- check:cifra-libre (horizonte h = 1 del diseño) --> |
 | Capa | [C4], predictivo. Pista: la combinación no supera al AR(4). <!-- check:cifra-libre (nombre de modelo) --> |
 | Superadas | La réplica ciega, tras corregir tres errores, coincide en la conclusión. Ninguna fila posterior al origen entra en la estimación. En error cuadrático, la combinación queda por delante del ECM v1. <!-- check:cifra-libre (nombre de modelo y número de errores corregidos) --> |
-| Fallidas o no evaluables | Razón del ECM frente al AR(4): mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): 1,2-1,5 razón [C4]. La pre-registrada: 1,5 [C4]. DM-HLN: 0,87 p; sin valor probatorio (estado en el apartado A). Clark-West y Giacomini-White: no aptos. MCS: descriptivo. Potencia inferior a la pre-registrada (menos errores). <!-- check:cifra-libre (nombres de modelo) --> |
+| Fallidas o no evaluables | Razón del ECM frente al AR(4): mayor que uno en todas las implementaciones. Rango entre implementaciones (réplica ciega y producción pre-registrada): 1,2-1,5 razón [C4]. La pre-registrada: 1,5 [C4]. DM-HLN: sin valor probatorio (estado en el apartado A). Clark-West y Giacomini-White: no aptos. MCS: descriptivo. Potencia inferior a la pre-registrada (menos errores). <!-- check:cifra-libre (nombres de modelo) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v15, commit 542b4fd, 2026-10-17. Evaluación sellada hacia octubre de 2027. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### E1 · Largo plazo entre valor tasado y alquiler (panel provincial) <!-- check:cifra-libre (id de análisis) -->
@@ -1599,9 +1612,9 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 |---|---|
 | Pregunta | ¿Se asocia la población extranjera con el valor tasado, las compraventas y el alquiler por sección? |
 | Diseño | Shift-share de forma reducida en provincias (Q3-c) y correlación transversal por sección con efectos de municipio (Q3-b). Puntual. <!-- check:cifra-libre (ids de pregunta) --> |
-| Capa | [C4]. Q3-b, correlación frágil: 0,01 (log por desviación típica). <!-- check:cifra-libre (id de pregunta) --> |
+| Capa | [C4]. Q3-b, correlación frágil: 0,00908 (log por desviación típica). <!-- check:cifra-libre (id de pregunta) --> |
 | Superadas | Q3-b: Oster y Cinelli-Hazlett no indican fragilidad; el signo se mantiene al excluir las grandes ciudades; la réplica ciega queda resuelta tras corregir Conley. Q3-c: mismo signo en todo el multiverso. <!-- check:cifra-libre (ids de pregunta) --> |
-| Fallidas o no evaluables | Q3-b: pretendencia del mismo orden (0,01); Conley, no apto; Moran de residuos con señal; desequilibrio de renta. Q3-c: AKM y AKM0, no aptos; el origen de mayor peso aporta una fracción 0,48 del estimador; los signos de Q3-c1 y Q3-c2 son opuestos. BLP/GATES: no apto (0,00). Mediana del multiverso de Q3-b: 0,01 [C4]. <!-- check:cifra-libre (ids de pregunta) --> |
+| Fallidas o no evaluables | Q3-b: pretendencia del mismo orden (0,00511); Conley, no apto; Moran de residuos con señal; desequilibrio de renta. Q3-c: AKM y AKM0, no aptos; el origen de mayor peso aporta una fracción 0,48 del estimador; los signos de Q3-c1 y Q3-c2 son opuestos. BLP/GATES: no apto (0,00). Mediana del multiverso de Q3-b: 0,00575 [C4], menor que el coeficiente principal. <!-- check:cifra-libre (ids de pregunta) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Q4 · Oferta y restricción física (Q4a, Q4b) <!-- check:cifra-libre (ids de pregunta) -->
@@ -1631,8 +1644,8 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 | Campo | Contenido |
 |---|---|
 | Pregunta | ¿Se asocian los cambios del tipo general del ITP con las compraventas y el valor tasado? |
-| Diseño | Wald-DID de de Chaisemartin-D'Haultfœuille con dosis continua, panel provincial anual. Solo puntual. Diferencias entre años consecutivos (corregido en la réplica ciega). |
-| Capa | [C4]. Q6-p, no concluyente: -0,00 log por punto de tipo (-0,02 a 0,01 log por punto de tipo). Q6-v, descriptivo, sin cifra. <!-- check:cifra-libre (ids de pregunta) --> |
+| Diseño | Wald-DID (de Chaisemartin y D'Haultfœuille) con dosis continua, panel provincial anual. Solo puntual. Diferencias entre años consecutivos (corregido en la réplica ciega). |
+| Capa | [C4]. Q6-p, no concluyente: −0,00204 log por punto de tipo. Q6-v, descriptivo, sin cifra. <!-- check:cifra-libre (ids de pregunta) --> |
 | Superadas | Q6-p: placebo de ΔY retardado pequeño y signo estable sin las grandes ciudades. Control negativo con la población, cercano a cero. <!-- check:cifra-libre (id de pregunta) --> |
 | Fallidas o no evaluables | Q6-v: placebo mayor y de signo contrario; signo opuesto a la referencia. Los 14,0 cambios se concentran en 2012-2013. Inferencia por aleatorización, Honest DiD, Cinelli-Hazlett y TOST: no evaluables. Compraventas = total de vivienda. <!-- check:cifra-libre (id de pregunta y años) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
@@ -1643,9 +1656,9 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 |---|---|
 | Pregunta | ¿Cambió en el corte de edad del bono la diferencia de alquiler pagado entre inquilinos de mercado, entre dos periodos? |
 | Diseño | Diferencia en discontinuidades lineal local con pesos de la encuesta, anchos de tres, cinco y siete años. Sin intervalo. |
-| Capa | [C4], descriptivo: -0,12 Δlog (-0,15 a -0,12 Δlog). Sin hallazgo ni pista. |
+| Capa | [C4], descriptivo: valor -0,12 Δlog; rango de especificaciones -0,15 a -0,12 Δlog. Sin hallazgo ni pista. |
 | Superadas | Los anchos de tres, cinco y siete años dan el mismo signo. |
-| Fallidas o no evaluables | Los umbrales placebo dan resultados del mismo orden (-0,05 Δlog (-0,14 a -0,05 Δlog)), así que el resultado no se lee como específico del corte. Potencia en el límite. Sin intervalo (Kolesár-Rothe no mostrado). Edad discreta: sin rdrobust. El Plan Estatal 2018-2021 ya tenía un programa para menores de 35 años: se mide un cambio de generosidad, no un programa nuevo. Oster, Cinelli-Hazlett y exclusión de grandes ciudades: no aplican o no son evaluables. <!-- check:cifra-libre (periodo del plan y umbral de edad) --> |
+| Fallidas o no evaluables | Los umbrales placebo dan resultados del mismo orden (valor -0,05 Δlog; rango -0,14 a -0,05 Δlog), así que el resultado no se lee como específico del corte. Potencia en el límite. Sin intervalo (Kolesár-Rothe no mostrado). Edad discreta: sin rdrobust. El Plan Estatal 2018-2021 ya tenía un programa para menores de 35 años: se mide un cambio de generosidad, no un programa nuevo. Oster, Cinelli-Hazlett y exclusión de grandes ciudades: no aplican o no son evaluables. <!-- check:cifra-libre (periodo del plan y umbral de edad) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Q8 · Compras de no residentes <!-- check:cifra-libre (id de pregunta) -->
@@ -1667,7 +1680,7 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 | Diseño | Q9-g: GSADF con bootstrap salvaje. Q9-c: CS-ARDL, MG, PMG y CIPS, puntuales. <!-- check:cifra-libre (ids de pregunta) --> |
 | Capa | [C4], pista no confirmada. Solo en la Parte VII. <!-- check:cifra-libre (número de parte) --> |
 | Superadas | Calibración del GSADF del factor con bootstrap salvaje (tamaño aceptable). Réplica ciega: coincide. |
-| Fallidas o no evaluables | Q9-g: estadístico 5,9; valor crítico del 95 % 3,3 estadístico. q de Benjamini-Yekutieli: 0,31, por encima del umbral. Heterocedasticidad de la variación del factor. Potencia limitada. Fechas marcadas en tramos en que el cociente baja o está plano. La alternativa con SERPAVI anual no rechaza y no tiene potencia. Q9-c: CS-ARDL no apto; el rango del multiverso incluye ambos signos (estimación 0,84, rango -1,4 a 0,95 elasticidad). CIPS: descriptivo, sin valor crítico. <!-- check:cifra-libre (ids de pregunta y nivel del 95 %) --> |
+| Fallidas o no evaluables | Q9-g: estadístico 5,9; valor crítico del 95 % 3,3 estadístico; p sin ajuste 0,004. q de Benjamini-Yekutieli: 0,306, por encima del umbral. Heterocedasticidad de la variación del factor. Potencia limitada. Fechas marcadas en tramos en que el cociente baja o está plano. La alternativa con SERPAVI anual no rechaza y no tiene potencia. Q9-c: CS-ARDL no apto; el rango del multiverso incluye ambos signos (estimación 0,84, rango -1,4 a 0,95 elasticidad). CIPS: descriptivo, sin valor crítico. <!-- check:cifra-libre (ids de pregunta y nivel del 95 %) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Q10 · Predicción nacional (Q10-1, Q10-2, Q10-3) <!-- check:cifra-libre (ids de pregunta) -->
@@ -1700,7 +1713,7 @@ V16 no añade hipótesis confirmatorias (desviación D1) y todo es [C4]. Pre-reg
 | Diseño | Benjamini-Yekutieli por rama. Comparación de signo entre diseños y con la literatura. Potencia por aleatorización placebo. |
 | Capa | [C4], descriptivo. |
 | Superadas | Solo una prueba de la rama de diseños tiene p válido (Q9-g). H1-CS y H1-SDID coinciden en signo, y H3 con Q2a. <!-- check:cifra-libre (ids de análisis) --> |
-| Fallidas o no evaluables | Q9-g no pasa el control (0,31). Q2c y Q6-v se apartan de la literatura y quedan descriptivos. H4, Q3-c1 y Q3-b no tienen grupo comparable en la literatura. Ningún grupo permite metaanálisis. Ningún resultado sube de capa por coincidir con la literatura. <!-- check:cifra-libre (ids de análisis) --> |
+| Fallidas o no evaluables | Q9-g no pasa el control (0,306). Q2c y Q6-v se apartan de la literatura y quedan descriptivos. H4, Q3-c1 y Q3-b no tienen grupo comparable en la literatura. Ningún grupo permite metaanálisis. Ningún resultado sube de capa por coincidir con la literatura. <!-- check:cifra-libre (ids de análisis) --> |
 | Pre-registro | Interno, sin sello de tiempo externo: prereg-v16, commit a8304ec, 2026-10-17. <!-- check:cifra-libre (etiqueta, hash y fecha) --> |
 
 ##### Fase de hechos y contabilidad (hechos, esfuerzo, contabilidad, atlas)
@@ -1729,8 +1742,9 @@ Registro completo, con fechas en UTC y la huella de cada fichero: docs/preregist
 - **V15.** Cinco hipótesis (H1 a H5) y cuatro análisis exploratorios (E1 a E4). H1, H2 y H4 forman la familia Holm; H3 es una réplica; H5 es predictiva. Las hipótesis no se modifican ni se reformulan. Sus evaluaciones selladas están pendientes (calendario: docs/v15/preregistro_v15_adenda.md, sección C; fecha límite 31-12-2027). <!-- check:cifra-libre (ids de hipótesis y análisis, fecha límite) -->
 - **V16.** Diez preguntas (Q1 a Q10) y una rejilla fija de 83 celdas. No añade hipótesis confirmatorias. Todo es [C4] como máximo. La adenda es vinculante. No tiene evaluación sellada pendiente: evaluate_v16 no aplica. <!-- check:cifra-libre (ids de pregunta, celdas y nombre de función) -->
 
-**Desviaciones.** Se anotan antes de ver el resultado afectado. Se citan por su número, tal como figuran en el fichero de desviaciones.
-- **V16** (metodologia/desviaciones_v16.md, D1 a D9): D1, sin preguntas confirmatorias nuevas; D2, operacionalización forzada por los datos en Q3, Q4 y Q6; D3, precisiones en Q1, Q2, Q7 y Q8; D4, Q5, Q9, Q10 y rejilla; D5, correcciones tras la réplica ciega; D6, correcciones tras la revisión adversarial; D7, Q6 con años consecutivos; D8, GSADF de V7.2 corregido y 4.999 simulaciones; D9, omisiones frente al plan: metaanálisis con Egger y PET-PEESE, modelo bayesiano jerárquico con priors de metaanálisis, GRF y DML, BH jerárquico sustituido por BY, y condición (b) de Gelman-Carlin. <!-- check:cifra-libre (ids de desviación D1 a D9, de pregunta y simulaciones) -->
+**Desviaciones.** La regla es anotarlas antes de ver el resultado afectado. Se citan por su número, tal como figuran en el fichero de desviaciones.
+- **V16** (fuente: docs/v16/desviaciones.md; se publicará en metodologia/desviaciones_v16.md con `make publicacion`; D1 a D9): D1, sin preguntas confirmatorias nuevas; D2, operacionalización forzada por los datos en Q3, Q4 y Q6; D3, precisiones en Q1, Q2, Q7 y Q8; D4, Q5, Q9, Q10 y rejilla; D5, correcciones tras la réplica ciega; D6, correcciones tras la revisión adversarial; D7, Q6 con años consecutivos; D8, GSADF de V7.2 corregido y 4.999 simulaciones; D9, omisiones frente al plan: metaanálisis con Egger y PET-PEESE, modelo bayesiano jerárquico con priors de metaanálisis, GRF y DML, BH jerárquico sustituido por BY, calibración de los cuatro cuadrantes para las grandes áreas urbanas y condición (b) de Gelman-Carlin. <!-- check:cifra-libre (ids de desviación D1 a D9, de pregunta y simulaciones) -->
+- **D9 se anotó después de ver los resultados**, el 2026-10-18, tras el arbitraje del informe integral. Incumple, por tanto, la regla de anotar antes. Recoge las omisiones frente al plan que antes solo constaban en docs/v16/decisiones.md y en la adenda. Incluye la calibración de los cuatro cuadrantes para las grandes áreas urbanas, que no se hizo: el marco se calibró solo para España porque no hay series de parque, terminadas y coste de uso por área urbana con la cobertura necesaria. <!-- check:cifra-libre (desviación D9, fecha del registro, cuatro cuadrantes: nombre del marco) -->
 - **V15** (docs/v15/desviaciones.md): DV15-A (H1, H2, H3, E4), DV15-B (H4, H5, E1, E2, E3) y DV15-K16 (correcciones tras la réplica ciega). <!-- check:cifra-libre (ids de desviación e hipótesis) -->
 - **Versiones cerradas anteriores.** Cambios posteriores a algunos commits de pre-registro: metodologia/desviaciones_preregistros.md. Ninguno cambia una hipótesis ni una cifra de la 1.0. <!-- check:cifra-libre (versión) -->
 
@@ -1743,7 +1757,7 @@ No se inventa ninguna licencia: cada una se toma del registro de la fuente.
 - **Condiciones de uso de Registradores, Notariado y AEAT.** docs/v14/licencias.md, con las cláusulas literales y la clave CLARO, AMBIGUO o NO CONSTA. Es un informe, no una decisión. Atribución exigida para el conjunto abierto de Registradores (compraventas de uso residencial por provincia): Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/. <!-- check:cifra-libre (versión de la licencia ODbL y de documento) -->
 - **Fuentes nuevas de V16.** docs/v16/inventario_fuentes.csv recoge, por fichero, la edición, la licencia declarada por el proveedor, si es redistribuible (sí, no o dudoso), la huella sha256 y si está versionado. Lo marcado «dudoso» o «no» no se redistribuye. <!-- check:cifra-libre (versión) -->
 - **Incasòl (fianzas).** Marcada como no redistribuible en las fuentes de las cifras de V9; solo se publican agregados propios. <!-- check:cifra-libre (versión) -->
-- **Huellas de los datos de origen.** data/CHECKSUMS.sha256.
+- **Huellas de los datos de origen.** data/CHECKSUMS.sha256. <!-- check:cifra-libre (umbrales, categorías y números del diseño; leyes y documentos) -->
 - **Literatura.** Las fichas de docs/v16/literatura.md llevan la etiqueta «DOI verificado; cuartil no verificado» (existe en Crossref o DataCite) o «NO VERIFICADA» (sin DOI localizado). Casi todas se leyeron en resumen o en versión de trabajo y son orientativas. <!-- check:cifra-libre (versión) -->
 
 

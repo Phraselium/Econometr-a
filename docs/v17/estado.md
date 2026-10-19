@@ -32,14 +32,15 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F1 | adquisidor-datos | oferta y turismo (cierre de la descarga del Censo en segundo plano) | 756 | - |
 | 2026-10-19 | F3 | modelizador | D3 cuantitativo (demografía, general o local, factibilidad) | 179.305 | src/v17/d3_cuantitativo.py; output/v17/d3/ |
 | 2026-10-19 | F2 | modelizador | inferencia micro V15-V16 | 273.700 | src/v17/f2_inferencia_v15_v16_micro.py; output/v17/lectura_bde/v15_v16_micro/ |
+| 2026-10-19 | F0 | lector-literatura | Informes Anuales e IEF del Banco de España | 439.510 | docs/v17/referencias/bde_informes.md; output/v17/f0/bde_informes.json |
 
 | Fase | Tokens de subagentes |
 |---|---|
-| F0 | 383.177 |
+| F0 | 822.687 |
 | F1 | 346.740 |
 | F2 | 443.477 |
 | F3 | 179.305 |
 
-Total V17: 1.352.699 tokens
+Total V17: 1.792.209 tokens
 
 <!-- fin subagentes -->

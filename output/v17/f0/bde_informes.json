@@ -1,0 +1,226 @@
+{
+  "nota": "a posteriori",
+  "documentos": [
+    {
+      "id_doc": "IA2023-C4",
+      "titulo": "Informe Anual 2023, cap. 4: El mercado de la vivienda en España: evolución reciente, riesgos y problemas de accesibilidad",
+      "fecha": "2024-04-23 (repositorio; la ficha web del Informe Anual 2023 indica 2024-04-30; no conciliado)",
+      "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesAnuales/InformesAnuales/23/Fich/InfAnual_2023_Cap4.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Déficit de vivienda nueva acumulado", "valor": "375000", "unidad": "viviendas", "periodo": "2022-2023", "ubicacion": "p. 251"},
+        {"nombre": "Déficit adicional proyectado", "valor": "más de 225000", "unidad": "viviendas", "periodo": "2024-2025", "ubicacion": "p. 251"},
+        {"nombre": "Viviendas terminadas", "valor": "en torno a 90000", "unidad": "viviendas/año", "periodo": "desde 2021", "ubicacion": "p. 251"},
+        {"nombre": "Cobertura de la demanda potencial de nuevos hogares por vivienda nueva", "valor": "cerca del 40", "unidad": "%", "periodo": "2022-2025", "ubicacion": "p. 251"},
+        {"nombre": "Indicador sintético de riesgos del mercado de vivienda", "valor": "0,32", "unidad": "índice 0-1", "periodo": "4T 2023", "ubicacion": "p. 256"},
+        {"nombre": "Sobrevaloración media (promedio de cuatro indicadores)", "valor": "no encontrada (solo gráfico 4.14; texto: grado moderado)", "unidad": "%", "periodo": "4T 2023", "ubicacion": "pp. 256-257"},
+        {"nombre": "Caída de precios en escenario adverso p10", "valor": "-5,2 a un año; -9,4 a dos años", "unidad": "%", "periodo": "4T 2023", "ubicacion": "p. 256"},
+        {"nombre": "LTV medio al origen", "valor": "en torno a 65", "unidad": "%", "periodo": "fin 2023", "ubicacion": "pp. 259-260"},
+        {"nombre": "LTP medio de nuevas operaciones", "valor": "en torno a 75", "unidad": "%", "periodo": "4T 2023", "ubicacion": "p. 259"},
+        {"nombre": "Hipotecas con carga superior al 30 % de la renta bruta", "valor": "25", "unidad": "% de nuevas hipotecas", "periodo": "2023", "ubicacion": "p. 260"},
+        {"nombre": "Alquiler turístico sobre viviendas principales", "valor": "1,8 (340000 viviendas; ~10 % del mercado del alquiler)", "unidad": "%", "periodo": "2023", "ubicacion": "p. 255"},
+        {"nombre": "Viviendas vacías en ciudades de más de 250000 habitantes", "valor": "7,5 % del parque; ~400000 viviendas", "unidad": "%", "periodo": "INE 2021 (consumo eléctrico)", "ubicacion": "p. 254"},
+        {"nombre": "Personas jurídicas en alquiler de mercado", "valor": "8", "unidad": "%", "periodo": "2021", "ubicacion": "p. 240"},
+        {"nombre": "Titulares con más de 10 viviendas", "valor": "máximo 7", "unidad": "% del parque de alquiler de mercado (territorio fiscal común)", "periodo": "2021", "ubicacion": "p. 240"},
+        {"nombre": "Compras sin hipoteca", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IA2024-R4",
+      "titulo": "Informe Anual 2024, Recuadro 4: Dinámicas recientes en el mercado de la vivienda",
+      "fecha": "2025-05-20",
+      "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesAnuales/InformesAnuales/24/Fich/InfAnual_2024_Recuadros.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Déficit de nuevas viviendas acumulado", "valor": "400000-450000", "unidad": "viviendas", "periodo": "2022-2024", "ubicacion": "recuadro 4, p. 167"},
+        {"nombre": "Parte del déficit en cinco provincias", "valor": "algo más del 50", "unidad": "%", "periodo": "2022-2024", "ubicacion": "p. 167"},
+        {"nombre": "Creación neta de hogares", "valor": "180000", "unidad": "hogares", "periodo": "2024 (provisional)", "ubicacion": "p. 164"},
+        {"nombre": "Creación neta de hogares media anual", "valor": "245000", "unidad": "hogares/año", "periodo": "2022-2023", "ubicacion": "p. 164"},
+        {"nombre": "Viviendas terminadas", "valor": "unas 100000", "unidad": "viviendas", "periodo": "2024", "ubicacion": "p. 165"},
+        {"nombre": "Visados de obra nueva", "valor": "127500", "unidad": "viviendas", "periodo": "2024", "ubicacion": "p. 165"},
+        {"nombre": "Compras de no residentes", "valor": "8,4 (en torno a 60000/año desde 2022)", "unidad": "% de compras", "periodo": "2024", "ubicacion": "p. 164"},
+        {"nombre": "Parque no destinado a uso residencial", "valor": "39", "unidad": "% del número de hogares", "periodo": "2024", "ubicacion": "p. 167"},
+        {"nombre": "Capacidad máxima de absorción de hogares con parque existente", "valor": "310000 (Barcelona); 390000 (Madrid)", "unidad": "hogares", "periodo": "2024", "ubicacion": "pp. 167-168"},
+        {"nombre": "Precio real de la vivienda", "valor": "+8,7 interanual; +39,8 acumulado desde 1T 2014", "unidad": "%", "periodo": "4T 2024", "ubicacion": "p. 168"},
+        {"nombre": "Crédito hipotecario nuevo (flujo / número)", "valor": "+24,6 / +17,6", "unidad": "%", "periodo": "2024", "ubicacion": "p. 168"},
+        {"nombre": "LTP medio", "valor": "76,6", "unidad": "%", "periodo": "2024", "ubicacion": "p. 169"},
+        {"nombre": "Esfuerzo potencial de acceso (renta bruta del hogar mediano)", "valor": "7,2", "unidad": "años de renta bruta anual", "periodo": "fin 2024", "ubicacion": "p. 169"},
+        {"nombre": "Sobrevaloración (rango de modelos)", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IA2025-C2",
+      "titulo": "Informe Anual 2025, cap. 2: Housing market challenges: affordability problems and supply-side constraints (edición inglesa)",
+      "fecha": "2026-06-18",
+      "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesAnuales/InformesAnuales/25/InfAnual_2025_En.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Déficit acumulado entre viviendas terminadas y creación neta de hogares", "valor": "750000", "unidad": "viviendas", "periodo": "2021-2025", "ubicacion": "p. 146, gráficos 2.10 y 2.11"},
+        {"nombre": "Déficit acumulado sobre hogares residentes", "valor": "3,7", "unidad": "% de hogares de 2025", "periodo": "2021-2025", "ubicacion": "p. 146"},
+        {"nombre": "Parte del déficit en seis provincias (Madrid, Barcelona, Alicante, Valencia, Murcia, Málaga)", "valor": "52,5", "unidad": "%", "periodo": "2021-2025", "ubicacion": "p. 145"},
+        {"nombre": "Creación neta de hogares", "valor": "240000", "unidad": "hogares", "periodo": "2025", "ubicacion": "pp. 124, 126, 146"},
+        {"nombre": "Creación neta de hogares media anual", "valor": "245000", "unidad": "hogares/año", "periodo": "2021-2024", "ubicacion": "p. 146"},
+        {"nombre": "Viviendas terminadas", "valor": "92000 (-9 %)", "unidad": "viviendas", "periodo": "2025", "ubicacion": "pp. 124, 146"},
+        {"nombre": "Viviendas previstas en las capitales de las seis grandes áreas urbanas", "valor": "320000 (4,5 % de 7 millones; 16 % de los hogares)", "unidad": "viviendas", "periodo": "SIU 2025", "ubicacion": "p. 147, nota 41"},
+        {"nombre": "Viviendas previstas y no entregadas en las seis grandes áreas urbanas", "valor": "1,1 millones (16 % del total nacional)", "unidad": "viviendas", "periodo": "SIU 2025", "ubicacion": "p. 147"},
+        {"nombre": "Viviendas adicionales a densidad de suelo consolidado (seis áreas)", "valor": "0,5 millones; máximo teórico 1-1,2 millones", "unidad": "viviendas", "periodo": "SIU 2025", "ubicacion": "p. 149"},
+        {"nombre": "Compras de no residentes (texto)", "valor": "7,4 (media 50000/año)", "unidad": "% de compras", "periodo": "2021-2025", "ubicacion": "p. 149"},
+        {"nombre": "Cuota de no residentes (Tabla 2.8)", "valor": "7,4 (+3,6 pp vs 2007)", "unidad": "% de compras", "periodo": "2025 (rotulado de la tabla; difiere del texto)", "ubicacion": "p. 150, tabla 2.8"},
+        {"nombre": "Compras de no residentes", "valor": "30000", "unidad": "unidades", "periodo": "2025", "ubicacion": "p. 126"},
+        {"nombre": "Vivienda turística", "valor": "355000 (1,5 % del parque; ~10 % del mercado de alquiler)", "unidad": "viviendas", "periodo": "media 2025", "ubicacion": "p. 150"},
+        {"nombre": "Compras con hipoteca", "valor": "52", "unidad": "% de compras", "periodo": "2025", "ubicacion": "p. 124"},
+        {"nombre": "Compras por personas jurídicas", "valor": "10", "unidad": "% de compras", "periodo": "2025", "ubicacion": "p. 123, nota 6"},
+        {"nombre": "Flujo de nuevas hipotecas / número", "valor": "+27,5 / +14,0", "unidad": "%", "periodo": "2025", "ubicacion": "p. 123"},
+        {"nombre": "LTV medio (nuevas hipotecas)", "valor": "66,4", "unidad": "%", "periodo": "2025", "ubicacion": "p. 124"},
+        {"nombre": "Hipotecas de primera vivienda con LTV>80 % / DSTI>35 % / ambos", "valor": "13,1 / 11,0 / 2,0", "unidad": "%", "periodo": "2025", "ubicacion": "p. 139, gráfico 2.9"},
+        {"nombre": "Precio real medio", "valor": "+9,7", "unidad": "% anual", "periodo": "2025", "ubicacion": "p. 125"},
+        {"nombre": "Precio real frente al máximo del 3T 2007", "valor": "-12,2", "unidad": "%", "periodo": "1T 2026", "ubicacion": "p. 125"},
+        {"nombre": "Indicador precio/renta de la OCDE frente a su máximo de 2007", "valor": "-18,1", "unidad": "%", "periodo": "2025", "ubicacion": "p. 135"},
+        {"nombre": "Precio de la vivienda sobre renta neta media del hogar", "valor": "4,3 (todos); 6,8 (no propietarios)", "unidad": "años de renta neta", "periodo": "2024", "ubicacion": "p. 136"},
+        {"nombre": "Esfuerzo del alquiler", "valor": "26,7", "unidad": "% de renta neta", "periodo": "2024", "ubicacion": "p. 140, tabla 2.5"},
+        {"nombre": "Elasticidad de oferta a largo plazo", "valor": "0,45", "unidad": "elasticidad (cota superior de la respuesta actual)", "periodo": "n/a", "ubicacion": "p. 146"},
+        {"nombre": "Aumento del parque de uso residencial", "valor": "1,2 millones, al menos 60 % de viviendas ya construidas con otro uso", "unidad": "viviendas", "periodo": "2021-2025", "ubicacion": "p. 143"},
+        {"nombre": "Indicador sintético de riesgos", "valor": "similar al de 2001", "unidad": "índice", "periodo": "4T 2025", "ubicacion": "p. 122"},
+        {"nombre": "Rango de desequilibrio de precios", "valor": "no encontrada en este capítulo", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"},
+        {"nombre": "Compras sin hipoteca (complemento del 52 % con hipoteca)", "valor": "48 (cálculo propio como complemento; no cifra textual)", "unidad": "%", "periodo": "2025", "ubicacion": "p. 124"}
+      ]
+    },
+    {
+      "id_doc": "IEF-2026P",
+      "titulo": "Informe de Estabilidad Financiera, primavera 2026, cap. 4: Mercados y precios de los activos",
+      "fecha": "2026-05-14",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/26/IEF_2026_1_Cap4.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Rango de desequilibrio de precios de la vivienda (batería de cuatro modelos)", "valor": "10-15", "unidad": "%", "periodo": "dic 2025", "ubicacion": "p. 100"},
+        {"nombre": "Máximo del promedio del indicador de desequilibrio", "valor": "24", "unidad": "%", "periodo": "fin 2007", "ubicacion": "p. 100"},
+        {"nombre": "Indicador sintético de riesgos", "valor": "nivel similar al 3T 2002", "unidad": "índice", "periodo": "dic 2025", "ubicacion": "p. 101"},
+        {"nombre": "Compraventas", "valor": "unas 750 mil (3,8 por 1000 hogares; cerca de 6 en 2006)", "unidad": "operaciones", "periodo": "2025", "ubicacion": "p. 97"},
+        {"nombre": "Precio nominal medio", "valor": "+12,7 (8,4 en 2024)", "unidad": "%", "periodo": "2025", "ubicacion": "p. 97"},
+        {"nombre": "Precio real", "valor": "+9,7 (5,5 en 2024); 14,7 % por debajo del máximo del 3T 2007", "unidad": "%", "periodo": "2025", "ubicacion": "pp. 97-98"},
+        {"nombre": "Creación neta de hogares", "valor": "225 mil", "unidad": "hogares", "periodo": "2025", "ubicacion": "p. 99"},
+        {"nombre": "Compras de no residentes (brutas; incremento neto de parque)", "valor": "55 mil; 30 mil neto", "unidad": "unidades", "periodo": "2025", "ubicacion": "p. 99, nota 3"},
+        {"nombre": "Viviendas terminadas", "valor": "92 mil", "unidad": "viviendas", "periodo": "2025", "ubicacion": "p. 99"},
+        {"nombre": "Crédito nuevo a hogares para compra de vivienda", "valor": "+26,2 (2T); +22,4 (4T)", "unidad": "% interanual", "periodo": "2025", "ubicacion": "p. 101"},
+        {"nombre": "Saldo de crédito hipotecario a hogares", "valor": "+3,7 interanual; 29,9 % del PIB; 43 % del crédito a hogares y empresas", "unidad": "%", "periodo": "4T 2025", "ubicacion": "p. 102"},
+        {"nombre": "LTP medio", "valor": "80,4", "unidad": "%", "periodo": "fin 2025", "ubicacion": "p. 103"},
+        {"nombre": "Operaciones con LTP>80 %", "valor": "de 39,2 a 43,8", "unidad": "%", "periodo": "inicio 2024 a fin 2025", "ubicacion": "p. 103"},
+        {"nombre": "LTV medio", "valor": "69,7", "unidad": "%", "periodo": "fin 2025", "ubicacion": "p. 104"},
+        {"nombre": "LTV>80 %", "valor": "de 10,8 a 15,6", "unidad": "%", "periodo": "inicio 2024 a fin 2025", "ubicacion": "p. 104"},
+        {"nombre": "LSTI medio", "valor": "23,5", "unidad": "%", "periodo": "fin 2025", "ubicacion": "pp. 104-105"},
+        {"nombre": "LTI medio", "valor": "no encontrada como valor textual (solo gráfico 4.6)", "unidad": "veces", "periodo": "2025", "ubicacion": "p. 104-105"},
+        {"nombre": "Compras sin hipoteca", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"},
+        {"nombre": "Precio/alquiler (indicador separado)", "valor": "no encontrada", "unidad": "n/a", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IEF-2025O",
+      "titulo": "Informe de Estabilidad Financiera, otoño 2025, cap. 4: Mercados y precios de los activos",
+      "fecha": "2025-11-13",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/25/IEF_2025_2_Cap4.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Rango de desequilibrio de precios", "valor": "5,3-12,7", "unidad": "%", "periodo": "jun 2025", "ubicacion": "p. 96"},
+        {"nombre": "Rango de desequilibrio de precios (revisado para finales de 2024)", "valor": "3,0-9,4", "unidad": "%", "periodo": "dic 2024", "ubicacion": "p. 96"},
+        {"nombre": "Compraventas acumuladas a 12 meses", "valor": "745 mil", "unidad": "operaciones", "periodo": "jun 2025", "ubicacion": "p. 93"},
+        {"nombre": "Precio nominal medio", "valor": "+12,5", "unidad": "% interanual", "periodo": "1S 2025", "ubicacion": "p. 94"},
+        {"nombre": "Precio real", "valor": "+10,3 interanual; 17,7 % por debajo del máximo del 3T 2007", "unidad": "%", "periodo": "2T 2025", "ubicacion": "p. 94"},
+        {"nombre": "Creación neta de hogares", "valor": "85 mil", "unidad": "hogares", "periodo": "1S 2025", "ubicacion": "p. 95"},
+        {"nombre": "Compras de no residentes (brutas; neto)", "valor": "29 mil; 15 mil neto", "unidad": "unidades", "periodo": "1S 2025", "ubicacion": "p. 95, nota 3"},
+        {"nombre": "Viviendas terminadas", "valor": "45 mil", "unidad": "viviendas", "periodo": "1S 2025", "ubicacion": "p. 95"},
+        {"nombre": "Diferencial hogares-vivienda nueva", "valor": "700 mil", "unidad": "viviendas", "periodo": "2021-2025 (datos hasta 1S 2025)", "ubicacion": "p. 95, nota 5"},
+        {"nombre": "Crédito nuevo a hogares para compra", "valor": "+26,2 (2T); +39,9 (1T)", "unidad": "% interanual", "periodo": "1S 2025", "ubicacion": "pp. 98"},
+        {"nombre": "LTI medio", "valor": "4,5 (4,4 en jun 2024)", "unidad": "veces la renta", "periodo": "mediados 2025", "ubicacion": "p. 100"},
+        {"nombre": "LSTI medio", "valor": "22,6", "unidad": "%", "periodo": "jun 2025", "ubicacion": "p. 100"},
+        {"nombre": "LTV y LTP medios", "valor": "68,7 y 77,8", "unidad": "%", "periodo": "1S 2025", "ubicacion": "p. 101"},
+        {"nombre": "Plazo medio de nuevas hipotecas", "valor": "26,5", "unidad": "años", "periodo": "2T 2025", "ubicacion": "p. 101"},
+        {"nombre": "Compras sin hipoteca", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IEF-2025P",
+      "titulo": "Informe de Estabilidad Financiera, primavera 2025, cap. 4: Mercados y precios de los activos",
+      "fecha": "2025-05-27",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/25/IEF_2025_1_Cap4.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Rango de desequilibrio de precios (modelos)", "valor": "1,1-8,5", "unidad": "%", "periodo": "dic 2024", "ubicacion": "p. 101, gráfico 4.2"},
+        {"nombre": "Rango de desequilibrio de precios seis meses antes", "valor": "0,8-4,8", "unidad": "%", "periodo": "jun 2024", "ubicacion": "p. 101"},
+        {"nombre": "Compraventas desestacionalizadas", "valor": "367 mil", "unidad": "operaciones", "periodo": "2S 2024", "ubicacion": "p. 99"},
+        {"nombre": "Compras de ciudadanos extranjeros (residentes y no residentes)", "valor": "18,0 (16,9 en 2019)", "unidad": "% de compras", "periodo": "2024", "ubicacion": "p. 99"},
+        {"nombre": "Precio real frente al nivel pre-Covid y al máximo de 2007", "valor": "+11,5 y -22", "unidad": "%", "periodo": "fin 2024", "ubicacion": "p. 100"},
+        {"nombre": "Creación neta de hogares", "valor": "180 mil", "unidad": "hogares", "periodo": "2024", "ubicacion": "p. 100"},
+        {"nombre": "Viviendas terminadas", "valor": "en torno a 100 mil", "unidad": "viviendas", "periodo": "2024", "ubicacion": "p. 100, nota 2"},
+        {"nombre": "Crédito nuevo para compra de vivienda", "valor": "+34,6 (4T 2024); +39,9 (1T 2025)", "unidad": "% interanual", "periodo": "2024-2025", "ubicacion": "p. 102"},
+        {"nombre": "LTP medio; LTP>80 %", "valor": "76,6; 41,3", "unidad": "%", "periodo": "2024", "ubicacion": "p. 104-105"},
+        {"nombre": "LTV medio; LTV>80 %", "valor": "67,2; 12,0", "unidad": "%", "periodo": "2024", "ubicacion": "p. 105"},
+        {"nombre": "Compras sin hipoteca", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IEF-2024O",
+      "titulo": "Informe de Estabilidad Financiera, otoño 2024: sección 1.2.2 y resumen del cap. 3",
+      "fecha": "2024-11-05",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/24/IEF_otono2024.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Precio de la vivienda (total; usada; nueva)", "valor": "+7,8; +7,3; +11,2", "unidad": "% interanual", "periodo": "2T 2024", "ubicacion": "p. 44, gráfico 1.5"},
+        {"nombre": "Compraventas notariales enero-agosto", "valor": "+8", "unidad": "% interanual", "periodo": "2024", "ubicacion": "p. 45"},
+        {"nombre": "Compras de ciudadanos extranjeros", "valor": "18,5 (17 en 2019)", "unidad": "% de compras", "periodo": "1S 2024", "ubicacion": "p. 45"},
+        {"nombre": "Crédito nuevo para compra de vivienda", "valor": "+25,6 (2T 2024); -10,2 (4T 2023)", "unidad": "% interanual", "periodo": "2023-2024", "ubicacion": "p. 45"},
+        {"nombre": "Creación neta de hogares (media 2022-2023; variación 2024)", "valor": "272000; 153000", "unidad": "hogares", "periodo": "2022-2024", "ubicacion": "p. 45, nota 11"},
+        {"nombre": "Visados de obra nueva residencial (12 meses)", "valor": "119000", "unidad": "viviendas", "periodo": "2024", "ubicacion": "p. 45, nota 11"},
+        {"nombre": "Rango de desequilibrio de precios", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a (cap. 3, p. 117: solo cualitativo)"},
+        {"nombre": "LTV, LTI y esfuerzo financiero (valores)", "valor": "no encontrada", "unidad": "n/a", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IEF-2024P",
+      "titulo": "Informe de Estabilidad Financiera, primavera 2024: sección 1.2.2",
+      "fecha": "2024-04-15",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/24/IEF_Primavera2024.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Precio de la vivienda (total; nueva; usada)", "valor": "+4,2; +7,5; +3,6", "unidad": "% interanual", "periodo": "4T 2023", "ubicacion": "p. 47"},
+        {"nombre": "Viviendas terminadas y formación neta de hogares", "valor": "cerca de 90000; próxima a 270000", "unidad": "unidades", "periodo": "2023", "ubicacion": "p. 48, nota 14"},
+        {"nombre": "Compraventas", "valor": "-11 vs 2022; +12 vs 2019", "unidad": "%", "periodo": "2023", "ubicacion": "p. 49"},
+        {"nombre": "Flujo de crédito hipotecario nuevo", "valor": "-10,5", "unidad": "% interanual", "periodo": "4T 2023", "ubicacion": "p. 49"},
+        {"nombre": "Rango de desequilibrio de precios", "valor": "no encontrada en las páginas leídas", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IEF-2023O",
+      "titulo": "Informe de Estabilidad Financiera, otoño 2023, cap. 3: Riesgo sistémico y política prudencial",
+      "fecha": "2023-10-30",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/23/IEF_2023_2_Cap3.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Rango de desequilibrio de precios", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a (p. 135: solo cualitativo)"},
+        {"nombre": "LTV, LTI y esfuerzo financiero (valores)", "valor": "no encontrada", "unidad": "n/a", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    },
+    {
+      "id_doc": "IEF-2023P",
+      "titulo": "Informe de Estabilidad Financiera, primavera 2023: sección 1.2.2",
+      "fecha": "2023-04-19",
+      "url": "https://www.bde.es/f/webbde/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/23/IEF_Primavera2023.pdf",
+      "consulta": "2026-10-19",
+      "lectura": "completo",
+      "cifras": [
+        {"nombre": "Precio de la vivienda (INE)", "valor": "+5,5 (nueva +6,2; usada +5,3)", "unidad": "% interanual", "periodo": "4T 2022", "ubicacion": "p. 60"},
+        {"nombre": "Flujo de nuevas hipotecas", "valor": "-5,4", "unidad": "% interanual", "periodo": "4T 2022", "ubicacion": "p. 58"},
+        {"nombre": "Saldo de crédito hipotecario", "valor": "-0,2", "unidad": "%", "periodo": "2022", "ubicacion": "p. 58"},
+        {"nombre": "Rango de desequilibrio de precios", "valor": "no encontrada", "unidad": "%", "periodo": "n/a", "ubicacion": "n/a"}
+      ]
+    }
+  ]
+}

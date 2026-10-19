@@ -19,3 +19,8 @@
 - InsideAirbnb también queda fuera: su licencia es CC BY 4.0, pero su política pide no republicar los datos.
 - Solo se versionan agregados propios.
 - Los Registradores se guardan en _terceros/, también ignorada.
+
+## K3. B4 (mejor estimación por canal) después de la auditoría (2026-10-19)
+- La mejor estimación razonada de B4 combina nuestros datos con la inferencia de B2, el Banco de España, el BCE y la literatura con diseño creíble. La literatura de cada canal la reúnen los auditores de la fase 3.
+- Por eso B4 se escribe al terminar la primera ronda de la auditoría, en docs/v17/mejor_estimacion.csv. src/v17/f2_lectura_bde.py la une a la tabla comparativa.
+- Es juicio experto y se rotula así.

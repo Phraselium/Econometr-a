@@ -59,11 +59,18 @@ def main() -> int:
     d["lectura_convencional"] = [lectura(r) for r in d.itertuples()]
     d["distorsion"] = [("sin medir" if pd.isna(t) else f"tamaño real {100 * float(t):.1f} % al 5 % nominal")
                        for t in pd.to_numeric(d.tamano_real, errors="coerce")]
-    if B4.exists():
-        b4 = pd.read_csv(B4)
-        d = d.merge(b4[["pregunta", "canal", "mejor_estimacion", "confianza"]], on="pregunta", how="left")
-    else:
-        d["canal"] = d["mejor_estimacion"] = d["confianza"] = np.nan
+    d["canal"] = pd.Series([None] * len(d), dtype=object)
+    d["mejor_estimacion"] = pd.Series([None] * len(d), dtype=object)
+    d["confianza"] = pd.Series([None] * len(d), dtype=object)
+    if B4.exists():   # B4 (juicio experto por canal): se une por el patrón de la pregunta
+        b4 = pd.read_csv(B4).fillna("")
+        for r in b4.itertuples():
+            if not r.patron:
+                continue
+            m = d.pregunta.astype(str).str.match(r.patron.replace("(", "(?:")) & d.canal.isna()
+            d.loc[m, "canal"] = r.canal
+            d.loc[m, "mejor_estimacion"] = f"{r.canal}: véase la tabla B4"
+            d.loc[m, "confianza"] = r.confianza
     cols = ["version", "id_resultado", "pregunta", "canal", "estimacion_publicada", "unidad", "capa_proyecto", "lectura_convencional",
             "distorsion", "regla", "p_holm_pregunta", "p_bh_pregunta", "mejor_estimacion", "confianza", "grupo"]
     t = d[cols]
@@ -83,6 +90,13 @@ def main() -> int:
         co = "" if pd.isna(r.confianza) else r.confianza
         L.append(f"| {r.version} | {r.id_resultado} | {r.pregunta} | {est} | {r.capa_proyecto} | {r.lectura_convencional} | {r.distorsion} | "
                  f"{r.regla} | {ph} | {me} | {co} |")
+    if B4.exists():
+        b4 = pd.read_csv(B4).fillna("")
+        L += ["", "## B4 · Mejor estimación razonada por canal (juicio experto, a posteriori)", "",
+              "Combina nuestros datos con la inferencia de B2, el Banco de España, el BCE y la literatura con diseño creíble. No es un "
+              "resultado identificado. La confianza usa la escala del Banco de España. Fuente: docs/v17/mejor_estimacion.csv.", "",
+              "| Canal | Mejor estimación | Rango | Confianza | Por qué | Fuentes | Rótulo |", "|---|---|---|---|---|---|---|"]
+        L += [f"| {r.canal} | {r.mejor_estimacion} | {r.rango} | {r.confianza} | {r.por_que} | {r.fuentes} | {r.rotulo} |" for r in b4.itertuples()]
     (LB / "tabla_comparativa.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     print(f"f2_lectura_bde V17: {len(t)} filas; {n}")
     return 0

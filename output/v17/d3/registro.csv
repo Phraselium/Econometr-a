@@ -1,0 +1,24 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v17-d3-panel,descomp_Valor tasado MIVAU (_2015-2019,var(Δln) = año + provincia + local,2015,2019,190,,,,,0.03799731936985667,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_Valor tasado MIVAU (_2020-2025,var(Δln) = año + provincia + local,2020,2025,228,,,,,0.6622640047316866,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_Valor tasado MIVAU (_2015-2025,var(Δln) = año + provincia + local,2015,2025,418,,,,,0.606807512033916,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPV INE por CCAA (ín_2015-2019,var(Δln) = año + provincia + local,2015,2019,85,,,,,0.1654951718966082,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPV INE por CCAA (ín_2020-2025,var(Δln) = año + provincia + local,2020,2025,102,,,,,0.910585356369684,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPV INE por CCAA (ín_2015-2025,var(Δln) = año + provincia + local,2015,2025,187,,,,,0.7630307043007342,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPC alquiler INE pro_2015-2019,var(Δln) = año + provincia + local,2015,2019,205,,,,,0.49476580560464056,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPC alquiler INE pro_2020-2025,var(Δln) = año + provincia + local,2020,2025,246,,,,,0.45399379380525284,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPC alquiler INE pro_2015-2025,var(Δln) = año + provincia + local,2015,2025,451,,,,,0.6422100372844324,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPVA INE provincial _2015-2019,var(Δln) = año + provincia + local,2015,2019,190,,,,,0.7397581741170401,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPVA INE provincial _2020-2025,var(Δln) = año + provincia + local,2020,2024,190,,,,,0.678300278636263,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_IPVA INE provincial _2015-2025,var(Δln) = año + provincia + local,2015,2024,380,,,,,0.7690668563285452,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_SERPAVI alquiler €/m_2015-2019,var(Δln) = año + provincia + local,2015,2019,190,,,,,0.7565631818068946,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_SERPAVI alquiler €/m_2020-2025,var(Δln) = año + provincia + local,2020,2024,190,,,,,0.44949285891220936,,C4 contabilidad de varianza; sin p-valores
+v17-d3-panel,descomp_SERPAVI alquiler €/m_2015-2025,var(Δln) = año + provincia + local,2015,2024,380,,,,,0.7080044151089212,,C4 contabilidad de varianza; sin p-valores
+v17-d3-escenario,prod_C2/C4 1.0 (L_5a,(D0/N + H_INE + bajas),2026,2031,1,,,,,257188.42,,escenario contable con supuestos explícitos; sin predicción
+v17-d3-escenario,prod_C2/C4 1.0 (L_10a,(D0/N + H_INE + bajas),2026,2036,1,,,,,204827.82,,escenario contable con supuestos explícitos; sin predicción
+v17-d3-escenario,prod_1.0 central _5a,(D0/N + H_INE + bajas),2026,2031,1,,,,,293622.82000000007,,escenario contable con supuestos explícitos; sin predicción
+v17-d3-escenario,prod_1.0 central _10a,(D0/N + H_INE + bajas),2026,2036,1,,,,,223045.02,,escenario contable con supuestos explícitos; sin predicción
+v17-d3-escenario,prod_BdE (Informe_5a,(D0/N + H_INE + bajas),2026,2031,1,,,,,302467.22000000003,,escenario contable con supuestos explícitos; sin predicción
+v17-d3-escenario,prod_BdE (Informe_10a,(D0/N + H_INE + bajas),2026,2036,1,,,,,227467.22,,escenario contable con supuestos explícitos; sin predicción
+v17-d3-escenario,prod_1.0 (L3-DEF-_5a,(D0/N + H_INE + bajas),2026,2031,1,,,,,330057.22000000003,,escenario contable con supuestos explícitos; sin predicción
+v17-d3-escenario,prod_1.0 (L3-DEF-_10a,(D0/N + H_INE + bajas),2026,2036,1,,,,,241262.22,,escenario contable con supuestos explícitos; sin predicción

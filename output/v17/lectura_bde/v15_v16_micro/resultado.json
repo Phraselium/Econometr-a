@@ -1,0 +1,302 @@
+{
+ "rama": "v17/f2/v15_v16_micro",
+ "pregunta": "¿Qué inferencia convencional daría un trabajo estándar a las estimaciones de V15 (H1-H4) y V16 (Q1-Q4, Q6-Q8) publicadas sin inferencia, y con qué distorsión medida?",
+ "capa": "C4 (sin cambio: la lectura convencional va en su propia columna)",
+ "datos": "entrenamiento de V15 y V16 (data/processed/v15, data/processed/v16/entrenamiento, ECV y MIVAU en data/raw); sin muestras selladas",
+ "N": {
+  "filas": 26,
+  "publicables": 12,
+  "no_fiables": 10,
+  "sin_medir": 4
+ },
+ "metodo": "Inferencia convencional a posteriori según docs/v17/brief_f2_inferencia.md; regla del 15 % con el tamaño real de los Monte Carlo de V15 y V16; Holm y BH dentro de cada pregunta",
+ "estimacion": {
+  "H1-CS": {
+   "estimacion": -7.178832767503041,
+   "unidad": "% (100·(exp(ATT)-1))"
+  },
+  "H1-SDID": {
+   "estimacion": -3.6420740265708074,
+   "unidad": "% (100·(exp(ATT)-1))"
+  },
+  "H2-CS": {
+   "estimacion": -4.215889712306953,
+   "unidad": "% (100·(exp(ATT)-1))"
+  },
+  "H2-SDID": {
+   "estimacion": -14.160466297485218,
+   "unidad": "% (100·(exp(ATT)-1))"
+  },
+  "H2-PPML": {
+   "estimacion": -9.948082837419877,
+   "unidad": "% (cambio porcentual)"
+  },
+  "H3": {
+   "estimacion": 0.002988665885207569,
+   "unidad": "% de alquiler por DT intra-sección del % de viviendas turísticas"
+  },
+  "H4-AKM0": {
+   "estimacion": 0.30524005882371286,
+   "unidad": "% de alquiler por punto porcentual de población extranjera"
+  },
+  "H4-AKM": {
+   "estimacion": 0.30524005882371286,
+   "unidad": "% de alquiler por punto porcentual de población extranjera"
+  },
+  "H4-PROV": {
+   "estimacion": 0.30524005882371286,
+   "unidad": "% de alquiler por punto porcentual de población extranjera"
+  },
+  "Q1c-global": {
+   "estimacion": -0.04780167408861156,
+   "unidad": "Δlog (ATT global)"
+  },
+  "Q1c-sin-grandes": {
+   "estimacion": -0.06404975548185231,
+   "unidad": "Δlog (ATT global)"
+  },
+  "Q2a": {
+   "estimacion": 0.013161806189649785,
+   "unidad": "Δlog IPC alquiler por DT del log de la exposición"
+  },
+  "Q2c": {
+   "estimacion": -0.0053760981909795474,
+   "unidad": "Δlog IPVA-TAM por DT de la exposición (nivel)"
+  },
+  "Q3-b": {
+   "estimacion": 0.009077270952434798,
+   "unidad": "Δlog SERPAVI VC 2021-2024 por DT de la cuota de extranjeros"
+  },
+  "Q3-c1-AKM0": {
+   "estimacion": 0.011896232675603786,
+   "unidad": "log del valor tasado por punto de población extranjera predicha"
+  },
+  "Q3-c1-AKM": {
+   "estimacion": 0.011896232675603786,
+   "unidad": "log del valor tasado por punto de población extranjera predicha"
+  },
+  "Q3-c2-AKM0": {
+   "estimacion": -0.028176478254562994,
+   "unidad": "log de las compraventas por punto de población extranjera predicha"
+  },
+  "Q3-c2-AKM": {
+   "estimacion": -0.028176478254562994,
+   "unidad": "log de las compraventas por punto de población extranjera predicha"
+  },
+  "Q4a": {
+   "estimacion": -0.12971924516228092,
+   "unidad": "Δlog obra nueva neta por DT del % Red Natura"
+  },
+  "Q4b": {
+   "estimacion": -0.0013826223465030403,
+   "unidad": "Δlog SERPAVI por DT de Red Natura y punto de choque"
+  },
+  "Q6-v": {
+   "estimacion": 0.02508245316199873,
+   "unidad": "Δlog por punto de tipo general del ITP"
+  },
+  "Q6-v-Webb": {
+   "estimacion": 0.02508245316199873,
+   "unidad": "Δlog por punto de tipo general del ITP"
+  },
+  "Q6-p": {
+   "estimacion": -0.002037210173603298,
+   "unidad": "Δlog por punto de tipo general del ITP"
+  },
+  "Q6-p-Webb": {
+   "estimacion": -0.002037210173603298,
+   "unidad": "Δlog por punto de tipo general del ITP"
+  },
+  "Q7": {
+   "estimacion": -0.11997210399031481,
+   "unidad": "Δlog alquiler (diferencia en discontinuidades, ancho ±5)"
+  },
+  "Q8": {
+   "estimacion": -1.3328674487467378,
+   "unidad": "puntos porcentuales de cuota (ventana de 4 trimestres posterior a 2025Q2 menos la anterior)"
+  }
+ },
+ "ic95": {
+  "H2-SDID": [
+   -19.28477073559072,
+   -8.710839163604811
+  ],
+  "H3": [
+   -0.06503962459556559,
+   0.07101695636598071
+  ],
+  "H4-AKM0": [
+   -1.0449079674496686,
+   0.6044426239281959
+  ],
+  "Q1c-global": [
+   -0.10277433514628453,
+   0.007170986969061419
+  ],
+  "Q1c-sin-grandes": [
+   -0.12520695914642166,
+   -0.0028925518172829637
+  ],
+  "Q2a": [
+   0.005540940744316417,
+   0.020782671634983152
+  ],
+  "Q2c": [
+   -0.01551601121282313,
+   0.0047638148308640355
+  ],
+  "Q3-b": [
+   0.006644553189052299,
+   0.011509988715817297
+  ],
+  "Q3-c1-AKM0": [
+   NaN,
+   NaN
+  ],
+  "Q3-c2-AKM0": [
+   -0.3850976963009904,
+   0.005971070430699425
+  ],
+  "Q6-v": [
+   -0.014991312875585056,
+   0.06515621919958252
+  ],
+  "Q6-p": [
+   -0.03233889427843453,
+   0.028264473931227937
+  ]
+ },
+ "p_ajustado": {
+  "H2-SDID": {
+   "p": 0.0001,
+   "holm_pregunta": 0.0004,
+   "bh_pregunta": 0.00025,
+   "pregunta": "V15 zonas tensionadas (H1, H2)"
+  },
+  "H3": {
+   "p": 0.9313817623784503,
+   "holm_pregunta": 0.9313817623784503,
+   "bh_pregunta": 0.9313817623784503,
+   "pregunta": "V15 turismo por sección (H3)"
+  },
+  "H4-AKM0": {
+   "p": 0.25889716534446805,
+   "holm_pregunta": 0.25889716534446805,
+   "bh_pregunta": 0.25889716534446805,
+   "pregunta": "V15 inmigración shift-share (H4)"
+  },
+  "Q1c-global": {
+   "p": 0.0943,
+   "holm_pregunta": 0.0943,
+   "bh_pregunta": 0.0943,
+   "pregunta": "V16 Q1 zonas tensionadas (Q1c)"
+  },
+  "Q1c-sin-grandes": {
+   "p": 0.0401,
+   "holm_pregunta": 0.0802,
+   "bh_pregunta": 0.0802,
+   "pregunta": "V16 Q1 zonas tensionadas (Q1c)"
+  },
+  "Q2a": {
+   "p": 0.0004,
+   "holm_pregunta": 0.0008,
+   "bh_pregunta": 0.0008,
+   "pregunta": "V16 Q2 turismo (Q2a, Q2c)"
+  },
+  "Q2c": {
+   "p": 0.3,
+   "holm_pregunta": 0.3,
+   "bh_pregunta": 0.3,
+   "pregunta": "V16 Q2 turismo (Q2a, Q2c)"
+  },
+  "Q3-b": {
+   "p": 2.6068036618198676e-13,
+   "holm_pregunta": 7.820410985459603e-13,
+   "bh_pregunta": 7.820410985459603e-13,
+   "pregunta": "V16 Q3 inmigración (Q3-b, Q3-c)"
+  },
+  "Q3-c1-AKM0": {
+   "p": 0.3272761473659668,
+   "holm_pregunta": 0.3272761473659668,
+   "bh_pregunta": 0.3272761473659668,
+   "pregunta": "V16 Q3 inmigración (Q3-b, Q3-c)"
+  },
+  "Q3-c2-AKM0": {
+   "p": 0.0772327917497641,
+   "holm_pregunta": 0.1544655834995282,
+   "bh_pregunta": 0.11584918762464613,
+   "pregunta": "V16 Q3 inmigración (Q3-b, Q3-c)"
+  },
+  "Q6-v": {
+   "p": 0.2178,
+   "holm_pregunta": 0.4356,
+   "bh_pregunta": 0.4356,
+   "pregunta": "V16 Q6 fiscalidad ITP (Q6-v, Q6-p)"
+  },
+  "Q6-p": {
+   "p": 0.886,
+   "holm_pregunta": 0.886,
+   "bh_pregunta": 0.886,
+   "pregunta": "V16 Q6 fiscalidad ITP (Q6-v, Q6-p)"
+  },
+  "Q7": {
+   "p": 0.0743,
+   "holm_pregunta": 0.0743,
+   "bh_pregunta": 0.0743,
+   "pregunta": "V16 Q7 bono alquiler joven"
+  },
+  "Q8": {
+   "p": 0.006651453161439729,
+   "holm_pregunta": 0.006651453161439729,
+   "bh_pregunta": 0.006651453161439729,
+   "pregunta": "V16 Q8 no residentes"
+  }
+ },
+ "nivel_evidencia": "DESCRIPTIVO (sin cambio de capa; lectura convencional a posteriori)",
+ "diagnosticos": {
+  "reproduccion_punto_maxima_rel": 1.753969170694724e-12,
+  "filas_no_reproducidas": [],
+  "no_fiables": [
+   "H1-CS",
+   "H1-SDID",
+   "H2-CS",
+   "H2-PPML",
+   "H4-AKM",
+   "H4-PROV",
+   "Q3-c1-AKM",
+   "Q3-c2-AKM",
+   "Q4a",
+   "Q4b"
+  ],
+  "sin_medir": [
+   "Q6-v-Webb",
+   "Q6-p-Webb",
+   "Q7",
+   "Q8"
+  ],
+  "publicables": [
+   "H2-SDID",
+   "H3",
+   "H4-AKM0",
+   "Q1c-global",
+   "Q1c-sin-grandes",
+   "Q2a",
+   "Q2c",
+   "Q3-b",
+   "Q3-c1-AKM0",
+   "Q3-c2-AKM0",
+   "Q6-v",
+   "Q6-p"
+  ],
+  "semilla": 20261010,
+  "B_webb": 9999,
+  "segundos": 181.9
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "nota": "a posteriori",
+ "notas": "Análisis a posteriori (V17): no sustituye a las capas del proyecto ni es confirmatorio. Las filas no fiables solo llevan la estimación puntual. Sin lenguaje causal."
+}

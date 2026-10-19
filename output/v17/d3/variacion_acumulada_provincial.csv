@@ -1,0 +1,6 @@
+serie,periodo,N,mediana_pct,p10_pct,p90_pct,min_pct,max_pct,dispersion_p90_p10_pp
+"Valor tasado MIVAU (€/m², media anual)",2015-2025,38,11.47,-2.25,30.91,-10.39,61.15,33.16
+"IPV INE por CCAA (índice, media anual)",2015-2025,17,47.9,35.04,70.85,24.86,75.95,35.82
+"IPC alquiler INE provincial (índice, media anual)",2015-2025,41,9.2,4.79,13.02,2.3,20.37,8.23
+IPVA INE provincial (índice anual),2015-2024,38,21.04,15.95,28.14,9.89,37.41,12.19
+SERPAVI alquiler €/m² mediana provincial,2015-2024,38,33.48,26.65,45.4,22.87,55.22,18.75

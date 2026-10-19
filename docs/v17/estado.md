@@ -30,13 +30,16 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F1 | adquisidor-datos | oferta, capacidad y turismo local | 94.325 | data/raw/v17/oferta_capacidad/; data/raw/v17/turismo_local/; docs/v17/fuentes/ |
 | 2026-10-19 | F2 | modelizador | inferencia series, V8, V9, V12 | 169.777 | src/v17/f2_inferencia_series_v8_v9_v12.py; output/v17/lectura_bde/series_v8_v9_v12/ |
 | 2026-10-19 | F1 | adquisidor-datos | oferta y turismo (cierre de la descarga del Censo en segundo plano) | 756 | - |
+| 2026-10-19 | F3 | modelizador | D3 cuantitativo (demografía, general o local, factibilidad) | 179.305 | src/v17/d3_cuantitativo.py; output/v17/d3/ |
+| 2026-10-19 | F2 | modelizador | inferencia micro V15-V16 | 273.700 | src/v17/f2_inferencia_v15_v16_micro.py; output/v17/lectura_bde/v15_v16_micro/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 383.177 |
 | F1 | 346.740 |
-| F2 | 169.777 |
+| F2 | 443.477 |
+| F3 | 179.305 |
 
-Total V17: 899.694 tokens
+Total V17: 1.352.699 tokens
 
 <!-- fin subagentes -->

@@ -6,3 +6,5 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-19,F1,adquisidor-datos,"oferta, capacidad y turismo local",94325,data/raw/v17/oferta_capacidad/; data/raw/v17/turismo_local/; docs/v17/fuentes/
 2026-10-19,F2,modelizador,"inferencia series, V8, V9, V12",169777,src/v17/f2_inferencia_series_v8_v9_v12.py; output/v17/lectura_bde/series_v8_v9_v12/
 2026-10-19,F1,adquisidor-datos,oferta y turismo (cierre de la descarga del Censo en segundo plano),756,-
+2026-10-19,F3,modelizador,"D3 cuantitativo (demografía, general o local, factibilidad)",179305,src/v17/d3_cuantitativo.py; output/v17/d3/
+2026-10-19,F2,modelizador,inferencia micro V15-V16,273700,src/v17/f2_inferencia_v15_v16_micro.py; output/v17/lectura_bde/v15_v16_micro/

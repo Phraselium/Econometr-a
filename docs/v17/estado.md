@@ -50,14 +50,17 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F3 | auditor | auditoría demanda y precios (6 filas; D3-1) | 399.678 | output/v17/auditoria/ (demanda_precios) |
 | 2026-10-19 | F3 | lector-literatura | lectura completa de estudios sobre no beneficiarios (P1) | 222.238 | docs/v17/referencias/no_beneficiarios.md |
 | 2026-10-19 | F3 | lector-literatura | versiones de González-Ortega y Monràs-García-Montalvo (D2) | 131.741 | docs/v17/referencias/d2_versiones.md |
+| 2026-10-19 | F3 | abogado-del-diablo | ronda 1 oferta y titularidad | 105.280 | - |
+| 2026-10-19 | F3 | abogado-del-diablo | ronda 1 demanda y precios | 136.019 | - |
+| 2026-10-19 | F3 | abogado-del-diablo | ronda 1 regulación y ayudas | 127.968 | - |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 822.687 |
 | F1 | 346.740 |
 | F2 | 443.477 |
-| F3 | 1.513.694 |
+| F3 | 1.882.961 |
 
-Total V17: 3.126.598 tokens
+Total V17: 3.495.865 tokens
 
 <!-- fin subagentes -->

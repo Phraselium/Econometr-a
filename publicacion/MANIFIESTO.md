@@ -34,7 +34,7 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `09824f977a1643c772ff48a09359c7f9e8c026fd758575e993a25952ac880f8e` |
 | informe_integral/informe_integral.md | output/v16/informe/informe_integral.md | `c1b928a5ae1100f9e42511ea2d5950cff8701b295e682857cd70d2fa9a615632` |
-| informe_tecnico.md | output/v5/informe_tecnico.md | `d8eda75c44f121964107027a12f7a9001e04e69a4c4553fcfbf02c061c9239bb` |
+| informe_tecnico.md | output/v5/informe_tecnico.md | `f8967bff9aea1349c3938f0077a9c5dddd6444c1741177c373d8219ee3cc9a51` |
 | informe_v9.md | output/v9/informe_v9.md | `bde71cee9bdaf6f11941c9c703bb7d92bb79bd8c9b2eb6d13a8771f6ae219c35` |
 | lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `f0d2af82cfe36acb84c0a6b7f39e95fabc5a126eb4c5009e1f93e4903ed303df` |
 | nota_metodologica.md | output/v5/nota_metodologica.md | `42a718ba6ef57a976b84c757885d65fccef9295f58838854bff2794ad084a9b4` |

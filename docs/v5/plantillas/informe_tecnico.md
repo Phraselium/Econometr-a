@@ -33,7 +33,7 @@
 **Lo que no se puede afirmar.**
 - Ninguna descomposición de la subida de precios es estable: el orden de las familias de factores cambia con el método y el periodo (tau de Kendall mínima {{B4-estabilidad-tau-min:valor}}) [C4]. Se habla de «contribuciones contables», no de atribuciones.
 - Las diferencias de precios entre provincias se describen, no se atribuyen: el pre-registro de B3 tenía potencia insuficiente y el resultado es «descriptivo honesto» [C4].
-- No se dispone de datos públicos sobre la distribución del parque por tipo de propietario (personas jurídicas, grandes tenedores); las afirmaciones del debate sobre ese punto quedan sin analizar por falta de datos.
+- Grandes tenedores (corregido en V17; ERRATA.md, 2026-10-19). Hay datos del parque total: {{V12-B5-pct_mas10:num}} % de las viviendas son de titulares con más de diez (Catastro 2026, España sin País Vasco ni Navarra) [C4]. Del parque en alquiler solo hay datos parciales, y el efecto sobre los precios no está medido en España.
 
 **Instrumentos.** Con la misma rúbrica se evalúan {{D1-H01:valor}}; en {{D1-H02:valor}} el signo no es evaluable con la evidencia disponible [C4]. La parte de una ayuda general a la demanda que se trasladaría al precio depende de la clase territorial: clase `1`, {{D1-H11:rango}}; clase `2`, {{D1-H12:rango}}; clase `3`, {{D1-H13:rango}} [C4]. Lo que aparece con signo estable en la rejilla de v3 es más construcción donde falta y la movilización de vacías [C2 en el signo; C4 en la magnitud].
 
@@ -539,7 +539,7 @@ La tabla completa, con documento y página de cada organismo, está en [output/v
 ### 10.1 Lo que no se puede afirmar
 
 - **Que una familia de factores «explique» la subida de precios.** Las contribuciones contables no son estables entre métodos ni periodos [C4].
-- **Que los grandes tenedores o los fondos determinen los precios.** No hay datos públicos del parque por tipo de propietario. El verificador lo deja en «no analizada: faltan datos».
+- **Que los grandes tenedores o los fondos determinen los precios.** Hay datos del parque total ({{V12-B5-pct_mas10:num}} % en titulares con más de diez viviendas) y datos parciales del alquiler, pero ninguna medida de su efecto sobre los precios en España. El verificador lo deja en «no analizada: faltan datos» (corregido en V17; ERRATA.md).
 - **Que los topes al alquiler bajen o suban las rentas en España.** El resultado de v3 está fuera de C3 por contaminación de la validación; la réplica de García-López y otros no se reproduce (coeficiente propio {{E-GL-coef}}, p ajustado {{E-GL-pholm:valor}}) porque el stock de SERPAVI recoge solo {{E-GL-lambda:valor}} de la variación del flujo [C4].
 - **Que las viviendas turísticas suban el alquiler nacional.** La asociación de v3 no se distingue de cero ({{E-v3-H3-1}}, p ajustado {{E-v3-H3-1-p:valor}}); la cota de cantidad es {{B4-v3-vut-cantidad:valor}} [C2].
 - **Que haya una burbuja.** Las pruebas de exuberancia (GSADF) con tamaño corregido detectan episodios en algunas razones de precio y no en otras; una exuberancia estadística no es una burbuja (sección de robustez del working paper).

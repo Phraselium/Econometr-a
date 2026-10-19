@@ -14,3 +14,6 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-19,F3,auditor,auditoría demanda y precios (6 filas; D3-1),399678,output/v17/auditoria/ (demanda_precios)
 2026-10-19,F3,lector-literatura,lectura completa de estudios sobre no beneficiarios (P1),222238,docs/v17/referencias/no_beneficiarios.md
 2026-10-19,F3,lector-literatura,versiones de González-Ortega y Monràs-García-Montalvo (D2),131741,docs/v17/referencias/d2_versiones.md
+2026-10-19,F3,abogado-del-diablo,ronda 1 oferta y titularidad,105280,-
+2026-10-19,F3,abogado-del-diablo,ronda 1 demanda y precios,136019,-
+2026-10-19,F3,abogado-del-diablo,ronda 1 regulación y ayudas,127968,-

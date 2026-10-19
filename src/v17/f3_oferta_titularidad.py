@@ -62,7 +62,7 @@ def hecho(id_, indicador, valor, unidad, periodo, fuentes, lectura, ficha, minim
     f = lambda x: None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), 4)
     HECHOS.append({"id": f"V17-AUD-OT-{id_}", "indicador": indicador, "valor": f(valor), "min": f(minimo), "max": f(maximo),
                    "unidad": unidad, "periodo": periodo, "fuentes": fuentes, "capa": "C4", "lectura_v17": lectura,
-                   "ficha": f"{FICHAS}/{ficha}.md", "nota": "a posteriori" + (f"; {nota}" if nota else "")})
+                   "ficha": (f"output/v17/auditoria/preguntas/{ficha}.md" if ficha.startswith("D3-") else f"{FICHAS}/{ficha}.md"), "nota": "a posteriori" + (f"; {nota}" if nota else "")})
 
 
 def selladas() -> set[str]:
@@ -379,7 +379,8 @@ def oferta() -> dict:
           "output/v5/cifras_clave.csv (V71-S1-a_construccion-alquiler-efecto_10k); INE Censo 2021 (parque de la CCAA mediana)",
           "juicio experto", "mas_oferta",
           nota=(f"parque de la CCAA mediana {med:,.0f}; vacías {el['vacias']:.2f}; vivienda pública {el['publica']:.2f}; "
-                f"Mense (2025) {DOC['mense_elasticidad']}: el escenario es {el['construccion'] / DOC['mense_elasticidad']:.1f} veces mayor"))
+                f"cociente con Mense (2025, {DOC['mense_elasticidad']}): {el['construccion'] / DOC['mense_elasticidad']:.1f}; Mense es local y de "
+                "corto plazo, no una referencia agregada, así que el cociente no mide optimismo"))
     hecho("OFERTA-ILUSTRACION-RANGO", "Ilustración: variación del alquiler medio al cerrar el déficit central, entre la elasticidad local de Mense y la implícita en el escenario V7.1",
           DOC["mense_elasticidad"] * pct["central"], "% del alquiler medio", "orden de magnitud", "Mense (2025); output/v5/cifras_clave.csv (V71-S1-a)",
           "juicio experto", "mas_oferta", minimo=el["construccion"] * pct["central"], maximo=DOC["mense_elasticidad"] * pct["central"],
@@ -391,6 +392,12 @@ def oferta() -> dict:
     incr = (nec5 - actual) * ocup_por_viv_2007
     incr_bde = (nec5 - DOC["bde_terminadas_2025"]) * ocup_por_viv_2007
     hoy = h["V17-D3-OCUPADOS-CONSTRUCCION"]["valor"]
+    hecho("OFERTA-EMPLEO-PROPORCIONAL-BOOM", "Ocupados en construcción proporcionales a la producción necesaria a 5 años, con la relación ocupados/terminadas de 2007",
+          cap.loc[2007, "ocupados_construccion_miles"] * nec5 / h["V17-D3-PROD-BOOM"]["valor"], "miles de ocupados", "2007 y 2026-2030",
+          "output/v17/d3/capacidad_construccion_boom_actual.csv; V17-D3-PROD-NECESARIA-5A; V17-D3-PROD-BOOM (media 2005-2007)",
+          "juicio experto", "mas_oferta",
+          nota=("se conserva por estar citada; NO es la necesidad de empleo: compara niveles como si el empleo actual estuviera libre; "
+                "la lectura correcta es en incrementos (V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO)"))
     hecho("OFERTA-EMPLEO-INCREMENTO", "Ocupados adicionales en construcción para pasar de la producción actual a la necesaria a 5 años (central), con la relación ocupados/terminadas de 2007",
           incr, "miles de ocupados", "2007 y 2026-2030", "output/v17/d3/capacidad_construccion_boom_actual.csv; V17-D3-PROD-NECESARIA-5A",
           "juicio experto", "mas_oferta", minimo=incr_bde, maximo=None,

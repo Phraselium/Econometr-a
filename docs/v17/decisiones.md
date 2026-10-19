@@ -24,3 +24,9 @@
 - La mejor estimación razonada de B4 combina nuestros datos con la inferencia de B2, el Banco de España, el BCE y la literatura con diseño creíble. La literatura de cada canal la reúnen los auditores de la fase 3.
 - Por eso B4 se escribe al terminar la primera ronda de la auditoría, en docs/v17/mejor_estimacion.csv. src/v17/f2_lectura_bde.py la une a la tabla comparativa.
 - Es juicio experto y se rotula así.
+
+## K4. IPV por CCAA en D3-2 con comunidades de bloques sellados en v6 (incidencia, 2026-10-19)
+- D3-2 (src/v17/d3_cuantitativo.py) usó el IPV por CCAA de data/raw (estadística pública del INE). Ahí entraban 8 CCAA de los bloques sellados en la validación v6, entre ellas la Comunidad de Madrid, uniprovincial.
+- No es un acceso al directorio de la muestra sellada ni a filas muestra_sellada_v6 de la base, así que no es la parada E. Sí va contra el criterio del proyecto de no usar las unidades selladas en las estimaciones.
+- La revisión de la auditoría recalcula la cuota común con las 9 CCAA restantes: 81 % (63 % hasta 2024), cifra V17-AUD-OT-D32-IPV-CCAA-SIN-SELLADAS. La conclusión no cambia.
+- En V18 toda estimación excluye las unidades selladas (plan V18, sección A), también cuando el dato viene de data/raw.

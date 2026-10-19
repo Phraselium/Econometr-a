@@ -2228,7 +2228,7 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
-  "nota": "a posteriori; parque de la CCAA mediana 1,075,076; vacías -1.88; vivienda pública -3.41; Mense (2025) -0.19: el escenario es 3.9 veces mayor",
+  "nota": "a posteriori; parque de la CCAA mediana 1,075,076; vacías -1.88; vivienda pública -3.41; cociente con Mense (2025, -0.19): 3.9; Mense es local y de corto plazo, no una referencia agregada, así que el cociente no mide optimismo",
   "fecha_dato": "2036",
   "cobertura": "véase la ficha"
  },
@@ -2248,6 +2248,24 @@
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
   "nota": "a posteriori; no hay referencia agregada verificada que permita decir cuál de las dos es más realista; ninguna es un efecto estimado para España",
   "fecha_dato": "2026-10-19",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-OFERTA-EMPLEO-PROPORCIONAL-BOOM",
+  "indicador": "Ocupados en construcción proporcionales a la producción necesaria a 5 años, con la relación ocupados/terminadas de 2007",
+  "valor": 1395.8198,
+  "min": null,
+  "max": null,
+  "unidad": "miles de ocupados",
+  "periodo": "2007 y 2026-2030",
+  "fuentes": [
+   "output/v17/d3/capacidad_construccion_boom_actual.csv; V17-D3-PROD-NECESARIA-5A; V17-D3-PROD-BOOM (media 2005-2007)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; se conserva por estar citada; NO es la necesidad de empleo: compara niveles como si el empleo actual estuviera libre; la lectura correcta es en incrementos (V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO)",
+  "fecha_dato": "2030",
   "cobertura": "véase la ficha"
  },
  {
@@ -2353,7 +2371,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "hecho",
-  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "ficha": "output/v17/auditoria/preguntas/D3-2.md",
   "nota": "a posteriori; V17-D3 usó las 17 CCAA, incluidas 8 de bloques sellados v6 (Madrid y otras uniprovinciales); efecto fijo 8 %, local 11 %; 2020-2025: 92 %; hasta 2024: 63 %",
   "fecha_dato": "2025",
   "cobertura": "véase la ficha"
@@ -2371,7 +2389,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "hecho",
-  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "ficha": "output/v17/auditoria/preguntas/D3-2.md",
   "nota": "a posteriori; 38 provincias sin muestra sellada v6; nominal mediana 33 %; deflactor +24.0 %; provincias con caída real: 1; frente a la renta disponible agregada de los hogares (+46 %): mediana -8.8 %, 35 provincias por debajo",
   "fecha_dato": "2024",
   "cobertura": "véase la ficha"
@@ -2468,10 +2486,10 @@
  },
  {
   "id": "V17-AUD-RA-TOP-INC-CONTRATOS-RANGO",
-  "indicador": "Ley 11/2020, contratos nuevos: rango de las 24 especificaciones de cantidad (4 controles × log, log per cápita, PPML × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
-  "valor": 4.3819,
-  "min": -0.3235,
-  "max": 10.5138,
+  "indicador": "Ley 11/2020, contratos nuevos: rango de las 60 especificaciones de cantidad (3 ventanas × 4 controles × log y log per cápita con y sin ponderar, y PPML) (valor: mediana; min/max: extremos; no es IC)",
+  "valor": 3.5619,
+  "min": -1.3312,
+  "max": 7.5915,
   "unidad": "%",
   "periodo": "2019T1-2022T1",
   "cobertura": "Cataluña, municipios",
@@ -2482,14 +2500,14 @@
   "lectura_v17": "asociación",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori; 4 de 24 con p < 0,05; 4 tras BH en la familia; negativas: 1 de 24"
+  "nota": "a posteriori; 4 de 60 con p < 0,05; 0 tras BH en la familia; negativas: 5 de 60; con p < 0,05 negativas: 0"
  },
  {
   "id": "V17-AUD-RA-TOP-INC-RENTA-RANGO",
-  "indicador": "Ley 11/2020, renta media de los contratos nuevos: rango de las 8 especificaciones (4 controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
-  "valor": null,
-  "min": null,
-  "max": null,
+  "indicador": "Ley 11/2020, renta media de los contratos nuevos: rango de las 24 especificaciones (3 ventanas × 4 controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
+  "valor": -5.8212,
+  "min": -6.836,
+  "max": -5.0818,
   "unidad": "%",
   "periodo": "2019T1-2022T1",
   "cobertura": "Cataluña, municipios",
@@ -2500,7 +2518,7 @@
   "lectura_v17": "asociación",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori; 0 de 8 con p BH < 0,05; la renta media mezcla precio y composición"
+  "nota": "a posteriori; 24 de 24 con p BH < 0,05; la renta media mezcla precio y composición"
  },
  {
   "id": "V17-AUD-RA-TUR-BCN-TRASLACION",

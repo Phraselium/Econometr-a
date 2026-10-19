@@ -18,3 +18,5 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-19,F3,abogado-del-diablo,ronda 1 demanda y precios,136019,-
 2026-10-19,F3,abogado-del-diablo,ronda 1 regulación y ayudas,127968,-
 2026-10-19,F3,auditor,revisión ronda 1 demanda y precios,62629,output/v17/auditoria/ (demanda_precios)
+2026-10-19,F3,auditor,revisión ronda 1 oferta y titularidad,107046,output/v17/auditoria/ (oferta_titularidad)
+2026-10-19,F3,auditor,revisión ronda 1 regulación y ayudas (descomposición de topes: 84 especificaciones),125786,output/v17/auditoria/ (regulacion_ayudas)

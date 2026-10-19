@@ -473,7 +473,7 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
-  "nota": "a posteriori; parque de la CCAA mediana 1,075,076; vacías -1.88; vivienda pública -3.41; Mense (2025) -0.19: el escenario es 3.9 veces mayor"
+  "nota": "a posteriori; parque de la CCAA mediana 1,075,076; vacías -1.88; vivienda pública -3.41; cociente con Mense (2025, -0.19): 3.9; Mense es local y de corto plazo, no una referencia agregada, así que el cociente no mide optimismo"
  },
  {
   "id": "V17-AUD-OT-OFERTA-ILUSTRACION-RANGO",
@@ -488,6 +488,20 @@
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
   "nota": "a posteriori; no hay referencia agregada verificada que permita decir cuál de las dos es más realista; ninguna es un efecto estimado para España"
+ },
+ {
+  "id": "V17-AUD-OT-OFERTA-EMPLEO-PROPORCIONAL-BOOM",
+  "indicador": "Ocupados en construcción proporcionales a la producción necesaria a 5 años, con la relación ocupados/terminadas de 2007",
+  "valor": 1395.8198,
+  "min": null,
+  "max": null,
+  "unidad": "miles de ocupados",
+  "periodo": "2007 y 2026-2030",
+  "fuentes": "output/v17/d3/capacidad_construccion_boom_actual.csv; V17-D3-PROD-NECESARIA-5A; V17-D3-PROD-BOOM (media 2005-2007)",
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; se conserva por estar citada; NO es la necesidad de empleo: compara niveles como si el empleo actual estuviera libre; la lectura correcta es en incrementos (V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO)"
  },
  {
   "id": "V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO",
@@ -570,7 +584,7 @@
   "fuentes": "INE IPV por CCAA (data/base/hechos.parquet)",
   "capa": "C4",
   "lectura_v17": "hecho",
-  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "ficha": "output/v17/auditoria/preguntas/D3-2.md",
   "nota": "a posteriori; V17-D3 usó las 17 CCAA, incluidas 8 de bloques sellados v6 (Madrid y otras uniprovinciales); efecto fijo 8 %, local 11 %; 2020-2025: 92 %; hasta 2024: 63 %"
  },
  {
@@ -584,7 +598,7 @@
   "fuentes": "MIVAU SERPAVI; INE CNT (data/base/hechos.parquet)",
   "capa": "C4",
   "lectura_v17": "hecho",
-  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "ficha": "output/v17/auditoria/preguntas/D3-2.md",
   "nota": "a posteriori; 38 provincias sin muestra sellada v6; nominal mediana 33 %; deflactor +24.0 %; provincias con caída real: 1; frente a la renta disponible agregada de los hogares (+46 %): mediana -8.8 %, 35 provincias por debajo"
  }
 ]

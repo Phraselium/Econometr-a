@@ -81,10 +81,10 @@
  },
  {
   "id": "V17-AUD-RA-TOP-INC-CONTRATOS-RANGO",
-  "indicador": "Ley 11/2020, contratos nuevos: rango de las 24 especificaciones de cantidad (4 controles × log, log per cápita, PPML × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
-  "valor": 4.3819,
-  "min": -0.3235,
-  "max": 10.5138,
+  "indicador": "Ley 11/2020, contratos nuevos: rango de las 60 especificaciones de cantidad (3 ventanas × 4 controles × log y log per cápita con y sin ponderar, y PPML) (valor: mediana; min/max: extremos; no es IC)",
+  "valor": 3.5619,
+  "min": -1.3312,
+  "max": 7.5915,
   "unidad": "%",
   "periodo": "2019T1-2022T1",
   "cobertura": "Cataluña, municipios",
@@ -93,14 +93,14 @@
   "lectura_v17": "asociación",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori; 4 de 24 con p < 0,05; 4 tras BH en la familia; negativas: 1 de 24"
+  "nota": "a posteriori; 4 de 60 con p < 0,05; 0 tras BH en la familia; negativas: 5 de 60; con p < 0,05 negativas: 0"
  },
  {
   "id": "V17-AUD-RA-TOP-INC-RENTA-RANGO",
-  "indicador": "Ley 11/2020, renta media de los contratos nuevos: rango de las 8 especificaciones (4 controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
-  "valor": null,
-  "min": null,
-  "max": null,
+  "indicador": "Ley 11/2020, renta media de los contratos nuevos: rango de las 24 especificaciones (3 ventanas × 4 controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
+  "valor": -5.8212,
+  "min": -6.836,
+  "max": -5.0818,
   "unidad": "%",
   "periodo": "2019T1-2022T1",
   "cobertura": "Cataluña, municipios",
@@ -109,7 +109,7 @@
   "lectura_v17": "asociación",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori; 0 de 8 con p BH < 0,05; la renta media mezcla precio y composición"
+  "nota": "a posteriori; 24 de 24 con p BH < 0,05; la renta media mezcla precio y composición"
  },
  {
   "id": "V17-AUD-RA-TUR-BCN-TRASLACION",

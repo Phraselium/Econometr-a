@@ -57,11 +57,13 @@ Análisis a posteriori (V17). Ficha de auditoría de la fila «turistica_regulac
 
 ## 5. Veredicto
 
-**Se sostiene con matices.** «Prometedora en la literatura internacional» y «no evaluable en España» se sostienen. «Su efecto local, sin medir» es impreciso: está medido el efecto local de la densidad turística y el de la regulación sobre la oferta turística en Barcelona, pero no el de la regulación sobre el alquiler. «Acotado» depende de la cota nacional, que discrepa en denominador con la cifra del Banco de España.
+**Se sostiene con matices.** «Prometedora en la literatura internacional» y «no evaluable en España» se sostienen. «Su efecto local, sin medir» es impreciso: está medido el efecto local de la densidad turística y el de la regulación sobre la oferta turística en Barcelona, pero no el de la regulación sobre el alquiler. «Acotado» vale para el crecimiento reciente del parque turístico (cota C2 ≈ 2,7 %), no para el stock que una regulación puede devolver, que es del orden del 10-12 % (sección 8).
 
 ## 6. Texto corregido y confianza
 
-> «Regular la vivienda turística: prometedora en la literatura internacional, donde las normas reducen mucho los anuncios y algo el alquiler. En España no hay evaluación de ninguna norma sobre el alquiler. En Barcelona sí está medido que más pisos turísticos se asocian con alquileres más altos en los barrios más expuestos (hasta un 7 %), y que la regulación frenó el número de anuncios; juntando ambas cosas, el orden de magnitud local es de pocos puntos porcentuales, sin estimación directa. A escala nacional el efecto está acotado por el peso del parque turístico en el alquiler.»
+> «Regular la vivienda turística: prometedora en la literatura internacional, donde las normas reducen mucho los anuncios y algo el alquiler. En España no hay evaluación de ninguna norma sobre el alquiler. En Barcelona sí está medido que más pisos turísticos se asocian con alquileres más altos en los barrios más expuestos (hasta un 7 %), y que la regulación frenó el número de anuncios; cuánto alquiler evitó esa regulación no está estimado. A escala nacional, las viviendas turísticas son en torno al 10-12 % del conjunto de viviendas de alquiler y turísticas: es el techo de lo que una regulación podría devolver al alquiler residencial si todas pasaran a él, no una previsión.»
+
+(La traslación orientativa de Barcelona, V17-AUD-RA-TUR-BCN-TRASLACION ≈ 1,5 %, es **juicio experto sin estimación**. Se queda en la ficha y no entra en el texto divulgativo.)
 
 Confianza:
 - internacional: **la evidencia sugiere**;
@@ -71,3 +73,24 @@ Confianza:
 ## 7. Parada
 
 No hay parada: nada de la frase es falso; «sin medir» es incompleto.
+
+## 8. Respuesta a la ronda 1
+
+**1. «Pocos puntos porcentuales» en el texto divulgativo.** **Aplicado.** Se retira del texto corregido. El cálculo de Barcelona (≈ 1,5 %; 0,7-3,0 %) queda solo en la ficha y en hechos.json, rotulado «JUICIO EXPERTO SIN ESTIMACIÓN».
+
+**2. Denominador. Resuelto** (V17-AUD-RA-TUR-CUOTA-STOCK; script, función turistica).
+
+- **Qué mide la cota C2 publicada.** B4-v3-vut-cantidad = 2,746 % es el **aumento** de viviendas turísticas entre agosto de 2020 y agosto de 2024 (+81.771, INE VUT) dividido por el stock de alquiler del Censo 2021 (2.978.090). Fuente: output/v3/PB/tablas/b1_nacional_sensibilidad.csv. No mide el stock turístico.
+- **El mismo numerador que el Banco de España**, es decir, el stock de viviendas turísticas, sobre (alquiler habitual + turísticas):
+
+| Fecha | Numerador (VUT) | Denominador de alquiler | Cuota |
+|---|---|---|---|
+| Agosto de 2024 | 403.267 | Censo 2021 | **11,9 %** |
+| Agosto de 2024 | 403.267 | ECV 2021 × ECP | 10,7 % |
+| Mayo de 2026 | 341.001 | Censo 2021 | 10,3 % |
+| Mayo de 2026 | 341.001 | ECV 2021 × ECP | 9,2 % |
+
+- **Comparación con el Banco de España.** Su «cerca del 10 %» (Informe Anual 2025, p. 150; unas 355.000 viviendas turísticas en 2025) coincide con nuestras cifras: la discrepancia era solo de numerador.
+- **Consecuencia para la fila.** «Su efecto agregado está acotado» es cierto para el **crecimiento** reciente: como máximo, en torno al 2,7 % del alquiler entre 2020 y 2024. Una regulación, en cambio, actúa sobre el **stock**, y su techo con sustitución 1:1 es del orden del 10-12 %. Ese techo no es pequeño, pero es solo un techo: no todas las viviendas turísticas irían al alquiler residencial. Por eso el texto corregido da la cifra del stock y la rotula como techo.
+
+**3. Veredicto.** Se mantiene **«se sostiene con matices»**. D1 no cita el 2,7 % en esta fila, y «acotado» no es falso. El matiz del denominador es sustancial y se incorpora al texto corregido.

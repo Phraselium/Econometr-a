@@ -245,18 +245,27 @@ def topes_descomposicion() -> dict:
         "tensos": g.tenso,
         "tensos_sin_vecinos": g.tenso & ~g.vecino,
     }
+    ventanas = {   # V9-D1b completa; la de Monràs y García-Montalvo (hasta junio de 2021); sin los trimestres de la COVID
+        "v9": lambda d: d,
+        "hasta_2021T2": lambda d: d[d.t <= tindex("2021T2")],
+        "sin_2020T2_T3": lambda d: d[~d.t.isin([tindex("2020T2"), tindex("2020T3")])],
+    }
+    # PPML ya pondera por niveles; su versión ponderada (var_weights) no tiene errores agrupados fiables en statsmodels
+    formas = [("log", False), ("log", True), ("log_pc", False), ("log_pc", True), ("ppml", False),
+              ("log_renta", False), ("log_renta", True)]
     filas = []
-    for nc, mc in controles.items():
-        df = g[g.tratado | mc].copy()
-        for forma in ("log", "log_pc", "ppml", "log_renta"):
-            for pond in (False, True):
-                b, se, n = _did(df, forma, pond)
+    for nv, fv in ventanas.items():
+        for nc, mc in controles.items():
+            df = fv(g[g.tratado | mc]).copy()
+            for forma, pond in formas:
+                dd = df.dropna(subset=["renta"]) if forma == "log_renta" else df
+                b, se, n = _did(dd, forma, pond)
                 p = pnorm2(b / se)
-                filas.append(dict(control=nc, forma=forma, ponderado=pond, b=b, se=se, p=p, n=n,
-                                  n_trat=int(df[df.tratado].cod.nunique()), n_ctrl=int(df[~df.tratado].cod.nunique())))
-                REG.log("V17-F3-RA", f"topes_ley11_{nc}_{forma}_{'w' if pond else 'nw'}",
-                        f"{forma} ~ d + EF municipio + EF trimestre; cluster municipio; control={nc}; ponderado={pond}",
-                        T_INI, T_FIN, n, np.nan, np.nan, np.nan, coef_interes=b, p_interes=p,
+                filas.append(dict(ventana=nv, control=nc, forma=forma, ponderado=pond, b=b, se=se, p=p, n=n,
+                                  n_trat=int(dd[dd.tratado].cod.nunique()), n_ctrl=int(dd[~dd.tratado].cod.nunique())))
+                REG.log("V17-F3-RA", f"topes_ley11_{nv}_{nc}_{forma}_{'w' if pond else 'nw'}",
+                        f"{forma} ~ d + EF municipio + EF trimestre; cluster municipio; control={nc}; ponderado={pond}; "
+                        f"ventana={nv}", T_INI, T_FIN, n, np.nan, np.nan, np.nan, coef_interes=b, p_interes=p,
                         notas="a posteriori; Incasòl (fianzas nuevas, municipio-trimestre), panel equilibrado; "
                               f"tratado desde {T_TRAT}; vecinos < {RADIO_VECINOS_M} m de un tratado")
     t = pd.DataFrame(filas)
@@ -264,26 +273,28 @@ def topes_descomposicion() -> dict:
     t.loc[cant, "p_bh"] = bh(t.loc[cant, "p"].tolist())
     t.loc[~cant, "p_bh"] = bh(t.loc[~cant, "p"].tolist())
     t["efecto_pct"] = 100 * (np.exp(t.b) - 1)
-    ref = t[(t.control == "todos") & (t.forma == "log") & ~t.ponderado].iloc[0]
+    ref = t[(t.ventana == "v9") & (t.control == "todos") & (t.forma == "log") & ~t.ponderado].iloc[0]
     sub = t[cant]
+    nsub, nr = len(sub), int((~cant).sum())
     hecho("TOP-INC-CONTRATOS-REF", "Ley 11/2020, contratos nuevos (Incasòl, municipio-trimestre): DiD en log, control = todos "
           "los municipios catalanes no tratados, sin ponderar (valor: exp(b)-1; min/max: IC 95 %)",
           ref.efecto_pct, 100 * (math.exp(ref.b - 1.96 * ref.se) - 1), 100 * (math.exp(ref.b + 1.96 * ref.se) - 1), "%",
           f"{T_INI}-{T_FIN}", f"Cataluña, {int(ref.n_trat)} tratados y {int(ref.n_ctrl)} controles (panel equilibrado)",
           "Incasòl (data/raw/v9/incasol; no redistribuible); BOE/DOGC; elaboración propia", "asociación", "topes",
           f"p = {ref.p:.3f}; registro en output/v17/auditoria/regulacion_ayudas_registro.csv")
-    hecho("TOP-INC-CONTRATOS-RANGO", "Ley 11/2020, contratos nuevos: rango de las 24 especificaciones de cantidad (4 controles "
-          "× log, log per cápita, PPML × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
+    hecho("TOP-INC-CONTRATOS-RANGO", f"Ley 11/2020, contratos nuevos: rango de las {nsub} especificaciones de cantidad (3 "
+          "ventanas × 4 controles × log y log per cápita con y sin ponderar, y PPML) (valor: mediana; min/max: extremos; "
+          "no es IC)",
           float(sub.efecto_pct.median()), float(sub.efecto_pct.min()), float(sub.efecto_pct.max()), "%",
           f"{T_INI}-{T_FIN}", "Cataluña, municipios", "Incasòl; elaboración propia", "asociación", "topes",
-          f"{int((sub.p < 0.05).sum())} de 24 con p < 0,05; {int((sub.p_bh < 0.05).sum())} tras BH en la familia; "
-          f"negativas: {int((sub.b < 0).sum())} de 24")
+          f"{int((sub.p < 0.05).sum())} de {nsub} con p < 0,05; {int((sub.p_bh < 0.05).sum())} tras BH en la familia; "
+          f"negativas: {int((sub.b < 0).sum())} de {nsub}; con p < 0,05 negativas: {int(((sub.p < 0.05) & (sub.b < 0)).sum())}")
     rt = t[~cant]
-    hecho("TOP-INC-RENTA-RANGO", "Ley 11/2020, renta media de los contratos nuevos: rango de las 8 especificaciones (4 "
-          "controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
+    hecho("TOP-INC-RENTA-RANGO", f"Ley 11/2020, renta media de los contratos nuevos: rango de las {nr} especificaciones (3 "
+          "ventanas × 4 controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
           float(rt.efecto_pct.median()), float(rt.efecto_pct.min()), float(rt.efecto_pct.max()), "%",
           f"{T_INI}-{T_FIN}", "Cataluña, municipios", "Incasòl; elaboración propia", "asociación", "topes",
-          f"{int((rt.p_bh < 0.05).sum())} de 8 con p BH < 0,05; la renta media mezcla precio y composición")
+          f"{int((rt.p_bh < 0.05).sum())} de {nr} con p BH < 0,05; la renta media mezcla precio y composición")
     return {"tabla": t, "n_mun": int(g.cod.nunique()), "n_trat": int(g[g.tratado].cod.nunique()),
             "n_tenso": int(g[g.tenso].cod.nunique()), "n_vecino": int(g[g.vecino].cod.nunique())}
 

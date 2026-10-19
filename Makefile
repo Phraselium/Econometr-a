@@ -26,6 +26,7 @@ export OPENBLAS_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 
 .PHONY: check_v15 v15 v15_f0 v15_f1 v15_f2 v15_f3 v15_f4 v15_f5
+.PHONY: check_v17 v17 v17_f0 v17_f1 v17_f2 v17_f3 v17_f4 v17_f5
 .PHONY: check_v16 v16 v16_f0 v16_f1 v16_f2 v16_f3 v16_f4 v16_f5 v16_f6 v16_f7
 .PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12 metadatos paquete_zenodo datos arbol_publico muestra_revision
 
@@ -60,6 +61,7 @@ check:
 	$(PY) src/v14/check_v14.py
 	$(PY) src/v15/check_v15.py
 	$(PY) src/v16/check_v16.py
+	$(PY) src/v17/check_v17.py
 	@$(PY) src/v12/git_limpio.py comparar $${TMPDIR:-/tmp}/econometra_check_git.txt
 	@rm -f /tmp/econometra_make_check.lock
 
@@ -256,3 +258,28 @@ v16_f7:
 	$(PY) src/v16/fase.py f7
 
 v16: v16_f0 v16_f1 v16_f2 v16_f3 v16_f4 v16_f5 v16_f6 v16_f7
+
+# ------------------------------------------------------------------ V17 (docs/v17/plan.md; se ejecuta dentro de V18, K0)
+# Todo a posteriori; la fase 4 no se ejecuta (su contenido va al Documento de Trabajo de V18).
+check_v17:
+	$(PY) src/v17/check_v17.py
+
+v17_f0:
+	$(PY) src/v17/fase.py f0
+
+v17_f1:
+	$(PY) src/v17/fase.py f1
+
+v17_f2:
+	$(PY) src/v17/fase.py f2
+
+v17_f3:
+	$(PY) src/v17/fase.py f3
+
+v17_f4:
+	$(PY) src/v17/fase.py f4
+
+v17_f5:
+	$(PY) src/v17/fase.py f5
+
+v17: v17_f0 v17_f1 v17_f2 v17_f3 v17_f5

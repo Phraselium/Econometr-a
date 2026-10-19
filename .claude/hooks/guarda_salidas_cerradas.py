@@ -18,7 +18,7 @@ import json
 import re
 import sys
 
-ABIERTAS = {"v15", "v16"}
+ABIERTAS = {"v15", "v16", "v17", "v18"}   # V17 y V18 (2026-10-19)
 _VERS = r"v\d+(?:_\d+)?"
 RAICES_CERRADAS = ("data/base/", "publicacion/", "metodologia/")
 

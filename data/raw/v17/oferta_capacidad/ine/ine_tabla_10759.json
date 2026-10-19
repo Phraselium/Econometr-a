@@ -1,0 +1,49 @@
+[{"COD":"IMM103", "Nombre":"Peninsula y Baleares. Cemento. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":16.287162, "Secreto":false}
+]
+}
+,{"COD":"IMM102", "Nombre":"Peninsula y Baleares. Ceramica. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":14.581337, "Secreto":false}
+]
+}
+,{"COD":"IMM101", "Nombre":"Peninsula y Baleares. Madera. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":17.455401, "Secreto":false}
+]
+}
+,{"COD":"IMM100", "Nombre":"Peninsula y Baleares. Acero. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":11.635266, "Secreto":false}
+]
+}
+,{"COD":"IMM99", "Nombre":"Peninsula y Baleares. Energía. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":34.869001, "Secreto":false}
+]
+}
+,{"COD":"IMM98", "Nombre":"Peninsula y Baleares. Cobre. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":21.988, "Secreto":false}
+]
+}
+,{"COD":"IMM97", "Nombre":"Peninsula y Baleares. Aluminio. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":7.427021, "Secreto":false}
+]
+}
+,{"COD":"IMM96", "Nombre":"Peninsula y Baleares. Ligantes. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":54.452328, "Secreto":false}
+]
+}
+,{"COD":"IMM95", "Nombre":"Canarias. Cemento. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":16.459957, "Secreto":false}
+]
+}
+,{"COD":"IMM94", "Nombre":"Canarias. Ceramica. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":25.143841, "Secreto":false}
+]
+}
+,{"COD":"IMM93", "Nombre":"Canarias. Madera. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":19.574155, "Secreto":false}
+]
+}
+,{"COD":"IMM92", "Nombre":"Canarias. Acero. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":24.416189, "Secreto":false}
+]
+}
+,{"COD":"IMM91", "Nombre":"Canarias. Energía. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":63.575686, "Secreto":false}
+]
+}
+,{"COD":"IMM90", "Nombre":"Canarias. Cobre. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":21.988, "Secreto":false}
+]
+}
+,{"COD":"IMM89", "Nombre":"Canarias. Aluminio. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":7.427021, "Secreto":false}
+]
+}
+,{"COD":"IMM88", "Nombre":"Canarias. Ligantes. Base 1964. Coeficiente de enlace. ", "FK_Unidad":123, "FK_Escala":1, "Data":[{"Fecha":1372629600000, "FK_TipoDato":1, "FK_Periodo":7, "Anyo":2013, "Valor":45.503067, "Secreto":false}
+]
+}
+]

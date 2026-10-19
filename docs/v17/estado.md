@@ -22,12 +22,13 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F0 | lector-literatura | INE demografía y comprobación D4 | 111.859 | docs/v17/referencias/ine_demografia.md; docs/v17/correcciones.md; output/v17/f0/ine_demografia.json |
 | 2026-10-19 | F0 | lector-literatura | documentos BdE y BCE | 271.318 | docs/v17/referencias/bde_bce_documentos.md; output/v17/f0/bde_bce_documentos.json |
 | 2026-10-19 | F1 | adquisidor-datos | crédito y compras | 97.021 | data/raw/v17/credito/; docs/v17/fuentes/credito.md |
+| 2026-10-19 | F1 | adquisidor-datos | titularidad y parque social | 154.638 | data/raw/v17/titularidad/; data/raw/v17/parque_social/; docs/v17/fuentes/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 383.177 |
-| F1 | 97.021 |
+| F1 | 251.659 |
 
-Total V17: 480.198 tokens
+Total V17: 634.836 tokens
 
 <!-- fin subagentes -->

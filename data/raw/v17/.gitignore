@@ -1,0 +1,2 @@
+# V17: documentos de terceros (PDF) fuera de git; su sha256 está en el _manifest.csv de cada carpeta
+*.pdf

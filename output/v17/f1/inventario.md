@@ -1,0 +1,34 @@
+# V17 · Fase 1 · Inventario de datos para la auditoría
+
+Análisis a posteriori (V17). Generado por src/v17/f1_inventario.py. «cubierta»: hay al menos una fuente previa; «parcial»: solo parte; «falta»: no hay nada en data/raw.
+
+| Bloque | Necesidad | Estado | Rutas presentes | Nota |
+|---|---|---|---|---|
+| Turismo local | Viviendas turísticas por sección y municipio (INE VTE) | cubierta | data/raw/ine_v2_vut.csv; data/raw/ine_vut_nacional_ccaa_prov.csv; data/raw/v16/alquiler_turismo |  |
+| Turismo local | Registros autonómicos de vivienda turística | cubierta | data/raw/gva_vut_municipio.csv; data/raw/v11/gva_vut; data/raw/v11/euskadi_vut |  |
+| Turismo local | InsideAirbnb (grandes ciudades) | falta | - | terceros: CC BY 4.0; solo agregados |
+| Turismo local | Parque de alquiler por sección (denominador local; Censo 2021) | cubierta | data/raw/v11/ine_censo2021 |  |
+| Migración y hogares | Población por nacionalidad y país de nacimiento (ECP) | cubierta | data/raw/ine_ecp_ccaa_nacionalidad.csv; data/raw/ine_ecp_ccaa_paises.csv; data/raw/v11/ine_ecp |  |
+| Migración y hogares | Saldo migratorio exterior por nacionalidad (EVR) | cubierta | data/raw/ine_migraciones_nacionalidad.csv; data/raw/v11/ine_evr |  |
+| Migración y hogares | Nacimientos y defunciones por nacionalidad (MNP) | cubierta | data/raw/v11/ine_mnp |  |
+| Migración y hogares | Migración interior entre provincias (EVR) | cubierta | data/raw/ine_v2_migraciones_prov.csv; data/raw/v11/ine_evr |  |
+| Migración y hogares | Tenencia por nacionalidad o país de nacimiento (Censo 2021, ECEPOV) | cubierta | data/raw/v11/ine_censo2021; data/raw/v11/ine_ecepov; data/raw/v11/ine_censos_microdatos |  |
+| Migración y hogares | Hogares y tamaño medio por edad (ECP, EPA, Proyección de hogares) | cubierta | data/raw/ine_hogares_60131.csv; data/raw/ine_epa_hogares.csv; data/raw/ine_v2_hogares_prov.csv |  |
+| Crédito y compras | Compras con y sin hipoteca (agregados) | cubierta | data/raw/ine_v2_hipotecas_prov.csv; data/raw/ine_etdp_compraventas.csv | terceros: solo agregados |
+| Crédito y compras | Compras de no residentes y de extranjeros | cubierta | data/raw/mivau_transacciones_extranjeros.csv; data/raw/mivau_transacciones_residencia.csv |  |
+| Crédito y compras | Compras de personas jurídicas | falta | - |  |
+| Crédito y compras | Crédito hipotecario nuevo | cubierta | data/raw/ecb_nuevo_credito_vivienda_es.csv; data/raw/bde_credito_finalidad.csv |  |
+| Crédito y compras | LTV, LTI y esfuerzo financiero (Banco de España) | falta | - |  |
+| Titularidad | Estadísticas catastrales de titularidad | cubierta | data/raw/v11/catastro_titularidad |  |
+| Titularidad | Catastro por transparencia (más de diez viviendas) | falta | - |  |
+| Titularidad | Observatori Metropolità de l'Habitatge de Barcelona | falta | - |  |
+| Titularidad | Ministerio: oferta de alquiler de grandes propietarios | falta | - |  |
+| Parque social | Vivienda social y pública frente a la UE (OCDE AHD, Eurostat) | cubierta | data/raw/mivau_v2_protegida.csv |  |
+| Renta | Renta disponible de los hogares (contabilidad nacional) | cubierta | data/raw/ine_cnt_renta_disponible.csv |  |
+| Renta | Renta por sección (ADRH) | cubierta | data/raw/v16/renta_parque |  |
+| Oferta y capacidad | Suelo urbano y urbanizable por municipio (SIU) | cubierta | data/raw/mivau_v2_suelo.csv; data/raw/v16/oferta_suelo |  |
+| Oferta y capacidad | Visados, iniciadas y terminadas | cubierta | data/raw/mivau_visados.csv; data/raw/mivau_v2_iniciadas_terminadas_prov.csv; data/raw/mivau_fin_obra.csv |  |
+| Oferta y capacidad | Empleo en la construcción (EPA por rama) | cubierta | data/raw/ine_epa_ocupados.csv; data/raw/eurostat_empleo_nuts2.csv |  |
+| Oferta y capacidad | Costes de la construcción (INE ICC, Eurostat) | cubierta | data/raw/eurostat_costes.csv |  |
+| Oferta y capacidad | Plazos de licencias | falta | - |  |
+| Oferta y capacidad | Viviendas previstas en grandes áreas (Banco de España) | falta | - | cifra de documento, no serie |

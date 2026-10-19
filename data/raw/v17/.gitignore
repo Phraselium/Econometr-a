@@ -1,2 +1,4 @@
 # V17: documentos de terceros (PDF) fuera de git; su sha256 está en el _manifest.csv de cada carpeta
 *.pdf
+# InsideAirbnb: CC BY 4.0, pero su política pide no republicar los datos; solo agregados propios (sha256 en _manifest.csv)
+turismo_local/insideairbnb/

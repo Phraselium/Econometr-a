@@ -11,3 +11,5 @@ No paran el trabajo: se anotan y se sigue con lo demás.
 3. **Catastro por transparencia (más de diez viviendas).** El 4,3 % del parque total (1.046.188 inmuebles) solo consta en prensa. Hay que localizar la resolución original (Portal de Transparencia o Consejo de Transparencia), o pedírsela al medio. Con los datos de V11 se reproduce un 4,30 % en 2025.
 4. **«15 % de la oferta de alquiler en grandes propietarios» (Ministerio).** No se ha encontrado el documento: indicar cuál es.
 5. **Condiciones de uso de la OCDE (Affordable Housing Database).** Devolvieron HTTP 403: confirmarlas en el navegador antes de redistribuir los xlsx de data/raw/v17/parque_social/.
+6. **InsideAirbnb.** Ediciones de 2019-2020: enviar una «Archived Data Request». Se descargó la edición de septiembre de 2026 de 9 áreas; queda fuera de git porque su política pide no republicar los datos (solo agregados propios).
+7. **Plazos de licencias.** No hay serie oficial; solo hay una nota de prensa de EY-ASPRIMA (2020, 12 meses de media). Decidir si se piden a los ayuntamientos o a ASPRIMA.

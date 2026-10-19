@@ -3,3 +3,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-19,F0,lector-literatura,documentos BdE y BCE,271318,docs/v17/referencias/bde_bce_documentos.md; output/v17/f0/bde_bce_documentos.json
 2026-10-19,F1,adquisidor-datos,crédito y compras,97021,data/raw/v17/credito/; docs/v17/fuentes/credito.md
 2026-10-19,F1,adquisidor-datos,titularidad y parque social,154638,data/raw/v17/titularidad/; data/raw/v17/parque_social/; docs/v17/fuentes/
+2026-10-19,F1,adquisidor-datos,"oferta, capacidad y turismo local",94325,data/raw/v17/oferta_capacidad/; data/raw/v17/turismo_local/; docs/v17/fuentes/

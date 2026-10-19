@@ -23,12 +23,13 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F0 | lector-literatura | documentos BdE y BCE | 271.318 | docs/v17/referencias/bde_bce_documentos.md; output/v17/f0/bde_bce_documentos.json |
 | 2026-10-19 | F1 | adquisidor-datos | crédito y compras | 97.021 | data/raw/v17/credito/; docs/v17/fuentes/credito.md |
 | 2026-10-19 | F1 | adquisidor-datos | titularidad y parque social | 154.638 | data/raw/v17/titularidad/; data/raw/v17/parque_social/; docs/v17/fuentes/ |
+| 2026-10-19 | F1 | adquisidor-datos | oferta, capacidad y turismo local | 94.325 | data/raw/v17/oferta_capacidad/; data/raw/v17/turismo_local/; docs/v17/fuentes/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 383.177 |
-| F1 | 251.659 |
+| F1 | 345.984 |
 
-Total V17: 634.836 tokens
+Total V17: 729.161 tokens
 
 <!-- fin subagentes -->

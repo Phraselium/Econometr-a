@@ -18,6 +18,8 @@ COLS = ["id", "indicador", "valor", "min", "max", "unidad", "periodo", "cobertur
 # v6.3 (R0 de V7, pendiente K4a-04): sentido de min/max cuando NO es un rango del valor. Las cifras no cambian; la columna
 # «sentido_min_max» lo declara y los tests exigen min <= valor <= max solo cuando es «rango».
 SENTIDO_MIN_MAX = {
+    # V17 (a posteriori): min y max de cada cifra V17 se definen en su nota (rango, referencia histórica o extremos entre estudios)
+    "V17-": "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)",
     # V16 (fase 7): cifras de la 2.0 cuyo min/max no es un rango del valor
     "V16-ATL-DISP-": "valor = cociente P90/P10 entre municipios; min y max = mínimo y máximo de la distribución, en la unidad del indicador",
     "V16-Q8-4": "min y max = mínimo y máximo anual de 2022-2024 (contexto; no es un rango del valor de 2025)",
@@ -104,7 +106,8 @@ def v4_adaptadores() -> list[dict]:
 
 
 def V7_HECHOS() -> list[Path]:   # v7.1 (W2): hechos de V7 (R4, R4b, R5, R6) y de V7.1 (S1, S3); V8 (F6, ids «V8-»); nunca los _smoke
-    return [p for v in ("v7", "v7_1", "v7_2", "v8", "v9", "v10", "v12", "v15", "v16") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name]   # V10: atlas (ids «V10-ATL-»); V9: F5 (ids «V9-»); V12: hechos (ids «V12-»); V15/V16 (fase 7 de V16, K22): ids «V15-»/«V16-»
+    v17 = [RAIZ / "output" / "v17" / "f5" / "hechos.json"]   # V17 (fase 5): solo el fichero consolidado por src/v17/f5_hechos.py
+    return [p for v in ("v7", "v7_1", "v7_2", "v8", "v9", "v10", "v12", "v15", "v16") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name] + [p for p in v17 if p.exists()]   # V10: atlas (ids «V10-ATL-»); V9: F5 (ids «V9-»); V12: hechos (ids «V12-»); V15/V16 (fase 7 de V16, K22): ids «V15-»/«V16-»
 
 
 def v5_hechos() -> list[dict]:

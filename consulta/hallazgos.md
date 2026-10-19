@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 8; V8: 368; v10: 28; v12: 60; v15: 32; v16: 192; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1544.
+Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 8; V8: 368; v10: 28; v12: 60; v15: 32; v16: 192; v17: 124; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 1668.
 
 ## Versión v4
 
@@ -431,7 +431,7 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `FICHA-T2-V1` | El envejecimiento resolvera el problema de la vivienda. | ANALIZADA, NO CONCLUYENTE | C4 |  | [liberadas_provincia.csv](../output/v5_1/T2/tablas/liberadas_provincia.csv) |
 | `FICHA-T2-V2` | Las herencias liberaran vivienda suficiente. | ANALIZADA, NO CONCLUYENTE | C4 |  | [liberadas_provincia.csv](../output/v5_1/T2/tablas/liberadas_provincia.csv) |
 | `FICHA-T4-V1` | Al ritmo actual el déficit se cerrará en pocos años. | NO RESPALDADA | C2 |  | [recuento_por_etapas.csv](../output/v5_1/T4/tablas/recuento_por_etapas.csv) |
-| `FICHA-V02` | Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres. | NO ANALIZADA: FALTAN DATOS | C4 |  | [solicitudes_transparencia.md](../docs/v3/solicitudes_transparencia.md) |
+| `FICHA-V02` | Los fondos de inversión y los grandes tenedores son los responsables de la subida de precios y alquileres. | NO ANALIZADA: FALTAN DATOS | C4 |  | [b5](../output/v12/b5) |
 | `FICHA-V06` | Los topes al precio del alquiler bajan los alquileres. | ANALIZADA, NO CONCLUYENTE | C4 |  | [resultado.json](../output/v3/C3/resultado.json) |
 | `FICHA-V07` | Los topes al precio del alquiler reducen la oferta de vivienda en alquiler. | ANALIZADA, NO CONCLUYENTE | C4 |  | [resultado.json](../output/v3/C3/resultado.json) |
 | `FICHA-V08` | Hay millones de viviendas vacías que se podrían movilizar para resolver el problema. | ANALIZADA, NO CONCLUYENTE | C4 |  | [V08.json](../output/v5/verificador/fichas/V08.json) |
@@ -1550,6 +1550,135 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V16-REJILLA-fam-Q4` | Q4: celdas estimadas con coeficiente positivo (de las estimadas) | 3 celdas (0 a 7) | C4 | 2011-2025 | [hechos.json](../output/v16/rejilla/hechos.json) |
 | `V16-REJILLA-fam-Q6` | Q6: celdas estimadas con coeficiente positivo (de las estimadas) | 7 celdas (0 a 13) | C4 | 2011-2025 | [hechos.json](../output/v16/rejilla/hechos.json) |
 | `V16-T4-H2-min-interp` | T4-H2: mínimo de la rejilla del cambio del déficit 2025-2030 con interpolación lineal entre 2025 y el relleno (el publicado, con… | 103.788 viviendas | C4 | 2026-2030 | [hechos.json](../output/v16/f7_hechos/hechos.json) |
+
+## Versión v17
+
+| id | enunciado | cifra | capa | periodo | origen |
+|---|---|---|---|---|---|
+| `V17-AUD-DP-ALQ-INCASOL-NUEVOS` | Renta media de contratos nuevos (Incasòl), mediana municipal de la variación 2019-2025 | 24,79 % | C4 | 2019-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-ALQ-IPC-REAL-RENTA` | IPC de alquiler (contratos vigentes) deflactado por la renta disponible bruta por hogar, 2019-2025 | -13,87 % | C4 | 2019-2025 (medias anuales) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-BUR-CREDITO-FRENTE-2007` | Saldo del crédito a hogares para vivienda sobre PIB: último dato frente a 2007 | -28,76 puntos de PIB | C4 | 2026-06 frente a 2007 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-BUR-GSADF-POTENCIA` | Potencia del GSADF del factor común (bootstrap salvaje) frente a una alternativa explosiva simulada (Monte Carlo V16) | 0,064 fracción de rechazos al 5 % n… | C4 | simulación T = 98 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-BUR-PRECIO-RENTA-FRENTE-2007` | Precio de la vivienda / renta bruta por hogar: último dato frente a 2007 | -10,66 % | C4 | 2026-06 frente a 2007 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-D31-ASILO-2019-2025` | Solicitantes de protección internacional en España, suma 2019-2025 | 863.550 personas | C4 | 2019-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-D31-LATAM-CUOTA` | Parte de la variación 2015-2025 de la población extranjera de África, América y Asia que es de Sudamérica, Centroamérica y Caribe | 68,66 % de la variación del grupo | C4 | 1-1-2015 a 1-1-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-INM-ALQUILER-LLEGADA-RECIENTE` | Hogares en alquiler, persona de mayor edad llegada a España en 2016-2021 | 45,5 % de los hogares del grupo | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-INM-ALQUILER-NUEVO-CONTABLE` | Hogares en alquiler implícitos en el aumento de hogares 2021-2026 atribuido a nacidos en el extranjero (contabilidad) | 334.118 hogares | C4 | 2021-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-INM-CUOTA-ALQUILER-EXTR` | Hogares en alquiler cuya persona de mayor edad nació en el extranjero, sobre el total de hogares en alquiler | 35,56 % de los hogares en alquiler | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-INM-GO-ELASTICIDAD` | Elasticidad implícita del precio de la vivienda a la población en González y Ortega (2013): 2 % anual de precio por 1,5 % anual d… | 1,33 % de precio por 1 % de poblac… | C4 | 2000-2010 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-PRE-COMPOSICION-PROVINCIAS` | Efecto de composición entre provincias en el valor tasado medio: valor unitario ponderado por compraventas menos Laspeyres de pes… | -4,76 puntos porcentuales de variac… | C4 | 2019-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-PRE-IPV-REAL-RENTA` | IPV deflactado por la renta disponible bruta por hogar, 2019-2025 | 12,92 % | C4 | 2019-2025 (medias anuales) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-PRE-TASADO-ESTRATOS` | Valor tasado por m² 2019-2025: total frente a viviendas de hasta 5 años y de más de 5 años | 29,64 % | C4 | 2019-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-PRE-TASADO-REAL-RENTA` | Valor tasado por m² deflactado por la renta disponible bruta por hogar, 2019-2025 | 1,38 % | C4 | 2019-2025 (medias anuales) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TIP-CONTRAFACTUAL` | Variación nominal del IPV 2021T4-2024T4 que se habría observado sin la subida de tipos (ilustración contable) | 37,95 % | C4 | 2021T4-2024T4 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TIP-DELTA-TAE` | Subida del tipo de las nuevas hipotecas (TAE), 2021T4 al máximo de 2023T3 | 2,51 puntos porcentuales | C4 | 2021T4-2023T3 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TIP-EFECTO-ILUSTRADO` | Efecto en el precio a unos dos años de la subida de tipos 2022-2023, con semielasticidades de la zona euro (ilustración) | -11,36 % del nivel de precios | C4 | 2022-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TIP-EFECTO-SOLO-HIPOTECA` | Efecto ilustrado si solo se transmite a la parte de compras con hipoteca (52 %) | -5,91 % del nivel de precios | C4 | 2022-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TIP-IPV-2022-2024` | Variación del IPV (ajustado por calidad), 2021T4-2024T4 | 22,28 % | C4 | 2021T4-2024T4 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TIP-RDB-2021-2024` | Variación de la renta disponible bruta de los hogares (nominal), 2021-2024 | 28,41 % | C4 | 2021-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-GL-ALQ-NAC` | Alquiler compatible con la densidad turística (NAC) según los coeficientes de Garcia-López et al. (ilustración) | 1,58 % de alquiler | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-GL-ALQ-SEC-P50` | Alquiler compatible con la densidad turística (SEC-P50) según los coeficientes de Garcia-López et al. (ilustración) | 0,297 % de alquiler | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-GL-ALQ-SEC-P90` | Alquiler compatible con la densidad turística (SEC-P90) según los coeficientes de Garcia-López et al. (ilustración) | 2,6 % de alquiler | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-GL-ALQ-SEC-P99` | Alquiler compatible con la densidad turística (SEC-P99) según los coeficientes de Garcia-López et al. (ilustración) | 10,63 % de alquiler | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-GL-FRENTE-H3` | Pendiente por DT intra-sección que implicarían los coeficientes de Garcia-López et al., frente a H3 (V15) | 0,637 % de alquiler por DT intra-se… | C4 | 2021-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-IAB-SEC-P90` | Anuncios de vivienda completa en Inside Airbnb sobre el alquiler de la sección, P90 (solo áreas rastreadas) | 25,9 % del parque de alquiler de l… | C4 | 2026-09 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-MUN-P90` | Viviendas turísticas sobre el alquiler del municipio, P90 de los municipios | 47,06 % del parque de alquiler del… | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-NAC-AUMENTO-2020-2024` | Aumento de viviendas turísticas 2020M08-2024M08 sobre el parque de alquiler (reproduce B4-v3-vut-cantidad) | 2,75 % del parque de alquiler | C4 | 2020M08-2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-NAC-STOCK-2024M02` | Viviendas turísticas (stock, feb. 2024) sobre viviendas principales en alquiler (Censo 2021), España | 11,8 % del parque de alquiler | C4 | 2024M02 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-NAC-STOCK-2024M08` | Viviendas turísticas (stock) sobre el parque de alquiler, España | 13,54 % del parque de alquiler | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-NAC-STOCK-2026M05` | Viviendas turísticas (stock, may. 2026) sobre el parque de alquiler (Censo 2021), España | 11,45 % del parque de alquiler | C4 | 2026M05 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-AGREGADO` | Viviendas turísticas sobre el parque de alquiler, suma de las secciones no selladas | 14,31 % del parque de alquiler | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-ALQ-EN-ALTA` | Parte del parque de alquiler situada en secciones con más viviendas turísticas que el 25 % de su alquiler | 12,59 % del parque de alquiler | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-AUMENTO-P90` | Aumento de viviendas turísticas 2021M08-2024M08 sobre el alquiler de la sección, P90 | 13,79 % del parque de alquiler de l… | C4 | 2021M08-2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-P50` | Viviendas turísticas sobre viviendas principales en alquiler, P50 de las secciones censales | 3,12 % del parque de alquiler de l… | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-P90` | Viviendas turísticas sobre viviendas principales en alquiler, P90 de las secciones censales | 33,93 % del parque de alquiler de l… | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-P90-2026M05` | Viviendas turísticas sobre el alquiler de la sección, P90, último dato | 30,86 % del parque de alquiler de l… | C4 | 2026M05 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-P99` | Viviendas turísticas sobre viviendas principales en alquiler, P99 de las secciones censales | 168,8 % del parque de alquiler de l… | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-DP-TUR-SEC-VIV-P90` | Viviendas turísticas sobre el total de viviendas de la sección, P90 | 2,5 % de las viviendas | C4 | 2024M08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-BCN-2024` | Barcelona ciudad: viviendas de titulares con más de 10 inmuebles en el municipio, sobre el parque catastral | 6,84 % del parque municipal | C4 | 2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-FISICAS-2026` | Viviendas de personas físicas con más de 10 inmuebles sobre el parque | 0,734 % del parque | C4 | 2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-MAS100-2026` | Viviendas de titulares con más de 100 inmuebles sobre el parque | 2,06 % del parque | C4 | 2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-PARQUE-2026` | Viviendas de titulares con más de 10 inmuebles residenciales sobre el parque catastral (régimen común) | 4,16 % del parque | C4 | 2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-PROV-MEDIANA-2026` | Cuota de viviendas de titulares con más de 10 inmuebles, mediana provincial (tramo contado en la provincia) | 2,75 % del parque provincial | C4 | 2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-SIN-PUBLICAS-2026` | Ídem excluyendo entidades públicas (PE) | 3,18 % del parque | C4 | 2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-SOCIEDADES-2026` | Viviendas de sociedades con más de 10 inmuebles sobre el parque | 2,18 % del parque | C4 | 2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-CAT-GT-TITULARES-2026` | Titulares (NIF) con más de 10 inmuebles residenciales | 26.890 titulares | C4 | 2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL` | Cota del peso de los titulares con 11+ viviendas en el alquiler de vivienda habitual, España | sin valor puntual % del alquiler habitual | C4 | 2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-ITP-Q6-p-MDE80` | Efecto mínimo detectable al 80 % de potencia y 5 % bilateral, Q6-p (valor tasado), por punto de tipo del ITP | 0,043 log por punto de tipo | C4 | panel de entrenamiento V16 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-ITP-Q6-v-MDE80` | Efecto mínimo detectable al 80 % de potencia y 5 % bilateral, Q6-v (compraventas), por punto de tipo del ITP | 0,057 log por punto de tipo | C4 | panel de entrenamiento V16 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-OFERTA-DEFICIT-SOBRE-PARQUE` | Déficit 2021-2025 de la 1.0 (L3-DEF-2125) sobre el parque de viviendas familiares (Censo 2021) | 2,65 % del parque | C4 | 2021-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71` | Elasticidad alquiler-parque implícita en el escenario V7.1 de construcción (−0,70 puntos % por 10.000 viviendas en la CCAA median… | -0,748 % de alquiler por 1 % de parq… | C4 | 2026-2036 (escenario) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-OFERTA-EMPLEO-PROPORCIONAL-BOOM` | Ocupados en construcción proporcionales a la producción necesaria a 5 años, con la relación ocupados/terminadas de 2007 | 1.396 miles de ocupados | C4 | 2007 y 2026-2030 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-OFERTA-MENSE-ILUSTRACION` | Ilustración: variación del alquiler medio si se cerrase el déficit con la elasticidad de corto plazo de Mense (2025) | -0,504 % del alquiler medio | C4 | orden de magnitud | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-PUB-ANIOS-1PP` | Años para añadir 1 punto de parque social al ritmo de calificaciones 2021-2025, si todas fueran alquiler social permanente | 22,78 años | C4 | 2021-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-PUB-BRECHA-UE` | Viviendas sociales de alquiler adicionales para pasar del 1,13 % de España al 7,99 % de la UE (parque constante) | 1.760.531 viviendas | C4 | 2019 (España) y 2022 o último (UE) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-PUB-CALIF-MEDIA-2021-2025` | Calificaciones definitivas de vivienda protegida, media anual 2021-2025 | 11.265 viviendas/año | C4 | 2021-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-VAC-6CAP-VACIAS` | Viviendas vacías en las capitales de esas 6 provincias | 162.010 viviendas | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-VAC-6PROV-VACIAS` | Viviendas vacías (consumo eléctrico, 2021) en las 6 provincias con más déficit 2021-2025 | 909.028 viviendas | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-VAC-SEGU-ILUSTRACION-6PROV` | Ilustración: viviendas que pasarían a uso con la reducción relativa de Segú (2020) aplicada a las vacías de las 6 provincias | 118.174 viviendas | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-VAC-TASA-T1` | Tasa de vacancia por consumo eléctrico, municipios con <2.000 viviendas | 23,43 % de las viviendas | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-VAC-TASA-T2` | Tasa de vacancia por consumo eléctrico, municipios con 2.000-10.000 viviendas | 18,51 % de las viviendas | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-VAC-TASA-T3` | Tasa de vacancia por consumo eléctrico, municipios con 10.000-50.000 viviendas | 14,44 % de las viviendas | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-OT-VAC-TASA-T4` | Tasa de vacancia por consumo eléctrico, municipios con >50.000 viviendas | 12,55 % de las viviendas | C4 | 2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-AYU-BONO-RETIENE` | Euros al mes del Bono Alquiler Joven (250) que retendría el beneficiario con las traslaciones de la literatura (valor: mediana de… | 135 euros al mes | C4 | escenario | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-AYU-Q7` | Q7a (V16) con inferencia convencional: diferencia en discontinuidades del log del alquiler en el corte de 35 años (valor: estimac… | -0,12 Δlog | C4 | 2018-2021 / 2023-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-AYU-RETIENE-MEDIANA` | Parte de la ayuda al alquiler que retiene el beneficiario (1 - traslación), mediana entre 7 estudios con diseño (valor: mediana;… | 54 % de la ayuda | C4 | 1984-2020 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-AYU-TRASLACION-MEDIANA` | Traslación de las ayudas al alquiler a la renta (θ), mediana de 7 estudios con diseño, ninguno español; min y max = extremos entr… | 46 % de la ayuda | C4 | estudios publicados 2002-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-TOP-COMPOSICION` | Parte de la caída de la renta media atribuible a composición en Monràs y García-Montalvo (1 - coef. con efectos fijos de vivienda… | 38,78 % de la caída | C4 | 2016-2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-TOP-CONTRATOS-DIF` | Diferencia entre las estimaciones de contratos nuevos de Jofre-Monseny et al. (0,001) y Monràs y García-Montalvo (-0,102), Ley 11… | 0,103 log contratos | C4 | 2016-2022 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-TOP-H2-SDID` | H2 (V15), contratos nuevos en zonas tensionadas de Cataluña 2024, SDID: lectura convencional (valor: estimación; min/max: IC 95 %… | -14,16 % | C4 | 2024T2-2026T1 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-TOP-TRAMO-ABAJO` | Contratos nuevos por debajo de la referencia (PPML, exp(b)-1) | 40,78 % | C4 | 2016-2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-TOP-TRAMO-ARRIBA` | Contratos nuevos por encima de la referencia (PPML, exp(b)-1) | -36,17 % | C4 | 2016-2021 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-TUR-BCN-TRASLACION` | Traslación orientativa a alquiler del freno a los anuncios en Barcelona: anuncios evitados según el contrafactual de Gyódi et al.… | 1,49 % de alquiler | C4 | 2015-2023 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-AUD-RA-TUR-Q2A` | Q2a (V16) con inferencia convencional: Δlog IPC de alquiler por DT del log de la exposición turística (valor: estimación; min/max… | 0,013 Δlog por DT | C4 | 2017-2019 frente a 2022-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-CREDITO-PIB` | Saldo del crédito a hogares para vivienda (% del PIB), último dato | 30,24 % del PIB | C4 | 2026-06 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-CREDITO-TASA` | Crédito a hogares para adquisición de vivienda, tasa interanual (%), último dato | 3,72 % | C4 | 2026-08 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-DUDOSIDAD` | Ratio de dudosidad del crédito a hogares para vivienda (%), último dato | 1,45 % | C4 | 2026-06 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-ESFUERZO-TEORICO` | Esfuerzo teórico anual sin deducciones (% de la renta), último dato | 38,01 % de la renta | C4 | 2026-06 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-LTV` | Relación préstamo-valor (RPV o LTV) de transacción (%), último dato | 63,7 % | C4 | 2026-06 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-LTV80` | Préstamos con RPV mayor que 80 % (% del total), último dato | 9,6 % del total | C4 | 2026-06 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-PRECIO-RENTA` | Precio de la vivienda / renta bruta por hogar (años), último dato | 8,36 años | C4 | 2026-06 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-RENTABILIDAD-ALQUILER` | Rentabilidad bruta por alquiler, doce meses (%), último dato | 2,84 % | C4 | 2026-09 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-B5-SIN-HIPOTECA-MIN` | Compras de vivienda sin hipoteca, cota inferior (1 - hipotecas sobre viviendas / compraventas de viviendas) | 29,95 % de las compraventas | C4 | 2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-AJUSTE-ESTADISTICO` | Diferencia entre el residuo padronal y el saldo exterior oficial (revisiones, ruptura censal 2021, bajas por caducidad) | -284.056 personas | C4 | 2015-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-BDE-POTENCIAL-6AREAS` | Potencial de viviendas previstas en las seis grandes áreas urbanas (cifra de documento del Banco de España) | 1.100.000 viviendas | C4 | SIU 2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-BDE-POTENCIAL-SOBRE-5A` | Potencial BdE de las seis áreas (1,1 millones) frente a 5 años de producción necesaria (escenario central) | 0,749 cociente | C4 | 2026-2030 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-CORONAS-SALDO-CAPITAL` | Saldo acumulado 2015-2024 de las capitales con el resto de su provincia (negativo = la capital cede residentes a su corona) | -199.029 personas | C4 | 2015-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-COSTE-MANO-OBRA-REAL` | Índice IMM de mano de obra en construcción, deflactado, 2025 respecto a 2007 (=1) | 1,03 índice | C4 | 2007-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-DEFICIT-CONCENTRACION-50` | Provincias que suman la mitad del déficit positivo 2021-2025 (sin sellada v6) | 5 provincias | C4 | 2021-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-DEFICIT-CONCENTRACION-80` | Provincias que suman el 80 % del déficit positivo 2021-2025 (sin sellada v6) | 14 provincias | C4 | 2021-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-HOGARES-CAMBIO-2021-2026` | Variación del número de hogares (ECP, V16) | 1.222.836 hogares | C4 | 1-1-2021 a 1-1-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-HOGARES-MOTOR-EDAD` | Parte atribuible a la estructura por edad (envejecimiento) | 473.045 hogares | C4 | 2021-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-HOGARES-MOTOR-JEFATURA` | Parte atribuible a la jefatura (residuo; tamaño medio del hogar) | -11.510 hogares | C4 | 2021-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-HOGARES-MOTOR-POBLACION` | Parte del cambio de hogares 2021-2026 atribuible al tamaño de la población (Shapley anual de V16, suma de los cinco años) | 858.274 hogares | C4 | 2021-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-HOGARES-ORIGEN-NACIDOS-EXTRANJERO` | Parte del componente población del cambio de hogares 2021-2026 que corresponde a nacidos en el extranjero (misma formación de hog… | 791.530 hogares | C4 | 2021-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-NACIDOS-ESPANA-DELTA` | Variación de los nacidos en España residentes (1-1-2015 a 1-1-2026) | -975.687 personas | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-NACIDOS-EXTRANJERO-DELTA` | Variación de los nacidos en el extranjero residentes (1-1-2015 a 1-1-2026) | 4.120.690 personas | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-NACIDOS-EXTRANJERO-PESO` | Parte del crecimiento de la población que corresponde a nacidos en el extranjero | 130 % | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-OCUPADOS-CONSTRUCCION` | Ocupados en construcción 2025 frente a 2007 | 1.498 miles | C4 | 2007 y 2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-POB-CRECIMIENTO` | Crecimiento de la población residente (ECP), 1-1-2015 a 1-1-2026 | 3.170.654 personas | C4 | 1-1-2015 a 1-1-2026 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-PROD-ACTUAL` | Viviendas terminadas, media 2024-2025 | 83.700 viviendas/año | C4 | 2024-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-PROD-BOOM` | Viviendas terminadas, media 2005-2007 | 568.684 viviendas/año | C4 | 2005-2007 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-PROD-NECESARIA-10A` | Producción anual necesaria para cerrar el déficit inicial en 10 años y absorber los hogares nuevos y la reposición (escenario con… | 223.045 viviendas/año | C4 | 2026-2035 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-PROD-NECESARIA-5A` | Producción anual necesaria para cerrar el déficit inicial en 5 años y absorber los hogares nuevos y la reposición (escenario cont… | 293.623 viviendas/año | C4 | 2026-2030 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-PROD-POR-OCUPADO` | Viviendas terminadas por ocupado en construcción | 0,054 viviendas/ocupado | C4 | 2007, 2024, 2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-RESIDUO-MIGRACION` | Crecimiento no explicado por el saldo vegetativo (saldo migratorio exterior neto y ajustes estadísticos) | 4.067.432 personas | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-RESIDUO-PESO` | Peso del residuo migratorio (más ajustes) en el crecimiento de la población | 128,3 % | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-SALDO-EXTERIOR-OFICIAL` | Saldo migratorio exterior oficial (EVR 2015-2020, EMCR 2021-2024) | 3.757.591 personas | C4 | 2015-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-SV-ACUMULADO` | Saldo vegetativo acumulado 2015-2025 (2025 provisional) | -896.778 personas | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-SV-NAC-ESPANOLA` | Saldo vegetativo de nacionalidad española (nacionalidad de la madre y del fallecido; proxy de nacidos en España) | -1.389.513 personas | C4 | 2015-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-SV-NAC-EXTRANJERA` | Saldo vegetativo de nacionalidad extranjera (madre y fallecido) | 604.316 personas | C4 | 2015-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-TENENCIA-ALQUILER-ESP` | Hogares en alquiler, persona de mayor edad nacida en España | 12,24 % de hogares | C4 | 1-11-2021 (Censo) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-TENENCIA-ALQUILER-EXTR` | Hogares en alquiler, persona de mayor edad nacida en el extranjero | 38,32 % de hogares | C4 | 1-11-2021 (Censo) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-TENENCIA-PROPIEDAD-ESP` | Hogares en propiedad, persona de mayor edad nacida en España | 79,96 % de hogares | C4 | 1-11-2021 (Censo) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-TENENCIA-PROPIEDAD-EXTR` | Hogares en propiedad, persona de mayor edad nacida en el extranjero | 49,73 % de hogares | C4 | 1-11-2021 (Censo) | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-VARIANZA-COMUN-IPC-ALQUILER` | Cuota de la varianza de la variación anual de IPC alquiler INE provincial debida al componente común (año) | 64,22 % | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-VARIANZA-COMUN-IPV-CCAA` | Cuota de la varianza de la variación anual de IPV INE por CCAA debida al componente común (año) | 76,3 % | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-VARIANZA-COMUN-IPVA` | Cuota de la varianza de la variación anual de IPVA INE provincial debida al componente común (año) | 76,91 % | C4 | 2015-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-VARIANZA-COMUN-SERPAVI` | Cuota de la varianza de la variación anual de SERPAVI alquiler €/m² mediana provincial debida al componente común (año) | 70,8 % | C4 | 2015-2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-D3-VARIANZA-COMUN-VALOR-TASADO` | Cuota de la varianza de la variación anual de Valor tasado MIVAU debida al componente común (año) | 60,68 % | C4 | 2015-2025 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-DOC-BDE-GT-ALQUILER-2024` | Viviendas alquiladas como residencia habitual en manos de personas físicas con 11 o más viviendas, sobre el total del alquiler de… | 2,4 % del alquiler de residencia… | C4 | 2024 | [hechos.json](../output/v17/f5/hechos.json) |
+| `V17-DOC-OHB-GT-ALQUILER-BCN-2021` | Viviendas de alquiler habitual de Barcelona ciudad en manos de grandes tenedores (104.958 de 290.416) | 36,1 % del alquiler habitual de la… | C4 | 1-1-2021 | [hechos.json](../output/v17/f5/hechos.json) |
 
 ## Versión v2
 

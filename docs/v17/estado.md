@@ -48,14 +48,15 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F3 | auditor | auditoría regulación y ayudas (topes, turística, ayudas; D3-4) | 289.072 | output/v17/auditoria/ (regulacion_ayudas) |
 | 2026-10-19 | F3 | auditor | auditoría oferta y titularidad (6 filas; D3-2, D3-3) | 291.660 | output/v17/auditoria/ (oferta_titularidad) |
 | 2026-10-19 | F3 | auditor | auditoría demanda y precios (6 filas; D3-1) | 399.678 | output/v17/auditoria/ (demanda_precios) |
+| 2026-10-19 | F3 | lector-literatura | lectura completa de estudios sobre no beneficiarios (P1) | 222.238 | docs/v17/referencias/no_beneficiarios.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 822.687 |
 | F1 | 346.740 |
 | F2 | 443.477 |
-| F3 | 1.159.715 |
+| F3 | 1.381.953 |
 
-Total V17: 2.772.619 tokens
+Total V17: 2.994.857 tokens
 
 <!-- fin subagentes -->

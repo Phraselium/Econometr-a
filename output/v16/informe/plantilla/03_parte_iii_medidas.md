@@ -12,7 +12,7 @@ Esta parte evalúa afirmaciones sobre ocho instrumentos de política de vivienda
   - **Sin evidencia.** No hay estudio con diseño que permita decir que funciona, o los estudios con diseño discrepan en el signo.
   - **Evidencia en contra.** Al menos dos estudios con diseño, leídos completos, en sentido contrario al objetivo declarado.
   - **No evaluable con los datos disponibles.** Ni la literatura ni nuestros datos permiten juzgar el instrumento en España.
-- **Resultado de aplicar la regla.** Casi toda la literatura de `docs/v16/literatura/` se leyó en resumen o en versión de trabajo. Por eso ninguna ficha llega a «eficacia probada» ni a «evidencia en contra». Cuando los estudios con diseño coinciden, el veredicto es «prometedora» y la ficha lo dice.
+- **Resultado de aplicar la regla.** Casi toda la literatura de `docs/v16/literatura/` se leyó en resumen o en versión de trabajo. Por eso ninguna ficha llega a «eficacia probada». La única «evidencia en contra» es la de III.8 (ii), corregida en V17 por decisión del autor, y descansa en un estudio leído completo en su versión definitiva (Grislain-Letrémy y Trevien, 2022) y otro leído completo en su versión de trabajo (Susin, 1999, publicado en 2002). Con la lectura más estricta de esta regla, que no cuenta las versiones de trabajo, sería «prometedora» en sentido contrario al objetivo. Cuando los estudios con diseño coinciden, el veredicto es «prometedora» y la ficha lo dice.
 - **Regla de capa.** Todas nuestras estimaciones de V15 y V16 son [C4]. De la 1.0 entran dos cosas. Las magnitudes de los escenarios simulados son [C4]. El signo de cuatro actuaciones es [C2], dentro de la rejilla simulada: movilización de vacías y más construcción donde hay presión (signo estable); vivienda pública (signo estable no positivo: nulo si desplaza por completo a la promoción privada); ayudas a la demanda (el beneficiario paga igual o menos como grupo). Ese signo [C2] es el publicado en la 1.0, no sube ni baja de capa, vale solo dentro de la rejilla de supuestos y no es una estimación sobre España. Ningún veredicto de este catálogo se apoya en una estimación propia de capa superior a [C4]. Los veredictos que no son «no evaluable» vienen de la literatura con DOI verificado, de otros países o periodos, y no de una estimación nuestra sobre España; el signo [C2] de la rejilla se cita junto a ellos, donde corresponde, sin sustituirlos. <!-- check:cifra-libre (versión 1.0; número de actuaciones: diseño) -->
 - **Literatura.** Solo entran las referencias de `docs/v16/literatura/` y `docs/v15/literatura/`, con la etiqueta de su ficha: «DOI verificado; cuartil no verificado» (existe en Crossref o DataCite) o NO VERIFICADA (sin DOI localizado). Las magnitudes de los autores no están en `cifras_clave`, así que aquí se da el signo y la ficha donde está la cifra.
 - **Pre-registro.** Los resultados de V15 y V16 que se citan tienen un pre-registro interno, sin sello de tiempo externo. V15: etiqueta `prereg-v15` en el remoto, commit 542b4fd, 2026-10-17. V16: etiqueta `prereg-v16` en el remoto, commit a8304ec, 2026-10-17. No son pre-registros depositados. <!-- check:cifra-libre (etiquetas, commit y fecha de pre-registro) -->
@@ -94,7 +94,8 @@ No hay evaluación del Bono Alquiler Joven ni de sus convocatorias autonómicas 
 
 - **Q7a (V16): descriptivo, sin separación entre señal y ruido.** Se compara el alquiler de los inquilinos de mercado a uno y otro lado del corte de edad del bono, antes y después de su entrada en vigor, con la ECV. La diferencia en discontinuidades del logaritmo del alquiler es {{V16-Q7-1:valor}} [C4]. Los umbrales placebo de edad dan diferencias del mismo orden: {{V16-Q7-4:rango}} [C4]. No se muestra ningún intervalo.
 - **Lo que mide.** El Plan Estatal 2018-2021 ya tenía un programa para menores de 35 años. La diferencia mide un cambio de generosidad entre ese plan y el bono, no un programa nuevo. El corte legal difiere en un año del de la ECV. La potencia está en el límite. <!-- check:cifra-libre (edad de corte, plan 2018-2021) -->
-- **Signo de la 1.0 [C2].** Para las ayudas a la demanda en general, la 1.0 da un signo [C2] en la rejilla simulada (véase III.8). No es una evaluación del bono. <!-- check:cifra-libre (apartado III.8, versión 1.0) -->
+- **Signo de la 1.0 [C2].** Para las ayudas a la demanda en general, la 1.0 da un signo [C2] en la rejilla simulada (véase III.8). No es una evaluación del bono.
+- **Literatura sobre las ayudas al alquiler en general.** Prometedora para la asequibilidad del beneficiario, con ganancia parcial, y evidencia en contra para la del resto de inquilinos (III.8, corregido en V17). No hay evaluación del bono en concreto. <!-- check:cifra-libre (apartado III.8, versión 1.0) -->
 - **Conclusión.** No se cita ninguna magnitud como efecto del bono. V16 no tiene evaluación sellada para Q7a (véase III.1). <!-- check:cifra-libre (apartado III.1) -->
 
 #### Coste
@@ -268,7 +269,7 @@ Desplazamiento de vivienda privada por la pública. Plazos largos (el retardo me
 
 Incluye las ayudas a la compra (avales ICO, deducciones, planes estatales) y las ayudas al alquiler distintas del Bono Alquiler Joven, que tiene su ficha.
 
-**Objetivo declarado:** la asequibilidad del beneficiario (poder pagar la compra o el alquiler). La traslación de la ayuda al precio o a la renta de mercado es un resultado distinto y se evalúa por separado.
+**Objetivos que se evalúan:** (i) la asequibilidad del beneficiario (poder pagar la compra o el alquiler), que es el objetivo declarado; y (ii) la asequibilidad general del alquiler, que depende de cuánto de la ayuda se traslada a la renta de mercado. Corregido en V17 (ERRATA.md, 2026-10-19). <!-- check:cifra-libre (versión V17, fecha de la errata) -->
 
 #### Mecanismo
 
@@ -302,8 +303,19 @@ Capitalización en el precio, con beneficio parcial para el vendedor. Mayor ende
 
 #### Veredicto
 
-- **Asequibilidad del beneficiario (objetivo declarado):** **sin evidencia**. Con la regla de umbral de III.1 hace falta al menos un estudio con diseño sobre la asequibilidad del beneficiario, y no lo hay: las referencias de L5 estudian la traslación al precio (Carozzi, Hilber y Yu, 2024, encuentran capitalización donde la oferta es rígida), no la asequibilidad del beneficiario. La 1.0 da, en la rejilla simulada, el signo [C2] de que el beneficiario paga igual o menos como grupo (ficha D1-V1, PARCIALMENTE), pero una simulación no es un estudio con diseño y no cambia este veredicto (la misma regla que en III.6). No hay evaluación empírica española.
-- **Traslación al precio o a la renta de mercado (resultado distinto):** las referencias con DOI verificado, leídas en resumen, describen capitalización parcial donde la oferta es rígida. Es una advertencia sobre el precio de mercado, no un veredicto sobre el instrumento. La magnitud del traslado en la 1.0 es [C4]. Con la regla de umbral no alcanza «evidencia en contra» (estudios no leídos completos). Eso no afirma que el comprador no se beneficie: afirma que parte de la ayuda llega al precio, según esos estudios y, en la simulación, según los coeficientes de panel.
+Corregido en V17 por decisión del autor (ERRATA.md, 2026-10-19; auditoría en output/v17/auditoria/filas/ayudas_demanda.md). Ningún estudio es español. <!-- check:cifra-libre (versión V17, fecha de la errata) -->
+
+- **(i) Asequibilidad del beneficiario de las ayudas al alquiler: prometedora, con ganancia parcial.**
+  - El coste neto del beneficiario es la renta menos la ayuda. Si una parte θ de la ayuda se traslada a la renta, al beneficiario le queda 1 − θ: medir la traslación es medir su ganancia.
+  - En siete estudios con diseño de otros países, la traslación tiene una mediana de {{V17-AUD-RA-AYU-TRASLACION-MEDIANA:num}} % de la ayuda, con un rango de {{V17-AUD-RA-AYU-TRASLACION-MEDIANA:min_num}} % a {{V17-AUD-RA-AYU-TRASLACION-MEDIANA:max_num}} % entre estudios [C4, juicio experto].
+  - Donde la oferta es rígida, la traslación se acerca al extremo alto (Fack, 2006, en Francia). La ganancia del beneficiario es, por tanto, menor justo donde más se usa la ayuda.
+  - Es «prometedora» y no «eficacia probada» por la regla de III.1: los estudios se leyeron casi todos en resumen y ninguno es español. <!-- check:cifra-libre (siete estudios; apartado III.1; año de Fack) -->
+- **(ii) Asequibilidad general del alquiler: evidencia en contra.**
+  - La parte trasladada sube también el alquiler de quien no recibe la ayuda.
+  - Dos estudios con diseño, leídos completos, lo encuentran: Susin (2002, EE. UU.; leída la versión de trabajo de 1999) y Grislain-Letrémy y Trevien (2022, Banque de France, documento de trabajo 886, Francia, versión definitiva). Véase docs/v17/referencias/no_beneficiarios.md y la salvedad de III.1 sobre las versiones de trabajo.
+  - Gibbons y Manning (2006, Reino Unido) no encuentran efecto en los no perceptores, pero estudian un recorte de la ayuda, no una ampliación. <!-- check:cifra-libre (años y número de documento de trabajo; dos estudios) -->
+- **Avales ICO y ayudas a la compra: sin evidencia, como estaba.** No hay evaluación española. Donde la oferta es rígida, la literatura (Carozzi, Hilber y Yu, 2024) encuentra capitalización en el precio, y la ayuda puede no mejorar el acceso. <!-- check:cifra-libre (año) -->
+- **Escenario de la 1.0.** El signo [C2] de la rejilla simulada (el beneficiario paga igual o menos como grupo y el no beneficiario paga más; ficha D1-V1) coincide en signo con (i) y con (ii). La magnitud del traslado en la simulación es [C4].
 
 ### III.9 Compradores no residentes
 
@@ -349,7 +361,7 @@ Menor entrada de capital. Efectos sobre el mercado turístico y de segunda resid
 | Movilización de vacías | Prometedora para la vacancia; sin evidencia para alquiler y precio | Un solo estudio verificado; signo estable [C2] solo en la rejilla simulada de la 1.0 |
 | Oferta libre y suelo | Prometedora | Q4 sin hallazgo; signo estable [C2] en la rejilla simulada de la 1.0 para más construcción donde hay presión |
 | Vivienda pública | Sin evidencia; no evaluable con los datos disponibles | Desplazamiento parcial en la literatura de EE. UU.; signo estable no positivo [C2] en la rejilla de la 1.0; PARCIALMENTE [C2] para el esfuerzo en la ficha V11; el precio de compra no tiene signo [C2] |
-| Ayudas a la demanda | Asequibilidad del beneficiario: sin evidencia (sin estudio con diseño; signo [C2] solo en la simulación de la 1.0). Traslación al precio: capitalización parcial en la literatura (resumen) | Escenario de la 1.0; magnitud del traslado [C4] |
+| Ayudas a la demanda | Ayudas al alquiler: prometedora para la asequibilidad del beneficiario, con ganancia parcial (traslación mediana {{V17-AUD-RA-AYU-TRASLACION-MEDIANA:num}} %, rango {{V17-AUD-RA-AYU-TRASLACION-MEDIANA:min_num}}-{{V17-AUD-RA-AYU-TRASLACION-MEDIANA:max_num}} %); evidencia en contra para la asequibilidad general del alquiler. Avales ICO y ayudas a la compra: sin evidencia | Ningún estudio español; corregido en V17 (ERRATA.md) | <!-- check:cifra-libre (versión V17) -->
 | Compradores no residentes | No evaluable con los datos disponibles | Q8 descriptivo |
 
 #### Qué dice la regla de capa sobre esta tabla

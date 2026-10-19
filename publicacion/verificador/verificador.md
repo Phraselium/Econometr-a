@@ -73,13 +73,13 @@ Recuento de veredictos: ANALIZADA, NO CONCLUYENTE: 32; NO ANALIZADA: FALTAN DATO
 |---|---|
 | Veredicto | **NO ANALIZADA: FALTAN DATOS** |
 | Capa de la evidencia | C4 |
-| Magnitud | Sin datos de titularidad por tamaño de tenedor (solicitud de transparencia al Catastro pendiente). |
+| Magnitud | Parque total: sí hay dato; 4,2 % de las viviendas son de titulares con más de diez (Catastro 2026, España sin País Vasco ni Navarra; V12-B5-pct_mas10). Parque en alquiler: solo datos parciales; 2,4 % del alquiler de vivienda principal en personas físicas con once o más (Banco de España, 2024; V17-DOC-BDE-GT-ALQUILER-2024), 36,1 % del alquiler habitual de Barcelona ciudad (O-HB, 2021; V17-DOC-OHB-GT-ALQUILER-BCN-2021) y, para España, entre el 2 % y el 12 % con supuestos explícitos (V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL). Efecto sobre los precios: no medido en España. |
 | Intervalo | n/d |
-| Cota | B3 en espera de datos (src/v3/ingesta_grandes_tenedores.py) |
-| Literatura | Sin trabajo replicado para España con estos datos. |
-| Regla del veredicto | Sin datos de la cuota de grandes tenedores no se puede acotar su contribución. v4: Faltan datos de titularidad por tamaño de tenedor (solicitud al Catastro pendiente). |
-| Límites | La ingesta está preparada; la cota se calculará con el esquema de B1 cuando lleguen los datos. |
-| Evidencia | docs/v3/solicitudes_transparencia.md, output/v3/PB/grandes_tenedores.json |
+| Cota | Sin cota de la contribución a la subida: el efecto en los precios no está medido |
+| Literatura | Sin trabajo replicado para España; la literatura de EE. UU. sobre inversores institucionales tiene validez externa limitada. |
+| Regla del veredicto | Hay datos de titularidad del parque total y datos parciales del alquiler, pero ninguna estimación del efecto de los grandes tenedores sobre los precios en España: no se puede acotar su contribución a la subida. v4: Faltan datos para medir el efecto sobre los precios. Hay titularidad del parque total y datos parciales del alquiler (corregido en V17; ERRATA.md, 2026-10-19). |
+| Límites | Corregido en V17: antes decía «sin datos de titularidad». El dato del parque total ya estaba publicado (atlas de V12 e informe integral, VII.7). El alquiler a escala nacional sigue sin dato directo. |
+| Evidencia | output/v12/b5, docs/v17/fuentes/titularidad.md, output/v17/auditoria/filas/grandes_tenedores.md |
 
 ## V06 · Topes de alquiler
 

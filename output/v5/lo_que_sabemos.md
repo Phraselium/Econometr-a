@@ -57,7 +57,10 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 ## No se puede afirmar con estos datos
 
-- Qué parte del stock y del alquiler está en manos de empresas o grandes tenedores: no hay datos de titularidad (solicitudes S1, S3 y S4).
+- Grandes tenedores (corregido en V17; ERRATA.md, 2026-10-19). Se separan tres cosas:
+  - Parque total: sí hay dato. En el Catastro de 2026, 4,2 % de las viviendas pertenecen a titulares con más de diez (España sin País Vasco ni Navarra) [C4].
+  - Parque en alquiler: solo hay datos parciales. El Banco de España da 2,4 % del alquiler de vivienda principal en manos de personas físicas con once viviendas o más (2024; no incluye empresas). En Barcelona ciudad, 36,1 % del alquiler habitual está en manos de grandes tenedores (2021). Para España, entre 2,2 % y 12,2 % con supuestos explícitos [C4].
+  - Efecto sobre los precios: no está medido en España.
 - El coste de construcción en nivel: no hay fuente verificable (S5). La clasificación territorial queda en C4.
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.
 - Que los topes al alquiler reduzcan los precios o la oferta: su resultado queda en C4.

@@ -27,7 +27,7 @@ DEST = RAIZ / "output" / "v4" / "verificador"
 # Clasificación de las fichas v3 con «SIN EVIDENCIA SUFICIENTE» (motivo en «regla_v4»)
 SPLIT = {
     "V01": ("ANALIZADA, NO CONCLUYENTE", "Hay cotas C2 de cantidad, cotas de precio C4 y un diseño (H3-1, C4); ninguno decide."),
-    "V02": ("NO ANALIZADA: FALTAN DATOS", "Faltan datos de titularidad por tamaño de tenedor (solicitud al Catastro pendiente)."),
+    "V02": ("NO ANALIZADA: FALTAN DATOS", "Faltan datos para medir el efecto sobre los precios. Hay titularidad del parque total y datos parciales del alquiler (corregido en V17; ERRATA.md, 2026-10-19)."),
     "V03": ("ANALIZADA, NO CONCLUYENTE", "Hay cotas C2 de hogares (M2 la amplía) y traducciones a precio C4; ninguna decide."),
     "V04": ("ANALIZADA, NO CONCLUYENTE", "Hay hechos C1 de balance hogares-viviendas (M1) sin atribución de precio; el suelo no es detectable (P-C4)."),
     "V06": ("ANALIZADA, NO CONCLUYENTE", "H3-3a analizada: C4. No puede ser C3: la validación por fuente no es independiente y el cálculo de potencia vio municipios sellados (decisiones v3, O1)."),

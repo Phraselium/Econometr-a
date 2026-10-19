@@ -57,7 +57,7 @@ def main() -> int:
             h.setdefault("ficha", str(p.relative_to(RAIZ)))
             filas.append(h)
     ids = {h["id"]: h for h in filas}
-    if "V17-AUD-RA-AYU-RETIENE-MEDIANA" in ids:
+    if "V17-AUD-RA-AYU-RETIENE-MEDIANA" in ids and "V17-AUD-RA-AYU-TRASLACION-MEDIANA" not in ids:   # si la auditoría ya la da, no se deriva
         filas.append(traslacion(ids["V17-AUD-RA-AYU-RETIENE-MEDIANA"]))
     filas += DOCUMENTO
     vistos, dup = set(), []

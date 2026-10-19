@@ -23,6 +23,12 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "output" / "v17" / "auditoria"
 CAT = ROOT / "data/raw/v11/catastro_titularidad"
 CENSO_VAC = ROOT / "data/raw/v11/ine_censo2021/censo2021_tpx59531.csv"
+CENSO_TEN = ROOT / "data/raw/v11/ine_censo2021/censo2021_tpx59537.csv"
+OCDE_PH42 = ROOT / "data/raw/v17/parque_social/oecd_ahd_PH4-2_social_rental_housing_stock.xlsx"
+UE27 = {"Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+        "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania",
+        "Slovak republic", "Slovenia", "Spain", "Sweden"}
+CCAA_SELLADAS_V6 = {"02", "03", "04", "05", "13", "14", "15", "17"}   # bloques de CCAA de las provincias con muestra_sellada_v6 (src/holdout.py)
 PROTEGIDA = ROOT / "data/raw/mivau_v2_protegida.csv"
 INFERENCIA = ROOT / "output/v17/lectura_bde/v15_v16_micro/inferencia.csv"
 D3 = ROOT / "output/v17/d3"
@@ -35,6 +41,11 @@ DOC = {
     "bde_particulares_alquiler": 90.0,   # «alrededor del 90 %» del alquiler en particulares (BdE IA 2025, p. 169)
     "ohb_bcn_parque_total": 17.1,        # O-HB 2022, gran tenedor sobre parque total de Barcelona ciudad, 1-1-2021
     "ohb_bcn_alquiler": 36.1,            # O-HB, sobre alquiler habitual
+    "ohb_bcn_admin_alquiler": 4.44,      # O-HB 2022, figura 5: administraciones sobre el alquiler habitual estimado
+    "bde_tramos_2mas": (21.8, 18.9, 6.2, 2.4),  # BdE IA 2025, cuadro 2.11: 2, 3-5, 6-10, 11+ viviendas
+    "mivau_publico_alquiler": 318_000,   # MIVAU, Boletín Especial Vivienda Social 2024
+    "bde_terminadas_2025": 92_000,       # BdE IA 2025, pp. 124 y 126 (verificado por el coordinador)
+    "bde_potencial_barcelona": 120_000, "bde_potencial_sevilla": 163_000,
     "ocde_es_social_pct": 1.13, "ocde_es_social_viv": 290_000, "ocde_ue_social_pct": 7.99,
     "ocde_fr": 14.0, "ocde_at": 23.6, "ocde_nl": 34.1, "ocde_de": 2.6, "ocde_it": 2.4, "ocde_pt": 1.06,
     "segu_reduccion_relativa": 13.0,     # Segú (2020): −13 % de la tasa de vacancia (relativa), Francia 1997-2001
@@ -136,6 +147,47 @@ def titularidad(sel: set[str]) -> dict:
           minimo=lo, maximo=hi, nota=("supuestos: particulares = 90 % del alquiler; cota inferior = ninguna persona jurídica es gran tenedor; "
                                       f"cota superior = todas lo son; con particulares = 85 %: {lo_s:.1f}-{hi_s:.1f} %"))
     res["cota"] = (lo, hi, lo_s, hi_s)
+    # Ronda 1: ¿el tramo del fichero total es por NIF nacional? Si lo fuera, el total >10 superaría la suma provincial >10
+    pv25 = pd.read_csv(CAT / "p_spi_prov_v.csv.gz")
+    for a in (2025, 2026):
+        s_prov = float(grandes(pv25[pv25.anio_fichero == a]).sum())
+        res[f"nif_{a}"] = (res[a]["g"], s_prov)
+    hecho("CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026", "Viviendas de titulares con más de 10 inmuebles: fichero nacional frente a suma de los ficheros provinciales",
+          res["nif_2026"][0] / res["nif_2026"][1], "cociente", "2026", fu, "OF", "grandes_tenedores",
+          nota=(f"nacional {res['nif_2026'][0]:,.0f}; suma provincial {res['nif_2026'][1]:,.0f}; un cociente > 1 indica que el tramo "
+                "del fichero total se cuenta por NIF en todo el territorio común y el provincial dentro de cada provincia"))
+    # Ronda 1: cota con la vivienda pública como suelo explícito y cota aparte de los PRIVADOS con más de 10
+    alq = float(num(pd.read_csv(CENSO_TEN, sep=";", dtype=str, encoding="utf-8-sig")
+                    .query("`Régimen de tenencia de la vivienda` == 'En alquiler' and `Tamaño del hogar` == 'Total (tamaño del hogar)'")["Total"]).iloc[0])
+    pub = {"Catastro PE >10 (2026)": float(r["pe"]), "OCDE PH4.2 (2019)": float(DOC["ocde_es_social_viv"]), "MIVAU (2023)": float(DOC["mivau_publico_alquiler"])}
+    grid = []
+    for pp in (0.85, 0.90, 0.95):
+        for k, v_ in pub.items():
+            ps = 100 * v_ / alq
+            no_part = 100 * (1 - pp)
+            grid.append(dict(p=pp, fuente_pub=k, pub=ps, total_lo=pp * pf + min(ps, no_part), total_hi=pp * pf + no_part,
+                             priv_lo=pp * pf, priv_hi=pp * pf + max(0.0, no_part - ps), coherente=ps <= no_part))
+    g = pd.DataFrame(grid)
+    res["grid"] = g
+    c = g[g.p == 0.90]
+    hecho("COTA-GT-ALQUILER-CON-PUBLICA", "Cota de los titulares con más de 10 viviendas en el alquiler habitual con la vivienda pública como suelo explícito",
+          None, "% del alquiler habitual", "2021-2024", "BdE IA 2025 cuadro 2.11; INE Censo 2021 (hogares en alquiler); Catastro; OCDE PH4.2; MIVAU 2024",
+          "cota", "grandes_tenedores", minimo=c.total_lo.min(), maximo=c.total_hi.max(),
+          nota=(f"denominador: {alq:,.0f} hogares en alquiler (Censo 2021); vivienda pública = {c.pub.min():.1f}-{c.pub.max():.1f} % del alquiler; "
+                f"particulares = 90 %; con 85-95 %: {g.total_lo.min():.1f}-{g.total_hi.max():.1f} %; universos no idénticos (AEAT frente a Censo)"))
+    hecho("COTA-GT-ALQUILER-PRIVADOS", "Cota de los titulares PRIVADOS (personas físicas y jurídicas) con más de 10 viviendas en el alquiler habitual",
+          None, "% del alquiler habitual", "2021-2024", "ídem", "cota", "grandes_tenedores", minimo=c.priv_lo.min(), maximo=c.priv_hi.max(),
+          nota=(f"particulares = 90 %; con 85-95 %: {g.priv_lo.min():.1f}-{g.priv_hi.max():.1f} %; con MIVAU la vivienda pública "
+                "agota el 10 % no particular, señal de que los universos no casan"))
+    multi_bde = sum(DOC["bde_tramos_2mas"])
+    hecho("BDE-MULTIARRENDADORES-2024", "Viviendas alquiladas por personas físicas con 2 o más viviendas (suma de tramos del BdE)", multi_bde,
+          "% de las viviendas alquiladas por personas físicas", "2024", "BdE IA 2025 cuadro 2.11 (AEAT)", "OF", "grandes_tenedores",
+          nota="el informe 1 del Ministerio de Derechos Sociales con IFS-CSIC da 52,8 % (2023, Panel de Hogares): fuente, año y universo distintos")
+    res["multi_bde"] = multi_bde
+    hecho("OHB-BCN-GT-SIN-ADMINISTRACIONES", "Barcelona ciudad: grandes tenedores sin administraciones públicas sobre el alquiler habitual estimado",
+          DOC["ohb_bcn_alquiler"] - DOC["ohb_bcn_admin_alquiler"], "% del alquiler habitual", "1-1-2021",
+          "O-HB (2022), figuras 3 y 5 (36,1 % menos 4,44 % de administraciones)", "OF", "grandes_tenedores",
+          nota="solo Barcelona ciudad; las administraciones son el 12,3 % de las viviendas de alquiler de grandes tenedores")
     res["y"] = res[2026]
     return res
 
@@ -151,6 +203,9 @@ def vacias(sel: set[str]) -> dict:
     w = w.rename(columns={"Viviendas totales": "tot", "Viviendas vacías": "vac", "Viviendas de uso esporádico": "esp"})
     w["cprov"] = w.index.str[:2]
     w = w[~w.cprov.isin(sel)].dropna(subset=["tot", "vac"])
+    # Las filas «xx999 Resto de <provincia>» agregan los municipios pequeños que la tabla no lista: se separan
+    resto = w[w.index.str.endswith("999")].copy()
+    w = w[~w.index.str.endswith("999")].copy()
     w["tasa"] = 100 * w.vac / w.tot
     fu = "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021)"
     bins = [0, 2_000, 10_000, 50_000, np.inf]
@@ -161,7 +216,7 @@ def vacias(sel: set[str]) -> dict:
     g["cuota_vac"] = 100 * g.vac / g.vac.sum()
     for k, idk in zip(lab, ["T1", "T2", "T3", "T4"]):
         hecho(f"VAC-TASA-{idk}", f"Tasa de vacancia por consumo eléctrico, municipios con {k} viviendas", g.loc[k, "tasa"],
-              "% de las viviendas", "2021", fu, "OF", "vacias", nota=f"{int(g.loc[k, 'n'])} municipios; {g.loc[k, 'cuota_vac']:.1f} % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre {len(w)} municipios")
+              "% de las viviendas", "2021", fu, "OF", "vacias", nota=f"{int(g.loc[k, 'n'])} municipios; {g.loc[k, 'cuota_vac']:.1f} % de las vacías de la muestra; sin provincias selladas v6; la tabla lista {len(w)} municipios y agrupa el resto en filas «Resto de provincia»")
     # Provincias que concentran el déficit (d3) y sus capitales
     d = pd.read_csv(D3 / "deficit_provincial_concentracion.csv", dtype={"cod_prov": str})
     d = d[~d.sellada_v6].sort_values("deficit_bajas0", ascending=False)
@@ -186,13 +241,51 @@ def vacias(sel: set[str]) -> dict:
           nota=f"déficit 2021-2025 de esas provincias: {t.deficit.sum():,.0f} viviendas (V17-D3, bajas 0)")
     hecho("VAC-6CAP-VACIAS", "Viviendas vacías en las capitales de esas 6 provincias", t.vac_cap.sum(), "viviendas", "2021", fu, "OF", "vacias",
           minimo=t.tasa_cap.min(), maximo=t.tasa_cap.max(), nota="min y max = tasa de vacancia de las capitales (%)")
-    hecho("VAC-SEGU-ILUSTRACION-6PROV", "Ilustración: viviendas que pasarían a uso con la reducción relativa de Segú (2020) aplicada a las vacías de las 6 provincias",
+    hecho("VAC-SEGU-ILUSTRACION-6PROV", "Escenario: viviendas que pasarían a uso con la reducción relativa de Segú (2020) aplicada a las vacías de las 6 provincias",
           s * t.vac_prov.sum(), "viviendas", "2021", "Segú (2020), J. Public Econ. 185, 104079 (Francia, 1999-2001); INE Censo 2021",
           "juicio experto", "vacias", minimo=s * t.vac_cap.sum(), maximo=None,
-          nota=(f"equivale al {100 * s * t.vac_prov.sum() / t.deficit.sum():.0f} % del déficit de esas provincias "
+          nota=(f"equivale al {100 * s * t.vac_prov.sum() / t.deficit.sum():.0f} % del déficit de esas provincias, mismo ámbito provincial "
                 f"(solo capitales: {100 * s * t.vac_cap.sum() / t.deficit.sum():.0f} %); min = solo capitales; validez externa no comprobada; "
-                "supone que las vacías por consumo son vacancia gravable; no es un efecto en precio"))
-    return dict(g=g, top=t, n_mun=len(w), s=s)
+                "supone que las vacías por consumo son vacancia gravable; no es un efecto en precio ni el parque útil"))
+    # Ronda 1: cobertura frente al total nacional y provincial (todas las provincias no selladas, incluidos los municipios fuera de la tabla)
+    nac_vac = float(v[(v.ccaa.isna() | (v.ccaa.str.strip() == "")) & (v.cat == "Viviendas vacías")].val.iloc[0])
+    pv_ns = pw[~pw.index.isin(sel)]
+    vac_ns = float(pv_ns["Viviendas vacías"].sum())
+    tot_ns = float(pv_ns["Viviendas totales"].sum())
+    fuera = float(resto.vac.sum())
+    assert abs(vac_ns - float(w.vac.sum()) - fuera) < 1, "las filas municipales y «resto» deben sumar el total provincial"
+    cuotas = {k: float(g.loc[k, "vac"]) / vac_ns for k in lab}
+    cuotas["fuera de la tabla"] = fuera / vac_ns
+    menos10 = cuotas["<2.000"] + cuotas["2.000-10.000"] + cuotas["fuera de la tabla"]
+    hecho("VAC-COBERTURA", "Vacías por consumo en provincias sin muestra sellada v6 (total provincial, incluidos municipios fuera de la tabla municipal)",
+          vac_ns, "viviendas", "2021", fu, "OF", "vacias", minimo=None, maximo=nac_vac,
+          nota=(f"max = total nacional; municipios no listados en la tabla: {fuera:,.0f} vacías ({100 * cuotas['fuera de la tabla']:.1f} %), "
+                f"tasa {100 * fuera / (tot_ns - float(w.tot.sum())):.1f} %"))
+    hecho("VAC-CUOTA-MUN-PEQUENOS", "Cuota de las vacías en municipios de menos de 10.000 viviendas o no listados (pequeños), sobre el total provincial no sellado",
+          100 * menos10, "% de las vacías", "2021", fu, "OF", "vacias",
+          minimo=100 * (cuotas["<2.000"] + cuotas["2.000-10.000"]), maximo=None,
+          nota=(f"min = solo municipios listados de menos de 10.000 viviendas; en municipios de más de 50.000 viviendas: "
+                f"{100 * cuotas['>50.000']:.1f} %"))
+    # Ronda 1: vacancia frente a presión (déficit 2021-2025 por vivienda), provincias no selladas
+    d2 = d.merge(pw[["Viviendas vacías", "Viviendas totales"]].rename(columns={"Viviendas vacías": "vac", "Viviendas totales": "tot"}),
+                 left_on="cod_prov", right_index=True)
+    d2["tasa_vac"] = 100 * d2.vac / d2.tot
+    d2["presion"] = 100 * d2.deficit_bajas0 / d2.tot
+    rho = float(d2[["tasa_vac", "presion"]].rank().corr().iloc[0, 1])
+    d2["terc"] = pd.qcut(d2.presion.rank(method="first"), 3, labels=["baja", "media", "alta"])
+    tg = d2.groupby("terc", observed=True).agg(vac=("vac", "sum"), tot=("tot", "sum"), deficit=("deficit_bajas0", "sum"))
+    tg["tasa"] = 100 * tg.vac / tg.tot
+    tg["cuota_vac"] = 100 * tg.vac / tg.vac.sum()
+    tg["vac_sobre_def"] = tg.vac / tg.deficit.clip(lower=1)
+    hecho("VAC-PRESION-SPEARMAN", "Correlación de rangos entre la tasa de vacancia provincial y el déficit 2021-2025 por vivienda (presión)", rho,
+          "rho de Spearman", "2021 y 2021-2025", fu + "; output/v17/d3/deficit_provincial_concentracion.csv", "asociación", "vacias",
+          nota=f"{len(d2)} provincias sin muestra sellada v6; descriptivo")
+    hecho("VAC-TASA-TERCIL-PRESION-ALTA", "Tasa de vacancia en el tercil de provincias con más déficit por vivienda", tg.loc["alta", "tasa"],
+          "% de las viviendas", "2021", fu, "OF", "vacias", minimo=tg.loc["baja", "tasa"], maximo=None,
+          nota=(f"min = tercil de menos presión; el tercil alto reúne el {tg.loc['alta', 'cuota_vac']:.0f} % de las vacías y el "
+                f"{100 * tg.loc['alta', 'deficit'] / tg.deficit.sum():.0f} % del déficit; vacías/déficit: alto {tg.loc['alta', 'vac_sobre_def']:.1f}, "
+                f"bajo {tg.loc['baja', 'vac_sobre_def']:.1f}"))
+    return dict(g=g, top=t, n_mun=len(w), s=s, cuotas=cuotas, rho=rho, tg=tg, vac_ns=vac_ns, nac=nac_vac)
 
 
 # ---------------------------------------------------------------- ITP: potencia del diseño Q6
@@ -225,16 +318,33 @@ def publica() -> dict:
     prod = json.load(open(D3 / "hechos.json"))
     prod = {h["id"]: h["valor"] for h in prod}["V17-D3-PROD-ACTUAL"]
     fu = "OCDE AHD PH4.2 (24-11-2025); MIVAU calificaciones definitivas (data/raw/mivau_v2_protegida.csv); V17-D3-PROD-ACTUAL"
-    hecho("PUB-BRECHA-UE", "Viviendas sociales de alquiler adicionales para pasar del 1,13 % de España al 7,99 % de la UE (parque constante)",
-          nec_ue, "viviendas", "2019 (España) y 2022 o último (UE)", fu, "cota", "vivienda_publica",
-          nota=f"parque implícito OCDE {stock:,.0f}; años de toda la producción actual: {nec_ue / prod:.0f}")
+    # Ronda 1: ¿el 7,99 % UE es media simple o ponderada? Media simple de los países UE-27 de la figura PH4.2.1
+    import openpyxl
+    wb = openpyxl.load_workbook(OCDE_PH42, read_only=True)
+    vals = {}
+    for row in wb["Figure PH4.2.1"].iter_rows(values_only=True):
+        cel = [c for c in (row or ()) if c is not None]
+        for i in range(len(cel) - 1):
+            if isinstance(cel[i], str) and cel[i].strip() in UE27 and isinstance(cel[i + 1], (int, float)):
+                vals[cel[i].strip()] = float(cel[i + 1])
+    simple = float(np.mean(list(vals.values())))
+    nec_mivau = (DOC["ocde_ue_social_pct"] - 1.72) / 100 * stock
+    hecho("PUB-UE-MEDIA-SIMPLE", "Media simple del parque social de los países UE-27 presentes en la figura PH4.2.1 de la OCDE", simple, "% del parque",
+          "2022 o último", "OCDE AHD PH4.2 (data/raw/v17/parque_social)", "OF", "vivienda_publica",
+          nota=(f"{len(vals)} países con dato, años de referencia distintos; coincide con el agregado UE de la OCDE (7,99 %): es una media "
+                "simple de países, no ponderada por parque (el fichero no declara el método; se deduce de la coincidencia)"))
+    hecho("PUB-BRECHA-UE", "Viviendas sociales de alquiler adicionales para pasar del parque social español al 7,99 % de la UE (parque constante)",
+          nec_ue, "viviendas", "2019 (España) y 2022 o último (UE)", fu + "; MIVAU Boletín Especial 2024", "cota", "vivienda_publica",
+          minimo=nec_mivau, maximo=nec_ue,
+          nota=(f"max = desde 1,13 % (OCDE 2019), min = desde 1,72 % (MIVAU 2023, sobre hogares, aplicado al mismo parque); "
+                f"parque implícito OCDE {stock:,.0f}; años de toda la producción actual: {nec_mivau / prod:.0f}-{nec_ue / prod:.0f}"))
     hecho("PUB-CALIF-MEDIA-2021-2025", "Calificaciones definitivas de vivienda protegida, media anual 2021-2025", calif, "viviendas/año",
           "2021-2025", "MIVAU, Boletín Online, tabla 1.6 (data/raw/mivau_v2_protegida.csv)", "OF", "vivienda_publica",
           nota="incluye protegida para venta; no es alquiler social ni parque neto (la protección caduca)")
     hecho("PUB-ANIOS-1PP", "Años para añadir 1 punto de parque social al ritmo de calificaciones 2021-2025, si todas fueran alquiler social permanente",
           nec_1pp / calif, "años", "2021-2025", fu, "juicio experto", "vivienda_publica",
           minimo=nec_1pp / prod, nota="min = si toda la producción actual fuese social; sin descalificaciones ni crecimiento del parque")
-    return dict(stock=stock, nec_ue=nec_ue, nec_1pp=nec_1pp, calif=calif, prod=prod)
+    return dict(stock=stock, nec_ue=nec_ue, nec_mivau=nec_mivau, nec_1pp=nec_1pp, calif=calif, prod=prod, simple=simple, n_ue=len(vals))
 
 
 # ---------------------------------------------------------------- más oferta: orden de magnitud
@@ -247,12 +357,11 @@ def oferta() -> dict:
     hecho("OFERTA-DEFICIT-SOBRE-PARQUE", "Déficit 2021-2025 de la 1.0 (L3-DEF-2125) sobre el parque de viviendas familiares (Censo 2021)",
           pct["central"], "% del parque", "2021-2025", "output/v5/cifras_clave.csv (L3-DEF-2125); INE Censo 2021", "cota", "mas_oferta",
           minimo=pct["min"], maximo=pct["max"])
-    hecho("OFERTA-MENSE-ILUSTRACION", "Ilustración: variación del alquiler medio si se cerrase el déficit con la elasticidad de corto plazo de Mense (2025)",
+    hecho("OFERTA-MENSE-ILUSTRACION", "Ilustración: variación del alquiler medio si se cerrase el déficit central, con la elasticidad local de corto plazo de Mense (2025)",
           il["central"], "% del alquiler medio", "orden de magnitud", "Mense (2025), JPE Macroeconomics, 10.1086/733977 (Alemania)",
           "juicio experto", "mas_oferta", minimo=il["max"], maximo=il["min"],
-          nota=("nacional y estático; Mense estima respuestas locales de corto plazo en ciudades alemanas; validez externa no comprobada; "
-                "con la elasticidad local de Li (2022, NO VERIFICADA) sería "
-                f"{DOC['li_elasticidad'] * pct['central']:.2f} %"))
+          nota=("min y max = déficit máximo y mínimo; Mense estima respuestas locales de corto plazo en ciudades alemanas, no una "
+                "elasticidad agregada de largo plazo (no se ha localizado una verificada); validez externa no comprobada"))
     # Elasticidad implícita de los escenarios V7.1 (V71-S1-*-alquiler-efecto_10k, C4) frente a la de Mense
     v = pd.read_csv(CENSO_VAC, sep=";", dtype=str, encoding="utf-8-sig")
     v.columns = ["nac", "ccaa", "prov", "mun", "cat", "val"]
@@ -271,19 +380,119 @@ def oferta() -> dict:
           "juicio experto", "mas_oferta",
           nota=(f"parque de la CCAA mediana {med:,.0f}; vacías {el['vacias']:.2f}; vivienda pública {el['publica']:.2f}; "
                 f"Mense (2025) {DOC['mense_elasticidad']}: el escenario es {el['construccion'] / DOC['mense_elasticidad']:.1f} veces mayor"))
-    ratio = h["V17-D3-PROD-NECESARIA-5A"]["valor"] / h["V17-D3-PROD-ACTUAL"]["valor"]
-    boom_emp = 2703.4 * h["V17-D3-PROD-NECESARIA-5A"]["valor"] / h["V17-D3-PROD-BOOM"]["valor"]
-    hecho("OFERTA-EMPLEO-PROPORCIONAL-BOOM", "Ocupados en construcción proporcionales a la producción necesaria a 5 años, con la relación ocupados/terminadas de 2007",
-          boom_emp, "miles de ocupados", "2007 y 2026-2030", "output/v17/d3/capacidad_construccion_boom_actual.csv; V17-D3-PROD-NECESARIA-5A",
-          "juicio experto", "mas_oferta", nota=(f"frente a {h['V17-D3-OCUPADOS-CONSTRUCCION']['valor']:,.0f} miles hoy; producción necesaria = "
-                                               f"x{ratio:.1f} la actual; la rama F incluye obra civil y rehabilitación, por lo que «terminadas por ocupado» no es productividad residencial"))
-    return dict(pct=pct, il=il, ratio=ratio, boom_emp=boom_emp)
+    hecho("OFERTA-ILUSTRACION-RANGO", "Ilustración: variación del alquiler medio al cerrar el déficit central, entre la elasticidad local de Mense y la implícita en el escenario V7.1",
+          DOC["mense_elasticidad"] * pct["central"], "% del alquiler medio", "orden de magnitud", "Mense (2025); output/v5/cifras_clave.csv (V71-S1-a)",
+          "juicio experto", "mas_oferta", minimo=el["construccion"] * pct["central"], maximo=DOC["mense_elasticidad"] * pct["central"],
+          nota="no hay referencia agregada verificada que permita decir cuál de las dos es más realista; ninguna es un efecto estimado para España")
+    cap = pd.read_csv(D3 / "capacidad_construccion_boom_actual.csv").set_index("anio")
+    ocup_por_viv_2007 = cap.loc[2007, "ocupados_construccion_miles"] / cap.loc[2007, "terminadas"]
+    nec5 = h["V17-D3-PROD-NECESARIA-5A"]["valor"]
+    actual = h["V17-D3-PROD-ACTUAL"]["valor"]
+    incr = (nec5 - actual) * ocup_por_viv_2007
+    incr_bde = (nec5 - DOC["bde_terminadas_2025"]) * ocup_por_viv_2007
+    hoy = h["V17-D3-OCUPADOS-CONSTRUCCION"]["valor"]
+    hecho("OFERTA-EMPLEO-INCREMENTO", "Ocupados adicionales en construcción para pasar de la producción actual a la necesaria a 5 años (central), con la relación ocupados/terminadas de 2007",
+          incr, "miles de ocupados", "2007 y 2026-2030", "output/v17/d3/capacidad_construccion_boom_actual.csv; V17-D3-PROD-NECESARIA-5A",
+          "juicio experto", "mas_oferta", minimo=incr_bde, maximo=None,
+          nota=(f"min = con 92.000 terminadas (BdE); total resultante {hoy + incr:,.0f} miles frente a {hoy:,.0f} hoy y al máximo de "
+                f"{cap.ocupados_construccion_miles.max():,.0f} en 2007; supone que el empleo actual sigue ocupado en lo que hace hoy"))
+    # Sensibilidad de la producción necesaria (D3-3): reposición, producción actual y absorción de vacías y secundarias
+    hog = 145_603.0
+    filas = []
+    for rep_lbl, rep in (("6.864 (V5.1)", 6_864.0), ("0,1 % del parque", 0.001 * parque), ("0,3 % del parque", 0.003 * parque)):
+        for abs_ in (0.0, 0.10, 0.25):
+            for prod_lbl, prod in (("83.700 (INE/MIVAU)", actual), ("92.000 (BdE)", float(DOC["bde_terminadas_2025"]))):
+                for n in (5, 10):
+                    need = deficit["central"] * (1 - abs_) / n + hog + rep
+                    filas.append(dict(reposicion=rep_lbl, absorcion=abs_, produccion_actual=prod_lbl, anios=n, necesaria=need, ratio=need / prod))
+    sens = pd.DataFrame(filas)
+    s5 = sens[sens.anios == 5]
+    hecho("OFERTA-SENSIBILIDAD-5A", "Producción necesaria a 5 años (déficit central) frente a la actual: rango de sensibilidad", None,
+          "veces la producción actual", "2026-2030", "V17-D3; BdE IA 2025 (92.000 terminadas)", "juicio experto", "mas_oferta",
+          minimo=s5.ratio.min(), maximo=s5.ratio.max(),
+          nota=("reposición 6.864/año o 0,1-0,3 % del parque; absorción de 0, 10 o 25 % del déficit por vacías y secundarias; producción actual "
+                f"83.700 o 92.000; necesaria {s5.necesaria.min():,.0f}-{s5.necesaria.max():,.0f} viviendas/año"))
+    s10 = sens[sens.anios == 10]
+    hecho("OFERTA-SENSIBILIDAD-10A", "Ídem a 10 años", None, "veces la producción actual", "2026-2035", "ídem", "juicio experto", "mas_oferta",
+          minimo=s10.ratio.min(), maximo=s10.ratio.max(), nota=f"necesaria {s10.necesaria.min():,.0f}-{s10.necesaria.max():,.0f} viviendas/año")
+    # Rangos de las ratios de suelo (área del BdE frente a necesidad provincial a 10 años, mínimo-máximo)
+    su = pd.read_csv(D3 / "suelo_potencial_bde_vs_necesidad.csv", dtype={"provincia": str}).dropna(subset=["necesidad_10a_prov_central"])
+    rs = {}
+    for _, r_ in su.iterrows():
+        rs[r_.area_bde] = (r_.potencial_bde / r_.necesidad_10a_prov_max, r_.potencial_bde / r_.necesidad_10a_prov_central, r_.potencial_bde / r_.necesidad_10a_prov_min)
+    b, sv = rs["Barcelona (área)"], rs["Sevilla (área)"]
+    hecho("SUELO-BARCELONA-RATIO", "Potencial del área de Barcelona (BdE) sobre la necesidad provincial a 10 años", b[1], "cociente", "2025 y 2026-2035",
+          "BdE IA 2025; output/v17/d3/suelo_potencial_bde_vs_necesidad.csv", "cota", "mas_oferta", minimo=b[0], maximo=b[2],
+          nota="área ≠ provincia; min y max con la necesidad máxima y mínima")
+    hecho("SUELO-SEVILLA-RATIO", "Potencial del área de Sevilla (BdE) sobre la necesidad provincial a 10 años", sv[1], "cociente", "2025 y 2026-2035",
+          "ídem", "cota", "mas_oferta", minimo=sv[0], maximo=sv[2],
+          nota="área ≠ provincia; la necesidad mínima (1.757) hace el máximo inestable; no se usa como conclusión")
+    return dict(pct=pct, il=il, el=el, incr=incr, incr_bde=incr_bde, hoy=hoy, sens=sens, rs=rs)
+
+
+# ---------------------------------------------------------------- D3-2: IPV por CCAA sin bloques sellados y variaciones deflactadas
+def cuotas_varianza(m: np.ndarray) -> tuple[float, float, float]:
+    """Misma descomposición que src/v17/d3_cuantitativo.py: año (común), territorio fijo y residuo local."""
+    mu = m.mean()
+    yr = m.mean(axis=1, keepdims=True) - mu
+    pr = m.mean(axis=0, keepdims=True) - mu
+    t = ((m - mu) ** 2).sum()
+    c, p = m.shape[1] * (yr ** 2).sum() / t, m.shape[0] * (pr ** 2).sum() / t
+    return c, p, 1 - c - p
+
+
+def d3_2() -> dict:
+    d = duckdb.sql(f"select territorio_codigo c, periodo p, valor v from '{HECHOS_BASE}' where variable='ipv' and nivel='ccaa' "
+                   "and frecuencia='T' and not muestra_sellada_v6").df()
+    d["a"] = d.p.str[:4].astype(int)
+    g = d.groupby(["c", "a"]).v.agg(["mean", "count"])
+    g = g[g["count"] == 4]["mean"].unstack("c").loc[2014:2025]
+    out = {}
+    rng = np.random.default_rng(SEED)
+    for nombre, cols, a1 in (("todas", list(g.columns), 2025), ("sin_selladas", [c for c in g.columns if c not in CCAA_SELLADAS_V6], 2025),
+                             ("sin_selladas_hasta_2024", [c for c in g.columns if c not in CCAA_SELLADAS_V6], 2024)):
+        r = np.log(g.loc[:a1, cols]).diff().dropna()
+        for per, (i, j) in {"2015-2019": (2015, 2019), "2020-fin": (2020, a1), "2015-fin": (2015, a1)}.items():
+            m = r.loc[i:j].values
+            c, p, l = cuotas_varianza(m)
+            bs = np.array([cuotas_varianza(m[:, rng.integers(0, m.shape[1], m.shape[1])])[0] for _ in range(300)])
+            out[(nombre, per)] = dict(N=m.shape[1], T=m.shape[0], comun=c, fija=p, local=l, lo=np.percentile(bs, 2.5), hi=np.percentile(bs, 97.5))
+    x = out[("sin_selladas", "2015-fin")]
+    hecho("D32-IPV-CCAA-SIN-SELLADAS", "Cuota común (año) de la varianza de la variación anual del IPV, 9 CCAA sin bloques sellados v6, 2015-2025",
+          100 * x["comun"], "% (IC95 bootstrap por CCAA)", "2015-2025", "INE IPV por CCAA (data/base/hechos.parquet)", "hecho", "D3-2",
+          minimo=100 * x["lo"], maximo=100 * x["hi"],
+          nota=(f"V17-D3 usó las 17 CCAA, incluidas 8 de bloques sellados v6 (Madrid y otras uniprovinciales); efecto fijo {100 * x['fija']:.0f} %, "
+                f"local {100 * x['local']:.0f} %; 2020-2025: {100 * out[('sin_selladas', '2020-fin')]['comun']:.0f} %; "
+                f"hasta 2024: {100 * out[('sin_selladas_hasta_2024', '2015-fin')]['comun']:.0f} %"))
+    # Variación acumulada 2015-2024 deflactada (deflactor del consumo de la CNT y renta disponible agregada de los hogares)
+    def anual(var):
+        q = duckdb.sql(f"select periodo p, valor v from '{HECHOS_BASE}' where variable='{var}' and nivel='nacional' and frecuencia='T'").df()
+        q["a"] = q.p.str[:4].astype(int)
+        return q.groupby("a").v.mean()
+    defl = anual("deflactor")
+    renta = anual("renta_hog")
+    f_defl = defl.loc[2024] / defl.loc[2015]
+    f_renta = renta.loc[2024] / renta.loc[2015]
+    sp = duckdb.sql(f"select territorio_codigo c, periodo p, valor v from '{HECHOS_BASE}' where variable='serpavi_alquiler_m2_mediana' "
+                    "and nivel='provincia' and frecuencia='A' and not muestra_sellada_v6").df()
+    sp["a"] = sp.p.astype(int)
+    sp = sp.pivot_table(index="a", columns="c", values="v").loc[[2015, 2024]].dropna(axis=1)
+    nom = sp.loc[2024] / sp.loc[2015]
+    real = 100 * (nom / f_defl - 1)
+    rel_renta = 100 * (nom / f_renta - 1)
+    hecho("D32-SERPAVI-REAL-2015-2024", "Variación acumulada 2015-2024 del alquiler SERPAVI (mediana provincial), deflactada por el deflactor del consumo de la CNT",
+          real.median(), "% real", "2015-2024", "MIVAU SERPAVI; INE CNT (data/base/hechos.parquet)", "hecho", "D3-2",
+          minimo=real.min(), maximo=real.max(),
+          nota=(f"{real.size} provincias sin muestra sellada v6; nominal mediana {100 * (nom.median() - 1):.0f} %; deflactor +{100 * (f_defl - 1):.1f} %; "
+                f"provincias con caída real: {(real < 0).sum()}; frente a la renta disponible agregada de los hogares (+{100 * (f_renta - 1):.0f} %): "
+                f"mediana {rel_renta.median():.1f} %, {(rel_renta < 0).sum()} provincias por debajo"))
+    return dict(out=out, real=real, rel_renta=rel_renta, f_defl=f_defl, f_renta=f_renta, nom=nom)
 
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     sel = selladas()
-    r = {"tit": titularidad(sel), "vac": vacias(sel), "itp": itp(), "pub": publica(), "of": oferta()}
+    r = {"tit": titularidad(sel), "vac": vacias(sel), "itp": itp(), "pub": publica(), "of": oferta(), "d32": d3_2()}
     ids = [h["id"] for h in HECHOS]
     assert len(ids) == len(set(ids))
     (OUT / "oferta_titularidad_hechos.json").write_text(json.dumps(HECHOS, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -294,6 +503,12 @@ def main() -> None:
     print(r["vac"]["top"].round(1).to_string())
     print("BCN", r["tit"]["bcn"], "prov_max", r["tit"]["prov_max"])
     print("ITP", r["itp"])
+    print(r["tit"]["grid"].round(2).to_string())
+    print("NIF", r["tit"]["nif_2025"], r["tit"]["nif_2026"])
+    print(r["vac"]["tg"].round(2).to_string(), r["vac"]["cuotas"])
+    print({k: {kk: round(vv, 3) for kk, vv in v.items()} for k, v in r["d32"]["out"].items()})
+    print(r["of"]["sens"].groupby(["anios"]).ratio.describe())
+    print("suelo", r["of"]["rs"])
 
 
 if __name__ == "__main__":

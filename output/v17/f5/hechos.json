@@ -1092,7 +1092,7 @@
    "Garcia-López et al. (2020, JUE 119, 103278; versión de trabajo MPRA 96131, cuadro 4); densidad propia"
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
   "nota": "a posteriori; densidad 1.51 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
   "fecha_dato": "2024",
@@ -1110,7 +1110,7 @@
    "Garcia-López et al. (2020, JUE 119, 103278; versión de trabajo MPRA 96131, cuadro 4); densidad propia"
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
   "nota": "a posteriori; densidad 0.29 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
   "fecha_dato": "2024",
@@ -1128,7 +1128,7 @@
    "Garcia-López et al. (2020, JUE 119, 103278; versión de trabajo MPRA 96131, cuadro 4); densidad propia"
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
   "nota": "a posteriori; densidad 2.50 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
   "fecha_dato": "2024",
@@ -1146,7 +1146,7 @@
    "Garcia-López et al. (2020, JUE 119, 103278; versión de trabajo MPRA 96131, cuadro 4); densidad propia"
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
   "nota": "a posteriori; densidad 10.22 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
   "fecha_dato": "2024",
@@ -1164,7 +1164,7 @@
    "output/v15/p5/resultado.json (H3); Garcia-López et al."
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
   "nota": "a posteriori; DT intra-sección 0.61 pp; H3 = 0.0030 % por DT (EMD 80 % = 0.097); H3 mide contratos vigentes (SERPAVI) y GL anuncios nuevos",
   "fecha_dato": "2024",
@@ -1264,8 +1264,8 @@
   "id": "V17-AUD-DP-INM-GO-ELASTICIDAD",
   "indicador": "Elasticidad implícita del precio de la vivienda a la población en González y Ortega (2013): 2 % anual de precio por 1,5 % anual de población",
   "valor": 1.3333,
-  "min": null,
-  "max": null,
+  "min": 1.0,
+  "max": 1.5333,
   "unidad": "% de precio por 1 % de población",
   "periodo": "2000-2010",
   "fuentes": [
@@ -1274,7 +1274,7 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/inmigracion.md",
-  "nota": "a posteriori; cociente de las cifras del resumen; comparar con Q3-c1-AKM0 (0,0119 log de valor tasado por punto de población extranjera) y H4",
+  "nota": "a posteriori; cociente de las cifras del resumen (precio +1,5 a +2,3 % anual según docs/v17/referencias/d2_versiones.md; central 2 %); la versión publicada (Wiley) no se leyó: cifras de resúmenes secundarios; comparar con Q3-c1-AKM0 y H4",
   "fecha_dato": "2010",
   "cobertura": "véase la ficha"
  },
@@ -1315,51 +1315,105 @@
   "cobertura": "véase la ficha"
  },
  {
-  "id": "V17-AUD-DP-TIP-EFECTO-ILUSTRADO",
-  "indicador": "Calibración: efecto en el precio a unos dos años de la subida de tipos 2022-2023 con semielasticidades de la zona euro (−2,3 a −6,3 % por punto; central −5 %)",
+  "id": "V17-AUD-DP-TIP-DELTA-POLITICA",
+  "indicador": "Subida del tipo de la facilidad de depósito del BCE, 2021T4-2023T4",
+  "valor": 4.5,
+  "min": null,
+  "max": null,
+  "unidad": "puntos porcentuales",
+  "periodo": "2021T4-2023T4",
+  "fuentes": [
+   "data/processed/v8/nacional_q_v8.csv (tipo_dfr, BCE)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/tipos.md",
+  "nota": "a posteriori",
+  "fecha_dato": "2023",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-DP-TIP-CALIBRACION-EFECTO-HIPOTECARIO",
+  "indicador": "Calibración: efecto en el precio a unos dos años de la subida del tipo hipotecario 2022-2023 (semielasticidades del BCE para la zona euro: −5 %/pp lineal; −9 %/pp no lineal con tipos bajos)",
   "valor": -11.3613,
-  "min": -15.817,
-  "max": -5.2262,
+  "min": -22.5957,
+  "max": -11.3613,
   "unidad": "% del nivel de precios",
   "periodo": "2022-2025",
   "fuentes": [
-   "BCE BE 6/2022 (−5 %/pp); Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); TIP-DELTA-TAE"
+   "BCE, Boletín Económico 6/2022 (proyecciones locales, 1995-2019); TIP-DELTA-TAE"
   ],
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; central = −5 %/pp × subida media anual; zona euro, no España; supone que la elasticidad media se aplica aunque solo el 52 % compre con hipoteca",
+  "nota": "a posteriori; central = −5 %/pp × subida de la TAE media 2021→2023 (2,27 pp); rango con 2,27-2,51 pp y −5 a −9 %/pp; zona euro, no España; medida de precio no especificada en lo leído",
   "fecha_dato": "2025",
   "cobertura": "véase la ficha"
  },
  {
-  "id": "V17-AUD-DP-TIP-CONTRAFACTUAL",
-  "indicador": "Calibración: variación nominal del IPV 2021T4-2024T4 una vez descontado el efecto calibrado de la subida de tipos (semielasticidades de la zona euro; no es una estimación para España)",
-  "valor": 37.9517,
-  "min": 29.0216,
-  "max": 45.2534,
-  "unidad": "%",
-  "periodo": "2021T4-2024T4",
+  "id": "V17-AUD-DP-TIP-CALIBRACION-EFECTO-POLITICA",
+  "indicador": "Calibración: efecto en el precio REAL a unos dos años de la subida del tipo de política 2022-2023 (semielasticidades de −2,3 y −6,3 %/pp del tipo corto)",
+  "valor": -19.35,
+  "min": -28.35,
+  "max": -10.35,
+  "unidad": "% del precio real",
+  "periodo": "2022-2025",
   "fuentes": [
-   "TIP-IPV-2022-2024 y TIP-EFECTO-ILUSTRADO"
+   "Calza et al. (2013) y Williams (2015); TIP-DELTA-POLITICA"
   ],
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; (1 + observado) / (1 + efecto) − 1; elasticidades: BCE BE 6/2022 (−5 %/pp), Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; calibración, no un contrafactual identificado",
+  "nota": "a posteriori; extrapolación lineal de 1 pp a ≈ 4,5 pp: fuera del rango habitual de las estimaciones; comparar con el IPV real (+8,5 %)",
+  "fecha_dato": "2025",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-DP-TIP-CALIBRACION-DESCONTADO",
+  "indicador": "Calibración: variación del IPV 2021T4-2024T4 una vez descontado el efecto calibrado del tipo hipotecario (nominal)",
+  "valor": 37.9517,
+  "min": 37.9517,
+  "max": 57.974,
+  "unidad": "%",
+  "periodo": "2021T4-2024T4",
+  "fuentes": [
+   "TIP-IPV-2022-2024 y TIP-CALIBRACION-EFECTO-HIPOTECARIO"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto (calibración)",
+  "ficha": "output/v17/auditoria/filas/tipos.md",
+  "nota": "a posteriori; (1 + observado) / (1 + efecto) − 1; BCE −5 a −9 %/pp × 2,27-2,51 pp; ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; no es un contrafactual identificado",
   "fecha_dato": "2024",
   "cobertura": "véase la ficha"
  },
  {
-  "id": "V17-AUD-DP-TIP-EFECTO-SOLO-HIPOTECA",
-  "indicador": "Calibración: efecto si solo se transmite a la parte de compras con hipoteca (52 %)",
+  "id": "V17-AUD-DP-TIP-CALIBRACION-DESCONTADO-REAL",
+  "indicador": "Calibración: variación del IPV REAL 2021T4-2024T4 una vez descontado el efecto calibrado del tipo de política",
+  "valor": 34.5767,
+  "min": 21.0665,
+  "max": 51.4809,
+  "unidad": "%",
+  "periodo": "2021T4-2024T4",
+  "fuentes": [
+   "TIP-IPV-2022-2024 (real) y TIP-CALIBRACION-EFECTO-POLITICA"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto (calibración)",
+  "ficha": "output/v17/auditoria/filas/tipos.md",
+  "nota": "a posteriori; ver TIP-CALIBRACION-EFECTO-POLITICA",
+  "fecha_dato": "2024",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-DP-TIP-CALIBRACION-SOLO-HIPOTECA",
+  "indicador": "Calibración: efecto del tipo hipotecario si solo se transmite a la parte de compras con hipoteca (52 %)",
   "valor": -5.9079,
-  "min": -8.2248,
-  "max": -2.7176,
+  "min": -11.7498,
+  "max": -5.9079,
   "unidad": "% del nivel de precios",
   "periodo": "2022-2025",
   "fuentes": [
-   "TIP-EFECTO-ILUSTRADO × 52 % (BdE IA2025, p. 124)"
+   "TIP-CALIBRACION-EFECTO-HIPOTECARIO × 52 % (BdE IA2025, p. 124)"
   ],
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
@@ -1388,7 +1442,7 @@
  },
  {
   "id": "V17-AUD-DP-BUR-GSADF-POTENCIA",
-  "indicador": "Potencia del GSADF del factor común (bootstrap salvaje) frente a una alternativa explosiva simulada (Monte Carlo V16)",
+  "indicador": "Potencia del GSADF de Q9-g (factor común, bootstrap salvaje) frente a una alternativa explosiva simulada (Monte Carlo V16); no calculada para el GSADF nacional de V7.2",
   "valor": 0.064,
   "min": 0.064,
   "max": 0.132,
@@ -1545,6 +1599,24 @@
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/alquiler.md",
   "nota": "a posteriori; min = P10; max = P90; 514 municipios sin muestra sellada v6 con dato en 2019 y 2025; nominal; contratos nuevos, no vigentes",
+  "fecha_dato": "2025",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-DP-ALQ-INCASOL-NUEVOS-POND",
+  "indicador": "Renta media de contratos nuevos (Incasòl), Cataluña, ponderada por contratos de 2019 (Laspeyres municipal), 2019-2025",
+  "valor": 19.9784,
+  "min": 17.125,
+  "max": 19.9784,
+  "unidad": "%",
+  "periodo": "2019-2025",
+  "fuentes": [
+   "base: incasol_renta_media e incasol_contratos (Incasòl, fianzas)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/alquiler.md",
+  "nota": "a posteriori; min = valor unitario (pesos de cada año); 514 municipios; IPC de alquiler de Cataluña (contratos vigentes) +8.6 %; nominal",
   "fecha_dato": "2025",
   "cobertura": "véase la ficha"
  },
@@ -1711,9 +1783,99 @@
   "cobertura": "véase la ficha"
  },
  {
+  "id": "V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026",
+  "indicador": "Viviendas de titulares con más de 10 inmuebles: fichero nacional frente a suma de los ficheros provinciales",
+  "valor": 1.084,
+  "min": null,
+  "max": null,
+  "unidad": "cociente",
+  "periodo": "2026",
+  "fuentes": [
+   "Catastro, estadística de titularidad (data/raw/v11/catastro_titularidad/p_spi_total_v*.csv.gz)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; nacional 1,013,400; suma provincial 934,842; un cociente > 1 indica que el tramo del fichero total se cuenta por NIF en todo el territorio común y el provincial dentro de cada provincia",
+  "fecha_dato": "2026",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA",
+  "indicador": "Cota de los titulares con más de 10 viviendas en el alquiler habitual con la vivienda pública como suelo explícito",
+  "valor": null,
+  "min": 10.1848,
+  "max": 12.16,
+  "unidad": "% del alquiler habitual",
+  "periodo": "2021-2024",
+  "fuentes": [
+   "BdE IA 2025 cuadro 2.11; INE Censo 2021 (hogares en alquiler); Catastro; OCDE PH4.2; MIVAU 2024"
+  ],
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; denominador: 2,983,619 hogares en alquiler (Censo 2021); vivienda pública = 8.0-10.7 % del alquiler; particulares = 90 %; con 85-95 %: 7.3-17.0 %; universos no idénticos (AEAT frente a Censo)",
+  "fecha_dato": "2024",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-COTA-GT-ALQUILER-PRIVADOS",
+  "indicador": "Cota de los titulares PRIVADOS (personas físicas y jurídicas) con más de 10 viviendas en el alquiler habitual",
+  "valor": null,
+  "min": 2.16,
+  "max": 4.1352,
+  "unidad": "% del alquiler habitual",
+  "periodo": "2021-2024",
+  "fuentes": [
+   "ídem"
+  ],
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; particulares = 90 %; con 85-95 %: 2.0-9.0 %; con MIVAU la vivienda pública agota el 10 % no particular, señal de que los universos no casan",
+  "fecha_dato": "2024",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-BDE-MULTIARRENDADORES-2024",
+  "indicador": "Viviendas alquiladas por personas físicas con 2 o más viviendas (suma de tramos del BdE)",
+  "valor": 49.3,
+  "min": null,
+  "max": null,
+  "unidad": "% de las viviendas alquiladas por personas físicas",
+  "periodo": "2024",
+  "fuentes": [
+   "BdE IA 2025 cuadro 2.11 (AEAT)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; el informe 1 del Ministerio de Derechos Sociales con IFS-CSIC da 52,8 % (2023, Panel de Hogares): fuente, año y universo distintos",
+  "fecha_dato": "2024",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-OHB-BCN-GT-SIN-ADMINISTRACIONES",
+  "indicador": "Barcelona ciudad: grandes tenedores sin administraciones públicas sobre el alquiler habitual estimado",
+  "valor": 31.66,
+  "min": null,
+  "max": null,
+  "unidad": "% del alquiler habitual",
+  "periodo": "1-1-2021",
+  "fuentes": [
+   "O-HB (2022), figuras 3 y 5 (36,1 % menos 4,44 % de administraciones)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; solo Barcelona ciudad; las administraciones son el 12,3 % de las viviendas de alquiler de grandes tenedores",
+  "fecha_dato": "2021",
+  "cobertura": "véase la ficha"
+ },
+ {
   "id": "V17-AUD-OT-VAC-TASA-T1",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con <2.000 viviendas",
-  "valor": 23.4251,
+  "valor": 23.4186,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -1724,14 +1886,14 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 1089 municipios; 10.9 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios",
+  "nota": "a posteriori; 1088 municipios; 12.9 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»",
   "fecha_dato": "2021",
   "cobertura": "véase la ficha"
  },
  {
   "id": "V17-AUD-OT-VAC-TASA-T2",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con 2.000-10.000 viviendas",
-  "valor": 18.5076,
+  "valor": 18.4218,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -1742,14 +1904,14 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 1106 municipios; 29.1 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios",
+  "nota": "a posteriori; 1102 municipios; 34.0 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»",
   "fecha_dato": "2021",
   "cobertura": "véase la ficha"
  },
  {
   "id": "V17-AUD-OT-VAC-TASA-T3",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con 10.000-50.000 viviendas",
-  "valor": 14.4353,
+  "valor": 12.6905,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -1760,14 +1922,14 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 319 municipios; 31.5 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios",
+  "nota": "a posteriori; 297 municipios; 29.5 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»",
   "fecha_dato": "2021",
   "cobertura": "véase la ficha"
  },
  {
   "id": "V17-AUD-OT-VAC-TASA-T4",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con >50.000 viviendas",
-  "valor": 12.5535,
+  "valor": 9.9614,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -1778,7 +1940,7 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 60 municipios; 28.4 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios",
+  "nota": "a posteriori; 50 municipios; 23.6 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»",
   "fecha_dato": "2021",
   "cobertura": "véase la ficha"
  },
@@ -1820,7 +1982,7 @@
  },
  {
   "id": "V17-AUD-OT-VAC-SEGU-ILUSTRACION-6PROV",
-  "indicador": "Ilustración: viviendas que pasarían a uso con la reducción relativa de Segú (2020) aplicada a las vacías de las 6 provincias",
+  "indicador": "Escenario: viviendas que pasarían a uso con la reducción relativa de Segú (2020) aplicada a las vacías de las 6 provincias",
   "valor": 118173.64,
   "min": 21061.3,
   "max": null,
@@ -1832,7 +1994,79 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; equivale al 43 % del déficit de esas provincias (solo capitales: 8 %); min = solo capitales; validez externa no comprobada; supone que las vacías por consumo son vacancia gravable; no es un efecto en precio",
+  "nota": "a posteriori; equivale al 43 % del déficit de esas provincias, mismo ámbito provincial (solo capitales: 8 %); min = solo capitales; validez externa no comprobada; supone que las vacías por consumo son vacancia gravable; no es un efecto en precio ni el parque útil",
+  "fecha_dato": "2021",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-COBERTURA",
+  "indicador": "Vacías por consumo en provincias sin muestra sellada v6 (total provincial, incluidos municipios fuera de la tabla municipal)",
+  "valor": 2932346.0,
+  "min": null,
+  "max": 3828307.0,
+  "unidad": "viviendas",
+  "periodo": "2021",
+  "fuentes": [
+   "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; max = total nacional; municipios no listados en la tabla: 441,344 vacías (15.1 %), tasa 32.6 %",
+  "fecha_dato": "2021",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-CUOTA-MUN-PEQUENOS",
+  "indicador": "Cuota de las vacías en municipios de menos de 10.000 viviendas o no listados (pequeños), sobre el total provincial no sellado",
+  "valor": 54.8411,
+  "min": 39.7902,
+  "max": null,
+  "unidad": "% de las vacías",
+  "periodo": "2021",
+  "fuentes": [
+   "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; min = solo municipios listados de menos de 10.000 viviendas; en municipios de más de 50.000 viviendas: 20.1 %",
+  "fecha_dato": "2021",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-PRESION-SPEARMAN",
+  "indicador": "Correlación de rangos entre la tasa de vacancia provincial y el déficit 2021-2025 por vivienda (presión)",
+  "valor": -0.3564,
+  "min": null,
+  "max": null,
+  "unidad": "rho de Spearman",
+  "periodo": "2021 y 2021-2025",
+  "fuentes": [
+   "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021); output/v17/d3/deficit_provincial_concentracion.csv"
+  ],
+  "capa": "C4",
+  "lectura_v17": "asociación",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; 41 provincias sin muestra sellada v6; descriptivo",
+  "fecha_dato": "2025",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-TASA-TERCIL-PRESION-ALTA",
+  "indicador": "Tasa de vacancia en el tercil de provincias con más déficit por vivienda",
+  "valor": 13.4715,
+  "min": 22.27,
+  "max": null,
+  "unidad": "% de las viviendas",
+  "periodo": "2021",
+  "fuentes": [
+   "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; min = tercil de menos presión; el tercil alto reúne el 45 % de las vacías y el 73 % del déficit; vacías/déficit: alto 3.7, bajo 24.8",
   "fecha_dato": "2021",
   "cobertura": "véase la ficha"
  },
@@ -1873,20 +2107,38 @@
   "cobertura": "véase la ficha"
  },
  {
-  "id": "V17-AUD-OT-PUB-BRECHA-UE",
-  "indicador": "Viviendas sociales de alquiler adicionales para pasar del 1,13 % de España al 7,99 % de la UE (parque constante)",
-  "valor": 1760530.9735,
+  "id": "V17-AUD-OT-PUB-UE-MEDIA-SIMPLE",
+  "indicador": "Media simple del parque social de los países UE-27 presentes en la figura PH4.2.1 de la OCDE",
+  "valor": 7.9901,
   "min": null,
   "max": null,
+  "unidad": "% del parque",
+  "periodo": "2022 o último",
+  "fuentes": [
+   "OCDE AHD PH4.2 (data/raw/v17/parque_social)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vivienda_publica.md",
+  "nota": "a posteriori; 19 países con dato, años de referencia distintos; coincide con el agregado UE de la OCDE (7,99 %): es una media simple de países, no ponderada por parque (el fichero no declara el método; se deduce de la coincidencia)",
+  "fecha_dato": "2022",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-PUB-BRECHA-UE",
+  "indicador": "Viviendas sociales de alquiler adicionales para pasar del parque social español al 7,99 % de la UE (parque constante)",
+  "valor": 1760530.9735,
+  "min": 1609115.0442,
+  "max": 1760530.9735,
   "unidad": "viviendas",
   "periodo": "2019 (España) y 2022 o último (UE)",
   "fuentes": [
-   "OCDE AHD PH4.2 (24-11-2025); MIVAU calificaciones definitivas (data/raw/mivau_v2_protegida.csv); V17-D3-PROD-ACTUAL"
+   "OCDE AHD PH4.2 (24-11-2025); MIVAU calificaciones definitivas (data/raw/mivau_v2_protegida.csv); V17-D3-PROD-ACTUAL; MIVAU Boletín Especial 2024"
   ],
   "capa": "C4",
   "lectura_v17": "cota",
   "ficha": "output/v17/auditoria/filas/vivienda_publica.md",
-  "nota": "a posteriori; parque implícito OCDE 25,663,717; años de toda la producción actual: 21",
+  "nota": "a posteriori; max = desde 1,13 % (OCDE 2019), min = desde 1,72 % (MIVAU 2023, sobre hogares, aplicado al mismo parque); parque implícito OCDE 25,663,717; años de toda la producción actual: 19-21",
   "fecha_dato": "2022",
   "cobertura": "véase la ficha"
  },
@@ -1946,7 +2198,7 @@
  },
  {
   "id": "V17-AUD-OT-OFERTA-MENSE-ILUSTRACION",
-  "indicador": "Ilustración: variación del alquiler medio si se cerrase el déficit con la elasticidad de corto plazo de Mense (2025)",
+  "indicador": "Ilustración: variación del alquiler medio si se cerrase el déficit central, con la elasticidad local de corto plazo de Mense (2025)",
   "valor": -0.5037,
   "min": -0.6337,
   "max": -0.3737,
@@ -1958,7 +2210,7 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
-  "nota": "a posteriori; nacional y estático; Mense estima respuestas locales de corto plazo en ciudades alemanas; validez externa no comprobada; con la elasticidad local de Li (2022, NO VERIFICADA) sería -0.27 %",
+  "nota": "a posteriori; min y max = déficit máximo y mínimo; Mense estima respuestas locales de corto plazo en ciudades alemanas, no una elasticidad agregada de largo plazo (no se ha localizado una verificada); validez externa no comprobada",
   "fecha_dato": "2026-10-19",
   "cobertura": "véase la ficha"
  },
@@ -1981,10 +2233,28 @@
   "cobertura": "véase la ficha"
  },
  {
-  "id": "V17-AUD-OT-OFERTA-EMPLEO-PROPORCIONAL-BOOM",
-  "indicador": "Ocupados en construcción proporcionales a la producción necesaria a 5 años, con la relación ocupados/terminadas de 2007",
-  "valor": 1395.8198,
-  "min": null,
+  "id": "V17-AUD-OT-OFERTA-ILUSTRACION-RANGO",
+  "indicador": "Ilustración: variación del alquiler medio al cerrar el déficit central, entre la elasticidad local de Mense y la implícita en el escenario V7.1",
+  "valor": -0.5037,
+  "min": -1.9838,
+  "max": -0.5037,
+  "unidad": "% del alquiler medio",
+  "periodo": "orden de magnitud",
+  "fuentes": [
+   "Mense (2025); output/v5/cifras_clave.csv (V71-S1-a)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; no hay referencia agregada verificada que permita decir cuál de las dos es más realista; ninguna es un efecto estimado para España",
+  "fecha_dato": "2026-10-19",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO",
+  "indicador": "Ocupados adicionales en construcción para pasar de la producción actual a la necesaria a 5 años (central), con la relación ocupados/terminadas de 2007",
+  "valor": 979.0206,
+  "min": 940.314,
   "max": null,
   "unidad": "miles de ocupados",
   "periodo": "2007 y 2026-2030",
@@ -1994,13 +2264,121 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
-  "nota": "a posteriori; frente a 1,498 miles hoy; producción necesaria = x3.5 la actual; la rama F incluye obra civil y rehabilitación, por lo que «terminadas por ocupado» no es productividad residencial",
+  "nota": "a posteriori; min = con 92.000 terminadas (BdE); total resultante 2,477 miles frente a 1,498 hoy y al máximo de 2,703 en 2007; supone que el empleo actual sigue ocupado en lo que hace hoy",
   "fecha_dato": "2030",
   "cobertura": "véase la ficha"
  },
  {
+  "id": "V17-AUD-OT-OFERTA-SENSIBILIDAD-5A",
+  "indicador": "Producción necesaria a 5 años (déficit central) frente a la actual: rango de sensibilidad",
+  "valor": null,
+  "min": 2.808,
+  "max": 4.3803,
+  "unidad": "veces la producción actual",
+  "periodo": "2026-2030",
+  "fuentes": [
+   "V17-D3; BdE IA 2025 (92.000 terminadas)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; reposición 6.864/año o 0,1-0,3 % del parque; absorción de 0, 10 o 25 % del déficit por vacías y secundarias; producción actual 83.700 o 92.000; necesaria 258,334-366,630 viviendas/año",
+  "fecha_dato": "2030",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-OFERTA-SENSIBILIDAD-10A",
+  "indicador": "Ídem a 10 años",
+  "valor": null,
+  "min": 2.2326,
+  "max": 3.537,
+  "unidad": "veces la producción actual",
+  "periodo": "2026-2035",
+  "fuentes": [
+   "ídem"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; necesaria 205,400-296,052 viviendas/año",
+  "fecha_dato": "2035",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-SUELO-BARCELONA-RATIO",
+  "indicador": "Potencial del área de Barcelona (BdE) sobre la necesidad provincial a 10 años",
+  "valor": 0.3888,
+  "min": 0.2867,
+  "max": 0.512,
+  "unidad": "cociente",
+  "periodo": "2025 y 2026-2035",
+  "fuentes": [
+   "BdE IA 2025; output/v17/d3/suelo_potencial_bde_vs_necesidad.csv"
+  ],
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; área ≠ provincia; min y max con la necesidad máxima y mínima",
+  "fecha_dato": "2035",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-SUELO-SEVILLA-RATIO",
+  "indicador": "Potencial del área de Sevilla (BdE) sobre la necesidad provincial a 10 años",
+  "valor": 2.6281,
+  "min": 1.7484,
+  "max": 92.7718,
+  "unidad": "cociente",
+  "periodo": "2025 y 2026-2035",
+  "fuentes": [
+   "ídem"
+  ],
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; área ≠ provincia; la necesidad mínima (1.757) hace el máximo inestable; no se usa como conclusión",
+  "fecha_dato": "2035",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-D32-IPV-CCAA-SIN-SELLADAS",
+  "indicador": "Cuota común (año) de la varianza de la variación anual del IPV, 9 CCAA sin bloques sellados v6, 2015-2025",
+  "valor": 81.0569,
+  "min": 70.165,
+  "max": 92.9,
+  "unidad": "% (IC95 bootstrap por CCAA)",
+  "periodo": "2015-2025",
+  "fuentes": [
+   "INE IPV por CCAA (data/base/hechos.parquet)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "hecho",
+  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "nota": "a posteriori; V17-D3 usó las 17 CCAA, incluidas 8 de bloques sellados v6 (Madrid y otras uniprovinciales); efecto fijo 8 %, local 11 %; 2020-2025: 92 %; hasta 2024: 63 %",
+  "fecha_dato": "2025",
+  "cobertura": "véase la ficha"
+ },
+ {
+  "id": "V17-AUD-OT-D32-SERPAVI-REAL-2015-2024",
+  "indicador": "Variación acumulada 2015-2024 del alquiler SERPAVI (mediana provincial), deflactada por el deflactor del consumo de la CNT",
+  "valor": 7.6393,
+  "min": -0.9189,
+  "max": 25.1699,
+  "unidad": "% real",
+  "periodo": "2015-2024",
+  "fuentes": [
+   "MIVAU SERPAVI; INE CNT (data/base/hechos.parquet)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "hecho",
+  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "nota": "a posteriori; 38 provincias sin muestra sellada v6; nominal mediana 33 %; deflactor +24.0 %; provincias con caída real: 1; frente a la renta disponible agregada de los hogares (+46 %): mediana -8.8 %, 35 provincias por debajo",
+  "fecha_dato": "2024",
+  "cobertura": "véase la ficha"
+ },
+ {
   "id": "V17-AUD-RA-TOP-CONTRATOS-DIF",
-  "indicador": "Diferencia entre las estimaciones de contratos nuevos de Jofre-Monseny et al. (0,001) y Monràs y García-Montalvo (-0,102), Ley 11/2020 (valor: diferencia en log; min/max: IC 95 % de la diferencia suponiendo independencia)",
+  "indicador": "Diferencia entre las estimaciones de contratos nuevos de Jofre-Monseny et al. (0,001; RSUE 2023, tabla 3) y Monràs y García-Montalvo (-0,102; UPF WP 1836, abril de 2022, tabla IV, PPML), Ley 11/2020 (valor: diferencia en log; min/max: IC 95 % de la diferencia suponiendo independencia)",
   "valor": 0.103,
   "min": 0.0247,
   "max": 0.1813,
@@ -2014,29 +2392,11 @@
   "lectura_v17": "juicio experto",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori; z = 2.58, p bilateral = 0.0100 suponiendo independencia; los IC 95 % de cada estudio solo se solapan entre -0.040 y -0.035; las muestras se solapan (mismo registro de Incasòl), por lo que el contraste es solo orientativo"
- },
- {
-  "id": "V17-AUD-RA-TOP-COMPOSICION",
-  "indicador": "Parte de la caída de la renta media atribuible a composición en Monràs y García-Montalvo (1 - coef. con efectos fijos de vivienda / coef. base)",
-  "valor": 38.7755,
-  "min": null,
-  "max": null,
-  "unidad": "% de la caída",
-  "periodo": "2016-2021",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "Monràs y García-Montalvo, UPF WP 1836, tabla I (leída en docs/v16/literatura/L1)"
-  ],
-  "capa": "C4",
-  "lectura_v17": "juicio experto",
-  "fecha_dato": "2026-10-19",
-  "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori; los autores hablan de «la mitad»; el cociente con sus coeficientes da en torno a dos quintos"
+  "nota": "a posteriori; z = 2.58, p bilateral = 0.0100 suponiendo independencia; los IC 95 % solo se solapan entre -0.040 y -0.035; mismo registro (Incasòl): orientativo. La versión FRBSF 2023-28 da en torno a -10 % en la introducción (cifra por versión en docs/v17/referencias/d2_versiones.md)"
  },
  {
   "id": "V17-AUD-RA-TOP-TRAMO-ARRIBA",
-  "indicador": "Contratos nuevos por encima de la referencia (PPML, exp(b)-1)",
+  "indicador": "Contratos nuevos por encima de la referencia, Monràs y García-Montalvo (UPF WP 1836, abril de 2022, tabla IV, PPML; exp(b)-1)",
   "valor": -36.1734,
   "min": null,
   "max": null,
@@ -2044,17 +2404,17 @@
   "periodo": "2016-2021",
   "cobertura": "Cataluña",
   "fuentes": [
-   "Monràs y García-Montalvo, UPF WP 1836, tabla IV"
+   "Monràs y García-Montalvo, UPF WP 1836, tabla IV (L1)"
   ],
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori"
+  "nota": "a posteriori; cifra de la versión de abril de 2022; la de 2023 presenta el reparto por sextiles del precio en exceso"
  },
  {
   "id": "V17-AUD-RA-TOP-TRAMO-ABAJO",
-  "indicador": "Contratos nuevos por debajo de la referencia (PPML, exp(b)-1)",
+  "indicador": "Contratos nuevos por debajo de la referencia, Monràs y García-Montalvo (UPF WP 1836, abril de 2022, tabla IV, PPML; exp(b)-1)",
   "valor": 40.776,
   "min": null,
   "max": null,
@@ -2062,13 +2422,13 @@
   "periodo": "2016-2021",
   "cobertura": "Cataluña",
   "fuentes": [
-   "Monràs y García-Montalvo, UPF WP 1836, tabla IV"
+   "Monràs y García-Montalvo, UPF WP 1836, tabla IV (L1)"
   ],
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/topes.md",
-  "nota": "a posteriori"
+  "nota": "a posteriori; cifra de la versión de abril de 2022"
  },
  {
   "id": "V17-AUD-RA-TOP-H2-SDID",
@@ -2089,6 +2449,60 @@
   "nota": "a posteriori; p = 0.0001, tamaño real 0.093; H2-CS y H2-PPML no fiables (tamaño > 15 %); pretendencias de contratos rechazadas en V9-D1a; no se cambia la lectura publicada"
  },
  {
+  "id": "V17-AUD-RA-TOP-INC-CONTRATOS-REF",
+  "indicador": "Ley 11/2020, contratos nuevos (Incasòl, municipio-trimestre): DiD en log, control = todos los municipios catalanes no tratados, sin ponderar (valor: exp(b)-1; min/max: IC 95 %)",
+  "valor": 0.9008,
+  "min": -2.5442,
+  "max": 4.4676,
+  "unidad": "%",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "Cataluña, 60 tratados y 356 controles (panel equilibrado)",
+  "fuentes": [
+   "Incasòl (data/raw/v9/incasol; no redistribuible); BOE/DOGC; elaboración propia"
+  ],
+  "capa": "C4",
+  "lectura_v17": "asociación",
+  "fecha_dato": "2026-10-19",
+  "ficha": "output/v17/auditoria/filas/topes.md",
+  "nota": "a posteriori; p = 0.613; registro en output/v17/auditoria/regulacion_ayudas_registro.csv"
+ },
+ {
+  "id": "V17-AUD-RA-TOP-INC-CONTRATOS-RANGO",
+  "indicador": "Ley 11/2020, contratos nuevos: rango de las 24 especificaciones de cantidad (4 controles × log, log per cápita, PPML × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
+  "valor": 4.3819,
+  "min": -0.3235,
+  "max": 10.5138,
+  "unidad": "%",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "Cataluña, municipios",
+  "fuentes": [
+   "Incasòl; elaboración propia"
+  ],
+  "capa": "C4",
+  "lectura_v17": "asociación",
+  "fecha_dato": "2026-10-19",
+  "ficha": "output/v17/auditoria/filas/topes.md",
+  "nota": "a posteriori; 4 de 24 con p < 0,05; 4 tras BH en la familia; negativas: 1 de 24"
+ },
+ {
+  "id": "V17-AUD-RA-TOP-INC-RENTA-RANGO",
+  "indicador": "Ley 11/2020, renta media de los contratos nuevos: rango de las 8 especificaciones (4 controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "%",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "Cataluña, municipios",
+  "fuentes": [
+   "Incasòl; elaboración propia"
+  ],
+  "capa": "C4",
+  "lectura_v17": "asociación",
+  "fecha_dato": "2026-10-19",
+  "ficha": "output/v17/auditoria/filas/topes.md",
+  "nota": "a posteriori; 0 de 8 con p BH < 0,05; la renta media mezcla precio y composición"
+ },
+ {
   "id": "V17-AUD-RA-TUR-BCN-TRASLACION",
   "indicador": "Traslación orientativa a alquiler del freno a los anuncios en Barcelona: anuncios evitados según el contrafactual de Gyódi et al. (2025) repartidos por igual entre las 220 áreas de García-López et al. (2020) y multiplicados por su efecto por anuncio (valor: reparto uniforme; min: solo la mitad de los anuncios evitados vuelve al alquiler residencial; max: los anuncios evitados se concentran en la mitad de las áreas)",
   "valor": 1.4874,
@@ -2104,7 +2518,7 @@
   "lectura_v17": "juicio experto",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/turistica_regulacion.md",
-  "nota": "a posteriori; combina un contrafactual descriptivo de anuncios con una elasticidad de 2007-2017; supone linealidad y que cada anuncio evitado es una vivienda residencial; no es una evaluación de la norma"
+  "nota": "a posteriori; JUICIO EXPERTO SIN ESTIMACIÓN: combina un contrafactual descriptivo de anuncios con una elasticidad de 2007-2017; supone linealidad y que cada anuncio evitado es una vivienda residencial; no es una evaluación de la norma"
  },
  {
   "id": "V17-AUD-RA-TUR-Q2A",
@@ -2125,11 +2539,29 @@
   "nota": "a posteriori; p = 0.0004; tamaño real 0.142 (cerca del límite del 15 %); mide densidad, no regulación; depende de controles y fecha de exposición"
  },
  {
-  "id": "V17-AUD-RA-AYU-RETIENE-MEDIANA",
-  "indicador": "Parte de la ayuda al alquiler que retiene el beneficiario (1 - traslación), mediana entre 7 estudios con diseño (valor: mediana; min/max: estudio con más y con menos traslación)",
-  "valor": 54.0,
-  "min": 22.0,
-  "max": 96.4,
+  "id": "V17-AUD-RA-TUR-CUOTA-STOCK",
+  "indicador": "Viviendas turísticas (stock, INE VUT) sobre alquiler habitual (Censo 2021) + turísticas: mismo numerador que el Banco de España (valor: agosto de 2024 con el Censo; min/max: otras fechas y stock ECV × ECP)",
+  "valor": 11.9262,
+  "min": 9.1767,
+  "max": 11.9262,
+  "unidad": "% de (alquiler habitual + turísticas)",
+  "periodo": "2024M08 (y 2026M05)",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v3/PB/tablas/b1_nacional_sensibilidad.csv (INE VUT experimental; Censo 2021; ECV 2021 × ECP)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "fecha_dato": "2026-10-19",
+  "ficha": "output/v17/auditoria/filas/turistica_regulacion.md",
+  "nota": "a posteriori; la cota C2 publicada (B4-v3-vut-cantidad = 2.746 %) es el AUMENTO de viviendas turísticas 2020M08-2024M08 (81771) sobre el alquiler, no el stock; el Banco de España (IA2025, p. 150) da «cerca del 10 %» con su propio numerador (unas 355.000 en 2025)"
+ },
+ {
+  "id": "V17-AUD-RA-AYU-TRASLACION-MEDIANA",
+  "indicador": "Traslación al alquiler de las ayudas a perceptores (θ), mediana de siete estudios con diseño, un valor por estudio (valor: mediana; min/max: Eerola et al. 2026 y Fack 2006)",
+  "valor": 46.0,
+  "min": 3.6,
+  "max": 78.0,
   "unidad": "% de la ayuda",
   "periodo": "1984-2020",
   "cobertura": "Francia, Reino Unido, EE. UU., Finlandia, Nueva Zelanda",
@@ -2140,25 +2572,61 @@
   "lectura_v17": "juicio experto",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/ayudas_demanda.md",
-  "nota": "a posteriori; estudios con diseño distinto y no independientes entre países; Collinson y Ganong incluyen algo de calidad; Fack (2005) DDD supera 1 con error grande"
+  "nota": "a posteriori; id citado en ERRATA.md (P1); la tabla completa y las sensibilidades están en la ficha; θ < 1 contrastado solo donde hay e.e."
  },
  {
-  "id": "V17-AUD-RA-AYU-BONO-RETIENE",
-  "indicador": "Euros al mes del Bono Alquiler Joven (250) que retendría el beneficiario con las traslaciones de la literatura (valor: mediana de los estudios; min: Fack 2006, 78 %; max: Eerola et al. 2026, 3,6 %)",
-  "valor": 135.0,
-  "min": 55.0,
-  "max": 241.0,
-  "unidad": "euros al mes",
-  "periodo": "escenario",
-  "cobertura": "España (sin evaluación propia)",
+  "id": "V17-AUD-RA-AYU-RETIENE-MEDIANA",
+  "indicador": "Parte de la ayuda al alquiler que retiene el perceptor (1 - θ), mediana de los mismos siete estudios (valor: mediana; min/max: Fack 2006 y Eerola et al. 2026)",
+  "valor": 54.0,
+  "min": 22.0,
+  "max": 96.4,
+  "unidad": "% de la ayuda",
+  "periodo": "1984-2020",
+  "cobertura": "ídem",
   "fuentes": [
-   "RD 42/2022 (250 euros); traslaciones de la literatura"
+   "ídem"
   ],
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/ayudas_demanda.md",
-  "nota": "a posteriori; traslado mecánico de magnitudes de otros países; no es una estimación sobre España"
+  "nota": "a posteriori; identidad coste neto = renta - ayuda: vale a calidad constante y mientras dure la ayuda"
+ },
+ {
+  "id": "V17-AUD-RA-AYU-TRASLACION-SENS",
+  "indicador": "Traslación mediana con otras composiciones (valor: ocho estudios con la θ implícita de Grislain-Letrémy y Trevien; min/max: extremos de las sensibilidades de la ficha)",
+  "valor": 54.6667,
+  "min": 41.0,
+  "max": 65.0,
+  "unidad": "% de la ayuda",
+  "periodo": "1984-2020",
+  "cobertura": "ídem",
+  "fuentes": [
+   "ídem; docs/v17/referencias/no_beneficiarios.md"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "fecha_dato": "2026-10-19",
+  "ficha": "output/v17/auditoria/filas/ayudas_demanda.md",
+  "nota": "a posteriori; ocho_con_GLT = 54.7 %; sin_CollinsonGanong = 49.7 %; sin_GibbonsManning = 41.0 %; ocho_sin_CollinsonGanong = 63.3 %; aumentos = 65.0 %; corto_plazo = 49.7 %; medio_largo = 55.5 %"
+ },
+ {
+  "id": "V17-AUD-RA-AYU-BONO-DURACION",
+  "indicador": "Ganancia neta del perceptor del Bono Alquiler Joven en todo el contrato si la subida θ·250 se mantiene los 60 meses de la LAU y la ayuda solo dura 24 (valor: θ = mediana de siete estudios; min/max: θ de Fack 2006 y de Eerola et al. 2026)",
+  "valor": -900.0,
+  "min": -5700.0,
+  "max": 5460.0,
+  "unidad": "euros por contrato",
+  "periodo": "escenario",
+  "cobertura": "España (sin evaluación propia)",
+  "fuentes": [
+   "RD 42/2022, arts. 11-12; Ley 29/1994, art. 9; θ de la literatura"
+  ],
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "fecha_dato": "2026-10-19",
+  "ficha": "output/v17/auditoria/filas/ayudas_demanda.md",
+  "nota": "a posteriori; umbral: la ganancia es negativa si θ > 0.40; con traslación limitada al periodo de la ayuda la ganancia es 250·(1-θ)·24"
  },
  {
   "id": "V17-AUD-RA-AYU-Q7",
@@ -2177,24 +2645,6 @@
   "fecha_dato": "2026-10-19",
   "ficha": "output/v17/auditoria/filas/ayudas_demanda.md",
   "nota": "a posteriori; p = 0.0743; distorsión sin medir; placebos de edad del mismo orden (V16-Q7-4)"
- },
- {
-  "id": "V17-AUD-RA-AYU-TRASLACION-MEDIANA",
-  "indicador": "Traslación de las ayudas al alquiler a la renta (θ), mediana de 7 estudios con diseño, ninguno español; min y max = extremos entre estudios (Eerola et al. 2026 y Fack 2006)",
-  "valor": 46.0,
-  "min": 3.6,
-  "max": 78.0,
-  "unidad": "% de la ayuda",
-  "periodo": "estudios publicados 2002-2026",
-  "cobertura": "Francia, Reino Unido, EE. UU., Finlandia y Nueva Zelanda",
-  "fuentes": [
-   "docs/v16/literatura/L5_ayudas_demanda_efectos.csv; Fack (2006) y Gibbons y Manning (2006), resúmenes"
-  ],
-  "capa": "C4",
-  "lectura_v17": "juicio experto",
-  "fecha_dato": "2026-10-19",
-  "ficha": "output/v17/auditoria/filas/ayudas_demanda.md",
-  "nota": "a posteriori; derivada de V17-AUD-RA-AYU-RETIENE-MEDIANA (θ = 100 − retiene)"
  },
  {
   "id": "V17-DOC-BDE-GT-ALQUILER-2024",

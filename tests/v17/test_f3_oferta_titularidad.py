@@ -45,6 +45,15 @@ def test_vacancia_decrece_con_tamano(hechos):
     assert t == sorted(t, reverse=True)
 
 
+def test_ronda1(hechos):
+    assert hechos["V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026"]["valor"] > 1          # tramo nacional por NIF
+    assert abs(hechos["V17-AUD-OT-PUB-UE-MEDIA-SIMPLE"]["valor"] - 7.99) < 0.01           # media simple de la OCDE
+    c = hechos["V17-AUD-OT-COTA-GT-ALQUILER-PRIVADOS"]
+    assert c["min"] <= c["max"] <= hechos["V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA"]["max"]
+    s = hechos["V17-AUD-OT-SUELO-BARCELONA-RATIO"]
+    assert s["min"] < s["valor"] < s["max"] < 1
+
+
 def test_script_sin_red_ni_sellado():
     src = SCRIPT.read_text(encoding="utf-8")
     src = src.split('"""', 2)[2]           # sin la cadena de documentación

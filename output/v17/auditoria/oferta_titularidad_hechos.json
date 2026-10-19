@@ -126,9 +126,79 @@
   "nota": "a posteriori; supuestos: particulares = 90 % del alquiler; cota inferior = ninguna persona jurídica es gran tenedor; cota superior = todas lo son; con particulares = 85 %: 2.0-17.0 %"
  },
  {
+  "id": "V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026",
+  "indicador": "Viviendas de titulares con más de 10 inmuebles: fichero nacional frente a suma de los ficheros provinciales",
+  "valor": 1.084,
+  "min": null,
+  "max": null,
+  "unidad": "cociente",
+  "periodo": "2026",
+  "fuentes": "Catastro, estadística de titularidad (data/raw/v11/catastro_titularidad/p_spi_total_v*.csv.gz)",
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; nacional 1,013,400; suma provincial 934,842; un cociente > 1 indica que el tramo del fichero total se cuenta por NIF en todo el territorio común y el provincial dentro de cada provincia"
+ },
+ {
+  "id": "V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA",
+  "indicador": "Cota de los titulares con más de 10 viviendas en el alquiler habitual con la vivienda pública como suelo explícito",
+  "valor": null,
+  "min": 10.1848,
+  "max": 12.16,
+  "unidad": "% del alquiler habitual",
+  "periodo": "2021-2024",
+  "fuentes": "BdE IA 2025 cuadro 2.11; INE Censo 2021 (hogares en alquiler); Catastro; OCDE PH4.2; MIVAU 2024",
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; denominador: 2,983,619 hogares en alquiler (Censo 2021); vivienda pública = 8.0-10.7 % del alquiler; particulares = 90 %; con 85-95 %: 7.3-17.0 %; universos no idénticos (AEAT frente a Censo)"
+ },
+ {
+  "id": "V17-AUD-OT-COTA-GT-ALQUILER-PRIVADOS",
+  "indicador": "Cota de los titulares PRIVADOS (personas físicas y jurídicas) con más de 10 viviendas en el alquiler habitual",
+  "valor": null,
+  "min": 2.16,
+  "max": 4.1352,
+  "unidad": "% del alquiler habitual",
+  "periodo": "2021-2024",
+  "fuentes": "ídem",
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; particulares = 90 %; con 85-95 %: 2.0-9.0 %; con MIVAU la vivienda pública agota el 10 % no particular, señal de que los universos no casan"
+ },
+ {
+  "id": "V17-AUD-OT-BDE-MULTIARRENDADORES-2024",
+  "indicador": "Viviendas alquiladas por personas físicas con 2 o más viviendas (suma de tramos del BdE)",
+  "valor": 49.3,
+  "min": null,
+  "max": null,
+  "unidad": "% de las viviendas alquiladas por personas físicas",
+  "periodo": "2024",
+  "fuentes": "BdE IA 2025 cuadro 2.11 (AEAT)",
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; el informe 1 del Ministerio de Derechos Sociales con IFS-CSIC da 52,8 % (2023, Panel de Hogares): fuente, año y universo distintos"
+ },
+ {
+  "id": "V17-AUD-OT-OHB-BCN-GT-SIN-ADMINISTRACIONES",
+  "indicador": "Barcelona ciudad: grandes tenedores sin administraciones públicas sobre el alquiler habitual estimado",
+  "valor": 31.66,
+  "min": null,
+  "max": null,
+  "unidad": "% del alquiler habitual",
+  "periodo": "1-1-2021",
+  "fuentes": "O-HB (2022), figuras 3 y 5 (36,1 % menos 4,44 % de administraciones)",
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/grandes_tenedores.md",
+  "nota": "a posteriori; solo Barcelona ciudad; las administraciones son el 12,3 % de las viviendas de alquiler de grandes tenedores"
+ },
+ {
   "id": "V17-AUD-OT-VAC-TASA-T1",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con <2.000 viviendas",
-  "valor": 23.4251,
+  "valor": 23.4186,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -137,12 +207,12 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 1089 municipios; 10.9 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios"
+  "nota": "a posteriori; 1088 municipios; 12.9 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»"
  },
  {
   "id": "V17-AUD-OT-VAC-TASA-T2",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con 2.000-10.000 viviendas",
-  "valor": 18.5076,
+  "valor": 18.4218,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -151,12 +221,12 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 1106 municipios; 29.1 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios"
+  "nota": "a posteriori; 1102 municipios; 34.0 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»"
  },
  {
   "id": "V17-AUD-OT-VAC-TASA-T3",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con 10.000-50.000 viviendas",
-  "valor": 14.4353,
+  "valor": 12.6905,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -165,12 +235,12 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 319 municipios; 31.5 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios"
+  "nota": "a posteriori; 297 municipios; 29.5 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»"
  },
  {
   "id": "V17-AUD-OT-VAC-TASA-T4",
   "indicador": "Tasa de vacancia por consumo eléctrico, municipios con >50.000 viviendas",
-  "valor": 12.5535,
+  "valor": 9.9614,
   "min": null,
   "max": null,
   "unidad": "% de las viviendas",
@@ -179,7 +249,7 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; 60 municipios; 28.4 % de las vacías de la muestra; sin provincias selladas v6; la tabla solo cubre 2574 municipios"
+  "nota": "a posteriori; 50 municipios; 23.6 % de las vacías de la muestra; sin provincias selladas v6; la tabla lista 2537 municipios y agrupa el resto en filas «Resto de provincia»"
  },
  {
   "id": "V17-AUD-OT-VAC-6PROV-VACIAS",
@@ -211,7 +281,7 @@
  },
  {
   "id": "V17-AUD-OT-VAC-SEGU-ILUSTRACION-6PROV",
-  "indicador": "Ilustración: viviendas que pasarían a uso con la reducción relativa de Segú (2020) aplicada a las vacías de las 6 provincias",
+  "indicador": "Escenario: viviendas que pasarían a uso con la reducción relativa de Segú (2020) aplicada a las vacías de las 6 provincias",
   "valor": 118173.64,
   "min": 21061.3,
   "max": null,
@@ -221,7 +291,63 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/vacias.md",
-  "nota": "a posteriori; equivale al 43 % del déficit de esas provincias (solo capitales: 8 %); min = solo capitales; validez externa no comprobada; supone que las vacías por consumo son vacancia gravable; no es un efecto en precio"
+  "nota": "a posteriori; equivale al 43 % del déficit de esas provincias, mismo ámbito provincial (solo capitales: 8 %); min = solo capitales; validez externa no comprobada; supone que las vacías por consumo son vacancia gravable; no es un efecto en precio ni el parque útil"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-COBERTURA",
+  "indicador": "Vacías por consumo en provincias sin muestra sellada v6 (total provincial, incluidos municipios fuera de la tabla municipal)",
+  "valor": 2932346.0,
+  "min": null,
+  "max": 3828307.0,
+  "unidad": "viviendas",
+  "periodo": "2021",
+  "fuentes": "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021)",
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; max = total nacional; municipios no listados en la tabla: 441,344 vacías (15.1 %), tasa 32.6 %"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-CUOTA-MUN-PEQUENOS",
+  "indicador": "Cuota de las vacías en municipios de menos de 10.000 viviendas o no listados (pequeños), sobre el total provincial no sellado",
+  "valor": 54.8411,
+  "min": 39.7902,
+  "max": null,
+  "unidad": "% de las vacías",
+  "periodo": "2021",
+  "fuentes": "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021)",
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; min = solo municipios listados de menos de 10.000 viviendas; en municipios de más de 50.000 viviendas: 20.1 %"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-PRESION-SPEARMAN",
+  "indicador": "Correlación de rangos entre la tasa de vacancia provincial y el déficit 2021-2025 por vivienda (presión)",
+  "valor": -0.3564,
+  "min": null,
+  "max": null,
+  "unidad": "rho de Spearman",
+  "periodo": "2021 y 2021-2025",
+  "fuentes": "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021); output/v17/d3/deficit_provincial_concentracion.csv",
+  "capa": "C4",
+  "lectura_v17": "asociación",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; 41 provincias sin muestra sellada v6; descriptivo"
+ },
+ {
+  "id": "V17-AUD-OT-VAC-TASA-TERCIL-PRESION-ALTA",
+  "indicador": "Tasa de vacancia en el tercil de provincias con más déficit por vivienda",
+  "valor": 13.4715,
+  "min": 22.27,
+  "max": null,
+  "unidad": "% de las viviendas",
+  "periodo": "2021",
+  "fuentes": "INE, Censo 2021, tabla 59531 (viviendas vacías por consumo eléctrico; data/raw/v11/ine_censo2021)",
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vacias.md",
+  "nota": "a posteriori; min = tercil de menos presión; el tercil alto reúne el 45 % de las vacías y el 73 % del déficit; vacías/déficit: alto 3.7, bajo 24.8"
  },
  {
   "id": "V17-AUD-OT-ITP-Q6-p-MDE80",
@@ -252,18 +378,32 @@
   "nota": "a posteriori; IC95 convencional [-0.015; 0.065], p = 0.218, tamaño real 7.8 %; referencia de la literatura -0.07 por punto; incidencia plena en el vendedor = −0,01 por punto"
  },
  {
-  "id": "V17-AUD-OT-PUB-BRECHA-UE",
-  "indicador": "Viviendas sociales de alquiler adicionales para pasar del 1,13 % de España al 7,99 % de la UE (parque constante)",
-  "valor": 1760530.9735,
+  "id": "V17-AUD-OT-PUB-UE-MEDIA-SIMPLE",
+  "indicador": "Media simple del parque social de los países UE-27 presentes en la figura PH4.2.1 de la OCDE",
+  "valor": 7.9901,
   "min": null,
   "max": null,
+  "unidad": "% del parque",
+  "periodo": "2022 o último",
+  "fuentes": "OCDE AHD PH4.2 (data/raw/v17/parque_social)",
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "ficha": "output/v17/auditoria/filas/vivienda_publica.md",
+  "nota": "a posteriori; 19 países con dato, años de referencia distintos; coincide con el agregado UE de la OCDE (7,99 %): es una media simple de países, no ponderada por parque (el fichero no declara el método; se deduce de la coincidencia)"
+ },
+ {
+  "id": "V17-AUD-OT-PUB-BRECHA-UE",
+  "indicador": "Viviendas sociales de alquiler adicionales para pasar del parque social español al 7,99 % de la UE (parque constante)",
+  "valor": 1760530.9735,
+  "min": 1609115.0442,
+  "max": 1760530.9735,
   "unidad": "viviendas",
   "periodo": "2019 (España) y 2022 o último (UE)",
-  "fuentes": "OCDE AHD PH4.2 (24-11-2025); MIVAU calificaciones definitivas (data/raw/mivau_v2_protegida.csv); V17-D3-PROD-ACTUAL",
+  "fuentes": "OCDE AHD PH4.2 (24-11-2025); MIVAU calificaciones definitivas (data/raw/mivau_v2_protegida.csv); V17-D3-PROD-ACTUAL; MIVAU Boletín Especial 2024",
   "capa": "C4",
   "lectura_v17": "cota",
   "ficha": "output/v17/auditoria/filas/vivienda_publica.md",
-  "nota": "a posteriori; parque implícito OCDE 25,663,717; años de toda la producción actual: 21"
+  "nota": "a posteriori; max = desde 1,13 % (OCDE 2019), min = desde 1,72 % (MIVAU 2023, sobre hogares, aplicado al mismo parque); parque implícito OCDE 25,663,717; años de toda la producción actual: 19-21"
  },
  {
   "id": "V17-AUD-OT-PUB-CALIF-MEDIA-2021-2025",
@@ -309,7 +449,7 @@
  },
  {
   "id": "V17-AUD-OT-OFERTA-MENSE-ILUSTRACION",
-  "indicador": "Ilustración: variación del alquiler medio si se cerrase el déficit con la elasticidad de corto plazo de Mense (2025)",
+  "indicador": "Ilustración: variación del alquiler medio si se cerrase el déficit central, con la elasticidad local de corto plazo de Mense (2025)",
   "valor": -0.5037,
   "min": -0.6337,
   "max": -0.3737,
@@ -319,7 +459,7 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
-  "nota": "a posteriori; nacional y estático; Mense estima respuestas locales de corto plazo en ciudades alemanas; validez externa no comprobada; con la elasticidad local de Li (2022, NO VERIFICADA) sería -0.27 %"
+  "nota": "a posteriori; min y max = déficit máximo y mínimo; Mense estima respuestas locales de corto plazo en ciudades alemanas, no una elasticidad agregada de largo plazo (no se ha localizado una verificada); validez externa no comprobada"
  },
  {
   "id": "V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71",
@@ -336,10 +476,24 @@
   "nota": "a posteriori; parque de la CCAA mediana 1,075,076; vacías -1.88; vivienda pública -3.41; Mense (2025) -0.19: el escenario es 3.9 veces mayor"
  },
  {
-  "id": "V17-AUD-OT-OFERTA-EMPLEO-PROPORCIONAL-BOOM",
-  "indicador": "Ocupados en construcción proporcionales a la producción necesaria a 5 años, con la relación ocupados/terminadas de 2007",
-  "valor": 1395.8198,
-  "min": null,
+  "id": "V17-AUD-OT-OFERTA-ILUSTRACION-RANGO",
+  "indicador": "Ilustración: variación del alquiler medio al cerrar el déficit central, entre la elasticidad local de Mense y la implícita en el escenario V7.1",
+  "valor": -0.5037,
+  "min": -1.9838,
+  "max": -0.5037,
+  "unidad": "% del alquiler medio",
+  "periodo": "orden de magnitud",
+  "fuentes": "Mense (2025); output/v5/cifras_clave.csv (V71-S1-a)",
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; no hay referencia agregada verificada que permita decir cuál de las dos es más realista; ninguna es un efecto estimado para España"
+ },
+ {
+  "id": "V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO",
+  "indicador": "Ocupados adicionales en construcción para pasar de la producción actual a la necesaria a 5 años (central), con la relación ocupados/terminadas de 2007",
+  "valor": 979.0206,
+  "min": 940.314,
   "max": null,
   "unidad": "miles de ocupados",
   "periodo": "2007 y 2026-2030",
@@ -347,6 +501,90 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/mas_oferta.md",
-  "nota": "a posteriori; frente a 1,498 miles hoy; producción necesaria = x3.5 la actual; la rama F incluye obra civil y rehabilitación, por lo que «terminadas por ocupado» no es productividad residencial"
+  "nota": "a posteriori; min = con 92.000 terminadas (BdE); total resultante 2,477 miles frente a 1,498 hoy y al máximo de 2,703 en 2007; supone que el empleo actual sigue ocupado en lo que hace hoy"
+ },
+ {
+  "id": "V17-AUD-OT-OFERTA-SENSIBILIDAD-5A",
+  "indicador": "Producción necesaria a 5 años (déficit central) frente a la actual: rango de sensibilidad",
+  "valor": null,
+  "min": 2.808,
+  "max": 4.3803,
+  "unidad": "veces la producción actual",
+  "periodo": "2026-2030",
+  "fuentes": "V17-D3; BdE IA 2025 (92.000 terminadas)",
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; reposición 6.864/año o 0,1-0,3 % del parque; absorción de 0, 10 o 25 % del déficit por vacías y secundarias; producción actual 83.700 o 92.000; necesaria 258,334-366,630 viviendas/año"
+ },
+ {
+  "id": "V17-AUD-OT-OFERTA-SENSIBILIDAD-10A",
+  "indicador": "Ídem a 10 años",
+  "valor": null,
+  "min": 2.2326,
+  "max": 3.537,
+  "unidad": "veces la producción actual",
+  "periodo": "2026-2035",
+  "fuentes": "ídem",
+  "capa": "C4",
+  "lectura_v17": "juicio experto",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; necesaria 205,400-296,052 viviendas/año"
+ },
+ {
+  "id": "V17-AUD-OT-SUELO-BARCELONA-RATIO",
+  "indicador": "Potencial del área de Barcelona (BdE) sobre la necesidad provincial a 10 años",
+  "valor": 0.3888,
+  "min": 0.2867,
+  "max": 0.512,
+  "unidad": "cociente",
+  "periodo": "2025 y 2026-2035",
+  "fuentes": "BdE IA 2025; output/v17/d3/suelo_potencial_bde_vs_necesidad.csv",
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; área ≠ provincia; min y max con la necesidad máxima y mínima"
+ },
+ {
+  "id": "V17-AUD-OT-SUELO-SEVILLA-RATIO",
+  "indicador": "Potencial del área de Sevilla (BdE) sobre la necesidad provincial a 10 años",
+  "valor": 2.6281,
+  "min": 1.7484,
+  "max": 92.7718,
+  "unidad": "cociente",
+  "periodo": "2025 y 2026-2035",
+  "fuentes": "ídem",
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "ficha": "output/v17/auditoria/filas/mas_oferta.md",
+  "nota": "a posteriori; área ≠ provincia; la necesidad mínima (1.757) hace el máximo inestable; no se usa como conclusión"
+ },
+ {
+  "id": "V17-AUD-OT-D32-IPV-CCAA-SIN-SELLADAS",
+  "indicador": "Cuota común (año) de la varianza de la variación anual del IPV, 9 CCAA sin bloques sellados v6, 2015-2025",
+  "valor": 81.0569,
+  "min": 70.165,
+  "max": 92.9,
+  "unidad": "% (IC95 bootstrap por CCAA)",
+  "periodo": "2015-2025",
+  "fuentes": "INE IPV por CCAA (data/base/hechos.parquet)",
+  "capa": "C4",
+  "lectura_v17": "hecho",
+  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "nota": "a posteriori; V17-D3 usó las 17 CCAA, incluidas 8 de bloques sellados v6 (Madrid y otras uniprovinciales); efecto fijo 8 %, local 11 %; 2020-2025: 92 %; hasta 2024: 63 %"
+ },
+ {
+  "id": "V17-AUD-OT-D32-SERPAVI-REAL-2015-2024",
+  "indicador": "Variación acumulada 2015-2024 del alquiler SERPAVI (mediana provincial), deflactada por el deflactor del consumo de la CNT",
+  "valor": 7.6393,
+  "min": -0.9189,
+  "max": 25.1699,
+  "unidad": "% real",
+  "periodo": "2015-2024",
+  "fuentes": "MIVAU SERPAVI; INE CNT (data/base/hechos.parquet)",
+  "capa": "C4",
+  "lectura_v17": "hecho",
+  "ficha": "output/v17/auditoria/filas/D3-2.md",
+  "nota": "a posteriori; 38 provincias sin muestra sellada v6; nominal mediana 33 %; deflactor +24.0 %; provincias con caída real: 1; frente a la renta disponible agregada de los hogares (+46 %): mediana -8.8 %, 35 provincias por debajo"
  }
 ]

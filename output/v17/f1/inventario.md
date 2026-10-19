@@ -31,4 +31,4 @@ Análisis a posteriori (V17). Generado por src/v17/f1_inventario.py. «cubierta�
 | Oferta y capacidad | Empleo en la construcción (EPA por rama) | cubierta | sí | data/raw/ine_epa_ocupados.csv; data/raw/eurostat_empleo_nuts2.csv; data/raw/v17/oferta_capacidad |  |
 | Oferta y capacidad | Costes de la construcción (INE ICC, Eurostat) | cubierta | sí | data/raw/eurostat_costes.csv; data/raw/v17/oferta_capacidad |  |
 | Oferta y capacidad | Plazos de licencias | cubierta | sí | data/raw/v17/oferta_capacidad |  |
-| Oferta y capacidad | Viviendas previstas en grandes áreas (Banco de España) | falta | no | - | cifra de documento, no serie |
+| Oferta y capacidad | Viviendas previstas en grandes áreas (Banco de España) | cubierta | sí | docs/v17/referencias/bde_informes.md | cifra de documento, no serie |

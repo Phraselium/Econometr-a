@@ -1,0 +1,343 @@
+{
+  "nota": "a posteriori",
+  "consulta": "2026-10-19",
+  "estado_referencias": "NO VERIFICADA",
+  "documentos": [
+    {
+      "id_doc": "BDE-DO2432",
+      "tema": "alquiler; turismo local; esfuerzo; demografia",
+      "titulo": "El mercado del alquiler de vivienda residencial en España: evolución reciente, determinantes e indicadores de esfuerzo",
+      "autores": "Dmitry Khametshin; David López Rodríguez; Luis Pérez García",
+      "serie": "Banco de España, Documentos Ocasionales n.º 2432",
+      "fecha": "2024-10",
+      "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/24/Fich/do2432.pdf",
+      "doi": "10.53479/37872",
+      "consulta": "2026-10-19",
+      "lectura": "parcial: págs. 1-12, 16-19, 23-26, 39-42, 48-49, 57-60",
+      "metodo": "Descriptivo (hechos estilizados), sin identificación causal. Datos: microdatos tributarios AEAT (Sistema estatal de referencia del precio del alquiler, personas físicas, territorio fiscal común), IPC e IPVA INE, ECV y EU-SILC, Padrón/ECP, Estadística experimental de viviendas turísticas INE (feb. 2024), Censo 2021.",
+      "cifras": [
+        {"nombre": "Precio medio del alquiler por m2, variación acumulada nominal", "valor": 28.5, "unidad": "% acumulado", "periodo": "2015-2022", "ubicacion": "pág. 18 y gráfico 6"},
+        {"nombre": "Precio medio del alquiler por m2, variación acumulada real", "valor": 10.8, "unidad": "% acumulado", "periodo": "2015-2022", "ubicacion": "pág. 18"},
+        {"nombre": "Precio medio del alquiler por m2, variación 2011-2014", "valor": -7.5, "unidad": "% acumulado", "periodo": "2011-2014", "ubicacion": "pág. 18"},
+        {"nombre": "Subcomponente alquiler del IPC, variación acumulada", "valor": 6.4, "unidad": "% acumulado", "periodo": "2015-2022", "ubicacion": "pág. 18 (IPC general: 16 %)"},
+        {"nombre": "Nuevos contratos, incremento interanual medio (ejercicio con 30-40 % de contratos nuevos)", "valor": "7.5 a 10", "unidad": "% interanual", "periodo": "2015-2022", "ubicacion": "págs. 18-19"},
+        {"nombre": "Esfuerzo mediano en alquiler (hogares en alquiler de mercado)", "valor": 22.7, "unidad": "% de la renta bruta", "periodo": "2022", "ubicacion": "pág. 39 (unos 7 pp sobre la UE-27)"},
+        {"nombre": "Esfuerzo mediano en alquiler, primer quintil de renta", "valor": 43.1, "unidad": "% de la renta bruta", "periodo": "2022", "ubicacion": "pág. 39 (UE-27: 31,9 %)"},
+        {"nombre": "Hogares arrendatarios con gasto en vivienda superior al 40 % de la renta", "valor": "cercana a 40", "unidad": "% de hogares arrendatarios", "periodo": "promedio 2015-2023", "ubicacion": "pág. 40 (UE-27: 27 %)"},
+        {"nombre": "Población en alquiler en riesgo de pobreza o exclusión", "valor": "alrededor de 45", "unidad": "% de la población en alquiler de mercado", "periodo": "promedio 2015-2023", "ubicacion": "pág. 42 (unos 13 pp sobre la UE-27)"},
+        {"nombre": "Contribución de nacidos en España al crecimiento de la población", "valor": -1.4, "unidad": "% acumulado", "periodo": "2014-2022", "ubicacion": "pág. 23 y gráfico 8.a"},
+        {"nombre": "Contribución de residentes de origen extranjero al crecimiento de la población", "valor": 4.5, "unidad": "% acumulado", "periodo": "2014-2022", "ubicacion": "pág. 23 y gráfico 8.a"},
+        {"nombre": "Crecimiento acumulado de la población", "valor": 3.1, "unidad": "%", "periodo": "2014-2022", "ubicacion": "pág. 24"},
+        {"nombre": "Viviendas turísticas sobre viviendas principales en alquiler, media de secciones censales", "valor": 11.1, "unidad": "%", "periodo": "feb. 2024 sobre Censo 2021", "ubicacion": "cuadro A.3, pág. 57, fila Total España"},
+        {"nombre": "Viviendas turísticas sobre viviendas principales en alquiler, mediana de secciones", "valor": 2.3, "unidad": "%", "periodo": "feb. 2024 sobre Censo 2021", "ubicacion": "cuadro A.3, pág. 57"},
+        {"nombre": "Viviendas turísticas sobre viviendas principales en alquiler, percentil 80 de secciones", "valor": 11.6, "unidad": "%", "periodo": "feb. 2024 sobre Censo 2021", "ubicacion": "cuadro A.3, pág. 57"},
+        {"nombre": "Viviendas turísticas sobre viviendas principales en alquiler, total municipal (fila Total España)", "valor": 11.8, "unidad": "%", "periodo": "feb. 2024 sobre Censo 2021", "ubicacion": "cuadro A.3, pág. 57 (universo de la fila no aclarado en lo leído)"},
+        {"nombre": "Viviendas turísticas sobre viviendas principales (propiedad y alquiler), total municipal", "valor": 1.9, "unidad": "%", "periodo": "feb. 2024", "ubicacion": "cuadro A.4, pág. 57 (mediana 0,3; percentil 80: 1,6)"}
+      ]
+    },
+    {
+      "id_doc": "BDE-DO2433",
+      "tema": "deficit y oferta; precios; credito; compradores no residentes; inmigracion (contabilidad); tipos (descriptivo)",
+      "titulo": "El mercado de la vivienda residencial en España: evolución reciente y comparación internacional",
+      "autores": "Andrés Lajer Baron; David López Rodríguez; Lucio San Juan",
+      "serie": "Banco de España, Documentos Ocasionales n.º 2433",
+      "fecha": "2024-10",
+      "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/24/Fich/do2433.pdf",
+      "doi": "10.53479/37873",
+      "consulta": "2026-10-19",
+      "lectura": "parcial: págs. 1-28 (secciones 1-3); no leída la sección 4 (págs. 29-41)",
+      "metodo": "Descriptivo con contabilidad de oferta y demanda (viviendas terminadas o iniciadas frente a creación neta de hogares, con proyecciones de hogares del INE de junio de 2024) y correlación del indicador de desajuste oferta-demanda con el precio. Datos: Ministerio de Transportes, INE, Notariado, Registradores, Banco de España. No identifica efectos causales; los autores piden cautela con las cuantificaciones del déficit.",
+      "cifras": [
+        {"nombre": "Creación neta de hogares acumulada", "valor": 545000, "unidad": "hogares", "periodo": "2022-2023", "ubicacion": "pág. 15"},
+        {"nombre": "Diferencial negativo entre producción de vivienda nueva y creación neta de hogares", "valor": 365000, "unidad": "viviendas", "periodo": "2022-2023", "ubicacion": "pág. 15"},
+        {"nombre": "Déficit adicional por demanda de no residentes (sin segunda residencia de residentes ni alquiler de no residentes)", "valor": 120000, "unidad": "viviendas", "periodo": "2022-2023", "ubicacion": "pág. 15"},
+        {"nombre": "Déficit adicional con proyección INE de junio de 2024 e iniciadas 2022-2023", "valor": "cercano a 500000", "unidad": "viviendas", "periodo": "2022-2025", "ubicacion": "pág. 15"},
+        {"nombre": "Peso de Madrid y Barcelona en el déficit acumulado estimado", "valor": "cerca de un tercio", "unidad": "% del total", "periodo": "2022-2025", "ubicacion": "pág. 16 y gráfico 6 (más del 50 % con València, Alicante y Málaga)"},
+        {"nombre": "Producción de vivienda nueva, mínimo", "valor": 45000, "unidad": "viviendas", "periodo": "2016", "ubicacion": "pág. 14"},
+        {"nombre": "Producción de vivienda nueva", "valor": "en torno a 90000 anuales", "unidad": "viviendas por año", "periodo": "desde 2021", "ubicacion": "págs. 14-15"},
+        {"nombre": "Saldos migratorios del exterior acumulados", "valor": "en torno a un millón y medio", "unidad": "personas", "periodo": "2022-2023", "ubicacion": "pág. 16"},
+        {"nombre": "Peso de la población de nacionalidad extranjera", "valor": "9.5 a 13.6", "unidad": "% de la población", "periodo": "2015 a 2T 2024", "ubicacion": "pág. 16"},
+        {"nombre": "Población nacida en el exterior", "valor": 18.5, "unidad": "% de la población", "periodo": "2T 2024 (provisional)", "ubicacion": "pág. 16"},
+        {"nombre": "Precio de la vivienda, variación nominal acumulada", "valor": 66, "unidad": "%", "periodo": "inicio 2014 a 2T 2024", "ubicacion": "pág. 13"},
+        {"nombre": "Precio real de la vivienda frente al máximo de 3T 2007", "valor": -25, "unidad": "%", "periodo": "2T 2024", "ubicacion": "pág. 13"},
+        {"nombre": "Precio real, revalorización acumulada", "valor": 34, "unidad": "%", "periodo": "última década hasta 2T 2024", "ubicacion": "pág. 13"},
+        {"nombre": "Precio real vivienda nueva frente a 2014", "valor": 57, "unidad": "%", "periodo": "2T 2024", "ubicacion": "pág. 14 (usada: 30,5 %)"},
+        {"nombre": "Adquisiciones de extranjeros, peso sobre compraventas", "valor": "en torno a 20 (máx. 21,1 sobre vivienda libre)", "unidad": "% de compraventas", "periodo": "desde 2013; máximo en 2023", "ubicacion": "pág. 11"},
+        {"nombre": "Adquisiciones anuales de extranjeros", "valor": 130000, "unidad": "viviendas por año (media)", "periodo": "2021-2023", "ubicacion": "pág. 11"},
+        {"nombre": "Precio medio por m2 de adquisiciones de extranjeros no residentes frente a nacionales residentes", "valor": "un 70 % mayor", "unidad": "%", "periodo": "2023", "ubicacion": "págs. 11-12 y gráfico 2.b"},
+        {"nombre": "Compras de no residentes concentradas en Comunitat Valenciana y Andalucía", "valor": "39.9 y 23.3", "unidad": "% de las compras de no residentes", "periodo": "2023", "ubicacion": "pág. 12"},
+        {"nombre": "Compras con hipoteca", "valor": "más de 50 (2021); menos de 45 (2023); 48 (jul. 2024)", "unidad": "% de compraventas", "periodo": "2021-2024", "ubicacion": "pág. 23 y gráfico 10.b"},
+        {"nombre": "Nuevo crédito para compra de vivienda", "valor": "4.8 (3T 2022); 3.8 (fin 2023); 17.7 (mediados de 2006)", "unidad": "% del PIB", "periodo": "2006-2023", "ubicacion": "págs. 23-24 y gráfico 11.a"},
+        {"nombre": "Ratio préstamo-precio medio de las hipotecas", "valor": "80 (desde 2014); 75 (2023)", "unidad": "%", "periodo": "2014-2023", "ubicacion": "pág. 25"},
+        {"nombre": "TAE sintético de nuevos préstamos para compra de vivienda", "valor": "1.5 (mínimo fin 2021); 4.8 (máximo 3T 2023)", "unidad": "% TAE", "periodo": "2021-2023", "ubicacion": "págs. 27-28"},
+        {"nombre": "Efecto de 100 pb de los tipos sobre precio o compraventas en España", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "el documento describe la contención pero no estima el efecto"}
+      ]
+    },
+    {
+      "id_doc": "BDE-IEF2025-2",
+      "tema": "sobrevaloracion; deficit; compradores no residentes; precios",
+      "titulo": "Informe de Estabilidad Financiera, otoño 2025, capítulo 4: Mercados y precios de los activos",
+      "autores": "Banco de España",
+      "serie": "Banco de España, Informe de Estabilidad Financiera, otoño 2025",
+      "fecha": "2025 (otoño; día exacto no confirmado)",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/25/IEF_2025_2_Cap4.pdf",
+      "doi": "sin DOI localizado",
+      "consulta": "2026-10-19",
+      "lectura": "parcial: págs. 93-96 del informe (inicio de 4.1.1)",
+      "metodo": "Descriptivo; batería de indicadores que relacionan precio con renta y tipos (rango entre métodos) e indicador sintético de riesgos. Datos: Banco de España, INE, Ministerio de Transportes.",
+      "cifras": [
+        {"nombre": "Compraventas acumuladas 12 meses", "valor": 745000, "unidad": "viviendas", "periodo": "junio 2025", "ubicacion": "pág. 93"},
+        {"nombre": "Precio nominal, crecimiento anual medio", "valor": 12.5, "unidad": "%", "periodo": "1S 2025 (2024: 8,4)", "ubicacion": "pág. 94"},
+        {"nombre": "Precio real interanual", "valor": 10.3, "unidad": "%", "periodo": "2T 2025", "ubicacion": "pág. 94 (17,7 % bajo el máximo de 3T 2007)"},
+        {"nombre": "Desviación del precio respecto a renta y tipos, rango entre métodos", "valor": "5.3 a 12.7", "unidad": "%", "periodo": "junio 2025", "ubicacion": "pág. 96 (fin de 2024: 3,0 a 9,4)"},
+        {"nombre": "Aumento de hogares residentes", "valor": 85000, "unidad": "hogares", "periodo": "1S 2025", "ubicacion": "pág. 95"},
+        {"nombre": "Adquisiciones brutas de no residentes", "valor": "más de 29000 (neto del stock unas 15000)", "unidad": "viviendas", "periodo": "1S 2025", "ubicacion": "pág. 95, nota 3"},
+        {"nombre": "Diferencial entre creación neta de hogares y vivienda nueva", "valor": 700000, "unidad": "viviendas", "periodo": "2021-2025", "ubicacion": "pág. 95, nota 5"}
+      ]
+    },
+    {
+      "id_doc": "BDE-IEF2026-1",
+      "tema": "sobrevaloracion; credito; compradores no residentes; precios; deficit",
+      "titulo": "Informe de Estabilidad Financiera, primavera 2026, capítulo 4: Mercados y precios de los activos",
+      "autores": "Banco de España",
+      "serie": "Banco de España, Informe de Estabilidad Financiera, primavera 2026",
+      "fecha": "2026-05 (según metadatos del PDF; día exacto no confirmado)",
+      "url": "https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/26/IEF_2026_1_Cap4.pdf",
+      "doi": "sin DOI localizado",
+      "consulta": "2026-10-19",
+      "lectura": "parcial: págs. 97-107 del informe (4.1.1 y parte de 4.1.2)",
+      "metodo": "Descriptivo; indicadores precio/renta y precio/tipos (rango entre métodos); indicador sintético de riesgos (Alves, Broto, Gil y Lamas, 2023); estándares de concesión con datos de Registradores y CIRBE.",
+      "cifras": [
+        {"nombre": "Compraventas de vivienda", "valor": 750000, "unidad": "viviendas", "periodo": "2025", "ubicacion": "pág. 97 (3,8 por cada 1000 hogares; cerca de 6 en 2006)"},
+        {"nombre": "Crecimiento de las compraventas", "valor": 5.1, "unidad": "%", "periodo": "2025 (2024: 12,1)", "ubicacion": "pág. 97"},
+        {"nombre": "Precio nominal, crecimiento anual medio", "valor": 12.7, "unidad": "%", "periodo": "2025 (2024: 8,4)", "ubicacion": "pág. 97"},
+        {"nombre": "Precio real, crecimiento interanual", "valor": 9.7, "unidad": "%", "periodo": "2025 (2024: 5,5)", "ubicacion": "págs. 97-98"},
+        {"nombre": "Nivel real frente al máximo de 3T 2007", "valor": -14.7, "unidad": "%", "periodo": "4T 2025", "ubicacion": "pág. 98"},
+        {"nombre": "Desviación del precio respecto a renta y tipos, rango entre métodos", "valor": "10 a 15", "unidad": "%", "periodo": "diciembre 2025", "ubicacion": "pág. 100 (similar a 2004; máximo promedio 24 % a finales de 2007)"},
+        {"nombre": "Indicador sintético de riesgos del mercado inmobiliario", "valor": "nivel similar al 3T 2002 (sin valor numérico en el texto)", "unidad": "índice 0-1", "periodo": "diciembre 2025", "ubicacion": "pág. 101, gráfico 4.3.b"},
+        {"nombre": "Creación neta de hogares", "valor": 225000, "unidad": "hogares", "periodo": "2025", "ubicacion": "pág. 99"},
+        {"nombre": "Adquisiciones brutas de no residentes", "valor": "55000 (neto del stock unas 30000)", "unidad": "viviendas", "periodo": "2025", "ubicacion": "pág. 99, nota 3"},
+        {"nombre": "Viviendas terminadas", "valor": 92000, "unidad": "viviendas", "periodo": "2025", "ubicacion": "pág. 99"},
+        {"nombre": "Nuevo crédito hipotecario a hogares, crecimiento interanual", "valor": 22.4, "unidad": "%", "periodo": "4T 2025 (2T 2025: 26,2)", "ubicacion": "pág. 101"},
+        {"nombre": "Saldo del crédito para compra de vivienda", "valor": 29.9, "unidad": "% del PIB", "periodo": "dic. 2025", "ubicacion": "pág. 102"},
+        {"nombre": "Ratio préstamo-precio medio; proporción de nueva producción con LTP superior a 80 %", "valor": "80.4; 43.8", "unidad": "%", "periodo": "fin 2025 (principios de 2024: 39,2 para el segundo)", "ubicacion": "pág. 103"},
+        {"nombre": "Ratio préstamo-valor medio; proporción con LTV superior a 80 %", "valor": "69.7; 15.6", "unidad": "%", "periodo": "fin 2025 (principios de 2024: 10,8 para el segundo)", "ubicacion": "pág. 104"},
+        {"nombre": "LSTI medio de nuevas hipotecas", "valor": 23.5, "unidad": "% de la renta", "periodo": "fin 2025", "ubicacion": "págs. 104-105"}
+      ]
+    },
+    {
+      "id_doc": "BDE-DO2314",
+      "tema": "sobrevaloracion; riesgo",
+      "titulo": "Indicadores de riesgos y vulnerabilidades en el mercado de la vivienda en España",
+      "autores": "Pana Alves; Carmen Broto; María Gil; Matías Lamas",
+      "serie": "Banco de España, Documentos Ocasionales n.º 2314",
+      "fecha": "2023-07 (ficha web: 2023-07-28)",
+      "url": "https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/23/Fich/do2314.pdf",
+      "doi": "10.53479/33154",
+      "consulta": "2026-10-19",
+      "lectura": "resumen (págs. 1-7 del PDF: portada, resumen, abstract, índice)",
+      "metodo": "Mapa de riesgos con indicadores individuales e indicador sintético acotado entre 0 y 1 (actividad real, valoración, condiciones crediticias, situación de los hogares).",
+      "cifras": [
+        {"nombre": "Valor del indicador sintético", "valor": "no encontrada", "unidad": "índice 0-1", "periodo": "2023", "ubicacion": "no figura en el resumen; solo se ve en gráficos de otros documentos"}
+      ]
+    },
+    {
+      "id_doc": "BDE-BE2023T2A09",
+      "tema": "deficit y oferta; precios",
+      "titulo": "El desajuste entre la oferta y la demanda de vivienda, y su relación con los precios",
+      "autores": "Lucio San Juan",
+      "serie": "Banco de España, Boletín Económico 2023/T2, artículo 09",
+      "fecha": "2023 (2.º trimestre)",
+      "url": "https://ideas.repec.org/a/bde/joures/y2023i02n09.html",
+      "doi": "10.53479/30189 (según RePEc)",
+      "consulta": "2026-10-19",
+      "lectura": "resumen (RePEc); PDF no abierto",
+      "metodo": "No leído; el resumen indica un indicador de desajuste entre oferta y demanda de vivienda en propiedad, a escala nacional y regional.",
+      "cifras": [
+        {"nombre": "Magnitud de la relación entre desajuste y precio", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "no figura en el resumen"}
+      ]
+    },
+    {
+      "id_doc": "BDE-DO2013",
+      "tema": "accesibilidad y esfuerzo; riesgo",
+      "titulo": "El mercado de la vivienda en España entre 2014 y 2019",
+      "autores": "Banco de España, Dirección General de Economía y Estadística (coord. Roberto Blanco)",
+      "serie": "Banco de España, Documentos Ocasionales n.º 2013",
+      "fecha": "2020",
+      "url": "https://www.bde.es/f/webbde/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/20/Fich/do2013.pdf",
+      "doi": "sin DOI en la portada",
+      "consulta": "2026-10-19",
+      "lectura": "resumen e índice (págs. 1-7 del PDF)",
+      "metodo": "Descriptivo; evalúa dificultades de acceso, medidas públicas y riesgos sistémicos a finales de 2019.",
+      "cifras": [
+        {"nombre": "Cifra principal", "valor": "no encontrada", "unidad": "n/d", "periodo": "2014-2019", "ubicacion": "no figura en el resumen"}
+      ]
+    },
+    {
+      "id_doc": "BDE-BE2025T2A08",
+      "tema": "inmigracion y demografia",
+      "titulo": "Factores que influyen sobre los flujos migratorios hacia España y otras economías avanzadas",
+      "autores": "Teresa Sastre; Marta Suárez-Varela; Pilar Cuadrado; Enrica Di Stefano",
+      "serie": "Banco de España, Boletín Económico 2025/T2, artículo 08",
+      "fecha": "2025 (2.º trimestre)",
+      "url": "https://ideas.repec.org/a/bde/joures/y2025i02n08.html",
+      "doi": "10.53479/39845 (según RePEc)",
+      "consulta": "2026-10-19",
+      "lectura": "resumen (RePEc); PDF no abierto",
+      "metodo": "No leído; el resumen distingue factores de atracción y de expulsión.",
+      "cifras": [
+        {"nombre": "Magnitud de los determinantes", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "no figura en el resumen"}
+      ]
+    },
+    {
+      "id_doc": "BDE-DO2312",
+      "tema": "tipos y transmision hipotecaria",
+      "titulo": "La traslación de los tipos de interés de mercado a los tipos de interés bancarios",
+      "autores": "Sergio Mayordomo; Irene Roibás",
+      "serie": "Banco de España, Documentos Ocasionales n.º 2312",
+      "fecha": "2023-06 (según RePEc)",
+      "url": "https://www.bde.es/f/webbde/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/23/Fich/do2312.pdf",
+      "doi": "10.53479/30254 (según RePEc)",
+      "consulta": "2026-10-19",
+      "lectura": "resumen (RePEc); PDF no abierto",
+      "metodo": "No leído; comparación del ciclo de subidas de 2022-2023 con ciclos anteriores en la zona del euro y España.",
+      "cifras": [
+        {"nombre": "Magnitud de la traslación a hipotecas", "valor": "no encontrada", "unidad": "n/d", "periodo": "2022-2023", "ubicacion": "no figura en el resumen (solo: traslación más lenta que en ciclos anteriores)"}
+      ]
+    },
+    {
+      "id_doc": "BCE-EB2022-6",
+      "tema": "tipos y precio; tipos e inversion residencial",
+      "titulo": "The impact of rising mortgage rates on the euro area housing market",
+      "autores": "Niccolò Battistini; Johannes Gareis; Moreno Roma",
+      "serie": "ECB Economic Bulletin, número 6/2022 (recuadro)",
+      "fecha": "2022 (día no consta en la página leída)",
+      "url": "https://www.ecb.europa.eu/pub/economic-bulletin/focus/2022/html/ecb.ebbox202206_04~786da4a23a.en.html",
+      "doi": "no consta",
+      "consulta": "2026-10-19",
+      "lectura": "texto de la página HTML por conversor (cifras no cotejadas con el original gráfico)",
+      "metodo": "Proyecciones locales con datos de 1995 a 2019 (excluye COVID); estimación lineal y no lineal; el autor advierte de endogeneidad en la versión no lineal. Zona euro.",
+      "cifras": [
+        {"nombre": "Efecto de +1 pp en el tipo hipotecario sobre el precio de la vivienda (lineal)", "valor": -5, "unidad": "%", "periodo": "tras unos 2 años; muestra 1995-2019", "ubicacion": "texto principal"},
+        {"nombre": "Efecto de +1 pp en el tipo hipotecario sobre la inversión en vivienda (lineal)", "valor": -8, "unidad": "%", "periodo": "tras unos 2 años; muestra 1995-2019", "ubicacion": "texto principal"},
+        {"nombre": "Efecto de +1 pp con tipos bajos sobre el precio de la vivienda (no lineal)", "valor": -9, "unidad": "%", "periodo": "tras unos 2 años", "ubicacion": "texto principal (extraído por conversor)"},
+        {"nombre": "Efecto de +1 pp con tipos bajos sobre la inversión en vivienda (no lineal)", "valor": -15, "unidad": "%", "periodo": "tras unos 2 años", "ubicacion": "texto principal (extraído por conversor)"},
+        {"nombre": "Subida del tipo hipotecario en el primer semestre", "valor": 63, "unidad": "pb", "periodo": "1S 2022", "ubicacion": "texto principal"},
+        {"nombre": "Efecto sobre las compraventas", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "no figura en la página leída"}
+      ]
+    },
+    {
+      "id_doc": "BCE-WP2789",
+      "tema": "tipos y precio",
+      "titulo": "House prices and ultra-low interest rates: exploring the non-linear nexus",
+      "autores": "Daniel Dieckelmann; Hannah S. Hempell; Barbara Jarmulska; Jan Hannes Lang; Marek Rusnák",
+      "serie": "ECB Working Paper Series n.º 2789",
+      "fecha": "2023-02",
+      "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2789~9e79458ee5.en.pdf",
+      "doi": "documento de trabajo: no localizado; versión publicada 10.1007/s00181-024-02662-4 (Empirical Economics, según RePEc, no verificado)",
+      "consulta": "2026-10-19",
+      "lectura": "parcial: págs. 1-3 del PDF (abstract, resumen no técnico, inicio de la introducción)",
+      "metodo": "Panel de países de la zona euro con elasticidad constante al tipo de interés real (no semielasticidad), coherente con la teoría de valoración de activos; régimen de tipos ultrabajos 2015-2021. Detalle de la muestra no leído.",
+      "cifras": [
+        {"nombre": "Efecto de +0,1 pp del tipo real desde niveles ultrabajos sobre el precio real de la vivienda", "valor": "-2.3 a -1.1", "unidad": "%", "periodo": "zona euro, régimen 2015-2021", "ubicacion": "resumen no técnico, pág. 2 (de tres a ocho veces lo que sugiere la literatura)"},
+        {"nombre": "Crecimiento anual del precio residencial de la zona euro", "valor": 9.5, "unidad": "%", "periodo": "4T 2021", "ubicacion": "pág. 2"},
+        {"nombre": "Tipo de los préstamos hipotecarios, mínimo histórico", "valor": 1.3, "unidad": "% nominal", "periodo": "2021", "ubicacion": "pág. 2"}
+      ]
+    },
+    {
+      "id_doc": "BCE-WP2752",
+      "tema": "tipos y precio; transmision de la politica monetaria",
+      "titulo": "Navigating the housing channel of monetary policy across euro area regions",
+      "autores": "Niccolò Battistini; Matteo Falagiarda; Angelina Hackmann; Moreno Roma",
+      "serie": "ECB Working Paper Series n.º 2752",
+      "fecha": "2022-11",
+      "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2752~efbdb19d8b.en.pdf",
+      "doi": "documento de trabajo: no localizado; versión publicada 10.1016/j.euroecorev.2024.104897 (European Economic Review, según búsqueda, no verificado)",
+      "consulta": "2026-10-19",
+      "lectura": "parcial: págs. 1-8 y 19-26 del PDF (resumen, método y sección 4 de resultados)",
+      "metodo": "VAR de panel estructural por región (estimador de grupo medio, un retardo) con PIB, empleo y precio de la vivienda; perturbaciones monetarias de alta frecuencia con restricciones de signo y cero. 106 regiones de 8 países (incluye 17 regiones españolas), 1999-2018, anual.",
+      "cifras": [
+        {"nombre": "Tamaño del choque monetario (media del valor absoluto): total; convencional; no convencional", "valor": "5.2; 4.6; 1.7", "unidad": "pb", "periodo": "1999-2018", "ubicacion": "figura 4, pág. 21"},
+        {"nombre": "Pico de la respuesta del precio de la vivienda al choque expansivo total", "valor": 0.15, "unidad": "%", "periodo": "a los 3 años", "ubicacion": "pág. 20"},
+        {"nombre": "Respuesta del PIB y del empleo en el impacto", "valor": "0.7; 0.4", "unidad": "%", "periodo": "impacto", "ubicacion": "pág. 20"},
+        {"nombre": "Pico de la respuesta del precio al choque convencional", "valor": "algo más de 0.1", "unidad": "%", "periodo": "a los 3 años", "ubicacion": "pág. 20"},
+        {"nombre": "Pico de la respuesta del precio al choque no convencional", "valor": "casi 0.3", "unidad": "%", "periodo": "al año", "ubicacion": "pág. 20"},
+        {"nombre": "Peso del canal vivienda en la respuesta del PIB: total o convencional; no convencional", "valor": "menos de 4; en torno a 16", "unidad": "%", "periodo": "horizonte de 5 años", "ubicacion": "pág. 20"},
+        {"nombre": "Varianza del precio de la vivienda explicada por choques monetarios (total y convencional; no convencional)", "valor": "0.1; 2.7", "unidad": "%", "periodo": "horizonte de 5 años", "ubicacion": "pág. 21"},
+        {"nombre": "Contribución de la política no convencional al aumento del precio de la vivienda", "valor": 41, "unidad": "% de un aumento medio de 5,2 %", "periodo": "2013-2018", "ubicacion": "pág. 22 (convencional: -3 %)"}
+      ]
+    },
+    {
+      "id_doc": "BCE-EB2025-2",
+      "tema": "sobrevaloracion; ciclo de precios zona euro; tipos",
+      "titulo": "Developments in the recent euro area house price cycle",
+      "autores": "Christian Höynck; Moreno Roma; Kathinka Schlieker (Box 1: Niccolò Battistini y Johannes Gareis; Box 2: Moreno Roma)",
+      "serie": "ECB Economic Bulletin, número 2/2025 (artículo)",
+      "fecha": "2025 (día no consta en el texto leído)",
+      "url": "https://www.ecb.europa.eu/press/economic-bulletin/articles/2025/html/ecb.ebart202502_01~2f59dafb26.en.html",
+      "doi": "no consta",
+      "consulta": "2026-10-19",
+      "lectura": "texto casi completo por conversor (100000 de 102750 caracteres); cifras no cotejadas con el original",
+      "metodo": "Datación de ciclos (Bry-Boschan); valoración como media de cuatro métodos del cuadro de riesgos de la JERS; Box 1 VAR bayesiano estructural con restricciones de signo y cero (1995T1-2024T3); Box 2 precio/alquiler. Zona euro.",
+      "cifras": [
+        {"nombre": "Caída acumulada del precio nominal en el ciclo reciente", "valor": "3 (en unos 1,5 años)", "unidad": "%", "periodo": "2022T3 en adelante, datos hasta 2024T3", "ubicacion": "sección 2"},
+        {"nombre": "Sobrevaloración media superior a", "valor": 10, "unidad": "%", "periodo": "mediados de 2022", "ubicacion": "nota 12, gráfico 2b"},
+        {"nombre": "Países con caídas de precios", "valor": 12, "unidad": "países", "periodo": "ciclo reciente", "ubicacion": "sección 2, gráfico 3"},
+        {"nombre": "Efecto de los tipos sobre el precio (Box 1)", "valor": "no encontrada como cifra textual", "unidad": "n/d", "periodo": "1995T1-2024T3", "ubicacion": "solo en gráfico A del Box 1"},
+        {"nombre": "Cifras para España", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "España solo aparece de forma cualitativa"}
+      ]
+    },
+    {
+      "id_doc": "BCE-FSR2023-11",
+      "tema": "sobrevaloracion; tipos; esfuerzo hipotecario",
+      "titulo": "Real estate markets in an environment of high financing costs",
+      "autores": "Ellen Ryan; Barbara Jarmulska; Giorgia De Nora; Adele Fontana; Aoife Horan; Jan Hannes Lang; Marco Lo Duca; Claudiu Moldovan; Marek Rusnák",
+      "serie": "ECB Financial Stability Review, noviembre de 2023 (artículo especial)",
+      "fecha": "2023-11 (día no consta)",
+      "url": "https://www.ecb.europa.eu/press/financial-stability-publications/fsr/special/html/ecb.fsrart202311_02~75cf0710b9.en.html",
+      "doi": "no consta",
+      "consulta": "2026-10-19",
+      "lectura": "texto de la página por conversor; cifras no cotejadas con el original",
+      "metodo": "VAR de la zona euro 2000-2022; regresión cuantílica de panel de 19 países; microsimulación del LSTI de préstamos a tipo variable (EDW) para Irlanda, España, Italia y Portugal; AnaCredit y datos de empresas.",
+      "cifras": [
+        {"nombre": "Sobrevaloración residencial estimada de la zona euro", "valor": "18 a 9", "unidad": "%", "periodo": "2T 2022 a 2T 2023", "ubicacion": "nota 8"},
+        {"nombre": "Aumento medio del LSTI de préstamos a tipo variable (IE, ES, IT, PT)", "valor": 8.0, "unidad": "pp", "periodo": "desde 2021", "ubicacion": "sección 3, gráfico B.5a"},
+        {"nombre": "Cifra propia de España", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "España solo en el grupo de la microsimulación"}
+      ]
+    },
+    {
+      "id_doc": "BCE-FSR2025-11",
+      "tema": "sobrevaloracion; riesgos de cola",
+      "titulo": "Financial Stability Review, November 2025, sección 1.5: As a recovery in real estate markets gains traction, tail risks remain elevated in some countries and segments",
+      "autores": "Banco Central Europeo",
+      "serie": "ECB Financial Stability Review, noviembre de 2025",
+      "fecha": "2025-11 (corte de datos 18 de noviembre; día de publicación no confirmado)",
+      "url": "https://www.ecb.europa.eu/press/financial-stability-publications/fsr/html/ecb.fsr202511~263b5810d4.en.html",
+      "doi": "no consta",
+      "consulta": "2026-10-19",
+      "lectura": "parcial por conversor: tramo de caracteres 100000-200000 (sección 1.5); resto no leído",
+      "metodo": "Regresión cuantílica de panel de 19 países de la zona euro para el riesgo de caída de precios (percentil 5 del agregado).",
+      "cifras": [
+        {"nombre": "Cifra de sobrevaloración residencial", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "la sección no la da"},
+        {"nombre": "Mención de España en el apartado residencial", "valor": "no encontrada", "unidad": "n/d", "periodo": "n/d", "ubicacion": "España aparece una vez, en el apartado de inmobiliario comercial"}
+      ]
+    },
+    {
+      "id_doc": "BCE-WP3026",
+      "tema": "grandes tenedores; inversores institucionales; transmision monetaria",
+      "titulo": "Institutional investors and house prices",
+      "autores": "Emil Bandoni; Giorgia De Nora; Margherita Giuzio; Ellen Ryan; Manuela Storz",
+      "serie": "ECB Working Paper Series n.º 3026",
+      "fecha": "2025-02-13 (según buscador y RePEc; la portada no indica fecha)",
+      "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp3026~8b2199688d.en.pdf",
+      "doi": "no localizado",
+      "consulta": "2026-10-19",
+      "lectura": "parcial: págs. 1-6 del PDF (abstract, resumen no técnico, inicio de introducción)",
+      "metodo": "Datos de grandes transacciones inmobiliarias residenciales; VAR bayesiano agregado de la zona euro y regresión de panel con heterogeneidad regional en ocho países.",
+      "cifras": [
+        {"nombre": "Magnitud del efecto de la demanda institucional sobre el precio agregado", "valor": "no encontrada", "unidad": "n/d", "periodo": "2007-2022", "ubicacion": "no figura en las páginas leídas (solo cualitativo: positivo y persistente)"},
+        {"nombre": "Presencia institucional alta en Madrid (entre otras capitales)", "valor": "cualitativa", "unidad": "n/d", "periodo": "2007-2022", "ubicacion": "resumen no técnico, pág. 3"}
+      ]
+    }
+  ]
+}

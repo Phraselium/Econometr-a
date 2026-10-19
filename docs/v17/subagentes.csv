@@ -11,3 +11,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-19,F0,lector-literatura,Informes Anuales e IEF del Banco de España,439510,docs/v17/referencias/bde_informes.md; output/v17/f0/bde_informes.json
 2026-10-19,F3,auditor,"auditoría regulación y ayudas (topes, turística, ayudas; D3-4)",289072,output/v17/auditoria/ (regulacion_ayudas)
 2026-10-19,F3,auditor,"auditoría oferta y titularidad (6 filas; D3-2, D3-3)",291660,output/v17/auditoria/ (oferta_titularidad)
+2026-10-19,F3,auditor,auditoría demanda y precios (6 filas; D3-1),399678,output/v17/auditoria/ (demanda_precios)

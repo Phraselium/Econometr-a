@@ -1,0 +1,9 @@
+id,alias_bde,indicador,uso_b5,ultimo,fecha_ultimo,media_2007,media_2019,media_historica,inicio,fin_media,desv_media_pct,max,anio_max
+V17-B5-PRECIO-RENTA,SI_1_5.43,Precio de la vivienda / renta bruta por hogar (años),sobrevaloración y acceso,8.3600,2026-06,9.3575,6.8650,6.0390,1987,2025,38.4326,9.3575,2007
+V17-B5-ESFUERZO-TEORICO,SI_1_5.44,Esfuerzo teórico anual sin deducciones (% de la renta),acceso,38.0100,2026-06,53.1600,30.2525,39.7389,1987,2025,-4.3507,71.4275,1990
+V17-B5-RENTABILIDAD-ALQUILER,SI_1_5.63,"Rentabilidad bruta por alquiler, doce meses (%)",sobrevaloración (inversa del precio/alquiler),2.8400,2026-09,2.9425,3.8300,4.6882,1987,2025,-39.4224,8.0100,1987
+V17-B5-LTV,SI_1_5.38,Relación préstamo-valor (RPV o LTV) de transacción (%),crédito,63.7000,2026-06,63.5000,64.4500,62.2307,2004,2025,2.3611,65.7000,2018
+V17-B5-LTV80,SI_1_5.39,Préstamos con RPV mayor que 80 % (% del total),crédito,9.6000,2026-06,14.3000,12.1250,12.4920,2004,2025,-23.1511,17.0250,2006
+V17-B5-CREDITO-PIB,SI_1_5.56,Saldo del crédito a hogares para vivienda (% del PIB),crédito,30.2400,2026-06,59.0000,42.1075,42.4050,1995,2025,-28.6877,63.1900,2010
+V17-B5-CREDITO-TASA,SI_1_5.55,"Crédito a hogares para adquisición de vivienda, tasa interanual (%)",crédito,3.7200,2026-08,16.9958,-1.1650,7.6838,1995,2025,-51.5864,24.1933,2005
+V17-B5-DUDOSIDAD,SI_1_5.59,Ratio de dudosidad del crédito a hogares para vivienda (%),crédito,1.4500,2026-06,0.5900,3.7725,2.6561,1988,2025,-45.4077,6.0850,2014

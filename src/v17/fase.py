@@ -15,7 +15,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 FASES: dict[str, list[str]] = {
     "f0": ["src/v17/f0_referencias.py"],
     "f1": ["src/v17/f1_inventario.py"],
-    "f2": ["src/v17/f2_lectura_bde.py"],
+    "f2": ["src/v17/f2_medidas_referencia.py", "src/v17/f2_lectura_bde.py"],
     "f3": ["src/v17/f3_auditoria.py"],
     "f4": [],
     "f5": ["src/v17/f5_hechos.py"],

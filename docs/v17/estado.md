@@ -29,13 +29,14 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F1 | adquisidor-datos | titularidad y parque social | 154.638 | data/raw/v17/titularidad/; data/raw/v17/parque_social/; docs/v17/fuentes/ |
 | 2026-10-19 | F1 | adquisidor-datos | oferta, capacidad y turismo local | 94.325 | data/raw/v17/oferta_capacidad/; data/raw/v17/turismo_local/; docs/v17/fuentes/ |
 | 2026-10-19 | F2 | modelizador | inferencia series, V8, V9, V12 | 169.777 | src/v17/f2_inferencia_series_v8_v9_v12.py; output/v17/lectura_bde/series_v8_v9_v12/ |
+| 2026-10-19 | F1 | adquisidor-datos | oferta y turismo (cierre de la descarga del Censo en segundo plano) | 756 | - |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 383.177 |
-| F1 | 345.984 |
+| F1 | 346.740 |
 | F2 | 169.777 |
 
-Total V17: 898.938 tokens
+Total V17: 899.694 tokens
 
 <!-- fin subagentes -->

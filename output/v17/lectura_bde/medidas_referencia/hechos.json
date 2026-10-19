@@ -1,0 +1,165 @@
+[
+ {
+  "id": "V17-B5-PRECIO-RENTA",
+  "indicador": "Precio de la vivienda / renta bruta por hogar (años), último dato",
+  "valor": 8.36,
+  "min": 6.039,
+  "max": 9.357,
+  "unidad": "años",
+  "periodo": "2026-06",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-06",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 1987-2025; max = máximo anual (2007)"
+ },
+ {
+  "id": "V17-B5-ESFUERZO-TEORICO",
+  "indicador": "Esfuerzo teórico anual sin deducciones (% de la renta), último dato",
+  "valor": 38.01,
+  "min": 39.739,
+  "max": 71.427,
+  "unidad": "% de la renta",
+  "periodo": "2026-06",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-06",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 1987-2025; max = máximo anual (1990)"
+ },
+ {
+  "id": "V17-B5-RENTABILIDAD-ALQUILER",
+  "indicador": "Rentabilidad bruta por alquiler, doce meses (%), último dato",
+  "valor": 2.84,
+  "min": 4.688,
+  "max": 8.01,
+  "unidad": "%",
+  "periodo": "2026-09",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-09",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 1987-2025; max = máximo anual (1987)"
+ },
+ {
+  "id": "V17-B5-LTV",
+  "indicador": "Relación préstamo-valor (RPV o LTV) de transacción (%), último dato",
+  "valor": 63.7,
+  "min": 62.231,
+  "max": 65.7,
+  "unidad": "%",
+  "periodo": "2026-06",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-06",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 2004-2025; max = máximo anual (2018)"
+ },
+ {
+  "id": "V17-B5-LTV80",
+  "indicador": "Préstamos con RPV mayor que 80 % (% del total), último dato",
+  "valor": 9.6,
+  "min": 12.492,
+  "max": 17.025,
+  "unidad": "% del total",
+  "periodo": "2026-06",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-06",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 2004-2025; max = máximo anual (2006)"
+ },
+ {
+  "id": "V17-B5-CREDITO-PIB",
+  "indicador": "Saldo del crédito a hogares para vivienda (% del PIB), último dato",
+  "valor": 30.24,
+  "min": 42.405,
+  "max": 63.19,
+  "unidad": "% del PIB",
+  "periodo": "2026-06",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-06",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 1995-2025; max = máximo anual (2010)"
+ },
+ {
+  "id": "V17-B5-CREDITO-TASA",
+  "indicador": "Crédito a hogares para adquisición de vivienda, tasa interanual (%), último dato",
+  "valor": 3.72,
+  "min": 7.684,
+  "max": 24.193,
+  "unidad": "%",
+  "periodo": "2026-08",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-08",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 1995-2025; max = máximo anual (2005)"
+ },
+ {
+  "id": "V17-B5-DUDOSIDAD",
+  "indicador": "Ratio de dudosidad del crédito a hogares para vivienda (%), último dato",
+  "valor": 1.45,
+  "min": 2.656,
+  "max": 6.085,
+  "unidad": "%",
+  "periodo": "2026-06",
+  "cobertura": "España",
+  "fuentes": [
+   "Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"
+  ],
+  "capa": "C4",
+  "lectura_v17": "OF",
+  "fecha_dato": "2026-06",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; min = media histórica 1988-2025; max = máximo anual (2014)"
+ },
+ {
+  "id": "V17-B5-SIN-HIPOTECA-MIN",
+  "indicador": "Compras de vivienda sin hipoteca, cota inferior (1 - hipotecas sobre viviendas / compraventas de viviendas)",
+  "valor": 29.95,
+  "min": 14.02,
+  "max": 36.11,
+  "unidad": "% de las compraventas",
+  "periodo": "2025",
+  "cobertura": "España",
+  "fuentes": [
+   "INE, Estadística de Hipotecas",
+   "INE, Estadística de Transmisiones de Derechos de la Propiedad"
+  ],
+  "capa": "C4",
+  "lectura_v17": "cota",
+  "fecha_dato": "2025",
+  "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
+  "nota": "a posteriori; cota inferior: las hipotecas sobre viviendas incluyen las no ligadas a una compra; min y max = rango anual de los años informativos 2012-2025"
+ }
+]

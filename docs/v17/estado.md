@@ -10,8 +10,12 @@ V17 se ejecuta dentro de V18 (docs/v17/decisiones.md, K0): fases 0-3 y 5; la 4 s
   - registro de subagentes con tope de 4 millones por fase;
   - la guarda de salidas cerradas deja abiertas output/v17 y output/v18.
 
+- 2026-10-19 · Fase 0 (en curso): fichas del INE y comprobación D4 (docs/v17/correcciones.md); 16 documentos del Banco de España y del BCE (docs/v17/referencias/bde_bce_documentos.md). Pendiente: Informes Anuales e IEF.
+- 2026-10-19 · Fase 1: inventario (output/v17/f1/); crédito y compras, titularidad, parque social, oferta y capacidad, y turismo local descargados en data/raw/v17/. Pendientes del autor en docs/v18/tareas_autor.md.
+- 2026-10-19 · Fase 2 (en curso): encargo común (docs/v17/brief_f2_inferencia.md) y dos modelizadores (micro V15-V16; series y V8, V9 y V12).
+
 ## Siguiente
-- Fase 0: referencias del Banco de España, el BCE y el INE.
+- Cerrar la fase 0 (referencias_bde.md y tabla de comparación), la fase 2 (B4-B5) y la fase 3 (auditoría).
 
 ## Subagentes y tokens
 

@@ -66,10 +66,10 @@ def main() -> int:
     filas = []
     for nec, bloque, rutas, nota in NECESIDADES:
         hay = [r for r in rutas if (RAIZ / r).exists() and (not (RAIZ / r).is_dir() or any((RAIZ / r).iterdir()))]
-        estado = "cubierta" if hay and not all("v17" in r for r in rutas) and hay == [r for r in rutas if "v17" not in r] \
-            else ("parcial" if hay else "falta")
-        filas.append({"bloque": bloque, "necesidad": nec, "estado": estado, "rutas_presentes": "; ".join(hay) or "-",
-                      "nota": nota})
+        estado = "cubierta" if hay else "falta"
+        nueva = "sí" if any("v17" in r for r in hay) else "no"
+        filas.append({"bloque": bloque, "necesidad": nec, "estado": estado, "fuente_nueva_v17": nueva,
+                      "rutas_presentes": "; ".join(hay) or "-", "nota": nota})
     with (OUT / "inventario.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, list(filas[0]), lineterminator="\n")
         w.writeheader()
@@ -77,10 +77,10 @@ def main() -> int:
     L = ["# V17 · Fase 1 · Inventario de datos para la auditoría", "",
          "Análisis a posteriori (V17). Generado por src/v17/f1_inventario.py. «cubierta»: hay al menos una fuente previa; "
          "«parcial»: solo parte; «falta»: no hay nada en data/raw.", "",
-         "| Bloque | Necesidad | Estado | Rutas presentes | Nota |", "|---|---|---|---|---|"]
-    L += [f"| {f['bloque']} | {f['necesidad']} | {f['estado']} | {f['rutas_presentes']} | {f['nota']} |" for f in filas]
+         "| Bloque | Necesidad | Estado | Nueva en V17 | Rutas presentes | Nota |", "|---|---|---|---|---|---|"]
+    L += [f"| {f['bloque']} | {f['necesidad']} | {f['estado']} | {f['fuente_nueva_v17']} | {f['rutas_presentes']} | {f['nota']} |" for f in filas]
     (OUT / "inventario.md").write_text("\n".join(L) + "\n", encoding="utf-8")
-    n = {e: sum(f["estado"] == e for f in filas) for e in ("cubierta", "parcial", "falta")}
+    n = {e: sum(f["estado"] == e for f in filas) for e in ("cubierta", "falta")}
     print(f"f1_inventario V17: {len(filas)} necesidades; {n}")
     return 0
 

@@ -11,7 +11,7 @@ Son tres afirmaciones: (a) un dato, «≤ 2,7 % del parque de alquiler»; (b) un
 ## 2. Mejor argumento a favor y mejor argumento en contra
 
 **A favor.**
-- La media nacional es baja frente a la subida. Las viviendas turísticas (INE, estadística experimental) son el 1,5 % de todas las viviendas familiares en agosto de 2024: 403.267 de 26,6 millones. El Banco de España da la misma cifra para 2025 (IA2025, p. 150).
+- La media nacional es baja frente a la subida. Las viviendas turísticas (INE, estadística experimental) son el 1,5 % de todas las viviendas familiares en agosto de 2024: 403.267 de 26,6 millones. Es la misma escala que la del Banco de España para 2024 (DO 2432, cuadro A.3, p. 57: 1,9 % de las viviendas principales; ver 3.1).
 - Con los coeficientes de Garcia-López et al. (2020), esa densidad es compatible con un alquiler entre un 1,0 % y un 2,1 % más alto que con densidad cero (V17-AUD-DP-TUR-GL-ALQ-NAC; ilustración, no estimación). En 2015-2024 el alquiler de los contratos vigentes subió entre un 10,9 % y un 22,9 % (IPC e IPVA; informe integral, resumen).
 - Los propios autores dicen que el efecto «cannot explain the bulk» de la subida de Barcelona en 2012-2016 (versión de trabajo, conclusiones).
 - Nuestra H3 (V15) no ve asociación dentro de la sección: 0,003 % por DT, con p = 0,93 y un tamaño real del 9,6 % (lectura convencional publicable).
@@ -22,9 +22,9 @@ Son tres afirmaciones: (a) un dato, «≤ 2,7 % del parque de alquiler»; (b) un
   - 11,8 % en febrero de 2024 (V17-AUD-DP-TUR-NAC-STOCK-2024M02);
   - 11,5 % en mayo de 2026.
 - **Ventana y base de la cota.** La cota empieza en el mínimo de la pandemia, cubre solo cuatro años y deja fuera el auge de 2014-2019, que la estadística del INE no cubre. Entre 2024M08 y 2026M05 el stock cae en 62.266 viviendas.
-- **La distribución local es muy desigual.** En las secciones censales sin muestra sellada, la mediana de viviendas turísticas sobre el alquiler es del 3,1 %, el P90 del 33,9 % y el P99 del 168,8 % (24.201 secciones; V17-AUD-DP-TUR-SEC-*). El 12,6 % del parque de alquiler está en secciones donde las turísticas superan la cuarta parte del alquiler.
-- **Hay una estimación causal publicada en España.** Garcia-López et al. (2020, JUE) usan un instrumento de tipo shift-share y estudios de evento con 220 áreas de Barcelona. Estiman +7 % de alquiler y +17-19 % de precio de transacción en el decil alto de actividad de Airbnb.
-- **Nuestra señal provincial.** Q2a (V16) da 0,013 Δlog del IPC de alquiler por DT del log de la exposición: p = 0,0004, Holm 0,0008, tamaño real 14,2 % (publicable por poco, por debajo del 15 %). Es una asociación, no un efecto, pero no es «sin señal».
+- **La distribución local es muy desigual.** En las secciones censales de provincias no selladas, las viviendas turísticas equivalen, en la mediana, al 3,1 % del alquiler, el P90 del 33,9 % y el P99 del 168,8 % (24.201 secciones; V17-AUD-DP-TUR-SEC-*). El 12,6 % del parque de alquiler está en secciones donde las turísticas superan la cuarta parte del alquiler.
+- **Hay una estimación causal publicada en España.** Garcia-López et al. (2020, JUE) usan un instrumento de tipo shift-share y estudios de evento con 220 áreas de Barcelona. Estiman +1,9 % de alquiler en el barrio con la actividad media de Airbnb y +7 % en el decil alto (+17-19 % de precio de transacción); ambas cifras están verificadas en el texto de la versión de trabajo (introducción y conclusiones).
+- **Nuestra señal provincial.** Q2a (V16) da 0,013 Δlog del IPC de alquiler por DT del log de la exposición, del mismo signo que Garcia-López et al. Su p (0,0004) es poco fiable: el tamaño real es del 14 %, al borde del umbral del 15 %. Es una asociación, no un efecto.
 
 ## 3. Pruebas mínimas (plan, fase 3, punto 2)
 
@@ -40,12 +40,11 @@ Script: src/v17/f3_demanda_precios.py.
 |---|---|---|---|---|
 | 2,7 % (2,4-2,7) de la 1.0 | aumento 2020M08-2024M08 (81.771) | alquiler, Censo 2021 (2.978.090) o ECV × ECP (3.374.940) | España | flujo: cota de sustitución uno a uno |
 | 11,8 % (BdE DO 2432, cuadro A.3) | stock feb. 2024 (351.389) | viviendas principales en alquiler, Censo 2021 | «Total España» por sección | stock; el proyecto lo reproduce (11,80 %) |
-| «cerca del 10 %» (BdE IA2025, p. 150) | unas 355.000 (media 2025) | mercado del alquiler (denominador no publicado) | España | stock |
-| 10,8 % (BdE IA2025, diapositiva 40) | no localizado | no localizado | no localizado | **no se encontró en el original**: el capítulo da «cerca del 10 %». No se usa |
+| 10,8 % (BdE IA2025, diapositiva 40) | no localizado | no localizado | no localizado | **no se encontró en el original**; no se usa |
 
 Conclusión: el denominador del 2,7 % es correcto y es el mismo que el del Banco de España. Lo que cambia es el numerador: flujo de cuatro años frente a stock. El 2,7 % publicado es correcto con su definición. La paráfrasis «≤ 2,7 % del parque de alquiler» es falsa si se lee como peso del parque, y así se lee.
 
-**3.2 Distribución local (2024M08; viviendas turísticas del INE sobre el alquiler del Censo 2021).**
+**3.2 Distribución local (2024M08; viviendas turísticas del INE como equivalente del alquiler del Censo 2021; secciones y municipios de provincias no selladas).**
 
 | Ámbito | P50 | P90 | P99 | N |
 |---|---|---|---|---|
@@ -58,21 +57,24 @@ Conclusión: el denominador del 2,7 % es correcto y es el mismo que el del Banco
 | Inside Airbnb, viviendas completas (sep. 2026; solo áreas rastreadas) | 4,3 % | 25,9 % | 93,7 % | 1.849 |
 
 - **Sobre el total de viviendas de la sección:** P50 0,29 %, P90 2,5 % y P99 10,2 % (V17-AUD-DP-TUR-SEC-VIV-P90).
-- **Ciudades sin muestra sellada:** Barcelona 4,7 %, València 14,3 %, Sevilla 18,4 % y Málaga 29,4 % del alquiler.
+- **Ciudades de provincias no selladas** (stock de 2024M08 equivalente a): Barcelona 4,7 %, València 14,3 %, Sevilla 18,4 % y Málaga 29,4 % del alquiler.
+- **Málaga: 29,4 % frente al 8,9 % de la 1.0.** No se contradicen. El 8,9 % del verificador de la 1.0 (B4-V2) es el AUMENTO 2020-2024 sobre el alquiler (2.618 viviendas; output/v3/PB/tablas/b1_ciudades.csv). El 29,4 % es el STOCK de 2024M08; la v3 da 29,0 % con datos municipales y aquí sale 29,4 % sumando secciones.
 - **Máximos entre los municipios grandes:** Mijas 78 %, Marbella 78 % y Torrevieja 71 %.
 - **Lectura.** Donde la proporción supera el 100 %, las turísticas no pueden haber salido todas del alquiler residencial: vienen sobre todo de segundas residencias, en la costa y en municipios pequeños. El cociente sobre el alquiler sobreestima el desplazamiento ahí. Por eso la escala de Garcia-López et al. (anuncios sobre viviendas) es la que se usa para el precio.
 
-**3.3 Traslación a precio (ilustración con parámetros ajenos; juicio experto).** Garcia-López et al., versión de trabajo, cuadro 4 y sección 3.4:
-- en la especificación de densidad, 0,68 % de alquiler por punto de anuncios sobre viviendas (no significativo, e.e. 0,5);
-- en el decil alto, con ≈ 5 % de las viviendas anunciadas, el +7 % implica ≈ 1,4 % por punto.
+**3.3 Traslación a precio (juicio experto, calibración).** Garcia-López et al., versión de trabajo, cuadro 4 y sección 3.4. Las dos cifras del rango salen de dos especificaciones del mismo cuadro y no se contradicen:
+- **Recuento (especificación base, significativa).** 0,035 log de alquiler por cada 100 anuncios. Con 56 anuncios de media, que son el 1,57 % de las viviendas en 4T2016, 100 anuncios ≈ 2,8 puntos de densidad: ≈ 1,25 % por punto. En el decil alto, 200 anuncios ≈ 5 % de las viviendas y +7 %: ≈ 1,4 % por punto. En el barrio medio, +1,9 % con ≈ 1,5 puntos: ≈ 1,25 % por punto.
+- **Densidad (columna 3).** 0,68 % por punto de anuncios sobre viviendas, no significativa (e.e. 0,5).
+- Por eso el rango es 0,68-1,4 % por punto: el extremo bajo es la especificación de densidad y el alto la de recuento en el decil alto.
 
 | Densidad (turísticas sobre viviendas) | Alquiler compatible |
 |---|---|
-| Media nacional, 1,5 % | +1,0 a +2,1 % |
+| Media nacional, 1,5 % | +1,0 a +2,1 % (1.0: ≤ 2,7-8,3 %, ver abajo) |
 | Sección P50, 0,29 % | +0,2 a +0,4 % |
 | Sección P90, 2,5 % | +1,7 a +3,5 % |
 | Sección P99, 10,2 % | +7,0 a +14,3 % |
 
+- **Cota de precio de la 1.0** (publicacion/verificador/verificador.md, B4-V2, C4): con |ε_d| entre 1,0 y 0,33, el aumento 2020-2024 equivale a como mucho un 2,7-8,3 % del alquiler, frente a una subida del alquiler de stock del 10,9-22,9 % en 2015-2024. Mide el AUMENTO con elasticidades de demanda supuestas; la calibración de Garcia-López et al. mide el NIVEL con una elasticidad estimada. Las dos dejan el efecto nacional por debajo de la subida.
 - **Límites del P99.** Fuera del soporte del estudio (≈ 5 %): es extrapolación lineal.
 - **Precio de transacción.** El coeficiente es unas 3-6 veces el del alquiler (3,9 % por punto en la especificación de densidad).
 - **Límites generales.**
@@ -83,11 +85,11 @@ Conclusión: el denominador del 2,7 % es correcto y es el mismo que el del Banco
 **3.4 Comparación con H3 y Q2.**
 - **H3 frente a Garcia-López et al.** Con la DT intra-sección de H3 (0,61 pp), los coeficientes de Garcia-López et al. implicarían 0,42-0,86 % por DT. H3 da 0,003 % (EMD del 80 % = 0,097 %). La diferencia es de dos órdenes de magnitud, y H3 tenía potencia para ver un efecto de ese tamaño.
 - **Por qué pueden diferir.** H3 mide el alquiler de los contratos VIGENTES (SERPAVI, datos tributarios), que solo se ajusta al renovar. Garcia-López et al. miden anuncios nuevos. Además, H3 cubre 2021-2024, con una exposición ya regulada en las grandes ciudades. Son medidas y periodos distintos, no una refutación.
-- **Q2a** (provincias) tiene el signo de Garcia-López et al. y p convencional válido.
+- **Q2a** (provincias) tiene el signo de Garcia-López et al.; su p no es fiable (tamaño real 14 %).
 - **Q2c** (IPVA municipal) cambia de signo y no es concluyente.
 
 **3.5 Banco de España y otros estudios españoles.**
-- IA2023 (p. 255) cita a Garcia-López et al. y da cerca del 10 % del mercado de alquiler.
+- IA2023 (p. 255) cita a Garcia-López et al. La cifra del Banco de España que se usa en esta ficha es una sola: 11,8 % (DO 2432, cuadro A.3, p. 57).
 - DO 2432 es descriptivo: atribuye la limitación de la oferta de alquiler, en parte, a usos alternativos (turístico, habitaciones, temporada).
 - No hay estimación propia del Banco de España.
 - Estudios españoles sin diseño causal comparable: MESVAL 2022 (València, corte transversal), Casanova 2019 (Madrid, sin significación con dependencia espacial) y Mozo Carollo et al. 2023 (San Sebastián). Fichas en docs/v15/literatura/P5_pisos_turisticos.md.
@@ -112,11 +114,11 @@ Conclusión: el denominador del 2,7 % es correcto y es el mismo que el del Banco
 
 ## 6. Texto corregido y confianza
 
-> «La culpa es de los pisos turísticos»: en la media nacional, no. Son en torno al 1,5 % de las viviendas y entre el 12 % y el 13,5 % del parque de alquiler. Su aumento entre 2020 y 2024 equivale como mucho al 2,7 % del alquiler. Con las estimaciones publicadas, eso deja un efecto nacional pequeño frente a la subida. En los barrios muy turísticos sí puede pesar. En una de cada diez secciones censales los pisos turísticos superan un tercio del alquiler. En Barcelona, un estudio con diseño causal estima alquileres un 7 % más altos en los barrios con más Airbnb (2012-2016). Fuera de esos barrios, y después de las regulaciones, no está medido.
+> «La culpa es de los pisos turísticos»: en la media nacional, no. Son en torno al 1,5 % de las viviendas y entre el 12 % y el 13,5 % del parque de alquiler. Su aumento entre 2020 y 2024 equivale como mucho al 2,7 % del alquiler. Con las estimaciones publicadas, eso deja un efecto nacional pequeño frente a la subida. En los barrios muy turísticos sí puede pesar. En una de cada diez secciones censales los pisos turísticos equivalen a más de un tercio del alquiler. En Barcelona, un estudio con diseño causal sugiere alquileres un 7 % más altos en los barrios con más Airbnb (2012-2016). Fuera de esos barrios, y después de las regulaciones, no está medido.
 
 Confianza:
 - efecto nacional pequeño: **la evidencia sugiere** (escala local medida; elasticidad ajena);
-- efecto en barrios muy turísticos de Barcelona en 2012-2016: **la evidencia indica**;
+- efecto en barrios muy turísticos de Barcelona en 2012-2016: **la evidencia sugiere** (un solo estudio, alquileres anunciados);
 - en otras ciudades y en 2021-2026: **la evidencia es compatible con** un efecto local, sin medirlo.
 
 ## 7. Parada
@@ -124,3 +126,14 @@ Confianza:
 **No hay parada sobre la 1.0.** El 2,7 % publicado (B4-v3-vut-cantidad, informe integral I.7 y VII.3) está rotulado como «el aumento 2020-2024 equivale como máximo a 2,7 %». Es correcto con esa definición, y su denominador es el mismo que el del Banco de España. La auditoría no muestra que esa cifra sea falsa.
 
 **Aviso al autor, no es una parada.** La paráfrasis de D1, «≤ 2,7 % del parque de alquiler», no figura en publicacion/ ni en web/. Si se lee como peso de los pisos turísticos, es falsa: el peso es del 11,8-13,5 % (V17-AUD-DP-TUR-NAC-STOCK-*). Si esa frase se ha usado o se va a usar en divulgación, debe corregirse antes. Lo decide el autor.
+
+## 8. Respuesta a la ronda 1
+
+- **Cota de precio de la 1.0 (≤ 2,7-8,3 %): aplicado.** Va junto a la calibración de Garcia-López et al. (3.3).
+- **Rango 0,68-1,4: aplicado.** Se explica qué especificación da cada extremo y la densidad del decil alto (≈ 5 % de las viviendas). El +1,9 % del barrio medio está verificado en el texto de la versión de trabajo (introducción y conclusiones).
+- **Barcelona: aplicado.** Baja a «sugiere».
+- **Redacción: aplicado.** Los cocientes van como «equivalen a» y las distribuciones se rotulan como «secciones de provincias no selladas».
+- **Q2a: aplicado.** Pasa a «p no fiable (tamaño real 14 %)».
+- **Una sola cifra del Banco de España: aplicado.** Se usa el 11,8 % del DO 2432, cuadro A.3, p. 57, y se retira el «cerca del 10 %» del IA2025.
+- **Málaga: aplicado.** El 8,9 % es flujo y el 29,4 % es stock (3.2).
+- **Veredicto: rebatido, se mantiene «engañosa».** El dato entre paréntesis sigue mal descrito.

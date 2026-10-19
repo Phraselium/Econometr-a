@@ -10,7 +10,7 @@ Análisis a posteriori (V17). Ficha de auditoría de la fila «burbuja» (D1, di
 
 **A favor.**
 - **Una exuberancia estadística no identifica una burbuja.** Una burbuja, en sentido estricto, es un precio que se separa de su valor fundamental por la expectativa de reventa. Ningún contraste disponible la identifica.
-- **El Banco de España tampoco habla de burbuja.** Habla de desequilibrio («sobrevaloración») respecto a renta y tipos. Lo sitúa entre el 10 % y el 15 % en diciembre de 2025, «similar al registrado en 2004» y muy por debajo del máximo promedio del 24 % de finales de 2007 (IEF primavera 2026, p. 100).
+- **El Banco de España tampoco habla de burbuja.** Estima que el precio está por encima de su nivel de equilibrio estimado respecto a renta y tipos, con cuatro métodos y una incertidumbre alta según la propia fuente: entre un 10 % y un 15 % en diciembre de 2025, «similar al registrado en 2004» y muy por debajo del máximo promedio del 24 % de finales de 2007 (IEF primavera 2026, p. 100).
 - **Riesgos contenidos.** Su indicador sintético de riesgos está en niveles de 2002 (IEF 2026, p. 101) o de 2001 (IA2025, p. 122). La propia fuente advierte de una «notable incertidumbre».
 - **El crédito y el apalancamiento no se parecen a 2005-2007** (V17-B5):
 
@@ -18,16 +18,19 @@ Análisis a posteriori (V17). Ficha de auditoría de la fila «burbuja» (D1, di
 |---|---|---|
 | Crédito a hogares para vivienda, % del PIB | 30,2 % (2026-06) | 59,0 % |
 | Crecimiento interanual de ese crédito | 3,7 % | 17,0 % |
-| Préstamos con LTV > 80 % | 9,6 % | 14,3 % |
+| Préstamos con LTV > 80 % (SI 1.5, RPV de transacción) | 9,6 % | 14,3 % |
+| Nueva producción con LTV > 80 % (IEF 2026, p. 104; otra definición) | 15,6 % (fin de 2025), subiendo desde el 10,8 % de comienzos de 2024 | — |
+| Flujo de crédito hipotecario nuevo, interanual (IEF 2026, p. 101) | +22,4 % (2025T4) | — |
 | Dudosidad | 1,45 % | 0,59 % (por debajo de su media de 2,66 %) |
 
   Compraventas por 1.000 hogares: 3,8, frente a cerca de 6 en 2006 (IEF 2026, p. 97).
 - **Nuestros contrastes, tras el ajuste múltiple.** Con el GSADF corregido de V7.2 no hay ningún cociente ni nivel nacional ni comunidad con exuberancia en la familia publicada (V72-GSADF-*).
 
 **En contra.**
-- **«No hay exuberancia estadística» es una lectura de un contraste sin potencia.**
-  - En el Monte Carlo de V16, el GSADF del factor común con bootstrap salvaje rechaza la alternativa explosiva simulada un 6,4 % de las veces sin saltos y un 13,2 % con saltos, para un tamaño de 1,7-4,6 % (V17-AUD-DP-BUR-GSADF-POTENCIA).
-  - Con T = 78-98, no rechazar es casi lo que se espera tanto si hay exuberancia como si no.
+- **«No hay exuberancia estadística» se apoya en contrastes cuya potencia no se ha medido, o es baja.**
+  - **GSADF nacional y regional de V7.2** (la base de «0 tras el ajuste»): su potencia NO se ha calculado. Solo se conoce su tamaño: 4 % con bootstrap AR (R1B-G-tam-corr). No se calcula aquí porque exige un Monte Carlo con bootstrap anidado (queda como tarea).
+  - **Q9-g** (factor común, V16): en su Monte Carlo rechaza la alternativa explosiva simulada un 6,4 % de las veces sin saltos y un 13,2 % con saltos (V17-AUD-DP-BUR-GSADF-POTENCIA). Aun así, Q9-g SÍ rechazó: 5,9 frente a un valor crítico de 3,3 (p = 0,004 sin ajuste; q = 0,306 tras el ajuste múltiple).
+  - Con T = 78-98, un no rechazo es poco informativo.
   - La 1.0 lo dice: «la ausencia no demuestra alineación con los fundamentales» (informe integral, VII.1).
 - **Sí hay rechazos sin ajuste.**
   - Precio/renta (IPV / renta del hogar): p = 0,010; 1 de 4 cocientes sin ajuste; 1 tras el ajuste en la familia de 4 (V72-GSADF-ratios-p05 y -bh4-sens).
@@ -54,7 +57,8 @@ Script: src/v17/f3_demanda_precios.py (lee output/v16/montecarlo/gsadf_factor/re
 | Precio real frente al máximo de 2007 | −14,7 % (2025T4) | — | IEF 2026, p. 98 |
 
 **3.2 Potencia del GSADF con nuestra muestra.**
-- **Factor común** (V16, T = 98, R = 2.000): potencia 0,064 sin saltos y 0,132 con saltos.
+- **Q9-g, factor común** (V16, T = 98, R = 2.000): potencia 0,064 sin saltos y 0,132 con saltos. Es la única potencia medida. Q9-g rechazó sin ajuste.
+- **GSADF nacional de V7.2:** potencia no calculada.
 - **Serie nacional** (v5, R1B-G-tam, T = 78): con valores críticos iid, el tamaño real es del 15 % si Δy es AR(1) con φ = 0,5. Con bootstrap AR, del 4 % (R1B-G-tam-corr).
 - **Lectura.** El contraste corregido controla el tamaño, pero apenas tiene potencia. Un «no rechaza» no es evidencia de ausencia.
 
@@ -73,12 +77,12 @@ Script: src/v17/f3_demanda_precios.py (lee output/v16/montecarlo/gsadf_factor/re
 
 **Engañosa.**
 - La primera mitad se sostiene: no se puede afirmar «hay burbuja» ni «no hay burbuja», y el Banco de España tampoco lo hace.
-- La segunda mitad, «no hay exuberancia estadística», presenta como hecho la falta de rechazo de un contraste con potencia del 6-13 %. Omite que hay rechazos sin ajuste.
+- La segunda mitad, «no hay exuberancia estadística», presenta como hecho la falta de rechazo tras el ajuste, con contrastes cuya potencia no se ha medido (V7.2) o es baja (Q9-g, 6-13 %). Omite que hay rechazos sin ajuste, entre ellos el de Q9-g.
 - La frase calla lo que sí se puede afirmar con los indicadores del Banco de España: una sobrevaloración moderada y creciente frente a la renta, sin el desequilibrio de crédito de 2007.
 
 ## 6. Texto corregido y confianza
 
-> «Hay burbuja» / «no hay burbuja»: ninguna de las dos se puede afirmar, porque no hay forma de identificar una burbuja con estos datos. Lo que sí se puede decir, con los indicadores del Banco de España, es otra cosa. A finales de 2025 el precio estaba entre un 10 % y un 15 % por encima de lo que justifican la renta y los tipos. Es un nivel parecido al de 2004, lejos del 24 % de 2007, y va en aumento. A diferencia de 2007, el crédito no se ha disparado: es el 30 % del PIB, frente al 59 %. Nuestros contrastes de exuberancia no dan señal tras corregir por pruebas múltiples, pero apenas tienen potencia, así que eso no prueba que no la haya.
+> «Hay burbuja» / «no hay burbuja»: ninguna de las dos se puede afirmar, porque no hay forma de identificar una burbuja con estos datos. Lo que sí se puede decir, con los indicadores del Banco de España, es otra cosa. A finales de 2025, con cuatro métodos y una incertidumbre alta, el precio estaba entre un 10 % y un 15 % por encima de su nivel de equilibrio estimado frente a la renta y los tipos. Es un nivel parecido al de 2004, lejos del 24 % de 2007, y va en aumento. A diferencia de 2007, el saldo de crédito es bajo: el 30 % del PIB, frente al 59 %. Pero el crédito nuevo crece con fuerza (+22 % en 2025) y aumentan los préstamos con LTV alto. Nuestros contrastes de exuberancia no dan señal tras corregir por pruebas múltiples, pero apenas tienen potencia, así que eso no prueba que no la haya.
 
 Confianza:
 - sobrevaloración moderada frente a la renta: **la evidencia sugiere** (rango entre métodos del Banco de España; los métodos no incluyen la oferta);
@@ -87,4 +91,12 @@ Confianza:
 
 ## 7. Parada
 
-No hay parada. La 1.0 (informe integral, VII.1; lo_que_sabemos.md) dice que ninguna de las dos se puede afirmar. También dice que «la ausencia tampoco la descarta» y que el contraste tiene poca potencia. La paráfrasis de D1, «no hay exuberancia estadística», es más tajante que la 1.0 y no figura en publicacion/. Se señala al autor.
+No hay parada. La 1.0 (informe integral, VII.1; lo_que_sabemos.md) dice que ninguna de las dos se puede afirmar. También dice que «la ausencia tampoco la descarta» y que el contraste tiene poca potencia. La paráfrasis de D1, «no hay exuberancia estadística», es más tajante que la 1.0. Una frase cercana sí figura en publicacion/: lo_que_sabemos.md:58 dice que el GSADF no detecta exuberancia en ninguna de las 11 CCAA contrastadas (v6). Es un resultado correcto de esa prueba; lo que falta a su lado es la advertencia de potencia. Se señala al autor; no es falsa.
+
+## 8. Respuesta a la ronda 1
+
+- **Potencia: aplicado.** La potencia citada es la de Q9-g. La del GSADF nacional de V7.2 se marca como no calculada (exige un Monte Carlo con bootstrap anidado; no es barato), y se explica que Q9-g sí rechazó sin ajuste.
+- **Crédito nuevo: aplicado.** Junto al saldo se añaden el LTV > 80 % del IEF 2026 (15,6 %, subiendo desde el 10,8 %) y el flujo de crédito nuevo (+22,4 %).
+- **Lenguaje del Banco de España: aplicado.** El desequilibrio pasa a «por encima de su nivel de equilibrio estimado, cuatro métodos, incertidumbre alta».
+- **lo_que_sabemos.md:58: aplicado.** Se cita en la sección de parada.
+- **Veredicto: se mantiene «engañosa».**

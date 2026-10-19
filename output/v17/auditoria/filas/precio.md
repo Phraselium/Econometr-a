@@ -39,7 +39,7 @@ Script: src/v17/f3_demanda_precios.py.
 | Valor unitario provincial (compraventas como pesos de cada año) frente a Laspeyres (pesos de 2019); 38 provincias sin muestra sellada | +24,4 % frente a +29,1 %: −4,8 pp (V17-AUD-DP-PRE-COMPOSICION-PROVINCIAS) | las compraventas se desplazan hacia provincias más baratas; una media ponderada por transacciones sube menos que el precio de cada provincia |
 | Valor tasado por antigüedad (BdE SI 1.5) | total +29,6 %; hasta 5 años +31,4 %; más de 5 años +29,6 % (V17-AUD-DP-PRE-TASADO-ESTRATOS) | composición entre antigüedades: de 0 a −1,8 pp |
 | IPV por tipo | nueva +60,3 %; usada +41,8 % | la vivienda nueva, poco del total, sube más |
-| Brecha restante IPV − media por m² | ≈ 14-15 pp | composición DENTRO de cada provincia (barrio, tamaño, estado) y diferencias de método (tasación frente a transacción; ajuste hedónico). Con agregados no se separa: haría falta microdato notarial |
+| Brecha restante IPV − media por m² | ≈ 14-15 pp | composición DENTRO de cada provincia (barrio, tamaño, estado) y el propio ajuste hedónico del IPV. No es «tasación frente a transacción»: las tres medias por m² (tasación, Notariado y Registradores) coinciden. Con agregados no se separa: haría falta microdato notarial |
 
 Conclusión:
 - **El sesgo identificable con agregados va en la dirección esperada:** la media sube menos porque se compra más en zonas y segmentos baratos. Pero explica solo una parte de la brecha: en torno a un tercio, en el valor unitario por transacciones.
@@ -65,11 +65,11 @@ Las medias anuales difieren ligeramente de las cifras publicadas (+30,4 % y +7,1
 
 ## 5. Veredicto
 
-**Engañosa.** Las cifras son correctas. «Quien elige la cifra elige el mensaje» es una falsa equivalencia. Para la variación del precio de la vivienda hay una medida de referencia, el índice ajustado por calidad, y las medias por m² responden a otra pregunta, con un sesgo de composición que es medible en parte. La advertencia correcta no es «elegir», sino «decir qué pregunta responde cada cifra» y, para el acceso, deflactar también por la renta.
+**Se sostiene con matices.** Las cifras son correctas, y la advertencia contra elegir sin decirlo la cifra que conviene es legítima. El matiz: no es una elección entre equivalentes. Para la variación del precio de la vivienda hay una medida de referencia, el índice ajustado por calidad, y las medias por m² responden a otra pregunta, con un sesgo de composición que es medible en parte. La advertencia correcta no es «elegir», sino «decir qué pregunta responde cada cifra» y, para el acceso, deflactar también por la renta.
 
 ## 6. Texto corregido y confianza
 
-> «El precio ha subido un X %»: una vivienda de las mismas características cuesta hoy un 44 % más que en 2019 (índice del INE), un 19 % más descontada la inflación y un 13 % más en relación con la renta de los hogares. El precio medio por m² sube menos (+30 % nominal, +7 % real) porque mide lo que se vende cada año, y cada año se vende más en zonas y viviendas más baratas. Para saber cuánto se ha encarecido la vivienda, la referencia es el índice. La media por m² dice cuánto pagan de media los compradores, que ya se han adaptado comprando más barato.
+> «El precio ha subido un X %»: una vivienda de las mismas características cuesta hoy un 44 % más que en 2019 (índice del INE), un 19 % más descontada la inflación y un 13 % más en relación con la renta de los hogares. El precio medio por m² sube menos (+30 % nominal, +7 % real). Mide lo que se vende cada año, y una parte de la diferencia se debe a que se vende más en provincias más baratas; el resto no está medido. Para saber cuánto se ha encarecido la vivienda, la referencia es el índice. La media por m² dice cuánto pagan de media los compradores, que en parte se han desplazado hacia lo más barato.
 
 Confianza:
 - IPV como medida de referencia: **la evidencia indica** (práctica estadística estándar);
@@ -78,3 +78,10 @@ Confianza:
 ## 7. Parada
 
 No hay parada. Las cifras publicadas son correctas. La frase «quien elige la cifra elige el mensaje» no figura en publicacion/. La 1.0 dice «se dan ambas medidas y no se elige una» (I.2), que es una opción de presentación, no una afirmación falsa. Se señala al autor que el estándar del Banco de España (B5) da prioridad al IPV.
+
+## 8. Respuesta a la ronda 1
+
+- **Atribución a la composición: aplicado.** El texto corregido ya no la atribuye toda: «en parte», y «el resto no está medido».
+- **Rótulo [C4] del IPV: se mantiene.** En la capa del proyecto el IPV es [C4] por ser de fuente única, y no cambia. En la lectura V17 (B1) es «OF»: estadística oficial. Se cita como referencia por método, no por capa.
+- **«Tasación frente a transacción»: aplicado, se quita.** Las tres medias por m² coinciden (29,2-29,7 % con medias anuales).
+- **Veredicto: aplicado.** Pasa a «se sostiene con matices». La falsa equivalencia queda como matiz: la advertencia es válida, pero para la variación del precio hay una medida de referencia.

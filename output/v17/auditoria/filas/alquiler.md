@@ -10,18 +10,18 @@ Análisis a posteriori (V17). Ficha de auditoría de la fila «alquiler» (D1, d
 
 **A favor.** Las dos preguntas separan cifras que difieren mucho con los mismos datos y el mismo periodo:
 - **IPC de alquiler (contratos vigentes), 2019-2025:** +10,1 % nominal y −9,5 % real con el IPC general (informe integral, VI; ids de la 1.0, C4).
-- **Contratos nuevos en Cataluña (Incasòl), 2019-2025:** mediana municipal de +24,8 % nominal, con un P10-P90 de +11,7 % a +48,9 % en 514 municipios sin muestra sellada (V17-AUD-DP-ALQ-INCASOL-NUEVOS).
+- **Contratos nuevos en Cataluña (Incasòl), 2019-2025:** mediana municipal de +24,8 % nominal, con un P10-P90 de +11,7 % a +48,9 % en 514 municipios sin muestra sellada (V17-AUD-DP-ALQ-INCASOL-NUEVOS). Ponderada por contratos, la subida es del +20,0 % con los pesos municipales de 2019 y del +17,1 % como valor unitario con los pesos de cada año, frente al +8,6 % del IPC de alquiler de Cataluña, que mide los contratos vigentes (V17-AUD-DP-ALQ-INCASOL-NUEVOS-POND).
 - **Brecha publicada.** La brecha entre contratos nuevos y vigentes en Cataluña es de 10,8 puntos (2021-2024; 1.0, [C1]).
 - **Banco de España (IA2025, p. 125).**
-  - Contratos vigentes: +0,4 % real de media anual desde 2019.
+  - Contratos vigentes: +0,4 % real de media anual desde 2019. No cuadra con el IPC de alquiler, que da −9,5 % real acumulado en 2019-2025, ≈ −1,6 % al año. La página leída no dice qué serie usa el Banco de España. Lo más probable es que sean los datos tributarios de contratos vigentes (SERPAVI o IPVA), con otra cobertura y otra composición, pero no se ha comprobado: la discrepancia queda sin conciliar y se dan ambas.
   - Nuevos contratos: +4,6 % real interanual en 2024.
   - Precios de oferta en portales: +5 % real en 2025.
 
 **En contra (lo que la frase omite).**
 - **Falta una tercera pregunta: ¿precio de oferta o precio firmado?** Los portales miden anuncios: precio pedido, con la composición de lo que se anuncia, y sin las viviendas que se alquilan sin anuncio. Los registros de fianzas miden contratos firmados. Las dos son «nuevos» y no miden lo mismo. En los topes de Cataluña, la distinción decide el resultado (ver la ficha topes).
 - **Falta una cuarta: ¿real respecto a qué?** El IPC dice cuánto pierde o gana el alquiler frente a los demás precios. Para el acceso, el Banco de España deflacta por la renta.
-  - El IPC de alquiler deflactado por la renta disponible bruta por hogar cae un 13,9 % en 2019-2025 (V17-AUD-DP-ALQ-IPC-REAL-RENTA). Para el inquilino que sigue en su contrato, el alquiler pesa hoy menos en la renta media que en 2019.
-  - Para quien firma ahora, en Cataluña, la renta media de los contratos nuevos (+24,8 %) sube 2,5 veces más que el IPC de alquiler, aunque algo menos que la renta disponible por hogar nacional (+27,9 %). La comparación con la renta mezcla ámbitos (Cataluña frente a España; mediana municipal frente a agregado) y es solo orientativa. El esfuerzo del primer quintil y de los jóvenes no se ve en una media.
+  - El IPC de alquiler deflactado por la renta disponible bruta por hogar cae un 13,9 % en 2019-2025 (V17-AUD-DP-ALQ-IPC-REAL-RENTA). El alquiler medio del stock ha crecido menos que la renta media por hogar. Eso NO es el esfuerzo del inquilino: la renta de los inquilinos no es la renta media, y el esfuerzo se mide con microdatos de hogares inquilinos (ECV; Banco de España: 26,7 % de la renta neta en 2024).
+  - Para quien firma ahora, en Cataluña, la renta media de los contratos nuevos ponderada por contratos (+17 % a +20 %) sube unas dos veces más que el IPC de alquiler de Cataluña (+8,6 %), aunque menos que la renta disponible por hogar nacional (+27,9 %). La comparación con la renta mezcla ámbitos (Cataluña frente a España; mediana municipal frente a agregado) y es solo orientativa. El esfuerzo del primer quintil y de los jóvenes no se ve en una media.
 - **Falta el ámbito y el desfase.** IPVA y SERPAVI (datos tributarios) bajan a municipio o distrito, pero llegan con unos dos años de retraso y miden el stock. El IPC es provincial como mucho. Una cifra nacional no describe Barcelona, y una de Barcelona no describe España.
 - **Precios medios por m² frente a índices.** SERPAVI y las fianzas publican medias o medianas por m², con la composición de cada año. El propio Banco de España advierte que los precios medios «no pueden considerarse índices de precios» (DO 2432, p. 17).
 
@@ -62,7 +62,7 @@ Siempre: nominal y real, y real frente al IPC y frente a la renta.
 
 ## 6. Texto corregido y confianza
 
-> «El alquiler ha subido un X %»: pregunte cuatro cosas. (1) ¿De contratos vigentes o de contratos nuevos? Entre 2019 y 2025, el alquiler de quien ya vivía de alquiler subió un 10 % nominal, menos que los precios y que la renta. El de los contratos nuevos en Cataluña subió en torno a un 25 %. (2) ¿Precio pedido en un portal o precio firmado? (3) ¿Nominal o real, y real frente a los precios o frente a la renta del hogar? (4) ¿De qué territorio? Cada cifra responde a una pregunta distinta: no se comparan entre sí.
+> «El alquiler ha subido un X %»: pregunte cuatro cosas. (1) ¿De contratos vigentes o de contratos nuevos? Entre 2019 y 2025, el alquiler de quien ya vivía de alquiler subió un 10 % nominal, menos que los precios y que la renta media (lo que no equivale a menos esfuerzo para el inquilino). El de los contratos nuevos en Cataluña subió entre un 17 % y un 20 %, el doble que el de los contratos vigentes de Cataluña (+8,6 %). (2) ¿Precio pedido en un portal o precio firmado? (3) ¿Nominal o real, y real frente a los precios o frente a la renta del hogar? (4) ¿De qué territorio? Cada cifra responde a una pregunta distinta: no se comparan entre sí.
 
 Confianza:
 - diferencias entre medidas: **la evidencia indica** (estadísticas oficiales);
@@ -71,3 +71,10 @@ Confianza:
 ## 7. Parada
 
 No hay parada.
+
+## 8. Respuesta a la ronda 1
+
+- **+0,4 % real del Banco de España: conciliación intentada, no resuelta.** El IPC de alquiler da ≈ −1,6 % real al año. La fuente del Banco de España (IA2025, p. 125) no identifica la serie en lo leído. Se dan ambas y se marca la discrepancia.
+- **Incasòl: aplicado.** Se pondera por contratos (+20,0 % Laspeyres; +17,1 % valor unitario; 514 municipios) y se compara con el IPC de alquiler de Cataluña (+8,6 %). La mediana municipal (+24,8 %) queda como dato de distribución.
+- **Renta media y esfuerzo: aplicado.** Se aclara que deflactar por la renta media no es el esfuerzo del inquilino.
+- **Veredicto: se mantiene «se sostiene con matices».**

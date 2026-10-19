@@ -53,14 +53,15 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F3 | abogado-del-diablo | ronda 1 oferta y titularidad | 105.280 | - |
 | 2026-10-19 | F3 | abogado-del-diablo | ronda 1 demanda y precios | 136.019 | - |
 | 2026-10-19 | F3 | abogado-del-diablo | ronda 1 regulación y ayudas | 127.968 | - |
+| 2026-10-19 | F3 | auditor | revisión ronda 1 demanda y precios | 62.629 | output/v17/auditoria/ (demanda_precios) |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 822.687 |
 | F1 | 346.740 |
 | F2 | 443.477 |
-| F3 | 1.882.961 |
+| F3 | 1.945.590 |
 
-Total V17: 3.495.865 tokens
+Total V17: 3.558.494 tokens
 
 <!-- fin subagentes -->

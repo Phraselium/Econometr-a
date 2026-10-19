@@ -46,7 +46,8 @@ DOC = {
     "gl_dens_media": 1.57,   # anuncios sobre viviendas, media de 4T2016 (%)
     "gl_dens_alta": 5.0,     # decil alto (≈ 5 % de las viviendas)
     # Tipos (zona euro): semielasticidad del precio a +1 pp del tipo hipotecario, a unos dos años
-    "bce_semi": -5.0,        # BCE, Boletín Económico 6/2022 (proyecciones locales, lineal)
+    "bce_semi": -5.0,
+    "bce_semi_nl": -9.0,     # BCE, Boletín Económico 6/2022, estimación no lineal con tipos bajos        # BCE, Boletín Económico 6/2022 (proyecciones locales, lineal)
     "calza_semi": -2.3,      # Calza, Monacelli y Stracca (2013), reescalado por Williams (2015)
     "williams_semi": -6.3,   # Williams (2015), con Jordà, Schularick y Taylor (2015)
     "bde_con_hipoteca_2025": 52.0,  # % de compras con hipoteca (BdE IA2025, p. 124)
@@ -67,7 +68,7 @@ def hecho(id_, indicador, valor, unidad, periodo, fuentes, lectura, ficha, minim
                    "ficha": f"{PREG if pregunta else FICHAS}/{ficha}.md", "nota": "a posteriori" + (f"; {nota}" if nota else "")})
 
 
-def base(sql_where: str) -> pd.DataFrame:
+def base(sql_where: str) -> pd.DataFrame:  # noqa: D401
     """Lee la base SIN las filas de la muestra sellada v6."""
     return duckdb.sql(f"select territorio_codigo c, nivel, variable v, periodo p, valor from '{BASE}' "
                       f"where {sql_where} and not muestra_sellada_v6").df()
@@ -191,7 +192,7 @@ def turisticos() -> dict:
     for nombre, val in (("NAC", nac_viv), ("SEC-P50", pv[0]), ("SEC-P90", pv[1]), ("SEC-P99", pv[2])):
         hecho(f"TUR-GL-ALQ-{nombre}", f"Alquiler compatible con la densidad turística ({nombre}) según los coeficientes de Garcia-López et al. (ilustración)",
               (lo + hi) / 2 * val, "% de alquiler (nivel acumulado frente a densidad cero)", "2024M08",
-              "Garcia-López et al. (2020, JUE 119, 103278; versión de trabajo MPRA 96131, cuadro 4); densidad propia", "juicio experto", fi,
+              "Garcia-López et al. (2020, JUE 119, 103278; versión de trabajo MPRA 96131, cuadro 4); densidad propia", "juicio experto (calibración)", fi,
               minimo=lo * val, maximo=hi * val,
               nota=(f"densidad {val:.2f} % de las viviendas; {lo}-{hi} % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); "
                     "fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí"))
@@ -203,7 +204,7 @@ def turisticos() -> dict:
     mde = h3["diagnosticos"]["MDE80_pct_por_DT"]["conley"]
     hecho("TUR-GL-FRENTE-H3", "Pendiente por DT intra-sección que implicarían los coeficientes de Garcia-López et al., frente a H3 (V15)",
           (lo + hi) / 2 * dt, "% de alquiler por DT intra-sección", "2021-2024", "output/v15/p5/resultado.json (H3); Garcia-López et al.",
-          "juicio experto", fi, minimo=lo * dt, maximo=hi * dt,
+          "juicio experto (calibración)", fi, minimo=lo * dt, maximo=hi * dt,
           nota=f"DT intra-sección {dt:.2f} pp; H3 = {b:.4f} % por DT (EMD 80 % = {mde:.3f}); H3 mide contratos vigentes (SERPAVI) y GL anuncios nuevos")
     res.update(h3=(b, mde, dt, lo * dt, hi * dt))
     return res
@@ -260,7 +261,9 @@ def inmigracion() -> dict:
     go = DOC["go_precio"] / DOC["go_pob"]
     hecho("INM-GO-ELASTICIDAD", "Elasticidad implícita del precio de la vivienda a la población en González y Ortega (2013): 2 % anual de precio por 1,5 % anual de población",
           go, "% de precio por 1 % de población", "2000-2010", "González y Ortega (2013), J. Regional Science 53(1), 37-59, resumen (Crossref)",
-          "juicio experto", fi, nota="cociente de las cifras del resumen; comparar con Q3-c1-AKM0 (0,0119 log de valor tasado por punto de población extranjera) y H4")
+          "juicio experto", fi, minimo=1.5 / DOC["go_pob"], maximo=2.3 / DOC["go_pob"],
+          nota=("cociente de las cifras del resumen (precio +1,5 a +2,3 % anual según docs/v17/referencias/d2_versiones.md; central 2 %); "
+                "la versión publicada (Wiley) no se leyó: cifras de resúmenes secundarios; comparar con Q3-c1-AKM0 y H4"))
     return {"cuota_alq": cuota_alq, "cuota_hog": cuota_hog, "a_ext": a_ext, "a_esp": a_esp, "a_rec": float(l["2016-2021"]),
             "alq_nuevo": (alq_nuevo_lo, alq_nuevo_hi), "go": go, "d3": d3, "infer": infer, "lat": cuota_lat, "sud": sud, "asilo": asi_1925, "asi": asi}
 
@@ -281,24 +284,45 @@ def tipos() -> dict:
     g_real = 100 * ((ipv.loc["2024Q4"] / s.ipc_general.loc["2024Q4"]) / (ipv.loc["2021Q4"] / s.ipc_general.loc["2021Q4"]) - 1)
     hecho("TIP-IPV-2022-2024", "Variación del IPV (ajustado por calidad), 2021T4-2024T4", g_nom, "%", "2021T4-2024T4",
           "data/processed/v8/nacional_q_v8.csv (INE IPV e IPC general)", "OF", fi, minimo=g_real, maximo=g_nom, nota="min = real (IPC general)")
-    # Calibración (decisión del autor, 2026-10-19): juicio experto con semielasticidades de la zona euro, no una estimación para
-    # España; nunca se rotula «sin la subida de tipos habría subido X»
-    semis = [DOC["calza_semi"], DOC["bce_semi"], DOC["williams_semi"]]
-    efectos = [x * dd for x in semis for dd in (d_anual, d_tae)]
+    # Calibración (decisión del autor, 2026-10-19): «juicio experto (calibración)», con rango completo, elasticidades y fuente;
+    # nunca «sin la subida de tipos habría subido X». Cada semielasticidad se aplica al tipo con el que se estimó y se compara con
+    # la medida de precio que usa (real o nominal).
+    dfr = s.tipo_dfr
+    d_pol = dfr.loc["2023Q4"] - dfr.loc["2021Q4"]
+    hecho("TIP-DELTA-POLITICA", "Subida del tipo de la facilidad de depósito del BCE, 2021T4-2023T4", d_pol, "puntos porcentuales", "2021T4-2023T4",
+          "data/processed/v8/nacional_q_v8.csv (tipo_dfr, BCE)", "OF", fi)
+    cal = [  # (fuente, semielasticidad %/pp, tipo, medida de precio, subida aplicada mín., máx.)
+        ("BCE BE 6/2022, lineal", DOC["bce_semi"], "hipotecario", "precio (real o nominal: no consta en lo leído)", d_anual, d_tae),
+        ("BCE BE 6/2022, no lineal con tipos bajos", DOC["bce_semi_nl"], "hipotecario", "precio (no consta)", d_anual, d_tae),
+        ("Calza, Monacelli y Stracca (2013), reescalado por Williams (2015)", DOC["calza_semi"], "interbancario a 3 meses (política)", "precio real", d_pol, d_pol),
+        ("Williams (2015) con Jordà, Schularick y Taylor (2015)", DOC["williams_semi"], "corto (política)", "precio real", d_pol, d_pol),
+    ]
+    filas = []
+    for fu, se, ti, me, d0, d1 in cal:
+        filas.append((fu, se, ti, me, se * d0, se * d1))
+    efectos = [x for f_ in filas for x in (f_[4], f_[5])]
+    ef_h = [x for f_ in filas[:2] for x in (f_[4], f_[5])]
+    ef_p = [x for f_ in filas[2:] for x in (f_[4], f_[5])]
     ef_c = DOC["bce_semi"] * d_anual
-    cf = lambda ef: 100 * ((1 + g_nom / 100) / (1 + ef / 100) - 1)
-    hecho("TIP-EFECTO-ILUSTRADO", "Calibración: efecto en el precio a unos dos años de la subida de tipos 2022-2023 con semielasticidades de la zona euro (−2,3 a −6,3 % por punto; central −5 %)",
-          ef_c, "% del nivel de precios", "2022-2025", "BCE BE 6/2022 (−5 %/pp); Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); TIP-DELTA-TAE",
-          "juicio experto (calibración)", fi, minimo=min(efectos), maximo=max(efectos),
-          nota="central = −5 %/pp × subida media anual; zona euro, no España; supone que la elasticidad media se aplica aunque solo el 52 % compre con hipoteca")
-    hecho("TIP-CONTRAFACTUAL", "Calibración: variación nominal del IPV 2021T4-2024T4 una vez descontado el efecto calibrado de la subida de tipos (semielasticidades de la zona euro; no es una estimación para España)",
-          cf(ef_c), "%", "2021T4-2024T4", "TIP-IPV-2022-2024 y TIP-EFECTO-ILUSTRADO", "juicio experto (calibración)", fi,
-          minimo=cf(max(efectos)), maximo=cf(min(efectos)),
-          nota="(1 + observado) / (1 + efecto) − 1; elasticidades: BCE BE 6/2022 (−5 %/pp), Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; calibración, no un contrafactual identificado")
-    # Escalado por la parte de compras financiadas con hipoteca
+    hecho("TIP-CALIBRACION-EFECTO-HIPOTECARIO", "Calibración: efecto en el precio a unos dos años de la subida del tipo hipotecario 2022-2023 (semielasticidades del BCE para la zona euro: −5 %/pp lineal; −9 %/pp no lineal con tipos bajos)",
+          ef_c, "% del nivel de precios", "2022-2025", "BCE, Boletín Económico 6/2022 (proyecciones locales, 1995-2019); TIP-DELTA-TAE",
+          "juicio experto (calibración)", fi, minimo=min(ef_h), maximo=max(ef_h),
+          nota="central = −5 %/pp × subida de la TAE media 2021→2023 (2,27 pp); rango con 2,27-2,51 pp y −5 a −9 %/pp; zona euro, no España; medida de precio no especificada en lo leído")
+    hecho("TIP-CALIBRACION-EFECTO-POLITICA", "Calibración: efecto en el precio REAL a unos dos años de la subida del tipo de política 2022-2023 (semielasticidades de −2,3 y −6,3 %/pp del tipo corto)",
+          sum(ef_p) / len(ef_p), "% del precio real", "2022-2025", "Calza et al. (2013) y Williams (2015); TIP-DELTA-POLITICA", "juicio experto (calibración)", fi,
+          minimo=min(ef_p), maximo=max(ef_p),
+          nota="extrapolación lineal de 1 pp a ≈ 4,5 pp: fuera del rango habitual de las estimaciones; comparar con el IPV real (+8,5 %)")
+    desc = lambda ef, obs: 100 * ((1 + obs / 100) / (1 + ef / 100) - 1)
+    hecho("TIP-CALIBRACION-DESCONTADO", "Calibración: variación del IPV 2021T4-2024T4 una vez descontado el efecto calibrado del tipo hipotecario (nominal)",
+          desc(ef_c, g_nom), "%", "2021T4-2024T4", "TIP-IPV-2022-2024 y TIP-CALIBRACION-EFECTO-HIPOTECARIO", "juicio experto (calibración)", fi,
+          minimo=desc(max(ef_h), g_nom), maximo=desc(min(ef_h), g_nom),
+          nota="(1 + observado) / (1 + efecto) − 1; BCE −5 a −9 %/pp × 2,27-2,51 pp; ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; no es un contrafactual identificado")
+    hecho("TIP-CALIBRACION-DESCONTADO-REAL", "Calibración: variación del IPV REAL 2021T4-2024T4 una vez descontado el efecto calibrado del tipo de política",
+          desc(sum(ef_p) / len(ef_p), g_real), "%", "2021T4-2024T4", "TIP-IPV-2022-2024 (real) y TIP-CALIBRACION-EFECTO-POLITICA", "juicio experto (calibración)", fi,
+          minimo=desc(max(ef_p), g_real), maximo=desc(min(ef_p), g_real), nota="ver TIP-CALIBRACION-EFECTO-POLITICA")
     sh = DOC["bde_con_hipoteca_2025"] / 100
-    hecho("TIP-EFECTO-SOLO-HIPOTECA", "Calibración: efecto si solo se transmite a la parte de compras con hipoteca (52 %)", ef_c * sh, "% del nivel de precios",
-          "2022-2025", "TIP-EFECTO-ILUSTRADO × 52 % (BdE IA2025, p. 124)", "juicio experto (calibración)", fi, minimo=min(efectos) * sh, maximo=max(efectos) * sh,
+    hecho("TIP-CALIBRACION-SOLO-HIPOTECA", "Calibración: efecto del tipo hipotecario si solo se transmite a la parte de compras con hipoteca (52 %)", ef_c * sh, "% del nivel de precios",
+          "2022-2025", "TIP-CALIBRACION-EFECTO-HIPOTECARIO × 52 % (BdE IA2025, p. 124)", "juicio experto (calibración)", fi, minimo=min(ef_h) * sh, maximo=max(ef_h) * sh,
           nota="cota inferior del efecto en valor absoluto: los compradores al contado también descuentan con el tipo (coste de oportunidad)")
     # Demanda que acompañó a la subida: renta y hogares
     rdb = 100 * (media_anual(n, "rdb", 2024) / media_anual(n, "rdb", 2021) - 1)
@@ -309,8 +333,11 @@ def tipos() -> dict:
     inf = pd.read_csv(INFER["series"])
     q5 = inf[inf.id_resultado.astype(str).str.startswith("Q5-p-")][["id_resultado", "estimacion_publicada", "p_conv", "ic95_lo", "ic95_hi",
                                                                       "tamano_real", "p_holm_pregunta"]]
-    return {"d_tae": d_tae, "d_anual": d_anual, "g_nom": g_nom, "g_real": g_real, "ef": (min(efectos), ef_c, max(efectos)),
-            "cf": (cf(max(efectos)), cf(ef_c), cf(min(efectos))), "sh": (ef_c * sh, max(efectos) * sh, min(efectos) * sh),
+    return {"d_tae": d_tae, "d_anual": d_anual, "d_pol": d_pol, "g_nom": g_nom, "g_real": g_real, "filas": filas,
+            "ef_h": (min(ef_h), ef_c, max(ef_h)), "ef_p": (min(ef_p), sum(ef_p) / len(ef_p), max(ef_p)),
+            "desc_nom": (desc(max(ef_h), g_nom), desc(ef_c, g_nom), desc(min(ef_h), g_nom)),
+            "desc_real": (desc(max(ef_p), g_real), desc(sum(ef_p) / len(ef_p), g_real), desc(min(ef_p), g_real)),
+            "sh": (min(ef_h) * sh, ef_c * sh, max(ef_h) * sh),
             "rdb": rdb, "hog": hog, "q5": q5, "tae21": tae.loc["2021Q4"], "tae23": tae.loc["2023Q3"], "tae25": tae.loc["2025Q4"]}
 
 
@@ -318,7 +345,7 @@ def tipos() -> dict:
 def burbuja() -> dict:
     fi = "burbuja"
     mc = json.loads(MC_GSADF.read_text(encoding="utf-8"))["estimacion"]
-    hecho("BUR-GSADF-POTENCIA", "Potencia del GSADF del factor común (bootstrap salvaje) frente a una alternativa explosiva simulada (Monte Carlo V16)",
+    hecho("BUR-GSADF-POTENCIA", "Potencia del GSADF de Q9-g (factor común, bootstrap salvaje) frente a una alternativa explosiva simulada (Monte Carlo V16); no calculada para el GSADF nacional de V7.2",
           mc["potencia"]["alt_homo"], "fracción de rechazos al 5 % nominal", "simulación T = 98", "output/v16/montecarlo/gsadf_factor/resultado.json",
           "hecho", fi, minimo=mc["potencia"]["alt_homo"], maximo=mc["potencia"]["alt_salto"],
           nota="min = alternativa homocedástica; max = alternativa con saltos; tamaño 0,017-0,046: el contraste casi nunca detecta la alternativa simulada")
@@ -403,6 +430,19 @@ def alquiler() -> dict:
               "2019-2025", "base: incasol_renta_media (Incasòl, fianzas)", "OF", fi, minimo=100 * (gm.quantile(0.1) - 1), maximo=100 * (gm.quantile(0.9) - 1),
               nota=f"min = P10; max = P90; {len(w)} municipios sin muestra sellada v6 con dato en 2019 y 2025; nominal; contratos nuevos, no vigentes")
         res["incasol"] = (gm.median(), gm.quantile(0.1), gm.quantile(0.9), len(w))
+        # Ponderado por contratos (mismo conjunto de municipios) y frente al IPC de alquiler de Cataluña
+        c = base("variable='incasol_contratos' and nivel='municipio' and periodo in ('2019','2025')").pivot_table(index="c", columns="p", values="valor")
+        k = w.join(c, rsuffix="_n").dropna()
+        lasp = (k["2025"] * k["2019_n"]).sum() / (k["2019"] * k["2019_n"]).sum()
+        uv = ((k["2025"] * k["2025_n"]).sum() / k["2025_n"].sum()) / ((k["2019"] * k["2019_n"]).sum() / k["2019_n"].sum())
+        ipc09 = base("variable='ipc_alquiler' and nivel='ccaa' and c='09' and (periodo like '2019T_' or periodo like '2025T_')")
+        ipc09 = ipc09[ipc09.c == "09"]
+        g09 = ipc09[ipc09.p.str[:4] == "2025"].valor.mean() / ipc09[ipc09.p.str[:4] == "2019"].valor.mean()
+        hecho("ALQ-INCASOL-NUEVOS-POND", "Renta media de contratos nuevos (Incasòl), Cataluña, ponderada por contratos de 2019 (Laspeyres municipal), 2019-2025",
+              100 * (lasp - 1), "%", "2019-2025", "base: incasol_renta_media e incasol_contratos (Incasòl, fianzas)", "OF", fi,
+              minimo=100 * (uv - 1), maximo=100 * (lasp - 1),
+              nota=f"min = valor unitario (pesos de cada año); {len(k)} municipios; IPC de alquiler de Cataluña (contratos vigentes) +{100 * (g09 - 1):.1f} %; nominal")
+        res["incasol_pond"] = (lasp, uv, g09, len(k))
     return res
 
 
@@ -417,7 +457,7 @@ def main() -> int:
     print(json.dumps({k: v for k, v in t.items() if k != "top"}, default=float, indent=0)[:4000])
     print("top municipios:", t["top"])
     tp = r["tipos"]
-    print("tipos", {k: tp[k] for k in ("d_tae", "d_anual", "g_nom", "g_real", "ef", "cf", "sh", "rdb", "hog", "tae21", "tae23", "tae25")})
+    print("tipos", {k: tp[k] for k in ("d_tae", "d_anual", "d_pol", "g_nom", "g_real", "filas", "ef_h", "ef_p", "desc_nom", "desc_real", "sh", "rdb", "hog", "tae21", "tae23", "tae25")})
     print("precio", {k: (round(float(v), 4) if not isinstance(v, int) else v) for k, v in p.items()})
     print("alquiler", r["alquiler"])
     i = r["inmigracion"]

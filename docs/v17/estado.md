@@ -46,14 +46,15 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F2 | modelizador | inferencia micro V15-V16 | 273.700 | src/v17/f2_inferencia_v15_v16_micro.py; output/v17/lectura_bde/v15_v16_micro/ |
 | 2026-10-19 | F0 | lector-literatura | Informes Anuales e IEF del Banco de España | 439.510 | docs/v17/referencias/bde_informes.md; output/v17/f0/bde_informes.json |
 | 2026-10-19 | F3 | auditor | auditoría regulación y ayudas (topes, turística, ayudas; D3-4) | 289.072 | output/v17/auditoria/ (regulacion_ayudas) |
+| 2026-10-19 | F3 | auditor | auditoría oferta y titularidad (6 filas; D3-2, D3-3) | 291.660 | output/v17/auditoria/ (oferta_titularidad) |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 822.687 |
 | F1 | 346.740 |
 | F2 | 443.477 |
-| F3 | 468.377 |
+| F3 | 760.037 |
 
-Total V17: 2.081.281 tokens
+Total V17: 2.372.941 tokens
 
 <!-- fin subagentes -->

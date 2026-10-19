@@ -16,3 +16,14 @@
   - (a) corregir III.8 y la medida 5, con una entrada en ERRATA.md porque cambia un veredicto publicado;
   - (b) mantenerlo, explicando por qué;
   - (c) otra opción.
+
+## P2. Parada E (2026-10-19): «no hay datos de titularidad»
+- **Qué conclusión.** publicacion/lo_que_sabemos.md, sección «No se puede afirmar con estos datos», dice sobre qué parte del stock y del alquiler está en manos de empresas o grandes tenedores: «no hay datos de titularidad (solicitudes S1, S3 y S4)». Lo mismo dice la ficha V02 del verificador («Sin datos de titularidad por tamaño de tenedor») y la fila de discurso de D1 («no hay datos de titularidad para afirmarlo ni negarlo»).
+- **Qué muestra la auditoría** (output/v17/auditoria/filas/grandes_tenedores.md, sección 7):
+  - Para la parte del STOCK sí hay datos públicos: el Catastro, con la titularidad por tramos y por tipo de titular.
+  - La propia 1.0 publica el 4,2 % en manos de titulares con más de diez viviendas, en publicacion/atlas_v12.md y en el informe integral, VII.7 (4,2 % y 2,1 % [C4]). El script de la auditoría lo reproduce: 4,16 % en 2026 y 4,30 % en 2025.
+  - Es una contradicción interna de la 1.0: una página dice que no hay datos y otra publica la cifra.
+  - Para la parte del ALQUILER no hay un dato nacional directo. Hay datos parciales: un 2,4 % del alquiler habitual en personas físicas con once o más viviendas (Banco de España); un 36 % del alquiler habitual de Barcelona ciudad (O-HB); y entre un 2 % y un 12 % con supuestos explícitos.
+  - publicacion/una_pagina.md («no hay datos de titularidad suficientes») es matizable, no falsa.
+- **Veredicto de la fila de discurso.** «Incorrecta»: los datos bastan para negar el «control» a escala nacional; Barcelona ciudad pesa mucho más; el efecto en los precios no está medido en España.
+- **Qué no se ha hecho.** No se ha cambiado ningún fichero publicado. Decide el autor: (a) corregir lo_que_sabemos.md y la ficha V02 (la frase, no una cifra), separando stock y alquiler; (b) mantenerlo; (c) otra opción.

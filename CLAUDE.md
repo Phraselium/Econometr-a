@@ -31,4 +31,4 @@
 - V10-V12: la capa pública de la base (data/base/publica) solo lleva datos redistribuibles y pesa < 50 MB; `make check` deja git sin cambios (nada se escribe en el repositorio durante el check).
 - V13: la versión pública, la fecha, la URL del repositorio, la web y el DOI viven SOLO en proyecto.json (CITATION.cff y .zenodo.json se generan con `make metadatos`); `make check` falla si una puerta de entrada declara otra versión vigente u otra URL del repositorio; ninguna cifra de cifras_clave cambia sin entrada en ERRATA.md.
 - V14: ficheros con Write o heredoc entrecomillado; nunca make clean, make all ni objetivos de estimación sin orden expresa del autor (`make check` rechaza heredocs sin comillas en src/ y el Makefile: src/v14/check_v14.py).
-- V16 en curso (ampliación de V15; pre-registros internos sin sello externo): leer docs/v16/plan.md y docs/v16/estado.md al empezar cualquier sesión o tras compactar
+- V18 en curso (bibliografía, replicación e impactos): leer docs/v18/plan.md y docs/v18/estado.md al empezar o tras compactar

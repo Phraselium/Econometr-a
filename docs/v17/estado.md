@@ -14,5 +14,17 @@ V17 se ejecuta dentro de V18 (docs/v17/decisiones.md, K0): fases 0-3 y 5; la 4 s
 - Fase 0: referencias del Banco de España, el BCE y el INE.
 
 ## Subagentes y tokens
-Sin subagentes todavía.
+
+Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). Tokens aproximados según el informe de cada subagente. Tope por fase: 4.000.000 (parada E).
+
+| Fecha | Fase | Rol | Tarea | Tokens | Ficheros |
+|---|---|---|---|---|---|
+| 2026-10-19 | F0 | lector-literatura | INE demografía y comprobación D4 | 111.859 | docs/v17/referencias/ine_demografia.md; docs/v17/correcciones.md; output/v17/f0/ine_demografia.json |
+
+| Fase | Tokens de subagentes |
+|---|---|
+| F0 | 111.859 |
+
+Total V17: 111.859 tokens
+
 <!-- fin subagentes -->

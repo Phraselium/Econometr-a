@@ -47,9 +47,9 @@ La 1.0 no la cita, por la primera etapa con signo contrario y el placebo (inform
 
 Script: src/v17/f3_demanda_precios.py. Serie: data/processed/v8/nacional_q_v8.csv, versionada.
 
-**3.1 Contrafactual aproximado.** Es juicio experto: ilustración con parámetros de la zona euro, no un contrafactual identificado.
+**3.1 Calibración (juicio experto).** Se usan semielasticidades de la zona euro: −5 % por punto (BCE, Boletín Económico 6/2022) y de −2,3 a −6,3 % por punto (Calza et al., 2013; Williams, 2015). No es una estimación para España ni un contrafactual identificado.
 
-| Supuesto | Efecto en el precio a ≈ 2 años | IPV 2021T4-2024T4 sin la subida |
+| Supuesto | Efecto calibrado en el precio a ≈ 2 años | IPV 2021T4-2024T4 descontado el efecto calibrado |
 |---|---|---|
 | −5 %/pp (BCE) × 2,27 pp (subida de la media anual 2021→2023) | −11,4 % | +38,0 % |
 | Rango: −2,3 a −6,3 %/pp × 2,27-2,51 pp | −5,2 a −15,8 % | +29,0 a +45,3 % |
@@ -62,7 +62,7 @@ Supuestos y límites:
 - **Otros choques.** No se modelan los demás choques.
 - **Escalado al 52 %.** Es una cota inferior en valor absoluto, porque el comprador al contado también descuenta con el tipo (coste de oportunidad).
 
-Lectura: con cualquiera de esos parámetros, sin la subida de tipos el precio habría subido más (entre 7 y 23 puntos más en tres años). El hecho «subieron los dos» es compatible con un efecto negativo de los tipos de esa magnitud.
+Lectura (juicio experto, calibración): con las semielasticidades de la zona euro, el efecto calibrado de la subida de tipos sobre el IPV está entre −5,2 % y −15,8 % a unos dos años. Descontado ese efecto, la variación del IPV en 2021T4-2024T4 sería de +29,0 % a +45,3 %, frente al +22,3 % observado. Es una calibración con parámetros de otra zona, no una estimación para España. El hecho «subieron los dos» es compatible con un efecto negativo de los tipos de ese orden.
 
 **3.2 Banco de España y BCE.**
 - No se encontró ningún documento del Banco de España con un efecto por cada 100 pb sobre el precio o las compraventas en España (docs/v17/referencias/bde_bce_documentos.md).
@@ -88,7 +88,7 @@ Lectura: con cualquiera de esos parámetros, sin la subida de tipos el precio ha
 
 ## 6. Texto corregido y confianza
 
-> «Con los tipos altos bajarán los precios»: no necesariamente. Los tipos altos frenan el precio respecto a lo que habría subido, pero no tienen por qué bajarlo. En 2022-2023 el tipo de las nuevas hipotecas subió unos 2,5 puntos. Con las estimaciones del BCE para la zona euro, eso resta al precio del orden de un 5 % a un 16 % a dos años. En España el crédito y las compraventas cayeron en 2023. El precio siguió subiendo porque los hogares y la renta crecían y apenas se construía. Además, cerca de la mitad de las compras no usa hipoteca, y eso debilita el efecto.
+> «Con los tipos altos bajarán los precios»: no necesariamente. Los tipos altos frenan el precio respecto a lo que habría subido, pero no tienen por qué bajarlo. En 2022-2023 el tipo de las nuevas hipotecas subió unos 2,5 puntos. Una calibración con las semielasticidades de la zona euro (−2,3 a −6,3 % por punto; BCE, Calza et al. y Williams) da un efecto de −5 % a −16 % sobre el precio a dos años. Es juicio experto, no una estimación para España. En España el crédito y las compraventas cayeron en 2023. El precio siguió subiendo porque los hogares y la renta crecían y apenas se construía. Además, cerca de la mitad de las compras no usa hipoteca, y eso debilita el efecto.
 
 Confianza:
 - signo negativo del efecto de los tipos sobre el precio: **la evidencia indica** (zona euro);

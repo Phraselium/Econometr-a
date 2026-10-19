@@ -60,7 +60,7 @@ HECHOS: list[dict] = []
 
 
 def hecho(id_, indicador, valor, unidad, periodo, fuentes, lectura, ficha, minimo=None, maximo=None, nota="", pregunta=False):
-    assert lectura in ("OF", "hecho", "cota", "asociación", "juicio experto")
+    assert lectura in ("OF", "hecho", "cota", "asociación", "juicio experto", "juicio experto (calibración)")
     f = lambda x: None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), 4)
     HECHOS.append({"id": f"V17-AUD-DP-{id_}", "indicador": indicador, "valor": f(valor), "min": f(minimo), "max": f(maximo),
                    "unidad": unidad, "periodo": periodo, "fuentes": fuentes, "capa": "C4", "lectura_v17": lectura,
@@ -281,23 +281,24 @@ def tipos() -> dict:
     g_real = 100 * ((ipv.loc["2024Q4"] / s.ipc_general.loc["2024Q4"]) / (ipv.loc["2021Q4"] / s.ipc_general.loc["2021Q4"]) - 1)
     hecho("TIP-IPV-2022-2024", "Variación del IPV (ajustado por calidad), 2021T4-2024T4", g_nom, "%", "2021T4-2024T4",
           "data/processed/v8/nacional_q_v8.csv (INE IPV e IPC general)", "OF", fi, minimo=g_real, maximo=g_nom, nota="min = real (IPC general)")
-    # Contrafactual: precio sin la subida de tipos, con las semielasticidades de la literatura
+    # Calibración (decisión del autor, 2026-10-19): juicio experto con semielasticidades de la zona euro, no una estimación para
+    # España; nunca se rotula «sin la subida de tipos habría subido X»
     semis = [DOC["calza_semi"], DOC["bce_semi"], DOC["williams_semi"]]
     efectos = [x * dd for x in semis for dd in (d_anual, d_tae)]
     ef_c = DOC["bce_semi"] * d_anual
     cf = lambda ef: 100 * ((1 + g_nom / 100) / (1 + ef / 100) - 1)
-    hecho("TIP-EFECTO-ILUSTRADO", "Efecto en el precio a unos dos años de la subida de tipos 2022-2023, con semielasticidades de la zona euro (ilustración)",
+    hecho("TIP-EFECTO-ILUSTRADO", "Calibración: efecto en el precio a unos dos años de la subida de tipos 2022-2023 con semielasticidades de la zona euro (−2,3 a −6,3 % por punto; central −5 %)",
           ef_c, "% del nivel de precios", "2022-2025", "BCE BE 6/2022 (−5 %/pp); Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); TIP-DELTA-TAE",
-          "juicio experto", fi, minimo=min(efectos), maximo=max(efectos),
+          "juicio experto (calibración)", fi, minimo=min(efectos), maximo=max(efectos),
           nota="central = −5 %/pp × subida media anual; zona euro, no España; supone que la elasticidad media se aplica aunque solo el 52 % compre con hipoteca")
-    hecho("TIP-CONTRAFACTUAL", "Variación nominal del IPV 2021T4-2024T4 que se habría observado sin la subida de tipos (ilustración contable)",
-          cf(ef_c), "%", "2021T4-2024T4", "TIP-IPV-2022-2024 y TIP-EFECTO-ILUSTRADO", "juicio experto", fi,
+    hecho("TIP-CONTRAFACTUAL", "Calibración: variación nominal del IPV 2021T4-2024T4 una vez descontado el efecto calibrado de la subida de tipos (semielasticidades de la zona euro; no es una estimación para España)",
+          cf(ef_c), "%", "2021T4-2024T4", "TIP-IPV-2022-2024 y TIP-EFECTO-ILUSTRADO", "juicio experto (calibración)", fi,
           minimo=cf(max(efectos)), maximo=cf(min(efectos)),
-          nota="(1 + observado) / (1 + efecto) − 1; ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; no es un contrafactual identificado")
+          nota="(1 + observado) / (1 + efecto) − 1; elasticidades: BCE BE 6/2022 (−5 %/pp), Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; calibración, no un contrafactual identificado")
     # Escalado por la parte de compras financiadas con hipoteca
     sh = DOC["bde_con_hipoteca_2025"] / 100
-    hecho("TIP-EFECTO-SOLO-HIPOTECA", "Efecto ilustrado si solo se transmite a la parte de compras con hipoteca (52 %)", ef_c * sh, "% del nivel de precios",
-          "2022-2025", "TIP-EFECTO-ILUSTRADO × 52 % (BdE IA2025, p. 124)", "juicio experto", fi, minimo=min(efectos) * sh, maximo=max(efectos) * sh,
+    hecho("TIP-EFECTO-SOLO-HIPOTECA", "Calibración: efecto si solo se transmite a la parte de compras con hipoteca (52 %)", ef_c * sh, "% del nivel de precios",
+          "2022-2025", "TIP-EFECTO-ILUSTRADO × 52 % (BdE IA2025, p. 124)", "juicio experto (calibración)", fi, minimo=min(efectos) * sh, maximo=max(efectos) * sh,
           nota="cota inferior del efecto en valor absoluto: los compradores al contado también descuentan con el tipo (coste de oportunidad)")
     # Demanda que acompañó a la subida: renta y hogares
     rdb = 100 * (media_anual(n, "rdb", 2024) / media_anual(n, "rdb", 2021) - 1)

@@ -28,7 +28,7 @@ def test_formato(hechos):
         assert i.startswith("V17-AUD-DP-")
         assert h["capa"] == "C4"
         assert h["nota"].startswith("a posteriori")
-        assert h["lectura_v17"] in ("OF", "hecho", "cota", "asociación", "juicio experto")
+        assert h["lectura_v17"] in ("OF", "hecho", "cota", "asociación", "juicio experto", "juicio experto (calibración)")
         assert h["fuentes"]
         if h["min"] is not None and h["max"] is not None and h["unidad"].startswith("%"):
             assert h["min"] <= h["max"] + 1e-9, i

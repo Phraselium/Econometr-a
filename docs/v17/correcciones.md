@@ -21,3 +21,12 @@ Consulta: 2026-10-19. Las cifras de partida proceden de la conversación con el 
 
 ## Reglas de uso
 Ninguna cifra de la tabla entra en un documento hasta que figure con resultado «Coincide» en su fuente original y con su fecha de nota. Las filas «solo en prensa» y «no encontrada» no deben citarse como hechos.
+
+## Correcciones a las referencias de partida de D2 (decisión del autor, 2026-10-19)
+
+Detalle de las versiones leídas en docs/v17/referencias/d2_versiones.md.
+
+| Referencia | Cifra o descripción de partida | Lo que dice la fuente | Resultado |
+|---|---|---|---|
+| González y Ortega (2013), Journal of Regional Science 53(1), 37-59, DOI 10.1111/jors.12010 (VERIFICADA en Crossref) | «Aproximadamente un tercio del aumento de precios y de la obra nueva en 1998-2008» | La versión publicada habla de en torno a un cuarto del aumento de precios en 2000-2010 (metadatos de Crossref y OpenAlex; documento de trabajo de octubre de 2011 leído completo: 25 % de los precios). La cifra de un tercio para 1998-2008 viene del resumen del documento de trabajo IZA DP 4333 (julio de 2009). | **No coincide.** Se cita la versión publicada: un cuarto del aumento de precios en 2000-2010. La versión publicada en Wiley no se pudo leer (HTTP 403); su resumen se toma de los metadatos. |
+| Monràs y García-Montalvo, FRBSF WP 2023-28 | «Anuncios: en torno a −5 %, la mitad por composición» | Las cuatro versiones (UPF Economics WP 1836 de diciembre de 2021 y abril de 2022, copia en la FRBSF de mayo de 2022 y FRBSF WP 2023-28) usan los mismos datos: contratos del registro de fianzas del Incasòl, de 2016 a junio de 2021. Idealista es solo una comparación descriptiva. Cambian las magnitudes y el énfasis: la caída de la oferta queda entre 10 y 15 % y la elasticidad pasa de 4 a 2. El análisis por tramo de precio aparece desde mayo de 2022. | **No coincide** en los datos: no son anuncios, sino el registro de contratos, como en Jofre-Monseny, Martínez-Mazza y Segú (2023). La discrepancia entre los dos estudios no se explica por contratos frente a anuncios (output/v17/auditoria/filas/topes.md). Ninguna versión se leyó completa. |

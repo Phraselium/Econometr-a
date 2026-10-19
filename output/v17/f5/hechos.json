@@ -1316,7 +1316,7 @@
  },
  {
   "id": "V17-AUD-DP-TIP-EFECTO-ILUSTRADO",
-  "indicador": "Efecto en el precio a unos dos años de la subida de tipos 2022-2023, con semielasticidades de la zona euro (ilustración)",
+  "indicador": "Calibración: efecto en el precio a unos dos años de la subida de tipos 2022-2023 con semielasticidades de la zona euro (−2,3 a −6,3 % por punto; central −5 %)",
   "valor": -11.3613,
   "min": -15.817,
   "max": -5.2262,
@@ -1326,7 +1326,7 @@
    "BCE BE 6/2022 (−5 %/pp); Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); TIP-DELTA-TAE"
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
   "nota": "a posteriori; central = −5 %/pp × subida media anual; zona euro, no España; supone que la elasticidad media se aplica aunque solo el 52 % compre con hipoteca",
   "fecha_dato": "2025",
@@ -1334,7 +1334,7 @@
  },
  {
   "id": "V17-AUD-DP-TIP-CONTRAFACTUAL",
-  "indicador": "Variación nominal del IPV 2021T4-2024T4 que se habría observado sin la subida de tipos (ilustración contable)",
+  "indicador": "Calibración: variación nominal del IPV 2021T4-2024T4 una vez descontado el efecto calibrado de la subida de tipos (semielasticidades de la zona euro; no es una estimación para España)",
   "valor": 37.9517,
   "min": 29.0216,
   "max": 45.2534,
@@ -1344,15 +1344,15 @@
    "TIP-IPV-2022-2024 y TIP-EFECTO-ILUSTRADO"
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; (1 + observado) / (1 + efecto) − 1; ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; no es un contrafactual identificado",
+  "nota": "a posteriori; (1 + observado) / (1 + efecto) − 1; elasticidades: BCE BE 6/2022 (−5 %/pp), Calza et al. (2013) y Williams (2015) (−2,3 a −6,3 %/pp); ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; calibración, no un contrafactual identificado",
   "fecha_dato": "2024",
   "cobertura": "véase la ficha"
  },
  {
   "id": "V17-AUD-DP-TIP-EFECTO-SOLO-HIPOTECA",
-  "indicador": "Efecto ilustrado si solo se transmite a la parte de compras con hipoteca (52 %)",
+  "indicador": "Calibración: efecto si solo se transmite a la parte de compras con hipoteca (52 %)",
   "valor": -5.9079,
   "min": -8.2248,
   "max": -2.7176,
@@ -1362,7 +1362,7 @@
    "TIP-EFECTO-ILUSTRADO × 52 % (BdE IA2025, p. 124)"
   ],
   "capa": "C4",
-  "lectura_v17": "juicio experto",
+  "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
   "nota": "a posteriori; cota inferior del efecto en valor absoluto: los compradores al contado también descuentan con el tipo (coste de oportunidad)",
   "fecha_dato": "2025",

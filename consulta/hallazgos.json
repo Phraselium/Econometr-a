@@ -37297,7 +37297,7 @@
   },
   {
    "id": "V17-AUD-DP-TIP-CONTRAFACTUAL",
-   "enunciado": "Variación nominal del IPV 2021T4-2024T4 que se habría observado sin la subida de tipos (ilustración contable)",
+   "enunciado": "Calibración: variación nominal del IPV 2021T4-2024T4 una vez descontado el efecto calibrado de la subida de tipos (semielasticidades de la zona euro; no es una estimación para España)",
    "cifra": 37.9517,
    "rango": null,
    "unidad": "%",
@@ -37345,7 +37345,7 @@
   },
   {
    "id": "V17-AUD-DP-TIP-EFECTO-ILUSTRADO",
-   "enunciado": "Efecto en el precio a unos dos años de la subida de tipos 2022-2023, con semielasticidades de la zona euro (ilustración)",
+   "enunciado": "Calibración: efecto en el precio a unos dos años de la subida de tipos 2022-2023 con semielasticidades de la zona euro (−2,3 a −6,3 % por punto; central −5 %)",
    "cifra": -11.3613,
    "rango": null,
    "unidad": "% del nivel de precios",
@@ -37369,7 +37369,7 @@
   },
   {
    "id": "V17-AUD-DP-TIP-EFECTO-SOLO-HIPOTECA",
-   "enunciado": "Efecto ilustrado si solo se transmite a la parte de compras con hipoteca (52 %)",
+   "enunciado": "Calibración: efecto si solo se transmite a la parte de compras con hipoteca (52 %)",
    "cifra": -5.9079,
    "rango": null,
    "unidad": "% del nivel de precios",

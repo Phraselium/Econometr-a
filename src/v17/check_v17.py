@@ -18,7 +18,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 OUT = RAIZ / "output" / "v17"
 TEXTO = (".md", ".csv", ".json")
 MARCA = "a posteriori"
-LECTURAS = {"OF", "hecho", "cota", "asociación", "juicio experto", "no fiable", "no se puede saber", "sin cambio"}
+LECTURAS = {"OF", "hecho", "cota", "asociación", "juicio experto", "juicio experto (calibración)", "no fiable", "no se puede saber", "sin cambio"}
 
 
 def a_posteriori() -> list[str]:

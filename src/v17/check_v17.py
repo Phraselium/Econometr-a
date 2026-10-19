@@ -1,6 +1,7 @@
 """V17 · Controles de `make check` (plan V17, fase 5). Solo lectura; sin red; no escribe nada.
 
-1. a posteriori: todo fichero de texto de output/v17/ y de docs/v17/{referencias_bde,correcciones}.md declara «a posteriori».
+1. a posteriori: todo fichero de texto de output/v17/ y de docs/v17/{referencias_bde,correcciones}.md declara «a posteriori»
+   (un CSV queda rotulado por el informe .md de su carpeta).
 2. cifras V17: toda cifra de output/v17/**/hechos.json tiene id V17-*, fuente, capa C4 y lectura V17 (columna propia:
    «OF», «juicio experto», etc.). La lectura V17 nunca va en la capa.
 3. sin promoción: ninguna fila de output/v5/cifras_clave.csv con id V17-* tiene capa distinta de C4.
@@ -26,6 +27,9 @@ def a_posteriori() -> list[str]:
     fich += [RAIZ / "docs" / "v17" / n for n in ("referencias_bde.md", "correcciones.md") if (RAIZ / "docs" / "v17" / n).exists()]
     for p in fich:
         t = p.read_text(encoding="utf-8", errors="ignore").lower()
+        if p.suffix == ".csv" and any(MARCA in m.read_text(encoding="utf-8", errors="ignore").lower()
+                                      for m in p.parent.glob("*.md")):
+            continue   # una tabla CSV va rotulada por el informe .md de su carpeta
         if MARCA not in t:
             err.append(f"{p.relative_to(RAIZ)}: falta el rótulo «a posteriori»")
     return err

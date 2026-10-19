@@ -1,0 +1,38 @@
+{
+ "rama": "v17/f2/series_v8_v9_v12",
+ "pregunta": "Inferencia convencional a posteriori de V8, V9, V12, V15 y V16 (grupo series) junto a la distorsión del Monte Carlo",
+ "capa": "sin cambio de capa (lectura paralela a posteriori)",
+ "datos": "output/v8, v9, v12, v15, v16 (entrenamiento; nunca muestras selladas)",
+ "N": 86,
+ "metodo": "Newey-West 1994 en series; error de media de grupo en paneles; Pearson/Fisher; DM-HLN y Clark-West; regla del 15 %; Holm y BH dentro de cada pregunta",
+ "estimacion": {
+  "filas": 86,
+  "reproducidas": 37,
+  "max_desviacion_relativa": 5.769747738624353e-14,
+  "publicables": 24,
+  "con_reserva_sin_medir": 26,
+  "no_fiables": 16,
+  "bloques_sin_recalcular": 20
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "Holm y BH dentro de cada pregunta (sensibilidad; no sustituye al ajuste original)",
+  "ver": "inferencia.csv"
+ },
+ "nivel_evidencia": "DESCRIPTIVO / lectura convencional a posteriori",
+ "diagnosticos": {
+  "semilla": 20261010,
+  "tolerancia_reproduccion": 1e-06,
+  "regla": "tamaño real > 15 % → no fiable"
+ },
+ "fuera_muestra": {
+  "modelo": "Q10 y H5 evaluados con DM-HLN y Clark-West frente a AR(4)",
+  "rmse": null,
+  "dm_vs_ar4": "ver inferencia.csv (filas Q10-* y H5-*)"
+ },
+ "notas": [
+  "a posteriori",
+  "Nada cambia de capa ni de valor publicado."
+ ],
+ "nota": "a posteriori"
+}

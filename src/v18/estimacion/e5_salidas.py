@@ -17,7 +17,11 @@ DATOS_QUE_FALTAN = (
 
 
 def g4(x):
-    return "—" if x is None or not np.isfinite(x) else f"{x:.4g}"
+    if x is None or (isinstance(x, float) and np.isnan(x)):
+        return "—"
+    if isinstance(x, (float, np.floating)) and np.isinf(x):
+        return "no acotado"
+    return f"{x:.4g}"
 
 
 def escribir(E5, dat, specs, mde_tab, res, ne, a1, fven, reg, B, t0):
@@ -72,7 +76,7 @@ def escribir(E5, dat, specs, mde_tab, res, ne, a1, fven, reg, B, t0):
     fuentes = ["MIVAU valor tasado e iniciadas", "Eurostat nama_10r_3empers (INE)", "deflactor del proyecto"]
     H = [K.hecho("V18-E5-R1-MDE80", "E5-R1: efecto mínimo detectable al 80 % de potencia con la variación real del Bartik y del precio", m1["mde80"], None, None, "elasticidad", "2002-2023",
                  f"39 provincias de entrenamiento; N = {m1['n']}; R = {m1['R']}", fuentes, clase_r1,
-                 f"Referencia única 0,87 (Taltavull). MDE infinito: con el Bartik de cuatro ramas el diseño no detecta ninguna elasticidad con el 80 % de potencia. σ del preperiodo declarada."),
+                 f"Referencia única 0,87 (Taltavull). El MDE supera {g4(m1['curva'][-1][0])} (seis errores típicos de referencia): con el Bartik de cuatro ramas el diseño no alcanza el 80 % de potencia. σ del preperiodo declarada."),
          K.hecho("V18-E5-R1-F", "E5-R1: F efectivo de Montiel Olea-Pflueger de la primera etapa del Bartik de cuatro ramas", m1["F_eff"], None, None, "estadístico F", "2002-2023", "39 provincias", fuentes,
                  clase_r1, "Primera etapa sin fuerza: el Bartik de cuatro ramas no predice el precio real."),
          K.hecho("V18-E5-1HHI", "E5: número efectivo de choques del Bartik (1/HHI de los pesos por rama)", m1["inv_hhi_sector"], None, None, "choques efectivos", "2002-2023", "4 ramas", fuentes, clase_r1,

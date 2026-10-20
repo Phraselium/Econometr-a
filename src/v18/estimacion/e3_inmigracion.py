@@ -378,7 +378,9 @@ def main() -> int:
         reg.log("v18-E3", f"{s['id']}|estimada", f"2SLS municipal; Webb-AR ({B_WEBB}) + AR", cfgm["ventana"][0], cfgm["ventana"][1], r["n"], np.nan, np.nan, np.nan, coef_interes=r["beta"],
                 p_interes=max(r["p_webb_ar"], r["ar"]["p_beta0"]), notas=s["nota"])
         print(f"[{time.time() - t0:5.0f}s] {s['id']}: n={r['n']} G={r['G']} F={r['F_eff']:.1f}", flush=True)
-    # ---- (2c) P provinciales
+    # ---- (2c) P provinciales (registradas antes de estimar)
+    for sid_p, desc_p in (("E3-P-D4", "V9-D4 2003-2012, valor tasado"), ("E3-P-Q3c1", "V16 Q3-c1 TWFE 2011-2022")):
+        reg.log("v18-E3", f"{sid_p}|registrada", desc_p, 2003 if "D4" in sid_p else 2011, 2012 if "D4" in sid_p else 2022, 0, np.nan, np.nan, np.nan, notas="coprincipal")
     pd4 = EX.p_d4(dat, B_WEBB)
     pq3 = EX.p_q3c1(dat, B_WEBB)
     reg.log("v18-E3", "E3-P-D4|estimada", "V9-D4 2003-2012, valor tasado", 2003, 2012, pd4["valor tasado"]["n"], np.nan, np.nan, np.nan, coef_interes=pd4["valor tasado"]["beta"],

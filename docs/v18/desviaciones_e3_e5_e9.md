@@ -107,3 +107,14 @@ Código: `src/v18/estimacion/{_e359_comun,_e359_datos,e359_adquisicion,e3_inmigr
   NO CONCLUYENTE (sin potencia) y se listan las pruebas débiles, porque no hay efecto que sugerir. El otro modelizador de la fase 4 (E2, E8) puede haber usado SUGESTIVO en el mismo caso: lo ve el orquestador.
 - **D-E359-18 · Información no preinscrita.** Se publica además, sin que entre en la clasificación, el control de la suma de cuotas × año (BHJ con cuotas incompletas; V9-D4 y H4 lo incluían) y el
   BHJ a nivel de choque con ese control (es la condición de equivalencia con el IV de localización, comprobada numéricamente: ambos dan el mismo β). El BHJ se etiqueta «no fiable» (Monte Carlo de V18).
+- **D-E359-19 · E5-P-Q4a.** La coprincipal Q4a de V16 (obra nueva neta municipal frente al porcentaje de Red Natura 2000) usa un panel de entrenamiento de V16 (`data/processed/v16/entrenamiento`) cuya variable
+  municipal de Red Natura no figura en `docs/v18/sellado_v18.json`; no se puede leer con `sellado.filtrar`. Se registra NO ESTIMABLE y sale de la familia de Holm (E5-R1 es NO ESTIMABLE por variación de todos modos).
+- **D-E359-20 · E5-A1.** S_p (solares por unidad residencial de 2012, suma de los municipios de entrenamiento de la provincia) se estandariza; sin referencia, el umbral de estimabilidad es 2δ = 0,10 (δ = 0,05 en log,
+  Anexo B) en Δ ln P real por punto de Z y por desviación típica de S, con σ y ρ del preperiodo 2009-2013. La interacción es una forma reducida de MCO: ASOCIACIÓN como máximo y fuera de la familia de Holm (adenda 1.7).
+- **D-E359-21 · MDE municipal (E3-A3, P-H4).** Ruido equicorrelado dentro del municipio (correlación intraclase del residuo 2012-2013 con efectos provincia-año); σ y ρ declaradas. P-H4 se calcula y se publica aunque
+  su MDE no sea el de una principal (la P representa la elección ya hecha, adenda 1.6).
+- **D-E359-22 · Cronología de A3 y P-H4.** Siguen la de H4 (V16): el resultado del año t frente a la variación del stock entre el 1 de enero de t-1 y el de t; las provinciales de E3 usan la del original (el stock entre t y t+1
+  frente al resultado de t). Se dice en el informe.
+- **D-E359-23 · Fallo corregido antes de la ejecución definitiva.** Una primera ejecución de desarrollo (con 999 réplicas) usó la absorción de efectos fijos por grupos con un orden de etiquetas incorrecto en
+  `DisenoIV` (grupos no monótonos respecto al conglomerado), que alteraba las estimaciones municipales (A3 y P-H4). Se detectó al comparar P-H4 con el 2SLS de V16 por desmedia de pandas, se corrigió y se añadió una prueba
+  de regresión (`test_grupos_con_orden_de_aparicion_no_monotono`). Las salidas definitivas se generan con el código corregido; ninguna cifra de la ejecución de desarrollo se publica.

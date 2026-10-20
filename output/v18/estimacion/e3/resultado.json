@@ -24,8 +24,8 @@
   "familia_holm": {
    "m": 4,
    "p_ajustados": {
-    "E3-P-H4": 0.0012257060415936886,
     "E3-P-Q3c1": 1.0,
+    "E3-P-H4": 1.0,
     "E3-P-D4": 1.0,
     "E3-R1": 1.0
    }
@@ -92,9 +92,9 @@
     "estimable": false
    },
    "E3-P-H4": {
-    "mde80": 0.6128984271780583,
+    "mde80": 2.105230096864099,
     "ref": 0.947,
-    "estimable": true
+    "estimable": false
    }
   }
  },
@@ -936,6 +936,16 @@
    "capa": "C4",
    "nivel_evidencia": "EXPLORATORIO"
   },
+  "E3-A4": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "la tenencia por nacionalidad del Censo de 2011 por provincia no está en el repositorio ni en Eurostat (cens_11htts_r2 es por hogares y NUTS 2, sin nacionalidad)",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
   "E3-A5": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
@@ -1019,33 +1029,33 @@
   "E3-P-H4": {
    "rol": "coprincipal",
    "padre": null,
-   "estimacion": 3.350662188511083,
-   "se": 0.40111317805345104,
+   "estimacion": 0.1756134133159126,
+   "se": 0.32940761985107647,
    "ic95": [
-    2.482273212550089,
-    4.228843966670647
+    -0.669428515770432,
+    0.9241894146651073
    ],
    "ic95_t": [
-    2.5379296903175272,
-    4.163394686704638
+    -0.49182982329069647,
+    0.8430566499225217
    ],
    "ar": {
     "tipo": "intervalo",
-    "lo": 2.6266897211900826,
-    "hi": 4.6746871352765265
+    "lo": -0.667397843318341,
+    "hi": 1.0179744323292754
    },
-   "F_efectivo": 224.02950739297074,
-   "p_webb_ar": 0.0,
-   "p_ar_exacto": 0.00030642651039842215,
-   "p_final": 0.00030642651039842215,
-   "p_ajustado": 0.0012257060415936886,
+   "F_efectivo": 54.341276571623524,
+   "p_webb_ar": 0.6256256256256256,
+   "p_ar_exacto": 0.5995034781377178,
+   "p_final": 0.6256256256256256,
+   "p_ajustado": 1.0,
    "q_BY": null,
    "N": 11759,
    "clusters": 38,
    "capa": "C4",
    "nivel_evidencia": "EXPLORATORIO",
    "nota": "réplica de H4 (V16, src/v16/replica/h4.py): 23 orígenes, 2012-2022, sin pesos; publicado: 2SLS 0,29 % por punto (N = 13.442 en V16)",
-   "mco": 0.9194470945063101,
+   "mco": 0.07390078556445415,
    "clasificacion_v18": "no se clasifica",
    "razones": [
     "coprincipal P (adenda 1.6)"
@@ -1054,19 +1064,19 @@
    "tost": null,
    "robustez": null,
    "mde": {
-    "mde80": 0.6128984271780583,
-    "tamano_nulo": 0.064,
-    "se_ref": 0.17883966264162185,
+    "mde80": 2.105230096864099,
+    "tamano_nulo": 0.05,
+    "se_ref": 0.6063062678968605,
     "R": 500,
-    "sigma": 9.128330586920757,
+    "sigma": 8.551020078868238,
     "rho": 0.0,
     "ref": 0.947,
-    "estimable": true,
+    "estimable": false,
     "n": 11759,
     "G": 38,
     "k": 418,
     "n_pre": null,
-    "F_eff": 224.02950739297074,
+    "F_eff": 54.341276571623524,
     "inv_hhi_origen": {
      "por_origen": 7.165235075555203,
      "pesos_origen": {

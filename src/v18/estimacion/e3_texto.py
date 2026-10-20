@@ -32,7 +32,11 @@ def tabla_md(df: pd.DataFrame, cols: list[str], fmt: dict | None = None) -> str:
 
 
 def g4(x):
-    return "—" if x is None or not np.isfinite(x) else f"{x:.4g}"
+    if x is None or (isinstance(x, float) and np.isnan(x)):
+        return "—"
+    if isinstance(x, (float, np.floating)) and np.isinf(x):
+        return "no acotado"
+    return f"{x:.4g}"
 
 
 def escribir_texto(E3, dat, specs, mspecs, mde_tab, res, ne, pd4, pq3, diag, clas, ph, qby, var_por_padre, tabla, B, t0):
@@ -106,9 +110,10 @@ def escribir_texto(E3, dat, specs, mspecs, mde_tab, res, ne, pd4, pq3, diag, cla
         cl = clas[sid]["clase"] if sid in clas else "NO ESTIMABLE"
         if s["rol"] == "coprincipal":
             continue
+        extra = "" if np.isfinite(m["mde80"]) else f" El MDE supera {g4(m['curva'][-1][0])} (seis errores típicos de referencia): no se alcanza el 80 % de potencia."
         H.append(K.hecho(f"V18-E3-{sid[3:]}-MDE80", f"{sid}: efecto mínimo detectable al 80 % de potencia con la variación real del diseño", m["mde80"], None, None, REF[s["ref"]]["unidad"],
                          str(s["cfg"]["ventana"] if "cfg" in s else s["cfgm"]["ventana"]), "comprobación previa por MDE (adenda 1.3), R = %d" % m["R"], FUENTES, cl,
-                         f"Referencia única {REF[s['ref']]['v']} {REF[s['ref']]['unidad']}; estimable si el MDE no la supera. σ del preperiodo declarada (no vista en V15 o V16)."))
+                         f"Referencia única {REF[s['ref']]['v']} {REF[s['ref']]['unidad']}; estimable si el MDE no la supera. σ del preperiodo declarada (no vista en V15 o V16).{extra}"))
     if "E3-R1" in mde_tab:
         H.append(K.hecho("V18-E3-1HHI", "E3: número efectivo de choques (1/HHI de los pesos por origen)", mde_tab["E3-R1"]["inv_hhi_origen"]["por_origen"], None, None, "choques efectivos", per,
                          "8 grupos de origen", FUENTES, clas["E3-R1"]["clase"] if "E3-R1" in clas else "NO ESTIMABLE", "Menos de 20: inferencia principal por provincia con Webb más AR (adenda 1.13)."))
@@ -132,7 +137,7 @@ def escribir_texto(E3, dat, specs, mspecs, mde_tab, res, ne, pd4, pq3, diag, cla
              "Además se estiman las coprincipales P (V9-D4, V16-Q3c1 y V16-H4) en la muestra V18.")
     if tit:
         c = clas[tit]
-        L.append(f"- **{tit}** (ventana {', '.join(str(x) for x in todas[tit]['cfg']['ventana'])}; sin 2003): {g4(ft['beta'])} {REF['R1']['unidad']}; IC95 Webb-AR [{g4(ft['ic_lo'])}; {g4(ft['ic_hi'])}]; "
+        L.append(f"- **{tit}** (ventana {todas[tit]['cfg']['ventana'][0]}-{todas[tit]['cfg']['ventana'][1]}; sin 2003): {g4(ft['beta'])} {REF['R1']['unidad']}; IC95 Webb-AR [{g4(ft['ic_lo'])}; {g4(ft['ic_hi'])}]; "
                  f"AR exacto [{g4(ft['ar_lo'])}; {g4(ft['ar_hi'])}]; F efectivo {g4(ft['F_eff'])}; p (Webb-AR) {g4(ft['p_webb_ar'])}, p (AR) {g4(ft['p_ar'])}, p tras Holm {g4(ph[tit])}. "
                  f"Clase: **{c['clase']}**. {c['i6']['texto']}.")
     L.append("- Lectura: " + ("la estimación no es distinguible de cero ni de la referencia; el diseño no decide" if tit and ph[tit] >= 0.10 else "ver tabla"))

@@ -120,7 +120,8 @@
    "m": 0,
    "nota": "las NO ESTIMABLES salen antes de ajustar (adenda 1.7)"
   },
-  "doble_computo_E3_E9": "E9 no tiene instrumento estimable: la fila alternativa de E9 en la contabilidad queda vacía y no hay correlación entre instrumentos que publicar (adenda 1.10)",
+  "doble_computo_E3_E9": "E9 no tiene instrumento estimable: la fila alternativa de E9 en la contabilidad queda vacía; no hay correlación entre instrumentos que publicar (adenda 1.10)",
+  "correlacion_indices_de_exposicion_E3_E9": 0.8547716852351344,
   "b5": "E9-R2 es la estimación propia de E9 para B5 y es NO ESTIMABLE por choques efectivos: no hay respaldo; entra solo la literatura (Sá, +2 % por pp de cuota)"
  },
  "fuera_muestra": {

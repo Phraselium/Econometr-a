@@ -41,6 +41,7 @@ v18-E3,E3-A2-v3|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,
 v18-E3,E3-A2-v4|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
 v18-E3,E3-A2-v5|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
 v18-E3,E3-A2-v6|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
+v18-E3,E3-A4|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,principal; ref A1
 v18-E3,E3-A5|registrada,"y~x|z (dlnp100; pp_ext; (2002, 2019))",2002,2019,0,,,,,,,principal; ref A5
 v18-E3,E3-A5-v1|registrada,"y~x|z (dlnp100; pp_ext; (2002, 2019))",2002,2019,0,,,,,,,variante; ref A5
 v18-E3,E3-A3|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True})",2014,2022,0,,,,,,,principal; ref A3
@@ -59,6 +60,6 @@ v18-E3,E3-R1-v7|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,
 v18-E3,E3-R1-v8|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,228,,,,,1.0083987683751092,0.9309309309309309,sin Barcelona
 v18-E3,E3-R1-v9|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,222,,,,,4.903479449894411,0.7657657657657657,sin Alicante ni Málaga
 v18-E3,E3-R1-v11|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,273,,,,,7.196380274950724,0.7477477477477478,holgura nº 1: 2003 con la composición interpolada (marcada)
-v18-E3,E3-P-H4|estimada,2SLS municipal; Webb-AR (999) + AR,2012,2022,11759,,,,,3.350662188511083,0.00030642651039842215,"réplica de H4 (V16, src/v16/replica/h4.py): 23 orígenes, 2012-2022, sin pesos; publicado: 2SLS 0,29 % por punto (N = 13.442 en V16)"
+v18-E3,E3-P-H4|estimada,2SLS municipal; Webb-AR (999) + AR,2012,2022,11759,,,,,0.1756134133159126,0.6256256256256256,"réplica de H4 (V16, src/v16/replica/h4.py): 23 orígenes, 2012-2022, sin pesos; publicado: 2SLS 0,29 % por punto (N = 13.442 en V16)"
 v18-E3,E3-P-D4|estimada,"V9-D4 2003-2012, valor tasado",2003,2012,34,,,,,0.005357671449618167,0.8728728728728729,coprincipal
 v18-E3,E3-P-Q3c1|estimada,V16 Q3-c1 TWFE 2011-2022,2011,2022,408,,,,,0.008202960682063696,0.34134134134134136,coprincipal

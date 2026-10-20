@@ -15,4 +15,4 @@ E5-R2,principal,,,,NO ESTIMABLE,"restricciones físicas (MDT05, agua, costa) y d
 E5-A2,principal,,,,NO ESTIMABLE,Atlas de áreas urbanas del MIVAU (`posterior_prereg`) no descargado; la unidad exige el valor tasado y la obra nueva por área,,,,,NO ESTIMABLE,,,,,
 E5-A3,principal,,,,NO ESTIMABLE,afiliación municipal por sección de la CNAE anterior a 2011-12 no agregada en el repositorio (solo tres ramas); el Bartik municipal no se puede construir,,,,,NO ESTIMABLE,,,,,
 E5-P-Q4a,coprincipal,,,,NO ESTIMABLE,la Red Natura municipal de V16 solo existe como panel de entrenamiento de V16 (data/processed/v16) y su variable no figura en docs/v18/sellado_v18.json: no se puede leer con sellado.filtrar,,,,,NO ESTIMABLE,,,,,
-E5-A1,principal,,,,estimada,,0.013165656879766419,,324.0,36.0,ASOCIACIÓN,0.0024392985759476506,0.0038860952303647078,-0.007942557581320323,0.01033375967212952,0.5815815815815816
+E5-A1,principal,,,,estimada,,0.01338683752409444,,324.0,36.0,ASOCIACIÓN,0.0024392985759476506,0.0038860952303647078,-0.007624725085672817,0.010495522181108328,0.5556555655565557

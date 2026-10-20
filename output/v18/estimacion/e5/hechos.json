@@ -7,7 +7,7 @@
   "max": null,
   "unidad": "elasticidad",
   "periodo": "2002-2023",
-  "cobertura": "39 provincias de entrenamiento; N = 848; R = 500",
+  "cobertura": "39 provincias de entrenamiento; N = 848; R = 2000",
   "fuentes": [
    "MIVAU valor tasado e iniciadas",
    "Eurostat nama_10r_3empers (INE)",
@@ -15,7 +15,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "Referencia única 0,87 (Taltavull). MDE infinito: con el Bartik de cuatro ramas el diseño no detecta ninguna elasticidad con el 80 % de potencia. σ del preperiodo declarada."
+  "nota": "Referencia única 0,87 (Taltavull). El MDE supera 230.8 (seis errores típicos de referencia): con el Bartik de cuatro ramas el diseño no alcanza el 80 % de potencia. σ del preperiodo declarada."
  },
  {
   "id": "V18-E5-R1-F",
@@ -128,7 +128,7 @@
  {
   "id": "V18-E5-A1-MDE80",
   "indicador": "E5-A1: efecto mínimo detectable al 80 % de la interacción del instrumento de inmigración con los solares por vivienda",
-  "valor": 0.013166,
+  "valor": 0.013387,
   "min": null,
   "max": null,
   "unidad": "Δ ln P por punto de Z y por desviación típica de S",
@@ -147,8 +147,8 @@
   "id": "V18-E5-A1-psi",
   "indicador": "E5-A1: coeficiente de la interacción (forma reducida, asociación)",
   "valor": 0.002439,
-  "min": -0.007943,
-  "max": 0.010334,
+  "min": -0.007625,
+  "max": 0.010496,
   "unidad": "Δ ln P por punto de Z y por desviación típica de S",
   "periodo": "2014-2022",
   "cobertura": "N = 324",

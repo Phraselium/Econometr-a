@@ -5,7 +5,7 @@
 ## 1. Resumen
 - **E9-R1, E9-R2, E9-A1 y E9-A2: NO ESTIMABLES por choques efectivos.** Con la exposición del padrón de 2003 (residentes por nacionalidad, aproximación a la exposición por compradores) y los 8 orígenes con serie de riesgo (Alemania, Francia, Italia, Portugal, Reino Unido, Rumanía, Bulgaria, Polonia), 1/HHI = 6.30 sin pesos y 5.88 con pesos de población, por debajo del umbral de 10 de la adenda (1.3 y 1.13). Si los 28 países individuales del padrón tuvieran serie de riesgo, 1/HHI sería 11.54: el límite son las series de riesgo de los países latinoamericanos, africanos y asiáticos, que no están en el repositorio.
 - **E9-X1 y E9-X2: NO ESTIMABLES por datos.**
-- No se estima ningún coeficiente. B5: E9-R2 (la estimación propia) no tiene respaldo; E9 no aporta magnitud propia (entra solo la literatura). Doble cómputo E3/E9: sin instrumento de E9 no hay correlación que publicar (adenda 1.10).
+- No se estima ningún coeficiente. B5: E9-R2 (la estimación propia) no tiene respaldo; E9 no aporta magnitud propia (entra solo la literatura). Doble cómputo E3/E9: sin instrumento de E9 no hay correlación entre instrumentos que publicar (adenda 1.10); como información, la correlación entre el índice de exposición de E9 (cuotas de 2003 de los orígenes con riesgo) y el instrumento medio de E3-R1 es 0.85.
 
 ## 2. Diseño que se habría estimado
 - Original: Badarinza y Ramadorai (2018; Londres 1995-2013; +1,62 pp de precio en barrios de más cuota del país en riesgo, transitorio), Sá (2016; +2 % de precio por +1 pp de cuota de compras de no residentes, IV), Cvijanović y Spaenjers (2021; París, efecto pequeño y no significativo), Álvarez, Blanco y García-Posada (2020; MCO transversal, no significativo).

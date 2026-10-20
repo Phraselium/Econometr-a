@@ -568,9 +568,26 @@ def _json(o):
     return str(o)
 
 
+def _limpio(o):
+    """Sustituye los reales no finitos por None (JSON estándar) y convierte los tipos de numpy; recursivo."""
+    if isinstance(o, dict):
+        return {str(k): _limpio(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple, set)):
+        return [_limpio(v) for v in o]
+    if isinstance(o, np.ndarray):
+        return _limpio(o.tolist())
+    if isinstance(o, (np.floating, float)):
+        return None if not np.isfinite(o) else float(o)
+    if isinstance(o, np.integer):
+        return int(o)
+    if isinstance(o, np.bool_):
+        return bool(o)
+    return o
+
+
 def volcar_json(ruta: Path, obj) -> None:
     ruta.parent.mkdir(parents=True, exist_ok=True)
-    ruta.write_text(json.dumps(obj, ensure_ascii=False, indent=1, default=_json), encoding="utf-8")
+    ruta.write_text(json.dumps(_limpio(obj), ensure_ascii=False, indent=1, default=_json), encoding="utf-8")
 
 
 def f4(x, d=4):

@@ -96,6 +96,19 @@ def main() -> int:
     v_o, d_o = inv(origenes_riesgo, None)
     ninfo = {"n_trimestres": n_trim, "inv_hhi_origen_trimestre_si_fueran_independientes": v_o * n_trim, "nota": "cota superior irreal: los choques de un origen son persistentes (PIB y empleo en origen)"}
     principal = filas[("origenes_con_serie_de_riesgo", "sin pesos")]
+    # doble cómputo E3/E9 (adenda 1.10): sin instrumento de E9, solo la correlación entre los índices de exposición (E3: instrumento medio de la ventana de E3-R1; E9: Σ cuotas de los orígenes con riesgo)
+    corr_e3_e9 = None
+    try:
+        import e3_inmigracion as E3
+        import e3_panel as EP
+        d3 = EP.DatosE3()
+        pan3 = d3.panel(E3.cfg_r1())
+        zbar = pd.Series(pan3.z).groupby(pan3.prov).mean()
+        e9 = S[origenes_riesgo].sum(axis=1).reindex(zbar.index)
+        ok = e9.notna()
+        corr_e3_e9 = float(np.corrcoef(zbar[ok], e9[ok])[0, 1])
+    except Exception as e:  # pragma: no cover
+        corr_e3_e9 = f"no calculada: {e}"
     estimable = bool(principal["inv_hhi"] >= UMBRAL)
     print(f"[{time.time() - t0:3.0f}s] orígenes con serie de riesgo: {origenes_riesgo}; 1/HHI sin pesos {principal['inv_hhi']:.2f}; con pesos de población "
           f"{filas[('origenes_con_serie_de_riesgo', 'pesos de población 2003')]['inv_hhi']:.2f}; todos los países del padrón {filas[('todos_los_paises_del_padron_(informacion)', 'sin pesos')]['inv_hhi']:.2f}", flush=True)
@@ -128,7 +141,8 @@ def main() -> int:
            "diagnosticos": {"origenes_con_serie_de_riesgo": origenes_riesgo, "paises_con_serie_eu_hpi": riesgo["eu_hpi"], "paises_con_serie_oecd": riesgo["oecd_hpi"],
                             "inv_hhi": {f"{k[0]}|{k[1]}": {"n_origenes": v["n_origenes"], "inv_hhi": v["inv_hhi"]} for k, v in filas.items()}, "pesos_por_origen_sin_pesos": principal["pesos"],
                             "origen_trimestre": ninfo, "umbral": UMBRAL, "familia_holm": {"m": 0, "nota": "las NO ESTIMABLES salen antes de ajustar (adenda 1.7)"},
-                            "doble_computo_E3_E9": "E9 no tiene instrumento estimable: la fila alternativa de E9 en la contabilidad queda vacía y no hay correlación entre instrumentos que publicar (adenda 1.10)",
+                            "doble_computo_E3_E9": "E9 no tiene instrumento estimable: la fila alternativa de E9 en la contabilidad queda vacía; no hay correlación entre instrumentos que publicar (adenda 1.10)",
+                            "correlacion_indices_de_exposicion_E3_E9": corr_e3_e9,
                             "b5": "E9-R2 es la estimación propia de E9 para B5 y es NO ESTIMABLE por choques efectivos: no hay respaldo; entra solo la literatura (Sá, +2 % por pp de cuota)"},
            "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None, "nota": "no se estima"},
            "notas": ["análisis V18; capa C4; pre-registro interno plan-replicacion-v18", "sin coeficiente: la regla de choques efectivos de la adenda 1.3 y 1.13 deja NO ESTIMABLES E9-R1, R2, A1 y A2",
@@ -151,7 +165,7 @@ def main() -> int:
          f"{len(origenes_riesgo)} orígenes con serie de riesgo ({', '.join(origenes_riesgo)}), 1/HHI = {principal['inv_hhi']:.2f} sin pesos y "
          f"{filas[('origenes_con_serie_de_riesgo', 'pesos de población 2003')]['inv_hhi']:.2f} con pesos de población, por debajo del umbral de 10 de la adenda (1.3 y 1.13). Si los 28 países individuales del padrón tuvieran serie de riesgo, "
          f"1/HHI sería {filas[('todos_los_paises_del_padron_(informacion)', 'sin pesos')]['inv_hhi']:.2f}: el límite son las series de riesgo de los países latinoamericanos, africanos y asiáticos, que no están en el repositorio.",
-         "- **E9-X1 y E9-X2: NO ESTIMABLES por datos.**", "- No se estima ningún coeficiente. B5: E9-R2 (la estimación propia) no tiene respaldo; E9 no aporta magnitud propia (entra solo la literatura). Doble cómputo E3/E9: sin instrumento de E9 no hay correlación que publicar (adenda 1.10).\n",
+         "- **E9-X1 y E9-X2: NO ESTIMABLES por datos.**", "- No se estima ningún coeficiente. B5: E9-R2 (la estimación propia) no tiene respaldo; E9 no aporta magnitud propia (entra solo la literatura). Doble cómputo E3/E9: sin instrumento de E9 no hay correlación entre instrumentos que publicar (adenda 1.10); como información, la correlación entre el índice de exposición de E9 (cuotas de 2003 de los orígenes con riesgo) y el instrumento medio de E3-R1 es " + (f"{corr_e3_e9:.2f}" if isinstance(corr_e3_e9, float) else str(corr_e3_e9)) + ".\n",
          "## 2. Diseño que se habría estimado", "- Original: Badarinza y Ramadorai (2018; Londres 1995-2013; +1,62 pp de precio en barrios de más cuota del país en riesgo, transitorio), Sá (2016; +2 % de precio por +1 pp de cuota de compras de no residentes, IV), "
          "Cvijanović y Spaenjers (2021; París, efecto pequeño y no significativo), Álvarez, Blanco y García-Posada (2020; MCO transversal, no significativo).",
          "- Traslado: 39 provincias de entrenamiento, exposición s_pc = residentes de la nacionalidad c entre la población de 2003 (padrón provincial), riesgo en origen = caída del PIB en el quintil superior de la historia del país (a 4 trimestres); "

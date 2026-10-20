@@ -54,3 +54,9 @@
 
 ## K6. Escritores en paralelo sin worktrees (2026-10-20)
 - Cada worktree ocupa unos 1,5 GB y el disco de la sesión tiene unos 4 GB libres: al crear dos a la vez se llenó (fallaron sin efecto en lo versionado). Los subagentes que escriben trabajan en el árbol principal, como máximo 3 a la vez, cada uno en ficheros y carpetas propios (src/v18/estimacion/<estudio>.py, output/v18/estimacion/<estudio>/); el orquestador revisa y hace commit, y no se lanza make check mientras escriben.
+
+## K7. Clasificación tras la ronda 1 del abogado del diablo (B6; 2026-10-20)
+- Se aplican las reglas del plan tal como están escritas, sin reinterpretarlas a la vista del resultado:
+  - **E8-R1 → ASOCIACIÓN.** El cambio de signo sin 2012-2013 es una prueba B4 del plan y un cambio de signo en B4 es fallo decisivo (plan, línea 124); el «tope SUGESTIVO» de la adenda (R-18) es un techo y no anula esa regla. Además depende de fechas no verificadas con el BOE.
+  - **E2-R1c → ASOCIACIÓN.** Falla el placebo de fecha (p = 0,0005) y persiste la diferencia tras la STC (tope de la adenda, línea 581). No existe la clase «SUGESTIVO sin significación»: un resultado no significativo es NO CONCLUYENTE si supera I1-I5 y ASOCIACIÓN si no.
+  - **E2-R1 → SUGESTIVO provisional**, pendiente de la réplica ciega (I8), de las pruebas 1-2 de la ronda 1 (tendencia del efecto y salto en 2022T2; HUT 2019 × trimestre) y de la ronda 2. El M̄ de ruptura queda «no evaluable» (desviación C2, decidida antes de estimar, porque el Monte Carlo de Honest DiD con M̄ > 0 no tiene potencia); se dice en la ficha.

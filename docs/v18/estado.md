@@ -47,6 +47,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F4 | modelizador | E2 topes (Ley 11/2020) y E8 ITP | 569.802 | src/v18/estimacion/{e2,e8}_*.py; output/v18/estimacion/{e2,e8}/ |
 | 2026-10-20 | F4 | modelizador | F1-F3 (sin cointegración: solo corto plazo) y E7 tipos (primera etapa débil: NO ESTIMABLE) | 511.431 | src/v18/estimacion/{f_*,e7_tipos}.py; output/v18/estimacion/{f_conjunto,e7}/ |
 | 2026-10-20 | F4 | modelizador | E3 (NO CONCLUYENTE), E5 y E9 (NO ESTIMABLES) | 751.395 | src/v18/estimacion/{e3_*,e5_*,e9_*,_e359_*,e359_*}.py; output/v18/estimacion/{e3,e5,e9}/ |
+| 2026-10-20 | F4 | abogado-del-diablo | ronda 1 B6: E2-R1, E2-R1c, E8-R1 | 119.872 | docs/v18/revision_estimaciones/ronda1_e2_e8.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -54,8 +55,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F1 | 1.630.684 |
 | F2 | 183.117 |
 | F3 | 985.262 |
-| F4 | 2.765.531 |
+| F4 | 2.885.403 |
 
-Total V18: 5.824.227 tokens
+Total V18: 5.944.099 tokens
 
 <!-- fin subagentes -->

@@ -1,0 +1,146 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "validación del F efectivo de MOP y de los IC de Anderson-Rubin (toda IV; E3-A4 con dos endógenas)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulación; sin datos reales",
+  "N": "39 clusters x 14 años; p = 1 y p = 2",
+  "metodo": "2SLS por cluster, F efectivo (MOP), AR exacto (p = 1) y AR conjunto/subvector (p = 2)",
+  "estimacion": null,
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto_por_inferencia": {
+      "p=1 · 2SLS (normal)": {
+        "veredicto": "APTO",
+        "aptos": [
+          "p=1, pi=0.03",
+          "p=1, pi=0.06",
+          "p=1, pi=0.1",
+          "p=1, pi=0.2",
+          "p=1, pi=0.5"
+        ],
+        "fallan": []
+      },
+      "p=1 · 2SLS (t de Student, G-1)": {
+        "veredicto": "APTO",
+        "aptos": [
+          "p=1, pi=0.03",
+          "p=1, pi=0.06",
+          "p=1, pi=0.1",
+          "p=1, pi=0.2",
+          "p=1, pi=0.5"
+        ],
+        "fallan": []
+      },
+      "p=1 · AR (IC exacto por cluster)": {
+        "veredicto": "APTO",
+        "aptos": [
+          "p=1, pi=0.03",
+          "p=1, pi=0.06",
+          "p=1, pi=0.1",
+          "p=1, pi=0.2",
+          "p=1, pi=0.5"
+        ],
+        "fallan": []
+      },
+      "p=2 · 2SLS beta_1 (normal)": {
+        "veredicto": "APTO CONDICIONADO",
+        "aptos": [
+          "p=2, ambas fuertes (0,5; 0,5)",
+          "p=2, ambas débiles (0,06; 0,06)"
+        ],
+        "fallan": [
+          "p=2, una débil (0,5; 0,05) (tamaño 0.0115)"
+        ]
+      },
+      "p=2 · 2SLS beta_1 (t de Student, G-1)": {
+        "veredicto": "APTO CONDICIONADO",
+        "aptos": [
+          "p=2, ambas fuertes (0,5; 0,5)"
+        ],
+        "fallan": [
+          "p=2, una débil (0,5; 0,05) (tamaño 0.0105)",
+          "p=2, ambas débiles (0,06; 0,06) (tamaño 0.0265)"
+        ]
+      },
+      "p=2 · AR conjunto (chi2, 2 gl)": {
+        "veredicto": "APTO CONDICIONADO",
+        "aptos": [
+          "p=2, ambas débiles (0,06; 0,06)"
+        ],
+        "fallan": [
+          "p=2, ambas fuertes (0,5; 0,5) (tamaño 0.0295)",
+          "p=2, una débil (0,5; 0,05) (tamaño 0.0285)"
+        ]
+      },
+      "p=2 · AR de subvector beta_1 (proyección)": {
+        "veredicto": "NO APTO",
+        "aptos": [],
+        "fallan": [
+          "p=2, ambas fuertes (0,5; 0,5) (tamaño 0.0070)",
+          "p=2, una débil (0,5; 0,05) (tamaño 0.0000)",
+          "p=2, ambas débiles (0,06; 0,06) (tamaño 0.0000)"
+        ]
+      },
+      "regla F efectivo >= 10 (2SLS condicionado)": {
+        "veredicto": "NO APTO",
+        "detalle": {
+          "p=1, pi=0.03": null,
+          "p=1, pi=0.06": null,
+          "p=1, pi=0.1": null,
+          "p=1, pi=0.2": 0.1927,
+          "p=1, pi=0.5": 0.0713,
+          "p=2, ambas fuertes (0,5; 0,5)": 0.0638,
+          "p=2, una débil (0,5; 0,05)": null,
+          "p=2, ambas débiles (0,06; 0,06)": null
+        }
+      }
+    },
+    "R": 0,
+    "semilla": 20261010,
+    "criterio": "tamaño [0,03; 0,08], cobertura [0,92; 0,97], R >= 2.000 (n >= 200 en filas condicionadas)",
+    "bandas_adenda_1_12": {
+      "p=1, pi=0.03 · 2SLS (normal)": "con valor crítico corregido",
+      "p=1, pi=0.03 · 2SLS (t de Student, G-1)": "apta",
+      "p=1, pi=0.03 · AR (IC exacto por cluster)": "apta",
+      "p=1, pi=0.06 · 2SLS (normal)": "con valor crítico corregido",
+      "p=1, pi=0.06 · 2SLS (t de Student, G-1)": "con valor crítico corregido",
+      "p=1, pi=0.06 · AR (IC exacto por cluster)": "apta",
+      "p=1, pi=0.1 · 2SLS (normal)": "con valor crítico corregido",
+      "p=1, pi=0.1 · 2SLS (t de Student, G-1)": "apta",
+      "p=1, pi=0.1 · AR (IC exacto por cluster)": "apta",
+      "p=1, pi=0.2 · 2SLS (normal)": "con valor crítico corregido",
+      "p=1, pi=0.2 · 2SLS (t de Student, G-1)": "con valor crítico corregido",
+      "p=1, pi=0.2 · AR (IC exacto por cluster)": "con valor crítico corregido",
+      "p=1, pi=0.2 · 2SLS (normal) | regla F efectivo >= 10": "no fiable",
+      "p=1, pi=0.5 · 2SLS (normal)": "con valor crítico corregido",
+      "p=1, pi=0.5 · 2SLS (t de Student, G-1)": "con valor crítico corregido",
+      "p=1, pi=0.5 · AR (IC exacto por cluster)": "apta",
+      "p=1, pi=0.5 · 2SLS (normal) | regla F efectivo >= 10": "con valor crítico corregido",
+      "p=2, ambas fuertes (0,5; 0,5) · 2SLS beta_1 (normal)": "apta",
+      "p=2, ambas fuertes (0,5; 0,5) · 2SLS beta_1 (t de Student, G-1)": "apta",
+      "p=2, ambas fuertes (0,5; 0,5) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",
+      "p=2, ambas fuertes (0,5; 0,5) · AR de subvector beta_1 (proyección)": "no fiable",
+      "p=2, ambas fuertes (0,5; 0,5) · 2SLS beta_1 (normal) | regla min F efectivo >= 10": "con valor crítico corregido",
+      "p=2, una débil (0,5; 0,05) · 2SLS beta_1 (normal)": "no fiable",
+      "p=2, una débil (0,5; 0,05) · 2SLS beta_1 (t de Student, G-1)": "no fiable",
+      "p=2, una débil (0,5; 0,05) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",
+      "p=2, una débil (0,5; 0,05) · AR de subvector beta_1 (proyección)": "no fiable",
+      "p=2, ambas débiles (0,06; 0,06) · 2SLS beta_1 (normal)": "con valor crítico corregido",
+      "p=2, ambas débiles (0,06; 0,06) · 2SLS beta_1 (t de Student, G-1)": "con valor crítico corregido",
+      "p=2, ambas débiles (0,06; 0,06) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",
+      "p=2, ambas débiles (0,06; 0,06) · AR de subvector beta_1 (proyección)": "no fiable"
+    },
+    "alcance_territorial": "sin lectura de datos"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "simulación; sin datos reales",
+    "Cobertura = 1 - tamaño por equivariancia a la traslación de beta; potencia frente a delta = 0,5."
+  ]
+}

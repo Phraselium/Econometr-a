@@ -1,0 +1,89 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "validación de Driscoll-Kraay en paneles provinciales (E3, E5, E7-A2, E8, E12, F1-F3)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulación; sin datos reales",
+  "N": "39 provincias; T = 14, 20, 30",
+  "metodo": "FE con errores de Driscoll-Kraay (Bartlett, t de T-1 gl); referencias CR1 y HC1",
+  "estimacion": null,
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto_por_inferencia": {
+      "Driscoll-Kraay (m = ancho, t de T-1 gl)": {
+        "veredicto": "NO APTO",
+        "aptos": [],
+        "fallan": [
+          "T=14 (tamaño 0.2020, cobertura 0.7980)",
+          "T=14 (tamaño 0.2275, cobertura 0.7725)",
+          "T=20 (tamaño 0.1725, cobertura 0.8275)",
+          "T=20 (tamaño 0.1845, cobertura 0.8155)",
+          "T=30 (tamaño 0.1600, cobertura 0.8400)",
+          "T=30 (tamaño 0.1670, cobertura 0.8330)"
+        ]
+      },
+      "HC1 (normal, referencia)": {
+        "veredicto": "NO APTO",
+        "aptos": [],
+        "fallan": [
+          "T=14 (tamaño 0.5325, cobertura 0.4675)",
+          "T=20 (tamaño 0.5530, cobertura 0.4470)",
+          "T=30 (tamaño 0.5655, cobertura 0.4345)"
+        ]
+      },
+      "cluster por provincia (CR1, t de N-1 gl)": {
+        "veredicto": "NO APTO",
+        "aptos": [],
+        "fallan": [
+          "T=14 (tamaño 0.4800, cobertura 0.5200)",
+          "T=20 (tamaño 0.4965, cobertura 0.5035)",
+          "T=30 (tamaño 0.5120, cobertura 0.4880)"
+        ]
+      }
+    },
+    "R": 2000,
+    "semilla": 20261010,
+    "criterio": "tamaño [0,03; 0,08], cobertura [0,92; 0,97], R >= 2.000",
+    "bandas_adenda_1_12": {
+      "Driscoll-Kraay (m = 2, t de T-1 gl) T=14 rho_f=0.5 año=False": "no fiable",
+      "Driscoll-Kraay (m = 3, t de T-1 gl) T=14 rho_f=0.5 año=False": "no fiable",
+      "cluster por provincia (CR1, t de N-1 gl) T=14 rho_f=0.5 año=False": "no fiable",
+      "HC1 (normal, referencia) T=14 rho_f=0.5 año=False": "no fiable",
+      "Driscoll-Kraay (m = 2, t de T-1 gl) T=20 rho_f=0.5 año=False": "no fiable",
+      "Driscoll-Kraay (m = 3, t de T-1 gl) T=20 rho_f=0.5 año=False": "no fiable",
+      "cluster por provincia (CR1, t de N-1 gl) T=20 rho_f=0.5 año=False": "no fiable",
+      "HC1 (normal, referencia) T=20 rho_f=0.5 año=False": "no fiable",
+      "Driscoll-Kraay (m = 3, t de T-1 gl) T=30 rho_f=0.5 año=False": "no fiable",
+      "Driscoll-Kraay (m = 4, t de T-1 gl) T=30 rho_f=0.5 año=False": "no fiable",
+      "cluster por provincia (CR1, t de N-1 gl) T=30 rho_f=0.5 año=False": "no fiable",
+      "HC1 (normal, referencia) T=30 rho_f=0.5 año=False": "no fiable",
+      "Driscoll-Kraay (m = 2, t de T-1 gl) T=14 rho_f=0.8 año=False": "no fiable",
+      "Driscoll-Kraay (m = 3, t de T-1 gl) T=14 rho_f=0.8 año=False": "no fiable",
+      "cluster por provincia (CR1, t de N-1 gl) T=14 rho_f=0.8 año=False": "no fiable",
+      "HC1 (normal, referencia) T=14 rho_f=0.8 año=False": "no fiable",
+      "Driscoll-Kraay (m = 3, t de T-1 gl) T=30 rho_f=0.8 año=False": "no fiable",
+      "Driscoll-Kraay (m = 4, t de T-1 gl) T=30 rho_f=0.8 año=False": "no fiable",
+      "cluster por provincia (CR1, t de N-1 gl) T=30 rho_f=0.8 año=False": "no fiable",
+      "HC1 (normal, referencia) T=30 rho_f=0.8 año=False": "no fiable",
+      "Driscoll-Kraay (m = 2, t de T-1 gl) T=14 rho_f=0.5 año=True": "no fiable",
+      "Driscoll-Kraay (m = 3, t de T-1 gl) T=14 rho_f=0.5 año=True": "no fiable",
+      "cluster por provincia (CR1, t de N-1 gl) T=14 rho_f=0.5 año=True": "apta",
+      "HC1 (normal, referencia) T=14 rho_f=0.5 año=True": "con valor crítico corregido",
+      "Driscoll-Kraay (m = 3, t de T-1 gl) T=30 rho_f=0.5 año=True": "con valor crítico corregido",
+      "Driscoll-Kraay (m = 4, t de T-1 gl) T=30 rho_f=0.5 año=True": "con valor crítico corregido",
+      "cluster por provincia (CR1, t de N-1 gl) T=30 rho_f=0.5 año=True": "apta",
+      "HC1 (normal, referencia) T=30 rho_f=0.5 año=True": "con valor crítico corregido"
+    },
+    "alcance_territorial": "sin lectura de datos"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "simulación; sin datos reales",
+    "Cobertura = 1 - tamaño por equivariancia; potencia frente a 0,3."
+  ]
+}

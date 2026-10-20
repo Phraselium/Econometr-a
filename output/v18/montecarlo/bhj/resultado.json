@@ -1,0 +1,109 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "validación de BHJ a nivel de choque (E3, E5, E9)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulación; sin datos reales",
+  "N": "39 provincias; K = 10, 20, 30 choques; HHI 0,1-0,3",
+  "metodo": "ssaggregate + iv_cluster + ar_ic_nulo_impuesto (src/v18/reproduccion/bhj_lib.py)",
+  "estimacion": null,
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto_por_inferencia": {
+      "AR (ar_ic_nulo_impuesto)": {
+        "veredicto": "NO APTO",
+        "escenarios_aptos": [],
+        "escenarios_no_aptos": [
+          "K=10, HHI=0.1 (tamaño 0.0065, cobertura 0.9935)",
+          "K=10, HHI=0.2 (tamaño 0.0025, cobertura 0.9975)",
+          "K=10, HHI=0.3 (tamaño 0.0015, cobertura 0.9985)",
+          "K=20, HHI=0.1 (tamaño 0.0170, cobertura 0.9830)",
+          "K=20, HHI=0.2 (tamaño 0.0045, cobertura 0.9955)",
+          "K=20, HHI=0.3 (tamaño 0.0015, cobertura 0.9985)",
+          "K=30, HHI=0.1 (tamaño 0.0190, cobertura 0.9810)",
+          "K=30, HHI=0.2 (tamaño 0.0055, cobertura 0.9945)",
+          "K=30, HHI=0.3 (tamaño 0.0050, cobertura 0.9950)"
+        ]
+      },
+      "iv_cluster (normal)": {
+        "veredicto": "NO APTO",
+        "escenarios_aptos": [],
+        "escenarios_no_aptos": [
+          "K=10, HHI=0.1 (tamaño 0.1535, cobertura 0.8465)",
+          "K=10, HHI=0.2 (tamaño 0.1995, cobertura 0.8005)",
+          "K=10, HHI=0.3 (tamaño 0.2375, cobertura 0.7625)",
+          "K=20, HHI=0.1 (tamaño 0.1525, cobertura 0.8475)",
+          "K=20, HHI=0.2 (tamaño 0.2045, cobertura 0.7955)",
+          "K=20, HHI=0.3 (tamaño 0.2615, cobertura 0.7385)",
+          "K=30, HHI=0.1 (tamaño 0.1700, cobertura 0.8300)",
+          "K=30, HHI=0.2 (tamaño 0.1985, cobertura 0.8015)",
+          "K=30, HHI=0.3 (tamaño 0.2350, cobertura 0.7650)"
+        ]
+      },
+      "iv_cluster (t de Student)": {
+        "veredicto": "NO APTO",
+        "escenarios_aptos": [],
+        "escenarios_no_aptos": [
+          "K=10, HHI=0.1 (tamaño 0.1235, cobertura 0.8765)",
+          "K=10, HHI=0.2 (tamaño 0.1570, cobertura 0.8430)",
+          "K=10, HHI=0.3 (tamaño 0.1945, cobertura 0.8055)",
+          "K=20, HHI=0.1 (tamaño 0.1410, cobertura 0.8590)",
+          "K=20, HHI=0.2 (tamaño 0.1860, cobertura 0.8140)",
+          "K=20, HHI=0.3 (tamaño 0.2460, cobertura 0.7540)",
+          "K=30, HHI=0.1 (tamaño 0.1550, cobertura 0.8450)",
+          "K=30, HHI=0.2 (tamaño 0.1845, cobertura 0.8155)",
+          "K=30, HHI=0.3 (tamaño 0.2220, cobertura 0.7780)"
+        ]
+      }
+    },
+    "R": 2000,
+    "semilla": 20261010,
+    "criterio": "tamaño [0,03; 0,08], cobertura [0,92; 0,97], R >= 2.000",
+    "bandas_adenda_1_12": {
+      "iv_cluster (normal) K=10 HHI=0.1 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=10 HHI=0.1 pi=1.0": "con valor crítico corregido",
+      "AR (ar_ic_nulo_impuesto) K=10 HHI=0.1 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=10 HHI=0.2 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=10 HHI=0.2 pi=1.0": "no fiable",
+      "AR (ar_ic_nulo_impuesto) K=10 HHI=0.2 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=10 HHI=0.3 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=10 HHI=0.3 pi=1.0": "no fiable",
+      "AR (ar_ic_nulo_impuesto) K=10 HHI=0.3 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=20 HHI=0.1 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=20 HHI=0.1 pi=1.0": "con valor crítico corregido",
+      "AR (ar_ic_nulo_impuesto) K=20 HHI=0.1 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=20 HHI=0.2 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=20 HHI=0.2 pi=1.0": "no fiable",
+      "AR (ar_ic_nulo_impuesto) K=20 HHI=0.2 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=20 HHI=0.3 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=20 HHI=0.3 pi=1.0": "no fiable",
+      "AR (ar_ic_nulo_impuesto) K=20 HHI=0.3 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=30 HHI=0.1 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=30 HHI=0.1 pi=1.0": "no fiable",
+      "AR (ar_ic_nulo_impuesto) K=30 HHI=0.1 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=30 HHI=0.2 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=30 HHI=0.2 pi=1.0": "no fiable",
+      "AR (ar_ic_nulo_impuesto) K=30 HHI=0.2 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=30 HHI=0.3 pi=1.0": "no fiable",
+      "iv_cluster (t de Student) K=30 HHI=0.3 pi=1.0": "no fiable",
+      "AR (ar_ic_nulo_impuesto) K=30 HHI=0.3 pi=1.0": "no fiable",
+      "iv_cluster (normal) K=20 HHI=0.2 pi=0.25": "no fiable",
+      "iv_cluster (t de Student) K=20 HHI=0.2 pi=0.25": "con valor crítico corregido",
+      "AR (ar_ic_nulo_impuesto) K=20 HHI=0.2 pi=0.25": "no fiable",
+      "iv_cluster (normal) K=200 HHI=0.006 pi=1.0": "con valor crítico corregido",
+      "iv_cluster (t de Student) K=200 HHI=0.006 pi=1.0": "con valor crítico corregido",
+      "AR (ar_ic_nulo_impuesto) K=200 HHI=0.006 pi=1.0": "apta"
+    },
+    "alcance_territorial": "sin lectura de datos"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "simulación; sin datos reales",
+    "Cobertura y potencia del caso no nulo por equivariancia a la traslación de beta."
+  ]
+}

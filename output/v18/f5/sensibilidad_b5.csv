@@ -1,0 +1,18 @@
+factor,variante,k,unidades,notas,estado,mu,lo,hi,I2,decision_coincide,mu_semicauchy
+E1,sin_I6,1,segu2018,,magnitud preferida,0.038,0.0145,0.0615,,,
+E2,rho_0.5,3,breuille2025; hahn2021; episodio CAT-2020-22,,rango sin magnitud preferida (la decisión no coincide en las tres priors),-0.0599,-0.1128,-0.005,0.95,False,-0.0594
+E2,rho_1,3,breuille2025; hahn2021; episodio CAT-2020-22,,rango sin magnitud preferida (la decisión no coincide en las tres priors),-0.0606,-0.1128,-0.0069,0.95,False,-0.0602
+E2,sin_I6,3,breuille2025; hahn2021; episodio CAT-2020-22,,rango sin magnitud preferida (la decisión no coincide en las tres priors),-0.0601,-0.1128,-0.0055,0.95,False,-0.0596
+E2,hahn_estrategia_B,3,breuille2025; hahn2021; episodio CAT-2020-22,,magnitud preferida,-0.0487,-0.0835,-0.0179,0.7,True,-0.0486
+E2,sin_estimacion_propia,3,breuille2025; hahn2021; episodio CAT-2020-22,,rango sin magnitud preferida (la decisión no coincide en las tres priors),-0.0606,-0.1128,-0.0069,0.95,False,-0.0602
+E2,solo_europeos,3,breuille2025; hahn2021; episodio CAT-2020-22,,rango sin magnitud preferida (la decisión no coincide en las tres priors),-0.0601,-0.1128,-0.0055,0.95,False,-0.0596
+E3,sin_I6,2,saiz_2007_philly; unal_2022_marburg,gonzalez_ortega_2009_iza fuera de I6 (razón 3.34); sanchis_guarner_2017_lse fuera de I6 (razón 3.18); sa_2015_iza fuera de I6 (razón -1.70),magnitud preferida,1.8255,1.2548,2.3963,0.55,,
+E3,version_2011_en_lugar_de_2009,5,sanchis_guarner_2017_lse; saiz_2007_philly; sa_2015_iza; unal_2022_marburg; gonzalez_ortega_2011_chicagofed,,rango sin magnitud preferida (I² > 75 % y el intervalo de predicción cambia de signo),1.0756,-0.6283,2.7931,0.91,True,1.07
+E3,solo_europeos,4,sanchis_guarner_2017_lse; sa_2015_iza; unal_2022_marburg; gonzalez_ortega_2009_iza,,rango sin magnitud preferida (I² > 75 % y el intervalo de predicción cambia de signo),1.3638,-0.7906,3.535,0.88,True,1.3415
+E3,solo_espana,2,sanchis_guarner_2017_lse; gonzalez_ortega_2009_iza,,magnitud preferida,3.116,1.3589,4.8731,0.0,,
+E4,sin_I6,2,fack_2005_cepremap; eerola_etal_2026_jpube,,magnitud preferida,0.0408,-0.0138,0.0953,0.53,,
+E5,sin_I6,2,taltavull_2006_funcas; paciorek_2012_feds,baum_snow_han_2020_nberconf fuera de I6 (razón 0.30),magnitud preferida,0.8517,0.6987,1.0048,0.0,,
+E6,sin_I6,1,mense_2025_jpemacro,,magnitud preferida,-0.192,-0.3194,-0.0646,,,
+E7,sin_I6,0,,,sin estudios,,,,,,
+E8,sin_I6,0,,,sin estudios,,,,,,
+E9,sin_I6,0,,,sin estudios,,,,,,

@@ -29,8 +29,10 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
   - NO ESTIMABLE: E4, E5, E6, E7 (primera etapa débil), E9, E11 y la mayoría de ampliaciones.
   - Ninguna IDENTIFICADO; sin parada G. Paquete de herramientas renombrado a src/v18/herr18 (choque con src/v8/herramientas).
 
+- 2026-10-20 · **Fase 5 (código y salidas; pendiente de revisión del orquestador).** src/v18/f5_magnitudes.py y f5_contabilidad.py (en FASES["f5"]), tests/v18/test_f5.py, salidas en output/v18/f5/ (magnitudes, magnitudes_estudios, sensibilidad_b5, contabilidad, contabilidad_ilustracion, comparacion_v8, respuesta, hechos.json, informe.md). B5: solo E2-R1 (SUGESTIVO) es estimación propia válida y E2 no alcanza magnitud preferida (decisión distinta en las tres priors; I² = 0,95); E3 y E5 sin magnitud preferida (I² > 75 %); E1, E4 y E6 con magnitud solo de la literatura; E7-E9 con rango sin error típico. Contabilidad principal sin filas con cifra (100 % sin explicar); ilustración aparte con literatura. Decisiones en K10. check_v18, check_v17, check_v15 y ruff sin errores. Tokens del modelizador: ≈ 350.000 (a registrar en docs/v18/subagentes.csv).
+
 ## Siguiente
-- Fase 5: magnitud preferida por factor (B5) y contabilidad de la subida (sección 4 del plan y 1.10 de la adenda).
+- Revisión de la fase 5 (verificador-cifras, abogado-del-diablo sobre B5 y la contabilidad) y fase 6: Documento de Trabajo (publicacion/documento_v18/), con la tabla de impactos de B5 y la sección 5 de contabilidad.
 
 ## Subagentes y tokens
 
@@ -65,6 +67,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F4 | abogado-del-diablo | ronda 2 B6: E2-R1 (SUGESTIVO con limitación) | 71.619 | docs/v18/revision_estimaciones/ronda2_e2r1.md |
 | 2026-10-20 | F4 | modelizador | E1-R4 principal sin adelantos (NO CONCLUYENTE; v3 con adelantos SUGESTIVO nulo acotado) | 100.844 | src/v18/estimacion/e1_*.py; output/v18/estimacion/e1/ |
 | 2026-10-20 | F4 | modelizador | K9 en E2-R1: paro trimestral (−0,0384), frase de limitación, D1 corregida | 86.575 | src/v18/estimacion/e2_*.py; output/v18/estimacion/e2/ |
+| 2026-10-20 | F5 | modelizador | magnitudes preferidas (B5) y contabilidad de la subida | 350.040 | src/v18/f5_*.py; output/v18/f5/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -73,7 +76,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F2 | 183.117 |
 | F3 | 985.262 |
 | F4 | 4.734.404 |
+| F5 | 350.040 |
 
-Total V18: 7.793.100 tokens
+Total V18: 8.143.140 tokens
 
 <!-- fin subagentes -->

@@ -21,7 +21,7 @@ FASES: dict[str, list[str]] = {
     "f2": ["src/v18/f2_reproduccion.py"],
     "f3": ["src/v18/f3_sellado.py", "src/v18/f3_plan.py"],
     "f4": [],
-    "f5": [],
+    "f5": ["src/v18/f5_magnitudes.py", "src/v18/f5_contabilidad.py"],
     "f6": [],
 }
 CON_PUERTA = {"f3", "f4", "f5", "f6"}

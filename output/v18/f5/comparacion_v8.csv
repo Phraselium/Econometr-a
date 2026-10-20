@@ -1,0 +1,29 @@
+periodo_v8,factor_v8,factor_v18,v8_mediana,v8_b68_lo,v8_b68_hi,v18_mediana,v18_p16,v18_p84,mismo_signo,intervalos_solapan,variante_v8,nota
+P2,empleo_renta,F1 (sensibilidad),-7.5720,-23.5243,0.6604,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P2,demografia,E3,-1.5992,-10.7148,4.0496,-0.7548,-2.1986,0.7386,True,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P2,demografia,E9,-1.5992,-10.7148,4.0496,11.3283,9.8135,12.8882,False,False,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P2,oferta,E5,-2.0535,-13.2992,2.4889,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P2,oferta,E6,-2.0535,-13.2992,2.4889,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P2,credito_tipos,E7,-5.8847,-18.8749,0.5422,1.1403,0.8039,1.4711,False,False,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P3,empleo_renta,F1 (sensibilidad),5.2226,-3.4664,18.2318,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P3,demografia,E3,-0.1774,-6.5783,6.8149,1.0217,-0.9997,2.9759,False,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P3,demografia,E9,-0.1774,-6.5783,6.8149,-4.2307,-4.8133,-3.6650,True,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P3,oferta,E5,0.1842,-7.2927,8.0243,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P3,oferta,E6,0.1842,-7.2927,8.0243,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P3,credito_tipos,E7,-0.6846,-9.7834,7.0710,0.3505,0.2471,0.4522,False,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P4,empleo_renta,F1 (sensibilidad),-0.4773,-7.0869,4.6602,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P4,demografia,E3,0.0708,-3.9907,3.3891,0.4760,-0.4658,1.3865,True,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P4,demografia,E9,0.0708,-3.9907,3.3891,,,,,,V3,V18 fuera del soporte: sin cifra
+P4,oferta,E5,-0.2855,-4.7538,3.3199,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P4,oferta,E6,-0.2855,-4.7538,3.3199,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P4,credito_tipos,E7,0.1164,-4.7230,4.4359,0.3271,0.2306,0.4220,True,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P5,empleo_renta,F1 (sensibilidad),1.0967,-4.7061,11.1947,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P5,demografia,E3,0.6154,-4.0786,5.7927,1.7587,-1.7208,5.1225,True,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P5,demografia,E9,0.6154,-4.0786,5.7927,-3.3242,-3.7820,-2.8797,False,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P5,oferta,E5,1.7841,-3.2501,9.0290,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P5,oferta,E6,1.7841,-3.2501,9.0290,,,,,,V3,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P5,credito_tipos,E7,3.3669,-2.8190,12.7731,2.8939,2.0403,3.7335,True,True,V3,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P1,empleo_renta,F1 (sensibilidad),29.5049,8.9990,54.6490,,,,,,larga,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P1,demografia,E3,4.7541,-4.9892,24.7777,6.8614,-6.7138,19.9855,True,True,larga,contabilidad con elasticidades de la literatura (ilustración) frente a descomposición histórica del SVAR (C3s): no se suman ni se promedian
+P1,demografia,E9,4.7541,-4.9892,24.7777,,,,,,larga,"V18 sin cifra para este factor y periodo (sin variación medida, fuera del soporte o sin magnitud)"
+P1,credito_tipos,E7,0.0976,-7.1903,14.0114,,,,,,larga,V18 fuera del soporte: sin cifra

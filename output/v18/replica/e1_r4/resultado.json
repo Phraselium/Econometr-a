@@ -1,0 +1,82 @@
+{
+ "rama": "v18",
+ "pregunta": "E1-R4 réplica ciega V18; capa C4: Sagrada Família, radio 500 m frente a anillo 500-1.000 m",
+ "capa": "C4",
+ "datos": "SERPAVI alquiler €/m² mediana vivienda colectiva por sección, Barcelona 2011-2019; geometría Ajuntament (secciones-barrio)",
+ "N": 693,
+ "metodo": "DiD TWFE (sección y año), tratamiento 2014-2019, base 2013, cluster barrio, WCR Webb 9.999",
+ "estimacion": 0.001120991289486954,
+ "ic95": [
+  -0.04699692636103747,
+  0.0715793707063263
+ ],
+ "p_ajustado": 0.845084508450845,
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "no se clasifica (réplica ciega)",
+ "diagnosticos": {
+  "evento": {
+   "coef": {
+    "2011": 0.014015622170294017,
+    "2012": -0.0020820200213407317,
+    "2014": 0.009917501586979693,
+    "2015": 0.005034562770943167,
+    "2016": 0.006482864238646304,
+    "2017": 0.0003060469949420939,
+    "2018": 0.004626910708757497,
+    "2019": 0.004225265734559608
+   },
+   "se_cr1": {
+    "2011": 0.01521012921328817,
+    "2012": 0.010366745277322932,
+    "2014": 0.004220549452892714,
+    "2015": 0.006327499732313368,
+    "2016": 0.009559693613933929,
+    "2017": 0.008537112250296661,
+    "2018": 0.01097101936793055,
+    "2019": 0.010498267612228716
+   },
+   "wald_adelantos": 11.290424869716906,
+   "p_adelantos_F": 0.06843541044701129
+  },
+  "placebo_fecha_2012": {
+   "beta": -0.015056632180964286,
+   "se_cr1": 0.010392475147333954,
+   "p_webb": 0.19421942194219421
+  },
+  "tost_delta_0.05": {
+   "ic90_webb": [
+    -0.038404441066300976,
+    0.054394400116853314
+   ],
+   "equivalencia": false
+  },
+  "n_tratadas": 21,
+  "n_control": 56,
+  "clusters": 5,
+  "se_cr1": 0.006873988235789205
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null
+ },
+ "notas": "Réplica ciega; comparación con el orquestador en comparacion de datos_intermedios.json",
+ "comparacion": {
+  "orquestador": {
+   "est": 0.0018,
+   "lo": -0.0446,
+   "hi": 0.0418,
+   "n_rad": 77,
+   "n_ani": 693,
+   "clusters": 6
+  },
+  "diferencia_abs": -0.000679008710513046,
+  "diferencia_rel": -0.3772270613961367,
+  "dif_sobre_se_propio": -0.0987794402931632,
+  "dif_sobre_se_orq_aprox": -0.030806876680684495,
+  "coincide_redondeo_4dec": false,
+  "estimacion_en_ic_orq": true,
+  "orq_en_ic_propio_webb": true,
+  "veredicto": "coincide"
+ }
+}

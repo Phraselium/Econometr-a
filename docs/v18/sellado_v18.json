@@ -24,7 +24,7 @@
   "anexo_c": "si el Anexo C fija un corte más restrictivo que la regla literal, se aplica el del Anexo C (nunca el más permisivo)"
  },
  "resumen": {
-  "n_variables": 100,
+  "n_variables": 102,
   "n_selladas_enteras": 1,
   "por_regla": {
    "(a)": 50,
@@ -32,9 +32,9 @@
    "(b) con (e)": 7,
    "(c)": 4,
    "(d)": 1,
-   "(e)": 20,
+   "(e)": 21,
    "(e) + Anexo C": 1,
-   "(f) (a)": 4,
+   "(f) (a)": 5,
    "(f) (c)": 1
   },
   "n_posterior_prereg": 13,
@@ -264,6 +264,26 @@
     "E1-R4"
    ],
    "nota": "ventana de E1 hasta 2024 (Anexo C)"
+  },
+  "c21md_hogares_muestra|municipio|D": {
+   "variable": "c21md_hogares_muestra",
+   "nivel": "municipio",
+   "frecuencia": "D",
+   "tope": "2021-01-01",
+   "sellada_entera": false,
+   "regla": "(e)",
+   "fuente_clave": "data/base/hechos.parquet (sha256 a8ae4998d400…): último periodo de base:c21md_hogares_muestra|municipio|D = 2021-01-01",
+   "origen": [
+    "base:c21md_hogares_muestra",
+    "data/raw/v11/ine_censo2021/hogares_muestra_municipio_nacionalidad.csv.gz"
+   ],
+   "media_desde": null,
+   "edicion_maxima": "2026-10-20",
+   "conjuntos_v15_v16": [],
+   "especificaciones": [
+    "E2-R1c"
+   ],
+   "nota": "añadida DESPUÉS de la etiqueta (desviación B6-1, ronda 1 del abogado del diablo): hogares en alquiler (tenencia = 3) del Censo 2021, recuento MUESTRAL del 10 % solo de municipios de 10.000 habitantes o más, fijo en el tiempo; denominador de E2-R1c-v1 (adenda AD-E2, medida)"
   },
   "catastro_inspire_viviendas_por_antiguedad|seccion|D": {
    "variable": "catastro_inspire_viviendas_por_antiguedad",
@@ -1278,6 +1298,30 @@
    ],
    "anexo_c": "2024",
    "coincide_anexo_c": true
+  },
+  "mivau_obra_libre_terminadas|provincia|A": {
+   "variable": "mivau_obra_libre_terminadas",
+   "nivel": "provincia",
+   "frecuencia": "A",
+   "tope": "2024",
+   "sellada_entera": false,
+   "regla": "(f) (a)",
+   "fuente_clave": "sustituto de terminadas|provincia: sellado_v15.json = 2024; sellado_v16.json = 2024 (manda la menor) [terminadas|provincia|A]",
+   "origen": [
+    "data/raw/mivau_v2_iniciadas_terminadas_prov.csv"
+   ],
+   "media_desde": null,
+   "edicion_maxima": "2026-10-17",
+   "conjuntos_v15_v16": [
+    "V15:p7_demografia_obra",
+    "V16:base_precio"
+   ],
+   "especificaciones": [
+    "E12-A1"
+   ],
+   "anexo_c": "2024",
+   "coincide_anexo_c": true,
+   "nota": "añadida DESPUÉS de la etiqueta (desviación B6-1, ronda 1 del abogado del diablo): obra libre terminada, variante E12-A1-v3 [M] de la adenda"
   },
   "mivau_parque|nacional|A": {
    "variable": "mivau_parque",
@@ -2910,6 +2954,7 @@
    "estado": "principal",
    "variables": [
     "aeat_irpf_renta_disponible_media|municipio|A",
+    "c21md_hogares_muestra|municipio|D",
     "idescat_hut_n|municipio|A",
     "incasol_contratos|municipio|A",
     "incasol_contratos|municipio|T",
@@ -3000,6 +3045,7 @@
    "estado": "coprincipal",
    "variables": [
     "aeat_irpf_renta_disponible_media|municipio|A",
+    "c21md_hogares_muestra|municipio|D",
     "idescat_hut_n|municipio|A",
     "incasol_contratos|municipio|A",
     "incasol_contratos|municipio|T",
@@ -3868,6 +3914,7 @@
    "variables": [
     "mivau_calificaciones_protegida|provincia|A",
     "mivau_obra_libre_iniciadas|provincia|A",
+    "mivau_obra_libre_terminadas|provincia|A",
     "mivau_parque|provincia|A",
     "pib_provincial_cre|provincia|A"
    ],

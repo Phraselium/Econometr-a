@@ -111,8 +111,13 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
     ic4 = M4.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA))
     ev4 = E.r4_eventos(r4["_d"])
     var4 = {}
-    for suf in ("v1", "v2"):
-        var4[suf] = E.r4(B, gsf, suf, webb_B=B_VAR if suf == "v2" else 0, rng=np.random.default_rng(K.SEMILLA))
+    for suf in ("v1", "v2", "v3"):
+        var4[suf] = E.r4(B, gsf, suf, webb_B=B_VAR if suf in ("v2", "v3") else 0, rng=np.random.default_rng(K.SEMILLA))
+    # K8 bis: la variante con adelantos (E1-R4-v3, estudio de eventos) se publica al lado con su IC95 y su IC90 por inversión del contraste de Webb
+    M4v3 = var4["v3"]["_res"]["modelo"]
+    ic95_v3 = M4v3.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA))
+    ic90_v3 = M4v3.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA), nivel=0.10)
+    var4["v3"]["ic95"] = (float(ic95_v3[0]), float(ic95_v3[1]))
     med4 = {}
     for nombre, col in (("y_vu", "y_vu"), ("y_mes", "y_mes")):
         try:
@@ -121,7 +126,7 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
         except Exception as e:  # noqa: BLE001
             med4[nombre] = {"coef": np.nan, "ic95": (np.nan, np.nan), "p": np.nan, "n": 0, "error": str(e)[:60]}
     moran4 = K.moran_i(K.residuo_medio_por_unidad(M4), E.coords_km(r4["_d"]), k=5, B=999)
-    out["R4"] = {"r": r4, "ev": ev4, "var": var4, "medidas": med4, "moran": moran4, "ic_webb": ic4, "conteos": cnt}
+    out["R4"] = {"r": r4, "ev": ev4, "var": var4, "medidas": med4, "moran": moran4, "ic_webb": ic4, "conteos": cnt, "v3_ic90": (float(ic90_v3[0]), float(ic90_v3[1])), "v3_ic95": var4["v3"]["ic95"]}
     R4 = out["R4"]
 
     # ------------------------------------------------------------------ P-H3
@@ -164,6 +169,9 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
     tost4 = {"ic90": (float(ic90_4[0]), float(ic90_4[1])), "delta": d4_, "equivalente": bool(ic90_4[0] > -d4_ and ic90_4[1] < d4_), "metodo": "IC90 por inversión del contraste de Webb"}
     pre4 = ev4["pretend"]
     rob4 = robustez(r4["coef"], r4_ic, [{"coef": v["coef"], "ic95": v["ic95"], "comparable": True} for v in var4.values()], [med4["y_vu"], med4["y_mes"]])
+    # variante con adelantos: misma clasificación aplicada a su coeficiente y a su IC90 de Webb (su p de Webb sin ajuste de Holm: no entra en la familia)
+    pv3 = var4["v3"]["_res"]["p_webb"]
+    tost_v3 = {"ic90": out["R4"]["v3_ic90"], "delta": d4_, "equivalente": bool(ic90_v3[0] > -d4_ and ic90_v3[1] < d4_), "metodo": "IC90 por inversión del contraste de Webb"}
     info4 = {"estimable": True, "coprincipal": False, "p_holm": holm["E1-R4"], "coef": r4["coef"], "tost": tost4, "pretend_p": pre4["p"], "roth_ok": bool(pre4["sesgo_post"] < d4_) if np.isfinite(pre4["sesgo_post"]) else None,
              "placebo_fecha": {"p": ev4["placebo_fecha"]["p"], "coef": ev4["placebo_fecha"]["coef"], "mismo_signo": bool(ev4["placebo_fecha"]["coef"] * r4["coef"] > 0)},
              "placebo_resultado": "no aplica (2011-2019: sin población de 65 años o más por sección)", "robustez": rob4, "inferencia_banda": "apta" if (np.isfinite(tam4) and 0.04 <= tam4 <= 0.06) else K.banda_mc(tam4) if np.isfinite(tam4) else "sin medida",
@@ -171,7 +179,11 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
              "debiles_extra": []}      # Webb apto con la mitad de los clusters tratados (Monte Carlo de V18; tamaño propio del diseño %.3f)
     cl4 = clasificar(info4)
     cl4["info"] = info4
-    out["clases"] = {"E1-R3": cl3, "E1-R4": cl4}
+    info4v3 = {**info4, "coef": var4["v3"]["coef"], "tost": tost_v3, "p_holm": K.p_corr(pv3, tam4 if np.isfinite(tam4) else None)}
+    cl4v3 = clasificar(info4v3)
+    cl4v3["info"] = info4v3
+    out["R4"]["v3_clase"] = cl4v3
+    out["clases"] = {"E1-R3": cl3, "E1-R4": cl4, "E1-R4-v3": cl4v3}
 
     # ------------------------------------------------------------------ filas de la tabla
     r3d = r3
@@ -193,15 +205,16 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
             if f["id"] == f"E1-R3-{suf}":
                 f["q_by"] = q
 
-    filas.append(_fila("E1-R4", "principal", "estimada", "ln SERPAVI (VC): < 500 m de la Sagrada Família frente al anillo 500-1.000 m, 2014-2019 frente a 2013", n_obs=r4["n"], n_unidades=r4["n_unidades"], G=r4["G"],
+    filas.append(_fila("E1-R4", "principal", "estimada", "ln SERPAVI (VC): < 500 m de la Sagrada Família frente al anillo 500-1.000 m, 2014-2019 frente a 2013, sin los adelantos de 2011-2012 como regresores (K8 bis)", n_obs=r4["n"], n_unidades=r4["n_unidades"], G=r4["G"],
                        ventana=r4["ventana"], coef=r4["coef"], se=r4["se"], ic95_lo=ic4[0], ic95_hi=ic4[1], p_cr1=r4["p_principal"], p_webb=r4["_res"]["p_webb"], p_i7=p4, p_holm=holm["E1-R4"], mde80=est["E1-R4"]["mde80"],
                        umbral=est["E1-R4"]["umbral"], inferencia="wild cluster bootstrap de Webb (9.999) por barrio; IC por inversión (1.999)", banda=("apta" if (np.isfinite(tam4) and 0.04 <= tam4 <= 0.06) else K.banda_mc(tam4) if np.isfinite(tam4) else "sin medida"),
                        clase=cl4["clase"], nota=f"{r4['n_tratadas']} secciones tratadas en {r4['G_tratados']} barrios y {r4['n_control']} de control"))
     for suf, dim, desc in A["E1-R4"]:
         v = var4[suf]
         filas.append(_fila(f"E1-R4-{suf}", "variante", "estimada", f"[{dim}] {desc}", n_obs=v["n"], n_unidades=v["n_unidades"], G=v["G"], ventana=v["ventana"], coef=v["coef"], se=v["se"], ic95_lo=v["ic95"][0],
-                           ic95_hi=v["ic95"][1], p_cr1=v["p_principal"], p_webb=v["_res"].get("p_webb", np.nan), p_i7=v["_res"].get("p_webb", v["p_principal"]), inferencia="Webb por barrio" if suf == "v2" else "CR1 t(G−1) por barrio",
-                           nota=f"{v['n_tratadas']} tratadas y {v['n_control']} de control"))
+                           ic95_hi=v["ic95"][1], p_cr1=v["p_principal"], p_webb=v["_res"].get("p_webb", np.nan), p_i7=v["_res"].get("p_webb", v["p_principal"]), inferencia="Webb por barrio" if suf in ("v2", "v3") else "CR1 t(G−1) por barrio",
+                           clase=cl4v3["clase"] if suf == "v3" else "",
+                           nota=(f"{v['n_tratadas']} tratadas y {v['n_control']} de control" + (f"; IC95 e IC90 por inversión de Webb; IC90 ({out['R4']['v3_ic90'][0]:.4f}; {out['R4']['v3_ic90'][1]:.4f})" if suf == "v3" else ""))))
     qs = N.by([var4[s]["_res"].get("p_webb", var4[s]["p_principal"]) for s, _, _ in A["E1-R4"]])
     for (suf, _, _), q in zip(A["E1-R4"], qs):
         for f in filas:

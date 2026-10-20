@@ -392,7 +392,8 @@ def r4_conteos(g: pd.DataFrame, r_in: float = 0.5, r_out: float = 1.0) -> dict:
 
 
 def r4(P: pd.DataFrame, g: pd.DataFrame, v: str | None = None, webb_B: int = 0, rng=None) -> dict:
-    """V18-E1-R4: diferencias en diferencias de las secciones a < 500 m del templo frente al anillo de 500-1.000 m (v1: resto de Barcelona; v2: 300 m y 300-800 m), tratamiento desde
+    """V18-E1-R4 (K8 bis): diferencias en diferencias de las secciones a < 500 m del templo frente al anillo de 500-1.000 m SIN los adelantos de 2011-2012 como regresores (los adelantos
+    son el diagnóstico de pretendencias, r4_eventos); v1: resto de Barcelona; v2: 300 m y 300-800 m; v3: estudio de eventos con los adelantos como regresores. Tratamiento desde
     2014, base 2013, preperiodo 2011-2012, años 2011-2019, efectos de sección y de año, cluster por barrio."""
     r_in, r_out, resto = {"v1": (0.5, 1.0, True), "v2": (0.3, 0.8, False)}.get(v, (0.5, 1.0, False))
     gg = g.set_index("cod_seccion")
@@ -404,7 +405,7 @@ def r4(P: pd.DataFrame, g: pd.DataFrame, v: str | None = None, webb_B: int = 0, 
     d = d.sort_values(["cod_seccion", "anio"]).reset_index(drop=True)
     d["u"], d["t"], d["cl"] = pd.factorize(d.cod_seccion)[0], pd.factorize(d.anio)[0], pd.factorize(d.barrio)[0]
     d["Dpost"] = d.tr * (d.anio >= 2014).astype(float)
-    lead = np.column_stack([(d.anio.values == k) * d.tr.values for k in (2011, 2012)])
+    lead = np.column_stack([(d.anio.values == k) * d.tr.values for k in (2011, 2012)]) if v == "v3" else None
     res = N.ajustar(d, "y", "Dpost", extra=lead, webb_B=webb_B, rng=rng)
     out = {"_d": d, "_res": res, "n_tratadas": int(d[d.tr == 1].u.nunique()), "n_control": int(d[d.tr == 0].u.nunique()), "n_unidades": int(d.u.nunique()), "ventana": "2011-2019",
            "G_tratados": int(d[d.tr == 1].cl.nunique())}

@@ -38,6 +38,7 @@ def escribir(OUT: Path, B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est
     tab.to_csv(OUT / "tabla.csv", index=False)
     R3, R4, PH = out["R3"], out["R4"], out["PH3"]
     r3, r4 = R3["r"], R4["r"]
+    r4v3, cl4v3 = R4["var"]["v3"], R4["v3_clase"]
     cl3, cl4 = out["clases"]["E1-R3"], out["clases"]["E1-R4"]
     holm = out["holm"]
     ev3, ev4 = R3["ev"], R4["ev"]
@@ -57,9 +58,9 @@ def escribir(OUT: Path, B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est
              f"Lectura: asociación estimada; la clase describe el diseño, no el coeficiente. {I8}.")
     H.append(K.hecho("V18-E1-R3", "Coeficiente de la densidad de viviendas turísticas (HUT de 2018T2, por pp) × posterior (2014-2019) sobre el log del alquiler mediano SERPAVI por sección, Barcelona",
                      r3["coef_por_pp"], r3["ic95_por_pp"][0], r3["ic95_por_pp"][1], "log por pp de densidad HUT (por 100 viviendas)", "2011-2019", cob, FUENTES, cl3["clase"], nota3))
-    nota4 = (f"Secciones a menos de 500 m de la Sagrada Família ({r4['n_tratadas']}) frente al anillo de 500-1.000 m ({r4['n_control']}), tratamiento desde 2014, base 2013, efectos fijos de sección y de año; "
+    nota4 = (f"Secciones a menos de 500 m de la Sagrada Família ({r4['n_tratadas']}) frente al anillo de 500-1.000 m ({r4['n_control']}), tratamiento desde 2014, base 2013, efectos fijos de sección y de año, sin los adelantos de 2011-2012 como regresores (K8 bis: son el diagnóstico de pretendencias); "
              f"Webb por barrio con {r4['G']} clusters ({r4['G_tratados']} con tratadas), p = {f(r4['_res']['p_webb'], 4)}, p tras Holm {f(holm['E1-R4'], 4)}; IC95 por inversión del contraste de Webb. "
-             f"Pretendencias (2011-2012): p = {f(ev4['pretend']['p'], 3)}. Sin referencia en la literatura (δ = 0,05): TOST: el IC90 de Webb ({f(cl4['info']['tost']['ic90'][0])}; {f(cl4['info']['tost']['ic90'][1])}) {'queda dentro de' if cl4['info']['tost']['equivalente'] else 'no queda dentro de'} ±0,05 (nulo {'acotado' if cl4['info']['tost']['equivalente'] else 'no acotado'}). Tope SUGESTIVO: un solo grupo tratado. Lectura: asociación estimada; "
+             f"Pretendencias (2011-2012): p = {f(ev4['pretend']['p'], 3)}. Sin referencia en la literatura (δ = 0,05): TOST: el IC90 de Webb ({f(cl4['info']['tost']['ic90'][0])}; {f(cl4['info']['tost']['ic90'][1])}) {'queda dentro de' if cl4['info']['tost']['equivalente'] else 'no queda dentro de'} ±0,05 (nulo {'acotado' if cl4['info']['tost']['equivalente'] else 'no acotado: NO CONCLUYENTE, sin potencia'}). Variante con adelantos (E1-R4-v3, estudio de eventos): {f(r4v3['coef'])}, IC90 de Webb ({f(R4['v3_ic90'][0])}; {f(R4['v3_ic90'][1])}), clase {cl4v3['clase']}. Tope SUGESTIVO: un solo grupo tratado. Lectura: asociación estimada; "
              f"la clase describe el diseño, no el coeficiente. {I8}.")
     H.append(K.hecho("V18-E1-R4", "Coeficiente de estar a menos de 500 m de la Sagrada Família × posterior (2014-2019) sobre el log del alquiler mediano SERPAVI por sección, frente al anillo de 500-1.000 m",
                      r4["coef"], R4["ic_webb"][0], R4["ic_webb"][1], "log (diferencia entre radio y anillo, posterior frente a 2013)", "2011-2019",
@@ -107,7 +108,7 @@ def escribir(OUT: Path, B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est
         "ic95": {"E1-R3": [float(t.loc["E1-R3", "ic95_lo"]), float(t.loc["E1-R3", "ic95_hi"])], "E1-R4": [float(R4["ic_webb"][0]), float(R4["ic_webb"][1])], "E1-P-H3": [float(PH["ic95"][0]), float(PH["ic95"][1])]},
         "p_ajustado": {k: float(v) for k, v in holm.items()},
         "nivel_evidencia": "EXPLORATORIO", "clasificacion_v18": "NO ESTIMABLE",
-        "clasificaciones": {"E1-R1": "NO ESTIMABLE", "E1-R2": "NO ESTIMABLE", "E1-R3": cl3["clase"], "E1-R4": cl4["clase"], "E1-A1": "NO ESTIMABLE", "E1-A2": "NO ESTIMABLE", "E1-A3": "NO ESTIMABLE", "E1-A4": "NO ESTIMABLE",
+        "clasificaciones": {"E1-R1": "NO ESTIMABLE", "E1-R2": "NO ESTIMABLE", "E1-R3": cl3["clase"], "E1-R4": cl4["clase"], "E1-R4-v3": cl4v3["clase"], "E1-A1": "NO ESTIMABLE", "E1-A2": "NO ESTIMABLE", "E1-A3": "NO ESTIMABLE", "E1-A4": "NO ESTIMABLE",
                             "E1-A5": "NO ESTIMABLE", "E1-X1": "NO ESTIMABLE", "E1-P-H3": "no se clasifica"},
         "diagnosticos": {
             "nota_clasificacion_global": "clasificacion_v18 es la de la estimación propia designada para B5, E1-A1 (NO ESTIMABLE); el respaldo E1-R2 también (NO ESTIMABLE por variación): E1 no tiene estimación propia estimable",
@@ -117,7 +118,7 @@ def escribir(OUT: Path, B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est
                       "honest": ev3["honest"], "tendencia_distancia_2011_2013": ev3["tendencia_distancia"], "conley_se": R3["conley"], "moran_residuos": R3["moran"], "medidas_alternativas": R3["medidas"],
                       "razon_con_referencia": r3["razon_ref"], "tamano_mc_cr1": out["tam"]["R3"], "v3_coprincipal": R3["v3_coprincipal"], "clasificacion_razones": cl3["razones"]},
             "E1-R4": {"tost_delta_0_05": {"ic90_webb": list(cl4["info"]["tost"]["ic90"]), "delta": 0.05, "equivalente": cl4["info"]["tost"]["equivalente"]}, "pretendencias_p": ev4["pretend"]["p"], "pendiente_detectable_80": ev4["pretend"]["pendiente_detectable"], "sesgo_implicado_post": ev4["pretend"]["sesgo_post"], "placebo_fecha": ev4["placebo_fecha"],
-                      "honest": ev4["honest"], "moran_residuos": R4["moran"], "medidas_alternativas": R4["medidas"], "conteos_geometria": R4["conteos"], "tamano_webb_mc": out["tam"]["R4"], "clasificacion_razones": cl4["razones"]},
+                      "honest": ev4["honest"], "moran_residuos": R4["moran"], "medidas_alternativas": R4["medidas"], "variante_con_adelantos_E1-R4-v3": {"coef": r4v3["coef"], "ic95_webb": list(R4["v3_ic95"]), "ic90_webb": list(R4["v3_ic90"]), "equivalente": cl4v3["info"]["tost"]["equivalente"], "clase": cl4v3["clase"]}, "conteos_geometria": R4["conteos"], "tamano_webb_mc": out["tam"]["R4"], "clasificacion_razones": cl4["razones"]},
             "E1-P-H3": {k: v for k, v in PH.items() if k != "ic95"},
         },
         "fuera_muestra": {"modelo": None, "rmse": None, "dm_vs_ar4": None, "nota": "no aplica: diseño de evaluación (efectos fijos y eventos), no predictivo; la evaluación sellada diferida de la adenda 1.11 solo incluye E1-A1, que no supera la estimabilidad"},
@@ -160,7 +161,7 @@ Código: `src/v18/estimacion/e1_turismo.py` (+ `e1_adquisicion.py`, `e1_datos.py
 ## 1. Resumen
 - **Lo que supera la estimabilidad (adenda 1.3)**: E1-R3 (estudio de eventos de dosis, 2011-2019) y E1-R4 (Sagrada Família), más la coprincipal E1-P-H3 (H3 de V15 en la muestra V18).
 - **E1-R3**: coeficiente por pp de densidad HUT de 2018T2 = **{f(r3['coef_por_pp'])}** (IC95 {f(r3['ic95_por_pp'][0])}; {f(r3['ic95_por_pp'][1])}; p corregido tras Holm {f(holm['E1-R3'], 4)}). Clase V18: **{cl3['clase']}**. Razón con la referencia (0,038): {f(razon3, 2)}, etiqueta {'coherente' if r3['coherente_ref'] else 'no coherente'}.
-- **E1-R4**: {f(r4['coef'])} (IC95 de Webb {f(R4['ic_webb'][0])}; {f(R4['ic_webb'][1])}; p de Webb {f(r4['_res']['p_webb'], 4)}, tras Holm {f(holm['E1-R4'], 4)}). Clase V18: **{cl4['clase']}**.
+- **E1-R4**: {f(r4['coef'])} (IC95 de Webb {f(R4['ic_webb'][0])}; {f(R4['ic_webb'][1])}; p de Webb {f(r4['_res']['p_webb'], 4)}, tras Holm {f(holm['E1-R4'], 4)}). Clase V18: **{cl4['clase']}**. Es la diferencia en diferencias del radio de 500 m frente al anillo de 500-1.000 m sin los adelantos de 2011-2012 como regresores (K8 bis); la versión con adelantos (E1-R4-v3, estudio de eventos) da {f(r4v3['coef'])}, IC90 de Webb ({f(R4['v3_ic90'][0])}; {f(R4['v3_ic90'][1])}), clase {cl4v3['clase']}.
 - **E1-P-H3**: {f(PH['coef'])} por DT intra-sección (IC95 {f(PH['ic95'][0])}; {f(PH['ic95'][1])}; p {f(PH['p_principal'], 4)}). Cifra de V15: 0,0030, p = 0,931. No se clasifica.
 - **NO ESTIMABLES por la regla previa** (se publica el MDE, no el coeficiente): **E1-R1** (solo {e1['n_barrios_cambian']} barrios con un cambio del stock HUT de al menos el 10 %, mínimo 20; MDE80 {f(e1['mde80'], 4)}), **E1-R2** (primera etapa nula: F efectivo {f(float(pe2.F_efectivo), 3)}) y **E1-A1** (MDE80 {f(a1['mde80'], 3)} frente a 0,038; F efectivo {f(float(pa1.F_efectivo), 2)}).
 - Consecuencia para B5: la estimación propia designada de E1 es E1-A1 y su respaldo E1-R2; las dos son NO ESTIMABLES por variación, de modo que **E1 no tiene estimación propia estimable** (la adenda 1.9 solo prevé el respaldo cuando la propia es NO ESTIMABLE, y también lo es). Lo dice el informe; no se sustituye por E1-R3 ni E1-R4.
@@ -218,18 +219,18 @@ Coeficiente de E1-R3 por desviación típica de la dosis ({f(sd3, 3)} pp): {f(r3
 
 {md(evt4)}
 
-- Equivalencia (TOST, δ = 0,05): el IC90 por inversión del contraste de Webb ({f(cl4['info']['tost']['ic90'][0])}; {f(cl4['info']['tost']['ic90'][1])}) {'queda dentro de' if cl4['info']['tost']['equivalente'] else 'no queda dentro de'} ±0,05: el nulo {'queda acotado' if cl4['info']['tost']['equivalente'] else 'no queda acotado y la clase es NO CONCLUYENTE (sin potencia) si el diseño es válido'}. Con {r4['G']} clusters, {r4['G_tratados']} con tratadas (la mitad), el Monte Carlo de V18 da el Webb por barrio como apto (tamaño propio del diseño {f(out['tam']['R4'], 3)}).
+- Equivalencia (TOST, δ = 0,05): el IC90 por inversión del contraste de Webb ({f(cl4['info']['tost']['ic90'][0])}; {f(cl4['info']['tost']['ic90'][1])}) {'queda dentro de' if cl4['info']['tost']['equivalente'] else 'no queda dentro de'} ±0,05: el nulo {'queda acotado' if cl4['info']['tost']['equivalente'] else 'no queda acotado y la clase es NO CONCLUYENTE (sin potencia) si el diseño es válido'}. Variante con adelantos (E1-R4-v3): IC90 de Webb ({f(R4['v3_ic90'][0])}; {f(R4['v3_ic90'][1])}), {'dentro' if cl4v3['info']['tost']['equivalente'] else 'no dentro'} de ±0,05; clase {cl4v3['clase']}. Con {r4['G']} clusters, {r4['G_tratados']} con tratadas (la mitad), el Monte Carlo de V18 da el Webb por barrio como apto (tamaño propio del diseño {f(out['tam']['R4'], 3)}).
 - Adelantos (2011 y 2012): p = {f(ev4['pretend']['p'], 3)}; pendiente detectable {f(ev4['pretend']['pendiente_detectable'], 4)}; sesgo implicado {f(ev4['pretend']['sesgo_post'], 4)} (umbral δ = 0,05). Placebo de fecha (adopción falsa en 2012): {f(ev4['placebo_fecha']['coef'])}, p = {f(ev4['placebo_fecha']['p'], 3)}.
 - Honest DiD:
 
 {md(hon4)}
 
 - Geometría: radio {R4['conteos']['radio_no_sellado']} de {R4['conteos']['radio_total']} secciones no selladas ({f(R4['conteos']['cuota_radio'], 2)}) y anillo {R4['conteos']['anillo_no_sellado']} de {R4['conteos']['anillo_total']} ({f(R4['conteos']['cuota_anillo'], 2)}): se cumple el 75 % de la adenda 1.5. {r4['G']} barrios, {r4['G_tratados']} con tratadas.
-- Réplica ciega (B6, K8): 693 es el número de observaciones (77 secciones × 9 años), no de secciones; esta principal ya usa el anillo de 500-1.000 m como control y «resto de Barcelona» es E1-R4-v1. La réplica da 21 y 56 secciones (0801902055 está a 499,7 m del templo con la geometría del INE y a 507,3 m con la del Ajuntament) y un coeficiente de 0,0011 con diferencias en diferencias sin los adelantos de 2011-2012 como regresores; aquí los adelantos entran (base 2013 sola) y el coeficiente es {f(r4['coef'])}. Con el estimador de la réplica sobre estas mismas 22 y 55 secciones el coeficiente es 0,0017 y el IC90 de Webb (−0,026; 0,053) no queda dentro de ±0,05: la equivalencia depende de esa lectura de la ficha.
+- Réplica ciega (B6, K8 y K8 bis): 693 era el número de observaciones (77 secciones × 9 años), no de secciones; el control principal ya era el anillo de 500-1.000 m y «resto de Barcelona» es E1-R4-v1. La réplica da 21 y 56 secciones (0801902055 está a 499,7 m del templo con la geometría del INE y a 507,3 m con la del Ajuntament). La diferencia entre las dos estimaciones era una lectura de la ficha: según K8 bis la principal es la diferencia en diferencias sin los adelantos de 2011-2012 como regresores (coeficiente {f(r4['coef'])}); los adelantos quedan como diagnóstico de pretendencias y su estimación con ellos pasa a la variante E1-R4-v3 (estudio de eventos con adelantos): {f(r4v3['coef'])}, IC90 de Webb ({f(R4['v3_ic90'][0])}; {f(R4['v3_ic90'][1])}). Cuando la ficha admite dos lecturas con clases distintas se toma la más prudente.
 - Medida alternativa: €/mes {f(R4['medidas']['y_mes']['coef'])}; vivienda unifamiliar {f(R4['medidas']['y_vu']['coef'])}. Moran de los residuos: I = {f(R4['moran']['I'], 3)}, p unilateral {f(R4['moran']['p_unilateral'], 3)}.
 
 ## 6. Variantes enumeradas (anexo A)
-Benjamini-Yekutieli al 10 % dentro de cada identificador. E1-R3 y E1-R4 con CR1 (E1-R4-v2, con 1.999 réplicas de Webb). Las variantes de E1-R1, E1-R2 y E1-A1 no se estiman (principal NO ESTIMABLE). E1-R3-v3 figura además como coprincipal en la familia de Holm cuando la tendencia por distancia de 2011-2013 es significativa al 10 % (adenda R-15); el q de cada variante es el de Benjamini-Yekutieli con su p de CR1 (E1-R4-v2: con su p de Webb).
+Benjamini-Yekutieli al 10 % dentro de cada identificador. E1-R3 y E1-R4 con CR1 (E1-R4-v2 y E1-R4-v3, con 1.999 réplicas de Webb). Las variantes de E1-R1, E1-R2 y E1-A1 no se estiman (principal NO ESTIMABLE). E1-R3-v3 figura además como coprincipal en la familia de Holm cuando la tendencia por distancia de 2011-2013 es significativa al 10 % (adenda R-15); el q de cada variante es el de Benjamini-Yekutieli con su p de CR1 (E1-R4-v2 y v3: con su p de Webb).
 
 {md(var)}
 

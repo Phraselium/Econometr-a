@@ -1,0 +1,316 @@
+{
+ "rama": "v18/estimacion/e2",
+ "pregunta": "¿Se asocian la Ley 11/2020 (topes al alquiler en Cataluña) y las zonas tensionadas de 2024 con la renta y el número de contratos nuevos de alquiler?",
+ "capa": "C4",
+ "datos": "Incasòl trimestral 2019T1-2026T1 y anual 2007-2025 por municipio; lista de la Ley 11/2020; sepe, padrón e idescat como controles; sin unidades selladas (v6, V15, V16)",
+ "N": {
+  "E2-R1": 143,
+  "E2-R1c": 205
+ },
+ "metodo": "TWFE con efectos fijos de municipio y trimestre, CR1 y wild cluster bootstrap de Webb por municipio, aleatorización, Conley 10 km, estudio de eventos, Honest DiD (M̄ = 0 informativo), CS para la coprincipal V9-D1b",
+ "estimacion": {
+  "E2-R1": -0.0381667943542379,
+  "E2-R1c": 0.017322043900921732,
+  "E2-P-D1b": -0.05816793665058043,
+  "E2-P-D1b-c": -0.006736155929805905,
+  "todas": {
+   "E2-R1": -0.0381667943542379,
+   "E2-R1-v1": -0.0378723521071795,
+   "E2-R1-v2": -0.039026756729855075,
+   "E2-R1-v3": -0.026021537967137527,
+   "E2-R1-v4": -0.05595533875710023,
+   "E2-R1-v6": -0.037558085874437985,
+   "E2-R1-v7": -0.03551338082432649,
+   "E2-R1-v8": -0.02676290658493059,
+   "E2-R1-v9": -0.005228536053534434,
+   "E2-R1-v10": -0.03498650952998023,
+   "E2-R1-v11": -0.037583039488098054,
+   "E2-R1-h1": -0.037784558631517515,
+   "E2-R1c": 0.017322043900921732,
+   "E2-R1c-v2": 0.022453533281677485,
+   "E2-R1c-v3": -0.008530925849076923,
+   "E2-R1c-v4": 0.02024402768621148,
+   "E2-P-D1b": -0.05816793665058043,
+   "E2-P-D1b-c": -0.006736155929805905
+  }
+ },
+ "ic95": {
+  "E2-R1": [
+   -0.050741158367558555,
+   -0.025713831332366127
+  ],
+  "E2-R1c": [
+   -0.02489924029418297,
+   0.05952066516641888
+  ],
+  "E2-P-D1b": [
+   -0.07606448481787592,
+   -0.04019871338906359
+  ],
+  "E2-P-D1b-c": [
+   -0.07085964566379557,
+   0.05449842297733609
+  ]
+ },
+ "p_ajustado": {
+  "E2-R1": 0.0005679999999999999,
+  "E2-R1c": 1.0,
+  "E2-P-D1b": 0.0005679999999999999,
+  "E2-P-D1b-c": 1.0
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "SUGESTIVO",
+ "clasificaciones": {
+  "E2-R1": "SUGESTIVO",
+  "E2-R1c": "SUGESTIVO",
+  "E2-A1": "NO ESTIMABLE",
+  "E2-A2": "NO ESTIMABLE",
+  "E2-A3": "NO ESTIMABLE",
+  "E2-A4": "NO ESTIMABLE",
+  "E2-R2": "NO ESTIMABLE",
+  "E2-R2s": "NO ESTIMABLE",
+  "E2-R2-X1": "NO ESTIMABLE",
+  "E2-A5": "NO ESTIMABLE"
+ },
+ "diagnosticos": {
+  "estimabilidad": [
+   {
+    "id": "E2-R1",
+    "n_tratados": 49,
+    "n_controles": 94,
+    "T": 13,
+    "minimo_datos": "49 tratados y 94 controles (mínimo 30 y 30)",
+    "minimo_ok": true,
+    "mde80": 0.02143538719334362,
+    "sd_placebo": 0.007705826684982841,
+    "umbral": 0.045,
+    "referencia": "Jofre-Monseny et al. (2023), tabla 2, col. 3: −0,045 (0,006)",
+    "estimable": true,
+    "motivo_no_estimable": ""
+   },
+   {
+    "id": "E2-R1c",
+    "n_tratados": 49,
+    "n_controles": 156,
+    "T": 13,
+    "minimo_datos": "49 tratados y 156 controles (mínimo 30 y 30)",
+    "minimo_ok": true,
+    "mde80": 0.08092605276289647,
+    "sd_placebo": 0.02918143283652685,
+    "umbral": 0.1,
+    "referencia": "sin referencia en la misma unidad (la de JMS, −0,003, es ≈ 0): 2δ",
+    "estimable": true,
+    "motivo_no_estimable": ""
+   },
+   {
+    "id": "E2-A1",
+    "n_tratados": 169,
+    "n_controles": 20,
+    "T": 17,
+    "minimo_datos": "169 tratados y 20 nunca tratados (CS exige controles propios)",
+    "minimo_ok": true,
+    "mde80": 0.040822468360904175,
+    "sd_placebo": 0.01465303192303428,
+    "umbral": 0.0298,
+    "referencia": "Pérez García (2026): −0,0298 (0,0113)",
+    "estimable": false,
+    "motivo_no_estimable": "MDE80 = 0.0408 > umbral 0.0298"
+   },
+   {
+    "id": "E2-A2",
+    "n_tratados": 6,
+    "n_controles": 4,
+    "T": 40,
+    "minimo_datos": "6 municipios tratados con EMAL no sellados (mínimo 10) y trimestres posteriores por cohorte {'2025T2': np.int64(3), '2025T3': np.int64(2), '2025T4': np.int64(1), '2026T2': np.int64(0), '2026T3': np.int64(0)} (mínimo 3)",
+    "minimo_ok": false,
+    "mde80": NaN,
+    "sd_placebo": NaN,
+    "umbral": 0.0298,
+    "referencia": "Pérez García (2026)",
+    "estimable": false,
+    "motivo_no_estimable": "6 municipios tratados con EMAL no sellados (mínimo 10) y trimestres posteriores por cohorte {'2025T2': np.int64(3), '2025T3': np.int64(2), '2025T4': np.int64(1), '2026T2': np.int64(0), '2026T3': np.int64(0)} (mínimo 3)"
+   },
+   {
+    "id": "E2-A3",
+    "n_tratados": 44,
+    "n_controles": 2,
+    "T": 7,
+    "minimo_datos": "44 tratados y 2 controles en la serie municipal de MIVAU",
+    "minimo_ok": false,
+    "mde80": NaN,
+    "sd_placebo": NaN,
+    "umbral": 0.1,
+    "referencia": "sin referencia: 2δ",
+    "estimable": false,
+    "motivo_no_estimable": "44 tratados y 2 controles en la serie municipal de MIVAU"
+   },
+   {
+    "id": "E2-A4",
+    "n_tratados": 84,
+    "n_controles": 12,
+    "T": 13,
+    "minimo_datos": "84 cerca (< 10 km) y 12 lejos (> 25 km)",
+    "minimo_ok": true,
+    "mde80": 0.044404460456264824,
+    "sd_placebo": 0.015725268101117074,
+    "umbral": 0.027,
+    "referencia": "Jofre-Monseny et al. (2023), vecinos directos, p. 18: −0,027",
+    "estimable": false,
+    "motivo_no_estimable": "MDE80 = 0.0444 > umbral 0.0270"
+   }
+  ],
+  "E2-R1": {
+   "pretendencias_p": 0.44012812921649735,
+   "pendiente_detectable_80": 0.009322512757860014,
+   "sesgo_implicado_post": 0.06059633292609009,
+   "placebo_fecha_2017_anual": {
+    "coef": 0.01459496943100431,
+    "p": 0.05598802989782801,
+    "mismo_signo": false,
+    "n_tr": 50,
+    "n_co": 170
+   },
+   "placebo_resultado": "población de 65+ por municipio y año: sin dato; renta IRPF: sin municipios catalanes",
+   "reversion": {
+    "coef_post": -0.0366199309534735,
+    "coef_reversion": -0.00156610242387918,
+    "se_reversion": 0.007765023549006861,
+    "p_reversion": 0.8404564784735662,
+    "n_tr": 49,
+    "n_co": 91,
+    "persiste": false
+   },
+   "honest": [
+    {
+     "Mbar": 0.0,
+     "ic95": [
+      -0.05494812889450228,
+      -0.014137623651842849
+     ],
+     "excluye_cero": true,
+     "G": 143,
+     "k": 9,
+     "rango_V": 9,
+     "lectura": "apto (Monte Carlo)"
+    },
+    {
+     "Mbar": 0.5,
+     "ic95": [
+      -0.08704505758187966,
+      0.02514210330246585
+     ],
+     "excluye_cero": false,
+     "G": 143,
+     "k": 9,
+     "rango_V": 9,
+     "lectura": "válido pero conservador: informativo, no criterio"
+    },
+    {
+     "Mbar": 1.0,
+     "ic95": [
+      -0.13397647973936483,
+      0.07166173072671463
+     ],
+     "excluye_cero": false,
+     "G": 143,
+     "k": 9,
+     "rango_V": 9,
+     "lectura": "válido pero conservador: informativo, no criterio"
+    }
+   ],
+   "honest_anual_v8": [
+    {
+     "Mbar": 0.0,
+     "ic95": [
+      -0.04608396640882362,
+      -0.012411004943222788
+     ],
+     "excluye_cero": true,
+     "G": 217,
+     "k": 6,
+     "rango_V": 6
+    },
+    {
+     "Mbar": 0.5,
+     "ic95": [
+      -0.05934884934309992,
+      0.0013857985083292191
+     ],
+     "excluye_cero": false,
+     "G": 217,
+     "k": 6,
+     "rango_V": 6
+    },
+    {
+     "Mbar": 1.0,
+     "ic95": [
+      -0.0776237241390524,
+      0.02001221939009365
+     ],
+     "excluye_cero": false,
+     "G": 217,
+     "k": 6,
+     "rango_V": 6
+    }
+   ],
+   "moran_residuos": {
+    "I": 0.0370987113338737,
+    "E_I": -0.007042253521126761,
+    "p_unilateral": 0.176,
+    "p_bilateral": 0.339,
+    "n": 143,
+    "k": 5
+   },
+   "razon_con_referencia": 0.8481509856497311,
+   "mde80": 0.02143538719334362,
+   "inferencia": {
+    "p_webb": 0.0001,
+    "p_webb_conglomerado_espacial": 0.0005,
+    "p_aleatorizacion": 0.0001,
+    "p_aleatorizacion_conglomerado": 0.0001,
+    "se_conley_10km": 0.006658078675351355,
+    "p_driscoll_kraay_no_fiable": 0.00015889091147426734
+   },
+   "clasificacion_razones": [
+    "potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|",
+    "placebo de fecha p = 0.056",
+    "placebo de resultado sin dato en el repositorio",
+    "IC95 de alguna robustez no solapa con el principal",
+    "tope SUGESTIVO por corrección de un fallo conocido de V9-D1b: grupo de control y ventana (adenda 1.6; Honest M̄ de ruptura 0,5)"
+   ]
+  },
+  "E2-R1c": {
+   "pretendencias_p": 0.1749790845614312,
+   "placebo_fecha_2017_anual": {
+    "coef": -0.07931224481293979,
+    "p": 0.0005191588629725066,
+    "mismo_signo": false,
+    "n_tr": 50,
+    "n_co": 183
+   },
+   "reversion": {
+    "coef_post": 0.0196734099950524,
+    "coef_reversion": 0.07356491176478348,
+    "se_reversion": 0.023893726489309076,
+    "p_reversion": 0.0023729445244520327,
+    "n_tr": 49,
+    "n_co": 150,
+    "persiste": true
+   },
+   "mde80": 0.08092605276289647,
+   "clasificacion_razones": [
+    "potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|",
+    "placebo de fecha p = 0.001",
+    "placebo de resultado sin dato en el repositorio",
+    "mismo signo en 67% de las variantes enumeradas (< 80 %)"
+   ]
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: diseño de evaluación (diferencias en diferencias), no predictivo; la evaluación sellada diferida de la adenda 1.11 no incluye a E2-R1 (episodio histórico)"
+ },
+ "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Clasificación provisional: falta I8 (réplica ciega, B6). Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
+}

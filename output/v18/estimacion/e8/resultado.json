@@ -1,0 +1,190 @@
+{
+ "rama": "v18/estimacion/e8",
+ "pregunta": "¿Se asocian los cambios del tipo general del ITP por comunidad con el valor tasado y con las compraventas provinciales?",
+ "capa": "C4",
+ "datos": "valor tasado provincial trimestral 2007T1-2026T2 (30 provincias de 7 comunidades), tipos del ITP de la base de intervenciones de V16; sin unidades selladas (v6, V15, V16)",
+ "N": {
+  "E8-R1": 2340,
+  "provincias": 30,
+  "comunidades": 7
+ },
+ "metodo": "dCDH con dosis continua (ℓ = 4), aleatorización de calendarios entre comunidades (APTO), t con G − 1 gl, adelantos por aleatorización, Sun-Abraham en bajadas, Wald-DID anual de V16 como coprincipal",
+ "estimacion": {
+  "E8-R1": 0.014609399725022084,
+  "E8-P-Q6p": -0.002037210173603296,
+  "variantes": {
+   "E8-R1-v1": 0.0011301683031883646,
+   "E8-R1-v2": 0.008819651637187372,
+   "E8-R1-v3": 0.013091673522800114,
+   "E8-R1-v4": -0.007907310798833132,
+   "E8-R1-v6": 0.0368364230941875,
+   "E8-R1-v7": 0.007330220514790818,
+   "E8-R1-v8": 0.017198283507026034,
+   "E8-R1-v9": 0.014609399725022084
+  }
+ },
+ "ic95": {
+  "E8-R1": [
+   0.0009250318940404452,
+   0.03085563969446533
+  ]
+ },
+ "p_ajustado": {
+  "E8-R1": 0.0874,
+  "E8-P-Q6p": 0.8805
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "SUGESTIVO",
+ "clasificaciones": {
+  "E8-R1": "SUGESTIVO",
+  "E8-R2": "NO ESTIMABLE",
+  "E8-A1": "NO ESTIMABLE",
+  "E8-A2": "NO ESTIMABLE",
+  "E8-X1": "NO ESTIMABLE",
+  "E8-X2": "NO ESTIMABLE"
+ },
+ "diagnosticos": {
+  "estimabilidad": [
+   {
+    "id": "E8-R1",
+    "n_unidades": 30,
+    "n_comunidades": 7,
+    "T": 78,
+    "minimo_datos": "12 cambios efectivos del tipo general en 7 comunidades (mínimo 8 en 4); 30 provincias con valor tasado",
+    "minimo_ok": true,
+    "mde80": 0.024358932759252147,
+    "sd_placebo": 0.008976451582697515,
+    "tamano_nominal_placebo": 0.05,
+    "R": 2000.0,
+    "umbral": 0.03,
+    "referencia": "Dolls et al. (versión publicada): −3 % por pp en el precio",
+    "estimable": true,
+    "motivo_no_estimable": ""
+   },
+   {
+    "id": "E8-R2",
+    "n_unidades": 36,
+    "n_comunidades": 8,
+    "T": 216,
+    "minimo_datos": "13 cambios efectivos del tipo general en 8 comunidades (mínimo 8 en 4); 36 provincias",
+    "minimo_ok": true,
+    "mde80": 0.08944727153772339,
+    "sd_placebo": 0.032740423804719074,
+    "tamano_nominal_placebo": 0.05,
+    "R": 2000.0,
+    "umbral": 0.06,
+    "referencia": "Fritzsche y Vandrei: −6 % por pp en el volumen",
+    "estimable": false,
+    "motivo_no_estimable": "MDE80 = 0.0894 por punto > umbral 0.0600"
+   },
+   {
+    "id": "E8-A1",
+    "n_unidades": 0,
+    "n_comunidades": 0,
+    "T": 0,
+    "minimo_datos": "la recaudación del ITP por comunidad (liquidación de tributos cedidos, Hacienda) no está en el repositorio: fuente `itp_recaudacion_ccaa` posterior a la etiqueta, sin descargar",
+    "minimo_ok": false,
+    "mde80": NaN,
+    "sd_placebo": NaN,
+    "tamano_nominal_placebo": NaN,
+    "R": NaN,
+    "umbral": 0.1,
+    "referencia": "sin referencia: 2δ",
+    "estimable": false,
+    "motivo_no_estimable": "la recaudación del ITP por comunidad (liquidación de tributos cedidos, Hacienda) no está en el repositorio: fuente `itp_recaudacion_ccaa` posterior a la etiqueta, sin descargar"
+   },
+   {
+    "id": "E8-A2",
+    "n_unidades": 164,
+    "n_comunidades": 8,
+    "T": 72,
+    "minimo_datos": "13 cambios efectivos en 8 comunidades; 164 municipios grandes con compraventas trimestrales (código INE por nombre)",
+    "minimo_ok": true,
+    "mde80": 0.21569985462554478,
+    "sd_placebo": 0.07406349947063137,
+    "tamano_nominal_placebo": 0.05,
+    "R": 2000.0,
+    "umbral": 0.06,
+    "referencia": "Fritzsche y Vandrei: −6 % por pp en el volumen",
+    "estimable": false,
+    "motivo_no_estimable": "MDE80 = 0.2157 por punto > umbral 0.0600"
+   }
+  ],
+  "E8-R1": {
+   "adelantos_g": {
+    "-2": -0.005953105726964484,
+    "-3": -0.0011224565687937146,
+    "-4": 0.0012559827061604017,
+    "-5": -9.660275681657265e-05,
+    "-6": 0.0006276493068423831,
+    "-7": 0.0010136968903426008,
+    "-8": 0.0005091518053172881
+   },
+   "pretendencias_p_conjunto": 0.994,
+   "pendiente_detectable": {
+    "mde_adelanto": 0.02810034312067458,
+    "pendiente_por_trimestre": 0.0035125428900843227,
+    "sesgo_post": 0.017562714450421613
+   },
+   "placebo_fecha_adelanto_8": {
+    "coef": 0.0005091518053172881,
+    "p": 0.9664,
+    "mismo_signo": true
+   },
+   "placebo_resultado_poblacion": {
+    "coef": -0.0023320809121801047,
+    "p": 0.4748,
+    "n_prov": 30
+   },
+   "inferencia": {
+    "p_aleatorizacion": 0.0437,
+    "p_t_7gl": 0.020825486674463014,
+    "p_webb_no_fiable": 0.0002,
+    "driscoll_kraay_twfe_no_fiable": {
+     "coef": -0.00042561659780126945,
+     "se": 0.0032035910669072835,
+     "p": 0.8946537766327319
+    }
+   },
+   "tost": {
+    "ic90": [
+     0.00548378179790439,
+     0.023735017652139777
+    ],
+    "delta": 0.015,
+    "equivalente": false
+   },
+   "moran_residuos": {
+    "I": 0.01849579292286695,
+    "E_I": -0.034482758620689655,
+    "p_unilateral": 0.297,
+    "p_bilateral": 0.66,
+    "n": 30,
+    "k": 5
+   },
+   "razon_con_referencia": -0.4869799908340695,
+   "clasificacion_razones": [
+    "potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|",
+    "p tras Holm = 0.087 entre 0,05 y 0,10",
+    "fechas de entrada en vigor de la memoria de Hacienda, sin contraste con el BOE ni con el diario autonómico: SUGESTIVO como máximo (plan, 1.8 f)",
+    "sin control de recaudación previa (fuente no descargada): tope SUGESTIVO (adenda R-18)",
+    "tope SUGESTIVO por corrección de un fallo conocido de Q6 (fechas; adenda 1.6)",
+    "el signo cambia sin 2012-2013 (adenda R-18)"
+   ]
+  },
+  "E8-P-Q6p": {
+   "coef": -0.002037210173603296,
+   "p_aleat": 0.8805,
+   "sd_placebo": 0.014640561641085554,
+   "n_obs": 520,
+   "n_perm": 9999
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: diseño de evaluación (dCDH), no predictivo; E8 es episodio histórico y no entra en la evaluación sellada diferida (adenda 1.11)"
+ },
+ "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Clasificación provisional: falta I8 (réplica ciega, B6). Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
+}

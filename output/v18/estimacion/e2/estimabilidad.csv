@@ -1,0 +1,7 @@
+id,n_tratados,n_controles,T,minimo_datos,minimo_ok,mde80,sd_placebo,umbral,referencia,estimable,motivo_no_estimable
+E2-R1,49,94,13,49 tratados y 94 controles (mínimo 30 y 30),True,0.021435,0.007706,0.045000,"Jofre-Monseny et al. (2023), tabla 2, col. 3: −0,045 (0,006)",True,
+E2-R1c,49,156,13,49 tratados y 156 controles (mínimo 30 y 30),True,0.080926,0.029181,0.100000,"sin referencia en la misma unidad (la de JMS, −0,003, es ≈ 0): 2δ",True,
+E2-A1,169,20,17,169 tratados y 20 nunca tratados (CS exige controles propios),True,0.040822,0.014653,0.029800,"Pérez García (2026): −0,0298 (0,0113)",False,MDE80 = 0.0408 > umbral 0.0298
+E2-A2,6,4,40,"6 municipios tratados con EMAL no sellados (mínimo 10) y trimestres posteriores por cohorte {'2025T2': np.int64(3), '2025T3': np.int64(2), '2025T4': np.int64(1), '2026T2': np.int64(0), '2026T3': np.int64(0)} (mínimo 3)",False,,,0.029800,Pérez García (2026),False,"6 municipios tratados con EMAL no sellados (mínimo 10) y trimestres posteriores por cohorte {'2025T2': np.int64(3), '2025T3': np.int64(2), '2025T4': np.int64(1), '2026T2': np.int64(0), '2026T3': np.int64(0)} (mínimo 3)"
+E2-A3,44,2,7,44 tratados y 2 controles en la serie municipal de MIVAU,False,,,0.100000,sin referencia: 2δ,False,44 tratados y 2 controles en la serie municipal de MIVAU
+E2-A4,84,12,13,84 cerca (< 10 km) y 12 lejos (> 25 km),True,0.044404,0.015725,0.027000,"Jofre-Monseny et al. (2023), vecinos directos, p. 18: −0,027",False,MDE80 = 0.0444 > umbral 0.0270

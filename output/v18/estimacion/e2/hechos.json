@@ -1,0 +1,194 @@
+[
+ {
+  "id": "V18-E2-R1",
+  "indicador": "Coeficiente Reg × Post sobre el log de la renta media de contratos nuevos de alquiler (Ley 11/2020, Cataluña, Incasòl)",
+  "valor": -0.038167,
+  "min": -0.050741,
+  "max": -0.025714,
+  "unidad": "log (diferencia entre regulados y controles, posterior frente a previo)",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 municipios regulados por la Ley 11/2020 y 94 controles de Cataluña, panel trimestral equilibrado 2019T1-2022T1 sin Barcelona ciudad; sin los municipios sellados en v6, V15 y V16",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "Coeficiente de Reg × Post con efectos fijos de municipio y de trimestre; inferencia de Webb por municipio (9.999 réplicas, p con valor crítico corregido por el tamaño de Monte Carlo 0,071), p tras Holm 0.00057. Razón con la referencia de Jofre-Monseny et al. (2023, −0,045): 0.85 (etiqueta coherente, razón en [1/3; 3]). Pretendencias p = 0.440; reversión en 2022T2-2023T4: -0.0016. Tope SUGESTIVO por corrección de un fallo conocido de V9-D1b. Lectura: asociación estimada. Clasificación provisional: falta I8 (réplica ciega, B6)."
+ },
+ {
+  "id": "V18-E2-R1-REV",
+  "indicador": "Coeficiente de la reversión en 2022T2-2023T4 (tras la STC 37/2022) sobre el log de la renta media, municipios regulados frente a controles",
+  "valor": -0.001566,
+  "min": -0.016786,
+  "max": 0.013653,
+  "unidad": "log (nivel posterior a la norma frente a previo)",
+  "periodo": "2019T1-2023T4",
+  "cobertura": "49 regulados y 91 controles, panel 2019T1-2023T4",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "Prueba de reversión de la adenda (AD-E2-R1); p = 0.840; no persiste una diferencia de la mitad del coeficiente de la vigencia, por lo que no se aplica el tope. IC95 con EE agrupado por municipio. Clasificación provisional: falta I8 (réplica ciega, B6)."
+ },
+ {
+  "id": "V18-E2-R1c",
+  "indicador": "Coeficiente Reg × Post sobre el log de contratos nuevos por 1.000 habitantes (Ley 11/2020, Cataluña, Incasòl)",
+  "valor": 0.017322,
+  "min": -0.024899,
+  "max": 0.059521,
+  "unidad": "log (diferencia entre regulados y controles, posterior frente a previo)",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 regulados y 156 controles, panel trimestral equilibrado",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "Coeficiente de Reg × Post sobre log(contratos/población × 1.000); p con Webb 0.403; p tras Holm 1.000; TOST con δ = 0,05: intervalo al 90 % (-0.0182; 0.0529) no dentro de ±0,05. Sin significación: la clase describe el diseño, no el coeficiente. No se descarta el desvío a la temporada o a no depositar la fianza (falta el Censo 2021 de hogares en alquiler en el sellado). Clasificación provisional: falta I8 (réplica ciega, B6)."
+ },
+ {
+  "id": "V18-E2-A1",
+  "indicador": "MDE al 80 % de potencia de la ampliación a las zonas tensionadas de 2024 de Cataluña (log de la renta media)",
+  "valor": 0.040822,
+  "min": null,
+  "max": null,
+  "unidad": "log (MDE80)",
+  "periodo": "2019T1-2026T1",
+  "cobertura": "169 tratados y 20 controles",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE por variación: MDE80 0.0408 mayor que el umbral 0.0298 (Pérez García (2026): −0,0298 (0,0113)); no se estima y sale de la familia de Holm. Sin resultado que difundir (la ampliación A1 estaba marcada provisional). Lo haría estimable: más trimestres posteriores a 2024 o más municipios nunca tratados."
+ },
+ {
+  "id": "V18-E2-A4",
+  "indicador": "MDE al 80 % de potencia del desbordamiento a municipios vecinos (log de la renta media)",
+  "valor": 0.044404,
+  "min": null,
+  "max": null,
+  "unidad": "log (MDE80)",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "84 tratados y 12 controles",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE por variación: MDE80 0.0444 mayor que el umbral 0.0270 (Jofre-Monseny et al. (2023), vecinos directos, p. 18: −0,027); no se estima y sale de la familia de Holm. Sin resultado que difundir (la ampliación A1 estaba marcada provisional). Lo haría estimable: más trimestres posteriores a 2024 o más municipios nunca tratados."
+ },
+ {
+  "id": "V18-E2-A2",
+  "indicador": "Zonas tensionadas fuera de Cataluña (País Vasco, EMAL): recuento de municipios tratados con datos",
+  "valor": 6.0,
+  "min": null,
+  "max": null,
+  "unidad": "municipios",
+  "periodo": "2016T1-2025T4",
+  "cobertura": "6 municipios tratados con EMAL no sellados (mínimo 10) y trimestres posteriores por cohorte {'2025T2': np.int64(3), '2025T3': np.int64(2), '2025T4': np.int64(1), '2026T2': np.int64(0), '2026T3': np.int64(0)} (mínimo 3)",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)",
+   "EMAL (Gobierno Vasco)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: no alcanza el mínimo de 10 municipios tratados no sellados con 3 trimestres posteriores por cohorte; Bizkaia y Gipuzkoa están sellados en su mayoría. Lo haría estimable: más trimestres de EMAL tras 2025 y los municipios sellados en la evaluación diferida."
+ },
+ {
+  "id": "V18-E2-A3",
+  "indicador": "Desplazamiento a la venta: compraventas municipales por 1.000 habitantes, controles disponibles en la serie municipal de MIVAU",
+  "valor": 2.0,
+  "min": null,
+  "max": null,
+  "unidad": "municipios de control",
+  "periodo": "2016-2022",
+  "cobertura": "44 tratados y 2 controles en la serie municipal de MIVAU",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)",
+   "MIVAU (compraventas por municipio >25.000 habitantes)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: la serie municipal de MIVAU solo trae municipios grandes y casi todos los catalanes están regulados (2 controles). Lo haría estimable: compraventas municipales de todos los municipios (Registradores o Notariado, tareas_autor punto 3)."
+ },
+ {
+  "id": "V18-E2-R2",
+  "indicador": "Monràs y García-Montalvo: PPML de contratos por tramo de renta",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md, punto 4"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: el campo de tramo de Incasòl clasifica al municipio y no reparte sus contratos (docstring de incasol en src/v9/paneles.py; adenda R-2); hacen falta microdatos de contratos con renta, renta anterior y superficie (tareas_autor, punto 4)."
+ },
+ {
+  "id": "V18-E2-R2s",
+  "indicador": "Proporción de contratos en tramos superiores",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md, punto 4"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: ídem E2-R2."
+ },
+ {
+  "id": "V18-E2-R2-X1",
+  "indicador": "Precio en exceso sobre el de referencia y composición",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md, punto 4"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: ídem E2-R2: precio de referencia, renta anterior y superficie por contrato (tareas_autor, punto 4)."
+ },
+ {
+  "id": "V18-E2-A5",
+  "indicador": "Desplazamiento al alquiler de temporada",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md, punto 4"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: faltan las fianzas por tipo de contrato o el Registro Único (tareas_autor, punto 4)."
+ }
+]

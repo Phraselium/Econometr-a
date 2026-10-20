@@ -1,0 +1,89 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v18-E2-prereg,E2-R1,ln renta_mt = β·Reg_m·Post_t + θ·Reg_m·1[t=2020T3] + α_m + γ_t + ε (Post = 2020T4-2022T1; base 2019T4),2019T1,2022T1,143,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-R1c,ln (contratos/pob)_mt = β·Reg_m·Post_t + θ·Reg_m·1[t=2020T3] + α_m + γ_t + ε (Post = 2020T4-2022T1; base 2019T4),2019T1,2022T1,205,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-A1,"CS, cohortes 2024T2 y 2024T4, nunca tratados",2022T1,2026T1,189,,,,,,,principal (provisional); registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-A2,SDID/CS País Vasco,2016T1,2025T4,10,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-A3,TWFE anual 2016-2022,2016,2022,46,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-A4,TWFE cerca (< 10 km) frente a lejos (> 25 km),2019T1,2022T1,96,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-P-D1b,"V9-D1b: CS nunca tratados, 2019T1-2022T1",2019T1,2022T1,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-P-D1b-c,V9-D1b (contratos): CS nunca tratados,2019T1,2022T1,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-P-H1,"V15-H1: SDID, cohortes 2024",2022T2,2026T1,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-P-H2,"V15-H2: SDID, cohortes 2024",2022T2,2026T1,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-P-D1c,"V9-D1c: CS aún no tratados, EMAL",2016T1,2025T4,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-P-Q1c,"V16-Q1c: CS provincial, zonas de 2024",2019T1,2026T2,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-R2,-,,,0,,,,,,,NO ESTIMABLE (adenda R-2); registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-R2s,-,,,0,,,,,,,NO ESTIMABLE (adenda R-2); registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-R2-X1,-,,,0,,,,,,,NO ESTIMABLE (adenda R-2); registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-A5,-,,,0,,,,,,,NO ESTIMABLE; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E2-prereg,E2-R1-v1,variante [V] sin 2020T1-2020T3,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v2,variante [U] con Barcelona ciudad,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v3,variante [C] controles por covariables (vecino más cercano),,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v4,variante [C] controles a más de 10 km,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v5,variante [C] sin covariables,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v6,variante [C] densidad HUT 2019 × posterior,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v7,variante [E] anticipación desde 2019T2,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v8,variante [V] anual 2014-2021 con Honest DiD,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v9,variante [M] SERPAVI municipal anual 2016-2021,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v10,variante [P] ponderada por contratos de 2019,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-v11,variante [U] sin el 1 % de municipios con más contratos,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1c-v1,variante [M] contratos por hogar inquilino,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1c-v2,variante [E] PPML,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1c-v3,variante [V] sin 2020T1-2020T3,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1c-v4,variante [U] con Barcelona,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A1-v1,variante [E] efectos fijos de dos vías,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A1-v2,variante [E] emparejamiento por puntuación de propensión,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A1-v3,variante [E] SDID,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A1-v4,variante [U] sin Barcelona,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A1-v5,variante [V] 2023T1-2026T1,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A2-v1,variante [M] €/m²,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A2-v2,variante [U] sin Bilbao,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A3-v1,variante [M] valor tasado,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A3-v2,variante [U] sin Barcelona,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A3-v3,variante [V] trimestral 2019-2022,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A4-v1,variante [C] vecinos directos,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-A4-v2,variante [C] 10-25 km frente a > 25 km,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E2-prereg,E2-R1-h1,"paro registrado con 2020 interpolado linealmente (el de 2020 no está en la base): solo robustez, holgura de la adenda 1.8",,,0,,,,,,,holgura (adenda 1.8); motivo en desviaciones
+v18-E2-no-estimada,E2-R2,PPML por tramo,,,0,,,,,,,NO ESTIMABLE
+v18-E2-no-estimada,E2-R2s,proporción por tramo,,,0,,,,,,,NO ESTIMABLE
+v18-E2-no-estimada,E2-R2-X1,precio en exceso,,,0,,,,,,,NO ESTIMABLE
+v18-E2-no-estimada,E2-A5,alquiler de temporada,,,0,,,,,,,NO ESTIMABLE
+v18-E2-no-estimada,E2-A1,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE por variación (MDE)
+v18-E2-no-estimada,E2-A1-v1,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A1-v2,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A1-v3,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A1-v4,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A1-v5,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A2,log renta mensual EMAL,,,0,,,,,,,NO ESTIMABLE (mínimo de datos)
+v18-E2-no-estimada,E2-A2-v1,log renta mensual EMAL,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A2-v2,log renta mensual EMAL,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A3,log compraventas por 1.000 habitantes,,,0,,,,,,,NO ESTIMABLE (mínimo de datos)
+v18-E2-no-estimada,E2-A3-v1,log compraventas por 1.000 habitantes,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A3-v2,log compraventas por 1.000 habitantes,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A3-v3,log compraventas por 1.000 habitantes,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A4,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE por variación (MDE)
+v18-E2-no-estimada,E2-A4-v1,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-A4-v2,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-P-H1,log renta media de contratos nuevos,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-P-H2,log(1 + contratos),,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-P-D1c,log renta EMAL,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-no-estimada,E2-P-Q1c,log compraventas provinciales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E2-estimada,E2-R1,log renta media de contratos nuevos,,,1859,,,,,-0.0381667943542379,0.0001,principal; clase SUGESTIVO
+v18-E2-estimada,E2-R1-v1,log renta media de contratos nuevos,,,1430,,,,,-0.0378723521071795,0.0005,variante; clase 
+v18-E2-estimada,E2-R1-v2,log renta media de contratos nuevos,,,1872,,,,,-0.039026756729855075,0.0005,variante; clase 
+v18-E2-estimada,E2-R1-v3,log renta media de contratos nuevos,,,767,,,,,-0.026021537967137527,0.0005,variante; clase 
+v18-E2-estimada,E2-R1-v4,log renta media de contratos nuevos,,,1443,,,,,-0.05595533875710023,0.0005,variante; clase 
+v18-E2-estimada,E2-R1-v5,log renta media de contratos nuevos,,,0,,,,,-0.0381667943542379,0.0001,variante; clase 
+v18-E2-estimada,E2-R1-v6,log renta media de contratos nuevos,,,1859,,,,,-0.037558085874437985,0.0005,variante; clase 
+v18-E2-estimada,E2-R1-v7,log renta media de contratos nuevos,,,1859,,,,,-0.03551338082432649,0.0015,variante; clase 
+v18-E2-estimada,E2-R1-v8,log renta media de contratos nuevos,,,1519,,,,,-0.02676290658493059,0.0015,variante; clase 
+v18-E2-estimada,E2-R1-v9,log renta media de contratos nuevos,,,1010,,,,,-0.005228536053534434,0.3605,variante; clase 
+v18-E2-estimada,E2-R1-v10,log renta media de contratos nuevos,,,1859,,,,,-0.03498650952998023,0.0005,variante; clase 
+v18-E2-estimada,E2-R1-v11,log renta media de contratos nuevos,,,1833,,,,,-0.037583039488098054,0.0005,variante; clase 
+v18-E2-estimada,E2-R1-h1,log renta media de contratos nuevos,,,1859,,,,,-0.037784558631517515,0.0005,holgura; clase 
+v18-E2-estimada,E2-R1c,log contratos por 1.000 habitantes,,,2665,,,,,0.017322043900921732,0.4029,principal; clase SUGESTIVO
+v18-E2-no-estimada,E2-R1c-v1,log contratos por 1.000 habitantes,,,0,,,,,,,NO ESTIMABLE
+v18-E2-estimada,E2-R1c-v2,log contratos por 1.000 habitantes,,,2665,,,,,0.022453533281677485,,variante; clase 
+v18-E2-estimada,E2-R1c-v3,log contratos por 1.000 habitantes,,,2050,,,,,-0.008530925849076923,0.714,variante; clase 
+v18-E2-estimada,E2-R1c-v4,log contratos por 1.000 habitantes,,,2678,,,,,0.02024402768621148,0.3405,variante; clase 
+v18-E2-estimada,E2-P-D1b,log renta media de contratos nuevos,,,2548,,,,,-0.05816793665058043,0.0001,coprincipal; clase no se clasifica
+v18-E2-estimada,E2-P-D1b-c,log contratos nuevos,,,4524,,,,,-0.006736155929805905,0.8346,coprincipal; clase no se clasifica

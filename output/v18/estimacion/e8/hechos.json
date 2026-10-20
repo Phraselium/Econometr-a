@@ -1,0 +1,104 @@
+[
+ {
+  "id": "V18-E8-R1",
+  "indicador": "Cambio del log del valor tasado provincial a 4 trimestres por punto de variación del tipo general del ITP (Wald-DID de dosis continua)",
+  "valor": 0.014609,
+  "min": 0.000925,
+  "max": 0.030856,
+  "unidad": "log por punto del tipo general",
+  "periodo": "2007T1-2026T2",
+  "cobertura": "30 provincias con valor tasado trimestral de 7 comunidades de régimen común no selladas (sin Cantabria: no hay serie provincial completa), 2007T1-2026T2",
+  "fuentes": [
+   "intervenciones.csv de V16 (tipos generales del ITP, memorias del Ministerio de Hacienda: fuente secundaria, fechas sin contraste con el BOE)",
+   "MIVAU, valor tasado de vivienda libre por provincia",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "Wald-DID de dosis continua (dCDH, 4 trimestres) por punto de variación del tipo general; p de aleatorización de calendarios entre comunidades 0.0437 (estudentizada, 9.999 permutaciones; tamaño de Monte Carlo 0,0455, banda apta); p tras Holm con la coprincipal V16-Q6-p 0.0874. Signo contrario al de la referencia (Dolls et al., −0,03 por pp): razón -0.49, etiqueta «no coherente». Sin 2012-2013 el signo cambia (-0.0079): el calendario se concentra en la crisis. Fechas de la memoria de Hacienda sin contraste con el BOE y sin control de recaudación previa: tope SUGESTIVO. Lectura: asociación estimada. Clasificación provisional: falta I8 (réplica ciega, B6)."
+ },
+ {
+  "id": "V18-E8-R2",
+  "indicador": "MDE al 80 % de potencia del efecto del tipo general del ITP sobre las compraventas provinciales mensuales (por punto)",
+  "valor": 0.089447,
+  "min": null,
+  "max": null,
+  "unidad": "log por punto (MDE80)",
+  "periodo": "2007-2024",
+  "cobertura": "36 provincias, 216 meses, 8 comunidades",
+  "fuentes": [
+   "intervenciones.csv de V16 (tipos generales del ITP, memorias del Ministerio de Hacienda: fuente secundaria, fechas sin contraste con el BOE)",
+   "MIVAU, valor tasado de vivienda libre por provincia",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE por variación: MDE80 0.0894 por punto mayor que el umbral 0.0600 (Fritzsche y Vandrei: −6 % por pp en el volumen); no se estima. Lo haría estimable: más comunidades con cambios de tipo, más años de calendario o compraventas con menor ruido (Notariado o AEAT por tramo, tareas_autor punto 7)."
+ },
+ {
+  "id": "V18-E8-A2",
+  "indicador": "MDE al 80 % de potencia del efecto del tipo general del ITP sobre las compraventas municipales (por punto)",
+  "valor": 0.2157,
+  "min": null,
+  "max": null,
+  "unidad": "log por punto (MDE80)",
+  "periodo": "2007-2024",
+  "cobertura": "164 municipios grandes, 72 trimestres, 8 comunidades",
+  "fuentes": [
+   "intervenciones.csv de V16 (tipos generales del ITP, memorias del Ministerio de Hacienda: fuente secundaria, fechas sin contraste con el BOE)",
+   "MIVAU, valor tasado de vivienda libre por provincia",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE por variación: MDE80 0.2157 por punto mayor que el umbral 0.0600 (Fritzsche y Vandrei: −6 % por pp en el volumen); no se estima. Lo haría estimable: más comunidades con cambios de tipo, más años de calendario o compraventas con menor ruido (Notariado o AEAT por tramo, tareas_autor punto 7)."
+ },
+ {
+  "id": "V18-E8-A1",
+  "indicador": "Primera etapa fiscal: recaudación del ITP por comunidad frente al cambio del tipo",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md, punto 7"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: la recaudación del ITP por comunidad (liquidación de tributos cedidos, Hacienda) no está en el repositorio. Lo haría estimable: descargar esa serie (fuente abierta)."
+ },
+ {
+  "id": "V18-E8-X1",
+  "indicador": "Bunching en los umbrales de los tipos reducidos",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md, punto 7"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: no hay compraventas por tramo de precio (Notariado o AEAT modelo 600; tareas_autor, punto 7)."
+ },
+ {
+  "id": "V18-E8-X2",
+  "indicador": "Tipos reducidos para jóvenes y familias",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md, punto 7"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: faltan el calendario de tipos reducidos (leyes autonómicas) y las compraventas por tramo (tareas_autor, punto 7)."
+ }
+]

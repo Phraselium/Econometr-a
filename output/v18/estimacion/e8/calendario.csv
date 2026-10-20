@@ -1,0 +1,17 @@
+cod_ine,fecha,dosis,aprox,fecha_original,fecha_codificada_mes,fecha_codificada_trimestre,calidad_fecha
+01,2012-01-01,1.0,True,2012-01-01,2012-01,2012T1,aproximada (1 de enero)
+01,2021-04-28,-1.0,False,2021-04-28,2021-05,2021T2,"de la memoria de Hacienda, sin contraste con el BOE"
+06,2013-01-01,1.0,True,2013-01-01,2013-01,2013T1,aproximada (1 de enero)
+06,2019-01-01,2.0,True,2019-01-01,2019-01,2019T1,aproximada (1 de enero)
+06,2024-01-01,-1.0,True,2024-01-01,2024-01,2024T1,aproximada (1 de enero)
+07,2013-01-01,1.0,True,2013-01-01,2013-01,2013T1,aproximada (1 de enero)
+08,2012-01-01,1.0,True,2012-01-01,2012-01,2012T1,aproximada (1 de enero)
+08,2016-06-01,1.0,False,2016-06-01,2016-06,2016T2,"de la memoria de Hacienda, sin contraste con el BOE"
+09,2010-07-01,1.0,False,2010-07-01,2010-07,2010T3,"de la memoria de Hacienda, sin contraste con el BOE"
+09,2013-08-01,2.0,False,2013-08-01,2013-08,2013T3,"de la memoria de Hacienda, sin contraste con el BOE"
+10,2013-01-01,3.0,True,2013-01-01,2013-01,2013T1,aproximada (1 de enero)
+10,2026-06-01,-1.0,False,2026-06-01,2026-06,2026T2,"de la memoria de Hacienda, sin contraste con el BOE"
+11,2012-01-01,1.0,True,2012-01-01,2012-01,2012T1,aproximada (1 de enero)
+12,2013-03-01,3.0,False,2013-03-01,2013-03,2013T1,"de la memoria de Hacienda, sin contraste con el BOE"
+12,2022-01-01,-1.0,True,2022-01-01,2022-01,2022T1,aproximada (1 de enero)
+12,2024-01-01,-1.0,True,2024-01-01,2024-01,2024T1,aproximada (1 de enero)

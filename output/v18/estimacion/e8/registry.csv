@@ -1,0 +1,59 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v18-E8-prereg,E8-R1,dCDH con dosis continua (ℓ = 4 trimestres): Δtipo general del ITP en puntos,2007,2026,30,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-R2,dCDH con dosis continua (ℓ = 12 meses),2007,2026,36,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-A1,primera etapa fiscal,2007,2026,0,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-A2,dCDH con dosis continua (ℓ = 4 trimestres),2007,2026,164,,,,,,,principal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-X1,-,2007,2026,0,,,,,,,NO ESTIMABLE; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-X2,-,2007,2026,0,,,,,,,NO ESTIMABLE; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-P-Q6p,"V16-Q6-p: Wald-DID anual 2011-2024, fechas por año de efecto",2007,2026,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-P-Q6v,V16-Q6-v: Wald-DID anual 2011-2024,2007,2026,0,,,,,,,coprincipal; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E8-prereg,E8-R1-v1,variante [M] fechas del 1 de enero,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v2,variante [M] fechas −3 meses,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v3,variante [M] fechas +3 meses,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v4,variante [V] sin 2012-2013 (cambiantes fuera de esos años),,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v5,variante [E] subidas por separado (Sun-Abraham),,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v6,variante [E] bajadas por separado (Sun-Abraham),,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v7,variante [M] IPV por comunidad,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v8,variante [U] sin Barcelona,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R1-v9,variante [C] sin recaudación previa,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v1,variante [M] fechas del 1 de enero,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v2,variante [M] fechas −3 meses,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v3,variante [M] fechas +3 meses,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v4,variante [V] sin 2012-2013,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v5,variante [E] subidas por separado,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v6,variante [E] bajadas por separado,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v7,variante [U] sin Barcelona,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-R2-v8,variante [C] sin recaudación previa,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-A1-v1,variante [V] sin 2012-2013,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-A1-v2,variante [M] fechas del 1 de enero,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-A2-v1,variante [V] sin 2012-2013,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-prereg,E8-A2-v2,variante [U] sin Barcelona,,,0,,,,,,,variante enumerada (adenda anexo A)
+v18-E8-no-estimada,E8-X1,bunching en los umbrales de los tipos reducidos,,,0,,,,,,,NO ESTIMABLE
+v18-E8-no-estimada,E8-X2,tipos reducidos para jóvenes y familias,,,0,,,,,,,NO ESTIMABLE
+v18-E8-no-estimada,E8-R2,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE por variación (MDE)
+v18-E8-no-estimada,E8-R2-v1,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-R2-v2,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-R2-v3,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-R2-v4,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-R2-v5,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-R2-v6,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-R2-v7,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-R2-v8,log compraventas de vivienda usada provinciales mensuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-A1,recaudación del ITP por comunidad,,,0,,,,,,,NO ESTIMABLE (mínimo de datos)
+v18-E8-no-estimada,E8-A1-v1,recaudación del ITP por comunidad,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-A1-v2,recaudación del ITP por comunidad,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-A2,log compraventas municipales (municipios grandes),,,0,,,,,,,NO ESTIMABLE por variación (MDE)
+v18-E8-no-estimada,E8-A2-v1,log compraventas municipales (municipios grandes),,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-A2-v2,log compraventas municipales (municipios grandes),,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-no-estimada,E8-P-Q6v,log compraventas provinciales anuales,,,0,,,,,,,NO ESTIMABLE (hereda la principal)
+v18-E8-estimada,E8-R1,log valor tasado provincial trimestral,,,2340,,,,,0.014609399725022084,0.0437,principal; clase SUGESTIVO
+v18-E8-estimada,E8-R1-v1,log valor tasado provincial trimestral,,,2340,,,,,0.0011301683031883646,0.9246,variante; clase 
+v18-E8-estimada,E8-R1-v2,log valor tasado provincial trimestral,,,2340,,,,,0.008819651637187372,0.2706,variante; clase 
+v18-E8-estimada,E8-R1-v3,log valor tasado provincial trimestral,,,2340,,,,,0.013091673522800114,0.1042,variante; clase 
+v18-E8-estimada,E8-R1-v4,log valor tasado provincial trimestral,,,2340,,,,,-0.007907310798833132,0.176,variante; clase 
+v18-E8-no-estimada,E8-R1-v5,log valor tasado provincial trimestral,,,0,,,,,,,NO ESTIMABLE
+v18-E8-estimada,E8-R1-v6,log valor tasado provincial trimestral,,,0,,,,,0.0368364230941875,,variante; clase 
+v18-E8-estimada,E8-R1-v7,log valor tasado provincial trimestral,,,546,,,,,0.007330220514790818,0.3806,variante; clase 
+v18-E8-estimada,E8-R1-v8,log valor tasado provincial trimestral,,,2262,,,,,0.017198283507026034,0.0494,variante; clase 
+v18-E8-estimada,E8-R1-v9,log valor tasado provincial trimestral,,,0,,,,,0.014609399725022084,0.0437,variante; clase 
+v18-E8-estimada,E8-P-Q6p,log valor tasado provincial anual,,,520,,,,,-0.002037210173603296,0.8805,coprincipal; clase no se clasifica

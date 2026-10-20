@@ -9,7 +9,7 @@ que cuando hay correlación hasta el borde subestima la varianza (sesgo a la baj
 Este Monte Carlo lo mide por cociente soporte/corte y lo declara como condición.
 
 Proceso generador (declarado antes de simular)
-- Geometría sintética (src/v18/herramientas/conley.py): sección = 800 secciones en 48 barrios de la ciudad (densidad 10,6 secciones/km2) + 3.200
+- Geometría sintética (src/v18/herr18/conley.py): sección = 800 secciones en 48 barrios de la ciudad (densidad 10,6 secciones/km2) + 3.200
   secciones en 310 municipios de la corona metropolitana (N = 4.000; unos 39 vecinos a menos de 2 km, similar al ~46 de V16 con datos de secciones);
   municipio = 311 centros municipales (Barcelona en el origen y 310 con ley radial). Coordenadas planas en km.
 - Sección: MCO de y sobre x con efectos fijos de barrio o municipio (358 grupos; grupos de unos 11 secciones); 48 clusters de barrio en la ciudad.
@@ -51,7 +51,7 @@ def _herr():
     """Carga la herramienta por ruta (mismo nombre de fichero que este script: no se puede importar por nombre)."""
     m = sys.modules.get("herr_conley")
     if m is None:
-        spec = importlib.util.spec_from_file_location("herr_conley", RAIZ / "src" / "v18" / "herramientas" / "conley.py")
+        spec = importlib.util.spec_from_file_location("herr_conley", RAIZ / "src" / "v18" / "herr18" / "conley.py")
         m = importlib.util.module_from_spec(spec)
         sys.modules["herr_conley"] = m
         spec.loader.exec_module(m)

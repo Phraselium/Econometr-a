@@ -1,4 +1,4 @@
-"""V18 · dCDH con dosis continua (DID_ℓ) e inferencia por aleatorización (src/v18/herramientas/dcdh.py y aleatorizacion.py)."""
+"""V18 · dCDH con dosis continua (DID_ℓ) e inferencia por aleatorización (src/v18/herr18/dcdh.py y aleatorizacion.py)."""
 import sys
 from pathlib import Path
 
@@ -6,8 +6,8 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
-from src.v18.herramientas import aleatorizacion as A  # noqa: E402
-from src.v18.herramientas import dcdh as H  # noqa: E402
+from src.v18.herr18 import aleatorizacion as A  # noqa: E402
+from src.v18.herr18 import dcdh as H  # noqa: E402
 from src.v18.montecarlo import _dgp_itp as P  # noqa: E402
 
 

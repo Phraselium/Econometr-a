@@ -1,7 +1,7 @@
 # V18 · Desviaciones y lecturas de reglas · E1 (vivienda turística) y E6 (obra nueva)
 
 Fecha: 2026-10-20. Autor del código: modelizador de E1 y E6 (fase 4). Pre-registro: plan-replicacion-v18 (plan + adenda). Cada entrada dice si se decidió antes de ver el coeficiente afectado. El orquestador puede consolidar este fichero en docs/v18/desviaciones.md.
-Código: src/v18/estimacion/{e1_*, e6_*}.py (usa _e2e8_comun.py y src/v18/herramientas/iv_debil.py, honest_did.py como bibliotecas). Salidas: output/v18/estimacion/e1/ y e6/.
+Código: src/v18/estimacion/{e1_*, e6_*}.py (usa _e2e8_comun.py y src/v18/herr18/iv_debil.py, honest_did.py como bibliotecas). Salidas: output/v18/estimacion/e1/ y e6/.
 
 ## Comunes
 - **C1. Orden de la adenda 1.3 cumplido.** Mínimos de datos y MDE por Monte Carlo (R = 2.000, SEED 20261010) calculados y registrados en el Registry («registrada antes de estimar») antes de estimar ningún coeficiente; lo que no los supera no se estima. El MDE usa la «σ ya vista»: V15 y V16 no publican la σ residual de ln SERPAVI por sección, así que se toma del periodo previo al tratamiento de cada diseño, remuestreada por cluster (bloques de residuos de un cluster donante y una ventana temporal circular; conserva la correlación serial y la intra-cluster). Decidido antes de estimar.

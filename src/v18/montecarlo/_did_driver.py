@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from src.v18.herramientas.did import CallawaySantAnna, SunAbraham  # noqa: E402
+from src.v18.herr18.did import CallawaySantAnna, SunAbraham  # noqa: E402
 from src.v18.montecarlo import _comun as C  # noqa: E402
 from src.v18.montecarlo import _dgp_did as D  # noqa: E402
 from src.v18.montecarlo import _informe as I  # noqa: E402

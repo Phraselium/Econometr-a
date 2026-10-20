@@ -41,7 +41,7 @@ def _herr():
     """Carga la herramienta por ruta (mismo nombre de fichero que este script: no se puede importar por nombre)."""
     m = sys.modules.get("herr_driscoll_kraay")
     if m is None:
-        spec = importlib.util.spec_from_file_location("herr_driscoll_kraay", RAIZ / "src" / "v18" / "herramientas" / "driscoll_kraay.py")
+        spec = importlib.util.spec_from_file_location("herr_driscoll_kraay", RAIZ / "src" / "v18" / "herr18" / "driscoll_kraay.py")
         m = importlib.util.module_from_spec(spec)
         sys.modules["herr_driscoll_kraay"] = m
         spec.loader.exec_module(m)

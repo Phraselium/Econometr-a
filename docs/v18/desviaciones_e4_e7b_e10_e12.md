@@ -28,7 +28,7 @@ modelizadores; el orquestador puede fusionarlo en `desviaciones.md`. Código: `s
 9. **E7-A1-v1 («sin 2010-2013»).** Se omiten las filas de regresión de 2010T1-2013T4 (los rezagos usan los valores reales), como en E7-R1-v1.
 10. **Diagnósticos B4 (no cuentan en el multiverso).** ADF y KPSS de las series; estabilidad (raíz máxima del VAR en la media posterior y proporción de extracciones explosivas: normal con prior de paseo aleatorio y variables en niveles);
     sensibilidad a la identificación (euríbor primero, sin crédito, precio primero) a h = 8, registrada en el Registry como diagnóstico.
-11. **Biblioteca.** `src/v18/estimacion/e7_bvar_lib.py` (no `src/v18/herramientas/`) por el encargo (auxiliares con el prefijo e7_bvar). `src/v18/montecarlo/bvar.py` se lanza como script (reimporta su propio módulo para que joblib serialice las funciones por referencia).
+11. **Biblioteca.** `src/v18/estimacion/e7_bvar_lib.py` (no `src/v18/herr18/`) por el encargo (auxiliares con el prefijo e7_bvar). `src/v18/montecarlo/bvar.py` se lanza como script (reimporta su propio módulo para que joblib serialice las funciones por referencia).
 12. **min y max en hechos.json** son la banda del 68 % (en E7-R1 son el AR al 95 %); la del 90 % está en la nota. Respuesta en nivel (no acumulada) a 8 trimestres, 10.000 extracciones.
 
 ## B. E4 y E11 (NO ESTIMABLES)

@@ -18,7 +18,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _e2e8_comun as K  # noqa: E402
 import e2_datos as D  # noqa: E402
-from herramientas.did import CallawaySantAnna  # noqa: E402
+from herr18.did import CallawaySantAnna  # noqa: E402
 
 ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6"
 SEED = K.SEMILLA

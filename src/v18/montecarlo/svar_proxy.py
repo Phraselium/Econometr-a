@@ -19,8 +19,8 @@ import pandas as pd
 from scipy import stats
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from src.v18.herramientas import lp_iv as L  # noqa: E402
-from src.v18.herramientas import svar_proxy as H  # noqa: E402
+from src.v18.herr18 import lp_iv as L  # noqa: E402
+from src.v18.herr18 import svar_proxy as H  # noqa: E402
 from src.v18.montecarlo import _comun as C  # noqa: E402
 from src.v18.montecarlo import _informe as I  # noqa: E402
 from src.v18.montecarlo._resumen import filas_por_p  # noqa: E402

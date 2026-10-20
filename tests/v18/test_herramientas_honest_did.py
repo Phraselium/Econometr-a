@@ -1,4 +1,4 @@
-"""V18 · Honest DiD (magnitudes relativas) sobre el contraste condicional de V9 (src/v18/herramientas/honest_did.py)."""
+"""V18 · Honest DiD (magnitudes relativas) sobre el contraste condicional de V9 (src/v18/herr18/honest_did.py)."""
 import sys
 from pathlib import Path
 
@@ -6,7 +6,7 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
-from src.v18.herramientas import honest_did as H  # noqa: E402
+from src.v18.herr18 import honest_did as H  # noqa: E402
 
 
 def test_covarianza_agrupada_rango_y_simetria():

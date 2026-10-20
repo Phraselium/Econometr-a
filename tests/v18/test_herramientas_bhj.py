@@ -18,7 +18,7 @@ def _cargar(nombre, ruta):
     return m
 
 
-B = _cargar("t_bhj_inferencia", "src/v18/herramientas/bhj_inferencia.py")
+B = _cargar("t_bhj_inferencia", "src/v18/herr18/bhj_inferencia.py")
 MC = _cargar("t_mc_bhj", "src/v18/montecarlo/bhj.py")
 
 

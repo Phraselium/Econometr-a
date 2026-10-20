@@ -2,7 +2,7 @@
 con remuestreo de residuos del periodo previo, estudios de eventos de dosis, placebos y resúmenes.
 
 Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. SEED = 20261010. Solo importa piezas de _e2e8_comun (Modelo, evento_multi, Webb,
-Conley, Moran, Roth, TOST, Honest) y de src/v18/herramientas (iv_debil). Sin lectura de datos: recibe tablas y arrays.
+Conley, Moran, Roth, TOST, Honest) y de src/v18/herr18 (iv_debil). Sin lectura de datos: recibe tablas y arrays.
 """
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from scipy import stats
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _e2e8_comun as K  # noqa: E402
-from herramientas import iv_debil as IV  # noqa: E402
+from herr18 import iv_debil as IV  # noqa: E402
 
 SEMILLA = K.SEMILLA
 ALCANCE_TERRITORIAL = "sin lectura de datos"
@@ -288,7 +288,7 @@ def media_posterior(ev: dict, base: int) -> dict:
 
 def honest_dosis(ev: dict, base: int, Mbars=(0.0, 0.5, 1.0)) -> list[dict]:
     """Honest DiD (Rambachan-Roth, magnitudes relativas) con la covarianza agrupada del estudio de eventos de dosis. Solo informativo (M̄ = 0 apto en el Monte Carlo de V18)."""
-    from herramientas import honest_did as HON
+    from herr18 import honest_did as HON
     ks = np.array(ev["anios"])
     pre, post = np.where(ks < base)[0], np.where(ks > base)[0]
     idx = list(pre) + list(post)

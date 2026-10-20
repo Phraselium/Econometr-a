@@ -16,7 +16,7 @@ def _cargar(nombre, ruta):
     return m
 
 
-C = _cargar("t_conley", "src/v18/herramientas/conley.py")
+C = _cargar("t_conley", "src/v18/herr18/conley.py")
 MC = _cargar("t_mc_conley", "src/v18/montecarlo/conley.py")
 
 

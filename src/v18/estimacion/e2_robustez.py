@@ -8,7 +8,7 @@ no cambian la especificación principal ni la clase por sí solas; se declaran e
 (b) densidad HUT 2019 × efectos de trimestre y ln(población 2019) × efectos de trimestre (padrón municipal: está en el repositorio);
 (c) controles emparejados por el crecimiento de la renta 2017-2019 (y por 2014-2017 y 2017-2019) y placebo de 2017 con tendencia propia de los
     regulados en 2014-2019;
-(d) SDID (src/v18/herramientas/sdid.py) con controles ponderados; inferencia de Conley-Taber por placebos. Monte Carlo de V18: APTO solo si los
+(d) SDID (src/v18/herr18/sdid.py) con controles ponderados; inferencia de Conley-Taber por placebos. Monte Carlo de V18: APTO solo si los
     tratados son intercambiables con los controles: se mide la razón de variabilidad temporal previa y se rotula;
 (e) E2-R1c-v1 (contratos por hogar inquilino; hogares en alquiler del Censo 2021, muestra del 10 %, municipios de 10.000 habitantes o más), posible
     porque la variable c21md_hogares_muestra|municipio|D se añadió a docs/v18/sellado_v18.json (desviación B6-1).
@@ -35,7 +35,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _e2e8_comun as K  # noqa: E402
 import e2_diseno as DS  # noqa: E402
 import e2_estim as E  # noqa: E402
-from herramientas import sdid as SD  # noqa: E402
+from herr18 import sdid as SD  # noqa: E402
 
 ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6"
 OUT = DS.OUT

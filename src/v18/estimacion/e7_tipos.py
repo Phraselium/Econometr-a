@@ -35,9 +35,9 @@ RAIZ = N.RAIZ
 sys.path.insert(0, str(RAIZ))
 sys.path.insert(0, str(RAIZ / "src"))
 from econ_utils import Registry, holm  # noqa: E402
-from src.v18.herramientas import lp_iv as L  # noqa: E402
-from src.v18.herramientas import svar_proxy as SP  # noqa: E402
-from src.v18.herramientas import webb_twfe as WB  # noqa: E402
+from src.v18.herr18 import lp_iv as L  # noqa: E402
+from src.v18.herr18 import svar_proxy as SP  # noqa: E402
+from src.v18.herr18 import webb_twfe as WB  # noqa: E402
 
 warnings.filterwarnings("ignore")
 SEED = 20261010
@@ -112,7 +112,7 @@ def _res(v, W):
 def lp_iv_ctrl(y, x, z, ctrl: list[np.ndarray], h, p: int = 4, L_hac: int = 0, omit: np.ndarray | None = None, lags_ctrl: int = 4,
                lags_y: int | None = None, extra: list[np.ndarray] | None = None) -> dict:
     """y_{t+h} − y_{t−1} (o la media de varios horizontes si h es lista) sobre Δi_t instrumentado por z_t, con constante, p rezagos de y (niveles) y de x, y
-    `lags_ctrl` rezagos de cada control. Frisch-Waugh como en src/v18/herramientas/lp_iv.py; devuelve el mismo objeto r (a, b, Om, n, beta) más residuos."""
+    `lags_ctrl` rezagos de cada control. Frisch-Waugh como en src/v18/herr18/lp_iv.py; devuelve el mismo objeto r (a, b, Om, n, beta) más residuos."""
     T = len(y)
     hs = [h] if np.isscalar(h) else list(h)
     hm = max(hs)

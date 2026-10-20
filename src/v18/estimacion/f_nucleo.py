@@ -5,7 +5,7 @@ Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Sin lectura d
 Herramientas:
 - UECM / contraste de límites de Pesaran-Shin-Smith con valores críticos por Monte Carlo (remuestreo por bloques de las diferencias bajo la
   nula de no cointegración), con su tamaño y potencia medidos en réplicas independientes;
-- DOLS de panel con efectos fijos y errores de Driscoll-Kraay (src/v18/herramientas/driscoll_kraay.py), PMG (Pesaran-Shin-Smith) y CS-ARDL/CCE-MG;
+- DOLS de panel con efectos fijos y errores de Driscoll-Kraay (src/v18/herr18/driscoll_kraay.py), PMG (Pesaran-Shin-Smith) y CS-ARDL/CCE-MG;
 - contraste de cointegración de panel tipo Westerlund (Gτ: media de las t de la velocidad de ajuste por unidad) con bootstrap conjunto en el tiempo;
 - fuera de muestra: bloques con embargo, Diebold-Mariano (HLN), Clark-West, Giacomini-White y conjunto de confianza de modelos (MCS);
 - diferencia mínima detectable (MDE) por Monte Carlo y clasificación I1-I8.
@@ -23,7 +23,7 @@ RAIZ = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(RAIZ))
 sys.path.insert(0, str(RAIZ / "src"))
 from econ_utils import dm_test, holm  # noqa: E402,F401
-from src.v18.herramientas import driscoll_kraay as DK  # noqa: E402
+from src.v18.herr18 import driscoll_kraay as DK  # noqa: E402
 
 SEED = 20261010
 Z80 = float(stats.norm.ppf(0.8))

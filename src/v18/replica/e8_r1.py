@@ -10,7 +10,7 @@ Decisiones (cada una con la lectura que admitía más de una):
 - Dos cambios de una CCAA a menos de 12 meses: un solo evento con la dosis acumulada en la primera fecha.
 - Panel 2010T1-2026T2: antes de 2010 el fichero no da tipos (no se extrapola). 36 provincias de las 8 CCAA de régimen común no selladas.
 - Sin control de recaudación previa (no está descargada): tope SUGESTIVO por la adenda.
-- Estimador: dCDH con dosis continua (src/v18/herramientas/dcdh.py), efecto acumulado a l = 4 trimestres por +1 pp, resultado ln valor tasado.
+- Estimador: dCDH con dosis continua (src/v18/herr18/dcdh.py), efecto acumulado a l = 4 trimestres por +1 pp, resultado ln valor tasado.
   Inferencia: aleatorización del calendario entre las 8 CCAA (9.999 permutaciones, estudentizada) y bootstrap de Webb con H0 impuesta.
   IC95 por inversión del contraste de aleatorización (rejilla), con el EE de agrupación por CCAA como referencia.
 """
@@ -28,7 +28,7 @@ sys.path.insert(0, str(RAIZ / "src"))
 sys.path.insert(0, str(RAIZ / "src" / "v18"))
 import holdout  # noqa: E402,F401
 import sellado  # noqa: E402
-from herramientas import dcdh  # noqa: E402
+from herr18 import dcdh  # noqa: E402
 
 SEED = 20261010
 SALIDA = RAIZ / "output" / "v18" / "replica" / "e8_r1"

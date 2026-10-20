@@ -19,7 +19,7 @@ import _e2e8_comun as K  # noqa: E402
 import e8_datos as D8  # noqa: E402
 import e8_estim as E8  # noqa: E402
 import sellado  # noqa: E402
-from herramientas import dcdh as DC  # noqa: E402
+from herr18 import dcdh as DC  # noqa: E402
 
 SALIDAS = RAIZ / "output" / "v18" / "estimacion"
 

@@ -37,7 +37,7 @@ def _H():
     """Carga la herramienta por ruta (mismo nombre de fichero que este script: no se puede importar por nombre)."""
     m = sys.modules.get("herr_iv_debil")
     if m is None:
-        spec = importlib.util.spec_from_file_location("herr_iv_debil", RAIZ / "src" / "v18" / "herramientas" / "iv_debil.py")
+        spec = importlib.util.spec_from_file_location("herr_iv_debil", RAIZ / "src" / "v18" / "herr18" / "iv_debil.py")
         m = importlib.util.module_from_spec(spec)
         sys.modules["herr_iv_debil"] = m
         spec.loader.exec_module(m)

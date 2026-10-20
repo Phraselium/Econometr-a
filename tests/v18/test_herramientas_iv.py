@@ -19,7 +19,7 @@ def _cargar(nombre, ruta):
     return m
 
 
-H = _cargar("t_iv_debil", "src/v18/herramientas/iv_debil.py")
+H = _cargar("t_iv_debil", "src/v18/herr18/iv_debil.py")
 MC = _cargar("t_mc_iv", "src/v18/montecarlo/iv_debil.py")
 
 

@@ -1,4 +1,4 @@
-"""V18 · SDID con placebos de Conley-Taber (src/v18/herramientas/sdid.py)."""
+"""V18 · SDID con placebos de Conley-Taber (src/v18/herr18/sdid.py)."""
 import sys
 from pathlib import Path
 
@@ -6,7 +6,7 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
-from src.v18.herramientas import sdid as S  # noqa: E402
+from src.v18.herr18 import sdid as S  # noqa: E402
 
 
 def test_proyeccion_al_simplex():

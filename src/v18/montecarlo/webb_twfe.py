@@ -35,7 +35,7 @@ def _herr():
     import importlib.util
     m = sys.modules.get("herr_webb_twfe")
     if m is None:
-        spec = importlib.util.spec_from_file_location("herr_webb_twfe", RAIZ / "src" / "v18" / "herramientas" / "webb_twfe.py")
+        spec = importlib.util.spec_from_file_location("herr_webb_twfe", RAIZ / "src" / "v18" / "herr18" / "webb_twfe.py")
         m = importlib.util.module_from_spec(spec)
         sys.modules["herr_webb_twfe"] = m
         spec.loader.exec_module(m)

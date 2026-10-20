@@ -15,7 +15,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from src.v18.herramientas import lp_iv as L  # noqa: E402
+from src.v18.herr18 import lp_iv as L  # noqa: E402
 
 ALCANCE_TERRITORIAL = "sin lectura de datos"
 

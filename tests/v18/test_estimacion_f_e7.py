@@ -161,7 +161,7 @@ def test_holm_y_by_de_las_variantes():
 # ---------------------------------------------------------------------------------------------- E7: LP-IV propio frente a la herramienta
 def test_lp_iv_con_controles_vacios_coincide_con_la_herramienta():
     import e7_tipos as E
-    from src.v18.herramientas import lp_iv as L
+    from src.v18.herr18 import lp_iv as L
     rng = np.random.default_rng(SEED)
     T = 120
     z = rng.normal(size=T)

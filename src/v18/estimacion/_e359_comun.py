@@ -31,7 +31,7 @@ for _p in (RAIZ / "src", RAIZ / "src" / "v18", RAIZ / "src" / "v18" / "reproducc
 import holdout  # noqa: E402
 import sellado  # noqa: E402
 from econ_utils import Registry, holm  # noqa: E402,F401
-from herramientas import iv_debil as IVD  # noqa: E402
+from herr18 import iv_debil as IVD  # noqa: E402
 import bhj_lib  # noqa: E402
 
 warnings.filterwarnings("ignore", message="Could not infer format")

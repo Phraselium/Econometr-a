@@ -1,7 +1,7 @@
 """V18 · Monte Carlo de Callaway-Sant'Anna con wild cluster bootstrap de Webb (plan de replicación 1.13; E2-A1, E6-R1, E8).
 
 Uso: python3 src/v18/montecarlo/cs_webb.py [--R 2000] [--jobs 4]
-Estimador: src/v18/herramientas/did.py (CallawaySantAnna). Proceso generador: src/v18/montecarlo/_dgp_did.py.
+Estimador: src/v18/herr18/did.py (CallawaySantAnna). Proceso generador: src/v18/montecarlo/_dgp_did.py.
 """
 from __future__ import annotations
 

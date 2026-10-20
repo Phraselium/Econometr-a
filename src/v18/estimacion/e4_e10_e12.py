@@ -7,7 +7,7 @@ Nunca data/sealed ni evaluate_*.
 - E4 y E11: NO ESTIMABLES (falta el dato imprescindible; se comprueba y se documenta con la tarea del autor que lo resolvería). E4-L1: solo literatura.
 - E10-A1 (asociación transversal; tope ASOCIACIÓN, fuera de Holm): MCO con efectos de provincia; error agrupado por provincia con wild bootstrap de Webb (WCR, 9.999), Conley a 10 km y Moran de los residuos.
 - E12-A1 y E12-A2 (protegida frente a libre, estilo Chapelle; tope SUGESTIVO): IV con efectos de provincia y de año, F efectivo de Montiel Olea-Pflueger, intervalo de Anderson-Rubin
-  por cluster (src/v18/herramientas/iv_debil.py, APTO), WCR de Webb del AR en cero y Driscoll-Kraay (NO APTO con T <= 30: solo etiqueta).
+  por cluster (src/v18/herr18/iv_debil.py, APTO), WCR de Webb del AR en cero y Driscoll-Kraay (NO APTO con T <= 30: solo etiqueta).
 El MDE se calcula y se registra antes de estimar (adenda 1.3): sin mirar el coeficiente de interés (solo variación real del instrumento y σ declarada «ya vista»).
 
 Uso: python3 src/v18/estimacion/e4_e10_e12.py [--rapido] [--salida DIR]
@@ -34,7 +34,7 @@ RAIZ = N.RAIZ
 sys.path.insert(0, str(RAIZ))
 sys.path.insert(0, str(RAIZ / "src"))
 from econ_utils import Registry, holm  # noqa: E402
-from src.v18.herramientas import iv_debil as IV  # noqa: E402
+from src.v18.herr18 import iv_debil as IV  # noqa: E402
 
 warnings.filterwarnings("ignore")
 SEED = 20261010

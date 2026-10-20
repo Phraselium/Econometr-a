@@ -15,9 +15,9 @@ from scipy import stats
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _e2e8_comun as K  # noqa: E402
-from herramientas import dcdh as DC  # noqa: E402
-from herramientas.did import SunAbraham  # noqa: E402
-from herramientas.driscoll_kraay import fe_dk  # noqa: E402
+from herr18 import dcdh as DC  # noqa: E402
+from herr18.did import SunAbraham  # noqa: E402
+from herr18.driscoll_kraay import fe_dk  # noqa: E402
 
 ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6"
 SEED = K.SEMILLA

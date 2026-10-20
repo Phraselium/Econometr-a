@@ -25,7 +25,7 @@ import _e2e8_comun as K  # noqa: E402
 import e8_datos as D8  # noqa: E402
 import e8_diseno as DS  # noqa: E402
 import e8_estim as E  # noqa: E402
-from herramientas import dcdh as DC  # noqa: E402
+from herr18 import dcdh as DC  # noqa: E402
 
 ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6"
 OUT = DS.OUT

@@ -1,4 +1,4 @@
-"""V18 · LP-IV (2SLS y Anderson-Rubin) y SVAR con proxy (src/v18/herramientas/lp_iv.py y svar_proxy.py)."""
+"""V18 · LP-IV (2SLS y Anderson-Rubin) y SVAR con proxy (src/v18/herr18/lp_iv.py y svar_proxy.py)."""
 import sys
 from pathlib import Path
 
@@ -6,8 +6,8 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
-from src.v18.herramientas import lp_iv as L  # noqa: E402
-from src.v18.herramientas import svar_proxy as S  # noqa: E402
+from src.v18.herr18 import lp_iv as L  # noqa: E402
+from src.v18.herr18 import svar_proxy as S  # noqa: E402
 from src.v18.montecarlo import lp_iv as MLP  # noqa: E402
 from src.v18.montecarlo import svar_proxy as MSV  # noqa: E402
 

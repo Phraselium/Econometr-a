@@ -18,7 +18,7 @@ def _cargar(nombre, ruta):
     return m
 
 
-D = _cargar("t_driscoll_kraay", "src/v18/herramientas/driscoll_kraay.py")
+D = _cargar("t_driscoll_kraay", "src/v18/herr18/driscoll_kraay.py")
 MC = _cargar("t_mc_dk", "src/v18/montecarlo/driscoll_kraay.py")
 
 

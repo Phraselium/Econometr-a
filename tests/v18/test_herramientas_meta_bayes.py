@@ -1,4 +1,4 @@
-"""V18 · Metaanálisis bayesiano por cuadratura (src/v18/herramientas/meta_bayes.py): contra integración bruta y propiedades."""
+"""V18 · Metaanálisis bayesiano por cuadratura (src/v18/herr18/meta_bayes.py): contra integración bruta y propiedades."""
 import sys
 from pathlib import Path
 
@@ -7,7 +7,7 @@ from scipy import stats
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
-from src.v18.herramientas import meta_bayes as H  # noqa: E402
+from src.v18.herr18 import meta_bayes as H  # noqa: E402
 
 
 def _bruto(y, se, s0, s_tau, mu_grid=np.linspace(-4, 4, 1601), tau_grid=np.linspace(1e-4, 4, 1601)):

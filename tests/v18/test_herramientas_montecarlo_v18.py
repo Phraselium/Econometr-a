@@ -68,7 +68,7 @@ def test_humo_conductores_de_aleatorizacion_y_svar(tmp_path):
 
 def test_ningun_modulo_nuevo_lee_datos():
     import re
-    for p in list((RAIZ / "src" / "v18" / "montecarlo").glob("*.py")) + list((RAIZ / "src" / "v18" / "herramientas").glob("*.py")):
+    for p in list((RAIZ / "src" / "v18" / "montecarlo").glob("*.py")) + list((RAIZ / "src" / "v18" / "herr18").glob("*.py")):
         t = p.read_text(encoding="utf-8").replace("read_csv(SALIDA", "")   # releer su propia tabla simulada no es leer datos
         if p.name == "__init__.py":
             continue

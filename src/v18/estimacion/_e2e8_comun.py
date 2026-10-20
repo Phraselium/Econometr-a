@@ -23,9 +23,9 @@ sys.path.insert(0, str(RAIZ / "src" / "v18"))
 import holdout  # noqa: E402
 import sellado  # noqa: E402
 from econ_utils import Registry, holm  # noqa: E402
-from herramientas import aleatorizacion as ALE  # noqa: E402
-from herramientas import honest_did as HON  # noqa: E402
-from herramientas.conley import nucleo_bartlett  # noqa: E402
+from herr18 import aleatorizacion as ALE  # noqa: E402
+from herr18 import honest_did as HON  # noqa: E402
+from herr18.conley import nucleo_bartlett  # noqa: E402
 
 ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6"
 SEMILLA = 20261010

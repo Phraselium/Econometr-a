@@ -243,7 +243,7 @@ def primera_etapa_subperiodos(P: pd.DataFrame, r: dict, ex_fun) -> dict:
 
 def hansen_j(d: pd.DataFrame, prox: str, cuandos: list[str], x: str, extra, cluster: str = "cl") -> dict:
     """Contraste de sobreidentificación de Hansen (varianza agrupada) con las dos medidas del «cuándo» a la vez: instrumentos prox × Trends y prox × noches."""
-    from herramientas import iv_debil as IV
+    from herr18 import iv_debil as IV
     M = K.Modelo(d["y"].values, d[x].values, d.u.values, d.t.values, extra=extra, cluster=d[cluster].values)
     Zs = []
     for c in cuandos:

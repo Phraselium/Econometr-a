@@ -1,4 +1,4 @@
-"""V18 · Callaway-Sant'Anna y Sun-Abraham con wild cluster bootstrap de Webb (src/v18/herramientas/did.py)."""
+"""V18 · Callaway-Sant'Anna y Sun-Abraham con wild cluster bootstrap de Webb (src/v18/herr18/did.py)."""
 import sys
 from pathlib import Path
 
@@ -6,7 +6,7 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
-from src.v18.herramientas.did import CallawaySantAnna, SunAbraham  # noqa: E402
+from src.v18.herr18.did import CallawaySantAnna, SunAbraham  # noqa: E402
 from src.v18.montecarlo import _dgp_did as D  # noqa: E402
 
 

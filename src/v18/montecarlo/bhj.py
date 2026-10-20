@@ -34,7 +34,7 @@ import pandas as pd
 from scipy import stats
 
 RAIZ = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(RAIZ / "src" / "v18" / "herramientas"))
+sys.path.insert(0, str(RAIZ / "src" / "v18" / "herr18"))
 import bhj_inferencia as B  # noqa: E402
 
 SEED = 20261010

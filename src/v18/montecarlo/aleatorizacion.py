@@ -18,8 +18,8 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from src.v18.herramientas import aleatorizacion as H  # noqa: E402
-from src.v18.herramientas import dcdh as DH  # noqa: E402
+from src.v18.herr18 import aleatorizacion as H  # noqa: E402
+from src.v18.herr18 import dcdh as DH  # noqa: E402
 from src.v18.montecarlo import _comun as C  # noqa: E402
 from src.v18.montecarlo import _dgp_did as D  # noqa: E402
 from src.v18.montecarlo import _dgp_itp as P  # noqa: E402

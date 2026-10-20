@@ -6,7 +6,7 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ))
-from src.v18.herramientas.did import CallawaySantAnna, pesos_webb  # noqa: E402
+from src.v18.herr18.did import CallawaySantAnna, pesos_webb  # noqa: E402
 
 
 def _ingenuo(Y, coh, cl, T, theta0, V, nulo_impuesto=True):

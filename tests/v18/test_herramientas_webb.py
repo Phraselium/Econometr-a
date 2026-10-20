@@ -18,7 +18,7 @@ def _cargar(nombre, ruta):
     return m
 
 
-W = _cargar("t_webb_twfe", "src/v18/herramientas/webb_twfe.py")
+W = _cargar("t_webb_twfe", "src/v18/herr18/webb_twfe.py")
 MC = _cargar("t_mc_webb", "src/v18/montecarlo/webb_twfe.py")
 
 

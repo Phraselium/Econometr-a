@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from src.v18.herramientas import lp_iv as H  # noqa: E402
+from src.v18.herr18 import lp_iv as H  # noqa: E402
 from src.v18.montecarlo import _comun as C  # noqa: E402
 from src.v18.montecarlo import _informe as I  # noqa: E402
 from src.v18.montecarlo._resumen import filas_por_p  # noqa: E402

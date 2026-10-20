@@ -106,6 +106,10 @@ VARIABLES = [
     V("aeat_irpf_renta_disponible_media", "municipio", "A", ["E2-R1", "E2-R1c"], nota="control municipal de renta (inventario de la fase 0)"),
     V("idescat_hut_n", "municipio", "A", ["E2-R1", "E2-R1c"], anexo="2025"),
     V("serpavi_alquiler_m2_mediana", "municipio", "A", ["E2-R1", "E2-A1", "E3-A3", "E10-A1"]),
+    V("c21md_hogares_muestra", "municipio", "D", ["E2-R1c"],
+      ["base:c21md_hogares_muestra", "data/raw/v11/ine_censo2021/hogares_muestra_municipio_nacionalidad.csv.gz"],
+      nota="añadida DESPUÉS de la etiqueta (desviación B6-1, ronda 1 del abogado del diablo): hogares en alquiler (tenencia = 3) del Censo 2021, "
+           "recuento MUESTRAL del 10 % solo de municipios de 10.000 habitantes o más, fijo en el tiempo; denominador de E2-R1c-v1 (adenda AD-E2, medida)"),
     V("zt_vigente", "municipio", "T", ["E2-A1", "E2-A2"], anexo="2026T3"),
     V("emal_renta_mensual_eur", "municipio", "T", ["E2-A2"], anexo="2025T4"),
     V("p_tasado", "municipio", "T", ["E2-A3"], anexo="2026T2"),
@@ -203,6 +207,8 @@ VARIABLES = [
     # E12 · vivienda protegida
     V("mivau_obra_libre_iniciadas", "provincia", "A", ["E12-A1", "E12-A2"], ["data/raw/mivau_v2_iniciadas_terminadas_prov.csv"], hereda="iniciadas",
       anexo="2024"),
+    V("mivau_obra_libre_terminadas", "provincia", "A", ["E12-A1"], ["data/raw/mivau_v2_iniciadas_terminadas_prov.csv"], hereda="terminadas",
+      anexo="2024", nota="añadida DESPUÉS de la etiqueta (desviación B6-1, ronda 1 del abogado del diablo): obra libre terminada, variante E12-A1-v3 [M] de la adenda"),
     V("mivau_calificaciones_protegida", "provincia", "A", ["E12-A1", "E12-A2"], ["data/raw/mivau_v2_protegida.csv"],
       meta={"tipo": "fecha", "ruta": RAW_RAIZ, "campo_clave": "archivo", "valor": "mivau_v2_protegida.csv", "campo": "ultima_fecha", "frec": "M"}),
     V("mivau_parque", "provincia", "A", ["E12-A1", "E12-A2", "F1-R2-alt", "F2-R1", "F2-A1"], ["data/raw/mivau_parque.csv"],

@@ -51,7 +51,7 @@ def escribir(OUT: Path, est: pd.DataFrame, tab: pd.DataFrame, diag: dict, clasif
     nota = (f"Wald-DID de dosis continua (dCDH, 4 trimestres) por punto de variación del tipo general; p de aleatorización de calendarios entre comunidades {f(r['p_aleat'], 4)} "
             f"(estudentizada, 9.999 permutaciones; tamaño de Monte Carlo 0,0455, banda apta); p tras Holm con la coprincipal V16-Q6-p {f(t.loc['E8-R1', 'p_holm'], 4)}. "
             f"Signo contrario al de la referencia (Dolls et al., −0,03 por pp): razón {f(razon, 2)}, etiqueta «no coherente». Sin 2012-2013 el signo cambia ({f(v4.coef)}): el calendario se "
-            "concentra en la crisis. Fechas de la memoria de Hacienda sin contraste con el BOE y sin control de recaudación previa: tope SUGESTIVO. Lectura: asociación estimada. " + I8 + ".")
+            "concentra en la crisis. El cambio de signo sin 2012-2013 es una prueba B4 y fallo decisivo (plan, línea 124): clase ASOCIACIÓN (K7). Además, fechas de la memoria de Hacienda sin contraste con el BOE y sin control de recaudación previa. Lectura: asociación estimada. " + I8 + ".")
     H.append(K.hecho("V18-E8-R1", "Cambio del log del valor tasado provincial a 4 trimestres por punto de variación del tipo general del ITP (Wald-DID de dosis continua)", r["coef"],
                      r["ic_aleat"][0], r["ic_aleat"][1], "log por punto del tipo general", "2007T1-2026T2", cob, FUENTES, cl["clase"], nota))
     for ident, texto, cober in (("E8-R2", "MDE al 80 % de potencia del efecto del tipo general del ITP sobre las compraventas provinciales mensuales (por punto)",
@@ -165,7 +165,7 @@ Wald-DID anual 2011-2024 de V16 (año de efecto, ΔY de años consecutivos, año
 ## 8. Clasificación (I1-I8 revisados)
 - **E8-R1: {cl['clase']}.** Razones: {'; '.join(cl['razones'])}.
 - I6: razón con la referencia {f(razon, 2)} (signo contrario): etiqueta «no coherente»; no interviene en la clase ni en B5.
-- Tope SUGESTIVO por: fechas sin contraste con el BOE, ausencia del control de recaudación previa, corrección de un fallo conocido de Q6 y cambio de signo sin 2012-2013 (adenda R-18).
+- Clase ASOCIACIÓN por fallo decisivo: el signo cambia sin 2012-2013 (prueba B4 del plan, línea 737; un cambio de signo en B4 es fallo decisivo, línea 124; el tope SUGESTIVO de la adenda R-18 es un techo y no anula esa regla; K7). Topes que se mantendrían de todos modos: fechas sin contraste con el BOE, ausencia del control de recaudación previa y corrección de un fallo conocido de Q6.
 - Lectura: asociación estimada con diseño de dosis continua; no se interpreta como respuesta del mercado al impuesto.
 
 ## 9. Desviaciones y lecturas de las reglas (se recogen en docs/v18/desviaciones.md)

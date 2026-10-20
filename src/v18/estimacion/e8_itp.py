@@ -287,19 +287,21 @@ def main() -> int:
         vv = tab[(tab.rol == "variante") & tab.id.str.startswith("E8-R1-") & (tab.estado == "estimada")]
         signo = np.sign(r["coef"])
         b4 = vv[vv.id.isin(["E8-R1-v7", "E8-R1-v8"])]
-        robustez = {"frac_mismo_signo": float((np.sign(vv.coef) == signo).mean()) if len(vv) else None, "n_variantes": int(len(vv)),
-                    "cambio_signo": bool((np.sign(b4.coef) != signo).any()) if len(b4) else False, "solape_ic": None}
         v4 = tab[tab.id == "E8-R1-v4"]
         sin_1213_cambia = bool(len(v4) and np.sign(v4.coef.iloc[0]) != signo)
+        # K7 (B6, ronda 1): el signo sin 2012-2013 es una prueba B4 (plan 0.5 y línea 737) y un cambio de signo en B4 es fallo decisivo (plan, línea 124);
+        # el tope de la adenda R-18 es un techo y no anula esa regla.
+        robustez = {"frac_mismo_signo": float((np.sign(vv.coef) == signo).mean()) if len(vv) else None, "n_variantes": int(len(vv)),
+                    "cambio_signo": bool((np.sign(b4.coef) != signo).any()) if len(b4) else False, "solape_ic": None}
+        robustez["cambio_signo"] = bool(robustez["cambio_signo"] or sin_1213_cambia)
         topes = ["fechas de entrada en vigor de la memoria de Hacienda, sin contraste con el BOE ni con el diario autonómico: SUGESTIVO como máximo (plan, 1.8 f)",
                  "sin control de recaudación previa (fuente no descargada): tope SUGESTIVO (adenda R-18)",
                  "tope SUGESTIVO por corrección de un fallo conocido de Q6 (fechas; adenda 1.6)"]
-        if sin_1213_cambia:
-            topes.append("el signo cambia sin 2012-2013 (adenda R-18)")
         info = {"estimable": True, "coprincipal": False, "p_holm": float(tab.loc[tab.id == "E8-R1", "p_holm"].iloc[0]), "coef": r["coef"], "pretend_p": di["adelantos"]["p_conjunto"],
                 "roth_ok": bool(di["pendiente"]["sesgo_post"] < 0.5 * ref["ref"]), "placebo_fecha": di["placebo_fecha"],
                 "placebo_resultado": "falla" if di["placebo_resultado"]["p"] <= 0.10 else "ok", "robustez": robustez, "inferencia_banda": K.banda_mc(E.TAM_ALEAT), "topes": topes,
-                "tost": K.tost(r["coef"], r["se"], ref["delta"], r["G"] - 1)}
+                "tost": K.tost(r["coef"], r["se"], ref["delta"], r["G"] - 1), "nulo_sin_sugestivo": True,
+                "texto_cambio_signo": "el signo cambia sin 2012-2013 (prueba B4 del plan, línea 737): cambio de signo en B4 = fallo decisivo (plan, línea 124; K7)"}
         clasif["E8-R1"] = {"info": info, "clase": K.clasificar(info)}
         tab.loc[tab.id == "E8-R1", "clase"] = clasif["E8-R1"]["clase"]["clase"]
     tab.to_csv(OUT / "tabla.csv", index=False, float_format="%.6f")

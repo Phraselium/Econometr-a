@@ -299,7 +299,7 @@ ORDEN = {"ASOCIACIÓN": 0, "SUGESTIVO": 1, "IDENTIFICADO": 2}
 def clasificar(i: dict) -> dict:
     """Clasificación V18 con I1-I8 revisados (adenda 1.1 y 1.2). I8 (réplica ciega) queda pendiente: se rotula.
     Claves: estimable, coprincipal, p_holm, coef, ic90, delta, pretend_p, roth_ok, placebo_fecha, placebo_resultado, robustez,
-    inferencia_banda, topes (lista), debiles_extra (lista)."""
+    inferencia_banda, topes (lista), debiles_extra (lista), nulo_sin_sugestivo (K7: un no significativo sin I1-I5 es ASOCIACIÓN, no SUGESTIVO)."""
     if not i.get("estimable", True):
         return {"clase": "NO ESTIMABLE", "razones": [i.get("motivo_no_estimable", "")], "debiles": [], "decisivos": [], "topes": []}
     if i.get("coprincipal"):
@@ -328,7 +328,7 @@ def clasificar(i: dict) -> dict:
         deb.append("placebo de resultado con p <= 0,10")
     rb = i.get("robustez") or {}
     if rb.get("cambio_signo"):
-        dec.append("cambio de signo en una prueba de robustez")
+        dec.append(i.get("texto_cambio_signo", "cambio de signo en una prueba de robustez"))
     if rb.get("frac_mismo_signo") is not None and rb["frac_mismo_signo"] < 0.8:
         deb.append(f"mismo signo en {rb['frac_mismo_signo']:.0%} de las variantes enumeradas (< 80 %)")
     if rb.get("solape_ic") is False:
@@ -352,6 +352,9 @@ def clasificar(i: dict) -> dict:
             clase = "IDENTIFICADO (efecto nulo acotado)" if (valido and not topes) else "SUGESTIVO (efecto nulo acotado)"
         elif valido:
             clase = "NO CONCLUYENTE (sin potencia)"
+        elif i.get("nulo_sin_sugestivo"):
+            # K7 (B6, ronda 1): no existe «SUGESTIVO sin significación»; un resultado no significativo que no supera I1-I5 es ASOCIACIÓN
+            clase = "ASOCIACIÓN"
         else:
             clase = "SUGESTIVO"
     return {"clase": clase, "razones": deb + topes, "debiles": deb, "decisivos": [], "topes": topes}

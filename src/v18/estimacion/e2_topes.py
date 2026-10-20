@@ -314,12 +314,19 @@ def main() -> int:
                 rc = r1c["r"]
                 if rc["coef"] <= -0.05 and rc["p_cr1"] < 0.05:
                     topes.append("contratos por 1.000 habitantes caen ≥ 5 % con significación al 5 %: no se descarta el desvío a la temporada o a no depositar la fianza (AD-E2)")
+        if ident == "E2-R1c":
+            rv = di["reversion"]
+            if rv["persiste"] or (rv["p_reversion"] < 0.05 and abs(rv["coef_reversion"]) >= 0.5 * abs(rv["coef_post"])):
+                topes.append(f"la diferencia persiste tras la STC 37/2022 (coeficiente {rv['coef_reversion']:+.4f}, p = {rv['p_reversion']:.3f}): tope de la adenda, AD-E2-R1 (línea 581)")
+            pf_ = di["placebo_fecha"]
+            if pf_["p"] < 0.05:
+                topes.append(f"el placebo de fecha (adopción falsa en 2017) es significativo (coeficiente {pf_['coef']:+.4f}, p = {pf_['p']:.4f}): el diseño no es creíble para este resultado (K7)")
         ev = di["evento"]
         umbral_sesgo = 0.5 * ref["ref"] if ref["ref"] else ref["delta"]
         info = {"estimable": True, "coprincipal": False, "p_holm": ph, "coef": r["coef"], "pretend_p": ev["p_pretend"],
                 "roth_ok": bool(ev["sesgo_post"] < umbral_sesgo), "placebo_fecha": di["placebo_fecha"], "placebo_resultado": "no disponible", "robustez": robustez,
                 "inferencia_banda": K.banda_mc(E.TAM_WEBB_MUN), "topes": topes,
-                "tost": K.tost(r["coef"], r["se"], ref["delta"], di["m"].G - 1)}
+                "tost": K.tost(r["coef"], r["se"], ref["delta"], di["m"].G - 1), "nulo_sin_sugestivo": True}
         c = K.clasificar(info)
         clasif[ident] = {"info": info, "clase": c}
         tab.loc[tab.id == ident, "clase"] = c["clase"]

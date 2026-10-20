@@ -165,3 +165,6 @@ output/v16/*/_smoke/
 data/processed/v16/renta_parque_adrh_completo.parquet
 # V16: entrenamiento sellado de series de terceros (solo en disco, como sus fuentes)
 data/processed/v16/entrenamiento/*_terceros.parquet
+# V18: bibliografía (PDFs y paquetes de replicación solo en disco; sha256 en data/bib/CHECKSUMS.sha256)
+data/bib/*
+!data/bib/CHECKSUMS.sha256

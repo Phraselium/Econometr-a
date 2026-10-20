@@ -7,6 +7,8 @@ motivo en stderr) si el comando:
   (d) lanza `make v15_f4*` o `make v15_f5*` sin la etiqueta prereg-v15 en el remoto apuntando a 542b4fd (V16: pre-registro
       interno sin sello externo; src/v16/etiquetas.py);
   (f) lanza `make v16_f5*`, `v16_f6*`, `v16_f7*` o `make v16` sin la etiqueta prereg-v16 en el remoto (V16);
+  (g) lanza `make v18_f3` o posteriores, o `make v18`, sin la etiqueta local plan-replicacion-v18 con su commit en la rama
+      remota (V18, B1; src/v18/etiqueta.py). El plan de la fase 3 se escribe y etiqueta antes; `make v18_f3` lo comprueba;
   (e) además de permissions.deny: make clean, make all, make v7, make evaluate_v7, git push --force/-f, git filter-repo,
       rm -rf data, rm -rf output (no cuenta el texto de un heredoc entrecomillado que solo escribe un fichero con cat o tee).
 La regla (a) no mira el cuerpo de un heredoc ya entrecomillado (el shell no lo expande).
@@ -71,6 +73,18 @@ def _etiqueta_ok(raiz: Path, cual: str) -> bool:
         return False
 
 
+def _etiqueta_v18_ok(raiz: Path) -> bool:
+    """V18: puerta del plan de replicación (src/v18/etiqueta.py)."""
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("etiqueta_v18", raiz / "src" / "v18" / "etiqueta.py")
+        e = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(e)
+        return e.puerta(raiz)[0]
+    except Exception:  # noqa: BLE001 (sin módulo: la puerta queda cerrada)
+        return False
+
+
 CUERPO = re.compile(r"(?m)^([^\n]*?)<<-?\s*(['\"])([A-Za-z_][A-Za-z0-9_]*)\2[^\n]*\n(.*?)^\3\s*$", re.S)
 
 
@@ -95,6 +109,9 @@ def evaluar(cmd: str, raiz: Path) -> str | None:
         return "(d) fases 4-5 de V15 bloqueadas: la etiqueta prereg-v15 no está en el remoto apuntando a 542b4fd"
     if re.search(r"\bmake\b[^;&|]*\s(v16_f[5-7]\w*|v16)(\s|$|;|&|\|)", cmd) and not _etiqueta_ok(raiz, "v16"):
         return "(f) fases 5-7 de V16 bloqueadas: la etiqueta prereg-v16 no existe en el remoto"
+    if re.search(r"\bmake\b[^;&|]*\s(v18_f[3-6]\w*|v18)(\s|$|;|&|\|)", _sin_cuerpos(cmd, solo_texto=True)) \
+            and not _etiqueta_v18_ok(raiz):
+        return "(g) fases 3-6 de V18 bloqueadas: falta la etiqueta local plan-replicacion-v18 con su commit en la rama remota"
     orden = _sin_cuerpos(cmd, solo_texto=True)
     for pat, motivo in PROHIBIDOS:
         if pat.search(orden):

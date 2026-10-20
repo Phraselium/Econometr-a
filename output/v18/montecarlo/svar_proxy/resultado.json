@@ -1,0 +1,30 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Son válidas las bandas AR (robustas a proxy débil) del SVAR con proxy de E7-R2 con T = 108 y 6 variables?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "VAR(2) de 6 variables, T = 108 (324 meses de sorpresa), h = 4 y 8; R = 3000",
+  "metodo": "proxy-SVAR (Montiel Olea-Stock-Watson): AR por método delta, Wald y bootstrap de bloques",
+  "estimacion": {
+    "tamano_AR_F3_h8": 0.013666666666666667,
+    "cobertura_AR_F3_h8": 0.9746666666666667,
+    "potencia_AR_F3_h8": 0.025666666666666667
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "AR_delta_NeweyWest4 (h = 8, todas las fuerzas): NO APTO; Wald_delta (h = 8, F >= 10): NO APTO",
+    "veredicto_por_variante": {
+      "AR_delta_NeweyWest4 (h = 8, todas las fuerzas)": "NO APTO",
+      "Wald_delta (h = 8, F >= 10)": "NO APTO"
+    },
+    "condicion_en_que_falla": "AR: fuerte|rho090|h8: cobertura 0.9027 fuera de [0,92; 0,97] (insuficiente); AR: fuerte|rho097|h8: cobertura 0.8733 fuera de [0,92; 0,97] (insuficiente); AR: debil|rho090|h8: tamaño 0.0137 fuera de [0,03; 0,08] (conservador) / cobertura 0.9863 fuera de [0,92; 0,97] (conservadora) / cobertura 0.9747 fuera de [0,92; 0,97] (conservadora); AR: debil|rho097|h8: tamaño 0.0190 fuera de [0,03; 0,08] (conservador) / cobertura 0.9810 fuera de [0,92; 0,97] (conservadora); Wald: fuerte|rho090|h8: cobertura 0.8840 fuera de [0,92; 0,97] (insuficiente); Wald: fuerte|rho097|h8: tamaño 0.0873 fuera de [0,03; 0,08] (liberal) / cobertura 0.9127 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.8557 fuera de [0,92; 0,97] (insuficiente)",
+    "R": 3000,
+    "segundos": 1200.6
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "svar_proxy",
+  "semilla": 20261010
+}

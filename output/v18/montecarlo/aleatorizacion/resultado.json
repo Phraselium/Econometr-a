@@ -1,0 +1,37 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Es válida la inferencia por aleatorización (permutaciones del calendario o de la asignación) en E2 y E8?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "E2: 100/200 y 10/150 municipios x 13 trimestres; E8: 36 provincias en 8 CCAA x 24 trimestres; R = 2000",
+  "metodo": "Aleatorización de Fisher estudentizada: asignación entre municipios, dentro de comarca y calendarios entre CCAA",
+  "estimacion": {
+    "tamano_E2_cat_trim_M_entre_municipios": 0.0635,
+    "cobertura_alt": 0.9425,
+    "potencia": 0.9995
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO",
+    "condicion_en_que_falla": "",
+    "variantes_principales": "estudentizadas del plan (entre municipios en E2; entre CCAA en E8)",
+    "por_escenario": {
+      "E2_cat_trim_M": "APTO",
+      "E2_pocos_tratados": "APTO",
+      "E8_desigual": "APTO",
+      "E8_equilibrado": "APTO"
+    },
+    "alternativa_dentro_de_comarca": {
+      "E2_cat_trim_M": "APTO",
+      "E2_pocos_tratados": "NO APTO"
+    },
+    "R": 2000,
+    "segundos": 78.9
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "aleatorizacion",
+  "semilla": 20261010
+}

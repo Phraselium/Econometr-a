@@ -1,0 +1,83 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Son válidos el 2SLS con Newey-West (h+1), la versión aumentada con EHW y el AR en la LP-IV de E7 con T = 108?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "T = 108 trimestres (324 meses de sorpresa), h = 4, 8, 12; R = 5000",
+  "metodo": "LP-IV (2SLS y AR) con Newey-West h+1 y con rezagos aumentados + EHW",
+  "estimacion": {
+    "tamano_AR_aumentado_F3_h8": 0.0558,
+    "cobertura_AR_aumentado_F3_h8": 0.9408,
+    "potencia": 0.0738
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "AR_aumentado_EHW (h = 8, todas las fuerzas): NO APTO; 2SLS_NeweyWest_h+1 (h = 8, F >= 10): NO APTO; 2SLS_aumentado_EHW (h = 8, F >= 10): NO APTO",
+    "veredicto_por_variante": {
+      "AR_aumentado_EHW (h = 8, todas las fuerzas)": "NO APTO",
+      "2SLS_NeweyWest_h+1 (h = 8, F >= 10)": "NO APTO",
+      "2SLS_aumentado_EHW (h = 8, F >= 10)": "NO APTO"
+    },
+    "condicion_en_que_falla": "AR_aumentado_EHW: fuerte|rho095|h8: cobertura 0.8724 fuera de [0,92; 0,97] (insuficiente); fuerte|rho099|h8: cobertura 0.8210 fuera de [0,92; 0,97] (insuficiente); moderada|rho099|h8: cobertura 0.9108 fuera de [0,92; 0,97] (insuficiente); 2SLS_NeweyWest_h+1: fuerte|rho095|h8: tamaño 0.1154 fuera de [0,03; 0,08] (liberal) / cobertura 0.8846 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.7914 fuera de [0,92; 0,97] (insuficiente); fuerte|rho099|h8: tamaño 0.1110 fuera de [0,03; 0,08] (liberal) / cobertura 0.8890 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.7192 fuera de [0,92; 0,97] (insuficiente); moderada|rho095|h8: cobertura 0.8570 fuera de [0,92; 0,97] (insuficiente); moderada|rho099|h8: cobertura 0.8224 fuera de [0,92; 0,97] (insuficiente); 2SLS_aumentado_EHW: fuerte|rho095|h8: cobertura 0.8400 fuera de [0,92; 0,97] (insuficiente); fuerte|rho099|h8: cobertura 0.7726 fuera de [0,92; 0,97] (insuficiente); moderada|rho095|h8: cobertura 0.9066 fuera de [0,92; 0,97] (insuficiente); moderada|rho099|h8: cobertura 0.8670 fuera de [0,92; 0,97] (insuficiente)",
+    "R": 5000,
+    "por_variante_h8": {
+      "2SLS_NeweyWest_h+1": {
+        "apto_en": [],
+        "falla_en": {
+          "fuerte|rho095|h8": "tamaño 0.1154 fuera de [0,03; 0,08] (liberal) / cobertura 0.8846 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.7914 fuera de [0,92; 0,97] (insuficiente)",
+          "fuerte|rho099|h8": "tamaño 0.1110 fuera de [0,03; 0,08] (liberal) / cobertura 0.8890 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.7192 fuera de [0,92; 0,97] (insuficiente)",
+          "moderada|rho095|h8": "cobertura 0.8570 fuera de [0,92; 0,97] (insuficiente)",
+          "moderada|rho099|h8": "cobertura 0.8224 fuera de [0,92; 0,97] (insuficiente)",
+          "debil|rho095|h8": "tamaño 0.0216 fuera de [0,03; 0,08] (conservador) / cobertura 0.9784 fuera de [0,92; 0,97] (conservadora)",
+          "debil|rho099|h8": "cobertura 0.8950 fuera de [0,92; 0,97] (insuficiente)"
+        }
+      },
+      "2SLS_aumentado_EHW": {
+        "apto_en": [],
+        "falla_en": {
+          "fuerte|rho095|h8": "cobertura 0.8400 fuera de [0,92; 0,97] (insuficiente)",
+          "fuerte|rho099|h8": "cobertura 0.7726 fuera de [0,92; 0,97] (insuficiente)",
+          "moderada|rho095|h8": "cobertura 0.9066 fuera de [0,92; 0,97] (insuficiente)",
+          "moderada|rho099|h8": "cobertura 0.8670 fuera de [0,92; 0,97] (insuficiente)",
+          "debil|rho095|h8": "tamaño 0.0118 fuera de [0,03; 0,08] (conservador) / cobertura 0.9882 fuera de [0,92; 0,97] (conservadora)",
+          "debil|rho099|h8": "tamaño 0.0136 fuera de [0,03; 0,08] (conservador) / cobertura 0.9864 fuera de [0,92; 0,97] (conservadora)"
+        }
+      },
+      "AR_NeweyWest_h+1": {
+        "apto_en": [],
+        "falla_en": {
+          "fuerte|rho095|h8": "tamaño 0.1084 fuera de [0,03; 0,08] (liberal) / cobertura 0.8916 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.8246 fuera de [0,92; 0,97] (insuficiente)",
+          "fuerte|rho099|h8": "tamaño 0.1020 fuera de [0,03; 0,08] (liberal) / cobertura 0.8980 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.7676 fuera de [0,92; 0,97] (insuficiente)",
+          "moderada|rho095|h8": "tamaño 0.0920 fuera de [0,03; 0,08] (liberal) / cobertura 0.9080 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.8770 fuera de [0,92; 0,97] (insuficiente)",
+          "moderada|rho099|h8": "tamaño 0.0946 fuera de [0,03; 0,08] (liberal) / cobertura 0.9054 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.8636 fuera de [0,92; 0,97] (insuficiente)",
+          "debil|rho095|h8": "tamaño 0.0866 fuera de [0,03; 0,08] (liberal) / cobertura 0.9134 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.9058 fuera de [0,92; 0,97] (insuficiente)",
+          "debil|rho099|h8": "tamaño 0.0842 fuera de [0,03; 0,08] (liberal) / cobertura 0.9158 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.9088 fuera de [0,92; 0,97] (insuficiente)"
+        }
+      },
+      "AR_aumentado_EHW": {
+        "apto_en": [
+          "moderada|rho095|h8",
+          "debil|rho095|h8",
+          "debil|rho099|h8"
+        ],
+        "falla_en": {
+          "fuerte|rho095|h8": "cobertura 0.8724 fuera de [0,92; 0,97] (insuficiente)",
+          "fuerte|rho099|h8": "cobertura 0.8210 fuera de [0,92; 0,97] (insuficiente)",
+          "moderada|rho099|h8": "cobertura 0.9108 fuera de [0,92; 0,97] (insuficiente)"
+        }
+      }
+    },
+    "F_efectiva_media_por_fuerza": {
+      "fuerte": 25.293118842376913,
+      "moderada": 10.209384813196268,
+      "debil": 3.1405831910577686
+    },
+    "segundos": 91.9
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "lp_iv",
+  "semilla": 20261010
+}

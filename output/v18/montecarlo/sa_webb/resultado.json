@@ -1,0 +1,40 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Es válida la inferencia de Sun-Abraham con wild cluster bootstrap de Webb en los diseños escalonados de V18?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000",
+  "metodo": "Sun-Abraham (interacciones ponderadas, nunca tratadas) + wild cluster bootstrap-t de Webb con nulo impuesto (B = 499)",
+  "estimacion": {
+    "tamano_cat_trim_M": 0.064,
+    "cobertura_nulo": 0.9359999999999999,
+    "cobertura_alt": 0.935,
+    "potencia": 0.996,
+    "sesgo": 5.730880708106016e-05,
+    "rmse": 0.007767925486010116
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO",
+    "condicion_en_que_falla": "",
+    "variante_principal": "webb_WCR_t_cluster_principal",
+    "por_escenario": {
+      "cat_trim_S": "APTO",
+      "cat_trim_M": "APTO",
+      "cat_trim_L": "APTO",
+      "cat_anual": "APTO",
+      "zt2024_2cohortes": "APTO",
+      "pocos_tratados": "APTO",
+      "itp_8ccaa": "APTO"
+    },
+    "R": 2000,
+    "B": 499,
+    "segundos": 809.5
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "sa_webb",
+  "semilla": 20261010
+}

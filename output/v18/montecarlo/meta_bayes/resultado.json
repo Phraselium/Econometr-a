@@ -1,0 +1,85 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Cubren los intervalos de credibilidad de μ y de τ del metaanálisis bayesiano de efectos aleatorios con 2 a 10 estudios?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "K = 2 a 10 estudios; R = 3000 por celda",
+  "metodo": "metaanálisis bayesiano normal-normal por cuadratura (3 priors de μ; τ semi-normal y semi-Cauchy); efecto fijo con K < 3",
+  "estimacion": {
+    "cobertura_mu_calibracion_K6": 0.9553333333333334,
+    "cobertura_tau_calibracion_K6": 0.943
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "NO APTO",
+    "por_variante": {
+      "prior_mu_s (principal)": {
+        "apto": false,
+        "falla_en": [
+          "nulo_het|K3: μ 0.986, τ 0.987 (conservador)",
+          "nulo_het|K4: μ 0.975, τ 0.981 (conservador)",
+          "nulo_het|K6: μ 0.965, τ 0.975 (τ fuera de banda)",
+          "efecto_het|K3: μ 0.988, τ 0.987 (conservador)",
+          "efecto_het|K4: μ 0.969, τ 0.982 (τ fuera de banda)"
+        ]
+      },
+      "prior_mu_2s": {
+        "apto": false,
+        "falla_en": [
+          "nulo_het|K3: μ 0.985, τ 0.985 (conservador)",
+          "nulo_het|K4: μ 0.977, τ 0.980 (conservador)",
+          "nulo_het|K6: μ 0.967, τ 0.974 (τ fuera de banda)",
+          "nulo_het|K8: μ 0.971, τ 0.962 (conservador)",
+          "efecto_het|K3: μ 0.989, τ 0.986 (conservador)",
+          "efecto_het|K4: μ 0.973, τ 0.982 (conservador)",
+          "efecto_het|K6: μ 0.970, τ 0.968 (conservador)",
+          "efecto_het|K8: μ 0.971, τ 0.967 (conservador)"
+        ]
+      },
+      "prior_mu_s/2": {
+        "apto": false,
+        "falla_en": [
+          "calibracion_prior|K3: μ 0.850, τ 0.937 (insuficiente)",
+          "calibracion_prior|K4: μ 0.888, τ 0.941 (insuficiente)",
+          "calibracion_prior|K6: μ 0.896, τ 0.943 (insuficiente)",
+          "calibracion_prior|K8: μ 0.906, τ 0.957 (insuficiente)",
+          "calibracion_prior|K10: μ 0.920, τ 0.947 (insuficiente)",
+          "nulo_het|K3: μ 0.989, τ 0.990 (conservador)",
+          "nulo_het|K4: μ 0.979, τ 0.983 (conservador)",
+          "nulo_het|K6: μ 0.966, τ 0.976 (τ fuera de banda)",
+          "efecto_het|K3: μ 0.981, τ 0.989 (conservador)",
+          "efecto_het|K4: μ 0.969, τ 0.982 (τ fuera de banda)"
+        ]
+      },
+      "tau_semicauchy (sensibilidad)": {
+        "apto": false,
+        "falla_en": [
+          "calibracion_prior|K3: μ 0.969, τ 0.971 (τ fuera de banda)",
+          "nulo_het|K3: μ 0.987, τ 0.984 (conservador)",
+          "nulo_het|K4: μ 0.977, τ 0.980 (conservador)",
+          "nulo_het|K6: μ 0.964, τ 0.975 (τ fuera de banda)",
+          "efecto_het|K3: μ 0.990, τ 0.986 (conservador)",
+          "efecto_het|K4: μ 0.969, τ 0.982 (τ fuera de banda)"
+        ]
+      },
+      "efecto_fijo (K < 3)": {
+        "apto": false,
+        "falla_en": [
+          "calibracion_prior|K2: μ 0.500 (insuficiente)",
+          "nulo_het|K2: μ 0.549 (insuficiente)",
+          "efecto_het|K2: μ 0.564 (insuficiente)"
+        ]
+      }
+    },
+    "condicion_en_que_falla": "prior_mu_s (principal): nulo_het|K3: μ 0.986, τ 0.987 (conservador); nulo_het|K4: μ 0.975, τ 0.981 (conservador); nulo_het|K6: μ 0.965, τ 0.975 (τ fuera de banda); efecto_het|K3: μ 0.988, τ 0.987 (conservador); efecto_het|K4: μ 0.969, τ 0.982 (τ fuera de banda) | prior_mu_2s: nulo_het|K3: μ 0.985, τ 0.985 (conservador); nulo_het|K4: μ 0.977, τ 0.980 (conservador); nulo_het|K6: μ 0.967, τ 0.974 (τ fuera de banda); nulo_het|K8: μ 0.971, τ 0.962 (conservador); efecto_het|K3: μ 0.989, τ 0.986 (conservador); efecto_het|K4: μ 0.973, τ 0.982 (conservador) ... | prior_mu_s/2: calibracion_prior|K3: μ 0.850, τ 0.937 (insuficiente); calibracion_prior|K4: μ 0.888, τ 0.941 (insuficiente); calibracion_prior|K6: μ 0.896, τ 0.943 (insuficiente); calibracion_prior|K8: μ 0.906, τ 0.957 (insuficiente); calibracion_prior|K10: μ 0.920, τ 0.947 (insuficiente); nulo_het|K3: μ 0.989, τ 0.990 (conservador) ... | tau_semicauchy (sensibilidad): calibracion_prior|K3: μ 0.969, τ 0.971 (τ fuera de banda); nulo_het|K3: μ 0.987, τ 0.984 (conservador); nulo_het|K4: μ 0.977, τ 0.980 (conservador); nulo_het|K6: μ 0.964, τ 0.975 (τ fuera de banda); efecto_het|K3: μ 0.990, τ 0.986 (conservador); efecto_het|K4: μ 0.969, τ 0.982 (τ fuera de banda) | efecto_fijo (K < 3): calibracion_prior|K2: μ 0.500 (insuficiente); nulo_het|K2: μ 0.549 (insuficiente); efecto_het|K2: μ 0.564 (insuficiente)",
+    "R": 3000,
+    "segundos": 308.5,
+    "nota_tamano": "tamaño = 1 − cobertura de μ (rechazo del valor verdadero por el intervalo)"
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "meta_bayes",
+  "semilla": 20261010
+}

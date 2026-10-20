@@ -1,0 +1,40 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Es válida la inferencia de Callaway-Sant'Anna con wild cluster bootstrap de Webb en los diseños escalonados de V18?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000",
+  "metodo": "Callaway-Sant'Anna (nunca tratadas, ATT simple) + wild cluster bootstrap-t de Webb con nulo impuesto (B = 999)",
+  "estimacion": {
+    "tamano_cat_trim_M": 0.071,
+    "cobertura_nulo": 0.929,
+    "cobertura_alt": 0.934,
+    "potencia": 0.9965,
+    "sesgo": -0.00033983673856320727,
+    "rmse": 0.00798155887035782
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO CONDICIONADO (solo en: cat_trim_S, cat_trim_M, cat_trim_L, cat_anual, zt2024_2cohortes, pocos_tratados)",
+    "condicion_en_que_falla": "itp_8ccaa (tamaño 0.1780 fuera de [0,03; 0,08] (liberal) / cobertura 0.8220 fuera de [0,92; 0,97] (insuficiente) / cobertura 0.8290 fuera de [0,92; 0,97] (insuficiente))",
+    "variante_principal": "webb_WCR_t_cluster_principal",
+    "por_escenario": {
+      "cat_trim_S": "APTO",
+      "cat_trim_M": "APTO",
+      "cat_trim_L": "APTO",
+      "cat_anual": "APTO",
+      "zt2024_2cohortes": "APTO",
+      "pocos_tratados": "APTO",
+      "itp_8ccaa": "NO APTO"
+    },
+    "R": 2000,
+    "B": 999,
+    "segundos": 132.5
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "cs_webb",
+  "semilla": 20261010
+}

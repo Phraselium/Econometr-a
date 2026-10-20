@@ -1,0 +1,49 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Es válida la inferencia por aleatorización del calendario (y Webb) para dCDH con dosis continua escalonada, 8 CCAA?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "36 provincias, 8 CCAA, T = 24; R = 2000",
+  "metodo": "DID_ℓ de de Chaisemartin-D'Haultfœuille, aleatorización de calendarios entre CCAA y bootstrap de Webb",
+  "estimacion": {
+    "tamano": 0.0455,
+    "cobertura_nulo": 0.9545,
+    "cobertura_alt": 0.9535,
+    "potencia": 0.3745,
+    "sesgo": -0.00011645412477509962,
+    "rmse": 0.015933539091942703
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO",
+    "condicion_en_que_falla": "",
+    "variante_principal": "aleatorizacion_estudentizada, itp_desigual_ell4",
+    "por_fila": {
+      "itp_desigual_ell4|aleatorizacion_estudentizada": "APTO",
+      "itp_desigual_ell4|aleatorizacion_coeficiente (V16)": "APTO",
+      "itp_desigual_ell4|webb_8_clusters": "NO APTO",
+      "itp_desigual_ell4|t_cluster_7gl": "APTO",
+      "itp_equilibrado_ell4|aleatorizacion_estudentizada": "APTO",
+      "itp_equilibrado_ell4|aleatorizacion_coeficiente (V16)": "APTO",
+      "itp_equilibrado_ell4|webb_8_clusters": "NO APTO",
+      "itp_equilibrado_ell4|t_cluster_7gl": "APTO",
+      "itp_desigual_ell0|aleatorizacion_estudentizada": "APTO",
+      "itp_desigual_ell0|aleatorizacion_coeficiente (V16)": "APTO",
+      "itp_desigual_ell0|webb_8_clusters": "NO APTO",
+      "itp_desigual_ell0|t_cluster_7gl": "APTO",
+      "itp_equilibrado_ell0|aleatorizacion_estudentizada": "APTO",
+      "itp_equilibrado_ell0|aleatorizacion_coeficiente (V16)": "APTO",
+      "itp_equilibrado_ell0|webb_8_clusters": "NO APTO",
+      "itp_equilibrado_ell0|t_cluster_7gl": "APTO"
+    },
+    "banda_112_principal": "apta",
+    "R": 2000,
+    "segundos": 271.5
+  },
+  "fuera_muestra": null,
+  "notas": "Valores simulados. Las demás variantes son información; el veredicto lo decide la principal.",
+  "herramienta": "dcdh_aleatorizacion",
+  "semilla": 20261010
+}

@@ -19,6 +19,8 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 
 - 2026-10-20 · **Fase 3.** Plan de replicación (docs/v18/plan_replicacion.md) revisado por revisor-preregistro (APTO CON CAMBIOS, 28 hallazgos) y abogado-del-diablo (resiste con limitaciones); decisión del autor K2 (toda cifra V18 en C4; fórmula condicional solo en secciones técnicas; evaluate_v18 diferido); adenda (docs/v18/plan_replicacion_adenda.md) que responde a todos los hallazgos: ventana trimestral de E2 2019T1-2022T1, E2 por tramo NO ESTIMABLE, padrón por nacionalidad cortado en 2022, multiverso enumerado (245 variantes + 200 de holgura), B5 sin filtro por significación, 7 hipótesis para evaluate_v18. Barcelona pierde Gràcia, Sant Andreu y Nou Barris (sellados V15/V16): 48 clusters.
 
+- 2026-10-20 · **Monte Carlo de herramientas (sección 1.13).** Nueve herramientas validadas con procesos simulados que reproducen la estructura de los diseños de V18 (grupo B; decisión K5): cs_webb APTO CONDICIONADO (solo diseños municipales; NO APTO con 8 clusters), sa_webb APTO, dcdh_aleatorizacion APTO (Webb con 8 clusters NO APTO), honest_did APTO CONDICIONADO (solo M̄ = 0), sdid_conley_taber APTO (con tratados intercambiables), aleatorizacion APTO, lp_iv NO APTO, svar_proxy NO APTO, meta_bayes NO APTO (conservador). R = 2.000 a 5.000. Sin parada G.
+
 ## Siguiente
 - Etiqueta plan-replicacion-v18 y push; sellado_v18.json; fase 4 (estimación).
 

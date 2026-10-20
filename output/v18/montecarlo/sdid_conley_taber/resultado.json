@@ -1,0 +1,38 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Es válida la inferencia de Conley-Taber con SDID y pocos tratados (2 a 25) en los diseños de zonas tensionadas?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "2-25 tratados y 150-200 controles; T = 17 y 40; R = 2000",
+  "metodo": "SDID (Arkhangelsky et al.) + placebos de Conley-Taber (199)",
+  "estimacion": {
+    "tamano_10_tratados": 0.0555,
+    "cobertura_nulo": 0.9445,
+    "cobertura_alt": 0.954,
+    "potencia": 0.807,
+    "sesgo": 0.00028276488434842307,
+    "rmse": 0.014694961558920057
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO",
+    "condicion_en_que_falla": "",
+    "variante_principal": "conley_taber_sdid",
+    "por_escenario": {
+      "tratados_02": "APTO",
+      "tratados_05": "APTO",
+      "tratados_10": "APTO",
+      "tratados_25": "APTO",
+      "pais_vasco_A2": "APTO"
+    },
+    "R": 2000,
+    "placebos": 199,
+    "segundos": 670.9
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "sdid_conley_taber",
+  "semilla": 20261010
+}

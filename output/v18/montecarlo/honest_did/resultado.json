@@ -1,0 +1,38 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Es válido el IC robusto de Honest DiD (magnitudes relativas, M̄ hasta 1) en los estudios de eventos de V18?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "Cataluña 150-450 municipios x 13 trimestres; 36 provincias x 24 trimestres; R = 2000",
+  "metodo": "Honest DiD (Rambachan-Roth, Δ^RM) con contraste condicional ARP por piezas; covarianza agrupada",
+  "estimacion": {
+    "tamano_M1_frontera": 0.0,
+    "cobertura_M1_frontera": 1.0,
+    "potencia_M1": 0.0,
+    "sesgo": 0.01599793810570799,
+    "rmse": 0.017911408364324505
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "APTO CONDICIONADO (solo en: cat_S_M0_PTexacta, cat_L_M0_PTexacta)",
+    "condicion_en_que_falla": "cat_M_M0_PTexacta (tamaño 0.0820 fuera de [0,03; 0,08] (liberal) / cobertura 0.9180 fuera de [0,92; 0,97] (insuficiente)); cat_M_M05_frontera (tamaño 0.0000 fuera de [0,03; 0,08] (conservador) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora)); cat_M_M1_frontera (tamaño 0.0000 fuera de [0,03; 0,08] (conservador) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora)); cat_S_M1_frontera (tamaño 0.0000 fuera de [0,03; 0,08] (conservador) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora)); cat_L_M1_frontera (tamaño 0.0000 fuera de [0,03; 0,08] (conservador) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora) / cobertura 1.0000 fuera de [0,92; 0,97] (conservadora))",
+    "variante_principal": "cluster_tratamiento (escenarios que entran en el veredicto)",
+    "por_escenario": {
+      "cat_M_M0_PTexacta": "NO APTO",
+      "cat_M_M05_frontera": "NO APTO",
+      "cat_M_M1_frontera": "NO APTO",
+      "cat_S_M0_PTexacta": "APTO",
+      "cat_S_M1_frontera": "NO APTO",
+      "cat_L_M0_PTexacta": "APTO",
+      "cat_L_M1_frontera": "NO APTO"
+    },
+    "R": 2000,
+    "segundos": 555.0
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "honest_did",
+  "semilla": 20261010
+}

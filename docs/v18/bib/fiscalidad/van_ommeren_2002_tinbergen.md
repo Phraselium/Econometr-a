@@ -1,8 +1,8 @@
 ### Van Ommeren y van Leuvensteijn (2005). New evidence of the effect of transaction costs on residential mobility (versión de trabajo del Tinbergen Institute de 2002)
 - Clave: van_ommeren_2002_tinbergen · DOI: 10.1111/j.0022-4146.2005.00389.x (edición publicada, Journal of Regional Science 45(4), 681-702; Crossref comprobado 2026-10-20) · Revista o serie: Tinbergen Institute Discussion Paper TI 2002-117; versión publicada en J. Regional Science 2005 · Licencia de la versión abierta: no declarada en el PDF; descarga libre en la serie del Tinbergen Institute
-- Enlace abierto: https://papers.tinbergen.nl/02117.pdf · Leído: resumen e introducción (PDF p. 2-4) · sha256 del PDF: 63e86dad68e8
-- Pregunta; datos; diseño; identificación: ¿Cuánto frenan los costes de transacción proporcionales la movilidad residencial? Datos: hogares propietarios de los Países Bajos (detalle de la muestra no leído). Diseño: modelo de riesgos competitivos de movilidad con el coste de transacción como porcentaje del valor de la vivienda.
-- Resultado principal con su unidad: Un punto porcentual más de coste de transacción (en % del valor de la vivienda) reduce la tasa de movilidad de propietario a propietario un 8 %; sin el impuesto de transmisión del 6 % para el comprador, la movilidad sería un 50 % mayor. Unidad: % de variación de la tasa de movilidad por +1 pp de coste de transacción.
+- Enlace abierto: https://papers.tinbergen.nl/02117.pdf · Leído: solo resumen e introducción (PDF p. 2-4) · sha256 del PDF: 63e86dad68e8
+- Pregunta: ¿Cuánto frenan los costes de transacción proporcionales la movilidad residencial? Datos: hogares propietarios de los Países Bajos (detalle de la muestra no leído). Diseño: modelo de riesgos competitivos de movilidad con el coste de transacción como porcentaje del valor de la vivienda.
+- Resultado principal. Un punto porcentual más de coste de transacción (en % del valor de la vivienda) reduce la tasa de movilidad de propietario a propietario un 8 %; sin el impuesto de transmisión del 6 % para el comprador, la movilidad sería un 50 % mayor. Unidad: % de variación de la tasa de movilidad por +1 pp de coste de transacción.
 - Limitaciones y validez externa para España: Mide movilidad, no precios; el impuesto holandés recae en el comprador. Los Países Bajos de comienzos de siglo; error no recuperado. Validez externa para España: media.
-- Paquete de replicación: no localizado
-- Estado: NO VERIFICADA
+- Paquete de replicación: no (no localizado; ver la nota del resumen del factor)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

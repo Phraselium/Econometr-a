@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: coeficiente en log del precio por pie cuadrado en el borde de la zona regulada. Borrador (Tabla 6, p. 38 del PDF): efecto diff-in-disc estable en torno a −0,50, que el texto interpreta como una caída de alrededor del 60 % del valor en el borde; el resumen de la versión publicada da «aproximadamente 30 %» (Crossref/IDEAS). Magnitud sensible al ancho de banda (100 m a 1.000 m).
 - Limitaciones y validez externa para España: una sola frontera, el Barrio Francés, con una singularidad previa a la norma (prima de entre el 38 y el 80 % antes de la ley); el propio texto reconoce que no se cumple bien el supuesto de discontinuidad constante en 2013. La diferencia entre el 60 % del borrador y el 30 % de la versión publicada impide usar la cifra sin leer la publicada.
 - Paquete de replicación: no (se buscó en DataCite, Zenodo y Dataverse; los datos de AirDNA y Zillow son comerciales).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

@@ -5,4 +5,4 @@
 - Resultado principal (tabla 2, p. 32 del PDF, columna 2, TSLS): interacción de la tasa de rechazo con el log de ingresos 0,293 (error 0,0566); suelo urbanizado × ingresos 0,295 (0,0493); rango de altitud × ingresos 0,0951 (0,0388); OLS de la tasa de rechazo: 0,0669 (0,0157). Contrafactual (texto, p. 25): sin restricciones regulatorias el precio medio en 2008 sería un 35% menor (rango 21,5-38,1%); una desviación típica menos de restricción reduce el precio un 14%. Unidad: elasticidad precio-ingresos y % de precio.
 - Limitaciones y validez externa para España: Inglaterra tiene un planeamiento discrecional con permisos por proyecto, distinto del régimen español; la identificación depende de tres instrumentos con F cercana al umbral de 10 (en la tabla 5, con otra variable de demanda, F = 5,18). Es la referencia europea de efecto del planeamiento en precios; no es una elasticidad de oferta de construcción.
 - Paquete de replicación: no (buscado en LSE Research Online y la web de los autores; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

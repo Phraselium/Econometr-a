@@ -5,4 +5,4 @@
 - Resultado principal (solo de resúmenes secundarios, sin tabla): la estimación IV más robusta implica un desplazamiento de casi el 100% de las unidades LIHTC por menos alquileres sin subsidio construidos, con intervalo amplio; MCO en torno al 15%; los efectos sobre la construcción en propiedad son más moderados e imprecisos. Unidad: viviendas no subsidiadas construidas de menos por unidad LIHTC.
 - Limitaciones y validez externa para España: EE. UU. y créditos fiscales; no leída la tabla ni los errores; la cifra de 100% y la de 15% no están contrastadas con el texto.
 - Paquete de replicación: no (buscado en IDEAS y búsquedas web; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

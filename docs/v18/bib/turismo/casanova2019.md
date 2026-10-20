@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: coeficiente del recuento de anuncios de Airbnb a 500 m (variable dependiente: alquiler por m², en logaritmo según el texto de la sección 4). Tabla 1, p. 17 del PDF: MCO 0,017 (significativo al 1 %); 2SLS 0,023 (1 %); SAR I 0,012 (10 %); SAR II 0,009 (no significativo). Los errores típicos no se extraen del texto; el autor concluye que al introducir efectos espaciales el efecto deja de ser significativo.
 - Limitaciones y validez externa para España: un solo corte transversal (abril de 2018); la conclusión de «sin efecto» depende de la especificación espacial; los instrumentos de la 2SLS proceden de la propia actividad de los anuncios, por lo que su exclusión es discutible y no se contrasta con tendencias previas. Resultado contrario al de García-López et al. (2020) en Barcelona, con otra identificación; no se pueden comparar magnitudes.
 - Paquete de replicación: no (se buscó en la web de FEDEA, DataCite y Zenodo).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: NO VERIFICADA (sin DOI)

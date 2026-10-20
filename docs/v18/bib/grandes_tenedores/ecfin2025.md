@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: ninguna cifra causal. Resumen (sección 5.1.6): los tipos bajos y la búsqueda de rentabilidad elevaron la demanda de inversores institucionales, con efectos que dependen de si compran vivienda existente o financian obra nueva; la presencia de institucionales ha aumentado, a veces con efecto en los ciclos de precios (cita, entre otros, a Banti y Phylaktis, 2024). Sin errores típicos.
 - Limitaciones y validez externa para España: documento de síntesis; no estima el efecto de grandes tenedores en España. Para la cuota de grandes tenedores en España hay estimaciones de V17 (docs/v17/referencias/bde_informes.md: personas jurídicas privadas, 8 % del alquiler de mercado, y titulares con más de 10 viviendas, máximo 7 %; datos AEAT, territorio común), no releídas aquí.
 - Paquete de replicación: no aplica (documento descriptivo).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: NO VERIFICADA (el DOI existe en doi.org, agencia OP, sin metadatos comparables)

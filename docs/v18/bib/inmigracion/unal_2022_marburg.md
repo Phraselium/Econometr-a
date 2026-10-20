@@ -5,4 +5,4 @@
 - Resultado principal (tabla 3, p. 21 del PDF): precio de pisos 2,689 (error 0,648; modelo 3), 2,388 (0,840; con controles) y 3,164 (1,451); alquiler de pisos 0,863 (0,421) y 1,180 (0,684); precio de casas 1,625 (0,685) sin controles y 1,130 (0,944) con controles (no significativo). Unidad: % de variación por cada 1% de la población inicial del distrito en inmigración internacional. La tabla 5 corrige por precio del suelo; no la he leído.
 - Limitaciones y validez externa para España: documento de trabajo sin revisión por pares visible; primera etapa en torno al umbral de 10-16; sin separación de oferta. Es una comparación europea de un país con mercado de alquiler grande y parque distinto del español.
 - Paquete de replicación: no (buscado en el repositorio de Marburgo y la serie MAGKS; el texto no lo ofrece). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)

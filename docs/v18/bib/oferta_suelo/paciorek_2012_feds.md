@@ -5,4 +5,4 @@
 - Resultado principal. Forma reducida OLS: elasticidad de 1,69 en una ciudad con regulación media, con −0,46 por desviación típica de regulación (texto, p. 26). IV (tabla 4, p. 57 del documento): log del precio 0,68 (error 0,07) en la columna 1; 0,84 (0,10) con regulación media y −0,32 (0,05) por desviación típica de regulación en la columna 3. Modelo estructural (tabla 5): un aumento de la inversión del 1% sube el coste marginal un 0,42%, es decir, una elasticidad de oferta de unos 2,4 (texto, p. 29). Unidad: elasticidad de los permisos respecto al precio.
 - Limitaciones y validez externa para España: EE. UU.; las elasticidades OLS e IV difieren en más de 1 (1,69 frente a 0,84), de modo que la magnitud depende del método y no del dato. Sin equivalente europeo directo; sirve como diseño y para la estructura de rezagos de permisos en F3.
 - Paquete de replicación: no localizado (no se consultó el sitio de la editorial; la versión publicada puede tener archivo). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

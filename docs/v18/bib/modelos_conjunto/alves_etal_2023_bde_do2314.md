@@ -1,0 +1,8 @@
+### Alves, Broto, Gil y Lamas (2023). Indicadores de riesgos y vulnerabilidades en el mercado de la vivienda en España
+- Clave: alves_etal_2023_bde_do2314 · DOI: 10.53479/33154 (Crossref comprobado 2026-10-20) · Revista o serie: Banco de España, Documentos Ocasionales n.º 2314 (2023) · Licencia de la versión abierta: CC BY-NC-SA 4.0 según OpenAlex; el PDF permite reproducir sin ánimo de lucro citando la fuente
+- Enlace abierto: https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/23/Fich/do2314.pdf · Leído: solo resumen e introducción (PDF p. 5-8); no se leyó la metodología del indicador sintético · sha256 del PDF: b231e8142ea7
+- Pregunta: ¿Cómo identificar pronto los riesgos del mercado de la vivienda en España? Datos: batería de indicadores individuales (valoración, crédito, oferta y demanda) del Banco de España e INE. Diseño: mapa de riesgos por indicador y un indicador sintético que resume su intensidad y composición. Identificación: ninguna; indicadores de alerta temprana.
+- Resultado principal. Tanto el mapa de riesgos como el indicador sintético sugieren que, en los últimos meses de la fecha del documento, se producía una cierta reversión de las vulnerabilidades que se acumulaban desde 2021. Unidad: índice sintético (escala 0-1 según V17); sin valor numérico en el resumen.
+- Limitaciones y validez externa para España: Indicador compuesto, no estimación; sin intervalos. El indicador sintético es la referencia que usa el IEF posterior (2025-2026). Útil como comparación de F1, no como elasticidad.
+- Paquete de replicación: no (indicadores públicos; sin código)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

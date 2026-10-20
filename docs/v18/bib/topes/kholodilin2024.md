@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: dirección del efecto por variable de resultado. Según el resumen: el control frena el crecimiento de las rentas de las viviendas sujetas, pero tiene un rango amplio de efectos adversos sobre el conjunto de la sociedad. Breuillé et al. (2025, informe de APUR) citan 112 estudios entre 1967 y 2023 en la versión publicada. No hay estimador común ni error típico.
 - Limitaciones y validez externa para España: revisión no ponderada por calidad de identificación; mezcla controles de primera, segunda y tercera generación; sirve como mapa y no como magnitud.
 - Paquete de replicación: no aplica (revisión). El metaestudio de HouseInc D3.3 del mismo autor (Zenodo 10.5281/zenodo.18432023, CC BY 4.0, 211 páginas) está guardado como data/bib/pdf/kholodilin2026hi.pdf (sha256 7d592575d79e) y no se ha leído en profundidad.
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

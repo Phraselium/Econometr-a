@@ -1,0 +1,21 @@
+{
+  "rama": "v18-bib",
+  "pregunta": "ayudas (E4); tipos (E7); fiscalidad (E8); no_residentes (E9); modelos_conjunto (F)",
+  "capa": "C4",
+  "datos": "docs/v18/bib/{ayudas,tipos,fiscalidad,no_residentes,modelos_conjunto}/ (83 fichas y 5 resumen.md); 70 PDFs en data/bib/pdf; 2 paquetes de datos en data/bib/replicacion (altavilla2019, jarocinski_karadi2020); sha256 en data/bib/CHECKSUMS.sha256",
+  "N": 83,
+  "metodo": "revisión de literatura",
+  "estimacion": null,
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "fichas_por_factor": {"ayudas": 18, "tipos": 15, "fiscalidad": 17, "no_residentes": 13, "modelos_conjunto": 20},
+    "con_PDF": 70,
+    "solo_resumen_sin_PDF": 13,
+    "doi_comprobados_en_crossref": "todos los DOI citados en las fichas se contrastaron con Crossref el 2026-10-20 (un DOI escrito de memoria resultó erróneo y se corrigió)",
+    "estado_de_todas_las_fichas": "NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py, no ejecutado)"
+  },
+  "fuera_muestra": null,
+  "notas": "Falta y por qué. (1) Sin ninguna evaluación cuasi experimental española de ayudas a la demanda (Bono Alquiler Joven, avales) ni del ITP: el efecto para España saldría solo de estudios extranjeros y debe rotularse así. (2) Sin versión abierta accesible: Fack 2006, Eriksen y Ross 2015, Eerola y Lyytikäinen 2021, Best y Kleven 2018, Pavlov et al., Howell et al., Martínez-Toledano et al. 2025 (golden visa en España, SSRN 5276559; solo resumen de Crossref y debe leerse completo), Mora-Sanguinetti y Rubio 2014, Kholodilin 2025. Sin ficha por no tener copia abierta ni resumen: Hülsewig y Rottmann 2021, Slemrod et al. 2017, Davidoff y Leigh 2013, Laferrère y Le Blanc 2004, Gallin 2006, Holly et al. 2010, Mikhed y Zemčík, Favilukis y Van Nieuwerburgh 2021, Refayet 2026. (3) Paquetes de replicación: solo dos, ambos sin licencia declarada y solo en local (EA-MPD del BCE, con aviso legal que permite uso citando la fuente; choques de Jarociński y Karadi, repositorio de actualización sin LICENSE). Los depósitos de la AEA en openICPSR (Jarociński y Karadi E231538V1, Eriksen y Ross E114569V1, Collinson y Ganong E114645V1, Kopczuk y Munroe E114591V1) existen pero openICPSR devuelve 403 desde el proxy. (4) Hosts bloqueados por el proxy (403): repositorio.bde.es, banque-france.fr por curl (se obtuvo con WebFetch), SSRN, openICPSR, Wiley, ScienceDirect, HAL. Los PDF del Banco de España se obtuvieron en www.bde.es con rutas heredadas. (5) OpenAlex limitó las búsquedas por texto (HTTP 429): la búsqueda sistemática se hizo con Crossref, OpenAlex por DOI y búsquedas web; no se descartó ningún estudio por exceder el tope de 15 nuevas por factor. (6) Gibbons y Manning, Susin y Collinson y Ganong se leyeron en versión de trabajo; las cifras de las versiones publicadas pueden diferir. (7) No se localizó ninguna estimación del Banco de España o del BCE con sorpresas de alta frecuencia sobre precios de la vivienda en España; lo más cercano es San Juan (BVAR, +100 pb: precio ≈ −2 % a 8 trimestres)."
+}

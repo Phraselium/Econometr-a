@@ -5,4 +5,4 @@
 - Resultado principal. Un aumento del 30% del crédito genera unas 6 viviendas de renta baja más sobre una base de 9 por tracto (resumen). Ingresos: −5% de la renta mediana en barrios cerca del percentil 30 (resumen); tabla 9, p. 43 del PDF: −0,054 (error 0,038) en el log de renta mediana por centenar de unidades LIHTC en el anillo de 0-1 km. Efecto sobre la cantidad de vivienda (tabla 11, p. 45): total 0,161 (0,186) a 0-1 km y 0,211 (0,084) a 0-1,5 km. Los autores indican desplazamiento casi completo en la sección 6 y que los promotores eligen barrios en proceso de gentrificación. Unidad: variación logarítmica y viviendas por unidad LIHTC. Esta versión de 2007 difiere de la publicada (V16: desplazamiento solo en barrios en gentrificación).
 - Limitaciones y validez externa para España: EE. UU. y el programa LIHTC (créditos fiscales, no vivienda pública directa); las cifras del borrador no son las de la edición publicada.
 - Paquete de replicación: no (buscado en la web del autor y de la revista; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: DISCREPANTE (año (2007 frente a 2009))

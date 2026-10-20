@@ -5,4 +5,4 @@
 - Resultado principal (tabla 1, p. 10 del PDF): media ponderada de la correlación parcial de 0,008 en la muestra completa (IC 95% 0,002; 0,015); para España 0,111 (IC 95% 0,024; 0,198), con 6 estudios y 71 estimaciones; Reino Unido −0,042 (−0,091; 0,006); Suiza 0,029 (−0,013; 0,072). Unidad: correlación parcial entre inmigración y precio de la vivienda (no un % por punto). Tabla 4: efecto más del doble a escala provincial o estatal que a escala de ciudad; las actitudes más favorables aumentan el efecto.
 - Limitaciones y validez externa para España: la correlación parcial no es convertible en % por punto sin las desviaciones típicas de los estudios; mezcla estudios con y sin instrumento. Es útil para saber dónde cae el resultado español respecto a los demás (alto) y por la escala (provincia frente a ciudad).
 - Paquete de replicación: no (buscado en IZA y en la web de Deakin; embargo del archivo publicado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)

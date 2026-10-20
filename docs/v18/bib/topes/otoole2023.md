@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: puntos porcentuales de crecimiento de la renta. Resumen: moderación de entre 2 y 5 puntos porcentuales en las zonas; uso bajo de las exenciones (oferta nueva, mantenimiento, eficiencia energética). Sin errores típicos leídos.
 - Limitaciones y validez externa para España: la designación por inflación y nivel de renta se parece a las zonas tensionadas de la Ley 12/2023, por lo que la selección del tratamiento es endógena a la tendencia previa; el efecto es en puntos de crecimiento y no en nivel, y no es comparable con los −4 % a −6 % de nivel de Cataluña.
 - Paquete de replicación: no (se buscó en DataCite).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

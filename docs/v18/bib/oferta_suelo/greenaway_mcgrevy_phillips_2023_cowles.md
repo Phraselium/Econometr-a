@@ -5,4 +5,4 @@
 - Resultado principal (texto, p. 3 y p. 14 del PDF): 21.808 viviendas permitidas de más en los cinco años siguientes a la reforma, equivalentes al 4,11% del parque de la región, con la tendencia lineal extrapolada como contrafactual; el efecto se mantiene bajo desbordamientos (conjunto de contrafactuales). Unidad: % del parque de viviendas, acumulado en cinco años. Sin error típico leído (figura 13 con intervalos al 95%). La cifra de 5,07% citada en V16 no figura en esta copia.
 - Limitaciones y validez externa para España: Nueva Zelanda, sin equivalente europeo; la reforma amplía la altura en suelo ya urbano. Mide permisos, no viviendas terminadas ni alquileres. Como diseño es transferible a reformas autonómicas de planeamiento.
 - Paquete de replicación: no (buscado en Cowles, el repositorio de Southampton y Auckland; no localizado en esta sesión). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

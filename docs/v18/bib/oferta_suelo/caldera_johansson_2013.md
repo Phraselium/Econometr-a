@@ -5,4 +5,4 @@
 - Resultado principal: la oferta es más flexible en América del Norte y algunos países nórdicos y más rígida en Europa continental y el Reino Unido; la respuesta depende de la regulación del suelo y la planificación (resumen). No he podido leer la cifra para España ni la tabla: no se da. Unidad: elasticidad precio a largo plazo de la oferta nueva.
 - Limitaciones y validez externa para España: sin lectura del texto no puedo decir si incluye a España ni con qué cifra. El diseño es de asociación; el uso para F3 depende de leer la tabla. Pendiente de bajar el PDF desde un navegador.
 - Paquete de replicación: no (buscado en OCDE; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

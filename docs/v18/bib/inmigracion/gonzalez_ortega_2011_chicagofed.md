@@ -5,4 +5,4 @@
 - Resultado principal. Elasticidad del precio respecto a la población en edad de trabajar (tabla 4, p. 30 del PDF): con ambos instrumentos, 0,866 (error 0,803) en 2001-2010 y 0,997 (error 0,424, p < 0,05) en 2001-2008; con redes solas, 0,959 (0,984) y 0,927 (0,596). Elasticidad de la cantidad construida: 1,05 (0,578, p < 0,1) y 0,986 (0,491, p < 0,05) con ambos instrumentos. Resumen: entrada anual media del 1,5% de la población en edad de trabajar, aumento anual del precio entre 1,5 y 2,3%, y de las viviendas entre 1,2 y 1,5%; en torno al 25% del aumento de precios y el 60% del parque. Unidad: elasticidad (log-log).
 - Limitaciones y validez externa para España: las elasticidades de precio solo son significativas antes de la caída (2001-2008); con 2009-2010 se pierde la significatividad. Instrumento de redes con base en 1991. Las cifras agregadas dependen de supuestos de extrapolación.
 - Paquete de replicación: no (buscado en la web de la Fed de Chicago, IZA y UPF; ninguno localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)

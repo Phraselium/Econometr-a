@@ -1,0 +1,8 @@
+### Pavlov, Somerville y Wetzel (2023). Foreign buyer taxes and housing affordability
+- Clave: pavlov_somerville_wetzel_2023 · DOI: 10.1111/1540-6229.12468 (Crossref comprobado 2026-10-20) · Revista o serie: Real Estate Economics 52(3), 928-950 · Licencia de la versión abierta: CC BY-NC-ND 4.0 según Crossref y OpenAlex; los repositorios abiertos (UBC cIRcle, Wiley) devolvieron 403 o bloqueo desde el entorno
+- Enlace abierto: https://doi.org/10.1111/1540-6229.12468 · Leído: solo resumen (resumen de Crossref) · sha256 del PDF: sin PDF
+- Pregunta: ¿Mejora el impuesto a compradores extranjeros la asequibilidad? Datos: transacciones con identificación directa de compradores extranjeros en Columbia Británica, con el impuesto de agosto de 2016. Diseño: diferencias en diferencias entre barrios de alta y baja concentración de compradores extranjeros antes y después del impuesto.
+- Resultado principal. Los precios bajan un 6 % en barrios con concentración de compradores extranjeros por encima de la mediana frente a los de por debajo; la cuota de compradores extranjeros pasa del 13,2 % de las transacciones de viviendas unifamiliares en las 6 semanas previas al anuncio al 1,7 % en los 3 meses posteriores. Unidad: % de precio de los barrios de alta frente a baja concentración. Sin error leído.
+- Limitaciones y validez externa para España: Mide un efecto relativo entre barrios; no concluye que mejore la asequibilidad general. Sin texto no se puede dar la magnitud absoluta.
+- Paquete de replicación: no (no localizado; ver la nota del resumen del factor)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

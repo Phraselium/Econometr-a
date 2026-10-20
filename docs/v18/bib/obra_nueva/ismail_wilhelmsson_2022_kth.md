@@ -5,4 +5,4 @@
 - Resultado principal (según el resumen): efecto limitado sobre la proporción de residentes con estudios superiores y de jóvenes, y efecto positivo sobre la renta y la asequibilidad. Sin cifras, errores ni tablas leídas. Unidad: no consta.
 - Limitaciones y validez externa para España: solo el resumen; no mide alquileres cercanos sino composición del vecindario y asequibilidad; la definición de tratamiento no se ha comprobado. Estudio de contexto europeo.
 - Paquete de replicación: no (buscado en DiVA y IDEAS; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: DISCREPANTE (título, año (2022 frente a 2024))

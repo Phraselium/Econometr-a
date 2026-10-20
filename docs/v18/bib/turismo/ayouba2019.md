@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: efecto de la densidad de Airbnb sobre el alquiler (sin cifra en el resumen). Resumen: presión al alza en Lyon, Montpellier y París y efecto no significativo en las demás ciudades; mayor efecto con anuncios profesionales (Marsella y París) y con contratos nuevos (París, Marsella, Montpellier). Sin coeficientes ni errores típicos leídos.
 - Limitaciones y validez externa para España: asociación sin instrumento; el efecto crece con el porcentaje de propietarios y baja con la densidad hotelera.
 - Paquete de replicación: no (no se buscó más allá de DataCite y HAL).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

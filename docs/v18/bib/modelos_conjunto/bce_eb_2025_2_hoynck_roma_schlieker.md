@@ -1,0 +1,8 @@
+### Höynck, Roma y Schlieker (2025). Developments in the recent euro area house price cycle
+- Clave: bce_eb_2025_2_hoynck_roma_schlieker · DOI: sin DOI · Revista o serie: Boletín Económico del BCE, n.º 2/2025, artículo 1 · Licencia de la versión abierta: aviso legal del BCE: uso libre citando la fuente (sin licencia abierta nominal)
+- Enlace abierto: https://www.ecb.europa.eu/press/economic-bulletin/articles/2025/html/ecb.ebart202502_01~2f59dafb26.en.html · Leído: solo resumen (lectura parcial de la página HTML: sobrevaloración y métodos); no se leyó el apartado final de 2.750 caracteres · sha256 del PDF: sin PDF
+- Pregunta: ¿Qué muestra el ciclo reciente de precios de la vivienda del área del euro y cuánto se desvía de su valoración? Datos: agregados del área del euro y de países hasta el tercer trimestre de 2024. Diseño: media de cuatro métodos de valoración (del panel de riesgos de la JERS) y medidas de precios reales. Identificación: ninguna.
+- Resultado principal. La sobrevaloración media de los precios de la vivienda a mediados de 2022 seguía por encima del 10 % (nota 12), media de los indicadores relevantes; las medidas de precios reales muestran un ajuste ya completado. El texto advierte de que las estimaciones son inciertas y difieren entre medidas. No da cifra ni método para España; España aparece solo como ejemplo de ciclo de auge y caída tras la adopción del euro. Unidad: % de sobrevaloración (media de cuatro métodos).
+- Limitaciones y validez externa para España: Área del euro agregada; sin España. Útil solo para comparar el orden de magnitud de las sobrevaloraciones.
+- Paquete de replicación: no (artículo del Boletín Económico; sin código)
+- Estado: NO VERIFICADA (sin DOI)

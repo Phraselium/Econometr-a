@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: % de variación de la renta. Resumen: −3,7 % a −4,2 % en París; efecto mayor en apartamentos pequeños; límite superior si todos cumplieran el tope: −8,2 % a −8,7 %; sin descenso de la oferta (nuevos anuncios) atribuible al control. Errores típicos no leídos en el artículo (en el informe de APUR: −5,0 %, error típico 0,007 del coeficiente en logaritmos, con otro periodo).
 - Limitaciones y validez externa para España: dos versiones con periodos y resultados distintos (informe 2025 con datos hasta junio de 2024: −5,0 %; artículo hasta junio de 2023: −3,7 % a −4,2 %); anuncios de portal y no contratos.
 - Paquete de replicación: no (datos de SeLoger comerciales; se buscó en DataCite y Zenodo).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

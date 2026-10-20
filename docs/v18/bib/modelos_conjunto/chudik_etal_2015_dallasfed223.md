@@ -1,0 +1,8 @@
+### Chudik, Mohaddes, Pesaran y Raissi (2016). Long-run effects in large heterogeneous panel data models with cross-sectionally correlated errors (herramienta)
+- Clave: chudik_etal_2015_dallasfed223 · DOI: 10.1108/s0731-905320160000036013 (edición publicada, Advances in Econometrics 36, 85-135; Crossref comprobado 2026-10-20) · Revista o serie: Federal Reserve Bank of Dallas, Globalization and Monetary Policy Institute Working Paper n.º 223 (enero de 2015) · Licencia de la versión abierta: no declarada en el PDF; descarga libre en la web de la Reserva Federal de Dallas
+- Enlace abierto: https://www.dallasfed.org/~/media/documents/institute/wpapers/2015/0223.pdf · Leído: solo resumen (PDF p. 2) · sha256 del PDF: 5415617bf305
+- Pregunta: Herramienta (no estudio empírico): estimación de efectos de largo plazo en paneles dinámicos heterogéneos grandes con errores correlacionados entre unidades. Diseño: estimador CS-DL (retardos distribuidos aumentados por sección cruzada), comparado con ARDL en simulaciones de Monte Carlo.
+- Resultado principal. El estimador CS-DL es robusto a la mala especificación de la dinámica y a la correlación serial de los errores, a diferencia de los estimadores tipo ARDL, y su rendimiento es a menudo superior cuando T está entre 30 y 100. Unidad: no aplicable (propiedades de un estimador).
+- Limitaciones y validez externa para España: Es la referencia de la herramienta que V18 propone para F1 (CS-ARDL/CS-DL). Debe validarse por Monte Carlo en nuestras dimensiones (50 provincias y T de 30 a 40 años) antes de usarse.
+- Paquete de replicación: no (el código de los autores no se encontró en abierto)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

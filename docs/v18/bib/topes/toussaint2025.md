@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: sin cifras leídas. Resumen de la ERES: el control de Lille eleva las rentas de las viviendas más grandes, reduce los retornos de capital de todas y eleva los retornos por alquiler de las más grandes. Sin coeficientes ni errores típicos.
 - Limitaciones y validez externa para España: documento de congreso sin estimaciones extraídas; el mecanismo de expectativas de los inversores es relevante para E10 (grandes tenedores) y E2. No puede usarse como cifra.
 - Paquete de replicación: no (se buscó en DataCite y Zenodo).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

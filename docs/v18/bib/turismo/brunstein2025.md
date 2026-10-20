@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: elasticidad (% de precio por 1 % de anuncios). Resumen: +1 % de anuncios → +0,21 % en el precio medio; mayor en municipios interiores y en destinos costeros menos desarrollados. Sin error típico.
 - Limitaciones y validez externa para España: isla con alta presión turística, comparable a Baleares o Canarias en estructura, no a las grandes ciudades; sin texto, la identificación y los supuestos de exclusión son desconocidos.
 - Paquete de replicación: no (no se buscó más allá de DataCite y HAL).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

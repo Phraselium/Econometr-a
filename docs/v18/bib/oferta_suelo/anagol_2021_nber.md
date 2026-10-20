@@ -5,4 +5,4 @@
 - Resultado principal (resumen y tabla 5, p. 49 del PDF): a largo plazo, +1,9% del parque y −0,5% del precio; permisos de edificios multifamiliares +65% en manzanas con más densidad permitida (texto, p. 36); unidades en venta +10% (p. 5). Escenario «doble BAR»: nuevas unidades 0,343 del parque en el panel A. Unidad: % del parque y % del precio (resultados del modelo, no estimados directamente). Sin errores típicos leídos.
 - Limitaciones y validez externa para España: Brasil, sin equivalente europeo; cifras de equilibrio dependen del modelo. Las versiones del documento dan cifras distintas (V16 cita otras de junio de 2024). Solo diseño de referencia.
 - Paquete de replicación: no. El «data appendix» de la serie NBER (https://data.nber.org/data-appendix/w29440/) es un PDF descriptivo de 4 MB (data/bib/pdf/anagol_2021_nber_apendice.pdf) y un readme; sin código ni datos.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

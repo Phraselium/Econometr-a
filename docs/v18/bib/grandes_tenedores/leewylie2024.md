@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: tasa de aumento de la renta respecto de la media; sin coeficientes leídos. Resumen: los inversores suben la renta a tasas un 60 % mayores que el aumento medio al adquirir la vivienda; una mayor cuota de inversores en el barrio se correlaciona con subidas más rápidas de renta de los demás arrendadores; sin evidencia de gentrificación.
 - Limitaciones y validez externa para España: asociación; el resultado de «60 % mayores» es una comparación descriptiva con la media y no un efecto causal. Incluido como contexto de comportamiento de fijación de rentas.
 - Paquete de replicación: no (se buscó en DataCite).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

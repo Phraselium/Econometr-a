@@ -5,4 +5,4 @@
 - Resultado principal (tabla 5, p. 32 del PDF): coeficiente 0,268 (error 0,012) sin efectos de estado y 0,369 (0,012) con ellos; los autores rechazan 0 y 1 y lo leen como tres viviendas subsidiadas que añaden una al parque total y desplazan dos privadas (resumen: «three government-subsidized units displace two units»). Unidad: viviendas totales por vivienda subsidiada (1 menos el coeficiente es el desplazamiento, 0,63 a 0,73). Menos desplazamiento en mercados mayores.
 - Limitaciones y validez externa para España: EE. UU. (validez externa limitada); asociación transversal con controles, sensible a la demanda no observada. La versión publicada de 2005 da una cifra distinta (V16: una adición neta de un tercio a la mitad).
 - Paquete de replicación: no (buscado en la serie NBER; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

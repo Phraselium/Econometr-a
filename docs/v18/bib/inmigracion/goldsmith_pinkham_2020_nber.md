@@ -5,4 +5,4 @@
 - Resultado principal (metodológico): el IV de Bartik equivale a un diseño de exposición cuyo supuesto es la exogeneidad de las cuotas; los pesos de Rotemberg muestran qué orígenes o industrias dominan la estimación (en la aplicación a inmigrantes, para los trabajadores con educación secundaria los pesos están casi completamente explicados por los flujos de inmigrantes, p. 7). Cifras: no recogidas (tablas 1-8 de las pp. 44-51 no leídas en detalle). Unidad: pesos de Rotemberg (suman 1 en el IV).
 - Limitaciones y validez externa para España: contrasta con Borusyak, Hull y Jaravel (identificación por los shocks). La réplica de E3 debe informar de ambos diagnósticos y declarar cuál supuesto sostiene.
 - Paquete de replicación: no localizado (no se consultó el sitio de la editorial; la versión publicada puede tener archivo). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: DISCREPANTE (año (2020 frente a 2018))

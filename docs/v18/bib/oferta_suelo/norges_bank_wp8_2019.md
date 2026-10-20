@@ -5,4 +5,4 @@
 - Resultado principal (tabla 3, p. 17 del PDF): log del precio 2,774 (error 0,428) en 1996-2006 y 1,794 (0,847) en 2012-2017; interacción con WRLURI −0,718 (0,096) y −1,086 (0,422); con UNAVAL −1,344 (0,340) y −1,225 (1,185). Las elasticidades han caído en toda la distribución y más donde ha aumentado la regulación. Unidad: elasticidad de las licencias respecto al precio.
 - Limitaciones y validez externa para España: EE. UU.; no hay una cifra de elasticidad única en la tabla (se calcula a partir del modelo). Documento de banco central que enlaza la oferta con la respuesta a la política monetaria, de interés para E7. Validez externa limitada.
 - Paquete de replicación: no (buscado en Norges Bank; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: DISCREPANTE (año (2019 frente a 2023))

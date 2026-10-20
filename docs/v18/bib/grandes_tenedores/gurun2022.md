@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: sin cifras leídas. Resumen: las rentas suben en los barrios solapados respecto de los no solapados y la delincuencia baja de forma significativa; los autores lo leen como poder de mercado más mejora de la calidad del servicio.
 - Limitaciones y validez externa para España: sin texto no se conocen tamaño ni errores típicos; el diseño de fusiones requiere datos de titularidad por barrio. Es el único diseño con variación exógena de cuota de mercado de arrendadores localizado.
 - Paquete de replicación: no (la fuente RFS anuncia un apéndice de internet, no datos; se buscó en DataCite).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

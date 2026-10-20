@@ -5,4 +5,4 @@
 - Resultado principal (tabla 4, p. 52 del PDF): coeficiente IV de Δ(extranjeros/población) sobre Δ log valor medio de −0,214 (error 0,054) con el control del stock inicial y los tres instrumentos; −0,346 (0,082) en la columna 1. OLS (tabla 1, col. 2): −0,246 (0,015). Unidad: Δ log del valor por cada unidad de variación de la cuota de extranjeros (un punto de cuota ≈ −0,2 p. p. de crecimiento del valor). El valor de la vivienda crece más despacio donde crece la inmigración.
 - Limitaciones y validez externa para España: EE. UU. y escala de barrio; los autores atribuyen el efecto a preferencias de segregación por raza y educación, no a ser extranjero. Escala opuesta a la provincial: no mezclar con González y Ortega. Para V18 solo es relevante en el diseño por barrios; validez externa limitada.
 - Paquete de replicación: no (buscado en la serie de la Fed de Filadelfia y la web de los autores; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: DISCREPANTE (año (2006 frente a 2011))

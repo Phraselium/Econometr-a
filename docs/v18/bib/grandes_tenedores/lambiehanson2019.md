@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: puntos básicos de crecimiento de la renta por punto porcentual de aumento neto de compradores institucionales (Tabla 8, p. 18): +4,6 puntos básicos en el crecimiento del índice de renta real; la compra y venta institucional explica el 36 % de los cambios en el crecimiento de la renta en la muestra; sin efecto sobre los desahucios del condado. Efectos sobre precios y empleo en el resumen (sin cifras leídas aquí).
 - Limitaciones y validez externa para España: mercado de viviendas ejecutadas tras la crisis de 2008, con inversores de compra para alquilar (single-family rental); la exclusión del instrumento exige que la exposición a First Look no afecte a los precios más que por los inversores. Poco comparable con los grandes tenedores españoles (bancos, fondos y servicers de activos de la SAREB).
 - Paquete de replicación: no (datos de CoreLogic comerciales; se buscó en DataCite y Zenodo).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

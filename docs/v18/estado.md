@@ -12,8 +12,11 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 
 - 2026-10-20 · **Fase 0 cerrada.** V17 completa (check_v17 sin errores). Inventario de 103 variables (output/v18/f0/): E1, E2, E3, E5, E6 (piloto en València), E7, E8, E9 y F1-F3 replicables en parte; E4, E10, E11 y E12 NO ESTIMABLES con los datos actuales. Paneles provinciales con 39 provincias (11 selladas fuera). 14 tareas del autor al principio de docs/v18/tareas_autor.md.
 
+- 2026-10-20 · **Fase 1 (bibliografía).** Criterios fijados antes de buscar (docs/v18/bib/criterios.md). Tres bibliotecarios: 181 fichas en 13 factores (docs/v18/bib/), con tabla de efectos y unidad por factor. DOI verificados con el verificador de V15 (src/v18/f1_bibliografia.py; caché docs/v18/bib/crossref_cache.json): 125 VERIFICADAS, 45 NO VERIFICADAS (sin DOI o sin registro), 11 DISCREPANTES por versión de trabajo frente a publicada. Catálogo: output/v18/f1/. PDFs y paquetes solo en disco con sha256. Pendientes: repetir la búsqueda sistemática con OpenAlex (cuota agotada el 2026-10-20) y cuartiles Scimago (tarea del autor).
+  - Hallazgos: González y Ortega 2013 es 2000-2010 y «un cuarto» (el «un tercio» 1998-2008 es el IZA 2009); Monràs y García-Montalvo usan contratos del Incasòl, no anuncios (E2 pasa a replicable en principio); sin estudios con datos españoles en E10 y E11; única evidencia española con diseño en ayudas: Jiménez Zambrano y Pérez Asenjo (2026, deducción de 2011).
+
 ## Siguiente
-- Fase 1: bibliografía (grupos A y B en marcha; C después).
+- Fase 2: reproducción de los estudios con paquete de replicación (Mense, Asquith-Mast-Reed, Koster-van Ommeren, Chaves-Fonseca, Borusyak-Hull-Jaravel, Jarociński-Karadi y EA-MPD como datos).
 
 ## Subagentes y tokens
 
@@ -24,12 +27,13 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F0 | general-purpose | inventario de datos por estudio (E1-E12, F1-F3) y tareas del autor | 259.633 | src/v18/f0_inventario.py; output/v18/f0/; docs/v18/tareas_autor.md |
 | 2026-10-20 | F1 | bibliotecario | grupo B: inmigración, oferta y suelo, obra nueva, vivienda pública (47 fichas) | 470.079 | docs/v18/bib/{inmigracion,oferta_suelo,obra_nueva,vivienda_publica}/ |
 | 2026-10-20 | F1 | bibliotecario | grupo A: turismo, topes, grandes tenedores, vacías (51 fichas) | 550.339 | docs/v18/bib/{turismo,topes,grandes_tenedores,vacias}/ |
+| 2026-10-20 | F1 | bibliotecario | grupo C: ayudas, tipos, fiscalidad, no residentes, modelos de conjunto (83 fichas) | 610.266 | docs/v18/bib/{ayudas,tipos,fiscalidad,no_residentes,modelos_conjunto}/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 259.633 |
-| F1 | 1.020.418 |
+| F1 | 1.630.684 |
 
-Total V18: 1.280.051 tokens
+Total V18: 1.890.317 tokens
 
 <!-- fin subagentes -->

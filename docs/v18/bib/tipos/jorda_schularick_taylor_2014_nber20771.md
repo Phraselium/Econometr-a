@@ -1,8 +1,8 @@
 ### Jordà, Schularick y Taylor (2015). Betting the house
 - Clave: jorda_schularick_taylor_2014_nber20771 · DOI: 10.1016/j.jinteco.2014.12.011 (edición publicada, Journal of International Economics 96, S2-S18; Crossref comprobado 2026-10-20) · Revista o serie: NBER Working Paper n.º 20771 (diciembre de 2014); versión publicada en J. International Economics 2015 · Licencia de la versión abierta: © de los autores; NBER permite citar secciones breves con crédito (aviso del PDF)
 - Enlace abierto: https://www.nber.org/papers/w20771 · Leído: solo resumen (resumen del PDF) · sha256 del PDF: 4c680f8c01c1
-- Pregunta; datos; diseño; identificación: ¿Los tipos de interés bajos alimentan booms de crédito inmobiliario y precios, y estos aumentan el riesgo de crisis? Datos: economías avanzadas, 140 años. Diseño: proyecciones locales con variables instrumentales. Identificación: el trilema macroeconómico: con tipo de cambio fijo, los tipos a corto de un país siguen a los del país ancla, sin relación con su ciclo.
-- Resultado principal con su unidad: Una política monetaria laxa provoca booms de crédito hipotecario y precios de la vivienda, que elevan materialmente el riesgo de crisis financiera; ambos efectos son más fuertes en la posguerra (resumen). Unidad y error: no recuperados (sin tablas).
+- Pregunta: ¿Los tipos de interés bajos alimentan booms de crédito inmobiliario y precios, y estos aumentan el riesgo de crisis? Datos: economías avanzadas, 140 años. Diseño: proyecciones locales con variables instrumentales. Identificación: el trilema macroeconómico: con tipo de cambio fijo, los tipos a corto de un país siguen a los del país ancla, sin relación con su ciclo.
+- Resultado principal. Una política monetaria laxa provoca booms de crédito hipotecario y precios de la vivienda, que elevan materialmente el riesgo de crisis financiera; ambos efectos son más fuertes en la posguerra (resumen). Unidad y error: no recuperados (sin tablas).
 - Limitaciones y validez externa para España: Muestra histórica larga con régimen de tipo de cambio fijo como instrumento; no hay España separada. Contexto de signo del canal, no de magnitud para el periodo 2022-2026.
 - Paquete de replicación: no (buscado en NBER y en la página de la revista)
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

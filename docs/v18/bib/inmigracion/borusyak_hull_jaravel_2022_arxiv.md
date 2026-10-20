@@ -5,4 +5,4 @@
 - Resultado principal (metodológico, sin efecto de vivienda): coeficiente de −0,310 con error 0,134 en la columna 5 de la tabla 4, y −0,293 (0,125) en la columna 6 (p. 33 del PDF); unidad: efecto de las importaciones chinas sobre el empleo manufacturero como porcentaje de la población en edad de trabajar (texto, p. 25), según la aplicación de ADH. Sirve para fijar el procedimiento de inferencia y de diagnóstico (pesos de Rotemberg, prueba de sobreidentificación a nivel de shock) en E3; las cifras no se trasladan a vivienda.
 - Limitaciones y validez externa para España: con pocos orígenes de inmigración y cuotas iniciales concentradas, los supuestos de muchos shocks son más débiles; la inmigración tiene shocks (flujos por país) correlacionados con la demanda local.
 - Paquete de replicación: sí (data/bib/replicacion/borusyak_hull_jaravel_2022/: ADH.zip, Bartik_1991.zip, MonteCarlo.zip, ssaggregate.ado, README.md y LICENSE; licencia GPL-3.0 declarada en el repositorio https://github.com/borusyak/shift-share; sha256 en data/bib/CHECKSUMS.sha256; no se sube al repositorio).
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

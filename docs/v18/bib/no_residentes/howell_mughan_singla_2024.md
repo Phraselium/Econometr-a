@@ -1,0 +1,8 @@
+### Howell, Mughan y Singla (2024). Heterogeneous effects of a foreign buyer tax on house prices in New South Wales
+- Clave: howell_mughan_singla_2024 · DOI: 10.1093/jeg/lbae007 (Crossref comprobado 2026-10-20); versión de trabajo SSRN 10.2139/ssrn.4182731 · Revista o serie: Journal of Economic Geography 24(4), 495-509 · Licencia de la versión abierta: no abierta (editorial de pago); SSRN devuelve 403
+- Enlace abierto: https://doi.org/10.1093/jeg/lbae007 · Leído: solo resumen (resumen de Crossref de la versión publicada) · sha256 del PDF: sin PDF
+- Pregunta: ¿Cómo afecta un impuesto a compradores extranjeros a la distribución de precios? Datos: transacciones de Nueva Gales del Sur (Australia) con el recargo de 2016. Diseño: regresiones cuantílicas incondicionales con diferencias en diferencias.
+- Resultado principal. El impuesto reduce los precios solo entre las viviendas más caras de barrios deseables de Sídney y con alta proporción de nacidos en el extranjero; reduce también el volumen en esos barrios. La versión de trabajo de SSRN da, de media, ≈ −1 % de precios y ≈ −8 % de volumen frente a vecinos sin recargo (resumen de SSRN en Crossref, no verificado en la versión publicada). Unidad: % de precio y de volumen.
+- Limitaciones y validez externa para España: Efectos concentrados en el segmento alto; las cifras medias de la versión de trabajo y de la publicada pueden diferir. Validez externa para España: baja a media (el recargo español a no residentes no existe aún).
+- Paquete de replicación: no (no localizado; ver la nota del resumen del factor)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

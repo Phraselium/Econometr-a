@@ -5,4 +5,4 @@
 - Resultado principal (cifras de V16, lectura de la versión de agosto de 2021; no recontrastadas en V18): alquiler −1,2 a −2,3% a menos de 500 m de un proyecto nuevo respecto a la tendencia, y −17,14% de riesgo de desplazamiento a un código postal más pobre; la vivienda asequible no tiene efectos de contagio. Resumen secundario (CA YIMBY, 2020): alquiler −2% a 100 m y desplazamiento −17%. Unidad: % de variación del alquiler respecto a la tendencia y % de riesgo. Errores: no leídos.
 - Limitaciones y validez externa para España: una sola ciudad de EE. UU., con alquileres de anuncios; las dos versiones del documento llegan a conclusiones distintas sobre la gentrificación, de modo que hay que fijar la versión. Sin versión publicada localizada.
 - Paquete de replicación: no (buscado en la web de Berkeley, SSRN y búsqueda web; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)

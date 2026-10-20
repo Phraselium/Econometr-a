@@ -5,4 +5,4 @@
 - Resultado principal (tabla 4, p. 26 del PDF): coeficiente IV de ΔPoblación extranjera/Población previa sobre Δ log precio de −1,627 (error 0,366, con efectos fijos) y −1,717 (0,829, sin ellos); OLS −0,172 (0,036). Unidad: % de variación del precio por cada 1% de la población en entrada de extranjeros. Primera etapa (tabla 5): 0,866 con error 0,284 (t ≈ 3,0, calculado). El texto (p. 13) lo interpreta como −1,6 a −1,7%.
 - Limitaciones y validez externa para España: signo opuesto al de González y Ortega; el autor lo atribuye a la salida de nativos de renta alta y a áreas con inmigrantes poco cualificados. Primera etapa más débil que en otros estudios (t ≈ 3). Periodo 2004-2010 con el choque de 2008. Comparación con España limitada por las diferencias de parque de alquiler y de composición de la inmigración.
 - Paquete de replicación: no (LFS con licencia especial del UK Data Archive; no hay código público localizado en IZA ni en la web de la editorial). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: elasticidad del alquiler por m² respecto a los anuncios comerciales de Airbnb (log-log). Tabla 1, pp. 10-11: MCO 0,065 (0,008), 0,051 (0,006) y 0,109 (0,018) según controles y efectos fijos de distrito-año; instrumental 0,091 (0,021), 0,114 (0,021) y 0,205 (0,093); F de primera etapa 586,9, 384,2 y 69,7. Precios de venta: instrumental 0,290 (0,030), 0,149 (0,016), 0,326 (0,102). El texto dice que son magnitudes mayores que el 0,018 de Barron et al. (2021).
 - Limitaciones y validez externa para España: el resultado principal del artículo es de segregación y servicios, no de alquiler; la elasticidad del alquiler procede de una tabla descriptiva con instrumento compartido con otros trabajos; Ámsterdam tiene alquiler social y regulado, lo que limita la comparación con España.
 - Paquete de replicación: no (microdatos de CBS de acceso restringido; se buscó en DataCite, Zenodo y Dataverse).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

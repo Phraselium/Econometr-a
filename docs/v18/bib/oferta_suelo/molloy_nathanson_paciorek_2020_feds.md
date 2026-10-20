@@ -5,4 +5,4 @@
 - Resultado principal (introducción, p. 4 del PDF): los efectos de las restricciones sobre el alquiler son aproximadamente la mitad de los efectos sobre el precio y pequeños en términos absolutos; un área con regulación 2 desviaciones típicas más estricta de la media tuvo 7 puntos porcentuales más de crecimiento acumulado del alquiler en 35 años (menos de ¼ de punto al año). Modelo: el precio sube en torno a un 4% por la renta futura esperada (p. 12). Unidad: % acumulado de alquiler por 2 desviaciones típicas de regulación. Errores: no recogidos.
 - Limitaciones y validez externa para España: EE. UU.; asociación condicional, no un diseño con instrumento; los autores suponen que las áreas más reguladas en 2006 endurecieron más desde 1980. Los resultados implican que el efecto de las restricciones es mayor sobre precios de compra que sobre alquileres, relevante para E5 y E6.
 - Paquete de replicación: no localizado (no se consultó el sitio de la editorial; la versión publicada puede tener archivo). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

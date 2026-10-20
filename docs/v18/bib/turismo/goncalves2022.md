@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: coeficiente sobre el log del precio de vivienda (≈ variación relativa). Tabla 5, p. 27 del PDF: Tratada×Aplicación −0,087 (error típico 0,02), −0,124 (0,08) en el periodo de aprobación; viviendas de dos dormitorios −0,196 (0,10); tramo del 75 % superior −0,104 (0,03). Resumen: −8 % de precio en promedio y −20 % en viviendas de dos dormitorios. Anuncios de Airbnb y sus precios: sin efecto en el corto plazo (Tabla 6).
 - Limitaciones y validez externa para España: muestra pequeña (429 observaciones), pocos periodos previos para los anuncios, y un efecto sobre el precio de compra, no sobre el alquiler residencial. Es un caso de regulación por licencia comparable a las moratorias de PEUAT en Barcelona y de ciudades españolas, pero el resultado de valor de opción depende de que la licencia caduque con la venta, como en Portugal.
 - Paquete de replicación: no (se buscó en DataCite, Zenodo, Dataverse y la página del IZA).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

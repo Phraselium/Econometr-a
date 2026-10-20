@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: % de variación a 12 meses tras la entrada en vigor de la regulación. Según el resumen de INFORMS/IDEAS (no el texto): anuncios −9,0 %; permisos residenciales −11,0 %; unidades accesorias −16,5 % en la comparación de frontera. Sin errores típicos leídos.
 - Limitaciones y validez externa para España: no cuasi experimental en lo leído; sin texto. Interesa como vía por la que la regulación turística podría afectar a la oferta de vivienda.
 - Paquete de replicación: no localizado (el suplemento de INFORMS devolvió 403).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

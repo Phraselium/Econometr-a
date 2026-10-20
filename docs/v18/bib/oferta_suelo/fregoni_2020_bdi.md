@@ -5,4 +5,4 @@
 - Resultado principal (tabla 4, p. 22 del PDF, ventana 1999-2000 frente a 2003-2004): ingresos de urbanización 0,234 (error robusto 0,102); licencias totales 0,236 (0,128); licencias no residenciales 0,366 (0,201); licencias residenciales 0,031 (0,147), sin efecto. Tabla 3 (ventana 2001-2002): ningún efecto significativo. Unidad: diferencia de tasa de crecimiento por habitante (variable estandarizada por la media de los dos periodos). El efecto se concentra en el mercado no residencial.
 - Limitaciones y validez externa para España: mide uso no residencial y finanzas municipales, no vivienda; el umbral no corresponde a un cambio de planeamiento. Aporta el mecanismo de dependencia de la licencia como ingreso local, comparable con los ayuntamientos españoles. Estudio de contexto, no de oferta de vivienda.
 - Paquete de replicación: no (buscado en la serie de la Banca d'Italia; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (el DOI existe en doi.org, agencia mEDRA, sin metadatos comparables)

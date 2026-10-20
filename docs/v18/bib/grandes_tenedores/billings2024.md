@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: log del precio de venta (≈ variación relativa). Tabla 1, p. 18: NearXPost −0,0079 (error típico 0,0022), es decir −0,8 % en media; con la banda más cercana, −1,9 % dentro de 250 pies y −1,1 % entre 250 y 500 pies; −0,0105 (0,0024) con REIT frente a +0,0103 (0,0060) con no REIT. Resumen del autor: −2 % en los precios vecinos, con aumento de la delincuencia y menor mantenimiento.
 - Limitaciones y validez externa para España: externalidad local sobre el precio de las viviendas vecinas, no sobre rentas; el control, a 500-1.000 pies, puede estar tratado por otras compras; condado concreto de EE. UU.
 - Paquete de replicación: no (datos de registros del condado; se buscó en DataCite y la página del seminario).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

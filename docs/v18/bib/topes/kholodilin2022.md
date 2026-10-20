@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: sin cifras verificadas en esta pasada. Según la ficha de V15 (no releída aquí): la introducción baja las rentas en los municipios controlados y también en los no controlados, con poco cambio en cantidades de alquiler; los precios de venta no se mueven y la oferta en venta sube mucho; tras la derogación, rentas y precios de venta suben con fuerza en todos los municipios.
 - Limitaciones y validez externa para España: si la caída aparece también en municipios no regulados, el control no está limpio (interferencia entre unidades) y un DiD municipal con controles catalanes se sesga hacia cero, lo que es un motivo para elegir controles fuera de Cataluña; anuncios de Idealista, no contratos.
 - Paquete de replicación: no (se buscó en DataCite y en la serie de DIW; datos de Idealista comerciales).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

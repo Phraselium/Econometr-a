@@ -1,0 +1,8 @@
+### Banco de España (2025). Informe Anual 2024, recuadro 4: Dinámicas recientes en el mercado de la vivienda
+- Clave: bde_ia2024_recuadros · DOI: sin DOI · Revista o serie: Banco de España, Informe Anual 2024, recuadros (publicado el 20-05-2025 según V17) · Licencia de la versión abierta: no declarada; el Banco de España permite reproducir citando la fuente (aviso general)
+- Enlace abierto: https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesAnuales/InformesAnuales/24/Fich/InfAnual_2024_Recuadros.pdf · Leído: solo resumen (más el apartado de demanda de no residentes, PDF p. 12; el resto del recuadro según V17) · sha256 del PDF: 7f20faa6c7b9
+- Pregunta: ¿Cómo ha evolucionado la demanda de vivienda, incluida la de no residentes? Datos: indicadores de INE, Catastro, Ministerio de Transportes, Registradores, AEAT y Panel de Hogares. Diseño: descriptivo.
+- Resultado principal. Las adquisiciones de no residentes se sitúan en torno a las 60.000 viviendas al año desde 2022 y supusieron el 8,4 % del total en 2024, con proporciones más altas en las islas y la costa mediterránea. El número de viviendas propiedad de extranjeros no residentes superaría el medio millón (2 % del parque), con ratios de en torno al 11 % en Alicante y al 8,5 % en Málaga (PDF p. 12). Creación neta de hogares de 180.000 en 2024 y de unos 245.000 al año en 2022-2023. Unidad: viviendas al año y % del total.
+- Limitaciones y validez externa para España: Descriptivo. La cifra de 2024 (8,4 %) y la de 2025 (7,4 %, Informe Anual 2025) vienen de definiciones distintas de la base (anuales y compras por provincia) y no deben leerse como una tendencia sin alinear el denominador.
+- Paquete de replicación: no (datos públicos; sin código)
+- Estado: NO VERIFICADA (sin DOI)

@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: % de variación acumulada entre 2024 T1 y 2025 T4. Precio medio del alquiler: Barcelona y Cataluña +5,7 %, Madrid +8,5 %, España +10,8 %; las cuatro provincias catalanas entre +3,1 % y +5,7 % (Tabla 3). Oferta de anuncios: Barcelona −22,2 %, Cataluña −20,5 %, Madrid +3,9 %, resto de España sin Cataluña −7,0 % (Tabla 4). Contactos por anuncio en 2025 T4: 462 en Barcelona frente a 103 en Madrid. Sin errores típicos ni intervalos.
 - Limitaciones y validez externa para España: no controla por composición ni por tendencias previas, de modo que la brecha entre territorios no es un efecto causal; la caída de oferta de anuncios puede reflejar cambios de canal o de publicación. Sirve para saber que existen series trimestrales de anuncios por provincia y ciudad para la réplica E2 de 2024.
 - Paquete de replicación: no (documento descriptivo; no declara paquete).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: NO VERIFICADA (sin DOI)

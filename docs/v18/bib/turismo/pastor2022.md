@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: variación porcentual del alquiler por cada anuncio de Airbnb en el barrio; elasticidad en el modelo logarítmico. Cuadro 5, p. 82: modelo común (2) 0,0000871 (error típico 0,0000244), es decir +0,87 % por cada 100 anuncios; con efectos fijos de distrito (3): 0,0000821 (0,0000272), +0,82 % por 100 anuncios; por ciudad (4): València 0,000364 (0,0000738), Barcelona 0,0000797 (0,0000284), Madrid 0,0000781 (0,0000289). Cuadro 6, p. 83: elasticidad 0,057 (0,0061) en el modelo común y 0,0577 en València; R² ajustado de 0,68 a 0,70.
 - Limitaciones y validez externa para España: es la única evidencia de València en la lista, pero es una asociación de corte transversal en 2021; los propios autores no rechazan que las tres ciudades tengan el mismo efecto (p-valor de 0,141 en la prueba de igualdad). No hay control de la selección de barrios turísticos ni pretendencias.
 - Paquete de replicación: no (se buscó en la web de la Cátedra MESVAL, DataCite y Zenodo).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: NO VERIFICADA (el DOI existe en doi.org, agencia mEDRA, sin metadatos comparables)

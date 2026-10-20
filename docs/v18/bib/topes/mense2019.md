@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: coeficiente sobre el log de la renta. Tabla 4, p. 28: viviendas nuevas (segmento no regulado) +0,038 (error típico 0,015) con efectos fijos de año; +0,033 (0,018) con tendencia B-spline; viviendas existentes de 2 a 10 años −0,018 (0,006) y −0,023 (0,009). Tabla 2, p. 22: segmento regulado −0,033 (0,016) y −0,036 (0,007) en códigos postales con regulación vinculante.
 - Limitaciones y validez externa para España: efecto de corto plazo; las rentas son anunciadas; el aumento en el segmento libre está en línea con la teoría de la mala asignación, y en España existen segmentos libres (obra nueva y grandes tenedores en la Ley 12/2023), por lo que la predicción es comprobable con datos de municipios próximos. La versión publicada puede diferir del documento de trabajo de 2019.
 - Paquete de replicación: no (se buscó en DataCite, Zenodo y Dataverse; los datos son de empirica y no redistribuibles).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

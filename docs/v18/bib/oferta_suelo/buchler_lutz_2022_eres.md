@@ -5,4 +5,4 @@
 - Resultado principal: subir la edificabilidad de una parcela un 20% o más eleva la superficie habitable un 13% en los diez años siguientes (resumen, p. 1); en rásteres de 100 m (tabla 3, p. 31 del PDF) el coeficiente de la variable binaria es 0,066 (error 0,018) y 0,095 (0,030) con el estimador doblemente robusto, sobre el cambio logarítmico a cinco años de los m² habitables. Alquileres (tabla 4, p. 32): −0,005 (error 0,003) y −0,010 (0,018) con doble robustez, sin diferencia relevante frente a parcelas no tratadas. Unidad: variación logarítmica de la superficie y del alquiler hedónico por m².
 - Limitaciones y validez externa para España: un solo cantón suizo rico; el efecto de oferta es local y no mide el efecto sobre alquileres de toda la ciudad (el modelo predice que se reparte). Documento de congreso sin revisión por pares visible en esta copia. Útil como diseño europeo de upzoning para F3.
 - Paquete de replicación: no (buscado en ERES y la web de los autores; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)

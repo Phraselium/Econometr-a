@@ -5,4 +5,4 @@
 - Resultado principal: las áreas más reguladas están en las dos costas (San Francisco y Nueva York las más reguladas); tras la crisis financiera ningún mercado muy regulado se desreguló de forma apreciable y la regulación aumentó en la mayoría de los grandes mercados costeros (resumen). Unidad: índice de regulación (no se reproducen valores). Sin errores.
 - Limitaciones y validez externa para España: EE. UU. y descriptivo; sirve de referencia para construir un índice de restricciones en España; no se ha localizado uno a escala provincial.
 - Paquete de replicación: sí, solo apéndice de datos anunciado en el documento (http://www.nber.org/data-appendix/w26573); no se ha descargado ni comprobado su licencia.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

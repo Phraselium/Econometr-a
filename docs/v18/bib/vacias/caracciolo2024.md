@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: puntos porcentuales de vacancia. Según el resumen de buscador y la ficha de V16 (no verificadas contra el PDF): −1,5 puntos porcentuales de vacancia, equivalentes a 5.355 viviendas vacías menos; sin efecto significativo sobre la construcción nueva ni sobre la renta media. No se leyeron errores típicos.
 - Limitaciones y validez externa para España: ciudad con vacancia y precios distintos de la media española; el tipo del 1 % al 3 % del valor catastral no es comparable con el recargo español del IBI; con solo el resumen no puede usarse como cifra.
 - Paquete de replicación: no (no localizado; se buscó en la página del editor y en DataCite).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: NO VERIFICADA (sin DOI)

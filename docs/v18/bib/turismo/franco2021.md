@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: % de variación del precio por punto porcentual de cuota de Airbnb. Resumen de IDEAS (no el texto): +1 punto porcentual de cuota municipal de Airbnb → +3,7 % en precios de vivienda; en Lisboa y Oporto, +1 punto de cuota en la parroquia → +3,2 %; la parroquia de alto turismo sube un 24,3 % en 2015 y un 32,3 % en el primer trimestre de 2016 respecto a una de bajo turismo. Sin errores típicos leídos.
 - Limitaciones y validez externa para España: no se ha leído el texto; no se conoce el instrumento ni los supuestos; el resumen habla de «asociación» en los municipios. Se mantiene como referencia ibérica para contrastar con Lisboa (goncalves2022).
 - Paquete de replicación: no (se buscó en DataCite y en el repositorio RUN; no localizado).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

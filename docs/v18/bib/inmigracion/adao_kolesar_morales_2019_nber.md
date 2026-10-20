@@ -5,4 +5,4 @@
 - Resultado principal (tabla 1, p. 8 del PDF): con la variable «tasa de empleo de la zona», los errores típicos robustos rechazan la nula (5%) en el 49,1% de los placebos y los agrupados por estado en el 38,3%; los errores típicos robustos y agrupados son, de media, un 41% y un 30% menores que la desviación real. Unidad: tasa de rechazo al 5% (debería ser 5%).
 - Limitaciones y validez externa para España: justifica usar inferencia AKM o BHJ en el análisis de E3 con 50 provincias; el tamaño del problema depende de la estructura de cuotas (aquí, de muchos sectores, no de pocos orígenes); sin evidencia en datos españoles.
 - Paquete de replicación: no del artículo; existe el paquete de R ShiftShareSE (https://github.com/kolesarm/ShiftShareSE) que implementa los intervalos AKM y trae los datos de ADH; licencia por confirmar en su fichero DESCRIPTION (la página no la muestra). No descargado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

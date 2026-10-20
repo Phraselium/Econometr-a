@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: % de variación del alquiler en el contrafactual sin Airbnb. Reasignación al alquiler corto: 0,68 % del parque de alquiler (viviendas disponibles más de 180 días en 2018); subida de alquileres resultante: 0,71 % en promedio (p. 29, con gran heterogeneidad); pérdida de bienestar de los inquilinos: 178 millones de dólares al año en esta versión. Sin error típico del 0,71 % en el texto leído.
 - Limitaciones y validez externa para España: efecto medio muy inferior a las estimaciones de García-López et al. (2020) para Barcelona; resultado estructural, dependiente de supuestos de elasticidad de oferta y de la definición de vivienda reasignada (más de 180 días); versiones posteriores dan otro bienestar (2.400 millones según el resumen de la web de la Wharton, no verificado).
 - Paquete de replicación: no (se buscó en la web de la Wharton, SSRN, DataCite y Zenodo).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

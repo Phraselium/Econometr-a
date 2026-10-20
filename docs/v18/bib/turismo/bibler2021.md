@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: log del precio de transacción (≈ variación relativa) y recuento de ejecuciones por sección-mes. Tabla 4, p. 41: Post×Tratada −0,053 (0,012) en precios (n = 147.997; 1.193 secciones); con interacción por densidad: −0,006 (0,001) por cada anuncio de Airbnb por 1.000 habitantes; ejecuciones: +0,059 (0,009) por sección-mes. Resumen: oferta y reservas de Airbnb −40 %; precios ≈ −10 % en las secciones más densas.
 - Limitaciones y validez externa para España: efecto sobre precios de compra de una política que redujo la oferta de Airbnb; se interpreta con la capitalización de los ingresos turísticos; no mide alquiler residencial. Ciudades con densidad de Airbnb por habitante distinta de las españolas.
 - Paquete de replicación: no (los datos de Zillow ZTRAX no son redistribuibles; se buscó en DataCite, Zenodo y Dataverse).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

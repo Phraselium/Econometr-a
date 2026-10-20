@@ -5,4 +5,4 @@
 - Resultado principal (tabla 2, p. 32 del PDF, panel A, col. 2): −0,147 (error 0,0448) en el crecimiento logarítmico del precio de las primeras viviendas, es decir, −15% de crecimiento (texto, p. 20), unos 12% menos de precio en niveles; paro +0,118 (0,0257), +12%. Segundas viviendas (tabla 3, col. 2): +0,256 (0,146), p < 0,1, +26%. F de Kleibergen-Paap de 1.619. Unidad: variación logarítmica; porcentaje de crecimiento del precio.
 - Limitaciones y validez externa para España: zonas turísticas de montaña con segundas viviendas y poco sustituibles por las primeras; el control de las segundas viviendas es un límite de oferta de tipo concreto. Aporta un diseño europeo con umbral y placebo. No equivale a un límite general de planeamiento.
 - Paquete de replicación: no (buscado en LSE y Bern/CRED; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

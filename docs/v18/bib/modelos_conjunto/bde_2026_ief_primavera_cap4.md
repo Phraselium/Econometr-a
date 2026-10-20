@@ -1,0 +1,8 @@
+### Banco de España (2026). Informe de Estabilidad Financiera, primavera de 2026, capítulo 4: Mercados y precios de los activos
+- Clave: bde_2026_ief_primavera_cap4 · DOI: sin DOI · Revista o serie: Banco de España, Informe de Estabilidad Financiera, primavera de 2026, capítulo 4 (mayo de 2026 según metadatos de los esquemas) · Licencia de la versión abierta: no declarada; el Banco de España permite reproducir citando la fuente (aviso general)
+- Enlace abierto: https://www.bde.es/f/webbe/Secciones/Publicaciones/InformesBoletinesRevistas/InformesEstabilidadFinancera/26/IEF_2026_1_Cap4.pdf · Leído: solo resumen (lectura parcial: apartado 4.1, PDF p. 5-7) · sha256 del PDF: ba688e337748
+- Pregunta: Misma batería de indicadores que el IEF de otoño de 2025, con datos hasta el cuarto trimestre de 2025 y el indicador sintético de riesgos de Alves et al. (2023). Diseño: rango entre métodos. Identificación: ninguna.
+- Resultado principal. El rango estimado de desviación del precio respecto a la renta y los tipos en diciembre de 2025 es del 10 % al 15 %, similar al registrado en 2004 y muy inferior al valor promedio máximo del 24 % de finales de 2007 (PDF p. 6). Los autores atribuyen la evolución al desacople entre precios y renta de los hogares desde 2024. El indicador sintético de riesgos ha continuado en niveles contenidos. Unidad: % de desviación del precio respecto al equilibrio (rango entre métodos).
+- Limitaciones y validez externa para España: Es el valor publicado más reciente del Banco de España; sirve de referencia para la comparación con el GSADF y con el modelo de F1. Sin detalle metodológico ni intervalos.
+- Paquete de replicación: no (sin datos ni código)
+- Estado: NO VERIFICADA (sin DOI)

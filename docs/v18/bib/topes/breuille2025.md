@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: coeficiente sobre el log de la renta por m² (la variable «Traitement (%)» es exp(coeficiente) − 1). Tabla 8, p. 26: −0,051 (error típico 0,007), es decir −5,0 %; −0,053 (0,007), −5,2 %, con coeficientes heterogéneos. Sobre una renta media anunciada de 1.492 €, la renta sin control habría sido de 1.571 a 1.574 €, es decir 79 a 82 € al mes menos (p. 26). Oferta: sin descenso duradero del número de anuncios imputable al control (Tabla 16, p. 41). En la extensión escalonada, 3 de 17 trimestres presentan pretendencia significativa; sin París, 6 trimestres.
 - Limitaciones y validez externa para España: anuncios de portal, no contratos; control en ciudades de provincia, con posibles pretendencias (3 de 17 trimestres significativos en la extensión); el efecto crece con el tiempo. Control francés con tope sobre rentas de referencia, parecido al catalán de 2020 y al de las zonas tensionadas de 2024.
 - Paquete de replicación: no (datos del grupo AVIV comerciales; no se declara paquete).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: NO VERIFICADA (sin DOI)

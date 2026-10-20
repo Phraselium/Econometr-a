@@ -5,4 +5,4 @@
 - Resultado principal (tabla 2, p. 22 del PDF): efecto de 2008 sobre el log del número de viviendas públicas 0,140 (error 0,042) y sobre el log de hogares de renta baja 0,053 (0,010); índice de disimilitud de la vivienda −3,499 (0,814); de renta −0,641 (0,436). Unidad: variación logarítmica (≈ %) en 2008 frente a 2000; errores agrupados por ciudad. No estima precios ni construcción privada.
 - Limitaciones y validez externa para España: mide construcción pública y segregación, no el desplazamiento de la privada; la presencia de hogares pobres aumenta poco porque los nuevos pisos entran en categorías para renta media. Útil como diseño de cuotas para E12.
 - Paquete de replicación: no (buscado en IZA, PSE y CEPR; los datos FILOCOM son de acceso restringido). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)

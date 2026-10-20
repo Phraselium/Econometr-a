@@ -1,8 +1,8 @@
 ### Eerola, Harjunen, Lyytikäinen y Saarimaa (2021). Revisiting the effects of housing transfer taxes
 - Clave: eerola_etal_2021_aalto · DOI: 10.1016/j.jue.2021.103367 (Crossref comprobado 2026-10-20) · Revista o serie: Journal of Urban Economics 124, 103367 · Licencia de la versión abierta: CC BY (indicada en la portada del repositorio de Aalto para la versión del editor)
-- Enlace abierto: https://acris.aalto.fi/ws/portalfiles/portal/66659415/1_s2.0_S0094119021000498_main.pdf · Leído: resumen e introducción (PDF p. 1-3 del repositorio) · sha256 del PDF: 1adf3c485f85
-- Pregunta; datos; diseño; identificación: ¿Los diseños de diferencias en diferencias subestiman el efecto de los impuestos de transmisión por desbordamientos entre tratados y controles? Datos: registros de población finlandeses 2005-2016. Diseño: casi experimento por la subida de marzo de 2013 del tipo para cooperativas de vivienda, sin tocar las casas unifamiliares; modelo de mercado calibrado con las tasas de movilidad y el efecto estimado.
-- Resultado principal con su unidad: Ignorar los desbordamientos conduce a subestimar un 20 % el efecto negativo del impuesto en la movilidad. Los costes de bienestar son mayores de lo que se pensaba. Unidad: % de subestimación del efecto; magnitud del efecto de movilidad no recuperada.
+- Enlace abierto: https://acris.aalto.fi/ws/portalfiles/portal/66659415/1_s2.0_S0094119021000498_main.pdf · Leído: solo resumen e introducción (PDF p. 1-3 del repositorio) · sha256 del PDF: 1adf3c485f85
+- Pregunta: ¿Los diseños de diferencias en diferencias subestiman el efecto de los impuestos de transmisión por desbordamientos entre tratados y controles? Datos: registros de población finlandeses 2005-2016. Diseño: casi experimento por la subida de marzo de 2013 del tipo para cooperativas de vivienda, sin tocar las casas unifamiliares; modelo de mercado calibrado con las tasas de movilidad y el efecto estimado.
+- Resultado principal. Ignorar los desbordamientos conduce a subestimar un 20 % el efecto negativo del impuesto en la movilidad. Los costes de bienestar son mayores de lo que se pensaba. Unidad: % de subestimación del efecto; magnitud del efecto de movilidad no recuperada.
 - Limitaciones y validez externa para España: Es una crítica metodológica al diseño de diferencias en diferencias aplicable a la réplica de V18: tratados y controles comparten mercado de compradores. Validez externa media.
-- Paquete de replicación: no localizado (datos de registro de acceso restringido)
-- Estado: NO VERIFICADA
+- Paquete de replicación: no (datos de registro de acceso restringido)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

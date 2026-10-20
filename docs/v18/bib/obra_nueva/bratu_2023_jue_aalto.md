@@ -5,4 +5,4 @@
 - Resultado principal (introducción, p. 3 del PDF): por cada 100 viviendas de mercado nuevas y céntricas se crean unas 31 vacantes en el quintil inferior de renta de barrio y unas 66 en la mitad inferior, en el muy corto plazo (años adyacentes). Primera ronda: el 20% (10%) de los residentes nuevos está en la mitad (quintil) inferior de renta nacional; alcanza en torno al 50% (30%) en la cuarta ronda (texto, Fig. 3). Unidad: viviendas liberadas por cada 100 viviendas nuevas. Sin errores: son recuentos.
 - Limitaciones y validez externa para España: es un resultado descriptivo y local, de corto plazo y limitado a las viviendas en la mitad inferior mediante vacantes; no mide alquileres ni precios. Útil como mecanismo, no como efecto sobre precios.
 - Paquete de replicación: no (el texto no ofrece los microdatos de registro; se buscó en Aalto y VATT sin hallar datos ni código abiertos). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

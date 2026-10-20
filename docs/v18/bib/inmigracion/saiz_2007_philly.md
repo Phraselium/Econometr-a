@@ -5,4 +5,4 @@
 - Resultado principal. Diferencias largas 1984-1998 (tabla 4, p. 38 del PDF), IV con el instrumento por país: Δ log alquiler = 0,935 (error 0,214) y Δ log precio = 1,607 (error 0,326), por cada unidad de inmigrantes 1983-1997 sobre la población de 1983. Unidad: % de variación por cada 1% de la población en inmigrantes. El autor concluye en torno a 1% para los alquileres y 2% para los precios con el modelo dinámico.
 - Limitaciones y validez externa para España: EE. UU., con oferta más elástica en muchas áreas y un parque de alquiler distinto; validez externa limitada. El instrumento mezcla corto y largo plazo (crítica posterior de la literatura, no probada aquí). Referencia metodológica del diseño shift-share de E3. La versión publicada en 2007 puede diferir en cifras; no la he leído.
 - Paquete de replicación: no (buscado en la web de la Fed de Filadelfia y en la web del autor; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: dólares canadienses por mes. Según la nota de McGill (no el artículo): en los 309 barrios con restricciones, −24 dólares al mes el primer año y −55 dólares después; −40 dólares en áreas vecinas no reguladas. Sin errores típicos leídos.
 - Limitaciones y validez externa para España: Canadá, con alquiler y oferta turística distintos; sin texto no se conocen el estimador (el resumen indica diseño escalonado) ni las pretendencias.
 - Paquete de replicación: no (no se buscó más allá de Crossref y DataCite).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

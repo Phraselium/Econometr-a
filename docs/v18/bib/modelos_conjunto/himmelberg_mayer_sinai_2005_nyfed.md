@@ -1,0 +1,8 @@
+### Himmelberg, Mayer y Sinai (2005). Assessing high house prices: bubbles, fundamentals and misperceptions
+- Clave: himmelberg_mayer_sinai_2005_nyfed · DOI: 10.3386/w11643 (versión NBER, Crossref comprobado 2026-10-20); edición publicada: Journal of Economic Perspectives 19(4), 67-92 (2005), DOI no comprobado · Revista o serie: Federal Reserve Bank of New York Staff Report n.º 218 (septiembre de 2005); versión publicada en J. Economic Perspectives 2005 · Licencia de la versión abierta: no declarada en el PDF; descarga libre en la web del banco de la Reserva Federal de Nueva York
+- Enlace abierto: https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr218.pdf · Leído: solo resumen (PDF p. 2) · sha256 del PDF: 07d416a7a7cd
+- Pregunta: ¿Están sobrevaloradas las viviendas en 46 áreas metropolitanas de EE. UU.? Diseño: coste anual de uso de una vivienda unifamiliar (user cost) comparado con alquileres e ingresos locales, con tipos reales de largo plazo y crecimiento de precios esperado por mercado.
+- Resultado principal. Las métricas convencionales (crecimiento del precio, precio-alquiler, precio-renta) pueden engañar porque ignoran el patrón de los tipos reales y las diferencias del crecimiento de largo plazo entre mercados. Entre 1995 y 2004 el coste de ser propietario aumentó frente al de alquilar, pero no a niveles de sobrevaloración en la mayoría de las ciudades. Unidad: cualitativa.
+- Limitaciones y validez externa para España: EE. UU. y de 2005: contexto metodológico del coste de uso, que Ayuso y Restoy y el modelo de F2 usan para el alquiler equivalente. No cuenta como estimación para España.
+- Paquete de replicación: no (no localizado; ver la nota del resumen del factor)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

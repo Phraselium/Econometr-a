@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: días reservados por mes y distrito; % de la media. Tabla 4.1, p. 20: tras la aplicación×tratamiento, −322,2 días reservados (error típico 124,0), que son −43,9 % de la media; número de anuncios −51,05 (18,38), −64 %; nuevas entradas −1,89 (0,588), −51,9 %; salidas +0,427 (0,135), +22,9 %. En la periferia el efecto es de −35 % de los días reservados (resumen).
 - Limitaciones y validez externa para España: mide solo la reacción de la actividad turística (primera etapa del mecanismo), no alquiler ni precio de compra; la regulación de Burdeos es municipal y de diseño propio, distinta de las normas autonómicas y locales españolas. Es útil para anticipar el tamaño del descenso de actividad que debe tener una norma local para que se vea un efecto en el alquiler.
 - Paquete de replicación: no (se buscó en HAL, DataCite y Zenodo; no hay paquete localizado).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: VERIFICADA (Crossref; cuartil no verificado)

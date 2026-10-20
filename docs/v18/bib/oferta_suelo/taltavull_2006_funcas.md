@@ -5,4 +5,4 @@
 - Resultado principal. Elasticidad precio de la oferta (cuadro 2 de la versión inglesa, p. 24): 0,87 (t = 6,96) en el panel de CCAA 1990-2004; 0,46 (t = 2,49) en el ARIMA 1987-2004 y 0,86 (t = 3,76) en 1990-2004; 1,40 y 2,38 en periodos posteriores. El texto (p. 15) fija 0,46 para 1988-2004 y 0,86 desde 1990. El resumen español da 0,86 para España. Unidad: elasticidad precio de los inicios de obra. Sin intervalos; se dan estadísticos t.
 - Limitaciones y validez externa para España: es evidencia española pero con identificación débil y muestra que acaba en 2004; la elasticidad cambia mucho con el periodo (0,46 a 2,38), de modo que no hay un valor único. Solo el coste de la mano de obra es relevante en el texto. No equivale a una elasticidad estructural de largo plazo.
 - Paquete de replicación: no (buscado en la web de Funcas y de la autora; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
-- Estado: NO VERIFICADA
+- Estado: NO VERIFICADA (sin DOI)

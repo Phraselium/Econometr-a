@@ -5,4 +5,4 @@
 - Resultado principal. Unidad: efecto medio sobre los tratados en el log de terminaciones más uno (≈ variación relativa) y en terminaciones por 1.000 habitantes. Tabla 4, p. 32, muestra completa: viviendas totales −0,475 (Callaway-Sant'Anna), −0,296 (Sun-Abraham) y −0,109 (Gardner); viviendas en multifamiliares −0,917, −0,633 y −0,408; terminaciones por 1.000 habitantes −1,107, −1,330 y −0,471; netas sobre el parque −2,043, −2,092 y −1,564. El texto da una caída de entre 0,039 y 0,137 log en la muestra de vecinos; la tabla no trae errores típicos (solo niveles de significación del 5 y 1 %).
 - Limitaciones y validez externa para España: documento de trabajo; el rango entre estimadores es amplio (−0,109 a −0,475); la selección de municipios tratados no es aleatoria; la variable es construcción y no contratos. Alemania exime la obra nueva, como la Ley 12/2023, por lo que la comparación sobre oferta nueva es relevante.
 - Paquete de replicación: no (se buscó en DataCite, Zenodo, Dataverse; no se declara paquete en el documento leído).
-- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)
+- Estado: NO VERIFICADA (sin DOI)

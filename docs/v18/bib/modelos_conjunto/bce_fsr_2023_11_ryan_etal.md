@@ -1,0 +1,8 @@
+### Ryan, Jarmulska, De Nora, Fontana, Horan, Lang, Lo Duca, Moldovan y Rusnák (2023). Real estate markets in an environment of high financing costs
+- Clave: bce_fsr_2023_11_ryan_etal · DOI: sin DOI · Revista o serie: Financial Stability Review del BCE, noviembre de 2023, recuadro especial · Licencia de la versión abierta: aviso legal del BCE: uso libre citando la fuente (sin licencia abierta nominal)
+- Enlace abierto: https://www.ecb.europa.eu/press/financial-stability-publications/fsr/special/html/ecb.fsrart202311_02~75cf0710b9.en.html · Leído: solo resumen (lectura parcial de la página HTML: sobrevaloración y modelo de precio en riesgo) · sha256 del PDF: sin PDF
+- Pregunta: ¿Cómo afectan los costes de financiación elevados a la vivienda residencial del área del euro? Diseño: modelo de «precio en riesgo» con la desviación de la ratio precio-renta de la media de largo plazo y un modelo econométrico. Identificación: ninguna causal.
+- Resultado principal. La sobrevaloración residencial del área del euro estaba en el 18 % en el segundo trimestre de 2022 y en el 9 % en el segundo trimestre de 2023 (nota 8). Sin cifra de sobrevaloración para España; España aparece solo en el análisis de préstamos a tipo variable (gráfico B.5). Unidad: % de sobrevaloración del área del euro (promedio de la desviación de la ratio precio-renta y del modelo econométrico).
+- Limitaciones y validez externa para España: Agregado del área del euro; sin España. Sirve de cota de referencia del orden de magnitud de las sobrevaloraciones del BCE en 2022-2023.
+- Paquete de replicación: no (artículo del FSR; sin código)
+- Estado: NO VERIFICADA (sin DOI)

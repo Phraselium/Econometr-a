@@ -1,0 +1,56 @@
+{
+  "rama": "v18-reproduccion",
+  "pregunta": "mense_2025",
+  "capa": "C4",
+  "datos": "paquete de replicacion Mense (2025), Harvard Dataverse doi:10.7910/DVN/LWRXA9 (CC0); Alemania, 94 PR, 2011-2018",
+  "N": 752,
+  "metodo": "IV-2SLS en panel con efectos fijos de PR y ano, error agrupado por PR; instrumento: duracion media de rachas de lluvia jul-sep (t-1); indice hedonico de alquiler por PR; columna 3 de la tabla 3",
+  "estimacion": -0.1916,
+  "ic95": [
+    -0.3175,
+    -0.0658
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "EXPLORATORIO",
+  "diagnosticos": {
+    "F_1a_etapa_cluster": {
+      "1": 17.7,
+      "2": 17.6,
+      "3": 19.3
+    },
+    "F_KP_publicado": {
+      "1": 17.4,
+      "2": 17.4,
+      "3": 19.0
+    },
+    "estimaciones": {
+      "1": {
+        "b": -0.1994,
+        "se": 0.0717,
+        "publicado": -0.199,
+        "se_publicado": 0.072,
+        "veredicto": "coincide"
+      },
+      "2": {
+        "b": -0.2038,
+        "se": 0.0715,
+        "publicado": -0.204,
+        "se_publicado": 0.072,
+        "veredicto": "coincide"
+      },
+      "3": {
+        "b": -0.1916,
+        "se": 0.0642,
+        "publicado": -0.192,
+        "se_publicado": 0.065,
+        "veredicto": "coincide"
+      }
+    }
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Veredicto: coincide. Reproduccion del estudio original con sus datos; no usa datos del proyecto. Elasticidad oferta nueva anual -> log alquiler, Alemania."
+}

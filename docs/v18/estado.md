@@ -29,13 +29,14 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F1 | bibliotecario | grupo A: turismo, topes, grandes tenedores, vacías (51 fichas) | 550.339 | docs/v18/bib/{turismo,topes,grandes_tenedores,vacias}/ |
 | 2026-10-20 | F1 | bibliotecario | grupo C: ayudas, tipos, fiscalidad, no residentes, modelos de conjunto (83 fichas) | 610.266 | docs/v18/bib/{ayudas,tipos,fiscalidad,no_residentes,modelos_conjunto}/ |
 | 2026-10-20 | F2 | replicador-estudio | Chaves-Fonseca 2026 (tabla 2, precios): coincide | 41.311 | src/v18/reproduccion/chavesfonseca2026.py; output/v18/reproduccion/chavesfonseca2026/ |
+| 2026-10-20 | F2 | replicador-estudio | Mense 2025 (tabla 3A, IV con lluvia): coincide | 65.000 | src/v18/reproduccion/mense_2025.py; output/v18/reproduccion/mense_2025/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 259.633 |
 | F1 | 1.630.684 |
-| F2 | 41.311 |
+| F2 | 106.311 |
 
-Total V18: 1.931.628 tokens
+Total V18: 1.996.628 tokens
 
 <!-- fin subagentes -->

@@ -1,0 +1,8 @@
+### Degen y Fischer (2017). Immigration and Swiss house prices
+- Clave: degen_fischer_2017 · DOI: 10.1007/bf03399433 (Crossref comprobado 2026-10-20) · Revista o serie: Swiss Journal of Economics and Statistics 153(1), 15-36; versión previa SNB Working Paper 2010-16 · Licencia de la versión abierta: CC BY 4.0 (campo de licencia de Crossref)
+- Enlace abierto: https://sjes.springeropen.com/counter/pdf/10.1007/BF03399433.pdf (descarga automática bloqueada por la editorial; no obtenida) · Leído: solo resumen (resultados de búsqueda y registro de Crossref) · sha256 del PDF: sin PDF
+- Pregunta: efecto de la inmigración sobre los precios de la vivienda en Suiza. Datos: 85 distritos o regiones, 2001-2006 (según la página de la SNB). Diseño: regresión con instrumento de localización previa de los inmigrantes (shift-share).
+- Resultado principal según el resumen: una entrada igual al 1% de la población se asocia con un 2,7% más en el precio de las viviendas unifamiliares y, según un extracto de la editorial, un 3,5% en las multifamiliares; la inmigración explica casi dos tercios del aumento de las unifamiliares. Unidad: % de precio por cada 1% de la población. Sin errores ni tabla (no leída).
+- Limitaciones y validez externa para España: periodo corto, baja inflación de precios, control de alquileres nacional y vivienda unifamiliar; no leídas las tablas. Pendiente de bajar el PDF desde un navegador por el autor del repositorio si se quiere texto completo.
+- Paquete de replicación: no (buscado en la página de la editorial y de la SNB; no localizado).
+- Estado: NO VERIFICADA

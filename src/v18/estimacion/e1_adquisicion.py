@@ -111,10 +111,24 @@ def bcn() -> None:
 
 # ---------------------------------------------------------------------------------------------- OpenStreetMap
 def descargar_pbf(nombre: str) -> Path:
+    """Descarga reanudable (Range) del extracto regional; el proxy corta transferencias largas."""
     SCRATCH.mkdir(parents=True, exist_ok=True)
     f = SCRATCH / f"{nombre}.osm.pbf"
-    if not f.exists():
-        urllib.request.urlretrieve(OSM_BASE + f"{nombre}.osm.pbf", f)
+    url = OSM_BASE + f"{nombre}.osm.pbf"
+    total = int(requests.head(url, timeout=60, allow_redirects=True).headers["Content-Length"])
+    intentos = 0
+    while (f.stat().st_size if f.exists() else 0) < total and intentos < 200:
+        pos = f.stat().st_size if f.exists() else 0
+        try:
+            with requests.get(url, headers={"Range": f"bytes={pos}-"}, stream=True, timeout=120) as r:
+                r.raise_for_status()
+                with open(f, "ab") as g:
+                    for bloque in r.iter_content(1 << 20):
+                        g.write(bloque)
+        except requests.RequestException:
+            time.sleep(2)
+        intentos += 1
+    assert f.stat().st_size == total, f"descarga incompleta de {nombre}"
     return f
 
 

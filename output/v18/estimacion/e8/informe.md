@@ -1,11 +1,11 @@
 # V18 · E8 · Fiscalidad de la compra: ITP por comunidades
 
 **Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en `clasificacion_v18` y no cambia la capa. Clasificación provisional: falta I8 (réplica ciega, B6).
-Código: `src/v18/estimacion/e8_itp.py` (+ `e8_datos.py`, `e8_diseno.py`, `e8_estim.py`, `e8_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; 45 s.
+Código: `src/v18/estimacion/e8_itp.py` (+ `e8_datos.py`, `e8_diseno.py`, `e8_estim.py`, `e8_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; 32 s.
 Rótulo del plan (1.8): no se conoce una evaluación española del ITP con diseño (ficha L4); esta sería la primera, con las reservas de la clasificación.
 
 ## 1. Resumen
-- **E8-R1 (principal)**: Wald-DID de dosis continua sobre el log del valor tasado provincial a 4 trimestres = **0.0146 por punto** del tipo general (IC95 por inversión de la aleatorización 0.0009; 0.0309); p de aleatorización 0.0437; p tras Holm (familia E8, m = 2) 0.0874. Clase V18: **SUGESTIVO**.
+- **E8-R1 (principal)**: Wald-DID de dosis continua sobre el log del valor tasado provincial a 4 trimestres = **0.0146 por punto** del tipo general (IC95 por inversión de la aleatorización 0.0009; 0.0309); p de aleatorización 0.0437; p tras Holm (familia E8, m = 2) 0.0874. Clase V18: **ASOCIACIÓN**.
 - El signo es **contrario** al de la referencia (Dolls et al.: −0,03 por pp; razón -0.49, etiqueta «no coherente»). Sin 2012-2013 el signo cambia (-0.0079, p de aleatorización 0.176): el calendario de cambios se concentra en la crisis y el diseño no separa el tipo del ciclo.
 - **Coprincipal V16-Q6-p** reproducida en la muestra V18: -0.002037 por punto (cifra publicada −0,0020); p de aleatorización 0.880.
 - **No estimables**: E8-R2 (compraventas: MDE 0.0894 > 0,06 por punto), E8-A2 (municipal: MDE 0.2157 > 0,06), E8-A1 (recaudación sin datos), E8-X1 y E8-X2 (sin compraventas por tramo ni calendario de tipos reducidos). E8-P-Q6v hereda la no estimabilidad de E8-R2.
@@ -92,9 +92,9 @@ Aleatorización con 4.999 permutaciones; q_by = Benjamini-Yekutieli al 10 % dent
 Wald-DID anual 2011-2024 de V16 (año de efecto, ΔY de años consecutivos, año previo al cambio fuera por anticipación) sobre las provincias de las 8 comunidades con valor tasado anual: **-0.002037** por punto (V16: −0,002037; coincide). V16 no daba inferencia (dCDH con aleatorización NO APTO); aquí se añade la aleatorización de calendarios con el coeficiente como estadístico (p = 0.880, 35 provincias). No se clasifica; entra en la familia de Holm.
 
 ## 8. Clasificación (I1-I8 revisados)
-- **E8-R1: SUGESTIVO.** Razones: potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|; p tras Holm = 0.087 entre 0,05 y 0,10; fechas de entrada en vigor de la memoria de Hacienda, sin contraste con el BOE ni con el diario autonómico: SUGESTIVO como máximo (plan, 1.8 f); sin control de recaudación previa (fuente no descargada): tope SUGESTIVO (adenda R-18); tope SUGESTIVO por corrección de un fallo conocido de Q6 (fechas; adenda 1.6); el signo cambia sin 2012-2013 (adenda R-18).
+- **E8-R1: ASOCIACIÓN.** Razones: el signo cambia sin 2012-2013 (prueba B4 del plan, línea 737): cambio de signo en B4 = fallo decisivo (plan, línea 124; K7).
 - I6: razón con la referencia -0.49 (signo contrario): etiqueta «no coherente»; no interviene en la clase ni en B5.
-- Tope SUGESTIVO por: fechas sin contraste con el BOE, ausencia del control de recaudación previa, corrección de un fallo conocido de Q6 y cambio de signo sin 2012-2013 (adenda R-18).
+- Clase ASOCIACIÓN por fallo decisivo: el signo cambia sin 2012-2013 (prueba B4 del plan, línea 737; un cambio de signo en B4 es fallo decisivo, línea 124; el tope SUGESTIVO de la adenda R-18 es un techo y no anula esa regla; K7). Topes que se mantendrían de todos modos: fechas sin contraste con el BOE, ausencia del control de recaudación previa y corrección de un fallo conocido de Q6.
 - Lectura: asociación estimada con diseño de dosis continua; no se interpreta como respuesta del mercado al impuesto.
 
 ## 9. Desviaciones y lecturas de las reglas (se recogen en docs/v18/desviaciones.md)

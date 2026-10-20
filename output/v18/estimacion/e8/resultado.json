@@ -34,9 +34,9 @@
   "E8-P-Q6p": 0.8805
  },
  "nivel_evidencia": "EXPLORATORIO",
- "clasificacion_v18": "SUGESTIVO",
+ "clasificacion_v18": "ASOCIACIÓN",
  "clasificaciones": {
-  "E8-R1": "SUGESTIVO",
+  "E8-R1": "ASOCIACIÓN",
   "E8-R2": "NO ESTIMABLE",
   "E8-A1": "NO ESTIMABLE",
   "E8-A2": "NO ESTIMABLE",
@@ -164,12 +164,7 @@
    },
    "razon_con_referencia": -0.4869799908340695,
    "clasificacion_razones": [
-    "potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|",
-    "p tras Holm = 0.087 entre 0,05 y 0,10",
-    "fechas de entrada en vigor de la memoria de Hacienda, sin contraste con el BOE ni con el diario autonómico: SUGESTIVO como máximo (plan, 1.8 f)",
-    "sin control de recaudación previa (fuente no descargada): tope SUGESTIVO (adenda R-18)",
-    "tope SUGESTIVO por corrección de un fallo conocido de Q6 (fechas; adenda 1.6)",
-    "el signo cambia sin 2012-2013 (adenda R-18)"
+    "el signo cambia sin 2012-2013 (prueba B4 del plan, línea 737): cambio de signo en B4 = fallo decisivo (plan, línea 124; K7)"
    ]
   },
   "E8-P-Q6p": {

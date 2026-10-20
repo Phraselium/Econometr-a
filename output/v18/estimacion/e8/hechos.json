@@ -14,8 +14,8 @@
    "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
   ],
   "capa": "C4",
-  "clasificacion_v18": "SUGESTIVO",
-  "nota": "Wald-DID de dosis continua (dCDH, 4 trimestres) por punto de variación del tipo general; p de aleatorización de calendarios entre comunidades 0.0437 (estudentizada, 9.999 permutaciones; tamaño de Monte Carlo 0,0455, banda apta); p tras Holm con la coprincipal V16-Q6-p 0.0874. Signo contrario al de la referencia (Dolls et al., −0,03 por pp): razón -0.49, etiqueta «no coherente». Sin 2012-2013 el signo cambia (-0.0079): el calendario se concentra en la crisis. Fechas de la memoria de Hacienda sin contraste con el BOE y sin control de recaudación previa: tope SUGESTIVO. Lectura: asociación estimada. Clasificación provisional: falta I8 (réplica ciega, B6)."
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "Wald-DID de dosis continua (dCDH, 4 trimestres) por punto de variación del tipo general; p de aleatorización de calendarios entre comunidades 0.0437 (estudentizada, 9.999 permutaciones; tamaño de Monte Carlo 0,0455, banda apta); p tras Holm con la coprincipal V16-Q6-p 0.0874. Signo contrario al de la referencia (Dolls et al., −0,03 por pp): razón -0.49, etiqueta «no coherente». Sin 2012-2013 el signo cambia (-0.0079): el calendario se concentra en la crisis. El cambio de signo sin 2012-2013 es una prueba B4 y fallo decisivo (plan, línea 124): clase ASOCIACIÓN (K7). Además, fechas de la memoria de Hacienda sin contraste con el BOE y sin control de recaudación previa. Lectura: asociación estimada. Clasificación provisional: falta I8 (réplica ciega, B6)."
  },
  {
   "id": "V18-E8-R2",

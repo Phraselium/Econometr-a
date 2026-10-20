@@ -190,5 +190,100 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "NO ESTIMABLE: faltan las fianzas por tipo de contrato o el Registro Único (tareas_autor, punto 4)."
+ },
+ {
+  "id": "V18-E2-B6-A",
+  "indicador": "Salto en 2022T2 del coeficiente de Reg por trimestre sobre la extrapolación de la recta de 2021T1-2022T1 (log de la renta media; E2-R1, robustez a posteriori)",
+  "valor": -0.021664,
+  "min": -0.046751,
+  "max": 0.003423,
+  "unidad": "log",
+  "periodo": "2019T1-2022T2",
+  "cobertura": "49 regulados y 94 controles, panel equilibrado 2019T1-2022T2",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "INE, Padrón municipal; IDESCAT (viviendas de uso turístico); INE, Censo 2021 (muestra del 10 %)",
+   "docs/v18/revision_estimaciones/ronda1_e2_e8.md (ronda 1 del abogado del diablo)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "Pendiente del coeficiente en 2021T1-2022T1 +0.0109 por trimestre (p = 0.000); p del salto 0.090. Prueba declarada a posteriori (ronda 1, B6); no cambia la especificación principal. Lectura: asociación estimada."
+ },
+ {
+  "id": "V18-E2-B6-B",
+  "indicador": "Coeficiente Reg × Post con densidad HUT 2019 y ln(población 2019) por efectos de trimestre (E2-R1, robustez a posteriori)",
+  "valor": -0.023708,
+  "min": -0.046062,
+  "max": -0.001355,
+  "unidad": "log",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 regulados y 94 controles",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "INE, Padrón municipal; IDESCAT (viviendas de uso turístico); INE, Censo 2021 (muestra del 10 %)",
+   "docs/v18/revision_estimaciones/ronda1_e2_e8.md (ronda 1 del abogado del diablo)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "IC95 CR1 por municipio; p de Webb 0.0356; con el paro registrado de 2019 por trimestre -0.0236. Principal -0.0382. Prueba declarada a posteriori (ronda 1, B6). Lectura: asociación estimada."
+ },
+ {
+  "id": "V18-E2-B6-C",
+  "indicador": "Coeficiente Reg × Post con controles emparejados por el crecimiento de la renta 2017-2019 (E2-R1, robustez a posteriori)",
+  "valor": -0.05427,
+  "min": -0.080863,
+  "max": -0.027678,
+  "unidad": "log",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 regulados y 31 controles emparejados con reposición",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "INE, Padrón municipal; IDESCAT (viviendas de uso turístico); INE, Censo 2021 (muestra del 10 %)",
+   "docs/v18/revision_estimaciones/ronda1_e2_e8.md (ronda 1 del abogado del diablo)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "IC95 CR1 por municipio; p de Webb 0.0004. Placebo de 2017 con tendencia propia de los regulados 2014-2019: +0.0299 (p = 0.012). Prueba declarada a posteriori (ronda 1, B6). Lectura: asociación estimada."
+ },
+ {
+  "id": "V18-E2-B6-D",
+  "indicador": "Estimación SDID de Reg × Post con controles ponderados, todos los no regulados con serie completa (E2-R1, robustez a posteriori)",
+  "valor": -0.044,
+  "min": -0.062427,
+  "max": -0.025572,
+  "unidad": "log",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 regulados y 146 controles",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "INE, Padrón municipal; IDESCAT (viviendas de uso turístico); INE, Censo 2021 (muestra del 10 %)",
+   "docs/v18/revision_estimaciones/ronda1_e2_e8.md (ronda 1 del abogado del diablo)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "IC95 por inversión del contraste de placebos de Conley-Taber (p = 0.001); razón de variabilidad previa tratados/controles 0.46 (conservadora (tratados menos variables que los controles)). Con los controles de JMS τ = -0.0416 (p = 0.001). Prueba declarada a posteriori (ronda 1, B6). Lectura: asociación estimada."
+ },
+ {
+  "id": "V18-E2-B6-R1CV1",
+  "indicador": "Coeficiente Reg × Post sobre el log de contratos nuevos por 1.000 hogares inquilinos del Censo 2021 (E2-R1c-v1)",
+  "valor": -0.031396,
+  "min": -0.084619,
+  "max": 0.021828,
+  "unidad": "log",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 regulados y 38 controles de 10.000 habitantes o más (Censo 2021, muestra del 10 %)",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "INE, Padrón municipal; IDESCAT (viviendas de uso turístico); INE, Censo 2021 (muestra del 10 %)",
+   "docs/v18/revision_estimaciones/ronda1_e2_e8.md (ronda 1 del abogado del diablo)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "IC95 CR1 por municipio; p de Webb 0.2255; MDE80 0.0670. Criterio de AD-E2 (caída de al menos un 5 % con p < 0,05): no se cumple. Prueba declarada a posteriori (ronda 1, B6); el denominador es fijo y lo absorbe el efecto fijo de municipio. Lectura: asociación estimada."
  }
 ]

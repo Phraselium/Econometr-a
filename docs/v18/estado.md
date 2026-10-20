@@ -10,11 +10,23 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
   - check_v18: cifras V18 con id, fuente, capa y clasificación; sin lenguaje causal por debajo de IDENTIFICADO; ninguna estimación anterior a la etiqueta; ningún PDF versionado, citas de 15 palabras como máximo y sha256 de cada PDF.
   - data/bib/ fuera de git salvo data/bib/CHECKSUMS.sha256; registro de subagentes con tope de 6 millones por fase.
 
+- 2026-10-20 · **Fase 0 cerrada.** V17 completa (check_v17 sin errores). Inventario de 103 variables (output/v18/f0/): E1, E2, E3, E5, E6 (piloto en València), E7, E8, E9 y F1-F3 replicables en parte; E4, E10, E11 y E12 NO ESTIMABLES con los datos actuales. Paneles provinciales con 39 provincias (11 selladas fuera). 14 tareas del autor al principio de docs/v18/tareas_autor.md.
+
 ## Siguiente
-- Fase 0: comprobar V17 e inventariar datos por estudio (E1-E12 y F1-F4); tareas del autor al principio de tareas_autor.md.
+- Fase 1: bibliografía (grupos A y B en marcha; C después).
 
 ## Subagentes y tokens
 
-Sin subagentes todavía.
+Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). Tokens aproximados según el informe de cada subagente. Tope por fase: 6.000.000 (parada G).
+
+| Fecha | Fase | Rol | Tarea | Tokens | Ficheros |
+|---|---|---|---|---|---|
+| 2026-10-20 | F0 | general-purpose | inventario de datos por estudio (E1-E12, F1-F3) y tareas del autor | 259.633 | src/v18/f0_inventario.py; output/v18/f0/; docs/v18/tareas_autor.md |
+
+| Fase | Tokens de subagentes |
+|---|---|
+| F0 | 259.633 |
+
+Total V18: 259.633 tokens
 
 <!-- fin subagentes -->

@@ -1,0 +1,2 @@
+fecha,fase,rol,tarea,tokens,ficheros
+2026-10-20,F0,general-purpose,"inventario de datos por estudio (E1-E12, F1-F3) y tareas del autor",259633,src/v18/f0_inventario.py; output/v18/f0/; docs/v18/tareas_autor.md

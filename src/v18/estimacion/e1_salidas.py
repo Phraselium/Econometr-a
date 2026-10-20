@@ -225,6 +225,7 @@ Coeficiente de E1-R3 por desviación típica de la dosis ({f(sd3, 3)} pp): {f(r3
 {md(hon4)}
 
 - Geometría: radio {R4['conteos']['radio_no_sellado']} de {R4['conteos']['radio_total']} secciones no selladas ({f(R4['conteos']['cuota_radio'], 2)}) y anillo {R4['conteos']['anillo_no_sellado']} de {R4['conteos']['anillo_total']} ({f(R4['conteos']['cuota_anillo'], 2)}): se cumple el 75 % de la adenda 1.5. {r4['G']} barrios, {r4['G_tratados']} con tratadas.
+- Réplica ciega (B6, K8): 693 es el número de observaciones (77 secciones × 9 años), no de secciones; esta principal ya usa el anillo de 500-1.000 m como control y «resto de Barcelona» es E1-R4-v1. La réplica da 21 y 56 secciones (0801902055 está a 499,7 m del templo con la geometría del INE y a 507,3 m con la del Ajuntament) y un coeficiente de 0,0011 con diferencias en diferencias sin los adelantos de 2011-2012 como regresores; aquí los adelantos entran (base 2013 sola) y el coeficiente es {f(r4['coef'])}. Con el estimador de la réplica sobre estas mismas 22 y 55 secciones el coeficiente es 0,0017 y el IC90 de Webb (−0,026; 0,053) no queda dentro de ±0,05: la equivalencia depende de esa lectura de la ficha.
 - Medida alternativa: €/mes {f(R4['medidas']['y_mes']['coef'])}; vivienda unifamiliar {f(R4['medidas']['y_vu']['coef'])}. Moran de los residuos: I = {f(R4['moran']['I'], 3)}, p unilateral {f(R4['moran']['p_unilateral'], 3)}.
 
 ## 6. Variantes enumeradas (anexo A)

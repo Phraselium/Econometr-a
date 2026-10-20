@@ -15,8 +15,10 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 - 2026-10-20 · **Fase 1 (bibliografía).** Criterios fijados antes de buscar (docs/v18/bib/criterios.md). Tres bibliotecarios: 181 fichas en 13 factores (docs/v18/bib/), con tabla de efectos y unidad por factor. DOI verificados con el verificador de V15 (src/v18/f1_bibliografia.py; caché docs/v18/bib/crossref_cache.json): 125 VERIFICADAS, 45 NO VERIFICADAS (sin DOI o sin registro), 11 DISCREPANTES por versión de trabajo frente a publicada. Catálogo: output/v18/f1/. PDFs y paquetes solo en disco con sha256. Pendientes: repetir la búsqueda sistemática con OpenAlex (cuota agotada el 2026-10-20) y cuartiles Scimago (tarea del autor).
   - Hallazgos: González y Ortega 2013 es 2000-2010 y «un cuarto» (el «un tercio» 1998-2008 es el IZA 2009); Monràs y García-Montalvo usan contratos del Incasòl, no anuncios (E2 pasa a replicable en principio); sin estudios con datos españoles en E10 y E11; única evidencia española con diseño en ayudas: Jiménez Zambrano y Pérez Asenjo (2026, deducción de 2011).
 
+- 2026-10-20 · **Fase 2 cerrada.** Tres reproducciones con el paquete de su autor, las tres «coincide»: Chaves-Fonseca (2026, tabla 2: 0,0197 frente a 0,020 por 100 anuncios), Mense (2025, tabla 3A: −0,1916 frente a −0,192) y Borusyak-Hull-Jaravel (2022, ADH tabla 4: 11 de 11; herramienta shift-share src/v18/reproduccion/bhj_lib.py validada). Los demás estudios clave no tienen paquete con datos y pasan a la fase 3 solo con su especificación (docs/v18/reproduccion.md). Sin parada G.
+
 ## Siguiente
-- Fase 2: reproducción de los estudios con paquete de replicación (Mense, Asquith-Mast-Reed, Koster-van Ommeren, Chaves-Fonseca, Borusyak-Hull-Jaravel, Jarociński-Karadi y EA-MPD como datos).
+- Fase 3: plan de replicación (docs/v18/plan_replicacion.md, B1) por estudio y ampliación; revisor-preregistro y abogado-del-diablo; adenda; etiqueta plan-replicacion-v18 y push.
 
 ## Subagentes y tokens
 

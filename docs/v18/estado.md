@@ -28,12 +28,14 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F1 | bibliotecario | grupo B: inmigración, oferta y suelo, obra nueva, vivienda pública (47 fichas) | 470.079 | docs/v18/bib/{inmigracion,oferta_suelo,obra_nueva,vivienda_publica}/ |
 | 2026-10-20 | F1 | bibliotecario | grupo A: turismo, topes, grandes tenedores, vacías (51 fichas) | 550.339 | docs/v18/bib/{turismo,topes,grandes_tenedores,vacias}/ |
 | 2026-10-20 | F1 | bibliotecario | grupo C: ayudas, tipos, fiscalidad, no residentes, modelos de conjunto (83 fichas) | 610.266 | docs/v18/bib/{ayudas,tipos,fiscalidad,no_residentes,modelos_conjunto}/ |
+| 2026-10-20 | F2 | replicador-estudio | Chaves-Fonseca 2026 (tabla 2, precios): coincide | 41.311 | src/v18/reproduccion/chavesfonseca2026.py; output/v18/reproduccion/chavesfonseca2026/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 259.633 |
 | F1 | 1.630.684 |
+| F2 | 41.311 |
 
-Total V18: 1.890.317 tokens
+Total V18: 1.931.628 tokens
 
 <!-- fin subagentes -->

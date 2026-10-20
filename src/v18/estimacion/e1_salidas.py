@@ -59,7 +59,7 @@ def escribir(OUT: Path, B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est
                      r3["coef_por_pp"], r3["ic95_por_pp"][0], r3["ic95_por_pp"][1], "log por pp de densidad HUT (por 100 viviendas)", "2011-2019", cob, FUENTES, cl3["clase"], nota3))
     nota4 = (f"Secciones a menos de 500 m de la Sagrada Família ({r4['n_tratadas']}) frente al anillo de 500-1.000 m ({r4['n_control']}), tratamiento desde 2014, base 2013, efectos fijos de sección y de año; "
              f"Webb por barrio con {r4['G']} clusters ({r4['G_tratados']} con tratadas), p = {f(r4['_res']['p_webb'], 4)}, p tras Holm {f(holm['E1-R4'], 4)}; IC95 por inversión del contraste de Webb. "
-             f"Pretendencias (2011-2012): p = {f(ev4['pretend']['p'], 3)}. Sin referencia en la literatura (δ = 0,05): el IC95 de Webb {'queda dentro de' if (R4['ic_webb'][0] > -0.05 and R4['ic_webb'][1] < 0.05) else 'no queda dentro de'} ±0,05 (equivalencia). Tope SUGESTIVO: un solo grupo tratado. Lectura: asociación estimada; "
+             f"Pretendencias (2011-2012): p = {f(ev4['pretend']['p'], 3)}. Sin referencia en la literatura (δ = 0,05): TOST: el IC90 de Webb ({f(cl4['info']['tost']['ic90'][0])}; {f(cl4['info']['tost']['ic90'][1])}) {'queda dentro de' if cl4['info']['tost']['equivalente'] else 'no queda dentro de'} ±0,05 (nulo {'acotado' if cl4['info']['tost']['equivalente'] else 'no acotado'}). Tope SUGESTIVO: un solo grupo tratado. Lectura: asociación estimada; "
              f"la clase describe el diseño, no el coeficiente. {I8}.")
     H.append(K.hecho("V18-E1-R4", "Coeficiente de estar a menos de 500 m de la Sagrada Família × posterior (2014-2019) sobre el log del alquiler mediano SERPAVI por sección, frente al anillo de 500-1.000 m",
                      r4["coef"], R4["ic_webb"][0], R4["ic_webb"][1], "log (diferencia entre radio y anillo, posterior frente a 2013)", "2011-2019",
@@ -116,7 +116,7 @@ def escribir(OUT: Path, B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est
             "E1-R3": {"pretendencias_p": ev3["pretend"]["p"], "pendiente_detectable_80": ev3["pretend"]["pendiente_detectable"], "sesgo_implicado_post": ev3["pretend"]["sesgo_post"], "placebo_fecha": ev3["placebo_fecha"],
                       "honest": ev3["honest"], "tendencia_distancia_2011_2013": ev3["tendencia_distancia"], "conley_se": R3["conley"], "moran_residuos": R3["moran"], "medidas_alternativas": R3["medidas"],
                       "razon_con_referencia": r3["razon_ref"], "tamano_mc_cr1": out["tam"]["R3"], "v3_coprincipal": R3["v3_coprincipal"], "clasificacion_razones": cl3["razones"]},
-            "E1-R4": {"pretendencias_p": ev4["pretend"]["p"], "pendiente_detectable_80": ev4["pretend"]["pendiente_detectable"], "sesgo_implicado_post": ev4["pretend"]["sesgo_post"], "placebo_fecha": ev4["placebo_fecha"],
+            "E1-R4": {"tost_delta_0_05": {"ic90_webb": list(cl4["info"]["tost"]["ic90"]), "delta": 0.05, "equivalente": cl4["info"]["tost"]["equivalente"]}, "pretendencias_p": ev4["pretend"]["p"], "pendiente_detectable_80": ev4["pretend"]["pendiente_detectable"], "sesgo_implicado_post": ev4["pretend"]["sesgo_post"], "placebo_fecha": ev4["placebo_fecha"],
                       "honest": ev4["honest"], "moran_residuos": R4["moran"], "medidas_alternativas": R4["medidas"], "conteos_geometria": R4["conteos"], "tamano_webb_mc": out["tam"]["R4"], "clasificacion_razones": cl4["razones"]},
             "E1-P-H3": {k: v for k, v in PH.items() if k != "ic95"},
         },
@@ -218,7 +218,7 @@ Coeficiente de E1-R3 por desviación típica de la dosis ({f(sd3, 3)} pp): {f(r3
 
 {md(evt4)}
 
-- Equivalencia (TOST, δ = 0,05): el IC95 de Webb ({f(R4['ic_webb'][0])}; {f(R4['ic_webb'][1])}) {'queda dentro de' if (R4['ic_webb'][0] > -0.05 and R4['ic_webb'][1] < 0.05) else 'no queda dentro de'} ±0,05, de modo que el IC90 también. Con {r4['G']} clusters, {r4['G_tratados']} con tratadas (la mitad), el Monte Carlo de V18 da el Webb por barrio como apto (tamaño propio del diseño {f(out['tam']['R4'], 3)}).
+- Equivalencia (TOST, δ = 0,05): el IC90 por inversión del contraste de Webb ({f(cl4['info']['tost']['ic90'][0])}; {f(cl4['info']['tost']['ic90'][1])}) {'queda dentro de' if cl4['info']['tost']['equivalente'] else 'no queda dentro de'} ±0,05: el nulo {'queda acotado' if cl4['info']['tost']['equivalente'] else 'no queda acotado y la clase es NO CONCLUYENTE (sin potencia) si el diseño es válido'}. Con {r4['G']} clusters, {r4['G_tratados']} con tratadas (la mitad), el Monte Carlo de V18 da el Webb por barrio como apto (tamaño propio del diseño {f(out['tam']['R4'], 3)}).
 - Adelantos (2011 y 2012): p = {f(ev4['pretend']['p'], 3)}; pendiente detectable {f(ev4['pretend']['pendiente_detectable'], 4)}; sesgo implicado {f(ev4['pretend']['sesgo_post'], 4)} (umbral δ = 0,05). Placebo de fecha (adopción falsa en 2012): {f(ev4['placebo_fecha']['coef'])}, p = {f(ev4['placebo_fecha']['p'], 3)}.
 - Honest DiD:
 

@@ -159,7 +159,9 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
 
     d4_ = E.DELTA["E1-R4"]
     r4_ic = ic4
-    tost4 = K.tost(r4["coef"], r4["se"], d4_, r4["G"] - 1)
+    # TOST (adenda 1.1; K8): equivalencia con el IC90 por inversión del contraste de Webb (la inferencia principal), no con el IC de CR1 con 5 clusters
+    ic90_4 = M4.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA), nivel=0.10)
+    tost4 = {"ic90": (float(ic90_4[0]), float(ic90_4[1])), "delta": d4_, "equivalente": bool(ic90_4[0] > -d4_ and ic90_4[1] < d4_), "metodo": "IC90 por inversión del contraste de Webb"}
     pre4 = ev4["pretend"]
     rob4 = robustez(r4["coef"], r4_ic, [{"coef": v["coef"], "ic95": v["ic95"], "comparable": True} for v in var4.values()], [med4["y_vu"], med4["y_mes"]])
     info4 = {"estimable": True, "coprincipal": False, "p_holm": holm["E1-R4"], "coef": r4["coef"], "tost": tost4, "pretend_p": pre4["p"], "roth_ok": bool(pre4["sesgo_post"] < d4_) if np.isfinite(pre4["sesgo_post"]) else None,

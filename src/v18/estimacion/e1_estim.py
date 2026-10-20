@@ -376,8 +376,8 @@ def sf_geometria() -> dict:
     import geopandas as gpd
     g = gpd.read_parquet(D.GEO)
     g = g[g.cod_municipio == "08019"][["cod_seccion", "cod_distrito", "geometry"]].reset_index(drop=True)
-    c = g.geometry.representative_point()
-    x, y = D.proyectar(c.x.values, c.y.values, 25831)
+    c = g.geometry.to_crs(25831).centroid          # centroide geométrico en ETRS89 / UTM 31N (K8: la réplica ciega usa el centroide, no un punto interior)
+    x, y = c.x.values, c.y.values
     tx, ty = D.proyectar([D.TEMPLO["sagrada_familia"][0]], [D.TEMPLO["sagrada_familia"][1]], 25831)
     g["dist_sf"] = np.sqrt((x - tx[0]) ** 2 + (y - ty[0]) ** 2) / 1000.0
     g["sellada"] = g.cod_distrito.isin(set(D.SELLADAS_BCN))

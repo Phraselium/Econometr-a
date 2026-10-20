@@ -51,3 +51,6 @@
   - E2-A1, A2: SDID con Conley-Taber vale con 2 a 25 tratados si son intercambiables; si los tratados son más variables que los controles (grandes municipios), no.
   - B5: la regla de «decisión coincidente en las tres priors» parte de intervalos conservadores; con K = 2 el efecto fijo no cubre μ si hay heterogeneidad (se muestra con esa advertencia).
 - **Aprendido de V16 y aplicado.** Nulo impuesto sobre el agregado y EE recalculado dentro de cada bootstrap (cs_webb); covarianza agrupada al nivel del tratamiento (honest); cobertura por inversión del mismo contraste; diseños con la estructura de V18 y diagnósticos que rompen a propósito el supuesto (variabilidad de los tratados, 4-5 CCAA de control, sorpresa gaussiana).
+
+## K6. Escritores en paralelo sin worktrees (2026-10-20)
+- Cada worktree ocupa unos 1,5 GB y el disco de la sesión tiene unos 4 GB libres: al crear dos a la vez se llenó (fallaron sin efecto en lo versionado). Los subagentes que escriben trabajan en el árbol principal, como máximo 3 a la vez, cada uno en ficheros y carpetas propios (src/v18/estimacion/<estudio>.py, output/v18/estimacion/<estudio>/); el orquestador revisa y hace commit, y no se lanza make check mientras escriben.

@@ -5,3 +5,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-20,F1,bibliotecario,"grupo C: ayudas, tipos, fiscalidad, no residentes, modelos de conjunto (83 fichas)",610266,"docs/v18/bib/{ayudas,tipos,fiscalidad,no_residentes,modelos_conjunto}/"
 2026-10-20,F2,replicador-estudio,"Chaves-Fonseca 2026 (tabla 2, precios): coincide",41311,src/v18/reproduccion/chavesfonseca2026.py; output/v18/reproduccion/chavesfonseca2026/
 2026-10-20,F2,replicador-estudio,"Mense 2025 (tabla 3A, IV con lluvia): coincide",65000,src/v18/reproduccion/mense_2025.py; output/v18/reproduccion/mense_2025/
+2026-10-20,F2,replicador-estudio,"Borusyak-Hull-Jaravel 2022 (ADH, tabla 4): coincide; bhj_lib",76806,"src/v18/reproduccion/{bhj_lib,borusyak_hull_jaravel_2022}.py; output/v18/reproduccion/borusyak_hull_jaravel_2022/"

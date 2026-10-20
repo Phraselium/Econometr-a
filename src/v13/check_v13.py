@@ -108,7 +108,9 @@ def cifras_sin_cambios() -> list[str]:
     nueva = lambda i: re.search(r"(?:^|\|)\s*`?" + re.escape(i) + r"`?\s*\|\s*nueva\b", errata, re.M)  # noqa: E731
     # V16 (fase 7, K22): las cifras de la 2.0 (ids V15-/V16- cuyo origen es output/v15 u output/v16) entran sin tocar la 1.0
     # V17 (fase 5): las cifras V17 (siempre C4, a posteriori; check_v17) entran con el mismo criterio desde output/v17/
-    dos = lambda i: i.startswith(("V15-", "V16-", "V17-")) and str(ck.at[i, "origen"]).startswith(("output/v15/", "output/v16/", "output/v17/"))  # noqa: E731
+    # V18 (fase 6): las cifras V18 (siempre C4, clasificacion_v18 al lado; check_v18) entran solo desde output/v18/f6/hechos.json
+    dos = lambda i: (i.startswith(("V15-", "V16-", "V17-")) and str(ck.at[i, "origen"]).startswith(("output/v15/", "output/v16/", "output/v17/"))  # noqa: E731
+                     or i.startswith("V18-") and str(ck.at[i, "origen"]).startswith("output/v18/f6/hechos.json:"))
     err += [f"cifra nueva en V13 (sin análisis nuevo): {i}" for i in ck.index if i not in base.index and not nueva(i) and not dos(i)]
     return err
 

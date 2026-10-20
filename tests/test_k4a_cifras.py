@@ -20,11 +20,13 @@ CK = RAIZ / "output" / "v5" / "cifras_clave.csv"
 RANGO_OTRO_SENTIDO = ("CA-EU-", "R1B-G-", "R1B-S-", "m2_pip_", "E-E1-VLC-contratos", "T1-H1", "T3-H8", "CC-C7b-jov-",
                       "CA-CT-ratio-triang-", "V8-M9-shap-",   # V8: banda del bootstrap de SHAP
                       "V16-ATL-DISP-", "V16-Q8-4", "V16-Q9-g",
-                      "V17-")   # V17: min y max definidos en la nota de cada cifra   # V16 (fase 7): dispersión P90/P10, contexto anual, valor crítico
+                      "V17-",   # V17: min y max definidos en la nota de cada cifra
+                      "V18-")   # V18 (fase 6): tipo_rango declarado (los intervalos pasan a «rango»; el resto, «sin rango»)  # V16 (fase 7): dispersión P90/P10, contexto anual, valor crítico
 # Filas con unidad «%» que son variaciones o log-puntos (pueden ser negativas)
 PCT_CAMBIO = ("CA-CR-", "E-v3-H3-", "V7-R6-", "V71-S3-R6-", "V9-",
               "V15-H1-", "V15-H2-", "V16-HEC-ALQ-IPC-REAL-", "V16-HEC-INTL-",
-              "V17-")   # V17: variaciones y diferencias (pueden ser negativas)   # V15: asociaciones (ATT); V16: cambios reales e internacionales   # v7.1: variaciones % de escenarios R6; V9: diferencias y asociaciones (pueden ser negativas)
+              "V17-",   # V17: variaciones y diferencias (pueden ser negativas)
+              "V18-")   # V18: coeficientes, contribuciones y variaciones (pueden ser negativos)  # V15: asociaciones (ATT); V16: cambios reales e internacionales   # v7.1: variaciones % de escenarios R6; V9: diferencias y asociaciones (pueden ser negativas)
 COMPONENTES = ("V9-D7-",)   # V9: cuota de un componente contable; supera 100 % si el otro componente es negativo
 
 

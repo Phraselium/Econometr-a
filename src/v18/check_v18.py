@@ -9,6 +9,10 @@
 4. derechos (sección A): ningún PDF versionado en data/bib/ ni en docs/v18/; las citas literales «…» de docs/v18/bib/ tienen 15
    palabras como máximo; cada PDF de data/bib/pdf/ en disco figura en data/bib/CHECKSUMS.sha256 con su sha256.
 5. nada anterior cambia y fuga v6: lo comprueban check_v8, check_v9, check_v13, check_v16 y check_v17 (que ya cubre src/v18/).
+6. Documento de Trabajo (fase 6): tras `make publicacion` existen publicacion/documento_v18/documento_v18.md y tablas_v18.xlsx; el
+   documento (output/v18/documento/documento_v18.md y su copia publicada) no usa lenguaje causal fuera de las secciones técnicas de
+   K2 (sección 4 y anexos, únicas donde cabe la fórmula condicional «con los supuestos …, el diseño identifica …»). En el resumen
+   ejecutivo, el no técnico y el abstract, nada; en el resto, solo líneas que lo niegan («no permite», «no identifica», «no es»…).
 """
 from __future__ import annotations
 
@@ -106,10 +110,51 @@ def derechos() -> list[str]:
     return err
 
 
+DOC = OUT / "documento" / "documento_v18.md"
+PUB_DOC = RAIZ / "publicacion" / "documento_v18"
+PUB_FICHEROS = ("documento_v18.md", "tablas_v18.xlsx")
+# documento: además de CAUSAL, «causalidad», la fórmula «el diseño identifica» y las formas inglesas (abstract)
+CAUSAL_DOC = re.compile(CAUSAL.pattern + r"|\bcausalidad\b|\bidentifica(?:n|r)?\b|\bcaus(?:e|es|ed|al|ally|ality)\b|\bdue to\b|\bdriv(?:e|es|en)\b",
+                        re.I)
+NEGACION = re.compile(r"\b(?:no (?:permite|identifica|es|son|implica|demuestra|se puede|hay)|sin lectura|ni )", re.I)
+TECNICAS = re.compile(r"^(?:4\.|anexo\b)", re.I)          # K2: secciones técnicas (resultados por factor y anexos)
+ESTRICTAS = re.compile(r"^(?:resumen|abstract\b)", re.I)  # resúmenes ejecutivo y no técnico y abstract: nada
+
+
+def texto_causal(texto: str, nombre: str) -> list[str]:
+    """Lenguaje causal por secciones de nivel 2 («## …»); los subapartados («### …») heredan la sección."""
+    err, seccion = [], ""
+    for n, ln in enumerate(texto.splitlines(), 1):
+        if ln.startswith("## "):
+            seccion = ln[3:].strip()
+            continue
+        m = CAUSAL_DOC.search(ln)
+        if not m or TECNICAS.match(seccion):
+            continue
+        if ESTRICTAS.match(seccion) or not NEGACION.search(ln):
+            err.append(f"{nombre}:{n}: lenguaje causal fuera de las secciones técnicas (K2), sección «{seccion or 'cabecera'}»: "
+                       f"{m.group(0)!r}")
+    return err
+
+
+def documento() -> list[str]:
+    err = []
+    if not DOC.exists():
+        return [f"{DOC.relative_to(RAIZ)}: falta el Documento de Trabajo (python3 src/v18/f6_documento.py)"]
+    err += texto_causal(DOC.read_text(encoding="utf-8"), str(DOC.relative_to(RAIZ)))
+    for f in PUB_FICHEROS:
+        p = PUB_DOC / f
+        if not p.exists():
+            err.append(f"{p.relative_to(RAIZ)}: no existe (make publicacion)")
+        elif p.suffix == ".md":
+            err += texto_causal(p.read_text(encoding="utf-8"), str(p.relative_to(RAIZ)))
+    return err
+
+
 def main() -> int:
     total = 0
     for nombre, f in (("cifras V18", cifras), ("lenguaje causal", causal), ("plan antes de estimar", plan_antes),
-                      ("derechos", derechos)):
+                      ("derechos", derechos), ("Documento de Trabajo", documento)):
         e = f()
         total += len(e)
         print(f"check_v18 · {nombre}: {len(e)} errores")

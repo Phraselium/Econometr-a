@@ -27,3 +27,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-20,F4,modelizador,E1-R4 principal sin adelantos (NO CONCLUYENTE; v3 con adelantos SUGESTIVO nulo acotado),100844,src/v18/estimacion/e1_*.py; output/v18/estimacion/e1/
 2026-10-20,F4,modelizador,"K9 en E2-R1: paro trimestral (−0,0384), frase de limitación, D1 corregida",86575,src/v18/estimacion/e2_*.py; output/v18/estimacion/e2/
 2026-10-20,F5,modelizador,magnitudes preferidas (B5) y contabilidad de la subida,350040,src/v18/f5_*.py; output/v18/f5/
+2026-10-20,F6,general-purpose,"infraestructura del Documento de Trabajo: cifras V18 en cifras_clave, generador, tablas, publicación, control",270213,src/v18/f6_*.py; output/v18/f6/; output/v18/documento/

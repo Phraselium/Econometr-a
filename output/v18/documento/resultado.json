@@ -1,0 +1,34 @@
+{
+ "rama": "V18-F6",
+ "pregunta": "Documento de Trabajo V18 (fase 6)",
+ "capa": "C4 (cifras V18) y la de cada cifra citada",
+ "partes": [
+  "00_resumen_ejecutivo.md",
+  "01_resumen_no_tecnico.md",
+  "02_abstract.md",
+  "10_introduccion.md",
+  "20_datos.md",
+  "30_metodos.md",
+  "40_resultados_factor.md",
+  "50_contabilidad.md",
+  "51_problema_general_local.md",
+  "52_demografia.md",
+  "60_implicaciones.md",
+  "61_factibilidad.md",
+  "62_medidas_auditadas.md",
+  "63_discurso_publico.md",
+  "70_limitaciones.md",
+  "90_anexos.md"
+ ],
+ "marcadores": 16,
+ "ids_por_capa": {
+  "C4": 15
+ },
+ "ids_v18_por_clasificacion": {
+  "NO ESTIMABLE": 5,
+  "SUGESTIVO": 2,
+  "ASOCIACIÓN": 2
+ },
+ "marcadores_sin_cifra": [],
+ "notas": "Ensamblado determinista; las cifras vienen de cifras_clave."
+}

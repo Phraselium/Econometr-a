@@ -75,3 +75,13 @@ def test_cifras_de_la_20_solo_desde_output_v15_v16(tmp_path, monkeypatch):
     _repo(tmp_path, monkeypatch, [a], [dict(a, origen="output/v5/X/hechos.json:X-1"), b, c], "# Fe de erratas\n")
     pd.DataFrame([dict(a, origen="o"), b, c]).to_csv(tmp_path / "output/v5/cifras_clave.csv", index=False)
     assert C.cifras_sin_cambios() == ["cifra nueva en V13 (sin análisis nuevo): V16-FALSA"]
+
+
+def test_cifras_v18_solo_desde_output_v18_f6(tmp_path, monkeypatch):
+    """V18 (fase 6): una cifra V18- nueva se admite solo si su origen es output/v18/f6/hechos.json (consolidado de f6_hechos)."""
+    a = _fila("X-1", "1")
+    b = dict(_fila("V18-B5-E1", "0.038"), origen="output/v18/f6/hechos.json:V18-B5-E1")
+    c = dict(_fila("V18-E1-R3", "0.0044"), origen="output/v18/estimacion/e1/hechos.json:V18-E1-R3")
+    _repo(tmp_path, monkeypatch, [a], [a, b, c], "# Fe de erratas\n")
+    pd.DataFrame([dict(a, origen="o"), b, c]).to_csv(tmp_path / "output/v5/cifras_clave.csv", index=False)
+    assert C.cifras_sin_cambios() == ["cifra nueva en V13 (sin análisis nuevo): V18-E1-R3"]

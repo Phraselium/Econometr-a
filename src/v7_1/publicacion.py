@@ -68,6 +68,9 @@ FUENTES: dict[str, str] = {
     "publicacion/informe_integral/informe_integral.md": "output/v16/informe/informe_integral.md",
     "publicacion/tablas_v16.xlsx": "output/v16/tablas_v16.xlsx",
     "metodologia/decisiones_v16.md": "docs/v16/decisiones.md",
+    # V18 (fase 6): Documento de Trabajo (src/v18/f6_documento.py, desde output/v18/documento/plantilla) y sus tablas
+    "publicacion/documento_v18/documento_v18.md": "output/v18/documento/documento_v18.md",
+    "publicacion/documento_v18/tablas_v18.xlsx": "output/v18/documento/tablas_v18.xlsx",
     "metodologia/preregistro_v9.md": "docs/v9/hipotesis.md",
     "metodologia/preregistro_v9_addendum_a1.md": "docs/v9/hipotesis_addendum_a1.md",
     "metodologia/revision_v9_F2.md": "docs/v9/revision_f2.md",

@@ -31,8 +31,11 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 
 - 2026-10-20 · **Fase 5 (código y salidas; pendiente de revisión del orquestador).** src/v18/f5_magnitudes.py y f5_contabilidad.py (en FASES["f5"]), tests/v18/test_f5.py, salidas en output/v18/f5/ (magnitudes, magnitudes_estudios, sensibilidad_b5, contabilidad, contabilidad_ilustracion, comparacion_v8, respuesta, hechos.json, informe.md). B5: solo E2-R1 (SUGESTIVO) es estimación propia válida y E2 no alcanza magnitud preferida (decisión distinta en las tres priors; I² = 0,95); E3 y E5 sin magnitud preferida (I² > 75 %); E1, E4 y E6 con magnitud solo de la literatura; E7-E9 con rango sin error típico. Contabilidad principal sin filas con cifra (100 % sin explicar); ilustración aparte con literatura. Decisiones en K10. check_v18, check_v17, check_v15 y ruff sin errores. Tokens del modelizador: ≈ 350.000 (a registrar en docs/v18/subagentes.csv).
 
+- 2026-10-20 · **Fase 6, primera parte (infraestructura del Documento de Trabajo; pendiente de make del orquestador).** src/v18/f6_hechos.py (570 cifras -> output/v18/f6/hechos.json; FASES["f6"] = f6_hechos, cifras_clave, f6_documento); cifras_clave lee ese fichero y añade la columna clasificacion_v18 (423 filas V18- nuevas; las anteriores sin cambios, comprobado sobre una copia); check_v13 admite V18- solo con origen output/v18/f6/hechos.json; prefijos V18- en tests/test_k4a_cifras.py; render.muestra_rango trata V18 como V17. src/v18/f6_documento.py: esqueleto en output/v18/documento/plantilla/ -> documento_v18.md (falla si un marcador no existe) y tablas_v18.xlsx (impactos, magnitudes, estimaciones, contabilidad). publicacion.py copia ambos a publicacion/documento_v18/. check_v18, control 6: documento publicado y lenguaje causal por sección. Escrituras autorizadas de cifras_clave.csv/.md registradas. Decisiones en K11.
+
 ## Siguiente
-- Revisión de la fase 5 (verificador-cifras, abogado-del-diablo sobre B5 y la contabilidad) y fase 6: Documento de Trabajo (publicacion/documento_v18/), con la tabla de impactos de B5 y la sección 5 de contabilidad.
+- Orquestador: `python3 src/v5/cifras_clave.py`, `python3 src/v18/f6_documento.py`, `make publicacion` y `make check` (hasta entonces check_v18 da 2 errores, publicacion/documento_v18/ no existe, y tests/v7_1/test_publicacion y tests/v18/test_infra_v18::test_repositorio_pasa fallan).
+- Fase 6, segunda parte: redacción del Documento de Trabajo sobre la plantilla, árbitro-final y verificador-cifras.
 
 ## Subagentes y tokens
 
@@ -68,6 +71,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F4 | modelizador | E1-R4 principal sin adelantos (NO CONCLUYENTE; v3 con adelantos SUGESTIVO nulo acotado) | 100.844 | src/v18/estimacion/e1_*.py; output/v18/estimacion/e1/ |
 | 2026-10-20 | F4 | modelizador | K9 en E2-R1: paro trimestral (−0,0384), frase de limitación, D1 corregida | 86.575 | src/v18/estimacion/e2_*.py; output/v18/estimacion/e2/ |
 | 2026-10-20 | F5 | modelizador | magnitudes preferidas (B5) y contabilidad de la subida | 350.040 | src/v18/f5_*.py; output/v18/f5/ |
+| 2026-10-20 | F6 | general-purpose | infraestructura del Documento de Trabajo: cifras V18 en cifras_clave, generador, tablas, publicación, control | 270.213 | src/v18/f6_*.py; output/v18/f6/; output/v18/documento/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -77,7 +81,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F3 | 985.262 |
 | F4 | 4.734.404 |
 | F5 | 350.040 |
+| F6 | 270.213 |
 
-Total V18: 8.143.140 tokens
+Total V18: 8.413.353 tokens
 
 <!-- fin subagentes -->

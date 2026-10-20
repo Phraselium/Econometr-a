@@ -38,8 +38,8 @@ CONTEOS = {"instrumentos", "variables", "hipótesis", "CCAA", "referencias", "af
 
 def muestra_rango(r) -> bool:
     """V17 (2026-10-20): una cifra V17 solo se escribe como «valor (mín.-máx.)» si su tipo_rango es «rango». Las cifras anteriores
-    se escriben como en su versión publicada."""
-    return r.get("tipo_rango", "rango") == "rango" or not str(r.get("id", "")).startswith("V17-")
+    se escriben como en su versión publicada. V18 (fase 6): igual que V17."""
+    return r.get("tipo_rango", "rango") == "rango" or not str(r.get("id", "")).startswith(("V17-", "V18-"))
 
 
 def fmt_num(x: float, unidad: str = "") -> str:

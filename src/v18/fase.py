@@ -22,7 +22,8 @@ FASES: dict[str, list[str]] = {
     "f3": ["src/v18/f3_sellado.py", "src/v18/f3_plan.py"],
     "f4": [],
     "f5": ["src/v18/f5_magnitudes.py", "src/v18/f5_contabilidad.py"],
-    "f6": [],
+    # f6: cifras V18 consolidadas -> cifras_clave (solo añade filas V18-) -> Documento de Trabajo y tablas_v18.xlsx
+    "f6": ["src/v18/f6_hechos.py", "src/v5/cifras_clave.py", "src/v18/f6_documento.py"],
 }
 CON_PUERTA = {"f3", "f4", "f5", "f6"}
 

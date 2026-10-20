@@ -48,6 +48,7 @@ def cargar() -> dict:
     d["rA"] = D.anual(K.leer_hechos("incasol_renta_media", "municipio", "A"))
     d["cA"] = D.anual(K.leer_hechos("incasol_contratos", "municipio", "A"))
     d["paro"] = D.anual(K.leer_hechos("sepe_paro_registrado_media_anual", "municipio", "A"))
+    d["paro_trim"] = D.paro_trimestral()        # media trimestral del fichero mensual del SEPE (adenda R-1; K9)
     d["hut"] = D.anual(K.leer_hechos("idescat_hut_n", "municipio", "A"))
     sp = K.leer_hechos("serpavi_alquiler_m2_mediana", "municipio", "A")
     d["serpavi"] = D.anual(sp[sp.desagregacion == "tipologia=VC"])
@@ -60,7 +61,8 @@ def cargar() -> dict:
 
 
 def paro_interp(paro: pd.DataFrame) -> pd.DataFrame:
-    """Paro registrado anual con 2020 INTERPOLADO linealmente entre 2019 y 2021 (el SEPE de 2020 no está en la base): solo robustez (CLAUDE.md)."""
+    """Paro registrado anual con 2020 INTERPOLADO linealmente entre 2019 y 2021. OBSOLETO desde K9 (el fichero mensual del SEPE sí trae 2020 y la
+    principal usa el paro trimestral); se conserva solo para 2019, que no se interpola."""
     p = paro.copy()
     p["2020"] = (p["2019"] + p["2021"]) / 2
     return p
@@ -87,7 +89,7 @@ def panel_r1(d: dict, resultado: str = "renta", con_barcelona: bool = False, gru
     else:
         ok = ok_c & d["pop"].reindex(cT.index)[["2019", "2020", "2021", "2022"]].notna().all(axis=1)
     if con_paro:
-        ok = ok & paro_interp(d["paro"]).reindex(ok.index)[["2019", "2020", "2021", "2022"]].notna().all(axis=1)
+        ok = ok & d["paro_trim"].reindex(ok.index)[per].notna().all(axis=1)
     cods = ok[ok].index
     gr = crecimiento_2014_2019(d["rA"])
     quitar = set() if con_barcelona else {D.BARCELONA}

@@ -146,13 +146,14 @@ def prueba_b(d: dict) -> tuple[list[dict], dict]:
     paro19 = np.log1p(DS.paro_interp(d["paro"]).reindex(cods)["2019"].values)
     ok_paro = np.isfinite(paro19)
     base = {"coef": m0.beta, "n_tr": q["n_tr"], "n_co": q["n_co"]}
+    paro_t = E.extra_paro(d, cods, q["cols"])        # K9: la principal lleva el paro trimestral; las variantes B6b lo conservan
     specs = [("B6b-1", "densidad HUT 2019 × efectos de trimestre", [dens], np.ones(len(cods), bool)),
              ("B6b-2", "ln(población 2019) × efectos de trimestre", [lp], np.ones(len(cods), bool)),
              ("B6b-3", "densidad HUT 2019 × trimestre y ln(población 2019) × trimestre", [dens, lp], np.ones(len(cods), bool)),
-             ("B6b-4", "B6b-3 y ln(1 + paro registrado 2019) × trimestre (paro real de 2019; sin el de 2020)", [dens, lp, paro19], ok_paro)]
+             ("B6b-4", "B6b-3 y ln(1 + paro registrado 2019) × trimestre (además del paro trimestral de la principal)", [dens, lp, paro19], ok_paro)]
     for ident, descr, vecs, keep in specs:
         Y, tr = q["Y"][keep], q["tr"][keep]
-        ex = []
+        ex = [paro_t[keep]]
         for v in vecs:
             ex += extra_por_trimestre(v[keep], T)
         m = E.twfe_panel(Y, tr, E.POST_COLS, (E.ANT_COL,), ex)
@@ -214,7 +215,7 @@ def prueba_c(d: dict) -> tuple[list[dict], dict]:
                                  ("B6c-2", 1, True, "controles emparejados por el crecimiento 2017-2019 y 2014-2017 (1 vecino más próximo)"),
                                  ("B6c-3", 3, False, "controles emparejados por el crecimiento 2017-2019 (3 vecinos más próximos)")):
         pe = panel_emparejado(d, k, dos)
-        m = E.twfe_panel(pe["Y"], pe["tr"], E.POST_COLS, (E.ANT_COL,), w=pe["w"])
+        m = E.twfe_panel(pe["Y"], pe["tr"], E.POST_COLS, (E.ANT_COL,), (E.extra_paro(d, pe["cod"], pe["cols"]),), w=pe["w"])
         r = inferir_var(m)
         ev = evento_w(pe["Y"], pe["tr"], pe["w"])
         info[ident] = {"pretend_p": ev["p_pretend"], "n_tr": pe["n_tr"], "n_co": pe["n_co"]}
@@ -397,7 +398,7 @@ los diagnósticos, los placebos y E2-R1c-v1 (una sola variante) llevan su p prop
 
 ### Cómo se hizo
 - **(a)** Estudio de eventos (base 2019T4) en los paneles equilibrados 2019T1-2022T2 (14 trimestres) y 2019T1-2023T4 (20): la recta se ajusta por mínima distancia (GLS con la covarianza agrupada por municipio) a los coeficientes de 2021T1-2022T1 (y, como variante, de 2020T4-2022T1); el salto es el coeficiente de 2022T2 menos el valor de la recta extrapolada, con su error típico conjunto (t de G−1 gl). La muestra de estos paneles es menor que la de la principal porque exige contratos en más trimestres.
-- **(b)** Covariables por trimestre: x_i × 1[t = k] para cada trimestre; la densidad HUT usa IDESCAT 2019 (sin dato = 0) entre los habitantes del padrón de 2019; la población municipal del padrón está en el repositorio. B6b-4 añade el paro registrado de 2019 (el de 2020 no está en la base; los ERTE por municipio tampoco).
+- **(b)** Covariables por trimestre: x_i × 1[t = k] para cada trimestre; la densidad HUT usa IDESCAT 2019 (sin dato = 0) entre los habitantes del padrón de 2019; la población municipal del padrón está en el repositorio. B6b-4 añade el paro registrado de 2019 (los ERTE por municipio no están en el repositorio).
 - **(c)** Emparejamiento con reposición por el crecimiento anual de la renta 2017-2019 (y 2014-2017 en B6c-2) con el conjunto de no regulados sin el criterio de crecimiento de JMS; el peso del control es el número de veces elegido. El placebo de 2017 usa Incasòl anual 2014-2019, adopción falsa en 2017, con y sin una tendencia lineal propia de los regulados.
 - **(d)** SDID con los pesos de unidad ω (símplex, con regularización) y de tiempo λ de `sdid.py`; pre = 2019T1-2020T2, post = 2020T4-2022T1 (como la principal; 2020T3 queda fuera). La inferencia por placebos de Conley-Taber solo es válida si los tratados son intercambiables con los controles (Monte Carlo de V18): se rotula la razón de variabilidad temporal previa entre tratados y controles. Con JMS hay pocos donantes por placebo.
 - **(e)** E2-R1c-v1: estimabilidad (mínimo de 30/30 y MDE80 frente al umbral 2δ = 0,10) calculada antes del coeficiente. Como el denominador (hogares inquilinos) es fijo en el tiempo, lo absorbe el efecto fijo de municipio: la variante equivale al log de contratos en la muestra de municipios con Censo 2021 (de 10.000 habitantes o más), y su contribución es el cambio de muestra y de unidades.

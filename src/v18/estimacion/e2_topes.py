@@ -60,7 +60,7 @@ NO_EST_DATOS = {
 }
 VARIANTES = {   # id padre: [(sufijo, dimensión, descripción)]
     "E2-R1": [("v1", "V", "sin 2020T1-2020T3"), ("v2", "U", "con Barcelona ciudad"), ("v3", "C", "controles por covariables (vecino más cercano)"),
-              ("v4", "C", "controles a más de 10 km"), ("v5", "C", "sin covariables"), ("v6", "C", "densidad HUT 2019 × posterior"),
+              ("v4", "C", "controles a más de 10 km"), ("v5", "C", "sin paro registrado (sin covariables)"), ("v6", "C", "densidad HUT 2019 × posterior"),
               ("v7", "E", "anticipación desde 2019T2"), ("v8", "V", "anual 2014-2021 con Honest DiD"), ("v9", "M", "SERPAVI municipal anual 2016-2021"),
               ("v10", "P", "ponderada por contratos de 2019"), ("v11", "U", "sin el 1 % de municipios con más contratos")],
     "E2-R1c": [("v1", "M", "contratos por hogar inquilino"), ("v2", "E", "PPML"), ("v3", "V", "sin 2020T1-2020T3"), ("v4", "U", "con Barcelona")],
@@ -70,7 +70,7 @@ VARIANTES = {   # id padre: [(sufijo, dimensión, descripción)]
     "E2-A3": [("v1", "M", "valor tasado"), ("v2", "U", "sin Barcelona"), ("v3", "V", "trimestral 2019-2022")],
     "E2-A4": [("v1", "C", "vecinos directos"), ("v2", "C", "10-25 km frente a > 25 km")],
 }
-HOLGURA = [("E2-R1-h1", "E2-R1", "paro registrado con 2020 interpolado linealmente (el de 2020 no está en la base): solo robustez, holgura de la adenda 1.8")]
+HOLGURA = []   # K9: la holgura E2-R1-h1 (paro con 2020 interpolado) desaparece: el paro trimestral real entra en la principal
 
 
 def comprobar_sin_selladas(codigos, nivel: str = "municipio") -> None:
@@ -106,7 +106,7 @@ def variante_trim(d, ident, suf, resultado, base_ic, rng_seed):
     """Estimación de una variante trimestral: devuelve (fila-resultado, panel). Inferencia: CR1 y Webb (B_VAR), sin IC de Webb."""
     kw = {"v1": dict(drop=(4, 5, 6), ant=()), "v2": dict(con_barcelona=True), "v3": dict(matching=True), "v4": dict(grupo="10km"),
           "v6": dict(covar="hut"), "v7": dict(ant=tuple(range(1, 7))), "v10": dict(pesos="contratos2019"), "v11": dict(sin_p99=True),
-          "h1": dict(covar="paro")}
+          "v5": dict(covar="ninguna")}
     if ident == "E2-R1c":
         kw = {"v3": dict(drop=(4, 5, 6), ant=()), "v4": dict(con_barcelona=True)}
     m, q = E.spec_trim(d, resultado, **kw[suf])
@@ -228,12 +228,6 @@ def main() -> int:
                 fv.update({"estado": "estimada a posteriori (B6)", "clase": "",
                            "nota": f"[{dim}] {desc}: la variable (hogares en alquiler del Censo 2021 por municipio) se añadió a docs/v18/sellado_v18.json DESPUÉS de la etiqueta (desviación B6-1) y se estima en "
                                    "e2_robustez.py (robustez_b6.csv; desviación B6-2), no en esta ejecución"})
-                filas.append(fv)
-                continue
-            if ident == "E2-R1" and suf == "v5":
-                fv.update({"estado": "coincide con la principal", "nota": f"[{dim}] {desc}: la principal ya va sin covariables (el paro registrado de 2020 no está en la base: "
-                                                                          "interpolarlo solo es robustez, holgura E2-R1-h1)", "coef": f["coef"], "p_webb": f["p_webb"], "p_cr1": f["p_cr1"],
-                           "ic95_lo": f["ic95_lo"], "ic95_hi": f["ic95_hi"]})
                 filas.append(fv)
                 continue
             if ident == "E2-R1" and suf in ("v8", "v9"):

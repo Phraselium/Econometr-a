@@ -18,6 +18,13 @@ ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6
 FUENTES = ["Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)", "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
            "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"]
 I8 = "Clasificación provisional: falta I8 (réplica ciega, B6)"
+FRASE_K9 = ("Entre 2020T4 y 2022T1, la renta media de los contratos nuevos registrados en el Incasòl en los 49 municipios sujetos a la Ley 11/2020 (sin Barcelona ciudad) se situó, "
+            "respecto a 2019, un 3,8 % por debajo (log −0,038; IC95 −0,051 a −0,026) de la de municipios catalanes no regulados con mercado tensionado. La diferencia no es estable: "
+            "es máxima en 2021T1 (−0,058), se reduce de forma gradual hasta no distinguirse de cero en 2022T1, antes de la STC 37/2022, sin cambio posterior, y baja a −0,023 "
+            "(IC95 −0,045 a −0,001) cuando se permiten trayectorias trimestrales distintas según el tamaño del municipio. Con estos datos no se separa la parte asociada a la norma "
+            "de un choque transitorio de la COVID-19 en los municipios grandes ni de un cambio en la composición de los contratos registrados, y la sensibilidad a tendencias "
+            "diferenciales (Honest DiD con M̄ ≥ 0,5) no es evaluable con la potencia disponible. La magnitud coincide con la de Jofre-Monseny et al. (2023), que usan el mismo "
+            "registro y el mismo episodio. Clase V18: SUGESTIVO; capa del proyecto C4.")
 
 
 def f(x, n=4):
@@ -47,7 +54,8 @@ def escribir(OUT: Path, d: dict, est: pd.DataFrame, tab: pd.DataFrame, diag: dic
     nota_r1 = (f"Coeficiente de Reg × Post con efectos fijos de municipio y de trimestre; inferencia de Webb por municipio (9.999 réplicas, p con valor crítico corregido "
                f"por el tamaño de Monte Carlo 0,071), p tras Holm {f(t.loc['E2-R1', 'p_holm'], 5)}. Razón con la referencia de Jofre-Monseny et al. (2023, −0,045): {f(razon, 2)} "
                f"(etiqueta coherente, razón en [1/3; 3]). Pretendencias p = {f(r1['evento']['p_pretend'], 3)}; reversión en 2022T2-2023T4: {f(r1['reversion']['coef_reversion'])}. "
-               f"Tope SUGESTIVO por corrección de un fallo conocido de V9-D1b. Lectura: asociación estimada. {I8}.")
+               f"Tope SUGESTIVO por corrección de un fallo conocido de V9-D1b. Lectura: asociación estimada. {I8}. "
+               f"Frase de limitación (K9, obligatoria al difundir la cifra): «{FRASE_K9}»")
     H.append(K.hecho("V18-E2-R1", "Coeficiente Reg × Post sobre el log de la renta media de contratos nuevos de alquiler (Ley 11/2020, Cataluña, Incasòl)", t.loc["E2-R1", "coef"],
                      t.loc["E2-R1", "ic95_lo"], t.loc["E2-R1", "ic95_hi"], "log (diferencia entre regulados y controles, posterior frente a previo)", "2019T1-2022T1",
                      cob_r1, FUENTES, cls["E2-R1"]["clase"], nota_r1))
@@ -212,7 +220,7 @@ Ajuste de Benjamini-Yekutieli al 10 % dentro de cada identificador (q_by). Webb 
 - I8 pendiente para ambas (replicador-ciego). El lenguaje de ambas cifras es el de una asociación estimada.
 
 ## 8. Desviaciones y lecturas de las reglas (se recogen en docs/v18/desviaciones.md)
-- **D1. Paro registrado de 2020 ausente.** La base no tiene el paro municipal del SEPE de 2013 ni de 2020. La principal va sin covariables; E2-R1-v5 («sin covariables») coincide con ella; el paro con 2020 interpolado entra como holgura E2-R1-h1 (adenda 1.8). Los ERTE por municipio no están en el repositorio.
+- **D1 (corregida en K9). Paro registrado.** La versión anterior de esta desviación («el paro de 2020 no está en la base») era falsa: el fichero mensual del SEPE por municipio (fichero paro_registrado_municipio_mensual.csv.gz de sepe_municipios, v9) cubre 2006-2026. La principal lleva ln(1 + paro) como media trimestral de los meses del fichero (adenda R-1); falta diciembre de 2020 en el fichero, así que 2020T4 es la media de octubre y noviembre. E2-R1-v5 («sin paro») es ahora una variante estimada y desaparece la holgura E2-R1-h1. Los ERTE por municipio no están en el repositorio.
 - **D2. Honest DiD.** Se aplica la lectura de la adenda 1.12 y del Monte Carlo de V18: solo M̄ = 0 es apto; el criterio de I3 «IC con M̄ = 1 excluye el cero» no es evaluable (tamaño 0 con M̄ ≥ 0,5). I3 se juzga con las pretendencias y la potencia de Roth.
 - **D3. Comarcas.** No están en el repositorio: 42 conglomerados de k-medias sobre los centroides de los 947 municipios (SEED 20261010) sustituyen a las comarcas en la inferencia alternativa.
 - **D4. Entradas y salidas del régimen.** La lista de la Ley 11/2020 del repositorio no identifica municipios que entraron o salieron; no se pudo reconstruir con el DOGC (sin red). Se dice.
@@ -223,6 +231,7 @@ Ajuste de Benjamini-Yekutieli al 10 % dentro de cada identificador (q_by). Webb 
 - **D9. Coprincipales sin estimar.** E2-P-H1, E2-P-H2, E2-P-D1c y E2-P-Q1c heredan la no estimabilidad de la principal que acompañan (misma variación).
 
 ## 9. Limitaciones
+- **Frase de limitación (K9; obligatoria al difundir la cifra principal, tal cual):** «{FRASE_K9}»
 - Incasòl público solo da la renta media por municipio y trimestre, sin renta anterior, superficie ni tipo de contrato: no se separa composición de precio y no se contrasta el desvío a la temporada.
 - La COVID coincide con el posterior; el control de JMS se define por el crecimiento de la renta de 2014-2019 (criterio legal de mercado tensionado), lo que condiciona la comparación (la coprincipal V9-D1b, sin ese criterio, da un coeficiente mayor).
 - Las 4 provincias catalanas no bastan como clusters; la unidad de agrupación es el municipio.

@@ -31,8 +31,9 @@ TAM_ALEAT_MUN = 0.0635  # aleatorizacion · E2_cat_trim_M · permuta_entre_munic
 
 # --------------------------------------------------------------------------------------------- construcción
 def extra_paro(d: dict, cods, per: list[str]) -> np.ndarray:
-    pi = DS.paro_interp(d["paro"]).reindex(cods)
-    return np.column_stack([np.log1p(pi[p[:4]].values) for p in per])
+    """ln(1 + paro registrado) trimestral: media trimestral del fichero mensual del SEPE (adenda R-1; K9)."""
+    pt = d["paro_trim"].reindex(cods)
+    return np.column_stack([np.log1p(pt[p].values) for p in per])
 
 
 def twfe_panel(Y, tr, post_cols, ant_cols=(), extras=(), w=None, cluster=None, drop_cols=()) -> K.Modelo:
@@ -188,10 +189,13 @@ def panel_matching(d: dict, resultado: str) -> dict:
     return q
 
 
-def spec_trim(d: dict, resultado: str = "renta", *, con_barcelona=False, grupo="jms", drop=(), ant=(ANT_COL,), covar="ninguna", pesos=None,
+def spec_trim(d: dict, resultado: str = "renta", *, con_barcelona=False, grupo="jms", drop=(), ant=(ANT_COL,), covar=None, pesos=None,
               sin_p99=False, matching=False, post=POST_COLS) -> tuple[K.Modelo, dict]:
+    """K9: la principal de la renta lleva ln(1 + paro trimestral) como covariable (adenda R-1); covar="ninguna" es la variante sin paro (v5)."""
+    if covar is None:
+        covar = "paro" if resultado == "renta" else "ninguna"
     p = panel_matching(d, resultado) if matching else DS.panel_r1(d, resultado, con_barcelona=con_barcelona, grupo_control=grupo,
-                                                                    con_paro=(covar == "paro"))
+                                                                    con_paro=(covar in ("paro", "hut") and resultado == "renta"))
     keep = np.ones(len(p["cod"]), bool)
     c19 = d["cT"].reindex(p["cod"])[["2019T1", "2019T2", "2019T3", "2019T4"]].sum(axis=1).values
     if sin_p99:
@@ -202,7 +206,7 @@ def spec_trim(d: dict, resultado: str = "renta", *, con_barcelona=False, grupo="
     if pesos == "contratos2019":
         w = c19[keep]
     extras = []
-    if covar == "paro":
+    if covar in ("paro", "hut") and resultado == "renta":      # la variante HUT va sobre la principal (con paro)
         extras.append(extra_paro(d, q["cod"], q["cols"]))
     if covar == "hut":
         pop19 = d["pop"].reindex(q["cod"])["2019"].values

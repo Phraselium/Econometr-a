@@ -2,9 +2,9 @@
  {
   "id": "V18-E2-R1",
   "indicador": "Coeficiente Reg × Post sobre el log de la renta media de contratos nuevos de alquiler (Ley 11/2020, Cataluña, Incasòl)",
-  "valor": -0.038167,
-  "min": -0.050741,
-  "max": -0.025714,
+  "valor": -0.038434,
+  "min": -0.050944,
+  "max": -0.02618,
   "unidad": "log (diferencia entre regulados y controles, posterior frente a previo)",
   "periodo": "2019T1-2022T1",
   "cobertura": "49 municipios regulados por la Ley 11/2020 y 94 controles de Cataluña, panel trimestral equilibrado 2019T1-2022T1 sin Barcelona ciudad; sin los municipios sellados en v6, V15 y V16",
@@ -15,7 +15,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "SUGESTIVO",
-  "nota": "Coeficiente de Reg × Post con efectos fijos de municipio y de trimestre; inferencia de Webb por municipio (9.999 réplicas, p con valor crítico corregido por el tamaño de Monte Carlo 0,071), p tras Holm 0.00057. Razón con la referencia de Jofre-Monseny et al. (2023, −0,045): 0.85 (etiqueta coherente, razón en [1/3; 3]). Pretendencias p = 0.440; reversión en 2022T2-2023T4: -0.0016. Tope SUGESTIVO por corrección de un fallo conocido de V9-D1b. Lectura: asociación estimada. Clasificación provisional: falta I8 (réplica ciega, B6)."
+  "nota": "Coeficiente de Reg × Post con efectos fijos de municipio y de trimestre; inferencia de Webb por municipio (9.999 réplicas, p con valor crítico corregido por el tamaño de Monte Carlo 0,071), p tras Holm 0.00057. Razón con la referencia de Jofre-Monseny et al. (2023, −0,045): 0.85 (etiqueta coherente, razón en [1/3; 3]). Pretendencias p = 0.440; reversión en 2022T2-2023T4: -0.0016. Tope SUGESTIVO por corrección de un fallo conocido de V9-D1b. Lectura: asociación estimada. Clasificación provisional: falta I8 (réplica ciega, B6). Frase de limitación (K9, obligatoria al difundir la cifra): «Entre 2020T4 y 2022T1, la renta media de los contratos nuevos registrados en el Incasòl en los 49 municipios sujetos a la Ley 11/2020 (sin Barcelona ciudad) se situó, respecto a 2019, un 3,8 % por debajo (log −0,038; IC95 −0,051 a −0,026) de la de municipios catalanes no regulados con mercado tensionado. La diferencia no es estable: es máxima en 2021T1 (−0,058), se reduce de forma gradual hasta no distinguirse de cero en 2022T1, antes de la STC 37/2022, sin cambio posterior, y baja a −0,023 (IC95 −0,045 a −0,001) cuando se permiten trayectorias trimestrales distintas según el tamaño del municipio. Con estos datos no se separa la parte asociada a la norma de un choque transitorio de la COVID-19 en los municipios grandes ni de un cambio en la composición de los contratos registrados, y la sensibilidad a tendencias diferenciales (Honest DiD con M̄ ≥ 0,5) no es evaluable con la potencia disponible. La magnitud coincide con la de Jofre-Monseny et al. (2023), que usan el mismo registro y el mismo episodio. Clase V18: SUGESTIVO; capa del proyecto C4.»"
  },
  {
   "id": "V18-E2-R1-REV",
@@ -213,9 +213,9 @@
  {
   "id": "V18-E2-B6-B",
   "indicador": "Coeficiente Reg × Post con densidad HUT 2019 y ln(población 2019) por efectos de trimestre (E2-R1, robustez a posteriori)",
-  "valor": -0.023708,
-  "min": -0.046062,
-  "max": -0.001355,
+  "valor": -0.024163,
+  "min": -0.046151,
+  "max": -0.002176,
   "unidad": "log",
   "periodo": "2019T1-2022T1",
   "cobertura": "49 regulados y 94 controles",
@@ -227,14 +227,14 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "SUGESTIVO",
-  "nota": "IC95 CR1 por municipio; p de Webb 0.0356; con el paro registrado de 2019 por trimestre -0.0236. Principal -0.0382. Prueba declarada a posteriori (ronda 1, B6). Lectura: asociación estimada."
+  "nota": "IC95 CR1 por municipio; p de Webb 0.0296; con el paro registrado de 2019 por trimestre -0.0239. Principal -0.0384. Prueba declarada a posteriori (ronda 1, B6). Lectura: asociación estimada."
  },
  {
   "id": "V18-E2-B6-C",
   "indicador": "Coeficiente Reg × Post con controles emparejados por el crecimiento de la renta 2017-2019 (E2-R1, robustez a posteriori)",
-  "valor": -0.05427,
-  "min": -0.080863,
-  "max": -0.027678,
+  "valor": -0.054625,
+  "min": -0.080597,
+  "max": -0.028653,
   "unidad": "log",
   "periodo": "2019T1-2022T1",
   "cobertura": "49 regulados y 31 controles emparejados con reposición",

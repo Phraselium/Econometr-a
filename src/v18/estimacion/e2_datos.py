@@ -115,3 +115,19 @@ def mivau_municipal(archivo: str, variable: str) -> pd.DataFrame:
     t = t[t.periodo.str.fullmatch(r"\d{4}T[1-4]")]
     t = K.filtrar(t, "cod", "municipio", "periodo", variable, "T")
     return t.rename(columns={"cod": "territorio_codigo"})[["territorio_codigo", "periodo", "valor"]]
+
+
+def paro_trimestral() -> pd.DataFrame:
+    """Paro registrado por municipio y trimestre (media de los meses del fichero mensual del SEPE; adenda R-1). El anual de la base no tiene 2020.
+    El mensual es el mismo dato que «sepe_paro_registrado_media_anual» y hereda su tope temporal (regla (f) de la adenda 1.4: mismo dato, mismo
+    nivel); pasa por K.filtrar (sellado.filtrar + holdout.excluir_sellados_v6). Los meses con «<5» vienen vacíos y diciembre de 2020 no está en el fichero (202012 ausente: 2020T4 = media de octubre y noviembre);
+    la media trimestral exige al menos 2 meses con dato."""
+    m = pd.read_csv(RAW / "v9" / "sepe_municipios" / "paro_registrado_municipio_mensual.csv.gz", dtype={"cod_municipio": str, "mes": str})
+    m["cod_municipio"] = m.cod_municipio.str.zfill(5)
+    m["anio"] = m["mes"].str[:4]
+    m = m[(m.anio >= "2019") & (m.anio <= "2022")]
+    m = K.filtrar(m, "cod_municipio", "municipio", "anio", "sepe_paro_registrado_media_anual", "A")
+    m["trim"] = m["anio"] + "T" + ((m["mes"].str[4:6].astype(int) - 1) // 3 + 1).astype(str)
+    g = m.groupby(["cod_municipio", "trim"]).paro_registrado.agg(["mean", "count"])
+    g.loc[g["count"] < 2, "mean"] = np.nan
+    return g["mean"].unstack().reindex(columns=K.trimestres("2019T1", "2022T4"))

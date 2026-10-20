@@ -25,3 +25,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-20,F4,modelizador,"corrección de E1-R4 (geometría, TOST con Webb)",78403,src/v18/estimacion/e1_*.py; output/v18/estimacion/e1/
 2026-10-20,F4,abogado-del-diablo,ronda 2 B6: E2-R1 (SUGESTIVO con limitación),71619,docs/v18/revision_estimaciones/ronda2_e2r1.md
 2026-10-20,F4,modelizador,E1-R4 principal sin adelantos (NO CONCLUYENTE; v3 con adelantos SUGESTIVO nulo acotado),100844,src/v18/estimacion/e1_*.py; output/v18/estimacion/e1/
+2026-10-20,F4,modelizador,"K9 en E2-R1: paro trimestral (−0,0384), frase de limitación, D1 corregida",86575,src/v18/estimacion/e2_*.py; output/v18/estimacion/e2/

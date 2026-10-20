@@ -17,3 +17,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-20,F4,modelizador,F1-F3 (sin cointegración: solo corto plazo) y E7 tipos (primera etapa débil: NO ESTIMABLE),511431,"src/v18/estimacion/{f_*,e7_tipos}.py; output/v18/estimacion/{f_conjunto,e7}/"
 2026-10-20,F4,modelizador,"E3 (NO CONCLUYENTE), E5 y E9 (NO ESTIMABLES)",751395,"src/v18/estimacion/{e3_*,e5_*,e9_*,_e359_*,e359_*}.py; output/v18/estimacion/{e3,e5,e9}/"
 2026-10-20,F4,abogado-del-diablo,"ronda 1 B6: E2-R1, E2-R1c, E8-R1",119872,docs/v18/revision_estimaciones/ronda1_e2_e8.md
+2026-10-20,F4,replicador-ciego,réplica ciega E2-R1 (coincide) y E8-R1 (coincide),165658,src/v18/replica/; output/v18/replica/

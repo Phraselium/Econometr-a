@@ -53,7 +53,8 @@ def calendario(desplazar_meses: int = 0) -> pd.DataFrame:
     i = d[(d.instrumento == "itp") & d.territorio.isin(CCAA_NOMBRE.values())].copy()
     gen = i[i.parametro == "tipo general ITP"]
     mini = i[i.parametro == "tipo general ITP (tipo mínimo de la escala)"]
-    usar = pd.concat([gen, mini[~mini.territorio.isin(gen.territorio)]])
+    # por CCAA y fecha, el tipo general si existe y, si no, el mínimo de la escala (Andalucía mezcla las dos etiquetas según el año)
+    usar = pd.concat([gen, mini]).drop_duplicates(["territorio", "fecha_efecto"], keep="first")
     usar["valor"] = pd.to_numeric(usar["valor"])
     usar["inicio"] = pd.to_datetime(usar["fecha_efecto"])
     usar = usar.sort_values(["territorio", "inicio"])
@@ -93,7 +94,7 @@ def cargar_resultado() -> pd.DataFrame:
     return sellado.filtrar(h, "territorio_codigo", "provincia", "periodo", "valor_tasado", "T")
 
 
-def preparar(desplazar=0, quitar_2012_13=False):
+def preparar(desplazar=0, quitar_2012_13=False, interpolar=False):
     y = cargar_resultado()
     periodos = [f"{a}T{q}" for a in range(2010, 2027) for q in range(1, 5) if f"{a}T{q}" <= "2026T2"]
     y = y[y.periodo.isin(periodos)]
@@ -104,11 +105,13 @@ def preparar(desplazar=0, quitar_2012_13=False):
     filas = [(p, c) for c, ps in PROV_CCAA.items() for p in ps]
     provs = [p for p, _ in filas]
     w = y.pivot(index="territorio_codigo", columns="periodo", values="valor").reindex(index=provs, columns=periodos)
+    if interpolar:   # solo robustez: huecos de 1-3 trimestres interpolados linealmente en logaritmos
+        w = np.exp(np.log(w).interpolate(axis=1, limit=3, limit_area="inside"))
     completo = w.notna().all(axis=1)
     provs_ok = [p for p in provs if completo[p]]
     cc = [c for p, c in filas if completo[p]]
     Y = np.log(w.loc[provs_ok].to_numpy(float))
-    ccaas = list(CCAA_NOMBRE.values())
+    ccaas = [c for c in CCAA_NOMBRE.values() if c in set(cc)]   # solo las CCAA con alguna provincia completa
     cl = np.array([ccaas.index(c) for c in cc])
     Dc = dc.loc[ccaas].to_numpy(float)
     return Y, Dc, cl, provs_ok, periodos, ev, [p for p in provs if not completo[p]]
@@ -116,7 +119,8 @@ def preparar(desplazar=0, quitar_2012_13=False):
 
 def ic_inversion(Y, Dc, cl, perms, b, se, ell):
     """IC95 por inversión del contraste de aleatorización: valores theta0 con p >= 0,05 en una rejilla."""
-    rej = np.linspace(b - 6 * se, b + 6 * se, 241)
+    perms = perms[:1999]                      # rejilla con 1.999 permutaciones (el p principal usa las 9.999)
+    rej = np.linspace(b - 5 * se, b + 5 * se, 61)
     ok = [t for t in rej if dcdh.p_aleatorizacion(Y, Dc, cl, t, ell, perms) >= 0.05]
     return (float(min(ok)), float(max(ok))) if ok else (float("nan"), float("nan"))
 
@@ -125,6 +129,7 @@ def main():
     SALIDA.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(SEED)
     Y, Dc, cl, provs, periodos, ev, perdidas = preparar()
+    ccaa_en_panel = sorted(set(cl.tolist()))
     G = Dc.shape[0]
     M = dcdh.onehot(cl)
     D = Dc[cl]
@@ -139,15 +144,15 @@ def main():
     r4 = dcdh.estimar(Y, D, ELL)
     b = float(r4["beta"])
     se = res[ELL]["se_cluster_ccaa"]
-    p_ale = dcdh.p_aleatorizacion(Y, D[:, :] * 0 + D, cl, 0.0, ELL, perms) if False else dcdh.p_aleatorizacion(Y, Dc, cl, 0.0, ELL, perms)
+    p_ale = dcdh.p_aleatorizacion(Y, Dc, cl, 0.0, ELL, perms)
     p_webb = dcdh.p_webb(Y, D, 0.0, ELL, M, np.random.default_rng(SEED), B=9999)
     ic = ic_inversion(Y, Dc, cl, perms, b, se, ELL)
     # robustez: fechas -3 / +3 meses, sin 2012-2013
     rob = {}
-    for nom, kw in [("fechas_-3m", dict(desplazar=-3)), ("fechas_+3m", dict(desplazar=3)), ("sin_2012_2013", dict(quitar_2012_13=True))]:
-        Yr, Dr, clr, *_ = preparar(**kw)
+    for nom, kw in [("fechas_-3m", dict(desplazar=-3)), ("fechas_+3m", dict(desplazar=3)), ("sin_2012_2013", dict(quitar_2012_13=True)), ("huecos_interpolados", dict(interpolar=True))]:
+        Yr, Dr, clr, provr, *_ = preparar(**kw)
         rr = dcdh.estimar(Yr, Dr[clr], ELL)
-        rob[nom] = {"beta": float(rr["beta"]), "se_cluster_ccaa": float(dcdh.ee_cluster(rr["IF"], dcdh.onehot(clr)))}
+        rob[nom] = {"n_provincias": len(provr), "beta": float(rr["beta"]), "se_cluster_ccaa": float(dcdh.ee_cluster(rr["IF"], dcdh.onehot(clr)))}
     out = {
         "rama": "replica_ciega_v18", "pregunta": "E8-R1: efecto de +1 pp del tipo general del ITP en el log del valor tasado a 4 trimestres",
         "capa": "C4", "rotulo": "réplica ciega V18; capa C4",
@@ -156,7 +161,7 @@ def main():
         "N": int(Y.shape[0] * Y.shape[1]), "n_provincias": int(Y.shape[0]), "n_clusters": int(G), "n_trimestres": int(Y.shape[1]),
         "provincias_perdidas_por_huecos": perdidas,
         "metodo": "dCDH dosis continua l=4; ln valor tasado; cluster CCAA; aleatorización del calendario (9.999) y Webb",
-        "estimacion": b, "se_cluster_ccaa": se, "ic95": list(ic), "ic95_metodo": "inversión del contraste de aleatorización (rejilla ±6 EE)",
+        "estimacion": b, "se_cluster_ccaa": se, "ic95": list(ic), "ic95_metodo": "inversión del contraste de aleatorización (rejilla ±5 EE, 61 puntos, 1.999 permutaciones)",
         "ic95_normal_cluster": [b - 1.96 * se, b + 1.96 * se],
         "p_ajustado": None, "p_aleatorizacion": p_ale, "p_webb": p_webb,
         "nivel_evidencia": "EXPLORATORIO", "clasificacion_v18": "no se clasifica (réplica ciega)",

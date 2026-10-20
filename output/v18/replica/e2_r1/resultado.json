@@ -1,0 +1,102 @@
+{
+  "rama": "replica_ciega_v18",
+  "pregunta": "E2-R1: efecto de la Ley 11/2020 sobre ln renta media de contratos nuevos (Incasòl)",
+  "capa": "C4",
+  "rotulo": "réplica ciega V18; capa C4",
+  "datos": "Incasòl municipio-trimestre 2019T1-2022T1 (renta, contratos; sellado.filtrar); paro SEPE mensual->trimestral",
+  "n_tratados": 49,
+  "n_controles": 93,
+  "minimo_30_30": true,
+  "N": 1846,
+  "metodo": "DiD TWFE (efectos municipio y trimestre), cluster municipio; Webb WCR/WCU 9.999; SEED 20261010",
+  "estimacion": -0.03779397729669712,
+  "ic95": [
+    -0.049932046539038544,
+    -0.025642591822796296
+  ],
+  "ic95_cr1": [
+    -0.04994697749543027,
+    -0.025640977097963966
+  ],
+  "se_cr1_municipio": 0.006200510305476097,
+  "p_webb": 0.0,
+  "p_ajustado": null,
+  "nivel_evidencia": "EXPLORATORIO",
+  "clasificacion_v18": "no se clasifica (réplica ciega)",
+  "diagnosticos": {
+    "principal": {
+      "beta": -0.03779397729669712,
+      "se_cr1_municipio": 0.006200510305476097,
+      "ic95_cr1": [
+        -0.04994697749543027,
+        -0.025640977097963966
+      ],
+      "p_webb_wcr": 0.0,
+      "ic95_webb_wcu": [
+        -0.049932046539038544,
+        -0.025642591822796296
+      ],
+      "theta_anticipacion": 0.013647755602085856,
+      "se_theta": 0.010809072430133274,
+      "n_municipios": 142,
+      "N": 1846
+    },
+    "sin_covariables_v5": {
+      "beta": -0.03752897629660673,
+      "se_cr1_municipio": 0.006249786900614263,
+      "ic95_cr1": [
+        -0.04977855862181069,
+        -0.025279393971402775
+      ],
+      "p_webb_wcr": 0.0,
+      "ic95_webb_wcu": [
+        -0.04971726458054434,
+        -0.02523030147175401
+      ],
+      "theta_anticipacion": 0.013886511224079625,
+      "se_theta": 0.010841313766619306,
+      "n_municipios": 142,
+      "N": 1846
+    },
+    "sin_2020T1_T3_v1": {
+      "beta": -0.03773371337321474,
+      "se_cr1_municipio": 0.006673736803271703,
+      "ic95_cr1": [
+        -0.05081423750762728,
+        -0.0246531892388022
+      ],
+      "p_webb_wcr": 0.0,
+      "ic95_webb_wcu": [
+        -0.05095062519788557,
+        -0.02467804215895043
+      ],
+      "theta_anticipacion": null,
+      "se_theta": null,
+      "n_municipios": 142,
+      "N": 1420
+    },
+    "crecimiento_control_mediana": 0.052430070100471404,
+    "comarca": "no disponible en el repositorio: cluster por municipio en lugar de comarca (adenda, 42 comarcas)",
+    "erte": "no disponible: omitido",
+    "barcelona": "excluida (principal de la adenda)"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Episodio histórico: nunca C3. Los parcialmente tratados y las entradas/salidas del régimen no se pueden identificar con el fichero: declarado.",
+  "comparacion": {
+    "orquestador": -0.038,
+    "ic95_orquestador": [
+      -0.051,
+      -0.026
+    ],
+    "mia": -0.03779397729669712,
+    "dif_abs": 0.00020602270330288136,
+    "dif_rel": 0.00542165008691793,
+    "mi_estimacion_en_ic_orquestador": true,
+    "cifra_orquestador_en_mi_ic95": true,
+    "veredicto": "coincide"
+  }
+}

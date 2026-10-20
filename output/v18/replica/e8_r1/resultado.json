@@ -1,0 +1,204 @@
+{
+  "rama": "replica_ciega_v18",
+  "pregunta": "E8-R1: efecto de +1 pp del tipo general del ITP en el log del valor tasado a 4 trimestres",
+  "capa": "C4",
+  "rotulo": "réplica ciega V18; capa C4",
+  "datos": "valor_tasado provincial trimestral (base) 2010T1-2026T2 (sellado.filtrar), 36 provincias de 8 CCAA; tipos generales de data/raw/v16/intervenciones/intervenciones.csv (memorias de Hacienda)",
+  "N": 1980,
+  "n_provincias": 30,
+  "n_clusters": 7,
+  "n_trimestres": 66,
+  "provincias_perdidas_por_huecos": [
+    "39",
+    "34",
+    "40",
+    "42",
+    "16",
+    "32"
+  ],
+  "metodo": "dCDH dosis continua l=4; ln valor tasado; cluster CCAA; aleatorización del calendario (9.999) y Webb",
+  "estimacion": 0.014609399725022083,
+  "se_cluster_ccaa": 0.004696228146519534,
+  "ic95": [
+    0.0013034199765500718,
+    0.030263493546753863
+  ],
+  "ic95_metodo": "inversión del contraste de aleatorización (rejilla ±5 EE, 61 puntos, 1.999 permutaciones)",
+  "ic95_normal_cluster": [
+    0.0054047925578437975,
+    0.023814006892200368
+  ],
+  "p_ajustado": null,
+  "p_aleatorizacion": 0.0437,
+  "p_webb": 0.0001,
+  "nivel_evidencia": "EXPLORATORIO",
+  "clasificacion_v18": "no se clasifica (réplica ciega)",
+  "diagnosticos": {
+    "efectos_por_horizonte": {
+      "0": {
+        "beta": 0.003007375200028413,
+        "se_cluster_ccaa": 0.0027408806406956955,
+        "den": 71.0
+      },
+      "2": {
+        "beta": 0.0017158692820460912,
+        "se_cluster_ccaa": 0.008024788100742808,
+        "den": 68.0
+      },
+      "4": {
+        "beta": 0.014609399725022083,
+        "se_cluster_ccaa": 0.004696228146519534,
+        "den": 68.0
+      },
+      "6": {
+        "beta": -0.00028334680426098,
+        "se_cluster_ccaa": 0.00989017341909529,
+        "den": 54.0
+      },
+      "8": {
+        "beta": -0.004710759719578076,
+        "se_cluster_ccaa": 0.012776810668451833,
+        "den": 51.0
+      }
+    },
+    "robustez": {
+      "fechas_-3m": {
+        "n_provincias": 30,
+        "beta": 0.008819651637187372,
+        "se_cluster_ccaa": 0.005225633890815397
+      },
+      "fechas_+3m": {
+        "n_provincias": 30,
+        "beta": 0.013091673522800117,
+        "se_cluster_ccaa": 0.005927551828734134
+      },
+      "sin_2012_2013": {
+        "n_provincias": 30,
+        "beta": -0.007907310798833132,
+        "se_cluster_ccaa": 0.003866998940705746
+      },
+      "huecos_interpolados": {
+        "n_provincias": 35,
+        "beta": 0.012157341560067555,
+        "se_cluster_ccaa": 0.0038694360255371717
+      }
+    },
+    "cambios_efectivos": 13,
+    "ccaa_con_cambio": 7,
+    "eventos": [
+      {
+        "territorio": "Andalucía",
+        "inicio": "2012-01-01",
+        "dosis": 1.0,
+        "trimestre": "2012T1"
+      },
+      {
+        "territorio": "Andalucía",
+        "inicio": "2021-04-28",
+        "dosis": -1.0,
+        "trimestre": "2021T2"
+      },
+      {
+        "territorio": "Cantabria",
+        "inicio": "2013-01-01",
+        "dosis": 1.0,
+        "trimestre": "2013T1"
+      },
+      {
+        "territorio": "Cantabria",
+        "inicio": "2019-01-01",
+        "dosis": 2.0,
+        "trimestre": "2019T1"
+      },
+      {
+        "territorio": "Cantabria",
+        "inicio": "2024-01-01",
+        "dosis": -1.0,
+        "trimestre": "2024T1"
+      },
+      {
+        "territorio": "Castilla y León",
+        "inicio": "2013-01-01",
+        "dosis": 1.0,
+        "trimestre": "2013T1"
+      },
+      {
+        "territorio": "Castilla-La Mancha",
+        "inicio": "2012-01-01",
+        "dosis": 1.0,
+        "trimestre": "2012T1"
+      },
+      {
+        "territorio": "Castilla-La Mancha",
+        "inicio": "2016-06-01",
+        "dosis": 1.0,
+        "trimestre": "2016T2"
+      },
+      {
+        "territorio": "Cataluña",
+        "inicio": "2010-07-01",
+        "dosis": 1.0,
+        "trimestre": "2010T3"
+      },
+      {
+        "territorio": "Cataluña",
+        "inicio": "2013-08-01",
+        "dosis": 2.0,
+        "trimestre": "2013T3"
+      },
+      {
+        "territorio": "Comunitat Valenciana",
+        "inicio": "2013-01-01",
+        "dosis": 3.0,
+        "trimestre": "2013T1"
+      },
+      {
+        "territorio": "Comunitat Valenciana",
+        "inicio": "2026-06-01",
+        "dosis": -1.0,
+        "trimestre": "2026T2"
+      },
+      {
+        "territorio": "Extremadura",
+        "inicio": "2012-01-01",
+        "dosis": 1.0,
+        "trimestre": "2012T1"
+      },
+      {
+        "territorio": "Galicia",
+        "inicio": "2013-03-01",
+        "dosis": 3.0,
+        "trimestre": "2013T1"
+      },
+      {
+        "territorio": "Galicia",
+        "inicio": "2022-01-01",
+        "dosis": -1.0,
+        "trimestre": "2022T1"
+      },
+      {
+        "territorio": "Galicia",
+        "inicio": "2024-01-01",
+        "dosis": -1.0,
+        "trimestre": "2024T1"
+      }
+    ],
+    "sin_control_recaudacion_previa": true
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Sin recaudación previa (no descargada): tope SUGESTIVO. Panel desde 2010T1 (sin tipos antes). Sin evaluación sellada.",
+  "comparacion": {
+    "orquestador": 0.0146,
+    "ic95_orquestador": null,
+    "mia": 0.014609399725022083,
+    "dif_abs": 9.399725022082514e-06,
+    "dif_rel": 0.0006438167823344188,
+    "mi_estimacion_en_ic_orquestador": null,
+    "cifra_orquestador_en_mi_ic95": true,
+    "veredicto": "coincide"
+  }
+}

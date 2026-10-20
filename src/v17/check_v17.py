@@ -88,7 +88,8 @@ def fuga_v6_texto(texto: str) -> bool:
     """True si el texto de un script incumple la guarda de fuga v6."""
     if not LEE_DATOS.search(texto):
         return False
-    return "excluir_sellados_v6(" not in texto and not DECLARACION.search(texto)
+    # V18: sellado.filtrar (src/v18/sellado.py) aplica holdout.excluir_sellados_v6 más las exclusiones de V15/V16 y el tope temporal
+    return "excluir_sellados_v6(" not in texto and "sellado.filtrar(" not in texto and not DECLARACION.search(texto)
 
 
 def fuga_v6() -> list[str]:

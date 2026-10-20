@@ -26,6 +26,7 @@ def test_acepta_filtro_o_declaracion():
     lee = 'p = RAIZ / "data" / "raw" / "x.csv"\n'
     assert check_v17.fuga_v6_texto(lee)
     assert not check_v17.fuga_v6_texto(lee + "d = holdout.excluir_sellados_v6(d, 'cod', 'provincia')\n")
+    assert not check_v17.fuga_v6_texto(lee + "d = sellado.filtrar(d, 'cod', 'provincia', 'periodo', 'v', 'T')\n")   # V18
     for a in ("nacional", "sin lectura de datos", "reproduce publicado"):
         assert not check_v17.fuga_v6_texto(f'ALCANCE_TERRITORIAL = "{a}"\n' + lee)
     assert check_v17.fuga_v6_texto('ALCANCE_TERRITORIAL = "provincial"\n' + lee)

@@ -17,8 +17,10 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 
 - 2026-10-20 · **Fase 2 cerrada.** Tres reproducciones con el paquete de su autor, las tres «coincide»: Chaves-Fonseca (2026, tabla 2: 0,0197 frente a 0,020 por 100 anuncios), Mense (2025, tabla 3A: −0,1916 frente a −0,192) y Borusyak-Hull-Jaravel (2022, ADH tabla 4: 11 de 11; herramienta shift-share src/v18/reproduccion/bhj_lib.py validada). Los demás estudios clave no tienen paquete con datos y pasan a la fase 3 solo con su especificación (docs/v18/reproduccion.md). Sin parada G.
 
+- 2026-10-20 · **Fase 3.** Plan de replicación (docs/v18/plan_replicacion.md) revisado por revisor-preregistro (APTO CON CAMBIOS, 28 hallazgos) y abogado-del-diablo (resiste con limitaciones); decisión del autor K2 (toda cifra V18 en C4; fórmula condicional solo en secciones técnicas; evaluate_v18 diferido); adenda (docs/v18/plan_replicacion_adenda.md) que responde a todos los hallazgos: ventana trimestral de E2 2019T1-2022T1, E2 por tramo NO ESTIMABLE, padrón por nacionalidad cortado en 2022, multiverso enumerado (245 variantes + 200 de holgura), B5 sin filtro por significación, 7 hipótesis para evaluate_v18. Barcelona pierde Gràcia, Sant Andreu y Nou Barris (sellados V15/V16): 48 clusters.
+
 ## Siguiente
-- Fase 3: plan de replicación (docs/v18/plan_replicacion.md, B1) por estudio y ampliación; revisor-preregistro y abogado-del-diablo; adenda; etiqueta plan-replicacion-v18 y push.
+- Etiqueta plan-replicacion-v18 y push; sellado_v18.json; fase 4 (estimación).
 
 ## Subagentes y tokens
 
@@ -36,14 +38,15 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F3 | general-purpose | plan de replicación (B1), E1-E12 y F1-F4 | 354.665 | docs/v18/plan_replicacion.md |
 | 2026-10-20 | F3 | abogado-del-diablo | ataque a los diseños del plan de replicación (T1-T5, E1-E12, F) | 127.140 | docs/v18/revision_plan/abogado_del_diablo.md |
 | 2026-10-20 | F3 | revisor-preregistro | revisión del plan de replicación (28 hallazgos; APTO CON CAMBIOS) | 181.919 | docs/v18/revision_plan/revisor_preregistro.md |
+| 2026-10-20 | F3 | general-purpose | adenda del plan de replicación (respuesta a 28 + AD hallazgos) | 321.538 | docs/v18/plan_replicacion_adenda.md; src/v18/f0_inventario.py |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 259.633 |
 | F1 | 1.630.684 |
 | F2 | 183.117 |
-| F3 | 663.724 |
+| F3 | 985.262 |
 
-Total V18: 2.737.158 tokens
+Total V18: 3.058.696 tokens
 
 <!-- fin subagentes -->

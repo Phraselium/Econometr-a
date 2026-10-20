@@ -150,20 +150,23 @@ ESTUDIOS: list[Estudio] = [
     Estudio(
         "E2", "Topes al alquiler (Jofre-Monseny, Martínez-Mazza y Segú, 2023; Monràs y García-Montalvo, 2023)",
         "replicable en parte",
-        "La réplica de Jofre-Monseny et al. es posible: Incasòl da renta y número de contratos por municipio y trimestre desde "
-        "2007, con tramos de renta, y la lista de municipios de la Ley 11/2020 está en el repositorio. Monràs y García-Montalvo "
-        "necesitan anuncios (composición y tramo de precio del anuncio): NO ESTIMABLE sin microdatos de portales. El "
-        "desplazamiento a temporada no tiene datos.",
+        "La réplica de Jofre-Monseny et al. es posible: Incasòl da renta y número de contratos por municipio, anual desde "
+        "2007 y trimestral solo desde 2019T1 (docs/v3/decisiones.md; src/v9/paneles.py), y la lista de municipios de la Ley "
+        "11/2020 está en el repositorio. El tramo de precio de Incasòl clasifica al municipio en cada periodo, no reparte sus "
+        "contratos por tramo: los contratos por tramo de renta no existen (corrección de la adenda del plan de replicación, "
+        "hallazgo 2 del revisor). Monràs y García-Montalvo necesitan anuncios o microdatos de contratos (composición y tramo "
+        "de precio): NO ESTIMABLE. El desplazamiento a temporada no tiene datos.",
         {"08": "réplica", "17": "réplica", "25": "réplica", "43": "réplica", "48": "ampliación (zonas 2024)",
          "31": "ampliación (zonas 2024)", "33": "ampliación (zonas 2024)", "15": "ampliación (zonas 2024)"},
         [
             _r("Renta media y número de contratos por municipio (Cataluña)", "disponible",
                ["data/raw/v9/incasol/incasol_qww9-bvhh_actual.csv.gz", "data/raw/v3/incasol_fianzas_municipio_v3.csv.gz"],
-               nivel="municipio (Cataluña)", periodo="2007T1-2026T1 trimestral", esencial=True),
-            _r("Contratos por tramo de renta", "parcial", ["data/raw/v9/incasol/incasol_qww9-bvhh_actual.csv.gz"],
-               nivel="municipio", periodo="2007T1-2026T1",
-               falta="tramos fijos en euros/mes, sin la renta anterior del contrato ni la superficie; microdatos de contratos "
-                     "del registro de fianzas (Agència de l'Habitatge de Catalunya)", autor="sí"),
+               nivel="municipio (Cataluña)", periodo="2007-2025 anual; 2019T1-2026T1 trimestral", esencial=True),
+            _r("Contratos por tramo de renta", "falta", [],
+               nivel="municipio", periodo="—",
+               falta="el campo de tramo de Incasòl (tram_preus) clasifica al municipio en cada periodo y no reparte sus "
+                     "contratos por tramo; hacen falta microdatos de contratos del registro de fianzas (Agència de "
+                     "l'Habitatge de Catalunya) con renta, renta anterior y superficie", autor="sí"),
             _r("Municipios y vigencia del tope (Ley 11/2020, STC 37/2022)", "disponible",
                ["data/raw/v3/cataluna_contencion_rentas_v3.csv", "base:tope_rentas_ccaa", "base:tope_rentas_ccaa_alt_v3"],
                nivel="municipio (lista) y CCAA (indicador)", periodo="2020-09-22 a 2022-04-08 (dos ventanas)", esencial=True),

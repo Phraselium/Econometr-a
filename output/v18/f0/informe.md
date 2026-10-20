@@ -23,7 +23,7 @@ Generado por `python3 src/v18/f0_inventario.py` (2026-10-20); no editar a mano. 
 | Estudio | Veredicto preliminar | Variables disponibles | Parciales | Faltan |
 |---|---|---|---|---|
 | E1 | replicable en parte | 5 | 5 | 4 |
-| E2 | replicable en parte | 5 | 2 | 2 |
+| E2 | replicable en parte | 5 | 1 | 3 |
 | E3 | replicable en parte | 8 | 2 | 0 |
 | E4 | NO ESTIMABLE con los datos actuales | 2 | 2 | 1 |
 | E5 | replicable en parte | 4 | 3 | 4 |
@@ -62,12 +62,12 @@ Generado por `python3 src/v18/f0_inventario.py` (2026-10-20); no editar a mano. 
 
 ## E2 · Topes al alquiler (Jofre-Monseny, Martínez-Mazza y Segú, 2023; Monràs y García-Montalvo, 2023)
 
-**Veredicto preliminar: replicable en parte.** La réplica de Jofre-Monseny et al. es posible: Incasòl da renta y número de contratos por municipio y trimestre desde 2007, con tramos de renta, y la lista de municipios de la Ley 11/2020 está en el repositorio. Monràs y García-Montalvo necesitan anuncios (composición y tramo de precio del anuncio): NO ESTIMABLE sin microdatos de portales. El desplazamiento a temporada no tiene datos.
+**Veredicto preliminar: replicable en parte.** La réplica de Jofre-Monseny et al. es posible: Incasòl da renta y número de contratos por municipio, anual desde 2007 y trimestral solo desde 2019T1 (docs/v3/decisiones.md; src/v9/paneles.py), y la lista de municipios de la Ley 11/2020 está en el repositorio. El tramo de precio de Incasòl clasifica al municipio en cada periodo, no reparte sus contratos por tramo: los contratos por tramo de renta no existen (corrección de la adenda del plan de replicación, hallazgo 2 del revisor). Monràs y García-Montalvo necesitan anuncios o microdatos de contratos (composición y tramo de precio): NO ESTIMABLE. El desplazamiento a temporada no tiene datos.
 
 - **Sellado v6 (reduce la muestra):** se excluyen Navarra [ampliación (zonas 2024)]; Asturias [ampliación (zonas 2024)]; siguen Barcelona, A Coruña, Girona, Lleida, Tarragona, Bizkaia.
 - **Réplica:**
   - Renta media y número de contratos por municipio (Cataluña): **disponible** (data/raw/v9/incasol/incasol_qww9-bvhh_actual.csv.gz; data/raw/v3/incasol_fianzas_municipio_v3.csv.gz).
-  - Contratos por tramo de renta: **parcial** (data/raw/v9/incasol/incasol_qww9-bvhh_actual.csv.gz). Falta: tramos fijos en euros/mes, sin la renta anterior del contrato ni la superficie; microdatos de contratos del registro de fianzas (Agència de l'Habitatge de Catalunya). Requiere al autor.
+  - Contratos por tramo de renta: **falta**. Falta: el campo de tramo de Incasòl (tram_preus) clasifica al municipio en cada periodo y no reparte sus contratos por tramo; hacen falta microdatos de contratos del registro de fianzas (Agència de l'Habitatge de Catalunya) con renta, renta anterior y superficie. Requiere al autor.
   - Municipios y vigencia del tope (Ley 11/2020, STC 37/2022): **disponible** (data/raw/v3/cataluna_contencion_rentas_v3.csv; base:tope_rentas_ccaa; base:tope_rentas_ccaa_alt_v3).
   - Controles municipales (población, renta, paro): **disponible** (base:pob_total; base:aeat_irpf_renta_disponible_media; base:sepe_paro_registrado_media_anual).
   - Anuncios de alquiler 2019-2022 (Monràs y García-Montalvo): **falta**. Falta: microdatos de portales (Idealista, Fotocasa, Habitaclia): precio, superficie, ubicación y fechas. Requiere al autor.

@@ -19,7 +19,7 @@ FASES: dict[str, list[str]] = {
     "f0": ["src/v18/f0_inventario.py"],
     "f1": ["src/v18/f1_bibliografia.py"],
     "f2": ["src/v18/f2_reproduccion.py"],
-    "f3": ["src/v18/f3_plan.py"],
+    "f3": ["src/v18/f3_sellado.py", "src/v18/f3_plan.py"],
     "f4": [],
     "f5": [],
     "f6": [],

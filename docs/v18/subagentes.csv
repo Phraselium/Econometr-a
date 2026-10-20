@@ -10,3 +10,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-20,F3,abogado-del-diablo,"ataque a los diseños del plan de replicación (T1-T5, E1-E12, F)",127140,docs/v18/revision_plan/abogado_del_diablo.md
 2026-10-20,F3,revisor-preregistro,revisión del plan de replicación (28 hallazgos; APTO CON CAMBIOS),181919,docs/v18/revision_plan/revisor_preregistro.md
 2026-10-20,F3,general-purpose,adenda del plan de replicación (respuesta a 28 + AD hallazgos),321538,docs/v18/plan_replicacion_adenda.md; src/v18/f0_inventario.py
+2026-10-20,F4,general-purpose,"sellado de entrenamiento (sellado_v18.json, sellado.py)",294114,"src/v18/{f3_sellado,sellado}.py; docs/v18/sellado_v18.json"

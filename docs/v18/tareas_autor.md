@@ -2,6 +2,12 @@
 
 No paran el trabajo: se anotan y se sigue con lo demás.
 
+
+## V18 · fase 3 (2026-10-20): subir la etiqueta del pre-registro
+- El proxy de la sesión cortó la subida de la etiqueta («the remote end hung up unexpectedly», 4 intentos). Desde tu ordenador, con la rama actualizada:
+  `git fetch origin claude/housing-price-spain-econometric-95dhj3 && git tag -a plan-replicacion-v18 ad4385c -m "V18: pre-registro interno (plan_replicacion.md + adenda), sin sello externo" && git push origin plan-replicacion-v18`
+- El commit ad4385c ya está en la rama remota; la puerta de V18 (src/v18/etiqueta.py) usa la etiqueta local y ese commit, así que el trabajo sigue.
+
 ## V18 · fase 0 (2026-10-20)
 Del inventario de datos por estudio (output/v18/f0/inventario.csv e informe.md; filas con requiere_autor = sí). Por orden de valor para la sección E del plan. Lo que se puede descargar sin ti (Censo 2001 por nacionalidad, renta de los hogares por provincia, alquiler por barrio de Open Data BCN, tipos de cambio, afiliación por sector, etc.) está en el informe y no va aquí.
 

@@ -20,14 +20,15 @@
   "70_limitaciones.md",
   "90_anexos.md"
  ],
- "marcadores": 16,
+ "marcadores": 214,
  "ids_por_capa": {
-  "C4": 15
+  "C4": 213
  },
  "ids_v18_por_clasificacion": {
-  "NO ESTIMABLE": 5,
-  "SUGESTIVO": 2,
-  "ASOCIACIÓN": 2
+  "NO ESTIMABLE": 112,
+  "ASOCIACIÓN": 16,
+  "SUGESTIVO": 10,
+  "NO CONCLUYENTE": 5
  },
  "marcadores_sin_cifra": [],
  "notas": "Ensamblado determinista; las cifras vienen de cifras_clave."

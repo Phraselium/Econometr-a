@@ -1,6 +1,22 @@
 ### 6.3 Discurso público auditado en V17: qué cambia
 
-<!-- Esqueleto. Sección de V17 (K0): afirmaciones del debate público auditadas en V17 y su revisión con V18. Veredicto sobre la
-afirmación, nunca sobre quién la dice. -->
+Son las afirmaciones del grupo «Demanda y precios» de la tabla final de V17. El veredicto se emite sobre la afirmación, nunca sobre quien la formula. La última columna dice si V18 lo cambia.
 
-Renta media de los contratos nuevos en Cataluña (Incasòl, 2019-2025, ponderada): {{V17-AUD-DP-ALQ-INCASOL-NUEVOS-POND:valor}}.
+| Afirmación | Veredicto de V17 | Cifras de V17 y aporte de V18 (clase, capa C4) | ¿Cambia? |
+|---|---|---|---|
+| «Hay burbuja» o «no hay burbuja» | engañosa | Variación del precio sobre la renta bruta por hogar frente a 2007: {{V17-AUD-DP-BUR-PRECIO-RENTA-FRENTE-2007:num}} %; variación del saldo de crédito sobre el PIB frente a 2007: {{V17-AUD-DP-BUR-CREDITO-FRENTE-2007:num}} puntos. V18: los modelos F1 a F3 no rechazan la ausencia de cointegración y no publican sobrevaloración; la dinámica de corto plazo es ASOCIACIÓN (F1-R1: {{V18-F1-R1:clasificacion}}) | No |
+| La inmigración como explicación de la subida | engañosa | La población crece por el saldo migratorio (el residuo es el {{V17-D3-RESIDUO-PESO:num}} % del crecimiento) y los hogares en alquiler cuya persona de mayor edad nació en el extranjero son el {{V17-AUD-DP-INM-CUOTA-ALQUILER-EXTR:num}} % del total. V18: E3-R1 ({{V18-E3-R1-beta:clasificacion}}) y E3 sin magnitud preferida | No |
+| Los pisos turísticos como explicación de la subida | engañosa | El aumento de 2020-2024 equivale al {{V17-AUD-DP-TUR-NAC-AUMENTO-2020-2024:num}} % del parque de alquiler y el stock de mayo de 2026, al {{V17-AUD-DP-TUR-NAC-STOCK-2026M05:num}} %; en el percentil 90 de las secciones, el {{V17-AUD-DP-TUR-SEC-P90:num}} %. V18: E1-R3 ({{V18-E1-R3:clasificacion}}) y E1-R4 ({{V18-E1-R4:clasificacion}}) | No |
+| «El alquiler ha subido un X %» | se sostiene con matices | La renta media de los contratos nuevos en Cataluña, ponderada por contratos (Incasòl, 2019-2025), varió {{V17-AUD-DP-ALQ-INCASOL-NUEVOS-POND:valor}}; el IPC de alquiler deflactado por la renta por hogar, {{V17-AUD-DP-ALQ-IPC-REAL-RENTA:num}} %. V18 no añade estimaciones sobre esta pregunta | No |
+| «El precio ha subido un X %» | se sostiene con matices | El IPV deflactado por la renta por hogar varió {{V17-AUD-DP-PRE-IPV-REAL-RENTA:num}} % en 2019-2025. V18 no añade estimaciones | No |
+| «Con los tipos altos bajarán los precios» | se sostiene con matices | El IPV subió {{V17-AUD-DP-TIP-IPV-2022-2024:num}} % entre 2021T4 y 2024T4. V18: E7-R1 ({{V18-E7-R1:clasificacion}}) y E7-R3 ({{V18-E7-R3:clasificacion}}); el rango de la literatura es de {{V18-B5-E7:min_num}} a {{V18-B5-E7:max_num}} % por +100 pb | No |
+
+**Por qué no cambian.**
+
+- *Burbuja.* V17 concluía que ninguna de las dos afirmaciones se puede sostener. V18 no aporta un indicador de nivel nuevo, y los modelos de largo plazo no se publican por falta de cointegración. La sobrevaloración que cita V17 es la del Banco de España.
+- *Inmigración.* V17 separaba la contabilidad de la población (que V18 no toca) del efecto sobre el precio (que V18 tampoco logra medir: E3-R1 es NO CONCLUYENTE y las demás especificaciones, NO ESTIMABLES). La afirmación sigue sin base para atribuir la subida a un grupo concreto, y también sin base para negar que un aumento de población se asocie con más demanda.
+- *Turísticos.* Los datos permiten una asociación débil en Barcelona y nada concluyente fuera de ella. V17 limitaba el efecto local a los barrios muy expuestos y V18 no lo desmiente ni lo confirma.
+- *Alquiler y precio.* Son preguntas de definición y medida (contratos vigentes o nuevos, nominal o real, territorio). V18 no estima nada sobre ellas.
+- *Tipos.* El hecho de que los precios subieran con los tipos (2022-2024) es descriptivo y V18 no puede contrastarlo: la proyección local con instrumento es NO ESTIMABLE por primera etapa débil, y el BVAR es informativo, con herramienta NO APTA.
+
+**Lo que dicen las preguntas D3 de V17 con V18.** Población: crece por la migración neta (sección 5.3). ¿General o local?: común en compra, mixto en alquiler (sección 5.2). ¿Factible construir?: la necesidad supera varias veces la producción actual (sección 6.1). Qué no sabemos: el efecto en España de casi todas las medidas, que es también el resultado de V18.

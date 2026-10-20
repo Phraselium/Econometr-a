@@ -74,7 +74,7 @@ def pesos_unidad_lote(Ypre_co: np.ndarray, grupos: np.ndarray, zeta_: float, it:
     L = 2 * (np.linalg.norm(A, 2) ** 2 + reg) + 1e-12
     donantes = ~grupos
     W0 = donantes / donantes.sum(1, keepdims=True)
-    return _fista(lambda Z: 2 * ((Z @ A.T) @ A - Aa) + 2 * reg * Z, L, W0, donantes, it)   # (Z A') A: T_pre << N
+    return _fista(lambda Z: 2 * ((Z @ A.T) @ A - Aa) + 2 * reg * Z, L, W0, donantes, it)   # (Z A') A: T_pre mucho menor que N
 
 
 def sdid(Ypre_tr: np.ndarray, Ypost_tr: np.ndarray, Ypre_co: np.ndarray, Ypost_co: np.ndarray) -> dict:

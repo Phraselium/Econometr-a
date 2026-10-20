@@ -109,7 +109,11 @@ def mivau_municipal(archivo: str, variable: str) -> pd.DataFrame:
     t = pd.read_csv(RAW / archivo, dtype=str)
     t = t[t.ccaa.isin(CODAUTO)]
     corr = correspondencia_ine(t.dropna(subset=["ccaa"]))
-    t = t.merge(corr[["territorio", "ccaa", "cod"]], on=["territorio", "ccaa"], how="inner").dropna(subset=["cod"])
+    # V7: el cruce es por código INE. MIVAU solo trae el nombre: se convierte una vez a código con el diccionario oficial del INE
+    # (correspondencia_ine; ambiguos y no resueltos se descartan y se cuentan) y todo lo demás se cruza por «cod».
+    cod = {(r.territorio, r.ccaa): r.cod for r in corr.itertuples() if isinstance(r.cod, str)}
+    t["cod"] = [cod.get(k) for k in zip(t.territorio, t.ccaa)]
+    t = t.dropna(subset=["cod"])
     t["valor"] = pd.to_numeric(t.valor, errors="coerce")
     t["periodo"] = t.periodo.astype(str)
     t = t[t.periodo.str.fullmatch(r"\d{4}T[1-4]")]

@@ -289,7 +289,8 @@ def panel_ccaa_oferta() -> pd.DataFrame:
     vt = a[["ccaa", "anio", "valor"]].rename(columns={"valor": "vt"})
     defl = anual_con_tope(a_anual(base("deflactor", "nacional", "T")), "deflactor", "nacional").set_index("periodo").valor
     cost = anual_de_t("costes_constr", "nacional").set_index("periodo").valor
-    D = iv.merge(vt, on=["ccaa", "anio"], how="inner")
+    D = iv.rename(columns={"ccaa": "cod_ccaa"}).merge(vt.rename(columns={"ccaa": "cod_ccaa"}), on=["cod_ccaa", "anio"], how="inner")   # códigos INE de CCAA
+    D = D.rename(columns={"cod_ccaa": "ccaa"})
     D["defl"] = D.anio.map({int(k): v for k, v in defl.items()})
     D["coste"] = D.anio.map({int(k): v for k, v in cost.items()})
     D["ln_ini"] = np.log(D.iniciadas.where(D.iniciadas > 0))

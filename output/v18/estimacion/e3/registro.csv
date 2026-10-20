@@ -51,15 +51,17 @@ v18-E3,E3-A3-v3|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob
 v18-E3,E3-A3-v4|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True, 'mun_min_pob': 20000})",2014,2022,0,,,,,,,variante; ref A3
 v18-E3,E3-A3-v5|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True, 'origenes': 'sin_res'})",2014,2022,0,,,,,,,variante; ref A3
 v18-E3,E3-P-H4|registrada,"y~x|z municipal ({'ventana': (2012, 2022), 'peso_pob0': False, 'origenes': 'sin_res'})",2012,2022,0,,,,,,,coprincipal; ref A3
-v18-E3,E3-R1|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,3.5549447915930315,0.8748748748748749,repite_visto (V9-D4)
-v18-E3,E3-R1-v2|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,-1.0289966773098902,0.9669669669669669,cuotas del padrón de 2003 (dentro de la ventana: contaminadas; máximo ASOCIACIÓN si fuera la principal)
-v18-E3,E3-R1-v4|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,3.1122248708229288,0.761419235030073,sin ponderar
-v18-E3,E3-R1-v5|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,6.561906528175994,0.6866866866866866,sin los grupos 1 y 2 (UE-15 y AELC)
-v18-E3,E3-R1-v6|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,5.863945286652897,0.7807807807807807,sin construcción ni costa × año
-v18-E3,E3-R1-v7|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,-3.860178738458671,0.8768768768768769,ficticias de 2005 y 2006 × cuota no comunitaria de 2001
-v18-E3,E3-R1-v8|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,228,,,,,1.0083987683751092,0.9309309309309309,sin Barcelona
-v18-E3,E3-R1-v9|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,222,,,,,4.903479449894411,0.7657657657657657,sin Alicante ni Málaga
-v18-E3,E3-R1-v11|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,273,,,,,7.196380274950724,0.7477477477477478,holgura nº 1: 2003 con la composición interpolada (marcada)
-v18-E3,E3-P-H4|estimada,2SLS municipal; Webb-AR (999) + AR,2012,2022,11759,,,,,0.1756134133159126,0.6256256256256256,"réplica de H4 (V16, src/v16/replica/h4.py): 23 orígenes, 2012-2022, sin pesos; publicado: 2SLS 0,29 % por punto (N = 13.442 en V16)"
-v18-E3,E3-P-D4|estimada,"V9-D4 2003-2012, valor tasado",2003,2012,34,,,,,0.005357671449618167,0.8728728728728729,coprincipal
-v18-E3,E3-P-Q3c1|estimada,V16 Q3-c1 TWFE 2011-2022,2011,2022,408,,,,,0.008202960682063696,0.34134134134134136,coprincipal
+v18-E3,E3-R1|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,234,,,,,3.5549447915930315,0.8780878087808781,repite_visto (V9-D4)
+v18-E3,E3-R1-v2|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,234,,,,,-1.0289966773098902,0.9756975697569757,cuotas del padrón de 2003 (dentro de la ventana: contaminadas; máximo ASOCIACIÓN si fuera la principal)
+v18-E3,E3-R1-v4|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,234,,,,,3.1122248708229288,0.7715771577157716,sin ponderar
+v18-E3,E3-R1-v5|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,234,,,,,6.561906528175994,0.6948694869486949,sin los grupos 1 y 2 (UE-15 y AELC)
+v18-E3,E3-R1-v6|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,234,,,,,5.863945286652897,0.7864786478647865,sin construcción ni costa × año
+v18-E3,E3-R1-v7|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,234,,,,,-3.860178738458671,0.8860886088608861,ficticias de 2005 y 2006 × cuota no comunitaria de 2001
+v18-E3,E3-R1-v8|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,228,,,,,1.0083987683751092,0.9321932193219322,sin Barcelona
+v18-E3,E3-R1-v9|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,222,,,,,4.903479449894411,0.7390739073907391,sin Alicante ni Málaga
+v18-E3,E3-R1-v11|estimada,2SLS por provincia; Webb-AR (9999) + AR,2002,2008,273,,,,,7.196380274950724,0.755075507550755,holgura nº 1: 2003 con la composición interpolada (marcada)
+v18-E3,E3-P-H4|estimada,2SLS municipal; Webb-AR (9999) + AR,2012,2022,11759,,,,,0.1756134133159126,0.620962096209621,"réplica de H4 (V16, src/v16/replica/h4.py): 23 orígenes, 2012-2022, sin pesos; publicado: 2SLS 0,29 % por punto (N = 13.442 en V16)"
+v18-E3,E3-P-D4|registrada,"V9-D4 2003-2012, valor tasado",2003,2012,0,,,,,,,coprincipal
+v18-E3,E3-P-Q3c1|registrada,V16 Q3-c1 TWFE 2011-2022,2011,2022,0,,,,,,,coprincipal
+v18-E3,E3-P-D4|estimada,"V9-D4 2003-2012, valor tasado",2003,2012,34,,,,,0.005357671449618167,0.8552855285528553,coprincipal
+v18-E3,E3-P-Q3c1|estimada,V16 Q3-c1 TWFE 2011-2022,2011,2022,408,,,,,0.008202960682063696,0.34393439343934396,coprincipal

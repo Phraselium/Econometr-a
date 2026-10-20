@@ -147,6 +147,10 @@ def y_pre_cfg(spec):
     return c
 
 
+def txt_mde(m: dict) -> str:
+    return f"MDE {m['mde80']:.3g}" if np.isfinite(m["mde80"]) else "MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia)"
+
+
 def precomprobar(dat: EP.DatosE3, spec: dict) -> dict:
     """MDE (adenda 1.3) con la variación real del regresor y del instrumento; σ y ρ del preperiodo. No usa la variable resultado de la ventana."""
     pan = dat.panel(spec["cfg"])
@@ -331,7 +335,7 @@ def main() -> int:
             m = precomprobar(dat, s)
             mde_tab[s["id"]] = m
             if not m["estimable"]:
-                ne[s["id"]] = f"NO ESTIMABLE por variación: MDE {m['mde80']:.3g} > |referencia| {m['ref']:.3g} ({REF[s['ref']]['unidad']})"
+                ne[s["id"]] = f"NO ESTIMABLE por variación: {txt_mde(m)} frente a |referencia| {m['ref']:.3g} ({REF[s['ref']]['unidad']})"
         print(f"[{time.time() - t0:5.0f}s] MDE {s['id']}: " + (f"{mde_tab[s['id']]['mde80']:.4g} (ref {mde_tab[s['id']]['ref']})" if s["id"] in mde_tab else s["ne"] or ""), flush=True)
     # ---- (1b) municipal
     mun = EM.DatosMunicipal()
@@ -346,7 +350,7 @@ def main() -> int:
             m = EX.precomprobar_municipal(mun, cfgm, REF[s["ref"]]["v"], R_MDE)
             mde_tab[s["id"]] = m
             if s["rol"] == "principal" and not m["estimable"]:
-                ne[s["id"]] = f"NO ESTIMABLE por variación: MDE {m['mde80']:.3g} > |referencia| {m['ref']:.3g} ({REF[s['ref']]['unidad']})"
+                ne[s["id"]] = f"NO ESTIMABLE por variación: {txt_mde(m)} frente a |referencia| {m['ref']:.3g} ({REF[s['ref']]['unidad']})"
         print(f"[{time.time() - t0:5.0f}s] MDE {s['id']}: " + (f"{mde_tab[s['id']]['mde80']:.4g} (ref {mde_tab[s['id']]['ref']})" if s["id"] in mde_tab else s["ne"] or ""), flush=True)
     # ---- (2) estimación provincial
     for s in specs:

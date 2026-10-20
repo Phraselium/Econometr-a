@@ -320,7 +320,8 @@ def main() -> int:
             m = precomprobar(dat, s)
             mde_tab[s["id"]] = m
             if not m["estimable"]:
-                ne[s["id"]] = f"NO ESTIMABLE por variación: MDE {m['mde80']:.3g} > |referencia| {m['ref']:.3g}"
+                ne[s["id"]] = ("NO ESTIMABLE por variación: " + (f"MDE {m['mde80']:.3g}" if np.isfinite(m["mde80"]) else "MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia)")
+                               + f" frente a |referencia| {m['ref']:.3g}")
             print(f"[{time.time() - t0:5.0f}s] MDE {s['id']}: {m['mde80']:.4g} (ref {m['ref']}); F {m['F_eff']:.1f}; 1/HHI sectores {m['inv_hhi_sector']:.2f}", flush=True)
     for sid, motivo in (("E5-R2", "restricciones físicas (MDT05, agua, costa) y de planeamiento (SIU) no están en el repositorio"),
                         ("E5-A2", "Atlas de áreas urbanas del MIVAU (`posterior_prereg`) no descargado; la unidad exige el valor tasado y la obra nueva por área"),

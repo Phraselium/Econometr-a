@@ -85,7 +85,7 @@
    "nota": "repite_visto (elección del instrumento tras Q4); Bartik de 4 ramas; 2002-2023; sin pesos",
    "ventana": "(2002, 2023)",
    "estado": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE inf > |referencia| 0.87",
+   "motivo": "NO ESTIMABLE por variación: MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia) frente a |referencia| 0.87",
    "mde80": null,
    "F_eff": 0.03195188530500244,
    "n": 848,

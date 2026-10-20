@@ -141,7 +141,7 @@ def escribir(E3, dat, mun, specs, mspecs, mde_tab, res, ne, pd4, pq3, reg, B, t0
     filas = []
     for s in todas:
         sid = s["id"]
-        base = {"id": sid, "rol": s["rol"], "padre": s.get("padre") or "", "nota": s["nota"], "ref": s["ref"], "ventana": str(s["cfg"]["ventana"]) if "ventana" in s["cfg"] else ""}
+        base = {"id": sid, "rol": s["rol"], "padre": s.get("padre") or "", "nota": s["nota"], "ref": s["ref"], "ventana": f"{s['cfg']['ventana'][0]}-{s['cfg']['ventana'][1]}" if "ventana" in s["cfg"] else ""}
         if sid in ne:
             m = mde_tab.get(sid, {})
             base.update({"estado": "NO ESTIMABLE", "motivo": ne[sid], "mde80": m.get("mde80"), "n": m.get("n"), "G": m.get("G"), "F_eff": m.get("F_eff"), "clase": "NO ESTIMABLE"})

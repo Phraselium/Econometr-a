@@ -3,7 +3,7 @@
 *análisis V18; capa C4; pre-registro interno plan-replicacion-v18.* Generado por `python3 src/v18/estimacion/e5_oferta.py` (SEED 20261010, sin red; B = 9999). Clasificaciones provisionales: pendientes de I8. Toda cifra es C4 (EXPLORATORIO). Sin lenguaje causal.
 
 ## 1. Resumen
-- **E5-R1: NO ESTIMABLE.** La comprobación previa de variación (adenda 1.3) da un MDE al 80 % de no acotado frente a la referencia única de 0.87 (Taltavull, NO VERIFICADA); el F efectivo de la primera etapa es 0.03195 y el número efectivo de choques es 3.326 (4 ramas). **No se publica ningún coeficiente de E5-R1** ni de sus variantes (auge, caída, terminadas, pesos, exclusiones).
+- **E5-R1: NO ESTIMABLE.** La comprobación previa de variación (adenda 1.3) da un MDE al 80 % superior a 230.8 (seis errores típicos de referencia) frente a la referencia única de 0.87 (Taltavull, NO VERIFICADA); el F efectivo de la primera etapa es 0.03195 y el número efectivo de choques es 3.326 (4 ramas). **No se publica ningún coeficiente de E5-R1** ni de sus variantes (auge, caída, terminadas, pesos, exclusiones).
 - F efectivo por ventana (solo primera etapa, sin usar el resultado): 2002-2007: 6.58, 2008-2013: 0.001793, 2014-2023: 0.1817, 2002-2023: 0.03195.
 - **E5-A1** (ASOCIACIÓN como máximo; fuera de Holm): ψ = 0.002439 (EE 0.003886); IC95 Webb [-0.007625; 0.0105]; p Webb 0.5557; N = 324.
 - **E5-R2, E5-A2, E5-A3 y la coprincipal P-Q4a: NO ESTIMABLES por datos.**
@@ -25,7 +25,7 @@ MDE por Monte Carlo (R = 2000, SEED 20261010) con el contraste de Anderson-Rubin
 
 ## 4. NO ESTIMABLES
 
-- **E5-R1**: NO ESTIMABLE por variación: MDE inf > |referencia| 0.87.
+- **E5-R1**: NO ESTIMABLE por variación: MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia) frente a |referencia| 0.87.
 - **E5-R1-v4**: los diez sectores A*10: a escala NUTS 3 Eurostat solo da seis ramas.
 - **E5-R1-v10**: exposición a cajas de 2007 × año: no está en el repositorio.
 - **E5-R2**: restricciones físicas (MDT05, agua, costa) y de planeamiento (SIU) no están en el repositorio.

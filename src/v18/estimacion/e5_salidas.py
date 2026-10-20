@@ -96,13 +96,13 @@ def escribir(E5, dat, specs, mde_tab, res, ne, a1, fven, reg, B, t0):
     L.append("# V18 · E5 Oferta y suelo: elasticidad de la oferta con un Bartik de empleo")
     L.append(f"\n*{K.ROTULO}.* Generado por `python3 src/v18/estimacion/e5_oferta.py` (SEED 20261010, sin red; B = {B}). Clasificaciones provisionales: pendientes de I8. Toda cifra es C4 (EXPLORATORIO). Sin lenguaje causal.\n")
     L.append("## 1. Resumen")
-    L.append(f"- **E5-R1: {clase_r1}.** La comprobación previa de variación (adenda 1.3) da un MDE al 80 % de {g4(m1['mde80'])} frente a la referencia única de {REF['v']} (Taltavull, {REF['estado']}); "
+    L.append(f"- **E5-R1: {clase_r1}.** La comprobación previa de variación (adenda 1.3) da un MDE al 80 % {('de ' + g4(m1['mde80'])) if np.isfinite(m1['mde80']) else 'superior a ' + g4(m1['curva'][-1][0]) + ' (seis errores típicos de referencia)'} frente a la referencia única de {REF['v']} (Taltavull, {REF['estado']}); "
              f"el F efectivo de la primera etapa es {g4(m1['F_eff'])} y el número efectivo de choques es {g4(m1['inv_hhi_sector'])} (4 ramas). **No se publica ningún coeficiente de E5-R1** ni de sus variantes (auge, caída, terminadas, pesos, exclusiones).")
     L.append("- F efectivo por ventana (solo primera etapa, sin usar el resultado): " + ", ".join(f"{k}: {g4(v['F_eff'])}" for k, v in fven.items()) + ".")
     if a1:
         L.append(f"- **E5-A1** (ASOCIACIÓN como máximo; fuera de Holm): ψ = {g4(a1['psi'])} (EE {g4(a1['se'])}); IC95 Webb [{g4(a1['ic_webb'][0])}; {g4(a1['ic_webb'][1])}]; p Webb {g4(a1['p_webb'])}; N = {a1['n']}.")
     else:
-        L.append(f"- **E5-A1: NO ESTIMABLE por variación** (MDE {g4(mA['mde80'])} > umbral 0,10).")
+        L.append(f"- **E5-A1: NO ESTIMABLE por variación** (MDE {g4(mA['mde80'])} frente al umbral 0,10).")
     L.append("- **E5-R2, E5-A2, E5-A3 y la coprincipal P-Q4a: NO ESTIMABLES por datos.**")
     L.append("- B5: E5-R1 es la estimación propia de E5 y no tiene respaldo; E5 no aporta magnitud propia (entra solo la literatura).\n")
     L.append("## 2. Diseño y traslado")

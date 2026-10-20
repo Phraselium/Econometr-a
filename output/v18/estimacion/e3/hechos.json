@@ -3,8 +3,8 @@
   "id": "V18-E3-R1-beta",
   "indicador": "E3-R1: asociación entre la entrada de extranjeros y la variación anual del valor tasado, estimación IV de asentamiento histórico",
   "valor": 3.554945,
-  "min": -53.331962,
-  "max": 62.91273,
+  "min": -53.487752,
+  "max": 63.871527,
   "unidad": "€/m² por punto de población (IC95 Webb-AR)",
   "periodo": "2002, 2004-2008",
   "cobertura": "39 provincias de entrenamiento; N = 234; sin las 11 provincias de v6",
@@ -42,12 +42,12 @@
  {
   "id": "V18-E3-R1-MDE80",
   "indicador": "E3-R1: efecto mínimo detectable al 80 % de potencia con la variación real del diseño",
-  "valor": 36.218705,
+  "valor": 36.736125,
   "min": null,
   "max": null,
   "unidad": "€/m² por punto",
   "periodo": "(2002, 2008)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -67,7 +67,7 @@
   "max": null,
   "unidad": "viviendas por inmigrante",
   "periodo": "(2002, 2008)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -77,17 +77,17 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "Referencia única 0.462 viviendas por inmigrante; estimable si el MDE no la supera. σ del preperiodo declarada (no vista en V15 o V16)."
+  "nota": "Referencia única 0.462 viviendas por inmigrante; estimable si el MDE no la supera. σ del preperiodo declarada (no vista en V15 o V16). El MDE supera 2.784 (seis errores típicos de referencia): no se alcanza el 80 % de potencia."
  },
  {
   "id": "V18-E3-R2-MDE80",
   "indicador": "E3-R2: efecto mínimo detectable al 80 % de potencia con la variación real del diseño",
-  "valor": 2.348173,
+  "valor": 2.331099,
   "min": null,
   "max": null,
   "unidad": "elasticidad",
   "periodo": "(2002, 2010)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -102,12 +102,12 @@
  {
   "id": "V18-E3-R2b-MDE80",
   "indicador": "E3-R2b: efecto mínimo detectable al 80 % de potencia con la variación real del diseño",
-  "valor": 2.131697,
+  "valor": 2.138081,
   "min": null,
   "max": null,
   "unidad": "elasticidad",
   "periodo": "(2002, 2008)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -122,12 +122,12 @@
  {
   "id": "V18-E3-R2q-MDE80",
   "indicador": "E3-R2q: efecto mínimo detectable al 80 % de potencia con la variación real del diseño",
-  "valor": 15.94964,
+  "valor": 15.888794,
   "min": null,
   "max": null,
   "unidad": "elasticidad",
   "periodo": "(2002, 2010)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -142,12 +142,12 @@
  {
   "id": "V18-E3-A1-MDE80",
   "indicador": "E3-A1: efecto mínimo detectable al 80 % de potencia con la variación real del diseño",
-  "valor": 10.943126,
+  "valor": 10.382636,
   "min": null,
   "max": null,
   "unidad": "% por punto",
   "periodo": "(2014, 2022)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -162,12 +162,12 @@
  {
   "id": "V18-E3-A2-MDE80",
   "indicador": "E3-A2: efecto mínimo detectable al 80 % de potencia con la variación real del diseño",
-  "valor": 13.340941,
+  "valor": 13.40649,
   "min": null,
   "max": null,
   "unidad": "% por punto",
   "periodo": "(2014, 2022)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -182,12 +182,12 @@
  {
   "id": "V18-E3-A5-MDE80",
   "indicador": "E3-A5: efecto mínimo detectable al 80 % de potencia con la variación real del diseño",
-  "valor": 3.936744,
+  "valor": 3.789276,
   "min": null,
   "max": null,
   "unidad": "% por punto",
   "periodo": "(2002, 2019)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -207,7 +207,7 @@
   "max": null,
   "unidad": "% por punto",
   "periodo": "(2014, 2022)",
-  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 500",
+  "cobertura": "comprobación previa por MDE (adenda 1.3), R = 2000",
   "fuentes": [
    "Eurostat cens_01rsctz (Censo 2001, INE)",
    "Eurostat migr_imm1ctz (INE)",
@@ -217,7 +217,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "Referencia única 0.947 % por punto; estimable si el MDE no la supera. σ del preperiodo declarada (no vista en V15 o V16)."
+  "nota": "Referencia única 0.947 % por punto; estimable si el MDE no la supera. σ del preperiodo declarada (no vista en V15 o V16). El MDE supera 2.357 (seis errores típicos de referencia): no se alcanza el 80 % de potencia."
  },
  {
   "id": "V18-E3-1HHI",

@@ -1,5 +1,5 @@
 id,rol,padre,nota,ventana,estado,motivo,mde80,F_eff,n,G,clase,beta,se,ic95_webb_ar_lo,ic95_webb_ar_hi,p_webb_ar
-E5-R1,principal,,repite_visto (elección del instrumento tras Q4); Bartik de 4 ramas; 2002-2023; sin pesos,"(2002, 2023)",NO ESTIMABLE,NO ESTIMABLE por variación: MDE inf > |referencia| 0.87,inf,0.03195188530500244,848.0,39.0,NO ESTIMABLE,,,,,
+E5-R1,principal,,repite_visto (elección del instrumento tras Q4); Bartik de 4 ramas; 2002-2023; sin pesos,"(2002, 2023)",NO ESTIMABLE,NO ESTIMABLE por variación: MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia) frente a |referencia| 0.87,inf,0.03195188530500244,848.0,39.0,NO ESTIMABLE,,,,,
 E5-R1-v1,variante,E5-R1,auge 2002-2007,"(2002, 2007)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
 E5-R1-v2,variante,E5-R1,caída 2008-2013,"(2008, 2013)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
 E5-R1-v3,variante,E5-R1,2014-2023,"(2014, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,

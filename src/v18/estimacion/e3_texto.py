@@ -140,7 +140,7 @@ def escribir_texto(E3, dat, specs, mspecs, mde_tab, res, ne, pd4, pq3, diag, cla
         L.append(f"- **{tit}** (ventana {todas[tit]['cfg']['ventana'][0]}-{todas[tit]['cfg']['ventana'][1]}; sin 2003): {g4(ft['beta'])} {REF['R1']['unidad']}; IC95 Webb-AR [{g4(ft['ic_lo'])}; {g4(ft['ic_hi'])}]; "
                  f"AR exacto [{g4(ft['ar_lo'])}; {g4(ft['ar_hi'])}]; F efectivo {g4(ft['F_eff'])}; p (Webb-AR) {g4(ft['p_webb_ar'])}, p (AR) {g4(ft['p_ar'])}, p tras Holm {g4(ph[tit])}. "
                  f"Clase: **{c['clase']}**. {c['i6']['texto']}.")
-    L.append("- Lectura: " + ("la estimación no es distinguible de cero ni de la referencia; el diseño no decide" if tit and ph[tit] >= 0.10 else "ver tabla"))
+    L.append("- Lectura: " + ("la estimación no es distinguible de cero ni de la referencia; el diseño no decide." if tit and ph[tit] >= 0.10 else "ver tabla."))
     L.append(f"- B5: E3-R2 (la estimación propia de E3) y su respaldo E3-A1 son NO ESTIMABLES por variación; E3 no aporta magnitud propia a la magnitud preferida (adenda 1.9).\n")
     L.append("## 2. Diseño y traslado")
     L.append("- **Original.** González y Ortega (2013, J. Regional Science) y su versión IZA de 2009: 50 provincias, primeras diferencias ponderadas, efectos región-año, instrumento de redes étnicas con el Censo de 1991; "
@@ -161,7 +161,7 @@ def escribir_texto(E3, dat, specs, mspecs, mde_tab, res, ne, pd4, pq3, diag, cla
     L.append("## 4. Resultados\n")
     ft_rows = tabla[tabla["estado"] == "estimada"].copy()
     cols = ["id", "rol", "ventana", "n", "G", "beta", "se", "ic95_webb_ar_lo", "ic95_webb_ar_hi", "F_eff", "p_webb_ar", "p_ar", "p_holm", "q_BY", "clase"]
-    L.append(tabla_md(ft_rows, [c for c in cols if c in ft_rows.columns]))
+    L.append(tabla_md(ft_rows, [c for c in cols if c in ft_rows.columns], {"n": lambda v: str(int(v)), "G": lambda v: str(int(v))}))
     L.append(f"\nUnidades: R1 en €/m² por punto de población; A1, A3 y A5 en % por punto; R2 en elasticidad (ln valor tasado frente a ln población de 15 a 64). IC95 Webb-AR: inversión del contraste de "
              f"Anderson-Rubin con bootstrap de Webb (nulo impuesto, {B} réplicas); si no está acotado se dice. «p_holm»: Holm dentro de la familia E3 (principales y coprincipales estimables; m = {len(ph)}). «q_BY»: "
              "Benjamini-Yekutieli entre las variantes de su principal.\n")
@@ -220,7 +220,7 @@ def escribir_texto(E3, dat, specs, mspecs, mde_tab, res, ne, pd4, pq3, diag, cla
     L.append(f"- **E3-P-Q3c1** (V16, TWFE, ln valor tasado 2011-2022): β = {g4(pq3['beta'])} (EE {g4(pq3['se'])}); IC95 Webb [{g4(pq3['ic_webb'][0])}; {g4(pq3['ic_webb'][1])}]; p Webb {g4(pq3['p_webb'])}; {pq3['G']} provincias × {pq3['T']} años. Publicado en V16: 0,0119 (solo puntual).")
     if "E3-P-H4" in res:
         f = ficha(res["E3-P-H4"])
-        L.append(f"- **E3-P-H4** (V16 réplica ciega H4, municipal SERPAVI): β = {g4(f['beta'])} % por punto (EE {g4(f['se'])}); IC95 Webb-AR [{g4(f['ic_lo'])}; {g4(f['ic_hi'])}]; F efectivo {g4(f['F_eff'])}; N = {f['n']} (V16: 13.442; publicado 0,29).")
+        L.append(f"- **E3-P-H4** (V16 réplica ciega H4, municipal SERPAVI): β = {g4(f['beta'])} % por punto (EE {g4(f['se'])}); IC95 Webb-AR [{g4(f['ic_lo'])}; {g4(f['ic_hi'])}]; F efectivo {g4(f['F_eff'])}; N = {f['n']} (réplica de V16: 2SLS 0,309 con N = 13.395; H4 publicado: 0,29 con N = 13.442; la muestra V18 excluye además los municipios de V16).")
     L.append("")
     L.append("## 8. Familia de Holm y multiverso\n")
     L.append(f"- Familia E3: m = {len(ph)} contrastes (principales estimables y coprincipales P tras las comprobaciones previas); p ajustados: " + ", ".join(f"{k} {v:.3f}" for k, v in ph.items()) + ".")

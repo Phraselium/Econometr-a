@@ -1,11 +1,11 @@
 # V18 · E3 Inmigración: réplica y ampliaciones de González y Ortega (2013)
 
-*análisis V18; capa C4; pre-registro interno plan-replicacion-v18.* Generado por `python3 src/v18/estimacion/e3_inmigracion.py` (SEED 20261010, sin red; B = 999 réplicas de Webb). Clasificaciones **provisionales: pendientes de I8** (réplica ciega, B6). Toda cifra es C4 (nivel_evidencia EXPLORATORIO). Sin lenguaje causal: se habla de asociación condicionada al diseño.
+*análisis V18; capa C4; pre-registro interno plan-replicacion-v18.* Generado por `python3 src/v18/estimacion/e3_inmigracion.py` (SEED 20261010, sin red; B = 9999 réplicas de Webb). Clasificaciones **provisionales: pendientes de I8** (réplica ciega, B6). Toda cifra es C4 (nivel_evidencia EXPLORATORIO). Sin lenguaje causal: se habla de asociación condicionada al diseño.
 
 ## 1. Resumen
 - De las 10 especificaciones principales (R1, R1q, R2, R2b, R2q, A1, A2, A4, A5, A3), la comprobación previa de variación (MDE al 80 %, adenda 1.3) deja **estimables 1** (R1) y **NO ESTIMABLES 9** (por variación: R1q, R2, R2b, R2q, A1, A2, A5, A3; por datos: A4). Además se estiman las coprincipales P (V9-D4, V16-Q3c1 y V16-H4) en la muestra V18.
-- **E3-R1** (ventana 2002, 2008; sin 2003): 3.555 €/m² por punto; IC95 Webb-AR [-53.33; 62.91]; AR exacto [-39.66; 84.41]; F efectivo 81.07; p (Webb-AR) 0.8749, p (AR) 0.8473, p tras Holm 1. Clase: **NO CONCLUYENTE (sin potencia)**. coherente con González y Ortega (2009, IZA): 44,72 €/m² por punto de población (NO VERIFICADA), razón 0.08.
-- Lectura: la estimación no es distinguible de cero ni de la referencia; el diseño no decide
+- **E3-R1** (ventana 2002-2008; sin 2003): 3.555 €/m² por punto; IC95 Webb-AR [-53.49; 63.87]; AR exacto [-39.66; 84.41]; F efectivo 81.07; p (Webb-AR) 0.8781, p (AR) 0.8473, p tras Holm 1. Clase: **NO CONCLUYENTE (sin potencia)**. coherente con González y Ortega (2009, IZA): 44,72 €/m² por punto de población (NO VERIFICADA), razón 0.08.
+- Lectura: la estimación no es distinguible de cero ni de la referencia; el diseño no decide.
 - B5: E3-R2 (la estimación propia de E3) y su respaldo E3-A1 son NO ESTIMABLES por variación; E3 no aporta magnitud propia a la magnitud preferida (adenda 1.9).
 
 ## 2. Diseño y traslado
@@ -17,58 +17,58 @@
 
 | id | n | G | F efectivo | σ preperiodo | ρ | MDE80 | |referencia| | estimable | 1/HHI origen |
 |---|---|---|---|---|---|---|---|---|---|
-| E3-R1 | 234 | 39 | 81.07 | 25.4 | 0.4143 | 36.22 | 44.72 | sí | 7.858 |
+| E3-R1 | 234 | 39 | 81.07 | 25.4 | 0.4143 | 36.74 | 44.72 | sí | 7.858 |
 | E3-R1q | 234 | 39 | 3.941 | 0.3074 | 0.2751 | — | 0.462 | NO | 7.858 |
-| E3-R2 | 312 | 39 | 22.91 | 0.02581 | 0.1341 | 2.348 | 0.959 | NO | 7.857 |
-| E3-R2b | 234 | 39 | 24.66 | 0.02581 | 0.1341 | 2.132 | 0.927 | NO | 7.855 |
-| E3-R2q | 312 | 39 | 22.91 | 0.2927 | -0.402 | 15.95 | 1.05 | NO | 7.857 |
-| E3-A1 | 351 | 39 | 14.85 | 2.895 | -0.02126 | 10.94 | 3.046 | NO | 7.825 |
-| E3-A2 | 324 | 36 | 13.85 | 1.655 | 0.8166 | 13.34 | 0.947 | NO | 7.79 |
-| E3-A5 | 653 | 39 | 41.57 | 2.581 | 0.1345 | 3.937 | 3.046 | NO | 7.854 |
+| E3-R2 | 312 | 39 | 22.91 | 0.02581 | 0.1341 | 2.331 | 0.959 | NO | 7.857 |
+| E3-R2b | 234 | 39 | 24.66 | 0.02581 | 0.1341 | 2.138 | 0.927 | NO | 7.855 |
+| E3-R2q | 312 | 39 | 22.91 | 0.2927 | -0.402 | 15.89 | 1.05 | NO | 7.857 |
+| E3-A1 | 351 | 39 | 14.85 | 2.895 | -0.02126 | 10.38 | 3.046 | NO | 7.825 |
+| E3-A2 | 324 | 36 | 13.85 | 1.655 | 0.8166 | 13.41 | 0.947 | NO | 7.79 |
+| E3-A5 | 653 | 39 | 41.57 | 2.581 | 0.1345 | 3.789 | 3.046 | NO | 7.854 |
 | E3-A3 | 9798 | 38 | 117.9 | 8.551 | 0 | — | 0.947 | NO | 9.637 |
-| E3-P-H4 | 11759 | 38 | 54.34 | 8.551 | 0 | 2.105 | 0.947 | NO | 7.165 |
+| E3-P-H4 | 11759 | 38 | 54.34 | 8.551 | 0 | 2.043 | 0.947 | NO | 7.165 |
 
 
-MDE por Monte Carlo (R = 500, SEED 20261010) con el contraste de Anderson-Rubin agrupado por provincia y la variación real del regresor y del instrumento; σ y ρ del preperiodo (1996-2001 en R; 2009-2013 en A1 y A5; 2012-2013 en A2 y A3), declaradas como «no vistas» en V15/V16 para estas unidades. Se calculó **antes** de estimar (incidencia D-E359-15: una lectura de desarrollo de R1 antes del MDE, sin efecto en ninguna decisión).
+MDE por Monte Carlo (R = 2000, SEED 20261010) con el contraste de Anderson-Rubin agrupado por provincia y la variación real del regresor y del instrumento; σ y ρ del preperiodo (1996-2001 en R; 2009-2013 en A1 y A5; 2012-2013 en A2 y A3), declaradas como «no vistas» en V15/V16 para estas unidades. Se calculó **antes** de estimar (incidencia D-E359-15: una lectura de desarrollo de R1 antes del MDE, sin efecto en ninguna decisión).
 
 ## 4. Resultados
 
 | id | rol | ventana | n | G | beta | se | ic95_webb_ar_lo | ic95_webb_ar_hi | F_eff | p_webb_ar | p_ar | p_holm | q_BY | clase |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| E3-R1 | principal | (2002, 2008) | 234 | 39 | 3.555 | 18.77 | -53.33 | 62.91 | 81.07 | 0.8749 | 0.8473 | 1 | — | NO CONCLUYENTE (sin potencia) |
-| E3-R1-v2 | variante | (2002, 2008) | 234 | 39 | -1.029 | 24.2 | -149.4 | 65.93 | 20.04 | 0.967 | 0.9661 | — | 1 |  |
-| E3-R1-v4 | variante | (2002, 2008) | 234 | 39 | 3.112 | 10.37 | -18.88 | 28.43 | 51.8 | 0.7538 | 0.7614 | — | 1 |  |
-| E3-R1-v5 | variante | (2002, 2008) | 234 | 39 | 6.562 | 14.47 | -21.48 | 46.34 | 67.02 | 0.6867 | 0.6105 | — | 1 |  |
-| E3-R1-v6 | variante | (2002, 2008) | 234 | 39 | 5.864 | 17.62 | -63.81 | 47.51 | 215.8 | 0.7808 | 0.7395 | — | 1 |  |
-| E3-R1-v7 | variante | (2002, 2008) | 234 | 39 | -3.86 | 21.21 | -93.27 | 62.58 | 54.18 | 0.8769 | 0.8572 | — | 1 |  |
-| E3-R1-v8 | variante | (2002, 2008) | 228 | 38 | 1.008 | 10.77 | -24.26 | 30.84 | 63.75 | 0.9309 | 0.9245 | — | 1 |  |
-| E3-R1-v9 | variante | (2002, 2008) | 222 | 37 | 4.903 | 12.93 | -42.23 | 47.88 | 81.18 | 0.7658 | 0.6833 | — | 1 |  |
-| E3-R1-v11 | variante | (2002, 2008) | 273 | 39 | 7.196 | 19.64 | -38.57 | 69.19 | 96.44 | 0.7477 | 0.7045 | — | — |  |
-| E3-P-H4 | coprincipal | (2012, 2022) | 1.176e+04 | 38 | 0.1756 | 0.3294 | -0.6694 | 0.9242 | 54.34 | 0.6256 | 0.5995 | 1 | — | no se clasifica |
-| E3-P-D4 | coprincipal | 2003-2012 | 34 | 34 | 0.005358 | 0.03049 | — | — | 0.3688 | 0.8729 | 0.854 | 1 | — | no se clasifica |
-| E3-P-Q3c1 | coprincipal | 2011-2022 | 408 | 34 | 0.008203 | 0.006885 | -0.01151 | 0.02564 | — | 0.3413 | — | 1 | — | no se clasifica |
+| E3-R1 | principal | 2002-2008 | 234 | 39 | 3.555 | 18.77 | -53.49 | 63.87 | 81.07 | 0.8781 | 0.8473 | 1 | — | NO CONCLUYENTE (sin potencia) |
+| E3-R1-v2 | variante | 2002-2008 | 234 | 39 | -1.029 | 24.2 | -147.3 | 65.93 | 20.04 | 0.9757 | 0.9661 | — | 1 |  |
+| E3-R1-v4 | variante | 2002-2008 | 234 | 39 | 3.112 | 10.37 | -19.01 | 27.5 | 51.8 | 0.7716 | 0.7614 | — | 1 |  |
+| E3-R1-v5 | variante | 2002-2008 | 234 | 39 | 6.562 | 14.47 | -20.83 | 46.6 | 67.02 | 0.6949 | 0.6105 | — | 1 |  |
+| E3-R1-v6 | variante | 2002-2008 | 234 | 39 | 5.864 | 17.62 | -62.35 | 48.25 | 215.8 | 0.7865 | 0.7395 | — | 1 |  |
+| E3-R1-v7 | variante | 2002-2008 | 234 | 39 | -3.86 | 21.21 | -95.23 | 62.86 | 54.18 | 0.8861 | 0.8572 | — | 1 |  |
+| E3-R1-v8 | variante | 2002-2008 | 228 | 38 | 1.008 | 10.77 | -24.61 | 30.07 | 63.75 | 0.9322 | 0.9245 | — | 1 |  |
+| E3-R1-v9 | variante | 2002-2008 | 222 | 37 | 4.903 | 12.93 | -39.44 | 47.61 | 81.18 | 0.7391 | 0.6833 | — | 1 |  |
+| E3-R1-v11 | variante | 2002-2008 | 273 | 39 | 7.196 | 19.64 | -37.57 | 70.24 | 96.44 | 0.7551 | 0.7045 | — | — |  |
+| E3-P-H4 | coprincipal | 2012-2022 | 11759 | 38 | 0.1756 | 0.3294 | -0.65 | 0.9283 | 54.34 | 0.621 | 0.5995 | 1 | — | no se clasifica |
+| E3-P-D4 | coprincipal | 2003-2012 | 34 | 34 | 0.005358 | 0.03049 | — | — | 0.3688 | 0.8553 | 0.854 | 1 | — | no se clasifica |
+| E3-P-Q3c1 | coprincipal | 2011-2022 | 408 | 34 | 0.008203 | 0.006885 | -0.0117 | 0.02632 | — | 0.3439 | — | 1 | — | no se clasifica |
 
 
-Unidades: R1 en €/m² por punto de población; A1, A3 y A5 en % por punto; R2 en elasticidad (ln valor tasado frente a ln población de 15 a 64). IC95 Webb-AR: inversión del contraste de Anderson-Rubin con bootstrap de Webb (nulo impuesto, 999 réplicas); si no está acotado se dice. «p_holm»: Holm dentro de la familia E3 (principales y coprincipales estimables; m = 4). «q_BY»: Benjamini-Yekutieli entre las variantes de su principal.
+Unidades: R1 en €/m² por punto de población; A1, A3 y A5 en % por punto; R2 en elasticidad (ln valor tasado frente a ln población de 15 a 64). IC95 Webb-AR: inversión del contraste de Anderson-Rubin con bootstrap de Webb (nulo impuesto, 9999 réplicas); si no está acotado se dice. «p_holm»: Holm dentro de la familia E3 (principales y coprincipales estimables; m = 4). «q_BY»: Benjamini-Yekutieli entre las variantes de su principal.
 
 ### NO ESTIMABLES
 
 - **E3-R1-v1**: ventana 1998-2008: sin stock provincial de extranjeros antes de 2002.
 - **E3-R1-v3**: Censo de 1991 no está en el repositorio.
 - **E3-R1-v10**: choque sin la propia provincia con el padrón por nacionalidad: no reconstruye los 8 grupos.
-- **E3-R1q**: NO ESTIMABLE por variación: MDE inf > |referencia| 0.462 (viviendas por inmigrante).
+- **E3-R1q**: NO ESTIMABLE por variación: MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia) frente a |referencia| 0.462 (viviendas por inmigrante).
 - **E3-R1q-v2**: ventana 1998-2008: sin stock provincial de extranjeros antes de 2002.
-- **E3-R2**: NO ESTIMABLE por variación: MDE 2.35 > |referencia| 0.959 (elasticidad).
+- **E3-R2**: NO ESTIMABLE por variación: MDE 2.33 frente a |referencia| 0.959 (elasticidad).
 - **E3-R2-v7**: Censo de 1991 no está en el repositorio.
-- **E3-R2b**: NO ESTIMABLE por variación: MDE 2.13 > |referencia| 0.927 (elasticidad).
-- **E3-R2q**: NO ESTIMABLE por variación: MDE 15.9 > |referencia| 1.05 (elasticidad).
-- **E3-A1**: NO ESTIMABLE por variación: MDE 10.9 > |referencia| 3.05 (% por punto).
+- **E3-R2b**: NO ESTIMABLE por variación: MDE 2.14 frente a |referencia| 0.927 (elasticidad).
+- **E3-R2q**: NO ESTIMABLE por variación: MDE 15.9 frente a |referencia| 1.05 (elasticidad).
+- **E3-A1**: NO ESTIMABLE por variación: MDE 10.4 frente a |referencia| 3.05 (% por punto).
 - **E3-A1-v4**: IPV por CCAA: nueve clusters, inferencia sin Monte Carlo apto (Webb con 8 clusters: NO APTO).
-- **E3-A2**: NO ESTIMABLE por variación: MDE 13.3 > |referencia| 0.947 (% por punto).
+- **E3-A2**: NO ESTIMABLE por variación: MDE 13.4 frente a |referencia| 0.947 (% por punto).
 - **E3-A4**: la tenencia por nacionalidad del Censo de 2011 por provincia no está en el repositorio ni en Eurostat (cens_11htts_r2 es por hogares y NUTS 2, sin nacionalidad).
-- **E3-A5**: NO ESTIMABLE por variación: MDE 3.94 > |referencia| 3.05 (% por punto).
+- **E3-A5**: NO ESTIMABLE por variación: MDE 3.79 frente a |referencia| 3.05 (% por punto).
 - **E3-A5-v1**: choque sin la propia provincia con el padrón por nacionalidad: no reconstruye los 8 grupos.
-- **E3-A3**: NO ESTIMABLE por variación: MDE inf > |referencia| 0.947 (% por punto).
+- **E3-A3**: NO ESTIMABLE por variación: MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia) frente a |referencia| 0.947 (% por punto).
 - **E3-A3-v1**: valor tasado municipal: el fichero de MIVAU (309 municipios) no trae código INE y la base solo lo tiene para un municipio.
 - **E3-R1q-v1**: su principal E3-R1q es NO ESTIMABLE.
 - **E3-R2-v1**: su principal E3-R2 es NO ESTIMABLE.
@@ -101,9 +101,9 @@ Qué datos las harían estimables: (i) flujos de entrada por nacionalidad (país
 ## 5. Pruebas B4 de las principales estimables
 
 ### E3-R1
-- Pretendencia del instrumento (corte transversal, efectos de macrorregión): pendiente 8.922 (EE 6.214), p Webb 0.2873; pendiente detectable al 80 %: 17.41; sesgo implicado en β: 26.64 frente a ½|referencia| = 22.36 → potencia insuficiente (prueba débil).
-- Placebo de fecha (instrumento de t+6 en el preperiodo): coef. 10.26, p Webb 0.3223 (N = 195).
-- Placebo de resultado (población de 65 años o más, total): coef. 0.008655, p Webb-AR 0.06006, p AR exacto 0.09411.
+- Pretendencia del instrumento (corte transversal, efectos de macrorregión): pendiente 8.922 (EE 6.214), p Webb 0.2555; pendiente detectable al 80 %: 17.41; sesgo implicado en β: 26.64 frente a ½|referencia| = 22.36 → potencia insuficiente (prueba débil).
+- Placebo de fecha (instrumento de t+6 en el preperiodo): coef. 10.26, p Webb 0.3006 (N = 195).
+- Placebo de resultado (población de 65 años o más, total): coef. 0.008655, p Webb-AR 0.06571, p AR exacto 0.09411.
 - Balance a nivel de choque (BHJ; 8 choques; Holm entre características): cuota empleo construcción 2001: pendiente -0.006113, p 0.9069; cuota empleo industria 2001: pendiente 0.02381, p 0.8199; log población 2001: pendiente -0.3576, p 0.7993; cuota de extranjeros 2001: pendiente -0.01047, p 0.7203. p de Holm mínimo 1.
 - Información: el balance del instrumento medio frente a las características de 2001 a nivel de provincia da p = 1.8e-12 (esperable: el instrumento es proporcional a la exposición de 2001); no entra en la clasificación (D-E359-16).
 - Pesos de Rotemberg: G1_UE15 0.19, G2_AELC 0.01, G3_Europa_resto 0.42, G4_Africa_norte 0.17, G5_Africa_resto 0.07, G6_America_latina_Caribe 0.14, G7_Asia -0.00, G8_resto_mundo 0.00
@@ -115,15 +115,15 @@ Qué datos las harían estimables: (i) flujos de entrada por nacionalidad (país
 
 ## 6. Clasificación (I1-I8 revisados; adenda 1.1 y 1.2)
 
-- **E3-R1: NO CONCLUYENTE (sin potencia)** (provisional, pendiente de I8). Razones y pruebas débiles: potencia de las pretendencias (Roth): el sesgo implicado supera la mitad de |referencia|; placebo de resultado p = 0.060; mismo signo en 71% de las variantes enumeradas (< 80 %); tope SUGESTIVO: año base 2001 tras el F de 3,4-4,6 de V9-D4 (adenda 1.6); sin significación (p de Holm ≥ 0,10) y sin equivalencia: se rotula NO CONCLUYENTE con las pruebas débiles listadas (D-E359-17). TOST con δ = 22.4: sin equivalencia. coherente con González y Ortega (2009, IZA): 44,72 €/m² por punto de población (NO VERIFICADA), razón 0.08.
+- **E3-R1: NO CONCLUYENTE (sin potencia)** (provisional, pendiente de I8). Razones y pruebas débiles: potencia de las pretendencias (Roth): el sesgo implicado supera la mitad de |referencia|; placebo de resultado p = 0.066; mismo signo en 71% de las variantes enumeradas (< 80 %); tope SUGESTIVO: año base 2001 tras el F de 3,4-4,6 de V9-D4 (adenda 1.6); sin significación (p de Holm ≥ 0,10) y sin equivalencia: se rotula NO CONCLUYENTE con las pruebas débiles listadas (D-E359-17). TOST con δ = 22.4: sin equivalencia. coherente con González y Ortega (2009, IZA): 44,72 €/m² por punto de población (NO VERIFICADA), razón 0.08.
 
 La adenda reserva SUGESTIVO a diseños creíbles con alguna prueba débil; una estimación sin significación (p de Holm ≥ 0,10) y sin equivalencia no tiene un efecto que sugerir, por lo que se rotula NO CONCLUYENTE (sin potencia) con las pruebas débiles listadas (D-E359-17). Tope de la tabla consolidada para E3-R1: SUGESTIVO (año base 2001 tras el F de 3,4-4,6 de V9-D4, adenda 1.6).
 
 ## 7. Coprincipales P (adenda 1.6; no se clasifican)
 
-- **E3-P-D4** (V9-D4, 2003-2012, valor tasado, muestra V18): β = 0.005358 (EE 0.03049); IC95 Webb-AR [—; —]; F efectivo 0.3688; p Webb-AR 0.8729, p AR 0.854; n = 34. Publicado en V9: −0,0029 (valor tasado) y 0,0072 (IPC de alquiler), F de 3,4 a 4,6. IPC de alquiler aquí: β = -0.007524.
-- **E3-P-Q3c1** (V16, TWFE, ln valor tasado 2011-2022): β = 0.008203 (EE 0.006885); IC95 Webb [-0.01151; 0.02564]; p Webb 0.3413; 34 provincias × 12 años. Publicado en V16: 0,0119 (solo puntual).
-- **E3-P-H4** (V16 réplica ciega H4, municipal SERPAVI): β = 0.1756 % por punto (EE 0.3294); IC95 Webb-AR [-0.6694; 0.9242]; F efectivo 54.34; N = 11759 (V16: 13.442; publicado 0,29).
+- **E3-P-D4** (V9-D4, 2003-2012, valor tasado, muestra V18): β = 0.005358 (EE 0.03049); IC95 Webb-AR [no acotado; no acotado]; F efectivo 0.3688; p Webb-AR 0.8553, p AR 0.854; n = 34. Publicado en V9: −0,0029 (valor tasado) y 0,0072 (IPC de alquiler), F de 3,4 a 4,6. IPC de alquiler aquí: β = -0.007524.
+- **E3-P-Q3c1** (V16, TWFE, ln valor tasado 2011-2022): β = 0.008203 (EE 0.006885); IC95 Webb [-0.0117; 0.02632]; p Webb 0.3439; 34 provincias × 12 años. Publicado en V16: 0,0119 (solo puntual).
+- **E3-P-H4** (V16 réplica ciega H4, municipal SERPAVI): β = 0.1756 % por punto (EE 0.3294); IC95 Webb-AR [-0.65; 0.9283]; F efectivo 54.34; N = 11759 (réplica de V16: 2SLS 0,309 con N = 13.395; H4 publicado: 0,29 con N = 13.442; la muestra V18 excluye además los municipios de V16).
 
 ## 8. Familia de Holm y multiverso
 

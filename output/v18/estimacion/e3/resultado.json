@@ -7,8 +7,8 @@
  "metodo": "IV de asentamiento histórico (shift-share) en primeras diferencias con efectos región-año y controles; inferencia por provincia: bootstrap de Webb con nulo impuesto sobre la forma reducida (Webb-AR, 9.999) y Anderson-Rubin exacto agrupado; F efectivo de Montiel Olea-Pflueger; MDE al 80 %",
  "estimacion": 3.5549447915930315,
  "ic95": [
-  -53.33196190017087,
-  62.912729902505646
+  -53.48775210184181,
+  63.8715269524952
  ],
  "p_ajustado": 1.0,
  "nivel_evidencia": "EXPLORATORIO",
@@ -47,52 +47,52 @@
   "estado_I8": "pendiente (replicador-ciego, B6)",
   "mde": {
    "E3-R1": {
-    "mde80": 36.218704888440136,
+    "mde80": 36.736125271680145,
     "ref": 44.72,
     "estimable": true
    },
    "E3-R1q": {
-    "mde80": Infinity,
+    "mde80": null,
     "ref": 0.462,
     "estimable": false
    },
    "E3-R2": {
-    "mde80": 2.3481730758343873,
+    "mde80": 2.331098790821627,
     "ref": 0.959,
     "estimable": false
    },
    "E3-R2b": {
-    "mde80": 2.131697227260471,
+    "mde80": 2.1380808298476524,
     "ref": 0.927,
     "estimable": false
    },
    "E3-R2q": {
-    "mde80": 15.949640055313498,
+    "mde80": 15.888793824000516,
     "ref": 1.05,
     "estimable": false
    },
    "E3-A1": {
-    "mde80": 10.943125584787994,
+    "mde80": 10.382636148317363,
     "ref": 3.046,
     "estimable": false
    },
    "E3-A2": {
-    "mde80": 13.340940667081764,
+    "mde80": 13.406489931469215,
     "ref": 0.947,
     "estimable": false
    },
    "E3-A5": {
-    "mde80": 3.936743885773592,
+    "mde80": 3.789276342875386,
     "ref": 3.046,
     "estimable": false
    },
    "E3-A3": {
-    "mde80": Infinity,
+    "mde80": null,
     "ref": 0.947,
     "estimable": false
    },
    "E3-P-H4": {
-    "mde80": 2.105230096864099,
+    "mde80": 2.0430194764533214,
     "ref": 0.947,
     "estimable": false
    }
@@ -117,8 +117,8 @@
    "estimacion": 3.5549447915930315,
    "se": 18.768137236593667,
    "ic95": [
-    -53.33196190017087,
-    62.912729902505646
+    -53.48775210184181,
+    63.8715269524952
    ],
    "ic95_t": [
     -34.439162697666106,
@@ -130,9 +130,9 @@
     "hi": 84.41000630849328
    },
    "F_efectivo": 81.07373442968849,
-   "p_webb_ar": 0.8748748748748749,
+   "p_webb_ar": 0.8780878087808781,
    "p_ar_exacto": 0.8472905877247983,
-   "p_final": 0.8748748748748749,
+   "p_final": 0.8780878087808781,
    "p_ajustado": 1.0,
    "q_BY": null,
    "N": 234,
@@ -144,7 +144,7 @@
    "clasificacion_v18": "NO CONCLUYENTE (sin potencia)",
    "razones": [
     "potencia de las pretendencias (Roth): el sesgo implicado supera la mitad de |referencia|",
-    "placebo de resultado p = 0.060",
+    "placebo de resultado p = 0.066",
     "mismo signo en 71% de las variantes enumeradas (< 80 %)",
     "tope SUGESTIVO: año base 2001 tras el F de 3,4-4,6 de V9-D4 (adenda 1.6)",
     "sin significación (p de Holm ≥ 0,10) y sin equivalencia: se rotula NO CONCLUYENTE con las pruebas débiles listadas (D-E359-17)"
@@ -160,8 +160,8 @@
    "tost": {
     "equivalente": false,
     "ic90": [
-     -31.813440294371794,
-     54.17702344704523
+     -33.026541938265396,
+     54.02466979394056
     ],
     "delta": 22.4
    },
@@ -172,10 +172,10 @@
     "solape_ic": true
    },
    "mde": {
-    "mde80": 36.218704888440136,
-    "tamano_nulo": 0.03,
-    "se_ref": 8.587940334372403,
-    "R": 500,
+    "mde80": 36.736125271680145,
+    "tamano_nulo": 0.0215,
+    "se_ref": 8.566271363799855,
+    "R": 2000,
     "sigma": 25.404256788936127,
     "rho": 0.4142936903417717,
     "ref": 44.72,
@@ -205,7 +205,7 @@
      "pendiente": 8.921673305196784,
      "se": 6.214320980075366,
      "p_t": 0.15927921892035535,
-     "p_webb": 0.2872872872872873,
+     "p_webb": 0.25552555255525555,
      "pendiente_detectable80": 17.410041657779146,
      "primera_etapa_cs": 0.6536217774920264,
      "sesgo_detectable_beta": 26.63626313765461,
@@ -215,7 +215,7 @@
     "placebo_fecha": {
      "coef": 10.257040189659298,
      "se": 8.40241530930883,
-     "p_webb": 0.32232232232232233,
+     "p_webb": 0.30063006300630063,
      "p_t": 0.22971089750659818,
      "n": 195,
      "mismo_signo_mitad": true
@@ -223,7 +223,7 @@
     "placebo_resultado": {
      "coef": 0.00865496739462055,
      "se": 0.005051534515128972,
-     "p_webb_ar": 0.06006006006006006,
+     "p_webb_ar": 0.06570657065706571,
      "p_ar_exacto": 0.09411146892853568,
      "n": 234
     },
@@ -309,8 +309,8 @@
      "se": 32.56211921629892,
      "F_eff": 23.654886681133874,
      "ic_webb_ar": {
-      "lo": -14.979447052099275,
-      "hi": 398.4739079597248,
+      "lo": -14.96354757982569,
+      "hi": 489.1664852422789,
       "acotado": true,
       "vacio": false
      },
@@ -340,8 +340,8 @@
      "se": 22.821648301937167,
      "F_eff": 58.97604039374142,
      "ic_webb_ar": {
-      "lo": -80.59940913671146,
-      "hi": 71.94793189325378,
+      "lo": -80.60498082819143,
+      "hi": 73.63476148881321,
       "acotado": true,
       "vacio": false
      },
@@ -364,7 +364,7 @@
    "estimacion": -1.0289966773098902,
    "se": 24.195092774960905,
    "ic95": [
-    -149.4450834263289,
+    -147.25875317405047,
     65.92616743831144
    ],
    "ic95_t": [
@@ -377,9 +377,9 @@
     "hi": 74.0141669110445
    },
    "F_efectivo": 20.038615598224396,
-   "p_webb_ar": 0.9669669669669669,
+   "p_webb_ar": 0.9756975697569757,
    "p_ar_exacto": 0.9661197201247274,
-   "p_final": 0.9669669669669669,
+   "p_final": 0.9756975697569757,
    "p_ajustado": null,
    "q_BY": 1.0,
    "N": 234,
@@ -395,8 +395,8 @@
    "estimacion": 3.1122248708229288,
    "se": 10.37314490229123,
    "ic95": [
-    -18.88290699429234,
-    28.430004712453353
+    -19.01079855131521,
+    27.50310748729744
    ],
    "ic95_t": [
     -17.887109130788634,
@@ -408,9 +408,9 @@
     "hi": 37.8931317301603
    },
    "F_efectivo": 51.79636341069083,
-   "p_webb_ar": 0.7537537537537538,
+   "p_webb_ar": 0.7715771577157716,
    "p_ar_exacto": 0.761419235030073,
-   "p_final": 0.761419235030073,
+   "p_final": 0.7715771577157716,
    "p_ajustado": null,
    "q_BY": 1.0,
    "N": 234,
@@ -426,8 +426,8 @@
    "estimacion": 6.561906528175994,
    "se": 14.469125600586024,
    "ic95": [
-    -21.479530888365005,
-    46.34007973767282
+    -20.830433762118012,
+    46.59971858817161
    ],
    "ic95_t": [
     -22.72930689455962,
@@ -439,9 +439,9 @@
     "hi": 149.4015827162399
    },
    "F_efectivo": 67.02441507696712,
-   "p_webb_ar": 0.6866866866866866,
+   "p_webb_ar": 0.6948694869486949,
    "p_ar_exacto": 0.6105213186015961,
-   "p_final": 0.6866866866866866,
+   "p_final": 0.6948694869486949,
    "p_ajustado": null,
    "q_BY": 1.0,
    "N": 234,
@@ -457,8 +457,8 @@
    "estimacion": 5.863945286652897,
    "se": 17.619611410629435,
    "ic95": [
-    -63.806325430627545,
-    47.51103276796032
+    -62.354514187686284,
+    48.25306962546363
    ],
    "ic95_t": [
     -29.805093223422073,
@@ -470,9 +470,9 @@
     "hi": 59.73867560270865
    },
    "F_efectivo": 215.84279588824677,
-   "p_webb_ar": 0.7807807807807807,
+   "p_webb_ar": 0.7864786478647865,
    "p_ar_exacto": 0.7395287718886023,
-   "p_final": 0.7807807807807807,
+   "p_final": 0.7864786478647865,
    "p_ajustado": null,
    "q_BY": 1.0,
    "N": 234,
@@ -488,8 +488,8 @@
    "estimacion": -3.860178738458671,
    "se": 21.207933308709876,
    "ic95": [
-    -93.26545508627422,
-    62.58483033356531
+    -95.22845745826262,
+    62.85536610392179
    ],
    "ic95_t": [
     -46.79339515724521,
@@ -501,9 +501,9 @@
     "hi": 69.44610477443989
    },
    "F_efectivo": 54.17719142700249,
-   "p_webb_ar": 0.8768768768768769,
+   "p_webb_ar": 0.8860886088608861,
    "p_ar_exacto": 0.857238967594231,
-   "p_final": 0.8768768768768769,
+   "p_final": 0.8860886088608861,
    "p_ajustado": null,
    "q_BY": 1.0,
    "N": 234,
@@ -519,8 +519,8 @@
    "estimacion": 1.0083987683751092,
    "se": 10.767021246168042,
    "ic95": [
-    -24.263937202893278,
-    30.844758333066174
+    -24.614207120142282,
+    30.065358479675343
    ],
    "ic95_t": [
     -20.807658529884865,
@@ -532,9 +532,9 @@
     "hi": 52.04529675319585
    },
    "F_efectivo": 63.75121684368124,
-   "p_webb_ar": 0.9309309309309309,
+   "p_webb_ar": 0.9321932193219322,
    "p_ar_exacto": 0.9244859352093073,
-   "p_final": 0.9309309309309309,
+   "p_final": 0.9321932193219322,
    "p_ajustado": null,
    "q_BY": 1.0,
    "N": 228,
@@ -550,8 +550,8 @@
    "estimacion": 4.903479449894411,
    "se": 12.934862749203004,
    "ic95": [
-    -42.22500561144885,
-    47.88166095456285
+    -39.43892586035403,
+    47.6100793636372
    ],
    "ic95_t": [
     -21.329638095269694,
@@ -563,9 +563,9 @@
     "hi": 419.77950099248994
    },
    "F_efectivo": 81.17500834141491,
-   "p_webb_ar": 0.7657657657657657,
+   "p_webb_ar": 0.7390739073907391,
    "p_ar_exacto": 0.6832747756022349,
-   "p_final": 0.7657657657657657,
+   "p_final": 0.7390739073907391,
    "p_ajustado": null,
    "q_BY": 1.0,
    "N": 222,
@@ -581,8 +581,8 @@
    "estimacion": 7.196380274950724,
    "se": 19.636416075906954,
    "ic95": [
-    -38.56699211484378,
-    69.18760139935097
+    -37.56623482581898,
+    70.24109320420462
    ],
    "ic95_t": [
     -32.55546582926249,
@@ -594,9 +594,9 @@
     "hi": 95.2890951519184
    },
    "F_efectivo": 96.43844900848124,
-   "p_webb_ar": 0.7477477477477478,
+   "p_webb_ar": 0.755075507550755,
    "p_ar_exacto": 0.70452586524242,
-   "p_final": 0.7477477477477478,
+   "p_final": 0.755075507550755,
    "p_ajustado": null,
    "q_BY": null,
    "N": 273,
@@ -639,8 +639,8 @@
   "E3-R1q": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE inf > |referencia| 0.462 (viviendas por inmigrante)",
-   "mde80": Infinity,
+   "motivo": "NO ESTIMABLE por variación: MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia) frente a |referencia| 0.462 (viviendas por inmigrante)",
+   "mde80": null,
    "referencia": 0.462,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -669,8 +669,8 @@
   "E3-R2": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE 2.35 > |referencia| 0.959 (elasticidad)",
-   "mde80": 2.3481730758343873,
+   "motivo": "NO ESTIMABLE por variación: MDE 2.33 frente a |referencia| 0.959 (elasticidad)",
+   "mde80": 2.331098790821627,
    "referencia": 0.959,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -759,8 +759,8 @@
   "E3-R2b": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE 2.13 > |referencia| 0.927 (elasticidad)",
-   "mde80": 2.131697227260471,
+   "motivo": "NO ESTIMABLE por variación: MDE 2.14 frente a |referencia| 0.927 (elasticidad)",
+   "mde80": 2.1380808298476524,
    "referencia": 0.927,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -779,8 +779,8 @@
   "E3-R2q": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE 15.9 > |referencia| 1.05 (elasticidad)",
-   "mde80": 15.949640055313498,
+   "motivo": "NO ESTIMABLE por variación: MDE 15.9 frente a |referencia| 1.05 (elasticidad)",
+   "mde80": 15.888793824000516,
    "referencia": 1.05,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -799,8 +799,8 @@
   "E3-A1": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE 10.9 > |referencia| 3.05 (% por punto)",
-   "mde80": 10.943125584787994,
+   "motivo": "NO ESTIMABLE por variación: MDE 10.4 frente a |referencia| 3.05 (% por punto)",
+   "mde80": 10.382636148317363,
    "referencia": 3.046,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -869,8 +869,8 @@
   "E3-A2": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE 13.3 > |referencia| 0.947 (% por punto)",
-   "mde80": 13.340940667081764,
+   "motivo": "NO ESTIMABLE por variación: MDE 13.4 frente a |referencia| 0.947 (% por punto)",
+   "mde80": 13.406489931469215,
    "referencia": 0.947,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -949,8 +949,8 @@
   "E3-A5": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE 3.94 > |referencia| 3.05 (% por punto)",
-   "mde80": 3.936743885773592,
+   "motivo": "NO ESTIMABLE por variación: MDE 3.79 frente a |referencia| 3.05 (% por punto)",
+   "mde80": 3.789276342875386,
    "referencia": 3.046,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -969,8 +969,8 @@
   "E3-A3": {
    "rol": "principal",
    "clasificacion_v18": "NO ESTIMABLE",
-   "motivo": "NO ESTIMABLE por variación: MDE inf > |referencia| 0.947 (% por punto)",
-   "mde80": Infinity,
+   "motivo": "NO ESTIMABLE por variación: MDE superior a seis errores típicos de referencia (no se alcanza el 80 % de potencia) frente a |referencia| 0.947 (% por punto)",
+   "mde80": null,
    "referencia": 0.947,
    "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
    "capa": "C4",
@@ -1032,8 +1032,8 @@
    "estimacion": 0.1756134133159126,
    "se": 0.32940761985107647,
    "ic95": [
-    -0.669428515770432,
-    0.9241894146651073
+    -0.6500066553714978,
+    0.9283110310023552
    ],
    "ic95_t": [
     -0.49182982329069647,
@@ -1045,9 +1045,9 @@
     "hi": 1.0179744323292754
    },
    "F_efectivo": 54.341276571623524,
-   "p_webb_ar": 0.6256256256256256,
+   "p_webb_ar": 0.620962096209621,
    "p_ar_exacto": 0.5995034781377178,
-   "p_final": 0.6256256256256256,
+   "p_final": 0.620962096209621,
    "p_ajustado": 1.0,
    "q_BY": null,
    "N": 11759,
@@ -1064,10 +1064,10 @@
    "tost": null,
    "robustez": null,
    "mde": {
-    "mde80": 2.105230096864099,
-    "tamano_nulo": 0.05,
-    "se_ref": 0.6063062678968605,
-    "R": 500,
+    "mde80": 2.0430194764533214,
+    "tamano_nulo": 0.038,
+    "se_ref": 0.6000130015797376,
+    "R": 2000,
     "sigma": 8.551020078868238,
     "rho": 0.0,
     "ref": 0.947,
@@ -1113,8 +1113,8 @@
    "estimacion": 0.005357671449618167,
    "se": 0.03049246748756738,
    "ic95": [
-    -Infinity,
-    Infinity
+    null,
+    null
    ],
    "F_efectivo": 0.3688220342660325,
    "p_ajustado": 1.0,
@@ -1123,11 +1123,11 @@
      "beta": 0.005357671449618167,
      "se": 0.03049246748756738,
      "F_eff": 0.3688220342660325,
-     "p_webb_ar": 0.8728728728728729,
+     "p_webb_ar": 0.8552855285528553,
      "p_ar": 0.8539542789756756,
      "ic_webb_ar": {
-      "lo": -Infinity,
-      "hi": Infinity,
+      "lo": null,
+      "hi": null,
       "acotado": false,
       "vacio": false
      },
@@ -1136,8 +1136,8 @@
      "pi": 0.09756278610044603,
      "ar": {
       "tipo": "recta",
-      "lo": -Infinity,
-      "hi": Infinity,
+      "lo": null,
+      "hi": null,
       "acotado": false,
       "p_beta0": 0.8539542789756756,
       "nota": "iv_debil.ar_ic_1 (APTO) con el factor c = G/(G-1)·(n-1)/(n-k)"
@@ -1153,11 +1153,11 @@
      "beta": -0.007523701147007295,
      "se": 0.028555334604707827,
      "F_eff": 0.6906817398533777,
-     "p_webb_ar": 0.8978978978978979,
+     "p_webb_ar": 0.892089208920892,
      "p_ar": 0.7561559994031124,
      "ic_webb_ar": {
-      "lo": -Infinity,
-      "hi": Infinity,
+      "lo": null,
+      "hi": null,
       "acotado": false,
       "vacio": false
      },
@@ -1194,17 +1194,17 @@
    "estimacion": 0.008202960682063696,
    "se": 0.0068851267883851715,
    "ic95": [
-    -0.011508572346256301,
-    0.02564186396968624
+    -0.011701880349348173,
+    0.026324325267558405
    ],
    "p_ajustado": 1.0,
    "detalle": {
     "beta": 0.008202960682063696,
     "se": 0.0068851267883851715,
-    "p_webb": 0.34134134134134136,
+    "p_webb": 0.34393439343934396,
     "ic_webb": [
-     -0.011508572346256301,
-     0.02564186396968624
+     -0.011701880349348173,
+     0.026324325267558405
     ],
     "n": 408,
     "G": 34,

@@ -1,7 +1,7 @@
 # V18 · E1 · Vivienda turística (Barcelona con registro HUT y SERPAVI; otras ciudades no selladas)
 
 **Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en el campo `clasificacion_v18` y no cambia la capa. Clasificación provisional: falta I8 (réplica ciega, B6).
-Código: `src/v18/estimacion/e1_turismo.py` (+ `e1_adquisicion.py`, `e1_datos.py`, `e1_diseno.py`, `e1_estim.py`, `e1_mde.py`, `e1_nucleo.py`, `e1_resultados.py`, `e1_salidas.py`); SEED 20261010; sin red en la estimación; 188 s.
+Código: `src/v18/estimacion/e1_turismo.py` (+ `e1_adquisicion.py`, `e1_datos.py`, `e1_diseno.py`, `e1_estim.py`, `e1_mde.py`, `e1_nucleo.py`, `e1_resultados.py`, `e1_salidas.py`); SEED 20261010; sin red en la estimación; 244 s.
 
 ## 1. Resumen
 - **Lo que supera la estimabilidad (adenda 1.3)**: E1-R3 (estudio de eventos de dosis, 2011-2019) y E1-R4 (Sagrada Família), más la coprincipal E1-P-H3 (H3 de V15 en la muestra V18).
@@ -144,6 +144,7 @@ Coeficiente de E1-R3 por desviación típica de la dosis (1.999 pp): 0.0089 (EE 
 | 1.0 | (-0.0740; 0.0675) | False | válido pero conservador; informativo |
 
 - Geometría: radio 22 de 25 secciones no selladas (0.88) y anillo 55 de 70 (0.79): se cumple el 75 % de la adenda 1.5. 5 barrios, 3 con tratadas.
+- Réplica ciega (B6, K8): 693 es el número de observaciones (77 secciones × 9 años), no de secciones; esta principal ya usa el anillo de 500-1.000 m como control y «resto de Barcelona» es E1-R4-v1. La réplica da 21 y 56 secciones (0801902055 está a 499,7 m del templo con la geometría del INE y a 507,3 m con la del Ajuntament) y un coeficiente de 0,0011 con diferencias en diferencias sin los adelantos de 2011-2012 como regresores; aquí los adelantos entran (base 2013 sola) y el coeficiente es 0.0026. Con el estimador de la réplica sobre estas mismas 22 y 55 secciones el coeficiente es 0,0017 y el IC90 de Webb (−0,026; 0,053) no queda dentro de ±0,05: la equivalencia depende de esa lectura de la ficha.
 - Medida alternativa: €/mes 0.0197; vivienda unifamiliar —. Moran de los residuos: I = 0.229, p unilateral 0.002.
 
 ## 6. Variantes enumeradas (anexo A)

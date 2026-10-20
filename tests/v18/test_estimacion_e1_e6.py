@@ -249,3 +249,23 @@ def test_salidas_cumplen_el_formato_c4_exploratorio_y_sin_lenguaje_causal(estudi
     assert not CAUSAL.search(inf)
     for f in ("tabla.csv", "registro.csv", "mde.csv"):
         assert (SALIDAS / estudio / f).exists()
+
+
+def test_e1_r4_principal_es_el_anillo_y_la_clase_exige_el_tost_con_ic90_de_webb():
+    g = pd.DataFrame({"cod_seccion": ["a", "b", "c", "d"], "dist_sf": [0.2, 0.7, 1.4, 0.49], "sellada": [False, False, False, True]})
+    c = E1.r4_conteos(g)
+    assert (c["radio_total"], c["anillo_total"], c["radio_no_sellado"]) == (2, 1, 1)          # el control principal es solo el anillo de 500-1.000 m
+    assert E1.DELTA["E1-R4"] == 0.05
+    ruta = SALIDAS / "e1" / "resultado.json"
+    if not ruta.exists():
+        pytest.skip("salidas todavía no generadas")
+    res = json.loads(ruta.read_text(encoding="utf-8"))
+    t = res["diagnosticos"]["E1-R4"]["tost_delta_0_05"]
+    lo, hi = t["ic90_webb"]
+    assert t["equivalente"] == (lo > -0.05 and hi < 0.05)
+    clase = res["clasificaciones"]["E1-R4"]
+    assert ("nulo acotado" in clase) == t["equivalente"]
+    if not t["equivalente"]:
+        assert clase.startswith(("NO CONCLUYENTE", "SUGESTIVO", "ASOCIACIÓN")) and "nulo acotado" not in clase
+    tabla = pd.read_csv(SALIDAS / "e1" / "tabla.csv").set_index("id")
+    assert "E1-R4-v1" in tabla.index and "resto de Barcelona" in tabla.loc["E1-R4-v1", "resultado"]

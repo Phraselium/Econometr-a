@@ -7,3 +7,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-20,F2,replicador-estudio,"Mense 2025 (tabla 3A, IV con lluvia): coincide",65000,src/v18/reproduccion/mense_2025.py; output/v18/reproduccion/mense_2025/
 2026-10-20,F2,replicador-estudio,"Borusyak-Hull-Jaravel 2022 (ADH, tabla 4): coincide; bhj_lib",76806,"src/v18/reproduccion/{bhj_lib,borusyak_hull_jaravel_2022}.py; output/v18/reproduccion/borusyak_hull_jaravel_2022/"
 2026-10-20,F3,general-purpose,"plan de replicación (B1), E1-E12 y F1-F4",354665,docs/v18/plan_replicacion.md
+2026-10-20,F3,abogado-del-diablo,"ataque a los diseños del plan de replicación (T1-T5, E1-E12, F)",127140,docs/v18/revision_plan/abogado_del_diablo.md

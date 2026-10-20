@@ -34,14 +34,15 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F2 | replicador-estudio | Mense 2025 (tabla 3A, IV con lluvia): coincide | 65.000 | src/v18/reproduccion/mense_2025.py; output/v18/reproduccion/mense_2025/ |
 | 2026-10-20 | F2 | replicador-estudio | Borusyak-Hull-Jaravel 2022 (ADH, tabla 4): coincide; bhj_lib | 76.806 | src/v18/reproduccion/{bhj_lib,borusyak_hull_jaravel_2022}.py; output/v18/reproduccion/borusyak_hull_jaravel_2022/ |
 | 2026-10-20 | F3 | general-purpose | plan de replicación (B1), E1-E12 y F1-F4 | 354.665 | docs/v18/plan_replicacion.md |
+| 2026-10-20 | F3 | abogado-del-diablo | ataque a los diseños del plan de replicación (T1-T5, E1-E12, F) | 127.140 | docs/v18/revision_plan/abogado_del_diablo.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 259.633 |
 | F1 | 1.630.684 |
 | F2 | 183.117 |
-| F3 | 354.665 |
+| F3 | 481.805 |
 
-Total V18: 2.428.099 tokens
+Total V18: 2.555.239 tokens
 
 <!-- fin subagentes -->

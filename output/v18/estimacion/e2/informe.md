@@ -121,3 +121,87 @@ Ajuste de Benjamini-Yekutieli al 10 % dentro de cada identificador (q_by). Webb 
 
 ## 10. Datos que los desbloquearían
 Microdatos de contratos del registro de fianzas con renta, renta anterior, superficie y tipo de contrato (tareas_autor, punto 4); compraventas municipales de todos los municipios; EMAL y zonas tensionadas con más trimestres posteriores; evaluación diferida de H1 y H2 de V15 para A1.
+
+## Robustez B6 (a posteriori)
+
+Pruebas pedidas por la ronda 1 del abogado del diablo (hallazgos 1, 2, 4, 5 y 6; docs/v18/revision_estimaciones/ronda1_e2_e8.md). **Se declaran a posteriori**: se añadieron después de ver los
+resultados de E2, no cambian la especificación principal ni su clase por sí solas y entran como robustez (desviación B6-2 de docs/v18/desviaciones_e2_e8.md). Código: `src/v18/estimacion/e2_robustez.py`;
+SEED 20261010; 46 s; inferencia de Webb con 4,999 réplicas por municipio en las variantes (9.999 en E2-R1c-v1) y 999 placebos de Conley-Taber en el SDID. q_bh: Benjamini-Hochberg al 10 % sobre las variantes de esta sección
+(exploratorias; los diagnósticos y placebos llevan su p propio, sin ajuste). Análisis V18; capa C4; nivel de evidencia EXPLORATORIO.
+
+### Lectura
+- (a) Tendencia: el coeficiente por trimestre sube +0.0109 por trimestre en 2021T1-2022T1 (IC95 0.0050; 0.0167; p = 0.000), es decir, se acerca a cero. Salto en 2022T2 sobre la extrapolación: -0.0217 (IC95 -0.0468; 0.0034; p = 0.090): observado -0.0262 frente a -0.0045 extrapolado. No hay un salto distinguible: la caída del coeficiente tras la STC continúa la pendiente previa.
+- (b) Covariables por trimestre: 1 -0.0376 (p Webb 0.0002); 2 -0.0228 (p Webb 0.0412); 3 -0.0237 (p Webb 0.0356); 4 -0.0236 (p Webb 0.0366); principal -0.0382. Alguno no queda por debajo de −0,03.
+- (c) Controles emparejados: 1 -0.0543 (p Webb 0.0004); 2 -0.0381 (p Webb 0.0028); 3 -0.0422 (p Webb 0.0002). Placebo de 2017: sin tendencia +0.0146 (p = 0.056); con tendencia propia de los regulados +0.0299 (p = 0.012); con tendencia y controles emparejados +0.0021 (p = 0.848).
+- (d) SDID: B6d-1 τ = -0.0416 (Conley-Taber p = 0.001; razón de variabilidad 0.45, conservadora (tratados menos variables que los controles)); B6d-2 τ = -0.0440 (Conley-Taber p = 0.001; razón de variabilidad 0.46, conservadora (tratados menos variables que los controles)).
+- (e) E2-R1c-v1: -0.0314 (IC95 -0.0846; 0.0218; p Webb 0.2255); en la misma muestra con la población como denominador -0.0270 (p Webb 0.3078). Criterio de AD-E2 (caída ≥ 5 % con p < 0,05): no se cumple. mínimo 30/30: True; MDE80 0.0670 (umbral 0.10, 2δ).
+
+### Tabla
+| id | rol | n_tratados | n_controles | coef | se | p_cr1 | p_webb | ic95_lo | ic95_hi | q_bh |
+|---|---|---|---|---|---|---|---|---|---|---|
+| E2-R1-B6a-14T-2021T1-2022T1-pendiente | diagnóstico | 49 | 94 | 0.0109 | 0.0030 | 0.0004 | — | 0.0050 | 0.0167 | — |
+| E2-R1-B6a-14T-2021T1-2022T1-salto-2022T2 | diagnóstico | 49 | 94 | -0.0217 | 0.0127 | 0.0900 | — | -0.0468 | 0.0034 | — |
+| E2-R1-B6a-14T-2020T4-2022T1-pendiente | diagnóstico | 49 | 94 | 0.0043 | 0.0024 | 0.0732 | — | -0.0004 | 0.0091 | — |
+| E2-R1-B6a-14T-2020T4-2022T1-salto-2022T2 | diagnóstico | 49 | 94 | -0.0107 | 0.0124 | 0.3935 | — | -0.0353 | 0.0139 | — |
+| E2-R1-B6a-20T-2021T1-2022T1-pendiente | diagnóstico | 49 | 91 | 0.0104 | 0.0030 | 0.0006 | — | 0.0045 | 0.0163 | — |
+| E2-R1-B6a-20T-2021T1-2022T1-salto-2022T2 | diagnóstico | 49 | 91 | -0.0231 | 0.0126 | 0.0698 | — | -0.0481 | 0.0019 | — |
+| E2-R1-B6a-20T-2021T1-2022T1-salto-2022T2-2022T4 | diagnóstico | 49 | 91 | -0.0141 | 0.0128 | 0.2710 | — | -0.0394 | 0.0112 | — |
+| E2-R1-B6a-20T-2020T4-2022T1-pendiente | diagnóstico | 49 | 91 | 0.0039 | 0.0024 | 0.1078 | — | -0.0009 | 0.0086 | — |
+| E2-R1-B6a-20T-2020T4-2022T1-salto-2022T2 | diagnóstico | 49 | 91 | -0.0122 | 0.0124 | 0.3264 | — | -0.0367 | 0.0123 | — |
+| E2-R1-B6a-20T-2020T4-2022T1-salto-2022T2-2022T4 | diagnóstico | 49 | 91 | 0.0033 | 0.0119 | 0.7822 | — | -0.0203 | 0.0269 | — |
+| E2-R1-B6b-1 | variante | 49 | 94 | -0.0376 | 0.0065 | 0.0000 | 0.0002 | -0.0504 | -0.0249 | 0.0010 |
+| E2-R1-B6b-2 | variante | 49 | 94 | -0.0228 | 0.0113 | 0.0450 | 0.0412 | -0.0451 | -0.0005 | 0.0458 |
+| E2-R1-B6b-3 | variante | 49 | 94 | -0.0237 | 0.0113 | 0.0378 | 0.0356 | -0.0461 | -0.0014 | 0.0457 |
+| E2-R1-B6b-4 | variante | 49 | 94 | -0.0236 | 0.0114 | 0.0410 | 0.0366 | -0.0462 | -0.0010 | 0.0457 |
+| E2-R1-B6c-1 | variante | 49 | 31 | -0.0543 | 0.0134 | 0.0001 | 0.0004 | -0.0809 | -0.0277 | 0.0013 |
+| E2-R1-B6c-2 | variante | 49 | 34 | -0.0381 | 0.0111 | 0.0009 | 0.0028 | -0.0601 | -0.0161 | 0.0047 |
+| E2-R1-B6c-3 | variante | 49 | 76 | -0.0422 | 0.0069 | 0.0000 | 0.0002 | -0.0559 | -0.0285 | 0.0010 |
+| E2-R1-B6c-4 | placebo | 50 | 170 | 0.0146 | 0.0076 | 0.0560 | — | -0.0004 | 0.0296 | — |
+| E2-R1-B6c-5 | placebo | 50 | 170 | 0.0299 | 0.0118 | 0.0121 | — | 0.0066 | 0.0532 | — |
+| E2-R1-B6c-6 | placebo | 50 | 31 | 0.0021 | 0.0108 | 0.8479 | — | -0.0193 | 0.0235 | — |
+| E2-R1-B6d-1 | variante | 49 | 94 | -0.0416 | 0.0099 | — | 0.0010 | -0.0608 | -0.0224 | 0.0020 |
+| E2-R1-B6d-2 | variante | 49 | 146 | -0.0440 | 0.0092 | — | 0.0010 | -0.0624 | -0.0256 | 0.0020 |
+| E2-R1c-v1 | variante | 49 | 38 | -0.0314 | 0.0268 | 0.2442 | 0.2255 | -0.0846 | 0.0218 | 0.2255 |
+| E2-R1c-v1-ref | referencia | 49 | 38 | -0.0270 | 0.0268 | 0.3176 | 0.3078 | -0.0804 | 0.0264 | — |
+
+### Notas por fila
+| id | nota |
+|---|---|
+| E2-R1-B6a-14T-2021T1-2022T1-pendiente | coeficiente ajustado al inicio de la ventana -0.0588 |
+| E2-R1-B6a-14T-2021T1-2022T1-salto-2022T2 | observado -0.0262; extrapolado -0.0045 |
+| E2-R1-B6a-14T-2020T4-2022T1-pendiente | coeficiente ajustado al inicio de la ventana -0.0416 |
+| E2-R1-B6a-14T-2020T4-2022T1-salto-2022T2 | observado -0.0262; extrapolado -0.0155 |
+| E2-R1-B6a-20T-2021T1-2022T1-pendiente | coeficiente ajustado al inicio de la ventana -0.0565 |
+| E2-R1-B6a-20T-2021T1-2022T1-salto-2022T2 | observado -0.0275; extrapolado -0.0044 |
+| E2-R1-B6a-20T-2021T1-2022T1-salto-2022T2-2022T4 | observado -0.0081; extrapolado +0.0060 |
+| E2-R1-B6a-20T-2020T4-2022T1-pendiente | coeficiente ajustado al inicio de la ventana -0.0387 |
+| E2-R1-B6a-20T-2020T4-2022T1-salto-2022T2 | observado -0.0275; extrapolado -0.0153 |
+| E2-R1-B6a-20T-2020T4-2022T1-salto-2022T2-2022T4 | observado -0.0081; extrapolado -0.0114 |
+| E2-R1-B6b-1 | principal -0.0382; criterio de la ronda: por debajo de −0,03: sí |
+| E2-R1-B6b-2 | principal -0.0382; criterio de la ronda: por debajo de −0,03: no |
+| E2-R1-B6b-3 | principal -0.0382; criterio de la ronda: por debajo de −0,03: no |
+| E2-R1-B6b-4 | principal -0.0382; criterio de la ronda: por debajo de −0,03: no |
+| E2-R1-B6c-1 | pretendencias (contraste conjunto) p = 0.636; principal -0.0382 |
+| E2-R1-B6c-2 | pretendencias (contraste conjunto) p = 0.347; principal -0.0382 |
+| E2-R1-B6c-3 | pretendencias (contraste conjunto) p = 0.557; principal -0.0382 |
+| E2-R1-B6c-4 | adopción falsa en 2017; el coeficiente principal del placebo sin tendencia fue +0,0146 (p = 0,056), de signo contrario al de la principal |
+| E2-R1-B6c-5 | adopción falsa en 2017; el coeficiente principal del placebo sin tendencia fue +0,0146 (p = 0,056), de signo contrario al de la principal |
+| E2-R1-B6c-6 | adopción falsa en 2017; el coeficiente principal del placebo sin tendencia fue +0,0146 (p = 0,056), de signo contrario al de la principal |
+| E2-R1-B6d-1 | τ(SDID) -0.0416; DiD simple en los mismos periodos -0.0382; razón de variabilidad previa tratados/controles 0.45 (conservadora (tratados menos variables que los controles)); donantes efectivos 93.3; 45 donantes en cada placebo (Mo |
+| E2-R1-B6d-2 | τ(SDID) -0.0440; DiD simple en los mismos periodos -0.0443; razón de variabilidad previa tratados/controles 0.46 (conservadora (tratados menos variables que los controles)); donantes efectivos 144.1; 97 donantes en cada placebo (M |
+| E2-R1c-v1 | pretendencias p = 0.426; MDE80 0.0670; criterio AD-E2 (cae ≥ 5 % con p < 0,05): no |
+| E2-R1c-v1-ref | pretendencias p = 0.409; MDE80 0.0670; criterio AD-E2 (cae ≥ 5 % con p < 0,05): no |
+
+### Cómo se hizo
+- **(a)** Estudio de eventos (base 2019T4) en los paneles equilibrados 2019T1-2022T2 (14 trimestres) y 2019T1-2023T4 (20): la recta se ajusta por mínima distancia (GLS con la covarianza agrupada por municipio) a los coeficientes de 2021T1-2022T1 (y, como variante, de 2020T4-2022T1); el salto es el coeficiente de 2022T2 menos el valor de la recta extrapolada, con su error típico conjunto (t de G−1 gl). La muestra de estos paneles es menor que la de la principal porque exige contratos en más trimestres.
+- **(b)** Covariables por trimestre: x_i × 1[t = k] para cada trimestre; la densidad HUT usa IDESCAT 2019 (sin dato = 0) entre los habitantes del padrón de 2019; la población municipal del padrón está en el repositorio. B6b-4 añade el paro registrado de 2019 (el de 2020 no está en la base; los ERTE por municipio tampoco).
+- **(c)** Emparejamiento con reposición por el crecimiento anual de la renta 2017-2019 (y 2014-2017 en B6c-2) con el conjunto de no regulados sin el criterio de crecimiento de JMS; el peso del control es el número de veces elegido. El placebo de 2017 usa Incasòl anual 2014-2019, adopción falsa en 2017, con y sin una tendencia lineal propia de los regulados.
+- **(d)** SDID con los pesos de unidad ω (símplex, con regularización) y de tiempo λ de `sdid.py`; pre = 2019T1-2020T2, post = 2020T4-2022T1 (como la principal; 2020T3 queda fuera). La inferencia por placebos de Conley-Taber solo es válida si los tratados son intercambiables con los controles (Monte Carlo de V18): se rotula la razón de variabilidad temporal previa entre tratados y controles. Con JMS hay pocos donantes por placebo.
+- **(e)** E2-R1c-v1: estimabilidad (mínimo de 30/30 y MDE80 frente al umbral 2δ = 0,10) calculada antes del coeficiente. Como el denominador (hogares inquilinos) es fijo en el tiempo, lo absorbe el efecto fijo de municipio: la variante equivale al log de contratos en la muestra de municipios con Censo 2021 (de 10.000 habitantes o más), y su contribución es el cambio de muestra y de unidades.
+
+### Qué dicen estas pruebas sobre la clase de E2-R1
+- Pendiente del coeficiente en la vigencia: significativa; salto en 2022T2 sobre la extrapolación: no distinguible.
+- Covariables de COVID y turismo por trimestre (B6b): el coeficiente no se mantiene por debajo de −0,03 en las cuatro especificaciones.
+- Placebo de 2017 con tendencia propia: coeficiente +0.0299, p = 0.012 (sigue siendo distinguible de cero).
+- SDID: τ negativo en las dos versiones; la inferencia de Conley-Taber se rotula con su condición de intercambiabilidad.
+- Regla del plan: ninguna de estas pruebas está en el pre-registro; no activan por sí solas un fallo decisivo ni un tope. La clase provisional SUGESTIVO de E2-R1 no cambia por estas pruebas salvo que el orquestador las trate como fallo de las «pruebas 1-2» de la ronda 1 (propuesta del abogado: ASOCIACIÓN si fallan). Con los números anteriores: falla al menos una; la decisión de aplicarla corresponde al orquestador y al árbitro.

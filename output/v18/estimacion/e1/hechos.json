@@ -21,9 +21,9 @@
  {
   "id": "V18-E1-R4",
   "indicador": "Coeficiente de estar a menos de 500 m de la Sagrada Família × posterior (2014-2019) sobre el log del alquiler mediano SERPAVI por sección, frente al anillo de 500-1.000 m",
-  "valor": 0.001764,
-  "min": -0.044622,
-  "max": 0.041754,
+  "valor": 0.002586,
+  "min": -0.038861,
+  "max": 0.041988,
   "unidad": "log (diferencia entre radio y anillo, posterior frente a 2013)",
   "periodo": "2011-2019",
   "cobertura": "22 secciones en el radio y 55 en el anillo, no selladas; el anillo conserva 55 de 70 secciones",
@@ -35,7 +35,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "SUGESTIVO",
-  "nota": "Secciones a menos de 500 m de la Sagrada Família (22) frente al anillo de 500-1.000 m (55), tratamiento desde 2014, base 2013, efectos fijos de sección y de año; Webb por barrio con 6 clusters (3 con tratadas), p = 0.8182, p tras Holm 1.0000; IC95 por inversión del contraste de Webb. Pretendencias (2011-2012): p = 0.121. Sin referencia en la literatura (δ = 0,05): el IC95 de Webb queda dentro de ±0,05 (equivalencia). Tope SUGESTIVO: un solo grupo tratado. Lectura: asociación estimada; la clase describe el diseño, no el coeficiente. Clasificación provisional: falta I8 (réplica ciega, B6)."
+  "nota": "Secciones a menos de 500 m de la Sagrada Família (22) frente al anillo de 500-1.000 m (55), tratamiento desde 2014, base 2013, efectos fijos de sección y de año; Webb por barrio con 5 clusters (3 con tratadas), p = 0.7422, p tras Holm 1.0000; IC95 por inversión del contraste de Webb. Pretendencias (2011-2012): p = 0.186. Sin referencia en la literatura (δ = 0,05): TOST: el IC90 de Webb (-0.0259; 0.0394) queda dentro de ±0,05 (nulo acotado). Tope SUGESTIVO: un solo grupo tratado. Lectura: asociación estimada; la clase describe el diseño, no el coeficiente. Clasificación provisional: falta I8 (réplica ciega, B6)."
  },
  {
   "id": "V18-E1-P-H3",

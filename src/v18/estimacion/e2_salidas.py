@@ -59,8 +59,9 @@ def escribir(OUT: Path, d: dict, est: pd.DataFrame, tab: pd.DataFrame, diag: dic
                      f"por lo que no se aplica el tope. IC95 con EE agrupado por municipio. {I8}."))
     nota_c = (f"Coeficiente de Reg × Post sobre log(contratos/población × 1.000); p con Webb {f(t.loc['E2-R1c', 'p_webb'], 3)}; p tras Holm {f(t.loc['E2-R1c', 'p_holm'], 3)}; "
               f"TOST con δ = 0,05: intervalo al 90 % ({f(clasif['E2-R1c']['info']['tost']['ic90'][0])}; {f(clasif['E2-R1c']['info']['tost']['ic90'][1])}) "
-              f"{'dentro' if clasif['E2-R1c']['info']['tost']['equivalente'] else 'no dentro'} de ±0,05. Sin significación: la clase describe el diseño, no el coeficiente. "
-              f"No se descarta el desvío a la temporada o a no depositar la fianza (falta el Censo 2021 de hogares en alquiler en el sellado). {I8}.")
+              f"{'dentro' if clasif['E2-R1c']['info']['tost']['equivalente'] else 'no dentro'} de ±0,05. Sin significación y con el placebo de fecha significativo (p = {f(r1c['placebo_fecha']['p'], 4)}) "
+              "y una diferencia que persiste tras la STC: no supera I1-I5 y no existe la clase SUGESTIVO sin significación (K7): ASOCIACIÓN. "
+              f"No se descarta el desvío a la temporada o a no depositar la fianza (variante con hogares inquilinos del Censo 2021 en la sección de robustez B6, a posteriori). {I8}.")
     H.append(K.hecho("V18-E2-R1c", "Coeficiente Reg × Post sobre el log de contratos nuevos por 1.000 habitantes (Ley 11/2020, Cataluña, Incasòl)", t.loc["E2-R1c", "coef"],
                      t.loc["E2-R1c", "ic95_lo"], t.loc["E2-R1c", "ic95_hi"], "log (diferencia entre regulados y controles, posterior frente a previo)", "2019T1-2022T1",
                      f"{int(t.loc['E2-R1c', 'n_tratados'])} regulados y {int(t.loc['E2-R1c', 'n_controles'])} controles, panel trimestral equilibrado", FUENTES, cls["E2-R1c"]["clase"], nota_c))
@@ -206,7 +207,7 @@ Ajuste de Benjamini-Yekutieli al 10 % dentro de cada identificador (q_by). Webb 
 
 ## 7. Clasificación (I1-I8 revisados)
 - **E2-R1: {cls['E2-R1']['clase']}.** Razones: {'; '.join(cls['E2-R1']['razones'])}.
-- **E2-R1c: {cls['E2-R1c']['clase']}.** Razones: {'; '.join(cls['E2-R1c']['razones'])}. Lectura: la clase describe el diseño; el coeficiente no es significativo.
+- **E2-R1c: {cls['E2-R1c']['clase']}.** Razones: {'; '.join(cls['E2-R1c']['razones'])}. Lectura: coeficiente no significativo; no hay clase SUGESTIVO sin significación (K7): al no superar I1-I5 (placebo de fecha, persistencia tras la STC) la clase es ASOCIACIÓN, no NO CONCLUYENTE.
 - I6 se publica como etiqueta (razón con la referencia); no interviene en la clase ni en B5.
 - I8 pendiente para ambas (replicador-ciego). El lenguaje de ambas cifras es el de una asociación estimada.
 
@@ -215,10 +216,10 @@ Ajuste de Benjamini-Yekutieli al 10 % dentro de cada identificador (q_by). Webb 
 - **D2. Honest DiD.** Se aplica la lectura de la adenda 1.12 y del Monte Carlo de V18: solo M̄ = 0 es apto; el criterio de I3 «IC con M̄ = 1 excluye el cero» no es evaluable (tamaño 0 con M̄ ≥ 0,5). I3 se juzga con las pretendencias y la potencia de Roth.
 - **D3. Comarcas.** No están en el repositorio: 42 conglomerados de k-medias sobre los centroides de los 947 municipios (SEED 20261010) sustituyen a las comarcas en la inferencia alternativa.
 - **D4. Entradas y salidas del régimen.** La lista de la Ley 11/2020 del repositorio no identifica municipios que entraron o salieron; no se pudo reconstruir con el DOGC (sin red). Se dice.
-- **D5. Hogares en alquiler del Censo 2021** (E2-R1c-v1): la variable no tiene entrada en docs/v18/sellado_v18.json (filtrar la rechazaría); NO ESTIMABLE hasta añadirla a src/v18/f3_sellado.py.
+- **D5. Hogares en alquiler del Censo 2021** (E2-R1c-v1): la variable no tenía entrada en docs/v18/sellado_v18.json cuando se estimó la principal; se añadió DESPUÉS de la etiqueta (desviación B6-1) y la variante se estima a posteriori en `e2_robustez.py` (sección «Robustez B6» de este informe).
 - **D6. Población** para contratos por 1.000 habitantes: padrón municipal (tope 2022 de la regla de sellado); en la reversión de 2023 se mantiene la de 2022.
 - **D7. Códigos INE de MIVAU.** Los ficheros municipales de MIVAU solo traen nombres; el código se asigna por nombre dentro de su comunidad con el diccionario oficial del INE (3 de 205 sin resolver). Solo afecta a E2-A3 (no estimable).
-- **D8. Lectura de la regla de clasificación.** SUGESTIVO se aplica literalmente («prueba débil o tope», sin exigir significación); NO CONCLUYENTE exige I1-I5 superados. Un coeficiente sin significación con alguna prueba débil queda SUGESTIVO por la regla, y la nota lo rotula. Conviene que el árbitro confirme esta lectura.
+- **D8. Lectura de la regla de clasificación (revisada en B6, K7).** Antes se aplicaba SUGESTIVO a un coeficiente sin significación con alguna prueba débil; tras la ronda 1 el autor decidió (K7) que no existe «SUGESTIVO sin significación»: un no significativo es NO CONCLUYENTE si supera I1-I5 y ASOCIACIÓN si no (opción `nulo_sin_sugestivo` de `clasificar`). Cambia E2-R1c: SUGESTIVO → ASOCIACIÓN.
 - **D9. Coprincipales sin estimar.** E2-P-H1, E2-P-H2, E2-P-D1c y E2-P-Q1c heredan la no estimabilidad de la principal que acompañan (misma variación).
 
 ## 9. Limitaciones

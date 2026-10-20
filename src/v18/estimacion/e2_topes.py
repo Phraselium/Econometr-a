@@ -225,9 +225,9 @@ def main() -> int:
             idv = f"{ident}-{suf}"
             fv = fila_base(idv, "variante", fam, rep, res, "estimada", f"[{dim}] {desc}")
             if ident == "E2-R1c" and suf == "v1":
-                fv.update({"estado": "NO ESTIMABLE", "clase": "NO ESTIMABLE",
-                           "nota": f"[{dim}] {desc}: los hogares en alquiler del Censo 2021 por municipio no tienen entrada en docs/v18/sellado_v18.json (añadir a src/v18/f3_sellado.py); "
-                                   "sin ese contraste no se puede descartar el desvío a la temporada o a no depositar la fianza (adenda, AD-E2 medida)"})
+                fv.update({"estado": "estimada a posteriori (B6)", "clase": "",
+                           "nota": f"[{dim}] {desc}: la variable (hogares en alquiler del Censo 2021 por municipio) se añadió a docs/v18/sellado_v18.json DESPUÉS de la etiqueta (desviación B6-1) y se estima en "
+                                   "e2_robustez.py (robustez_b6.csv; desviación B6-2), no en esta ejecución"})
                 filas.append(fv)
                 continue
             if ident == "E2-R1" and suf == "v5":

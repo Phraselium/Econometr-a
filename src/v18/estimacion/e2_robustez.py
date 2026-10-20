@@ -320,24 +320,34 @@ def lectura(ia: dict, ib: dict, ic_: dict, id_: dict, ie: dict, filas: list[dict
     L = []
     k = ia["14T-2021T1-2022T1"]
     s, sal = k["pendiente"], k["saltos"][0]
-    L.append(f"(a) Tendencia: el coeficiente por trimestre sube {s['est']:+.4f} por trimestre en 2021T1-2022T1 (IC95 {f(s['ic'][0])}; {f(s['ic'][1])}; p = {s['p']:.3f}), "
-             f"es decir, se acerca a cero. Salto en 2022T2 sobre la extrapolación: {sal[1]['est']:+.4f} (IC95 {f(sal[1]['ic'][0])}; {f(sal[1]['ic'][1])}; p = {sal[1]['p']:.3f}): "
-             f"observado {sal[3]:+.4f} frente a {sal[2]:+.4f} extrapolado. "
-             + ("No hay un salto distinguible: la caída del coeficiente tras la STC continúa la pendiente previa." if sal[1]["p"] >= 0.05
-                else "Hay un salto distinguible sobre la extrapolación."))
+    k2 = ia["20T-2021T1-2022T1"]
+    sal3 = k2["saltos"][1]
+    L.append(f"(a) Tendencia: el coeficiente por trimestre sube {s['est']:+.4f} por trimestre en 2021T1-2022T1 (IC95 {f(s['ic'][0])}; {f(s['ic'][1])}; p = {s['p']:.3f}): "
+             f"ya durante la vigencia pierde magnitud trimestre a trimestre (ajustado: {k['a']:+.4f} en 2021T1); con la ventana 2020T4-2022T1 la pendiente es {ia['14T-2020T4-2022T1']['pendiente']['est']:+.4f} "
+             f"(p = {ia['14T-2020T4-2022T1']['pendiente']['p']:.3f}). El coeficiente medio de la principal ({ib['coef']:+.4f}) no describe un nivel estable. "
+             f"Salto en 2022T2 sobre la extrapolación de la recta: {sal[1]['est']:+.4f} (IC95 {f(sal[1]['ic'][0])}; {f(sal[1]['ic'][1])}; p = {sal[1]['p']:.3f}): observado {sal[3]:+.4f} frente a {sal[2]:+.4f} extrapolado; "
+             f"media 2022T2-2022T4: {sal3[1]['est']:+.4f} (p = {sal3[1]['p']:.3f}). "
+             + ("El observado es MÁS negativo que la extrapolación (no hay una desaparición abrupta del coeficiente en 2022T2): no se detecta un salto en la fecha de la STC a este nivel de potencia, y el coeficiente se aproxima a cero de forma gradual."
+                if sal[1]["est"] < 0 and sal[1]["p"] >= 0.05 else
+                ("El observado es más negativo que la extrapolación y el salto es distinguible." if sal[1]["est"] < 0 else "El observado está por encima de la extrapolación: el coeficiente se aproxima a cero más rápido que la recta.")))
     b = [t[f"E2-R1-B6b-{i}"] for i in (1, 2, 3, 4)]
-    L.append("(b) Covariables por trimestre: " + "; ".join(f"{x['id'].split('-')[-1]} {x['coef']:+.4f} (p Webb {f(x['p_webb'])})" for x in b)
-             + f"; principal {ib['coef']:+.4f}. " + ("Todos quedan por debajo de −0,03." if all(x["coef"] < -0.03 for x in b) else "Alguno no queda por debajo de −0,03."))
+    L.append("(b) Covariables por trimestre: " + "; ".join(f"{x['id'].split('-')[-1]} {x['coef']:+.4f} (IC95 {f(x['ic95_lo'])}; {f(x['ic95_hi'])}; p Webb {f(x['p_webb'])})" for x in b)
+             + f"; principal {ib['coef']:+.4f}. HUT × trimestre deja el coeficiente en {b[0]['coef']:+.4f} (por debajo de −0,03); ln(población) × trimestre lo reduce a {b[1]['coef']:+.4f} "
+             f"({'no queda' if b[1]['coef'] >= -0.03 else 'queda'} por debajo de −0,03, criterio de la ronda), con IC95 que casi llega a cero.")
     c = [t[f"E2-R1-B6c-{i}"] for i in (1, 2, 3)]
     pl = {i: ic_[f"B6c-{i}"] for i in (4, 5, 6)}
-    L.append("(c) Controles emparejados: " + "; ".join(f"{x['id'].split('-')[-1]} {x['coef']:+.4f} (p Webb {f(x['p_webb'])})" for x in c)
-             + f". Placebo de 2017: sin tendencia {pl[4]['coef']:+.4f} (p = {pl[4]['p']:.3f}); con tendencia propia de los regulados {pl[5]['coef']:+.4f} (p = {pl[5]['p']:.3f}); "
-             f"con tendencia y controles emparejados {pl[6]['coef']:+.4f} (p = {pl[6]['p']:.3f}).")
-    L.append("(d) SDID: " + "; ".join(f"{k_} τ = {v['tau']:+.4f} (Conley-Taber p = {v['p_ct']:.3f}; razón de variabilidad {v['razon_var']:.2f}, {v['interc']})" for k_, v in id_.items()) + ".")
+    L.append("(c) Controles emparejados: " + "; ".join(f"{x['id'].split('-')[-1]} {x['coef']:+.4f} (p Webb {f(x['p_webb'])}; pretendencias p = {ic_[x['id'].split('-')[-1]]['pretend_p']:.2f})" for x in c)
+             + f". Placebo de 2017: sin tendencia {pl[4]['coef']:+.4f} (p = {pl[4]['p']:.3f}); con tendencia propia de los regulados {pl[5]['coef']:+.4f} (p = {pl[5]['p']:.3f}, de signo contrario al de la principal); "
+             f"con tendencia y controles emparejados {pl[6]['coef']:+.4f} (p = {pl[6]['p']:.3f}). El placebo de signo contrario indica que los regulados subían más que los controles en 2017-2019 "
+             "(lo que, si se revierte, sesgaría hacia un coeficiente más negativo); el emparejamiento por ese crecimiento no reduce el coeficiente.")
+    L.append("(d) SDID: " + "; ".join(f"{k_} τ = {v['tau']:+.4f} (Conley-Taber p = {v['p_ct']:.3f}, mínimo posible 0,001; razón de variabilidad previa {v['razon_var']:.2f}, {v['interc']}; "
+                                      f"donantes efectivos {v['n_ef']:.0f} de {v['n_co']}; DiD simple {v['did']:+.4f})" for k_, v in id_.items())
+             + ". Los pesos de unidad quedan casi uniformes (la regularización de ζ es fuerte con 49 tratados): SDID reproduce al DiD y no cambia la lectura; la dependencia del control (hallazgo 5) se aborda mejor con B6c.")
     if "E2-R1c-v1" in ie["res"]:
         r, r0 = ie["res"]["E2-R1c-v1"], ie["res"]["E2-R1c-v1-ref"]
         L.append(f"(e) E2-R1c-v1: {r['coef']:+.4f} (IC95 {f(r['ic_cr1'][0])}; {f(r['ic_cr1'][1])}; p Webb {f(r['p_webb'])}); en la misma muestra con la población como denominador {r0['coef']:+.4f} "
-                 f"(p Webb {f(r0['p_webb'])}). Criterio de AD-E2 (caída ≥ 5 % con p < 0,05): {'se cumple' if r['cae5'] else 'no se cumple'}. {ie['est']['nota']}.")
+                 f"(p Webb {f(r0['p_webb'])}); la R1c principal, con 156 controles, da +0,0173. Criterio de AD-E2 (caída ≥ 5 % con p < 0,05): {'se cumple' if r['cae5'] else 'no se cumple'}, pero el IC95 incluye caídas "
+                 f"mayores que 5 % (hasta {r['ic_cr1'][0]:+.3f}): no se descarta el desvío a la temporada o a no depositar la fianza. {ie['est']['nota']}.")
     else:
         L.append(f"(e) E2-R1c-v1: NO ESTIMABLE ({ie['est']['nota']}).")
     return L
@@ -345,7 +355,7 @@ def lectura(ia: dict, ib: dict, ic_: dict, id_: dict, ie: dict, filas: list[dict
 
 def escribir(filas: list[dict], info: dict, seg: float) -> None:
     df = pd.DataFrame(filas)
-    v = df[(df.rol == "variante") & df.id.str.startswith("E2-R1-") | (df.id == "E2-R1c-v1")].copy()
+    v = df[(df.rol == "variante") & df.id.str.startswith("E2-R1-B6")].copy()
     p = v.p_webb.astype(float).values
     ok = np.isfinite(p)
     q = multipletests(p[ok], alpha=0.10, method="fdr_bh")[1]
@@ -373,8 +383,8 @@ def escribir(filas: list[dict], info: dict, seg: float) -> None:
 
 Pruebas pedidas por la ronda 1 del abogado del diablo (hallazgos 1, 2, 4, 5 y 6; docs/v18/revision_estimaciones/ronda1_e2_e8.md). **Se declaran a posteriori**: se añadieron después de ver los
 resultados de E2, no cambian la especificación principal ni su clase por sí solas y entran como robustez (desviación B6-2 de docs/v18/desviaciones_e2_e8.md). Código: `src/v18/estimacion/e2_robustez.py`;
-SEED 20261010; {seg:.0f} s; inferencia de Webb con {B_W:,} réplicas por municipio en las variantes (9.999 en E2-R1c-v1) y {B_CT} placebos de Conley-Taber en el SDID. q_bh: Benjamini-Hochberg al 10 % sobre las variantes de esta sección
-(exploratorias; los diagnósticos y placebos llevan su p propio, sin ajuste). Análisis V18; capa C4; nivel de evidencia EXPLORATORIO.
+SEED 20261010; {seg:.0f} s; inferencia de Webb con {B_W // 1000}.{B_W % 1000:03d} réplicas por municipio en las variantes (9.999 en E2-R1c-v1) y {B_CT} placebos de Conley-Taber en el SDID. q_bh: Benjamini-Hochberg al 10 % sobre las variantes de la renta de esta sección (B6b, B6c-1 a B6c-3, B6d; exploratorias);
+los diagnósticos, los placebos y E2-R1c-v1 (una sola variante) llevan su p propio, sin ajuste. Análisis V18; capa C4; nivel de evidencia EXPLORATORIO.
 
 ### Lectura
 """ + "\n".join(f"- {x}" for x in L) + f"""
@@ -407,23 +417,21 @@ SEED 20261010; {seg:.0f} s; inferencia de Webb con {B_W:,} réplicas por municip
 
 
 def clase_texto(info: dict) -> str:
-    ia, ib, ic_, id_ = info["a"], info["b"], info["c"], info["d"]
+    ia, ib, ic_ = info["a"], info["b"], info["c"]
     k = ia["14T-2021T1-2022T1"]
     tend_sig = k["pendiente"]["p"] < 0.05
     salto_sig = k["saltos"][0][1]["p"] < 0.05
-    b_ok = all(x for x in info["b_ok"])
+    b1, b2 = info["b_coefs"][0], info["b_coefs"][1]
     pl5 = ic_["B6c-5"]
-    sdid_ok = all(v["tau"] < 0 for v in id_.values())
-    pl_cambia = pl5["p"] > 0.10
     partes = [
-        f"- Pendiente del coeficiente en la vigencia: {'significativa' if tend_sig else 'no significativa'}; salto en 2022T2 sobre la extrapolación: {'distinguible' if salto_sig else 'no distinguible'}.",
-        f"- Covariables de COVID y turismo por trimestre (B6b): el coeficiente {'se mantiene' if b_ok else 'no se mantiene'} por debajo de −0,03 en las cuatro especificaciones.",
-        f"- Placebo de 2017 con tendencia propia: coeficiente {pl5['coef']:+.4f}, p = {pl5['p']:.3f} ({'deja de ser distinguible de cero' if pl_cambia else 'sigue siendo distinguible de cero'}).",
-        f"- SDID: τ negativo en {'las dos' if sdid_ok else 'no todas las'} versiones; la inferencia de Conley-Taber se rotula con su condición de intercambiabilidad.",
-        "- Regla del plan: ninguna de estas pruebas está en el pre-registro; no activan por sí solas un fallo decisivo ni un tope. La clase provisional SUGESTIVO de E2-R1 no cambia por estas pruebas "
-        "salvo que el orquestador las trate como fallo de las «pruebas 1-2» de la ronda 1 (propuesta del abogado: ASOCIACIÓN si fallan). Con los números anteriores: "
-        + ("no fallan (el coeficiente se mantiene y el salto no es distinguible), aunque la pendiente del coeficiente en la vigencia limita la lectura de un nivel estable." if (b_ok and not salto_sig)
-           else "falla al menos una; la decisión de aplicarla corresponde al orquestador y al árbitro."),
+        f"- Prueba 1 de la ronda (tendencia y salto): pendiente {'significativa' if tend_sig else 'no significativa'}; salto en 2022T2 sobre la extrapolación {'distinguible' if salto_sig else 'no distinguible'}.",
+        f"- Prueba 2 (COVID y turismo por trimestre): HUT × trimestre {b1:+.4f} ({'por debajo' if b1 < -0.03 else 'no por debajo'} de −0,03); ln(población) × trimestre {b2:+.4f} ({'por debajo' if b2 < -0.03 else 'no por debajo'} de −0,03).",
+        f"- Placebo de 2017 con tendencia propia: {pl5['coef']:+.4f} (p = {pl5['p']:.3f}), de signo contrario al de la principal: no activa el fallo decisivo del plan (que exige el mismo signo); con controles emparejados el coeficiente de la principal sigue entre {min(info['c_coefs']):+.4f} y {max(info['c_coefs']):+.4f}.",
+        "- Reglas escritas del plan (líneas 118-130): ninguna de estas pruebas es un fallo decisivo ni un tope pre-registrado; ninguna variante cambia de signo; las pretendencias de las muestras emparejadas son compatibles con cero. "
+        "Por las reglas escritas, la clase provisional de E2-R1 sigue siendo SUGESTIVO. Las pruebas 1 y 2 limitan la lectura: el coeficiente no es un nivel estable (pierde magnitud durante la vigencia) y con ln(población) × trimestre baja a "
+        f"{b2:+.4f}. La propuesta del abogado («ASOCIACIÓN si fallan las pruebas 1-2») usa un criterio (por debajo de −0,03) que no estaba en el pre-registro: "
+        + ("aplicado literalmente, la prueba 2 falla con ln(población) × trimestre y no con HUT × trimestre; la decisión corresponde al orquestador y al árbitro, que deben decidir antes de la ronda 2." if b2 >= -0.03
+           else "aplicado literalmente, la prueba 2 no falla."),
     ]
     return "\n".join(partes)
 
@@ -486,7 +494,8 @@ def main() -> int:
     fe, ie = prueba_e(d)
     filas = fa + fb + fc + fd + fe
     info = {"a": ia, "b": ib, "c": ic_, "d": id_, "e": ie}
-    info["b_ok"] = [f_["coef"] < -0.03 for f_ in fb]
+    info["b_coefs"] = [f_["coef"] for f_ in fb]
+    info["c_coefs"] = [f_["coef"] for f_ in fc if f_["rol"] == "variante"]
     escribir(filas, info, time.time() - t0)
     print(f"E2 robustez B6 hecha en {time.time() - t0:.0f} s", flush=True)
     return 0

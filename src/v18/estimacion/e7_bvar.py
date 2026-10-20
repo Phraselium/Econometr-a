@@ -223,7 +223,7 @@ def main(rapido: bool = False, salida: Path | None = None) -> dict:
         "pregunta": "¿Qué respuesta del precio, las compraventas y los visados a 8 trimestres de un aumento de 100 pb del euríbor da un BVAR recursivo de siete variables (réplica de San Juan, 2023) y cambia al ampliarlo a 2026T2? "
                     "Asociación condicionada al orden de las variables, sin identificación externa (E7-R3 y E7-A1 del plan de replicación V18)",
         "capa": "C4",
-        "datos": "base (hechos.parquet) vía src/v18/sellado.filtrar, series nacionales trimestrales 2008T1-2026T2: compraventas, valor tasado nominal, visados, PIB, IPC, euríbor a 1 año y flujo de crédito nuevo",
+        "datos": "base (hechos.parquet, sin filas muestra_sellada_v6) vía src/v18/sellado.filtrar, series nacionales trimestrales 2008T1-2026T2: compraventas, valor tasado nominal, visados, PIB, IPC, euríbor a 1 año y flujo de crédito nuevo",
         "N": {"R3_filas": e_r3["filas"], "A1_filas": e_a1["filas"], "T_R3": e_r3["T"], "T_A1": e_a1["T"]},
         "metodo": f"BVAR({P_LAGS}) con prior de Minnesota en observaciones ficticias (normal-Wishart inversa), tres ficticias estacionales, identificación recursiva en el orden de San Juan, "
                   f"{D_} extracciones del posterior, bandas por percentiles 16-84 y 5-95; Monte Carlo previo de la cobertura de las bandas (R = 2.000): {apto}",

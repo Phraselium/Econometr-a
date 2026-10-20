@@ -389,7 +389,8 @@ def metadatos_base(variables: set[str]) -> dict[tuple[str, str, str], tuple[str,
     import duckdb
     con = duckdb.connect()
     q = ("select variable, nivel, frecuencia, min(periodo), max(periodo) from read_parquet(?) "
-         "where variable in (select unnest(?)) group by variable, nivel, frecuencia")
+         "where variable in (select unnest(?)) and not coalesce(muestra_sellada_v6, false) "   # sin filas de v6 (check_v15)
+         "group by variable, nivel, frecuencia")
     return {(v, n, f): (a, b) for v, n, f, a, b in con.execute(q, [str(HECHOS), sorted(variables)]).fetchall()}
 
 

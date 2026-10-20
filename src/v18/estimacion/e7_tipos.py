@@ -754,7 +754,7 @@ def escribir(res: dict, salida: Path) -> None:
         "pregunta": "¿Cuánto cambia el precio real de la vivienda (y las compraventas y el alquiler) ante un aumento de 100 pb del tipo hipotecario, identificado con las sorpresas de política "
                     "monetaria del BCE (Jarociński-Karadi)? Proyección local con instrumento, SVAR con proxy y panel provincial con exposición (E7 del plan de replicación V18)",
         "capa": "C4",
-        "datos": "base (hechos.parquet) vía src/v18/sellado.filtrar; sorpresas de data/bib/replicacion/jarocinski_karadi2020 (mensuales, 1999-2025-10; trimestrales hasta 2025T3); "
+        "datos": "base (hechos.parquet, sin filas muestra_sellada_v6) vía src/v18/sellado.filtrar; sorpresas de data/bib/replicacion/jarocinski_karadi2020 (mensuales, 1999-2025-10; trimestrales hasta 2025T3); "
                  "hipotecas y compraventas provinciales de data/raw (INE) para la exposición",
         "N": {"LP-IV_h8": r1["res"]["n"], "SVAR": S["E7-R2"]["res"]["n"], "panel": {k: [a["G"], a["T"]] for k, a in A2.items()}},
         "metodo": "LP-IV con 4 rezagos de y y de Δi y de los controles (PIB, inflación): 2SLS con Newey-West h+1 y con EHW aumentado, F efectivo, conjunto de Anderson-Rubin; "

@@ -790,7 +790,7 @@ def escribir(res: dict, salida: Path) -> None:
         "pregunta": "¿Hay una relación de largo plazo (cointegración) del precio real, el alquiler real y las iniciadas con sus fundamentales, a escala nacional y provincial, "
                     "y qué dice la dinámica de corto plazo cuando no la hay? (F1, F2, F3 y F4 del plan de replicación V18)",
         "capa": CAPA,
-        "datos": "base (hechos.parquet) y data/raw filtrados con src/v18/sellado.filtrar: nacional trimestral 1999T1-2026T2 y anual 2001-2025; provincias no selladas (v6, V15, V16) "
+        "datos": "base (hechos.parquet, sin filas muestra_sellada_v6) y data/raw filtrados con src/v18/sellado.filtrar: nacional trimestral 1999T1-2026T2 y anual 2001-2025; provincias no selladas (v6, V15, V16) "
                  "anual hasta 2024; 9 CCAA no selladas para F3-R1",
         "N": {"nacional_trimestral": res["nac"][0]["n"], "nacional_anual": res["nac"][6]["n"],
               "paneles": {e["id"]: (e["info"]["N"], e["T"]) for e in res["pan"] if not e.get("no_estimable")}},

@@ -26,7 +26,15 @@
 - Es juicio experto y se rotula así.
 
 ## K4. IPV por CCAA en D3-2 con comunidades de bloques sellados en v6 (incidencia, 2026-10-19)
-- D3-2 (src/v17/d3_cuantitativo.py) usó el IPV por CCAA de data/raw (estadística pública del INE). Ahí entraban 8 CCAA de los bloques sellados en la validación v6, entre ellas la Comunidad de Madrid, uniprovincial.
-- No es un acceso al directorio de la muestra sellada ni a filas muestra_sellada_v6 de la base, así que no es la parada E. Sí va contra el criterio del proyecto de no usar las unidades selladas en las estimaciones.
+- D3-2 (src/v17/d3_cuantitativo.py) usó el IPV y el esfuerzo por CCAA de la base. Ahí entraban las 8 CCAA de los bloques sellados en la validación v6 (K8 de V16), entre ellas la Comunidad de Madrid, uniprovincial. El filtro `not muestra_sellada_v6` de la base no las excluye, porque no marca las filas de CCAA (src/v10/base.py). Corregido el 2026-10-20: antes se decía «de data/raw».
+- No es un acceso al directorio de la muestra sellada ni a filas marcadas como muestra_sellada_v6, así que no es la parada E. Sí va contra el criterio del proyecto de no usar las unidades selladas en las estimaciones.
 - La revisión de la auditoría recalcula la cuota común con las 9 CCAA restantes: 81 % (63 % hasta 2024), cifra V17-AUD-OT-D32-IPV-CCAA-SIN-SELLADAS. La conclusión no cambia.
 - En V18 toda estimación excluye las unidades selladas (plan V18, sección A), también cuando el dato viene de data/raw.
+
+## K5. Guarda de fuga v6 en make check (decisión del autor del 2026-10-20)
+- **check_v17, control «fuga v6».** Todo script de src/v17/ o posterior que lea datos (data/raw, data/processed, la base o la tabla de territorios) debe hacer una de estas dos cosas:
+  - excluir las unidades de los bloques sellados de v6 con `holdout.excluir_sellados_v6(df, columna, nivel)`, que filtra las ocho CCAA de K8 y sus provincias, municipios, distritos y secciones;
+  - declarar `ALCANCE_TERRITORIAL`: «nacional», «sin lectura de datos» o «reproduce publicado». Esta última es para los scripts que solo leen a través de los cargadores de la versión publicada que reproducen, ya cubiertos por la guarda «lecturas v6» de check_v15.
+- **Incidente de D3.** La guarda lo habría detectado: tests/v17/test_fuga_v6.py lo comprueba con la versión del script del commit 415eb90.
+- **Límite.** Es un control estático. Comprueba que el script usa el filtro, no que lo aplique en cada lectura. La revisión de cada script (y el abogado del diablo) cubre el resto.
+- **V18.** Todos los scripts de V18 quedan sometidos a esta guarda.

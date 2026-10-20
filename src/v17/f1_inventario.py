@@ -8,6 +8,7 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
+ALCANCE_TERRITORIAL = "sin lectura de datos"   # guarda de fuga v6 (check_v17): solo comprueba que existen ficheros; no lee su contenido
 RAIZ = Path(__file__).resolve().parents[2]
 OUT = RAIZ / "output" / "v17" / "f1"
 
@@ -16,7 +17,7 @@ NECESIDADES: list[tuple[str, str, list[str], str]] = [
     ("Viviendas turísticas por sección y municipio (INE VTE)", "Turismo local",
      ["data/raw/ine_v2_vut.csv", "data/raw/ine_vut_nacional_ccaa_prov.csv", "data/raw/v16/alquiler_turismo"], ""),
     ("Registros autonómicos de vivienda turística", "Turismo local",
-     ["data/raw/gva_vut_municipio.csv", "data/raw/v11/gva_vut", "data/raw/v11/euskadi_vut", "data/raw/v17/turismo_local"], ""),
+     ["data/raw/gva_vut_municipio.csv.gz", "data/raw/v11/gva_vut", "data/raw/v11/euskadi_vut", "data/raw/v17/turismo_local"], ""),
     ("InsideAirbnb (grandes ciudades)", "Turismo local", ["data/raw/v17/turismo_local"], "terceros: CC BY 4.0; solo agregados"),
     ("Parque de alquiler por sección (denominador local; Censo 2021)", "Turismo local",
      ["data/raw/v11/ine_censo2021", "data/raw/v17/turismo_local"], ""),

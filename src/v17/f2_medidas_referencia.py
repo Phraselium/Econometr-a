@@ -16,6 +16,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+ALCANCE_TERRITORIAL = "nacional"   # guarda de fuga v6 (check_v17): solo series nacionales: Síntesis del BdE, hipotecas (nivel nacional) y compraventas (Total Nacional)
 RAIZ = Path(__file__).resolve().parents[2]
 SI = RAIZ / "data" / "raw" / "v17" / "credito" / "bde_si_1_5.csv"
 OUT = RAIZ / "output" / "v17" / "lectura_bde" / "medidas_referencia"

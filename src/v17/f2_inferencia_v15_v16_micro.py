@@ -22,6 +22,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+ALCANCE_TERRITORIAL = "reproduce publicado"   # guarda de fuga v6 (check_v17): lee solo a través de los cargadores de V15 y V16 que reproduce (guarda «lecturas v6» de check_v15)
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "src"))

@@ -403,6 +403,23 @@ def municipio_sellado_v6(cod_mun: str) -> bool:
     return str(cod_mun).zfill(5)[:2] in set(provincias_selladas_v6())
 
 
+def excluir_sellados_v6(df: pd.DataFrame, col: str, nivel: str) -> pd.DataFrame:
+    """V17-V18 (guarda de fuga v6, docs/v17/decisiones.md): devuelve df sin las filas de las unidades selladas en v6.
+
+    nivel: «ccaa» (código de 2 dígitos de CCAA), «provincia» (2), «municipio» (5), «distrito» (7) o «seccion» (10); para los
+    niveles por debajo de la CCAA se toma la provincia de los 2 primeros dígitos. «nacional» devuelve df sin cambios. Solo
+    filtra con los códigos calculados aquí; nunca abre la muestra sellada."""
+    if nivel == "nacional":
+        return df
+    cod = df[col].astype(str).str.strip()
+    if nivel == "ccaa":
+        return df[~cod.str.zfill(2).isin(ccaa_selladas_v6())]   # K8 de V16 (definida más abajo)
+    ancho = {"provincia": 2, "municipio": 5, "distrito": 7, "seccion": 10}
+    if nivel not in ancho:
+        raise ValueError(f"nivel desconocido: {nivel}")
+    return df[~cod.str.zfill(ancho[nivel]).str[:2].isin(provincias_selladas_v6())]
+
+
 def distrito_sellado_v6(cod_dist: str) -> bool | None:
     """Distrito (7 dígitos) sellado si su provincia lo está. None si fue sellado en v3: se EXCLUYE de todo uso en v6."""
     d = str(cod_dist).zfill(7)

@@ -57,9 +57,9 @@ La capa de un hecho es la menor de las de sus componentes. Ningún resultado alc
 
 ## No se puede afirmar con estos datos
 
-- Grandes tenedores (corregido en V17; ERRATA.md, 2026-10-19). Se separan tres cosas:
-  - Parque total: sí hay dato. En el Catastro de 2026, {{V12-B5-pct_mas10:num}} % de las viviendas pertenecen a titulares con más de diez (España sin País Vasco ni Navarra) [C4].
-  - Parque en alquiler: solo hay datos parciales. El Banco de España da {{V17-DOC-BDE-GT-ALQUILER-2024:num}} % del alquiler de vivienda principal en manos de personas físicas con once viviendas o más (2024; no incluye empresas). En Barcelona ciudad, {{V17-DOC-OHB-GT-ALQUILER-BCN-2021:num}} % del alquiler habitual está en manos de grandes tenedores (2021). Para España, entre {{V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL:min_num}} % y {{V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL:max_num}} % con supuestos explícitos [C4].
+- Grandes tenedores (corregido en V17; ERRATA.md, 2026-10-19). Se separan tres cosas: <!-- check:cifra-libre (versión V17, fecha de la errata, años de los datos y umbrales de diez y once viviendas) -->
+  - Parque total: sí hay dato. En el Catastro de 2026, {{V12-B5-pct_mas10:num}} % de las viviendas pertenecen a titulares con más de diez (España sin País Vasco ni Navarra) [C4]. <!-- check:cifra-libre (versión V17, fecha de la errata, años de los datos y umbrales de diez y once viviendas) -->
+  - Parque en alquiler: solo hay datos parciales. El Banco de España da {{V17-DOC-BDE-GT-ALQUILER-2024:num}} % del alquiler de vivienda principal en manos de personas físicas con once viviendas o más (2024; no incluye empresas). En Barcelona ciudad, {{V17-DOC-OHB-GT-ALQUILER-BCN-2021:num}} % del alquiler habitual está en manos de grandes tenedores (2021). Para España, entre {{V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL:min_num}} % y {{V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL:max_num}} % con supuestos explícitos [C4]. <!-- check:cifra-libre (versión V17, fecha de la errata, años de los datos y umbrales de diez y once viviendas) -->
   - Efecto sobre los precios: no está medido en España.
 - El coste de construcción en nivel: no hay fuente verificable (S5). La clasificación territorial queda en C4.
 - Que alguno de estos factores sea la causa principal de la subida: turísticos, inmigración, falta de oferta, tipos, compradores extranjeros o empresas.

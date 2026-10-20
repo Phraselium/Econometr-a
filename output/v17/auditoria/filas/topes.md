@@ -1,4 +1,4 @@
-Análisis a posteriori (V17). Ficha de auditoría de la fila «topes» (D1, medida 2). Grupo regulacion_ayudas. Capa de toda cifra nueva: C4. Ninguna cifra ni capa publicada cambia. Versión tras la ronda 1 del abogado del diablo (sección 8).
+Análisis a posteriori (V17). Ficha de auditoría de la fila «topes» (D1, medida 2). Grupo regulacion_ayudas. Capa de toda cifra nueva: C4. Ninguna cifra ni capa publicada cambia. Versión tras las rondas 1 y 2 del abogado del diablo (secciones 8 y 9).
 
 # Medida 2 · Regular la renta de los contratos nuevos
 
@@ -65,10 +65,13 @@ Script: src/v17/f3_regulacion_ayudas.py. Lee el Incasòl de data/raw/v9 en solo 
 - **Contratos nuevos.** De 60 especificaciones, la mediana es +3,6 % y el rango va de −1,3 % a +7,6 %. Solo 5 son negativas, y ninguna con p < 0,05. Las 4 con p < 0,05 son positivas (log per cápita, ventana hasta 2021T2), y ninguna sobrevive a BH.
 - **Especificación de referencia** (todos los controles, log, sin ponderar, ventana de V9): +0,9 % (−2,5 a 4,5).
 
-**Lectura.** Con el agregado público del Incasòl, ninguna de las causas candidatas acerca el resultado a la caída de Monràs y García-Montalvo: el control (tensos), la exclusión de vecinos, PPML frente a log per cápita, la ponderación y su ventana. El agregado reproduce a Jofre-Monseny et al. Las causas que quedan solo se pueden contrastar con microdatos y quedan como hipótesis declaradas:
+**Ventanas.** La variante «hasta 2021T2» es una ventana corta que acaba donde acaban los datos de Monràs y García-Montalvo (junio de 2021). No es su especificación.
+
+**Lectura** (con las reservas de la sección 9, T1 y T2). Con el agregado público del Incasòl, ninguna de las causas candidatas acerca el resultado a la caída de Monràs y García-Montalvo: el control (tensos), la exclusión de vecinos, PPML frente a log per cápita, la ponderación y su ventana. El agregado reproduce a Jofre-Monseny et al. Las causas que quedan solo se pueden contrastar con microdatos y quedan como hipótesis declaradas:
 1. la depuración de la AHC, que elimina falsos contratos de menos de 100 €, aumentos de fianza (Monràs y García-Montalvo, nota 13);
 2. su muestra y su definición de control a nivel de vivienda;
-3. el reparto por tramo de precio, que solo existe en sus microdatos.
+3. el reparto por tramo de precio, que solo existe en sus microdatos;
+4. el desplazamiento a temporada. Si el agregado de fianzas incluye contratos de temporada, una sustitución de habitual por temporada no reduce el recuento, y nuestro nulo no la excluye (sección 9, T2).
 
 **Altas, bajas y stock (rotación frente a salida del mercado).** No se pueden separar con el repositorio. El fichero público del Incasòl solo trae fianzas nuevas (altas). Las bajas y el stock activo están solo en los microdatos que usaron Jofre-Monseny et al.: sus resultados (bajas −0,006, stock 0,002) son la única evidencia sobre ese margen.
 
@@ -120,10 +123,11 @@ No es medible: no hay fianzas por tipo de contrato. Es la laguna n.º 1 de D3-4.
 
 ## 6. Texto corregido y confianza
 
-> «Regular la renta de los contratos nuevos: en Cataluña (Ley 11/2020) dos estudios con contratos registrados hallan una renta media un 4-6 % más baja en los contratos regulados, y nuestros datos dan lo mismo; en el tramo barato la renta pudo subir. Si reduce el número de contratos nuevos está en disputa: un estudio halla en torno a un 10 % menos, concentrado en las viviendas caras, y otro, con el mismo registro, no halla caída ni en contratos ni en el stock. Para las zonas de 2024 hay indicios de menos contratos, con pruebas previas que fallan. El paso a alquiler de temporada coincide en el tiempo con la regulación, pero solo se ha medido con anuncios y sin diseño. Fuera de España, la menor oferta de alquiler sí está documentada en varios estudios.»
+> «Regular la renta de los contratos nuevos: en Cataluña (Ley 11/2020) dos estudios con contratos registrados hallan una renta media un 4-6 % más baja en los contratos regulados (en torno a un 3 % comparando la misma vivienda), y nuestros datos dan lo mismo; en el tramo barato la renta subió más que en los municipios de control. Si reduce el número de contratos nuevos está en disputa: un estudio halla en torno a un 10 % menos, concentrado en las viviendas caras, y otro, con el mismo registro, no halla caída ni en contratos ni en el stock. Para las zonas de 2024 hay indicios de menos contratos, con pruebas previas que fallan. El paso a alquiler de temporada coincide en el tiempo con la regulación, pero solo se ha medido con anuncios y sin diseño. Fuera de España, la menor oferta de alquiler sí está documentada en varios estudios.»
 
 **Confianza:**
-- renta del contrato regulado: **la evidencia indica**;
+- renta del contrato regulado, signo: **la evidencia indica**;
+- magnitud de 4-6 % (en torno a un 3 % en la misma vivienda): **la evidencia sugiere**;
 - menos contratos nuevos (Ley 11/2020): **la evidencia no permite concluir**;
 - menos contratos nuevos (zonas de 2024): **la evidencia es compatible con** una caída;
 - temporada: **la evidencia no permite concluir**.
@@ -144,3 +148,41 @@ No hay parada. Nada de la frase es falso en sentido estricto. Se señala la reda
 | Incluir Pérez García (2024) y H2 | **Aplicado.** Pérez García figura como coautor de DO 2432 (2024, descriptivo) y como autor del preprint de 2026 (zonas de 2024). H2-SDID está en las secciones 2 y 3.3. |
 | Retirar el 38,8 % de composición | **Aplicado.** El hecho V17-AUD-RA-TOP-COMPOSICION se retira: mezclaba dos especificaciones de la versión de 2022, y la de 2023 ya no lo afirma. |
 | Cifras por versión de Monràs y García-Montalvo | **Aplicado.** Cada cifra lleva su versión. |
+
+## 9. Respuesta a la ronda 2
+
+No cambia ni el veredicto ni la parada.
+
+**T1 · Confusor turístico de 2020T4-2022T1. Aplicado.** Cálculo en topes_t1() del script; 7 especificaciones más en el Registry.
+- **Datos.** Densidad de viviendas de uso turístico de 2019 (IDESCAT, establecimientos por 100 habitantes) sobre la especificación de referencia (ventana de V9, todos los no tratados).
+
+| Variante | log | PPML |
+|---|---|---|
+| Periodo posterior × densidad de 2019 | +1,2 % (p = 0,51) | +4,8 % (p = 0,17) |
+| Sin Barcelona | +0,7 % (p = 0,71) | −0,9 % (p = 0,59) |
+| Sin el decil más turístico (> 4,3 por 100 hab.) | +1,0 % (p = 0,57) | +4,8 % (p = 0,18) |
+
+  V17-AUD-RA-TOP-INC-T1-RANGO: mediana +1,1 %, entre −0,9 % y +4,8 %; ninguna con p < 0,05.
+- **Estudio de eventos** (log, referencia 2020T3):
+  - Previos: el Wald conjunto da p = 0,29. El mayor coeficiente previo es −8,0 log × 100, en 2020T2, el confinamiento (V17-AUD-RA-TOP-INC-EVENTOS-PRE).
+  - Posteriores: media −1,3, en línea con V9-D1b (−1,32 %). El último trimestre (2022T1, cuando se anula la ley) da −11,4 (e.e. 3,9).
+  - Además, el trimestre de referencia (2020T3) incluye el adelanto de firmas documentado por Jofre-Monseny et al. (+13 % en las dos semanas previas), lo que sesga hacia abajo los posteriores y hacia arriba los previos.
+- **Peso que se da a las 60 especificaciones.** Se rebaja. El DiD de dos periodos (+0,9 %) y el estudio de eventos (−1,3 %) difieren en el signo, porque los previos de la COVID entran en la referencia del primero. Lo que sí resiste a todas las variantes es la ausencia de una caída sostenida del orden del 10 %: solo el último trimestre la alcanza.
+- **Nuevo texto de 3.1.** «Con el agregado público, ninguna variante reproduce una caída sostenida de contratos; el signo exacto depende de cómo se trate 2020.»
+
+**T2 · El agregado de fianzas no distingue la temporada. Aplicado** como hipótesis 4 en la sección 3.1. Nuestro nulo es compatible con una sustitución de contratos de vivienda habitual por contratos de temporada.
+
+**T3 · Composición en la renta media. Comprobado en el preprint de julio de 2023**, leído en V17: resumen, sección 5.4, robustez y tabla A2.
+- Jofre-Monseny et al. no usan la renta por m² ni efectos fijos de vivienda. Su variable es la renta media municipal.
+- Sí comprueban la composición por tamaño: ni la superficie media ni las cuotas de viviendas pequeñas, medianas y grandes cambian (sección 5.4, tabla A2).
+- Monràs y García-Montalvo, con efectos fijos de vivienda, dan −3,0 % (e.e. 0,011; UPF 1836).
+- **Decisión.** Para el signo de la renta del contrato regulado se mantiene «la evidencia indica»: dos registros, el control de tamaño de uno y los efectos fijos de vivienda del otro. Para la magnitud de 4-6 %, «la evidencia sugiere», porque en la misma vivienda la caída es de en torno a un 3 %. El texto corregido lo dice.
+- **Robustez propia de Jofre-Monseny et al.** Quitan Barcelona en el análisis principal y, como robustez, los municipios con más de 500 licencias turísticas (renta −5,0 %, contratos sin cambio). Es lo mismo que T1.
+
+**T4 · Rótulo «hasta 2021T2». Aplicado.** Es una ventana corta que acaba donde acaban los datos de Monràs y García-Montalvo, no su especificación.
+
+**T5 · Unicidad municipio-trimestre. Aplicado.** El script tiene un assert sobre el Incasòl antes de agregar.
+
+**T6 · «Pudo subir» en el tramo barato. Rebatido.** Sí hay renta por tramo: Monràs y García-Montalvo (2023, por sextiles del precio en exceso) hallan que en el tramo barato los precios suben por encima del control (docs/v17/referencias/d2_versiones.md). Se sustituye «pudo subir» por «subió más que en los municipios de control». Al ser un solo estudio, el matiz se lee como «la evidencia sugiere».
+
+**Fuga v6.** Toda lectura municipal pasa por holdout.excluir_sellados_v6(): el Incasòl, los centroides, el padrón y el IDESCAT.

@@ -6,9 +6,12 @@ ANÁLISIS A POSTERIORI (V17), capa C4.
 - Ronda 1 (abogado del diablo): descomposición de la discrepancia sobre contratos de la Ley 11/2020 con el fichero de
   fianzas del Incasòl que usó V9-D1b (data/raw/v9/incasol, solo lectura): grupo de control, vecinos, forma funcional y
   ponderación. Cada especificación va al Registry (src/econ_utils.py); BH dentro de la familia como sensibilidad.
-Sin red. SEED = 20261010 (nada aleatorio). Las provincias de la muestra cerrada v6 se leen de data/base/hechos.parquet
-(campo muestra_sellada_v6) y se excluyen; Cataluña no está entre ellas. No se toca la muestra cerrada ni se ejecuta
-ninguna evaluación.
+- Ronda 2: confusor turístico (densidad de viviendas de uso turístico de 2019, IDESCAT), sin Barcelona, sin el decil
+  más turístico y estudio de eventos de la especificación de referencia; tabla de θ por grupo de control; umbrales de
+  duración del bono (RD 42/2022 y RD 326/2026) frente a la LAU.
+Sin red. SEED = 20261010 (nada aleatorio). Guarda de fuga v6 (docs/v17/decisiones.md, K5): toda lectura municipal pasa
+por holdout.excluir_sellados_v6() (Cataluña no está en los bloques sellados; el filtro se aplica igual). No se toca la
+muestra cerrada ni se ejecuta ninguna evaluación.
 
 Uso: python3 src/v17/f3_regulacion_ayudas.py
 Salidas: output/v17/auditoria/regulacion_ayudas_hechos.json y output/v17/auditoria/regulacion_ayudas_registro.csv
@@ -28,6 +31,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from src.econ_utils import Registry  # noqa: E402
+from src import holdout  # noqa: E402
 
 SEED = 20261010
 OUT = ROOT / "output" / "v17" / "auditoria" / "regulacion_ayudas_hechos.json"
@@ -42,7 +46,7 @@ INCASOL = RAW / "v9" / "incasol" / "incasol_qww9-bvhh_actual.csv.gz"
 REGIMEN = RAW / "v3" / "cataluna_contencion_rentas_v3.csv"
 CENTROIDES = RAW / "v5" / "municipio_centroides_utm30.csv"
 PADRON = RAW / "v16" / "tension_social" / "padron_cifras_oficiales" / "ine_cifras_oficiales_padron_municipio_29005.csv.gz"
-BASE = ROOT / "data" / "base" / "hechos.parquet"
+HUT = RAW / "v9" / "cat_turisme" / "idescat_allotjaments_municipi.csv.gz"
 FECHA = "2026-10-19"
 FICHA = "output/v17/auditoria/filas/{}.md"
 CAT = ("08", "17", "25", "43")
@@ -76,10 +80,16 @@ HECHOS: list[dict] = []
 REG: Registry | None = None
 
 
-def hecho(id_, indicador, valor, minimo, maximo, unidad, periodo, cobertura, fuentes, lectura, ficha, nota=""):
+def hecho(id_, indicador, valor, minimo, maximo, unidad, periodo, cobertura, fuentes, lectura, ficha, nota="",
+          tipo_rango="rango"):
     assert lectura in ("OF", "hecho", "cota", "asociación", "juicio experto", "no fiable", "no se puede saber", "sin cambio")
+    assert tipo_rango in ("rango", "referencias", "sin rango")
+    assert "ficha" not in cobertura.lower() and "ídem" not in cobertura.lower()
     r = lambda x: None if x is None or (isinstance(x, float) and not math.isfinite(x)) else round(float(x), 4)
+    if r(minimo) is None or r(maximo) is None:
+        tipo_rango = "sin rango"
     HECHOS.append({"id": f"V17-AUD-RA-{id_}", "indicador": indicador, "valor": r(valor), "min": r(minimo), "max": r(maximo),
+                   "tipo_rango": tipo_rango,
                    "unidad": unidad, "periodo": periodo, "cobertura": cobertura, "fuentes": fuentes, "capa": "C4",
                    "lectura_v17": lectura, "fecha_dato": FECHA, "ficha": FICHA.format(ficha),
                    "nota": "a posteriori" + (f"; {nota}" if nota else "")})
@@ -163,12 +173,6 @@ def topes_literatura() -> dict:
 
 
 # ------------------------------------------------------------------ topes: descomposición con el Incasòl del repositorio
-def provincias_cerradas() -> set[str]:
-    import duckdb
-    d = duckdb.sql(f"select distinct territorio_codigo c from '{BASE}' where nivel='provincia' and muestra_sellada_v6").df()
-    return set(d.c)
-
-
 def panel_incasol() -> pd.DataFrame:
     i = pd.read_csv(INCASOL, dtype=str)
     i = i[i.ambit_territorial.str.lower().str.startswith("municipi") & (i.posterior_prereg.str.lower() != "true")]
@@ -178,9 +182,10 @@ def panel_incasol() -> pd.DataFrame:
     i["renta"] = pd.to_numeric(i.renda.str.replace(",", "."), errors="coerce")
     i["t"] = i.periodo_iso.map(tindex)
     i = i[(i.t >= tindex(T_INI)) & (i.t <= tindex(T_FIN)) & i.cod.str[:2].isin(CAT)]
-    cerr = provincias_cerradas()
-    assert not (set(CAT) & cerr), "Cataluña en la muestra cerrada: no se usa"
-    i = i[~i.cod.str[:2].isin(cerr)]
+    assert not (set(CAT) & set(holdout.provincias_selladas_v6())), "Cataluña en los bloques sellados de v6: no se usa"
+    i = holdout.excluir_sellados_v6(i, "cod", "municipio")
+    # T5: una fila por municipio y trimestre (cada municipio y periodo está en un solo tramo de precio)
+    assert not i.duplicated(["cod", "t"]).any(), "Incasòl: municipio-trimestre duplicado"
     g = i.groupby(["cod", "t"]).agg(contratos=("contratos", "sum"), renta=("renta", "mean")).reset_index()
     nt = tindex(T_FIN) - tindex(T_INI) + 1
     ok = g[g.contratos > 0].groupby("cod").t.nunique()
@@ -192,7 +197,8 @@ def panel_incasol() -> pd.DataFrame:
     g["tenso"] = g.cod.isin(zt) & ~g.tratado            # aproximación al control de Jofre-Monseny et al.
     g["post"] = g.t >= tindex(T_TRAT)
     g["d"] = (g.tratado & g.post).astype(float)
-    cen = pd.read_csv(CENTROIDES, dtype={"codigo": str}).assign(codigo=lambda x: x.codigo.str.zfill(5)).set_index("codigo")
+    cen = pd.read_csv(CENTROIDES, dtype={"codigo": str}).assign(codigo=lambda x: x.codigo.str.zfill(5))
+    cen = holdout.excluir_sellados_v6(cen, "codigo", "municipio").set_index("codigo")
     trat = cen.loc[cen.index.isin(ley11), ["x_m", "y_m"]].to_numpy()
     xy = cen.reindex(sorted(g.cod.unique()))[["x_m", "y_m"]]
     dist = np.sqrt(((xy.to_numpy()[:, None, :] - trat[None, :, :]) ** 2).sum(-1)).min(1)
@@ -201,6 +207,7 @@ def panel_incasol() -> pd.DataFrame:
     p = pd.read_csv(PADRON, sep=";", dtype=str, encoding="utf-8-sig")
     p = p[p.Sexo == "Total"]
     p["cod"] = p.Municipios.str[:5]
+    p = holdout.excluir_sellados_v6(p, "cod", "municipio")
     p["anio"] = p.Periodo.astype(int)
     p["pob"] = pd.to_numeric(p.Total.str.replace(".", "", regex=False), errors="coerce")
     pob = p.set_index(["cod", "anio"]).pob
@@ -208,14 +215,24 @@ def panel_incasol() -> pd.DataFrame:
     g["pob"] = [pob.get((c, a), np.nan) for c, a in zip(g.cod, g.anio)]
     pre = g[~g.post].groupby("cod").contratos.mean()
     g["w"] = g.cod.map(pre)
+    # T1: densidad de viviendas de uso turístico en 2019 (IDESCAT, establecimientos por 100 habitantes)
+    h = pd.read_csv(HUT, dtype={"cod_ine": str})
+    h = h[(h.tipo == "habitatges_us_turistic") & (h.medida == "Establiments") & (h.anio == 2019)].copy()
+    h["cod"] = h.cod_ine.str.zfill(5)
+    h = holdout.excluir_sellados_v6(h, "cod", "municipio")
+    hut = h.groupby("cod").valor.sum()
+    pob19 = {c: pob.get((c, 2019), np.nan) for c in g.cod.unique()}
+    g["dens_hut"] = g.cod.map(lambda c: 100 * hut.get(c, 0.0) / pob19[c] if pob19[c] and pob19[c] > 0 else np.nan)
+    g["post_dens"] = g.post.astype(float) * g.dens_hut
     return g.dropna(subset=["pob"]).reset_index(drop=True)
 
 
-def _did(df: pd.DataFrame, forma: str, ponderar: bool) -> tuple[float, float, int]:
+def _did(df: pd.DataFrame, forma: str, ponderar: bool, extra: tuple[str, ...] = (), devolver=False):
     import statsmodels.api as sm
+    df = df.reset_index(drop=True)
     cods = pd.Categorical(df.cod)
     ts = pd.Categorical(df.t)
-    X = pd.concat([df[["d"]].reset_index(drop=True),
+    X = pd.concat([df[["d", *extra]],
                    pd.get_dummies(cods, prefix="m", drop_first=True, dtype=float),
                    pd.get_dummies(ts, prefix="t", drop_first=True, dtype=float)], axis=1)
     X = sm.add_constant(X)
@@ -234,6 +251,8 @@ def _did(df: pd.DataFrame, forma: str, ponderar: bool) -> tuple[float, float, in
             y = np.log(df.renta.to_numpy())
         m = sm.WLS(y, X, weights=w) if ponderar else sm.OLS(y, X)
         r = m.fit(cov_type="cluster", cov_kwds={"groups": grupos})
+    if devolver:
+        return r
     return float(r.params["d"]), float(r.bse["d"]), int(len(df))
 
 
@@ -247,7 +266,7 @@ def topes_descomposicion() -> dict:
     }
     ventanas = {   # V9-D1b completa; la de Monràs y García-Montalvo (hasta junio de 2021); sin los trimestres de la COVID
         "v9": lambda d: d,
-        "hasta_2021T2": lambda d: d[d.t <= tindex("2021T2")],
+        "hasta_2021T2": lambda d: d[d.t <= tindex("2021T2")],   # ventana corta: Monràs y García-Montalvo acaban en junio de 2021
         "sin_2020T2_T3": lambda d: d[~d.t.isin([tindex("2020T2"), tindex("2020T3")])],
     }
     # PPML ya pondera por niveles; su versión ponderada (var_weights) no tiene errores agrupados fiables en statsmodels
@@ -295,8 +314,63 @@ def topes_descomposicion() -> dict:
           float(rt.efecto_pct.median()), float(rt.efecto_pct.min()), float(rt.efecto_pct.max()), "%",
           f"{T_INI}-{T_FIN}", "Cataluña, municipios", "Incasòl; elaboración propia", "asociación", "topes",
           f"{int((rt.p_bh < 0.05).sum())} de {nr} con p BH < 0,05; la renta media mezcla precio y composición")
-    return {"tabla": t, "n_mun": int(g.cod.nunique()), "n_trat": int(g[g.tratado].cod.nunique()),
+    t1 = topes_t1(g)
+    return {"tabla": t, "t1": t1, "n_mun": int(g.cod.nunique()), "n_trat": int(g[g.tratado].cod.nunique()),
             "n_tenso": int(g[g.tenso].cod.nunique()), "n_vecino": int(g[g.vecino].cod.nunique())}
+
+
+def topes_t1(g: pd.DataFrame) -> dict:
+    """Ronda 2, T1: confusor turístico de 2020T4-2022T1 sobre la especificación de referencia (ventana V9, todos los no
+    tratados). Variantes: periodo posterior × densidad turística de 2019; sin Barcelona; sin el decil más turístico;
+    estudio de eventos (referencia 2020T3)."""
+    base = g[g.dens_hut.notna()].copy()
+    d10 = base.groupby("cod").dens_hut.first().quantile(0.9)
+    variantes = {
+        "post_x_densidad_2019": (base, ("post_dens",)),
+        "sin_barcelona": (base[base.cod != "08019"], ()),
+        "sin_decil_turistico": (base[base.dens_hut <= d10], ()),
+    }
+    filas = []
+    for nv, (df, extra) in variantes.items():
+        for forma in ("log", "ppml"):
+            b, se, n = _did(df, forma, False, extra)
+            p = pnorm2(b / se)
+            filas.append(dict(variante=nv, forma=forma, b=b, se=se, p=p, n=n, efecto_pct=100 * (math.exp(b) - 1)))
+            REG.log("V17-F3-RA", f"topes_ley11_T1_{nv}_{forma}", f"{forma} ~ d {'+ post×densidad VUT 2019 ' if extra else ''}"
+                    "+ EF municipio + EF trimestre; cluster municipio; control=todos; ventana=v9", T_INI, T_FIN, n,
+                    np.nan, np.nan, np.nan, coef_interes=b, p_interes=p,
+                    notas=f"a posteriori; ronda 2 (T1); decil más turístico: densidad > {d10:.3f} VUT por 100 hab.")
+    t1 = pd.DataFrame(filas)
+    # estudio de eventos de la especificación de referencia (log, sin ponderar)
+    import statsmodels.api as sm
+    df = g.reset_index(drop=True)
+    tref = tindex("2020T3")
+    rel = sorted(x for x in df.t.unique() if x != tref)
+    ev = pd.DataFrame({f"e{x}": (df.tratado & (df.t == x)).astype(float) for x in rel})
+    X = sm.add_constant(pd.concat([ev, pd.get_dummies(pd.Categorical(df.cod), prefix="m", drop_first=True, dtype=float),
+                                   pd.get_dummies(pd.Categorical(df.t), prefix="t", drop_first=True, dtype=float)], axis=1))
+    r = sm.OLS(np.log(df.contratos.to_numpy()), X).fit(cov_type="cluster", cov_kwds={"groups": pd.Categorical(df.cod).codes})
+    pre = [f"e{x}" for x in rel if x < tref]
+    post = [f"e{x}" for x in rel if x > tref]
+    wald = r.wald_test(" , ".join(f"{c} = 0" for c in pre), scalar=True)
+    p_pre = float(wald.pvalue)
+    coefs = {c: (float(r.params[c]), float(r.bse[c])) for c in pre + post}
+    REG.log("V17-F3-RA", "topes_ley11_T1_eventos_log", "log ~ Σ tratado×trimestre (ref. 2020T3) + EF; cluster municipio",
+            T_INI, T_FIN, int(len(df)), np.nan, np.nan, np.nan, coef_interes=float(np.mean([coefs[c][0] for c in post])),
+            p_interes=p_pre, notas="a posteriori; ronda 2 (T1); coef_interes = media de los posteriores; p = Wald conjunto previos")
+    hecho("TOP-INC-T1-RANGO", "Ley 11/2020, contratos nuevos: variantes contra el confusor turístico (periodo posterior × "
+          "densidad de viviendas de uso turístico de 2019; sin Barcelona; sin el decil más turístico), log y PPML (valor: "
+          "mediana; min/max: extremos; no es IC)", float(t1.efecto_pct.median()), float(t1.efecto_pct.min()),
+          float(t1.efecto_pct.max()), "%", f"{T_INI}-{T_FIN}", "Cataluña, municipios con densidad turística de 2019",
+          "Incasòl; IDESCAT (habitatges d'ús turístic, 2019); padrón; elaboración propia", "asociación", "topes",
+          f"{int((t1.p < 0.05).sum())} de {len(t1)} con p < 0,05; negativas: {int((t1.b < 0).sum())}", "rango")
+    hecho("TOP-INC-EVENTOS-PRE", "Ley 11/2020, contratos nuevos (log, referencia): estudio de eventos, mayor coeficiente "
+          "previo en valor absoluto (valor) y media de los coeficientes posteriores (min = max = media posterior)",
+          100 * max((coefs[c][0] for c in pre), key=abs), None, None, "puntos log × 100", f"{T_INI}-{T_FIN}",
+          "Cataluña, municipios", "Incasòl; elaboración propia", "asociación", "topes",
+          f"p del Wald conjunto de los {len(pre)} previos = {p_pre:.3f}; media posterior = "
+          f"{100 * np.mean([coefs[c][0] for c in post]):.2f}", "sin rango")
+    return {"tabla": t1, "eventos": coefs, "p_pre": p_pre, "d10": float(d10)}
 
 
 # ------------------------------------------------------------------ turística
@@ -331,14 +405,19 @@ def turistica() -> dict:
         cuotas[(r.periodo, r.stock)] = dict(vut=r.VUT_fin, alq=r.stock_alquiler, cuota=100 * r.VUT_fin / (r.stock_alquiler + r.VUT_fin),
                                            flujo=r.cota_cantidad_pct)
     c24 = cuotas[("2020M08-2024M08", "censo2021")]
-    otros = [v["cuota"] for k, v in cuotas.items() if k[0].endswith("2024M08") or k[0].endswith("2026M05")]
-    hecho("TUR-CUOTA-STOCK", "Viviendas turísticas (stock, INE VUT) sobre alquiler habitual (Censo 2021) + turísticas: mismo "
-          "numerador que el Banco de España (valor: agosto de 2024 con el Censo; min/max: otras fechas y stock ECV × ECP)",
-          c24["cuota"], min(otros), max(otros), "% de (alquiler habitual + turísticas)", "2024M08 (y 2026M05)", "España",
-          "output/v3/PB/tablas/b1_nacional_sensibilidad.csv (INE VUT experimental; Censo 2021; ECV 2021 × ECP)", "cota", "turistica_regulacion",
+    c26 = cuotas[("2020M08-2026M05", "censo2021")]
+    todas = [v["cuota"] for k, v in cuotas.items()]
+    hecho("TUR-CUOTA-STOCK", "Viviendas turísticas (stock, INE VUT) sobre alquiler habitual + turísticas: mismo numerador "
+          "que el Banco de España (valor: mayo de 2026 con el Censo 2021, la fecha más reciente; min/max: mayo de 2026 con "
+          "el stock ECV 2021 × ECP y agosto de 2024 con el Censo)",
+          c26["cuota"], min(todas), max(todas), "% de (alquiler habitual + turísticas)", "2024M08 y 2026M05", "España",
+          "output/v3/PB/tablas/b1_nacional_sensibilidad.csv (INE VUT experimental; Censo 2021; ECV 2021 × ECP)", "cota",
+          "turistica_regulacion",
           f"la cota C2 publicada (B4-v3-vut-cantidad = {c24['flujo']:.3f} %) es el AUMENTO de viviendas turísticas "
           f"2020M08-2024M08 ({int(c24['vut'] - pb.iloc[0].VUT_ini)}) sobre el alquiler, no el stock; el Banco de España "
-          "(IA2025, p. 150) da «cerca del 10 %» con su propio numerador (unas 355.000 en 2025)")
+          "(IA2025, p. 150) da «cerca del 10 %» con su propio numerador (unas 355.000 en 2025). Techo con sustitución 1:1: "
+          "las VUT del INE incluyen viviendas de uso turístico parcial o estacional que no pasarían al alquiler habitual, "
+          "así que el techo sobrestima lo que una regulación podría devolver", "referencias")
     return {"efecto_medio": efecto, "por_area": por_area, "cuotas": cuotas}
 
 
@@ -410,56 +489,103 @@ def tabla_theta() -> pd.DataFrame:
     return t
 
 
+# Grupo de control de cada diseño (A1): «mercado» si la comparación es entre mercados o zonas (capta el efecto de equilibrio
+# también en no perceptores); «dentro del mercado» si compara perceptores con no perceptores (o con perceptores no
+# afectados) del mismo mercado: si los no perceptores también suben (resultado ii), θ está sesgada a la baja.
+CONTROL = {"Fack": "dentro del mercado", "GibbonsManning": "dentro del mercado", "Kangasharju": "dentro del mercado",
+           "Viren": "dentro del mercado", "EerolaEtAl2026": "dentro del mercado", "CollinsonGanong": "mercado",
+           "HyslopRea": "mercado", "GrislainTrevien": "mercado"}
+COB_THETA = "Francia, Reino Unido, EE. UU., Finlandia y Nueva Zelanda (ningún estudio español)"
+
+
 def ayudas() -> dict:
     t = tabla_theta()
+    t["control"] = t.ficha.map(CONTROL)
     pr = t[t.principal].set_index("ficha").theta
     siete = pr.drop("GrislainTrevien")
     med7 = statistics.median(siete)
+    med8 = statistics.median(pr)
+    fuentes7 = "docs/v16/literatura/L5_ayudas_demanda_efectos.csv; Fack (2006) y Gibbons y Manning (2006), resúmenes"
     hecho("AYU-TRASLACION-MEDIANA", "Traslación al alquiler de las ayudas a perceptores (θ), mediana de siete estudios con "
-          "diseño, un valor por estudio (valor: mediana; min/max: Eerola et al. 2026 y Fack 2006)",
-          100 * med7, 100 * siete.min(), 100 * siete.max(), "% de la ayuda", "1984-2020",
-          "Francia, Reino Unido, EE. UU., Finlandia, Nueva Zelanda",
-          "docs/v16/literatura/L5_ayudas_demanda_efectos.csv; Fack (2006) y Gibbons y Manning (2006), resúmenes",
+          "diseño, un valor por estudio (valor: mediana; min/max: θ de Eerola et al. 2026 y de Fack 2006)",
+          100 * med7, 100 * siete.min(), 100 * siete.max(), "% de la ayuda", "1984-2020", COB_THETA, fuentes7,
           "juicio experto", "ayudas_demanda",
-          "id citado en ERRATA.md (P1); la tabla completa y las sensibilidades están en la ficha; θ < 1 contrastado "
-          "solo donde hay e.e.")
-    hecho("AYU-RETIENE-MEDIANA", "Parte de la ayuda al alquiler que retiene el perceptor (1 - θ), mediana de los mismos siete "
+          "id citado en ERRATA.md (P1); misma jerarquía que AYU-TRASLACION-MEDIANA-8 (ocho estudios, 54,7 %)", "referencias")
+    hecho("AYU-TRASLACION-MEDIANA-8", "Traslación al alquiler de las ayudas a perceptores (θ), mediana de ocho estudios con "
+          "diseño (los siete y la θ implícita de Grislain-Letrémy y Trevien) (valor: mediana; min/max: θ de Eerola et al. "
+          "2026 y de Grislain-Letrémy y Trevien 2022)", 100 * med8, 100 * pr.min(), 100 * pr.max(), "% de la ayuda",
+          "1984-2020", COB_THETA, fuentes7 + "; docs/v17/referencias/no_beneficiarios.md", "juicio experto",
+          "ayudas_demanda", "al mismo nivel que la mediana de siete (46 %)", "referencias")
+    hecho("AYU-RETIENE-MEDIANA", "Parte de la ayuda al alquiler que retiene el perceptor (1 - θ), mediana de los siete "
           "estudios (valor: mediana; min/max: Fack 2006 y Eerola et al. 2026)", 100 * (1 - med7), 100 * (1 - siete.max()),
-          100 * (1 - siete.min()), "% de la ayuda", "1984-2020", "ídem", "ídem", "juicio experto", "ayudas_demanda",
-          "identidad coste neto = renta - ayuda: vale a calidad constante y mientras dure la ayuda")
+          100 * (1 - siete.min()), "% de la ayuda", "1984-2020", COB_THETA, fuentes7, "juicio experto", "ayudas_demanda",
+          "identidad coste neto = renta - ayuda: vale a calidad constante y mientras dure la ayuda; con ocho estudios, "
+          f"{100 * (1 - med8):.1f} %", "referencias")
+    g = t[t.ficha == "GrislainTrevien"].iloc[0]
+    hecho("AYU-THETA-GLT", "θ implícita en perceptores de Grislain-Letrémy y Trevien (2022): 0,052 log × 454 euros / "
+          "diferencial de ayuda de 22-27 euros (valor: punto medio; min/max: diferencial de 40 y de 15 euros)",
+          100 * g.theta, 100 * g.lo, 100 * g.hi, "% del diferencial de ayuda", "2000-2016",
+          "Francia, aglomeraciones de 50.000 a 180.000 habitantes", "Banque de France WP 886, tablas 1 y 7 "
+          "(docs/v17/referencias/no_beneficiarios.md); cálculo del auditor", "juicio experto", "ayudas_demanda",
+          f"e.e. aproximado {100 * g.se:.1f} puntos (del e.e. 0,018 del log); no se distingue de 100 %", "rango")
+    mercado = pr[[k for k in pr.index if CONTROL[k] == "mercado"]]
+    dentro = pr[[k for k in pr.index if CONTROL[k] == "dentro del mercado"]]
+    hecho("AYU-TRASLACION-MERCADO", "θ mediana de los diseños a nivel de mercado o zona (Collinson y Ganong, Hyslop y Rea, "
+          "Grislain-Letrémy y Trevien) (valor: mediana; min/max: extremos)", 100 * statistics.median(mercado),
+          100 * mercado.min(), 100 * mercado.max(), "% de la ayuda", "1993-2016", "EE. UU., Nueva Zelanda y Francia",
+          fuentes7, "juicio experto", "ayudas_demanda",
+          f"diseños dentro del mismo mercado (Fack, Gibbons y Manning, Kangasharju, Viren, Eerola et al.): mediana "
+          f"{100 * statistics.median(dentro):.1f} %; si los no perceptores también suben (resultado ii), su θ está sesgada a "
+          "la baja", "referencias")
     sens = {
-        "ocho_con_GLT": statistics.median(pr),
+        "ocho_con_GLT": med8,
         "sin_CollinsonGanong": statistics.median(siete.drop("CollinsonGanong")),
         "sin_GibbonsManning": statistics.median(siete.drop("GibbonsManning")),
         "ocho_sin_CollinsonGanong": statistics.median(pr.drop("CollinsonGanong")),
-        "aumentos": statistics.median(pr[["Fack", "Kangasharju", "HyslopRea", "EerolaEtAl2026", "GrislainTrevien"]]),
+        "subidas_de_cuantia": statistics.median(pr[["Fack", "Kangasharju", "HyslopRea", "EerolaEtAl2026", "GrislainTrevien"]]),
         "corto_plazo": statistics.median(pr[["GibbonsManning", "HyslopRea"]]),
         "medio_largo": statistics.median(pr.drop(["GibbonsManning", "HyslopRea"])),
+        "mercado": statistics.median(mercado),
+        "dentro_del_mercado": statistics.median(dentro),
     }
-    hecho("AYU-TRASLACION-SENS", "Traslación mediana con otras composiciones (valor: ocho estudios con la θ implícita de "
-          "Grislain-Letrémy y Trevien; min/max: extremos de las sensibilidades de la ficha)",
-          100 * sens["ocho_con_GLT"], 100 * min(sens.values()), 100 * max(sens.values()), "% de la ayuda", "1984-2020",
-          "ídem", "ídem; docs/v17/referencias/no_beneficiarios.md", "juicio experto", "ayudas_demanda",
-          "; ".join(f"{k} = {100 * v:.1f} %" for k, v in sens.items()))
-    # duración: el bono dura 24 meses; el contrato, 60 (LAU). Si el arrendador sube la renta θ·ayuda durante todo el contrato:
+    hecho("AYU-TRASLACION-SENS", "Traslación mediana con otras composiciones (valor: ocho estudios; min/max: extremos de las "
+          "sensibilidades de la ficha)", 100 * med8, 100 * min(sens.values()), 100 * max(sens.values()), "% de la ayuda",
+          "1984-2020", COB_THETA, fuentes7 + "; docs/v17/referencias/no_beneficiarios.md", "juicio experto",
+          "ayudas_demanda", "; ".join(f"{k} = {100 * v:.1f} %" for k, v in sens.items()) +
+          "; «subidas de cuantía» = aumentos o diferenciales positivos de la ayuda (excluye el recorte de Gibbons y "
+          "Manning, el techo de cupón de Collinson y Ganong y la variación general de Viren)", "rango")
+    # A2: umbral de θ por encima del cual el perceptor pierde en el conjunto del contrato, si la subida θ·ayuda se queda
+    # en la renta todo el contrato: θ* = meses de ayuda / meses de contrato.
+    umbrales = {(ma, mc): ma / mc for ma in (24, 48) for mc in (36, 60, 84)}
+    hecho("AYU-UMBRAL-24M", "Umbral de traslación θ* = meses de ayuda / meses de contrato, ayuda de 24 meses (Bono Alquiler "
+          "Joven, RD 42/2022, art. 12; RD 326/2026, art. 134) (valor: contrato de 5 años; min: 7 años, persona jurídica; "
+          "max: 3 años)", 100 * umbrales[(24, 60)], 100 * umbrales[(24, 84)], 100 * umbrales[(24, 36)], "% (θ*)",
+          "normas vigentes", "España", "RD 42/2022; RD 326/2026 (BOE-A-2026-8872), art. 134; Ley 29/1994, art. 9.1",
+          "juicio experto", "ayudas_demanda", "por encima de θ* el perceptor pierde en el contrato si la subida se queda "
+          "en la renta; 3 años es el mínimo anterior a 2019, hoy solo por acuerdo o fin anticipado", "referencias")
+    hecho("AYU-UMBRAL-48M", "Umbral de traslación θ* con la ayuda joven del Plan Estatal 2026-2030 prorrogada (2 + 2 años, "
+          "RD 326/2026, art. 134) (valor: contrato de 5 años; min: 7 años; max: 3 años)", 100 * umbrales[(48, 60)],
+          100 * umbrales[(48, 84)], 100 * umbrales[(48, 36)], "% (θ*)", "normas vigentes", "España",
+          "RD 326/2026 (BOE-A-2026-8872), arts. 134 y 137; Ley 29/1994, art. 9.1", "juicio experto", "ayudas_demanda",
+          "con 48 meses de ayuda y contrato de 3 años, θ* > 100 %: no hay pérdida", "referencias")
     def neto(theta, meses_contrato):
         return DOC["bono_eur_mes"] * (DOC["bono_meses"] - theta * meses_contrato)
     hecho("AYU-BONO-DURACION", "Ganancia neta del perceptor del Bono Alquiler Joven en todo el contrato si la subida θ·250 "
           "se mantiene los 60 meses de la LAU y la ayuda solo dura 24 (valor: θ = mediana de siete estudios; min/max: "
           "θ de Fack 2006 y de Eerola et al. 2026)", neto(med7, DOC["lau_meses_min"]), neto(siete.max(), DOC["lau_meses_min"]),
-          neto(siete.min(), DOC["lau_meses_min"]), "euros por contrato", "escenario",
-          "España (sin evaluación propia)", "RD 42/2022, arts. 11-12; Ley 29/1994, art. 9; θ de la literatura",
-          "juicio experto", "ayudas_demanda",
-          f"umbral: la ganancia es negativa si θ > {DOC['bono_meses'] / DOC['lau_meses_min']:.2f}; con traslación "
-          "limitada al periodo de la ayuda la ganancia es 250·(1-θ)·24")
+          neto(siete.min(), DOC["lau_meses_min"]), "euros por contrato", "escenario", "España (escenario; sin evaluación)",
+          "RD 42/2022, arts. 11-12; Ley 29/1994, art. 9; θ de la literatura", "juicio experto", "ayudas_demanda",
+          "con traslación limitada al periodo de la ayuda la ganancia es 250·(1-θ)·24; con ocho estudios (θ = "
+          f"{med8:.3f}) la ganancia en el contrato sería {neto(med8, DOC['lau_meses_min']):.0f} euros", "rango")
     inf = leer(INF)
     q7 = fila(inf, id_resultado="Q7")
     hecho("AYU-Q7", "Q7a (V16) con inferencia convencional: diferencia en discontinuidades del log del alquiler en el corte de "
           "35 años (valor: estimación; min/max: IC 95 %)", float(q7["estimacion_publicada"]), float(q7["ic95_lo"]),
-          float(q7["ic95_hi"]), "Δlog", "2018-2021 / 2023-2025", "inquilinos de mercado de la ECV",
+          float(q7["ic95_hi"]), "Δlog", "2018-2021 / 2023-2025", "España, inquilinos de mercado de la ECV (muestra de "
+          "V16 Q7a, grupo A de entrenamiento)",
           "output/v17/lectura_bde/v15_v16_micro/inferencia.csv (Q7); id publicado V16-Q7-1", "no se puede saber",
           "ayudas_demanda", f"p = {q7['p_conv']}; distorsión sin medir; placebos de edad del mismo orden (V16-Q7-4)")
-    return {"tabla": t, "mediana7": med7, "sens": sens}
+    return {"tabla": t, "mediana7": med7, "mediana8": med8, "sens": sens, "umbrales": umbrales}
 
 
 def cifra_publicada(ide: str) -> str:

@@ -1,4 +1,4 @@
-Análisis a posteriori (V17). Ficha de auditoría de la fila «ayudas_demanda» (D1, medida 5). Grupo regulacion_ayudas. Capa de toda cifra nueva: C4. Ninguna cifra ni capa publicada cambia. Versión tras la ronda 1 del abogado del diablo (secciones 8 y 9).
+Análisis a posteriori (V17). Ficha de auditoría de la fila «ayudas_demanda» (D1, medida 5). Grupo regulacion_ayudas. Capa de toda cifra nueva: C4. Ninguna cifra ni capa publicada cambia. Versión tras las rondas 1 y 2 del abogado del diablo (secciones 8, 9 y 11).
 
 # Medida 5 · Ayudas a la demanda (bono joven, avales)
 
@@ -25,8 +25,8 @@ Esta ficha no toca nada publicado. La sección 9 da la recomendación razonada s
 **En contra de la frase original (ayudas al alquiler).**
 - **La identidad del coste neto.** El coste neto del perceptor es la renta menos la ayuda. Con una traslación θ < 1, mientras dure la ayuda y a calidad constante, el perceptor gana (1 − θ) por euro.
 - **Lo que dice la tabla completa** (sección 3):
-  - de ocho estudios con diseño, siete tienen una θ central menor que 1;
-  - el octavo, Grislain-Letrémy y Trevien, tiene una θ implícita de 0,96 y no se puede distinguir de 1;
+  - los ocho estudios con diseño tienen una θ central menor que 1;
+  - en uno de ellos, Grislain-Letrémy y Trevien, la θ implícita es de 0,96 (V17-AUD-RA-AYU-THETA-GLT) y no se puede distinguir de 1;
   - tres estimaciones contrastan θ < 1 con p < 0,05: Eerola et al. y dos de Fack (2005) con controles.
 - **Lo que no recoge la frase original: el resto de inquilinos.**
   - Susin (2002, versión de trabajo leída completa): +16 % en el alquiler de los no perceptores de renta baja.
@@ -64,17 +64,19 @@ Esta ficha no toca nada publicado. La sección 9 da la recomendación razonada s
 
 | Composición | θ mediana | Parte que retiene el perceptor |
 |---|---|---|
-| Siete estudios (los de ERRATA P1) | **46 %** (3,6-78 %) | 54 % |
-| Ocho estudios, con Grislain-Letrémy y Trevien | 54,7 % | 45 % |
+| Siete estudios (los de ERRATA P1; V17-AUD-RA-AYU-TRASLACION-MEDIANA) | **46 %** (3,6-78 %) | 54 % |
+| Ocho estudios, con Grislain-Letrémy y Trevien (V17-AUD-RA-AYU-TRASLACION-MEDIANA-8) | **54,7 %** (3,6-96 %) | 45 % |
 | Siete, sin Collinson y Ganong | 49,7 % | 50 % |
 | Ocho, sin Collinson y Ganong | 63,3 % | 37 % |
 | Siete, sin Gibbons y Manning | 41,0 % | 59 % |
-| Solo aumentos de ayuda (Fack, Kangasharju, Hyslop y Rea, Eerola, Grislain-Letrémy y Trevien) | 65,0 % | 35 % |
+| Subidas de cuantía de la ayuda: aumentos o diferenciales positivos (Fack, Kangasharju, Hyslop y Rea, Eerola, Grislain-Letrémy y Trevien; excluye el recorte de Gibbons y Manning, el techo de cupón de Collinson y Ganong y la variación general de Viren) | 65,0 % | 35 % |
+| Diseños a nivel de mercado o zona (Collinson y Ganong, Hyslop y Rea, Grislain-Letrémy y Trevien; V17-AUD-RA-AYU-TRASLACION-MERCADO) | 46,0 % | 54 % |
+| Diseños dentro del mismo mercado (Fack, Gibbons y Manning, Kangasharju, Viren, Eerola et al.) | 63,3 % (sesgada a la baja si (ii) es cierto) | 37 % |
 | Corto plazo (Gibbons y Manning, Hyslop y Rea) | 49,7 % | 50 % |
 | Medio y largo plazo | 55,5 % | 45 % |
 | A calidad constante (solo Fack 2005, tabla 7, cuatro columnas) | 0,77 | 23 % |
 
-**Lectura.** El signo de la ganancia del perceptor (θ < 1) aparece en 7 de 8 estudios por su valor central. La magnitud es muy dispersa: la mediana va del 41 % al 65 % según la composición. El rango completo va de casi nada (Eerola) a casi todo (Grislain-Letrémy y Trevien; Fack DDD). Solo cinco estimaciones tienen error estándar, y solo tres rechazan θ = 1.
+**Lectura.** El signo de la ganancia del perceptor (θ < 1) aparece en los 8 estudios por su valor central. La magnitud es muy dispersa: la mediana va del 41 % al 65 % según la composición. El rango completo va de casi nada (Eerola) a casi todo (Grislain-Letrémy y Trevien; Fack DDD). Solo cinco estimaciones tienen error estándar, y solo tres rechazan θ = 1.
 
 **¿La ganancia es menor donde la oferta es más rígida?** Es compatible con la evidencia:
 - **Entre estudios.** Las tres θ más altas (Grislain-Letrémy y Trevien 0,96, Fack 0,78, Gibbons y Manning 0,63) son de estudios cuyos autores describen una oferta privada poco elástica. La más baja (Eerola et al.) la atribuyen sus autores a que los perceptores no cambiaron de vivienda, no a una oferta elástica.
@@ -147,7 +149,7 @@ Esta sección es una recomendación. No se ha aplicado ningún cambio.
 
 **Etiqueta: «prometedora»**, que es la decidida.
 - **No llega a «eficacia probada».** De los estudios leídos completos, Gibbons y Manning (2003) tiene DOI verificado solo para la versión publicada, que no se ha leído, y su efecto en perceptores no es robusto. Grislain-Letrémy y Trevien no tiene DOI y su θ (0,96) no se distingue de 1.
-- **Sí llega a «prometedora».** Siete de ocho estudios con diseño dan θ < 1, y Eerola et al. y Fack (2005, con controles) lo contrastan.
+- **Sí llega a «prometedora».** Los ocho estudios con diseño dan una θ central menor que 1, y Eerola et al. y Fack (2005, con controles) lo contrastan.
 
 **Cifra principal recomendada.** «Traslación mediana en torno a la mitad (46 % con siete estudios; entre el 41 % y el 65 % según qué estudios se incluyan), con estudios que van de casi nada al 100 %». El rango «3,6-78 %» publicado omite:
 - la θ implícita de Grislain-Letrémy y Trevien (≈ 0,96), leída completa;
@@ -173,6 +175,58 @@ Esta sección es una recomendación. No se ha aplicado ningún cambio.
 
 **Frase que habría que cambiar.** «La parte trasladada sube el alquiler de los no beneficiarios» → «la ayuda se asocia con alquileres más altos también para quienes no la reciben (EE. UU. y Francia; en el Reino Unido no se detecta)». En Grislain-Letrémy y Trevien la subida es la misma para perceptores y no perceptores: no es «la parte trasladada».
 
+### Propuestas de texto para A3 y A4 (ronda 2; no aplicadas)
+
+- **A3. Confianza de la frase sobre la rigidez de la oferta.**
+  - Texto propuesto para III.8 (i): «La evidencia es compatible con que la parte que retiene el perceptor sea menor donde la oferta es más rígida (Fack, 2006; Grislain-Letrémy y Trevien, 2022; Eriksen y Ross, 2015)».
+  - Motivo: la relación entre estudios no es un contraste. Solo hay dos estudios que la vean dentro de su propia muestra, y uno de ellos sin magnitud.
+- **A4. Tensión con la regla de III.1.**
+  - Texto propuesto para añadir a III.1: «Las etiquetas pueden aplicarse a un resultado distinto del objetivo declarado cuando la ficha lo nombra como tal; para "evidencia en contra" y "eficacia probada" cuenta como leído completo la versión de trabajo o abierta leída entera, y la ficha dice qué versión es».
+  - Texto propuesto para III.8 (ii): «Alquiler de quien no recibe la ayuda (resultado distinto del objetivo declarado): evidencia en contra según la regla de III.1, con dos estudios leídos completos en versión de trabajo (Susin, EE. UU.; Grislain-Letrémy y Trevien, Francia) y un tercero sin efecto detectable y con poca potencia (Gibbons y Manning, Reino Unido)».
+
 ## 10. Parada
 
 La parada P1 (D1, medida 5, e informe integral, III.8) la resolvió el autor el 2026-10-19 (ERRATA.md). No hay parada nueva. Las recomendaciones de la sección 9 son de redacción y de rango; ninguna convierte en falsa la decisión tomada.
+
+## 11. Respuesta a la ronda 2
+
+No cambia ni el veredicto ni la parada.
+
+**A1 · Grupo de control de cada θ. Aplicado** (constante CONTROL del script; V17-AUD-RA-AYU-TRASLACION-MERCADO).
+
+| Estudio | Grupo de control | θ |
+|---|---|---|
+| Collinson y Ganong (2018) | mercado (condados y áreas con techos distintos) | 0,46 |
+| Hyslop y Rea (2019) | mercado (zonas a ambos lados de una frontera) | 0,36 |
+| Grislain-Letrémy y Trevien (2022) | mercado (aglomeraciones de zona II frente a zona III) | 0,96 |
+| Fack (2006) | dentro del mercado (hogares del primer cuartil frente al resto) | 0,78 |
+| Gibbons y Manning (2006) | dentro del mercado (perceptores nuevos frente a perceptores antiguos y no perceptores) | 0,63 |
+| Kangasharju (2010) | dentro del mercado (variación de la ayuda entre perceptores) | 0,65 |
+| Viren (2013) | dentro del mercado (panel de perceptores) | 0,33 |
+| Eerola et al. (2026) | dentro del mercado (viviendas con más y menos ayuda) | 0,036 |
+
+- **Medianas.** 46 % en los diseños a nivel de mercado y 63,3 % en los de dentro del mercado.
+- **Sesgo declarado.** Si (ii) es cierto, la renta del control también sube en los diseños de dentro del mercado, y su θ está sesgada a la baja: es una cota inferior.
+- **Lectura.** La mediana de mercado no es mayor que la de dentro del mercado. Con tres estudios y diseños muy distintos no se puede medir ese sesgo. La clasificación es juicio del auditor a partir de las fichas.
+
+**A2 · Umbrales de duración y RD 326/2026. Aplicado.**
+- **RD 326/2026** (Plan Estatal de Vivienda 2026-2030; BOE-A-2026-8872, consultado el 2026-10-20 en la API de datos abiertos del BOE). Regula la «ayuda al alquiler para la emancipación de las personas jóvenes» en los arts. 132-139:
+  - 300 € al mes como máximo, con el límite del 60 % de la renta, y 200 € por habitación (art. 137);
+  - plazo de dos años, prorrogable por otros dos como máximo si la comunidad lo acuerda (art. 134).
+- **Umbral.** θ* = meses de ayuda / meses de contrato (V17-AUD-RA-AYU-UMBRAL-24M y -48M). Por encima de θ*, el perceptor pierde en el conjunto del contrato si la subida se queda en la renta.
+
+| Contrato | Ayuda de 24 meses | Ayuda de 48 meses (prórroga) |
+|---|---|---|
+| 3 años (mínimo anterior a 2019; hoy por acuerdo o fin anticipado) | 66,7 % | 133 % (sin pérdida posible) |
+| 5 años (LAU, art. 9.1, persona física) | **40 %** | 80 % |
+| 7 años (LAU, art. 9.1, persona jurídica) | 28,6 % | 57,1 % |
+
+- **Lectura.** Con la θ mediana (46 % o 54,7 %), un perceptor del bono de dos años con contrato de cinco o siete años pierde en el contrato si la subida persiste. Con la prórroga a cuatro años, gana en el contrato de cinco años y pierde en el de siete solo si θ > 57 %. Es un escenario, no una estimación: no se sabe si la subida persiste.
+
+**A5 · «Solo aumentos». Reetiquetado** como «subidas de cuantía de la ayuda: aumentos o diferenciales positivos». Excluye el recorte, el techo de cupón y la variación general.
+
+**A6 · «Ocho de ocho con θ < 1». Aplicado.** La θ implícita de Grislain-Letrémy y Trevien (0,96) es menor que 1 en su valor central, aunque no se distingue de 1. Se corrige «siete de ocho» en las secciones 2, 3 y 9.
+
+**A7 · Id de la θ implícita de Grislain-Letrémy y Trevien. Aplicado.** V17-AUD-RA-AYU-THETA-GLT = 96,4 %; rango del 59 % al 157 % según el diferencial de 15-40 €.
+
+**A8 · Mediana de ocho al mismo nivel. Aplicado.** V17-AUD-RA-AYU-TRASLACION-MEDIANA-8 = 54,7 % figura en la tabla de medianas junto a la de siete (46 %), las dos en negrita. La de siete se mantiene con su id porque la cita ERRATA.md.

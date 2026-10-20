@@ -43,8 +43,13 @@ def test_formato_hechos(corrida):
         assert f["lectura_v17"] in LECTURAS
         assert f["nota"].startswith("a posteriori")
         assert f["fuentes"]
+        assert f["tipo_rango"] in ("rango", "referencias", "sin rango")
+        assert (f["tipo_rango"] == "sin rango") == (f["min"] is None or f["max"] is None)
+        assert f["cobertura"] and "ficha" not in f["cobertura"].lower() and "ídem" not in f["cobertura"].lower()
         if f["min"] is not None and f["max"] is not None:
             assert f["min"] <= f["max"]
+        if f["tipo_rango"] == "rango":
+            assert f["min"] <= f["valor"] <= f["max"]
 
 
 def test_valores_clave(corrida):
@@ -68,6 +73,12 @@ def test_valores_clave(corrida):
     inc = r["topes_inc"]["tabla"]
     assert len(inc) == 84
     assert (inc[inc.forma == "log_renta"].b < 0).all()
+    t1 = r["topes_inc"]["t1"]
+    assert len(t1["tabla"]) == 6 and 0 <= t1["p_pre"] <= 1
+    # A6: los ocho valores centrales de θ son menores que 1; A7: la θ implícita de Grislain-Letrémy y Trevien tiene id
+    assert (tab[tab.principal].theta < 1).all()
+    assert abs(d["V17-AUD-RA-AYU-THETA-GLT"]["valor"] - 100 * 0.052 * 454 / 24.5) < 1e-3
+    assert abs(d["V17-AUD-RA-AYU-UMBRAL-24M"]["valor"] - 40.0) < 1e-9
 
 
 def test_cifras_publicadas_sin_cambio(corrida):
@@ -79,6 +90,7 @@ def test_cifras_publicadas_sin_cambio(corrida):
 
 def test_sin_red_ni_evaluacion():
     src = (ROOT / "src" / "v17" / "f3_regulacion_ayudas.py").read_text(encoding="utf-8")
-    for prohibido in ("import requests", "import urllib", "http://", "https://", "holdout", "evaluate_("):
+    for prohibido in ("import requests", "import urllib", "http://", "https://", "evaluate_(", "evaluate(", "sellar_v6(",
+                      "load_sealed"):
         assert prohibido not in src
-    assert "muestra_sellada_v6" in src                     # filtra la muestra cerrada al leer la base
+    assert "excluir_sellados_v6(" in src                   # guarda de fuga v6 (K5)

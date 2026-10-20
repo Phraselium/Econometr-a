@@ -61,7 +61,7 @@ Análisis a posteriori (V17). Ficha de auditoría de la fila «turistica_regulac
 
 ## 6. Texto corregido y confianza
 
-> «Regular la vivienda turística: prometedora en la literatura internacional, donde las normas reducen mucho los anuncios y algo el alquiler. En España no hay evaluación de ninguna norma sobre el alquiler. En Barcelona sí está medido que más pisos turísticos se asocian con alquileres más altos en los barrios más expuestos (hasta un 7 %), y que la regulación frenó el número de anuncios; cuánto alquiler evitó esa regulación no está estimado. A escala nacional, las viviendas turísticas son en torno al 10-12 % del conjunto de viviendas de alquiler y turísticas: es el techo de lo que una regulación podría devolver al alquiler residencial si todas pasaran a él, no una previsión.»
+> «Regular la vivienda turística: prometedora en la literatura internacional, donde las normas reducen mucho los anuncios y algo el alquiler. En España no hay evaluación de ninguna norma sobre el alquiler. En Barcelona sí está medido que más pisos turísticos se asocian con alquileres más altos en los barrios más expuestos (hasta un 7 %), y tras la regulación hubo menos anuncios que en un escenario estimado sin ella; cuánto alquiler evitó esa regulación no está estimado. A escala nacional, las viviendas turísticas son en torno al 9-12 % del conjunto de viviendas de alquiler y turísticas (10 % en mayo de 2026): es el techo de lo que una regulación podría devolver al alquiler residencial si todas pasaran a él, y lo sobrestima, porque parte de ellas solo se usa como turística una parte del año.»
 
 (La traslación orientativa de Barcelona, V17-AUD-RA-TUR-BCN-TRASLACION ≈ 1,5 %, es **juicio experto sin estimación**. Se queda en la ficha y no entra en el texto divulgativo.)
 
@@ -94,3 +94,13 @@ No hay parada: nada de la frase es falso; «sin medir» es incompleto.
 - **Consecuencia para la fila.** «Su efecto agregado está acotado» es cierto para el **crecimiento** reciente: como máximo, en torno al 2,7 % del alquiler entre 2020 y 2024. Una regulación, en cambio, actúa sobre el **stock**, y su techo con sustitución 1:1 es del orden del 10-12 %. Ese techo no es pequeño, pero es solo un techo: no todas las viviendas turísticas irían al alquiler residencial. Por eso el texto corregido da la cifra del stock y la rotula como techo.
 
 **3. Veredicto.** Se mantiene **«se sostiene con matices»**. D1 no cita el 2,7 % en esta fila, y «acotado» no es falso. El matiz del denominador es sustancial y se incorpora al texto corregido.
+
+## 9. Respuesta a la ronda 2
+
+No cambia ni el veredicto ni la parada.
+
+**U1 · Gyódi et al. Aplicado.** Su resumen describe un «counterfactual analysis» de los anuncios de 2015-2023 combinado con trabajo de campo, sin grupo de control ni diseño declarado en lo leído. Por eso el texto ya no dice que «la regulación frenó los anuncios». Dice: «tras la regulación hubo menos anuncios que en un escenario estimado sin ella». La traslación de Barcelona (V17-AUD-RA-TUR-BCN-TRASLACION) hereda esa debilidad: sigue siendo juicio experto sin estimación.
+
+**U2 · Fecha más reciente. Aplicado.** V17-AUD-RA-TUR-CUOTA-STOCK pasa a tomar como valor mayo de 2026 con el Censo (10,3 %). Antes era agosto de 2024 (11,9 %), que queda como referencia junto al 9,2 % de mayo de 2026 con el stock ECV × ECP. Su tipo de rango es «referencias». El texto dice «en torno al 9-12 % (10 % en mayo de 2026)».
+
+**U3 · Viviendas de uso parcial. Aplicado.** La estadística experimental de viviendas turísticas del INE cuenta las viviendas anunciadas en plataformas, incluidas las que solo se alquilan a turistas una parte del año: segundas residencias, uso estacional. Esas no pasarían al alquiler habitual con una regulación. Por eso el techo con sustitución 1:1 sobrestima lo que una regulación podría devolver. La nota va en el hecho y en el texto.

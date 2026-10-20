@@ -11,7 +11,9 @@
   "capa": "C4",
   "lectura_v17": "cota",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; numerador = AUMENTO de viviendas turísticas (81.771), no su número; min = denominador ECV"
+  "nota": "a posteriori; numerador = AUMENTO de viviendas turísticas (81.771), no su número; min = denominador ECV",
+  "tipo_rango": "rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-TUR-NAC-STOCK-2024M08",
@@ -25,7 +27,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; 403.267 viviendas turísticas; denominador Censo 2021 (2,978,090); min = denominador ECV"
+  "nota": "a posteriori; 403.267 viviendas turísticas; denominador Censo 2021 (2,978,090); min = denominador ECV",
+  "tipo_rango": "rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-TUR-NAC-STOCK-2024M02",
@@ -39,7 +43,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; coincide con la fila «Total España» (11,8 %) del cuadro A.3 de BdE DO 2432: mismo numerador y denominador"
+  "nota": "a posteriori; coincide con la fila «Total España» (11,8 %) del cuadro A.3 de BdE DO 2432: mismo numerador y denominador",
+  "tipo_rango": "sin rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-TUR-NAC-STOCK-2026M05",
@@ -53,7 +59,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "sin rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-P50",
@@ -67,7 +75,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; 24201 secciones sin muestra sellada v6 con código 2021 coincidente; P50 ponderado por el parque de alquiler: 2.9 %"
+  "nota": "a posteriori; 24201 secciones sin muestra sellada v6 con código 2021 coincidente; P50 ponderado por el parque de alquiler: 2.9 %",
+  "tipo_rango": "sin rango",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-P90",
@@ -81,7 +91,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; 24201 secciones sin muestra sellada v6 con código 2021 coincidente; P90 ponderado por el parque de alquiler: 33.3 %"
+  "nota": "a posteriori; 24201 secciones sin muestra sellada v6 con código 2021 coincidente; P90 ponderado por el parque de alquiler: 33.3 %",
+  "tipo_rango": "sin rango",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-P99",
@@ -95,7 +107,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; 24201 secciones sin muestra sellada v6 con código 2021 coincidente; P99 ponderado por el parque de alquiler: 192.6 %"
+  "nota": "a posteriori; 24201 secciones sin muestra sellada v6 con código 2021 coincidente; P99 ponderado por el parque de alquiler: 192.6 %",
+  "tipo_rango": "sin rango",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-AGREGADO",
@@ -109,7 +123,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "sin rango",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-ALQ-EN-ALTA",
@@ -123,7 +139,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; min = umbral 50 %; max = umbral 10 %; con umbral 100 % (más turísticas que alquiladas): 3.1 %"
+  "nota": "a posteriori; min = umbral 50 %; max = umbral 10 %; con umbral 100 % (más turísticas que alquiladas): 3.1 %",
+  "tipo_rango": "referencias",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-VIV-P90",
@@ -137,7 +155,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; min = P50; max = P99 (escala comparable a la de Garcia-López et al., anuncios sobre viviendas)"
+  "nota": "a posteriori; min = P50; max = P99 (escala comparable a la de Garcia-López et al., anuncios sobre viviendas)",
+  "tipo_rango": "referencias",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-AUMENTO-P90",
@@ -151,7 +171,9 @@
   "capa": "C4",
   "lectura_v17": "cota",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; min = P50; max = P99; análogo local de la cota nacional de sustitución uno a uno (no es efecto en precio)"
+  "nota": "a posteriori; min = P50; max = P99; análogo local de la cota nacional de sustitución uno a uno (no es efecto en precio)",
+  "tipo_rango": "referencias",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-SEC-P90-2026M05",
@@ -165,7 +187,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; min = P50; max = P99"
+  "nota": "a posteriori; min = P50; max = P99",
+  "tipo_rango": "referencias",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales)"
  },
  {
   "id": "V17-AUD-DP-TUR-MUN-P90",
@@ -179,7 +203,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; min = P50; max = P99; 5454 municipios; con 5.000 viviendas en alquiler o más (61 municipios): P50 4.7, P90 22.5, P99 78.0 %"
+  "nota": "a posteriori; min = P50; max = P99; 5454 municipios; con 5.000 viviendas en alquiler o más (61 municipios): P50 4.7, P90 22.5, P99 78.0 %",
+  "tipo_rango": "referencias",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (municipios, suma de secciones)"
  },
  {
   "id": "V17-AUD-DP-TUR-IAB-SEC-P90",
@@ -193,7 +219,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; min = P50; max = P99; 1849 secciones no selladas de las áreas rastreadas; anuncios, no viviendas registradas; no oficial"
+  "nota": "a posteriori; min = P50; max = P99; 1849 secciones no selladas de las áreas rastreadas; anuncios, no viviendas registradas; no oficial",
+  "tipo_rango": "referencias",
+  "cobertura": "Áreas rastreadas por Inside Airbnb fuera de los bloques sellados v6 (secciones)"
  },
  {
   "id": "V17-AUD-DP-TUR-GL-ALQ-NAC",
@@ -207,7 +235,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; densidad 1.51 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí"
+  "nota": "a posteriori; densidad 1.51 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
+  "tipo_rango": "rango",
+  "cobertura": "España (densidad); elasticidad de Barcelona"
  },
  {
   "id": "V17-AUD-DP-TUR-GL-ALQ-SEC-P50",
@@ -221,7 +251,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; densidad 0.29 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí"
+  "nota": "a posteriori; densidad 0.29 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
+  "tipo_rango": "rango",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales); elasticidad de Barcelona"
  },
  {
   "id": "V17-AUD-DP-TUR-GL-ALQ-SEC-P90",
@@ -235,7 +267,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; densidad 2.50 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí"
+  "nota": "a posteriori; densidad 2.50 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
+  "tipo_rango": "rango",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales); elasticidad de Barcelona"
  },
  {
   "id": "V17-AUD-DP-TUR-GL-ALQ-SEC-P99",
@@ -249,7 +283,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; densidad 10.22 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí"
+  "nota": "a posteriori; densidad 10.22 % de las viviendas; 0.68-1.4 % de alquiler por punto (Barcelona 2012-2016, anuncios de Idealista); fuera del soporte del estudio (≈ 5 %) es extrapolación; validez externa no comprobada; no es un efecto estimado aquí",
+  "tipo_rango": "rango",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (secciones censales); elasticidad de Barcelona"
  },
  {
   "id": "V17-AUD-DP-TUR-GL-FRENTE-H3",
@@ -263,7 +299,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/turisticos.md",
-  "nota": "a posteriori; DT intra-sección 0.61 pp; H3 = 0.0030 % por DT (EMD 80 % = 0.097); H3 mide contratos vigentes (SERPAVI) y GL anuncios nuevos"
+  "nota": "a posteriori; DT intra-sección 0.61 pp; H3 = 0.0030 % por DT (EMD 80 % = 0.097); H3 mide contratos vigentes (SERPAVI) y GL anuncios nuevos",
+  "tipo_rango": "rango",
+  "cobertura": "Secciones de la muestra de entrenamiento de H3 (V15); elasticidad de Barcelona"
  },
  {
   "id": "V17-AUD-DP-INM-CUOTA-ALQUILER-EXTR",
@@ -277,7 +315,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/inmigracion.md",
-  "nota": "a posteriori; frente a 15.0 % del total de hogares; la llegada 2016-2021 alquila un 45,5 %"
+  "nota": "a posteriori; frente a 15.0 % del total de hogares; la llegada 2016-2021 alquila un 45,5 %",
+  "tipo_rango": "sin rango",
+  "cobertura": "España (Censo 2021, muestra del 10 %)"
  },
  {
   "id": "V17-AUD-DP-INM-ALQUILER-LLEGADA-RECIENTE",
@@ -291,7 +331,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/inmigracion.md",
-  "nota": "a posteriori; min = nacidos en España (12,2 %)"
+  "nota": "a posteriori; min = nacidos en España (12,2 %)",
+  "tipo_rango": "referencias",
+  "cobertura": "España (Censo 2021, muestra del 10 %)"
  },
  {
   "id": "V17-AUD-DP-INM-ALQUILER-NUEVO-CONTABLE",
@@ -305,7 +347,9 @@
   "capa": "C4",
   "lectura_v17": "cota",
   "ficha": "output/v17/auditoria/filas/inmigracion.md",
-  "nota": "a posteriori; supuesto: los hogares nuevos alquilan como los de su origen en 2021 (min: todos los nacidos fuera; max: llegada 2016-2021); contabilidad, no efecto"
+  "nota": "a posteriori; supuesto: los hogares nuevos alquilan como los de su origen en 2021 (min: todos los nacidos fuera; max: llegada 2016-2021); contabilidad, no efecto",
+  "tipo_rango": "rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-D31-LATAM-CUOTA",
@@ -319,7 +363,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/preguntas/D3-1.md",
-  "nota": "a posteriori; población de nacionalidad sudamericana +153 %; nacionalidad, no país de nacimiento (las nacionalizaciones salen del recuento); Europa no se incluye por ruptura de la serie en 2021"
+  "nota": "a posteriori; población de nacionalidad sudamericana +153 %; nacionalidad, no país de nacimiento (las nacionalizaciones salen del recuento); Europa no se incluye por ruptura de la serie en 2021",
+  "tipo_rango": "sin rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-D31-ASILO-2019-2025",
@@ -333,7 +379,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/preguntas/D3-1.md",
-  "nota": "a posteriori; frente a un saldo exterior oficial de 3,76 millones en 2015-2024 (V17-D3-SALDO-EXTERIOR-OFICIAL); una solicitud no es una entrada neta"
+  "nota": "a posteriori; frente a un saldo exterior oficial de 3,76 millones en 2015-2024 (V17-D3-SALDO-EXTERIOR-OFICIAL); una solicitud no es una entrada neta",
+  "tipo_rango": "sin rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-INM-GO-ELASTICIDAD",
@@ -347,7 +395,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto",
   "ficha": "output/v17/auditoria/filas/inmigracion.md",
-  "nota": "a posteriori; cociente de las cifras del resumen (precio +1,5 a +2,3 % anual según docs/v17/referencias/d2_versiones.md; central 2 %); la versión publicada (Wiley) no se leyó: cifras de resúmenes secundarios; comparar con Q3-c1-AKM0 y H4"
+  "nota": "a posteriori; cociente de las cifras del resumen (precio +1,5 a +2,3 % anual según docs/v17/referencias/d2_versiones.md; central 2 %); la versión publicada (Wiley) no se leyó: cifras de resúmenes secundarios; comparar con Q3-c1-AKM0 y H4",
+  "tipo_rango": "rango",
+  "cobertura": "España, provincias (2000-2010)"
  },
  {
   "id": "V17-AUD-DP-TIP-DELTA-TAE",
@@ -361,7 +411,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; min = media de 2023 menos media de 2021"
+  "nota": "a posteriori; min = media de 2023 menos media de 2021",
+  "tipo_rango": "rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-TIP-IPV-2022-2024",
@@ -375,7 +427,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; min = real (IPC general)"
+  "nota": "a posteriori; min = real (IPC general)",
+  "tipo_rango": "referencias",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-TIP-DELTA-POLITICA",
@@ -389,7 +443,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "sin rango",
+  "cobertura": "Zona del euro (tipo del BCE)"
  },
  {
   "id": "V17-AUD-DP-TIP-CALIBRACION-EFECTO-HIPOTECARIO",
@@ -403,7 +459,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; central = −5 %/pp × subida de la TAE media 2021→2023 (2,27 pp); rango con 2,27-2,51 pp y −5 a −9 %/pp; zona euro, no España; medida de precio no especificada en lo leído"
+  "nota": "a posteriori; central = −5 %/pp × subida de la TAE media 2021→2023 (2,27 pp); rango con 2,27-2,51 pp y −5 a −9 %/pp; zona euro, no España; medida de precio no especificada en lo leído",
+  "tipo_rango": "rango",
+  "cobertura": "España (elasticidades de la zona del euro)"
  },
  {
   "id": "V17-AUD-DP-TIP-CALIBRACION-EFECTO-POLITICA",
@@ -417,7 +475,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; extrapolación lineal de 1 pp a ≈ 4,5 pp: fuera del rango habitual de las estimaciones; comparar con el IPV real (+8,5 %)"
+  "nota": "a posteriori; extrapolación lineal de 1 pp a ≈ 4,5 pp: fuera del rango habitual de las estimaciones; comparar con el IPV real (+8,5 %)",
+  "tipo_rango": "rango",
+  "cobertura": "España (elasticidades internacionales)"
  },
  {
   "id": "V17-AUD-DP-TIP-CALIBRACION-DESCONTADO",
@@ -431,7 +491,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; (1 + observado) / (1 + efecto) − 1; BCE −5 a −9 %/pp × 2,27-2,51 pp; ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; no es un contrafactual identificado"
+  "nota": "a posteriori; (1 + observado) / (1 + efecto) − 1; BCE −5 a −9 %/pp × 2,27-2,51 pp; ignora el desfase de dos años, la bajada de 2024-2025 y los demás choques; no es un contrafactual identificado",
+  "tipo_rango": "rango",
+  "cobertura": "España (elasticidades de la zona del euro)"
  },
  {
   "id": "V17-AUD-DP-TIP-CALIBRACION-DESCONTADO-REAL",
@@ -445,7 +507,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; ver TIP-CALIBRACION-EFECTO-POLITICA"
+  "nota": "a posteriori; ver TIP-CALIBRACION-EFECTO-POLITICA",
+  "tipo_rango": "rango",
+  "cobertura": "España (elasticidades internacionales)"
  },
  {
   "id": "V17-AUD-DP-TIP-CALIBRACION-SOLO-HIPOTECA",
@@ -459,7 +523,9 @@
   "capa": "C4",
   "lectura_v17": "juicio experto (calibración)",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; cota inferior del efecto en valor absoluto: los compradores al contado también descuentan con el tipo (coste de oportunidad)"
+  "nota": "a posteriori; cota inferior del efecto en valor absoluto: los compradores al contado también descuentan con el tipo (coste de oportunidad)",
+  "tipo_rango": "rango",
+  "cobertura": "España (elasticidades de la zona del euro)"
  },
  {
   "id": "V17-AUD-DP-TIP-RDB-2021-2024",
@@ -473,7 +539,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/tipos.md",
-  "nota": "a posteriori; hogares EPA +790,875 (medias anuales)"
+  "nota": "a posteriori; hogares EPA +790,875 (medias anuales)",
+  "tipo_rango": "sin rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-BUR-GSADF-POTENCIA",
@@ -487,7 +555,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/burbuja.md",
-  "nota": "a posteriori; min = alternativa homocedástica; max = alternativa con saltos; tamaño 0,017-0,046: el contraste casi nunca detecta la alternativa simulada"
+  "nota": "a posteriori; min = alternativa homocedástica; max = alternativa con saltos; tamaño 0,017-0,046: el contraste casi nunca detecta la alternativa simulada",
+  "tipo_rango": "rango",
+  "cobertura": "Simulación con la estructura del factor común de Q9-g (provincias de V16)"
  },
  {
   "id": "V17-AUD-DP-BUR-CREDITO-FRENTE-2007",
@@ -501,7 +571,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/burbuja.md",
-  "nota": "a posteriori; min = último (% del PIB); max = media de 2007"
+  "nota": "a posteriori; min = último (% del PIB); max = media de 2007",
+  "tipo_rango": "referencias",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-BUR-PRECIO-RENTA-FRENTE-2007",
@@ -515,7 +587,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/burbuja.md",
-  "nota": "a posteriori; min = último (años de renta); max = 2007; 38.4 % sobre la media 1987-2025; mide precio por m² tasado, no IPV"
+  "nota": "a posteriori; min = último (años de renta); max = 2007; 38.4 % sobre la media 1987-2025; mide precio por m² tasado, no IPV",
+  "tipo_rango": "referencias",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-PRE-IPV-REAL-RENTA",
@@ -529,7 +603,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/precio.md",
-  "nota": "a posteriori; renta por hogar +27.9 %; min = deflactado por renta per cápita; IPV nominal +44.4 %, real IPC +18.7 %"
+  "nota": "a posteriori; renta por hogar +27.9 %; min = deflactado por renta per cápita; IPV nominal +44.4 %, real IPC +18.7 %",
+  "tipo_rango": "rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-PRE-TASADO-REAL-RENTA",
@@ -543,7 +619,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/precio.md",
-  "nota": "a posteriori; valor tasado nominal +29.6 %, real IPC +6.5 %"
+  "nota": "a posteriori; valor tasado nominal +29.6 %, real IPC +6.5 %",
+  "tipo_rango": "sin rango",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-PRE-COMPOSICION-PROVINCIAS",
@@ -557,7 +635,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/precio.md",
-  "nota": "a posteriori; 38 provincias sin muestra sellada v6; min = valor unitario; max = pesos fijos 2019; solo capta composición ENTRE provincias"
+  "nota": "a posteriori; 38 provincias sin muestra sellada v6; min = valor unitario; max = pesos fijos 2019; solo capta composición ENTRE provincias",
+  "tipo_rango": "referencias",
+  "cobertura": "España sin provincias ni CCAA selladas v6 (38 provincias con datos completos)"
  },
  {
   "id": "V17-AUD-DP-PRE-TASADO-ESTRATOS",
@@ -571,7 +651,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/precio.md",
-  "nota": "a posteriori; hasta 5 años +31.4 %; más de 5 años +29.6 %; si el total sube menos que ambos estratos, hay composición entre ellos"
+  "nota": "a posteriori; hasta 5 años +31.4 %; más de 5 años +29.6 %; si el total sube menos que ambos estratos, hay composición entre ellos",
+  "tipo_rango": "referencias",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-ALQ-IPC-REAL-RENTA",
@@ -585,7 +667,9 @@
   "capa": "C4",
   "lectura_v17": "hecho",
   "ficha": "output/v17/auditoria/filas/alquiler.md",
-  "nota": "a posteriori; max = nominal; real IPC -9.5 %"
+  "nota": "a posteriori; max = nominal; real IPC -9.5 %",
+  "tipo_rango": "referencias",
+  "cobertura": "España"
  },
  {
   "id": "V17-AUD-DP-ALQ-INCASOL-NUEVOS",
@@ -599,7 +683,9 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/alquiler.md",
-  "nota": "a posteriori; min = P10; max = P90; 514 municipios sin muestra sellada v6 con dato en 2019 y 2025; nominal; contratos nuevos, no vigentes"
+  "nota": "a posteriori; min = P10; max = P90; 514 municipios sin muestra sellada v6 con dato en 2019 y 2025; nominal; contratos nuevos, no vigentes",
+  "tipo_rango": "referencias",
+  "cobertura": "Cataluña, municipios con contratos en 2019 y 2025"
  },
  {
   "id": "V17-AUD-DP-ALQ-INCASOL-NUEVOS-POND",
@@ -613,6 +699,8 @@
   "capa": "C4",
   "lectura_v17": "OF",
   "ficha": "output/v17/auditoria/filas/alquiler.md",
-  "nota": "a posteriori; min = valor unitario (pesos de cada año); 514 municipios; IPC de alquiler de Cataluña (contratos vigentes) +8.6 %; nominal"
+  "nota": "a posteriori; min = valor unitario (pesos de cada año); 514 municipios; IPC de alquiler de Cataluña (contratos vigentes) +8.6 %; nominal",
+  "tipo_rango": "rango",
+  "cobertura": "Cataluña, municipios con contratos en 2019 y 2025"
  }
 ]

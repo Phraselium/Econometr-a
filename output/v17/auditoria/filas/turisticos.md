@@ -44,6 +44,8 @@ Script: src/v17/f3_demanda_precios.py.
 
 Conclusión: el denominador del 2,7 % es correcto y es el mismo que el del Banco de España. Lo que cambia es el numerador: flujo de cuatro años frente a stock. El 2,7 % publicado es correcto con su definición. La paráfrasis «≤ 2,7 % del parque de alquiler» es falsa si se lee como peso del parque, y así se lee.
 
+**Estacionalidad.** El dato de agosto (2024M08) recoge el máximo de verano. En febrero de 2024 el peso nacional es del 11,8 % y en agosto del 13,5 %: los cocientes de agosto son una cota alta del año.
+
 **3.2 Distribución local (2024M08; viviendas turísticas del INE como equivalente del alquiler del Censo 2021; secciones y municipios de provincias no selladas).**
 
 | Ámbito | P50 | P90 | P99 | N |
@@ -137,3 +139,8 @@ Confianza:
 - **Una sola cifra del Banco de España: aplicado.** Se usa el 11,8 % del DO 2432, cuadro A.3, p. 57, y se retira el «cerca del 10 %» del IA2025.
 - **Málaga: aplicado.** El 8,9 % es flujo y el 29,4 % es stock (3.2).
 - **Veredicto: rebatido, se mantiene «engañosa».** El dato entre paréntesis sigue mal descrito.
+
+## 9. Respuesta a la ronda 2
+
+- **Rótulo: aplicado.** Las distribuciones van rotuladas como «secciones de provincias no selladas»; desde esta ronda el script aplica además holdout.excluir_sellados_v6 (sin cambio de valores). El P90 sobre el total de viviendas de la sección es del 2,5 % (V17-AUD-DP-TUR-SEC-VIV-P90), y es la escala que se usa para la calibración de precio.
+- **Estacionalidad de agosto: aplicado.** Se añade antes de 3.2.

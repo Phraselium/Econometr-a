@@ -42,7 +42,7 @@ Script: src/v17/f3_demanda_precios.py.
 | Brecha restante IPV − media por m² | ≈ 14-15 pp | composición DENTRO de cada provincia (barrio, tamaño, estado) y el propio ajuste hedónico del IPV. No es «tasación frente a transacción»: las tres medias por m² (tasación, Notariado y Registradores) coinciden. Con agregados no se separa: haría falta microdato notarial |
 
 Conclusión:
-- **El sesgo identificable con agregados va en la dirección esperada:** la media sube menos porque se compra más en zonas y segmentos baratos. Pero explica solo una parte de la brecha: en torno a un tercio, en el valor unitario por transacciones.
+- **Con agregados, la composición no explica la brecha.** El valor unitario ponderado por transacciones (+24,4 %) sube menos que el índice de pesos fijos (+29,1 %). Pero las medias publicadas (tasación +29,6 %, Notariado +29,7 %, Registradores +29,2 %) son casi iguales a ese índice de pesos fijos, no al valor unitario. Además, el cálculo excluye Madrid, Baleares y Canarias (bloques sellados v6). La brecha de ≈ 14-15 puntos con el IPV no se puede atribuir a la composición con estos datos.
 - **El resto no se puede atribuir con estos datos.** No se afirma que todo sea composición.
 
 **3.3 Variación real deflactada por renta y no solo por IPC.**
@@ -69,11 +69,11 @@ Las medias anuales difieren ligeramente de las cifras publicadas (+30,4 % y +7,1
 
 ## 6. Texto corregido y confianza
 
-> «El precio ha subido un X %»: una vivienda de las mismas características cuesta hoy un 44 % más que en 2019 (índice del INE), un 19 % más descontada la inflación y un 13 % más en relación con la renta de los hogares. El precio medio por m² sube menos (+30 % nominal, +7 % real). Mide lo que se vende cada año, y una parte de la diferencia se debe a que se vende más en provincias más baratas; el resto no está medido. Para saber cuánto se ha encarecido la vivienda, la referencia es el índice. La media por m² dice cuánto pagan de media los compradores, que en parte se han desplazado hacia lo más barato.
+> «El precio ha subido un X %»: una vivienda de las mismas características cuesta hoy un 44 % más que en 2019 (índice del INE), un 19 % más descontada la inflación y un 13 % más en relación con la renta de los hogares. El precio medio por m² sube menos (+30 % nominal, +7 % real). Mide lo que se vende cada año, sin ajustar por sus características; por qué sube menos no está medido. Para saber cuánto se ha encarecido la vivienda, la referencia es el índice. La media por m² dice cuánto pagan de media por m² los compradores de cada año.
 
 Confianza:
 - IPV como medida de referencia: **la evidencia indica** (práctica estadística estándar);
-- parte de la brecha debida a composición: **la evidencia sugiere** (entre provincias, ≈ 5 pp; el resto no se ha medido).
+- que la brecha se deba a la composición: **la evidencia no permite concluir**.
 
 ## 7. Parada
 
@@ -85,3 +85,10 @@ No hay parada. Las cifras publicadas son correctas. La frase «quien elige la ci
 - **Rótulo [C4] del IPV: se mantiene.** En la capa del proyecto el IPV es [C4] por ser de fuente única, y no cambia. En la lectura V17 (B1) es «OF»: estadística oficial. Se cita como referencia por método, no por capa.
 - **«Tasación frente a transacción»: aplicado, se quita.** Las tres medias por m² coinciden (29,2-29,7 % con medias anuales).
 - **Veredicto: aplicado.** Pasa a «se sostiene con matices». La falsa equivalencia queda como matiz: la advertencia es válida, pero para la variación del precio hay una medida de referencia.
+
+## 9. Respuesta a la ronda 2
+
+- **Atribución a la composición: aplicado.** Se retiran del texto corregido y de la conclusión de 3.2 «se vende más en provincias más baratas» y «en torno a un tercio». Las medias publicadas coinciden con el índice de pesos fijos, no con el valor unitario, y el cálculo excluye Madrid, Baleares y Canarias.
+- **Confianza sobre la composición: aplicado.** Pasa a «la evidencia no permite concluir».
+- **Hecho afectado.** V17-AUD-DP-PRE-COMPOSICION-PROVINCIAS se mantiene como cálculo descriptivo, sin cambio de valor; ya no se usa como explicación.
+- **Veredicto: sin cambio.** Sigue «se sostiene con matices».

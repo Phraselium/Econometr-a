@@ -2,6 +2,10 @@
 
 Sin lenguaje causal ni estimaciones nuevas de efectos. Sin red. SEED 20261010. Con la base (data/base/hechos.parquet) se filtra siempre
 muestra_sellada_v6 == False; no se lee data/sealed ni se ejecuta evaluate_*. Los datos crudos de data/raw se leen en solo lectura.
+Guarda de fuga v6 (docs/v17/decisiones.md, K5): toda tabla por CCAA, provincia o municipio pasa por holdout.excluir_sellados_v6()
+(ocho CCAA de K8 y sus provincias y municipios). Excepción declarada: las series que solo se SUMAN para reconstruir el total
+nacional (nacidos por provincia, MNP y EVR municipales) se leen completas, porque su resultado es el agregado nacional publicado
+por el INE (nivel «nacional» de la guarda) y no se usa ningún detalle territorial.
 Uso: python3 src/v17/d3_cuantitativo.py
 Salidas: output/v17/d3/*.csv, informe.md, hechos.json, registro.csv
 """
@@ -18,6 +22,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from src.econ_utils import Registry  # noqa: E402
+from src import holdout  # noqa: E402
 
 SEED = 20261010
 OUT = ROOT / "output" / "v17" / "d3"
@@ -49,12 +54,20 @@ def num(s: pd.Series) -> pd.Series:
 
 
 def selladas() -> set[str]:
-    d = duckdb.sql(f"select distinct territorio_codigo c from '{HECHOS_BASE}' where nivel='provincia' and muestra_sellada_v6").df()
-    return set(d.c)
+    """Provincias de los bloques sellados de v6 (src/holdout.py); coincide con las marcadas en la base."""
+    return set(holdout.provincias_selladas_v6())
+
+
+def sin_selladas(df: pd.DataFrame, col: str, nivel: str) -> pd.DataFrame:
+    return holdout.excluir_sellados_v6(df, col, nivel)
 
 
 def base(variable: str, nivel: str, freq: str) -> pd.DataFrame:
-    return duckdb.sql(f"select territorio_codigo c, periodo p, valor v from '{HECHOS_BASE}' where variable='{variable}' and nivel='{nivel}' "
+    return _base(variable, nivel, freq)
+
+
+def _base(variable: str, nivel: str, freq: str) -> pd.DataFrame:
+    d = duckdb.sql(f"select territorio_codigo c, periodo p, valor v from '{HECHOS_BASE}' where variable='{variable}' and nivel='{nivel}' "
                       f"and frecuencia='{freq}' and not muestra_sellada_v6").df()
 
 

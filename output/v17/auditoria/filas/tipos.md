@@ -56,7 +56,7 @@ Script: src/v17/f3_demanda_precios.py. Serie: data/processed/v8/nacional_q_v8.cs
 | Calza, Monacelli y Stracca (2013), reescalado por Williams (2015) | interbancario a 3 meses | real | −2,3 | 4,5 pp (facilidad de depósito, 2021T4-2023T4) | −10,4 % |
 | Williams (2015), con Jordà, Schularick y Taylor (2015) | corto | real | −6,3 | 4,5 pp | −28,4 % |
 
-- **Tipo hipotecario.** El efecto calibrado va de −11,4 % a −22,6 % (V17-AUD-DP-TIP-CALIBRACION-EFECTO-HIPOTECARIO). Descontado ese efecto, la variación nominal del IPV de 2021T4-2024T4 queda entre +38,0 % y +58,0 %, frente al +22,3 % observado (V17-AUD-DP-TIP-CALIBRACION-DESCONTADO).
+- **Tipo hipotecario.** El efecto calibrado va de −11,4 % a −22,6 % (V17-AUD-DP-TIP-CALIBRACION-EFECTO-HIPOTECARIO). Descontado ese efecto, la variación nominal del IPV de 2021T4-2024T4 queda entre +38,0 % y +58,0 %, frente al +22,3 % observado (V17-AUD-DP-TIP-CALIBRACION-DESCONTADO). No es un contrafactual identificado. Este resultado nominal es PROVISIONAL: en lo leído no consta si la semielasticidad del BCE se refiere al precio real o al nominal. Si es real, la comparación correcta es con el IPV real (+8,5 %).
 - **Tipo de política.** El efecto calibrado sobre el precio real va de −10,4 % a −28,4 % (V17-AUD-DP-TIP-CALIBRACION-EFECTO-POLITICA). Descontado, el IPV real queda entre +21,1 % y +51,5 %, frente al +8,5 % observado. Es una extrapolación lineal de 1 a 4,5 puntos, fuera del rango en que se estimaron estas elasticidades.
 - **Transmisión solo al 52 % de compras con hipoteca.** Efecto de −5,9 % a −11,7 % (V17-AUD-DP-TIP-CALIBRACION-SOLO-HIPOTECA). Es una cota inferior en valor absoluto, porque el comprador al contado también descuenta con el tipo.
 
@@ -72,7 +72,7 @@ Lectura: con cualquiera de esas elasticidades, el aumento observado es compatibl
 - 2021-2025: «los tipos suben y el precio también (+25,0 %): signo contrario».
 - La 1.0 lo rotula C4, como cota condicional a supuestos del coste de uso.
 
-**3.1 ter Comparación con la zona euro.** Con la misma subida de tipos de política, los precios de la zona euro cayeron en torno a un 3 % en año y medio (BCE, Boletín Económico 2/2025; extraído por conversor). En España, el IPV subió un 22,3 % nominal entre 2021T4 y 2024T4. Ante el mismo choque monetario, la diferencia apunta a factores propios de España (hogares, renta, oferta y una menor dependencia del crédito), sin identificarlos.
+**3.1 ter Comparación con la zona euro (solo contexto, no homogénea).** El BCE (Boletín Económico 2/2025; extraído por conversor) describe una caída acumulada del precio medio de la zona euro de ≈ 3 % en ≈ 1,5 años, con caídas en 12 países. Esa ventana (1,5 años, desde el máximo) y ese agregado no son comparables con el +22,3 % del IPV español en 2021T4-2024T4 (3 años). No se usa en el texto corregido. Una comparación homogénea, con el mismo periodo y el índice de Eurostat para la zona euro y para España, queda pendiente.
 
 **3.2 Banco de España y BCE.**
 - No se encontró ningún documento del Banco de España con un efecto por cada 100 pb sobre el precio o las compraventas en España (docs/v17/referencias/bde_bce_documentos.md).
@@ -98,7 +98,7 @@ Lectura: con cualquiera de esas elasticidades, el aumento observado es compatibl
 
 ## 6. Texto corregido y confianza
 
-> «Con los tipos altos bajarán los precios»: en 2022-2024 subieron los tipos y también los precios, así que no bajaron. Eso no significa que los tipos no influyan. Con las elasticidades de la zona euro, la subida de unos 2,5 puntos del tipo hipotecario equivale a restar al precio entre un 11 % y un 23 % a unos dos años; es una calibración, no una estimación para España. En 2023 cayeron el crédito y las compraventas. A la vez crecían los hogares y la renta, y se terminaban unas 90.000 viviendas al año, frente a más de 200.000 hogares nuevos. Cerca de la mitad de las compras no usa hipoteca. En la zona euro, con la misma subida, los precios cayeron en torno a un 3 %.
+> «Con los tipos altos bajarán los precios»: en 2022-2024 subieron los tipos y también los precios, así que no bajaron. Eso no significa que los tipos no influyan. Con las elasticidades de la zona euro, la subida de unos 2,5 puntos del tipo hipotecario equivale a restar al precio entre un 11 % y un 23 % a unos dos años; es una calibración, no una estimación para España. En 2023 cayeron el crédito y las compraventas. A la vez crecían los hogares y la renta, y se terminaban unas 90.000 viviendas al año, frente a más de 200.000 hogares nuevos. Cerca de la mitad de las compras no usa hipoteca.
 
 Confianza:
 - signo negativo del efecto de los tipos sobre el precio: **la evidencia indica** (zona euro);
@@ -117,3 +117,10 @@ No hay parada. La 1.0 no afirma que los tipos no afecten al precio. Dice que el 
 - **Texto corregido: aplicado.** Sin el «porque» causal; «apenas se construía» pasa a ≈ 90.000 terminadas al año.
 - **Comparaciones nuevas: aplicado.** Se añaden el cálculo de la 1.0 con el coste de uso (3.1 bis) y la zona euro, con una caída de ≈ 3 % (3.1 ter).
 - **Veredicto: aplicado.** Pasa a «se sostiene con matices», porque la lectura auditada es la literal; se mantiene la advertencia de uso engañoso.
+
+## 9. Respuesta a la ronda 2
+
+- **Zona euro: aplicado.** La comparación mezclaba ventanas (1,5 frente a 3 años) y un agregado con 12 países en caída, así que se retira del texto corregido y queda en 3.1 ter como contexto no homogéneo.
+- **Resultado nominal: aplicado.** Se declara provisional mientras no conste la medida de precio del BCE.
+- **Contrafactual: aplicado.** «No es un contrafactual identificado» va junto a la cifra descontada.
+- **Veredicto: sin cambio.**

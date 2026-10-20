@@ -29,7 +29,7 @@ Análisis a posteriori (V17). Ficha de auditoría de la fila «burbuja» (D1, di
 **En contra.**
 - **«No hay exuberancia estadística» se apoya en contrastes cuya potencia no se ha medido, o es baja.**
   - **GSADF nacional y regional de V7.2** (la base de «0 tras el ajuste»): su potencia NO se ha calculado. Solo se conoce su tamaño: 4 % con bootstrap AR (R1B-G-tam-corr). No se calcula aquí porque exige un Monte Carlo con bootstrap anidado (queda como tarea).
-  - **Q9-g** (factor común, V16): en su Monte Carlo rechaza la alternativa explosiva simulada un 6,4 % de las veces sin saltos y un 13,2 % con saltos (V17-AUD-DP-BUR-GSADF-POTENCIA). Aun así, Q9-g SÍ rechazó: 5,9 frente a un valor crítico de 3,3 (p = 0,004 sin ajuste; q = 0,306 tras el ajuste múltiple).
+  - **Q9-g** (factor común, V16): en su Monte Carlo rechaza la alternativa explosiva simulada un 6,4 % de las veces sin saltos y un 13,2 % con saltos (V17-AUD-DP-BUR-GSADF-POTENCIA). Q9-g rechazó sin ajuste (5,9 frente a un valor crítico de 3,3), pero no tras el ajuste múltiple (q = 0,306). No se usa como apoyo de que haya exuberancia; solo muestra que «no hay» resume un resultado mixto.
   - Con T = 78-98, un no rechazo es poco informativo.
   - La 1.0 lo dice: «la ausencia no demuestra alineación con los fundamentales» (informe integral, VII.1).
 - **Sí hay rechazos sin ajuste.**
@@ -77,12 +77,12 @@ Script: src/v17/f3_demanda_precios.py (lee output/v16/montecarlo/gsadf_factor/re
 
 **Engañosa.**
 - La primera mitad se sostiene: no se puede afirmar «hay burbuja» ni «no hay burbuja», y el Banco de España tampoco lo hace.
-- La segunda mitad, «no hay exuberancia estadística», presenta como hecho la falta de rechazo tras el ajuste, con contrastes cuya potencia no se ha medido (V7.2) o es baja (Q9-g, 6-13 %). Omite que hay rechazos sin ajuste, entre ellos el de Q9-g.
+- La segunda mitad, «no hay exuberancia estadística», presenta como hecho la falta de rechazo tras el ajuste, con contrastes cuya potencia no se ha medido (V7.2) o es baja (Q9-g, 6-13 %). Omite que hay rechazos sin ajuste múltiple, aunque no sobreviven a él.
 - La frase calla lo que sí se puede afirmar con los indicadores del Banco de España: una sobrevaloración moderada y creciente frente a la renta, sin el desequilibrio de crédito de 2007.
 
 ## 6. Texto corregido y confianza
 
-> «Hay burbuja» / «no hay burbuja»: ninguna de las dos se puede afirmar, porque no hay forma de identificar una burbuja con estos datos. Lo que sí se puede decir, con los indicadores del Banco de España, es otra cosa. A finales de 2025, con cuatro métodos y una incertidumbre alta, el precio estaba entre un 10 % y un 15 % por encima de su nivel de equilibrio estimado frente a la renta y los tipos. Es un nivel parecido al de 2004, lejos del 24 % de 2007, y va en aumento. A diferencia de 2007, el saldo de crédito es bajo: el 30 % del PIB, frente al 59 %. Pero el crédito nuevo crece con fuerza (+22 % en 2025) y aumentan los préstamos con LTV alto. Nuestros contrastes de exuberancia no dan señal tras corregir por pruebas múltiples, pero apenas tienen potencia, así que eso no prueba que no la haya.
+> «Hay burbuja» / «no hay burbuja»: ninguna de las dos se puede afirmar, porque no hay forma de identificar una burbuja con estos datos. Lo que sí se puede decir, con los indicadores del Banco de España, es otra cosa. A finales de 2025, con cuatro métodos y una incertidumbre alta, el precio estaba entre un 10 % y un 15 % por encima de su nivel de equilibrio estimado frente a la renta y los tipos. Es un nivel parecido al de 2004, lejos del 24 % de 2007, y va en aumento. A diferencia de 2007, el saldo de crédito es bajo: el 30 % del PIB, frente al 59 %. Pero el crédito nuevo crece con fuerza (+22 % interanual en 2025T4) y aumentan los préstamos con LTV alto. Nuestros contrastes de exuberancia no dan señal tras corregir por pruebas múltiples, pero su potencia no se ha medido, salvo en Q9-g, donde es muy baja; eso no prueba que no la haya.
 
 Confianza:
 - sobrevaloración moderada frente a la renta: **la evidencia sugiere** (rango entre métodos del Banco de España; los métodos no incluyen la oferta);
@@ -100,3 +100,10 @@ No hay parada. La 1.0 (informe integral, VII.1; lo_que_sabemos.md) dice que ning
 - **Lenguaje del Banco de España: aplicado.** El desequilibrio pasa a «por encima de su nivel de equilibrio estimado, cuatro métodos, incertidumbre alta».
 - **lo_que_sabemos.md:58: aplicado.** Se cita en la sección de parada.
 - **Veredicto: se mantiene «engañosa».**
+
+## 9. Respuesta a la ronda 2
+
+- **Potencia: aplicado.** «Su potencia no se ha medido, salvo en Q9-g, donde es muy baja» sustituye a «apenas tienen potencia».
+- **Q9-g: aplicado.** Su p sin ajustar deja de usarse como apoyo; se dice que no sobrevive al ajuste (q = 0,306).
+- **Crédito nuevo: aplicado.** La cifra se rotula «+22 % interanual en 2025T4».
+- **Veredicto: sin cambio.**

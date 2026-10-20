@@ -14,11 +14,15 @@ Uso: python3 src/v17/f3_demanda_precios.py  ->  output/v17/auditoria/demanda_pre
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import duckdb
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from holdout import excluir_sellados_v6  # noqa: E402
 
 SEED = 20261010
 np.random.seed(SEED)
@@ -68,10 +72,13 @@ def hecho(id_, indicador, valor, unidad, periodo, fuentes, lectura, ficha, minim
                    "ficha": f"{PREG if pregunta else FICHAS}/{ficha}.md", "nota": "a posteriori" + (f"; {nota}" if nota else "")})
 
 
-def base(sql_where: str) -> pd.DataFrame:  # noqa: D401
-    """Lee la base SIN las filas de la muestra sellada v6."""
-    return duckdb.sql(f"select territorio_codigo c, nivel, variable v, periodo p, valor from '{BASE}' "
-                      f"where {sql_where} and not muestra_sellada_v6").df()
+def base(sql_where: str) -> pd.DataFrame:
+    """Lee la base SIN la muestra sellada v6: filtro de la base y guarda de fuga v6 (holdout.excluir_sellados_v6, K5),
+    que también excluye las CCAA selladas y sus provincias, municipios, distritos y secciones."""
+    d = duckdb.sql(f"select territorio_codigo c, nivel, variable v, periodo p, valor from '{BASE}' "
+                   f"where {sql_where} and not muestra_sellada_v6").df()
+    partes = [excluir_sellados_v6(g, "c", n) for n, g in d.groupby("nivel")]
+    return pd.concat(partes) if partes else d
 
 
 def pct(s: pd.Series, qs=(0.5, 0.9, 0.99)) -> list[float]:
@@ -251,7 +258,7 @@ def inmigracion() -> dict:
           cuota_lat, "% de la variación del grupo", "1-1-2015 a 1-1-2025", "output/v17/d3/demografia_grupos_nacionalidad.csv (INE, población por nacionalidad)",
           "hecho", "D3-1", nota=(f"población de nacionalidad sudamericana +{sud:.0f} %; nacionalidad, no país de nacimiento (las nacionalizaciones "
                                  "salen del recuento); Europa no se incluye por ruptura de la serie en 2021"), pregunta=True)
-    asi = duckdb.sql(f"select substr(periodo,1,4) a, sum(valor) v from '{BASE}' where variable='asilo_solicitantes' "
+    asi = duckdb.sql(f"select substr(periodo,1,4) a, sum(valor) v from '{BASE}' where variable='asilo_solicitantes' and nivel='nacional' "
                      "and desagregacion='nacionalidad=TOTAL' and not muestra_sellada_v6 group by 1 order by 1").df().set_index("a").v
     asi_1925 = float(asi.loc["2019":"2025"].sum())
     hecho("D31-ASILO-2019-2025", "Solicitantes de protección internacional en España, suma 2019-2025", asi_1925, "personas (solicitudes)", "2019-2025",
@@ -446,9 +453,54 @@ def alquiler() -> dict:
     return res
 
 
+ESP_NS = "España sin provincias ni CCAA selladas v6 (secciones censales)"
+RANGO_COBERTURA = {   # id -> (tipo_rango, cobertura territorial real)
+    "TUR-NAC-AUMENTO-2020-2024": ("rango", "España"), "TUR-NAC-STOCK-2024M08": ("rango", "España"),
+    "TUR-NAC-STOCK-2024M02": ("sin rango", "España"), "TUR-NAC-STOCK-2026M05": ("sin rango", "España"),
+    "TUR-SEC-P50": ("sin rango", ESP_NS), "TUR-SEC-P90": ("sin rango", ESP_NS), "TUR-SEC-P99": ("sin rango", ESP_NS),
+    "TUR-SEC-AGREGADO": ("sin rango", ESP_NS), "TUR-SEC-ALQ-EN-ALTA": ("referencias", ESP_NS),
+    "TUR-SEC-VIV-P90": ("referencias", ESP_NS), "TUR-SEC-AUMENTO-P90": ("referencias", ESP_NS),
+    "TUR-SEC-P90-2026M05": ("referencias", ESP_NS),
+    "TUR-MUN-P90": ("referencias", "España sin provincias ni CCAA selladas v6 (municipios, suma de secciones)"),
+    "TUR-IAB-SEC-P90": ("referencias", "Áreas rastreadas por Inside Airbnb fuera de los bloques sellados v6 (secciones)"),
+    "TUR-GL-ALQ-NAC": ("rango", "España (densidad); elasticidad de Barcelona"),
+    "TUR-GL-ALQ-SEC-P50": ("rango", ESP_NS + "; elasticidad de Barcelona"),
+    "TUR-GL-ALQ-SEC-P90": ("rango", ESP_NS + "; elasticidad de Barcelona"),
+    "TUR-GL-ALQ-SEC-P99": ("rango", ESP_NS + "; elasticidad de Barcelona"),
+    "TUR-GL-FRENTE-H3": ("rango", "Secciones de la muestra de entrenamiento de H3 (V15); elasticidad de Barcelona"),
+    "INM-CUOTA-ALQUILER-EXTR": ("sin rango", "España (Censo 2021, muestra del 10 %)"),
+    "INM-ALQUILER-LLEGADA-RECIENTE": ("referencias", "España (Censo 2021, muestra del 10 %)"),
+    "INM-ALQUILER-NUEVO-CONTABLE": ("rango", "España"),
+    "D31-LATAM-CUOTA": ("sin rango", "España"), "D31-ASILO-2019-2025": ("sin rango", "España"),
+    "INM-GO-ELASTICIDAD": ("rango", "España, provincias (2000-2010)"),
+    "TIP-DELTA-TAE": ("rango", "España"), "TIP-IPV-2022-2024": ("referencias", "España"),
+    "TIP-DELTA-POLITICA": ("sin rango", "Zona del euro (tipo del BCE)"),
+    "TIP-CALIBRACION-EFECTO-HIPOTECARIO": ("rango", "España (elasticidades de la zona del euro)"),
+    "TIP-CALIBRACION-EFECTO-POLITICA": ("rango", "España (elasticidades internacionales)"),
+    "TIP-CALIBRACION-DESCONTADO": ("rango", "España (elasticidades de la zona del euro)"),
+    "TIP-CALIBRACION-DESCONTADO-REAL": ("rango", "España (elasticidades internacionales)"),
+    "TIP-CALIBRACION-SOLO-HIPOTECA": ("rango", "España (elasticidades de la zona del euro)"),
+    "TIP-RDB-2021-2024": ("sin rango", "España"),
+    "BUR-GSADF-POTENCIA": ("rango", "Simulación con la estructura del factor común de Q9-g (provincias de V16)"),
+    "BUR-CREDITO-FRENTE-2007": ("referencias", "España"), "BUR-PRECIO-RENTA-FRENTE-2007": ("referencias", "España"),
+    "PRE-IPV-REAL-RENTA": ("rango", "España"), "PRE-TASADO-REAL-RENTA": ("sin rango", "España"),
+    "PRE-COMPOSICION-PROVINCIAS": ("referencias", "España sin provincias ni CCAA selladas v6 (38 provincias con datos completos)"),
+    "PRE-TASADO-ESTRATOS": ("referencias", "España"),
+    "ALQ-IPC-REAL-RENTA": ("referencias", "España"),
+    "ALQ-INCASOL-NUEVOS": ("referencias", "Cataluña, municipios con contratos en 2019 y 2025"),
+    "ALQ-INCASOL-NUEVOS-POND": ("rango", "Cataluña, municipios con contratos en 2019 y 2025"),
+}
+
+
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     r = {"turisticos": turisticos(), "inmigracion": inmigracion(), "tipos": tipos(), "burbuja": burbuja(), "precio": precio(), "alquiler": alquiler()}
+    for h in HECHOS:
+        k = h["id"].replace("V17-AUD-DP-", "")
+        tr, cob = RANGO_COBERTURA[k]
+        if h["min"] is None or h["max"] is None:
+            tr = "sin rango"
+        h["tipo_rango"], h["cobertura"] = tr, cob
     ids = [h["id"] for h in HECHOS]
     assert len(ids) == len(set(ids))
     (OUT / "demanda_precios_hechos.json").write_text(json.dumps(HECHOS, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

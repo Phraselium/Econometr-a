@@ -87,7 +87,7 @@ Script: src/v17/f3_demanda_precios.py (sin red, SEED 20261010, sin muestra sella
 
 | Referencia | Estado | Lectura |
 |---|---|---|
-| González y Ortega (2013), J. Regional Science 53(1), 37-59, DOI 10.1111/jors.12010 | VERIFICADA (Crossref, consulta 2026-10-19; cuartil no verificado) | resumen (Crossref). Corrige D2: la versión publicada cubre 2000-2010 y dice «una cuarta parte» del precio; «un tercio» es de la versión IZA 2009 |
+| González y Ortega (2013), J. Regional Science 53(1), 37-59, DOI 10.1111/jors.12010 | VERIFICADA (DOI y metadatos comprobados en api.crossref.org el 2026-10-19: título, autores, revista, volumen 53(1), pp. 37-59; también en docs/v15/literatura/crossref_cache.json vía P4; cuartil no verificado). Contenido: solo resúmenes secundarios (la versión de Wiley no se leyó) | resumen (Crossref). Corrige D2: la versión publicada cubre 2000-2010 y dice «una cuarta parte» del precio; «un tercio» es de la versión IZA 2009 |
 | Saiz (2007), JUE 61(2), DOI 10.1016/j.jue.2006.07.004 | VERIFICADA | resumen |
 | Larkin et al. (2019), J. Housing Economics 46, DOI 10.1016/j.jhe.2019.04.002 | VERIFICADA | resumen |
 | Sá (2015), Economic Journal 125(587), DOI 10.1111/ecoj.12158 | VERIFICADA | resumen |
@@ -126,3 +126,9 @@ No hay parada. La frase de D1 no figura en publicacion/. La 1.0 (informe integra
 - **Confianza contable: aplicado.** El reparto por origen pasa a «es compatible con» (tope al 100 %, orden del Shapley, composición ≈ −97.000).
 - **«Sobre todo de alquiler»: aplicado.** Se sustituye por la proporción con su denominador: 38,3 % de los hogares de nacidos fuera frente a 12,2 % de los nacidos en España.
 - **Matiz que no se retira.** Torres-Téllez y Montero-Soler refuerzan que el signo depende de la fase, pero no de la escala. A escala provincial, el efecto del aumento de población en la fase de entrada es positivo en todos los trabajos españoles leídos.
+
+## 9. Respuesta a la ronda 2
+
+- **Estado de González y Ortega (2013): unificado.** Es VERIFICADA en cuanto a la referencia: el DOI 10.1111/jors.12010 se comprobó en Crossref el 2026-10-19 (título, autores, revista y páginas coinciden). La diferencia con d2_versiones.md, donde figura como NO VERIFICADA, es de criterio: allí se rotula el contenido, que solo se conoce por resúmenes porque la versión de Wiley no se leyó.
+- **Respaldo de la frase: aplicado.** La afirmación cuantitativa («en torno a una cuarta parte») se apoya también en el documento de trabajo de 2011, leído en su texto: 25 % del aumento de precios en 2000-2010, conclusiones (d2_versiones.md).
+- **Torres-Téllez y Montero-Soler (2023): aplicado.** Pasan a ser evidencia de simetría: la inmigración eleva el precio en la fase de entrada y su retorno lo reduce en la de salida, con el mismo mecanismo de población. No son un signo contrario. El texto de la sección 2 se mantiene, con esta lectura.

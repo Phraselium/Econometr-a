@@ -50,6 +50,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F4 | abogado-del-diablo | ronda 1 B6: E2-R1, E2-R1c, E8-R1 | 119.872 | docs/v18/revision_estimaciones/ronda1_e2_e8.md |
 | 2026-10-20 | F4 | replicador-ciego | réplica ciega E2-R1 (coincide) y E8-R1 (coincide) | 165.658 | src/v18/replica/; output/v18/replica/ |
 | 2026-10-20 | F4 | modelizador | E7-R3/A1 BVAR (MC NO APTO; informativas), E4, E10-E12 | 365.382 | src/v18/estimacion/{e7_bvar*,e4_e10_e12}.py; output/v18/estimacion/{e7_bvar,e4,e10,e11,e12}/ |
+| 2026-10-20 | F4 | modelizador | E1 turismo (R3 ASOCIACIÓN, R4 nulo acotado SUGESTIVO, resto NO ESTIMABLE) y E6 obra nueva (NO ESTIMABLE) | 635.935 | src/v18/estimacion/{e1,e6}_*.py; output/v18/estimacion/{e1,e6}/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -57,8 +58,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F1 | 1.630.684 |
 | F2 | 183.117 |
 | F3 | 985.262 |
-| F4 | 3.416.443 |
+| F4 | 4.052.378 |
 
-Total V18: 6.475.139 tokens
+Total V18: 7.111.074 tokens
 
 <!-- fin subagentes -->

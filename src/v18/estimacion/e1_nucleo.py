@@ -95,8 +95,8 @@ def iv_ajustar(df: pd.DataFrame, y: str, x: str, z: str, extra: np.ndarray | Non
     np.add.at(sc2, cl_, Z[:, 0] * e2)
     se_rf = float(np.sqrt((sc2 ** 2).sum() * G / (G - 1)) / (Z[:, 0] @ Z[:, 0]))
     q = stats.t.ppf(0.975, G - 1)
-    return {"beta": float(beta[0]), "se": se, "p_t": float(2 * stats.t.sf(abs(beta[0] / se), G - 1)), "ic_t": (float(beta[0] - q * se), float(beta[0] + q * se)), "F_efectivo": f,
-            "ar_ic": ic, "p_ar": float(p_ar), "pi": pi, "se_pi": se_pi, "rf": rf, "se_rf": se_rf, "p_rf": float(2 * stats.t.sf(abs(rf / se_rf), G - 1)), "G": G, "n": M.n,
+    return {"beta": float(beta[0]), "se": se, "p_t": float(2 * stats.t.sf(abs(beta[0] / se), G - 1)) if se > 0 else float("nan"), "ic_t": (float(beta[0] - q * se), float(beta[0] + q * se)), "F_efectivo": f,
+            "ar_ic": ic, "p_ar": float(p_ar), "pi": pi, "se_pi": se_pi, "rf": rf, "se_rf": se_rf, "p_rf": float(2 * stats.t.sf(abs(rf / se_rf), G - 1)) if se_rf > 0 else float("nan"), "G": G, "n": M.n,
             "A": A, "C": C, "cl": cl_, "Zt": Z[:, 0], "Xt": X[:, 0], "Yt": Y, "modelo": M}
 
 
@@ -164,12 +164,32 @@ def mde_ols(M: "K.Modelo", pool: PoolResiduos, unidad_obs: np.ndarray, t_obs: np
         b0[h:h + m], se0[h:h + m] = bb, se
         h += m
     sd = float(b0.std(ddof=1))
-    grid = np.linspace(0, 6 * max(sd, 1e-9) + q * float(np.median(se0)) * 2, 3001)
-    pot = np.array([np.mean(np.abs(b0 + t) / se0 > q) for t in grid])
-    ok = np.where(pot >= 0.8)[0]
-    mde = float(grid[ok[0]]) if len(ok) else float("nan")
-    return {"mde80": mde, "sd_beta_placebo": sd, "se_mediana": float(np.median(se0)), "tamano_nominal": float(np.mean(np.abs(b0) / se0 > q)), "R": int(R),
-            "sigma_residual_previo": pool.sd}
+    t0 = np.abs(b0) / se0
+    crit_emp = float(np.quantile(t0, 0.95))
+
+    def mde_con(crit: float) -> float:
+        grid = np.linspace(0, 8 * max(sd, 1e-9) + crit * float(np.median(se0)) * 2, 3001)
+        pot = np.array([np.mean(np.abs(b0 + t) / se0 > crit) for t in grid])
+        ok = np.where(pot >= 0.8)[0]
+        return float(grid[ok[0]]) if len(ok) else float("nan")
+
+    nominal, corregido = mde_con(q), mde_con(max(q, crit_emp))
+    return {"mde80": float(np.nanmax([nominal, corregido])), "mde80_nominal": nominal, "mde80_corregido_tamano": corregido, "sd_beta_placebo": sd, "se_mediana": float(np.median(se0)),
+            "tamano_nominal": float(np.mean(t0 > q)), "critico_empirico": crit_emp, "R": int(R), "sigma_residual_previo": pool.sd}
+
+
+def tamano_webb(d: pd.DataFrame, dcol: str, extra: np.ndarray | None, pool: PoolResiduos, unidad_obs: np.ndarray, t_obs: np.ndarray, T: int, R: int = 400, B: int = 499,
+                semilla: int = SEMILLA, unit: str = "u", time: str = "t", cluster: str = "cl") -> dict:
+    """Tamaño al 5 % del wild cluster bootstrap de Webb (nulo impuesto) del diseño REAL con el ruido remuestreado del periodo previo (R réplicas, B réplicas bootstrap)."""
+    rng = np.random.default_rng(semilla)
+    rej = 0
+    ps = np.empty(R)
+    for r in range(R):
+        E = pool.sortear(rng, T)
+        y = E[unidad_obs, t_obs]
+        M = K.Modelo(y, d[dcol].values, d[unit].values, d[time].values, extra=extra, cluster=d[cluster].values)
+        ps[r] = M.webb_p(0.0, B, rng)
+    return {"tamano_webb_5pct": float(np.mean(ps < 0.05)), "R_webb": int(R), "B_webb": int(B)}
 
 
 def mde_iv_ar(res: dict, pool: PoolResiduos, unidad_obs: np.ndarray, t_obs: np.ndarray, T: int, R: int = 2000, semilla: int = SEMILLA, lote: int = 100) -> dict:
@@ -182,7 +202,7 @@ def mde_iv_ar(res: dict, pool: PoolResiduos, unidad_obs: np.ndarray, t_obs: np.n
     C = np.zeros(G)
     np.add.at(C, cl, Zt * Xt)
     crit = stats.chi2.ppf(0.95, 1) * G / (G - 1)
-    Ae = np.empty((R, G))
+    Ae = np.zeros((R, G))
     h = 0
     while h < R:
         m = min(lote, R - h)
@@ -196,8 +216,8 @@ def mde_iv_ar(res: dict, pool: PoolResiduos, unidad_obs: np.ndarray, t_obs: np.n
             np.add.at(Ae[h + j], cl, Zt * Yt[:, j])
         h += m
     cs = C.sum()
-    scale = float(np.sqrt((Ae.sum(1) ** 2).mean()) / max(abs(cs), 1e-12))
-    grid = np.linspace(0, 12 * scale + 1e-9, 1201)
+    scale = float(np.sqrt((Ae.sum(1) ** 2).mean()) / max(abs(cs), 1e-6))
+    grid = np.concatenate([[0.0], np.geomspace(0.02 * scale, 600 * scale, 1500)])
     pot = np.empty(len(grid))
     for i, t in enumerate(grid):
         A = Ae + t * C[None, :]
@@ -206,7 +226,7 @@ def mde_iv_ar(res: dict, pool: PoolResiduos, unidad_obs: np.ndarray, t_obs: np.n
         pot[i] = np.mean(num > crit * den)
     ok = np.where(pot >= 0.8)[0]
     mde = float(grid[ok[0]]) if len(ok) else float("nan")
-    return {"mde80": mde, "tamano_nominal": float(pot[0]), "R": int(R), "sigma_residual_previo": pool.sd, "potencia_max": float(pot.max()), "rejilla_max": float(grid[-1])}
+    return {"mde80": mde, "tamano_nominal": float(pot[0]), "R": int(R), "sigma_residual_previo": pool.sd, "potencia_max": float(pot.max()), "rejilla_max": float(grid[-1]), "potencia_en_umbral": None}
 
 
 def residuos_previos_fe(d: pd.DataFrame, y: str, unit: str, anio: str, anios: list[int], extra_fun=None) -> tuple[np.ndarray, list]:

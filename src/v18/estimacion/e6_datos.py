@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 import sys
+import tempfile
 import zipfile
 from pathlib import Path
 
@@ -22,7 +23,7 @@ import e1_datos as D  # noqa: E402
 RAIZ = K.RAIZ
 ORIG = RAIZ / "data" / "raw" / "v11" / "catastro_inspire" / "original"
 CORR = RAIZ / "data" / "raw" / "v11" / "catastro_inspire" / "correspondencia_dgc_ine.csv"
-CACHE = RAIZ / "data" / "cache" / "v18_e6_edificios_46.parquet"
+CACHE = Path(tempfile.gettempdir()) / "v18_e6_edificios_46.parquet"      # caché fuera del repositorio; se regenera si falta
 RX = {k: re.compile(v) for k, v in {
     "uso": r"<bu-ext2d:currentUse>([^<]+)<", "inm": r"<bu-ext2d:numberOfBuildingUnits>(\d+)<",
     "viv": r"<bu-ext2d:numberOfDwellings>(\d+)<", "anio": r"<bu-core2d:end>(\d{4})-", "estado": r"<bu-core2d:conditionOfConstruction>([^<]+)<",
@@ -46,12 +47,13 @@ def _edificios_zip(zp: Path) -> pd.DataFrame:
 
 
 def edificios_46() -> pd.DataFrame:
-    """Edificios de los 92 municipios de la provincia de València del Catastro con sección INE asignada por posición (EPSG:25830). Caché en data/cache."""
+    """Edificios de los 92 municipios de la provincia de València del Catastro con sección INE asignada por posición (EPSG:25830). Caché en el directorio temporal (fuera del repositorio)."""
     if CACHE.exists():
         return pd.read_parquet(CACHE)
     import geopandas as gpd
     corr = pd.read_csv(CORR, dtype=str)
     corr = corr[corr.cod_municipio_seleccion.str.startswith("46")]
+    corr = corr[~D.sellado.mascara_v15_v16(corr.cod_municipio_seleccion.astype(str), "municipio").values]      # municipios sellados de V15 y V16: no se lee su zip
     sec = gpd.read_parquet(D.GEO).to_crs(25830)[["cod_seccion", "cod_municipio", "geometry"]]
     partes = []
     for r in corr.itertuples():
@@ -62,10 +64,10 @@ def edificios_46() -> pd.DataFrame:
         p = gpd.GeoDataFrame(e, geometry=gpd.points_from_xy(e.x, e.y), crs=25830)
         j = gpd.sjoin(p, sec, how="left", predicate="within")
         j = j[~j.index.duplicated(keep="first")].drop(columns=["index_right", "geometry"])
+        j = j[~D.sellado.mascara_v15_v16(j.cod_seccion.fillna("").astype(str), "seccion").values]          # edificios de distritos sellados (València ciudad): fuera
         j["dgc"] = r.dgc
         partes.append(j)
     out = pd.concat(partes, ignore_index=True)
-    CACHE.parent.mkdir(parents=True, exist_ok=True)
     out.to_parquet(CACHE)
     return out
 

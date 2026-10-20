@@ -1,0 +1,316 @@
+{
+ "rama": "v18/estimacion/e6",
+ "pregunta": "¿Se asocian los edificios nuevos de 20 viviendas o más terminados en 2015-2018 con el alquiler mediano de las secciones contiguas (piloto de la provincia de València), y las unidades terminadas con el alquiler provincial (instrumento de lluvia)?",
+ "capa": "C4",
+ "datos": "Catastro INSPIRE (edificios con año de construcción) de 92 municipios de la provincia de València; SERPAVI por sección 2011-2024; terminadas trimestrales y IPVA provinciales; sin unidades selladas (v6, V15, V16)",
+ "N": {
+  "E6-R1_tratadas": 33,
+  "E6-R1_controles": 74,
+  "E6-R1_obs": 1611,
+  "secciones_no_selladas": 992
+ },
+ "metodo": "Diferencias en diferencias apiladas por cohorte (controles aún no expuestos), efectos fijos de unidad, año y municipio × año por pila, CR1 con t(G−1) por sección del edificio, MDE por Monte Carlo; IV con lluvia (AEMET) no disponible",
+ "estimacion": {},
+ "ic95": {},
+ "p_ajustado": {},
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO ESTIMABLE",
+ "clasificaciones": {
+  "E6-R1": "NO ESTIMABLE",
+  "E6-A1": "NO ESTIMABLE",
+  "E6-A2": "NO ESTIMABLE",
+  "E6-R2": "NO ESTIMABLE",
+  "E6-A3": "NO ESTIMABLE"
+ },
+ "diagnosticos": {
+  "estimabilidad": [
+   {
+    "id": "E6-R1",
+    "tratadas": 33,
+    "controles": 74,
+    "cumple_minimo": true,
+    "G": 37,
+    "mde80": 0.06229511419547269,
+    "mde80_R10000": 0.062243715435756575,
+    "umbral": 0.062,
+    "decision": "NO ESTIMABLE por variación: MDE80 0.0623 > umbral 0.062",
+    "sigma_residual_previo": 0.053919180465136614,
+    "tamano_nominal_cr1": 0.098
+   }
+  ],
+  "recuentos_pilas": {
+   "E6-R1": {
+    "conteos": {
+     "2015": {
+      "tratadas": 14,
+      "controles": 73,
+      "municipios_tratadas": 3,
+      "municipios_controles": 3,
+      "valencia_ciudad_tratadas": 1
+     },
+     "2016": {
+      "tratadas": 13,
+      "controles": 44,
+      "municipios_tratadas": 1,
+      "municipios_controles": 3,
+      "valencia_ciudad_tratadas": 13
+     },
+     "2017": {
+      "tratadas": 3,
+      "controles": 22,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 3
+     },
+     "2018": {
+      "tratadas": 3,
+      "controles": 7,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 3
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 201
+   },
+   "E6-R1-v1": {
+    "conteos": {
+     "2015": {
+      "tratadas": 3,
+      "controles": 2,
+      "municipios_tratadas": 1,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2016": {
+      "tratadas": 0,
+      "controles": 2,
+      "municipios_tratadas": 0,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2017": {
+      "tratadas": 0,
+      "controles": 0,
+      "municipios_tratadas": 0,
+      "municipios_controles": 0,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2018": {
+      "tratadas": 0,
+      "controles": 0,
+      "municipios_tratadas": 0,
+      "municipios_controles": 0,
+      "valencia_ciudad_tratadas": 0
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 201
+   },
+   "E6-R1-v2": {
+    "conteos": {
+     "2015": {
+      "tratadas": 3,
+      "controles": 22,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 3
+     },
+     "2016": {
+      "tratadas": 3,
+      "controles": 7,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 3
+     },
+     "2017": {
+      "tratadas": 9,
+      "controles": 0,
+      "municipios_tratadas": 1,
+      "municipios_controles": 0,
+      "valencia_ciudad_tratadas": 9
+     },
+     "2018": {
+      "tratadas": 19,
+      "controles": 0,
+      "municipios_tratadas": 1,
+      "municipios_controles": 0,
+      "valencia_ciudad_tratadas": 19
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 201
+   },
+   "E6-R1-v3": {
+    "conteos": {
+     "2015": {
+      "tratadas": 13,
+      "controles": 2,
+      "municipios_tratadas": 2,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2016": {
+      "tratadas": 0,
+      "controles": 2,
+      "municipios_tratadas": 0,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2017": {
+      "tratadas": 0,
+      "controles": 0,
+      "municipios_tratadas": 0,
+      "municipios_controles": 0,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2018": {
+      "tratadas": 0,
+      "controles": 0,
+      "municipios_tratadas": 0,
+      "municipios_controles": 0,
+      "valencia_ciudad_tratadas": 0
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 201
+   },
+   "E6-R1-v4": {
+    "conteos": {
+     "2015": {
+      "tratadas": 15,
+      "controles": 79,
+      "municipios_tratadas": 3,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 1
+     },
+     "2016": {
+      "tratadas": 15,
+      "controles": 43,
+      "municipios_tratadas": 1,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 15
+     },
+     "2017": {
+      "tratadas": 5,
+      "controles": 24,
+      "municipios_tratadas": 2,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 4
+     },
+     "2018": {
+      "tratadas": 3,
+      "controles": 7,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 3
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 201
+   },
+   "E6-R1-v5": {
+    "conteos": {
+     "2015": {
+      "tratadas": 14,
+      "controles": 16,
+      "municipios_tratadas": 3,
+      "municipios_controles": 4,
+      "valencia_ciudad_tratadas": 1
+     },
+     "2016": {
+      "tratadas": 13,
+      "controles": 20,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 13
+     },
+     "2017": {
+      "tratadas": 3,
+      "controles": 3,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 3
+     },
+     "2018": {
+      "tratadas": 3,
+      "controles": 11,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 3
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 201
+   },
+   "E6-R1-v6": {
+    "conteos": {
+     "2015": {
+      "tratadas": 3,
+      "controles": 49,
+      "municipios_tratadas": 2,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 1
+     },
+     "2016": {
+      "tratadas": 2,
+      "controles": 32,
+      "municipios_tratadas": 1,
+      "municipios_controles": 3,
+      "valencia_ciudad_tratadas": 2
+     },
+     "2017": {
+      "tratadas": 1,
+      "controles": 15,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 1
+     },
+     "2018": {
+      "tratadas": 1,
+      "controles": 3,
+      "municipios_tratadas": 1,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 1
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 201
+   },
+   "E6-A1": {
+    "conteos": {
+     "2015": {
+      "tratadas": 0,
+      "controles": 19,
+      "municipios_tratadas": 0,
+      "municipios_controles": 2,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2016": {
+      "tratadas": 0,
+      "controles": 11,
+      "municipios_tratadas": 0,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2017": {
+      "tratadas": 0,
+      "controles": 9,
+      "municipios_tratadas": 0,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 0
+     },
+     "2018": {
+      "tratadas": 0,
+      "controles": 1,
+      "municipios_tratadas": 0,
+      "municipios_controles": 1,
+      "valencia_ciudad_tratadas": 0
+     }
+    },
+    "unidades_contaminadas_por_secciones_selladas": 135
+   }
+  },
+  "nota_clasificacion_global": "clasificacion_v18 es la de la estimación propia designada para B5, E6-R2 (NO ESTIMABLE por falta de la lluvia de AEMET); E6-R1 está en otra unidad y también es NO ESTIMABLE"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: diseño de evaluación, no predictivo; E6-R2 es hipótesis de la evaluación sellada diferida (adenda 1.11) solo si llegara a IDENTIFICADO"
+ },
+ "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Sin estimación del resultado: no hay clasificación que contrastar con I8. Sin parada G."
+}

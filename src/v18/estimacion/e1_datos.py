@@ -72,6 +72,8 @@ FICHEROS_HUT = {"2018T2": "2018_2T_hut_comunicacio.csv.zip", **{f"{a}T4": f"{a}_
 
 
 def _leer_hut(zp: Path) -> pd.DataFrame:
+    """Lee un corte del registro HUT (todos los puntos del fichero). El filtro territorial (solo secciones no selladas: sellado.mascara_v15_v16 y holdout.excluir_sellados_v6 en secciones())
+    se aplica en hut_por_seccion, que solo asigna los puntos a secciones no selladas."""
     with zipfile.ZipFile(zp) as z:
         raw = z.read(z.namelist()[0])
     txt = raw.decode("utf-8-sig", "replace")
@@ -89,14 +91,11 @@ def _leer_hut(zp: Path) -> pd.DataFrame:
 
 
 def hut_por_seccion(sec: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
-    """Recuento de HUT por sección y corte (puntos del registro, asignados a la sección INE que los contiene). Valor anual = corte más cercano al 31-12 (regla 1.3):
-    en 2018-2024 es el de 4T. Devuelve (wide: sección x corte, auditoría con los puntos sin geocodificar o fuera de las secciones no selladas)."""
+    """Recuento de HUT por sección y corte (puntos del registro, asignados a la sección INE NO SELLADA que los contiene: los puntos de secciones selladas no se asignan ni se cuentan).
+    Valor anual = corte más cercano al 31-12 (regla 1.3): en 2018-2024 es el de 4T. Devuelve (wide: sección x corte, auditoría con filas del fichero, puntos con coordenadas y puntos
+    en secciones no selladas)."""
     import geopandas as gpd
-    import shapely
     g = gpd.GeoDataFrame(sec[["cod_seccion"]], geometry=sec.attrs["geometry"].values, crs=4326)
-    # secciones de TODO Barcelona para distinguir «fuera de la ciudad» de «en sección sellada»: se usa el parquet completo del municipio
-    full = gpd.read_parquet(GEO)
-    full = full[full.cod_municipio == "08019"][["cod_seccion", "geometry"]]
     cols, aud = {}, {}
     for corte, f in FICHEROS_HUT.items():
         assert corte <= sellado.tope("bcn_hut_registro", "municipio", "T"), corte
@@ -105,12 +104,10 @@ def hut_por_seccion(sec: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
         d = d.dropna(subset=["lon", "lat"])
         d = d[(d.lon.between(2.0, 2.3)) & (d.lat.between(41.3, 41.5))]
         p = gpd.GeoDataFrame(d, geometry=gpd.points_from_xy(d.lon, d.lat), crs=4326)
-        j = gpd.sjoin(p, full, how="left", predicate="within")
+        j = gpd.sjoin(p, g, how="inner", predicate="within")
         j = j[~j.index.duplicated(keep="first")]
-        en_ciudad = j.cod_seccion.notna()
-        usado = j[j.cod_seccion.isin(set(sec.cod_seccion))]
-        cols[corte] = usado.groupby("cod_seccion").size()
-        aud[corte] = {"filas": int(n0), "con_coordenadas": int(len(d)), "en_una_seccion_de_BCN": int(en_ciudad.sum()), "en_secciones_no_selladas": int(len(usado))}
+        cols[corte] = j.groupby("cod_seccion").size()
+        aud[corte] = {"filas_fichero": int(n0), "con_coordenadas": int(len(d)), "en_secciones_no_selladas": int(len(j))}
     W = pd.DataFrame(cols).reindex(sec.cod_seccion).fillna(0.0)
     return W, aud
 
@@ -158,11 +155,11 @@ def trends() -> pd.Series:
 
 
 def noches(nuts3: str) -> pd.Series:
-    """Noches en plataformas colaborativas (Eurostat, tour_ce_oan3), total residentes, anual. Regla 1.4 (e): tope 2025."""
+    """Noches en plataformas colaborativas (Eurostat, tour_ce_oan3), total residentes, anual. Regla 1.4 (e): tope temporal con sellado.tope. Nivel NUTS3 de las cinco ciudades no selladas
+    (diccionario CIUDADES): las NUTS3 no son unidades de los bloques sellados de v6, V15 ni V16."""
     h = pd.read_parquet(K.HECHOS, columns=["territorio_codigo", "periodo", "valor", "desagregacion"],
                         filters=[("variable", "==", "eurostat_plataformas_noches"), ("territorio_codigo", "==", nuts3)])
     h = h[h.desagregacion.str.contains("c_resid=TOTAL")]
-    assert h.periodo.astype(int).max() <= int(sellado.tope("eurostat_plataformas_noches", "nuts3", "A")) or True
     s = h.set_index(h.periodo.astype(int)).valor
     return s[s.index <= int(sellado.tope("eurostat_plataformas_noches", "nuts3", "A"))]
 

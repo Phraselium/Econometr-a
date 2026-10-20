@@ -16,9 +16,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import e1_datos as D  # noqa: E402
 
 ANIOS = list(range(2011, 2025))
-GRANDES_ATRACTIVOS = ("sagrada", "güell", "guell", "batll")      # E1-R2-v3: Sagrada Família, Park Güell y Casa Batlló
+GRANDES_ATRACTIVOS = ("basilica de la sagrada familia", "sagrada familia", "parc guell", "park guell", "casa batllo")   # E1-R2-v3: nombre exacto (normalizado)
 NOMBRE_CLAVE = {"08019": ["barcelona"], "46250": ["valencia"], "41091": ["sevilla"], "29067": ["malaga"], "03014": ["alicante", "alacant"]}
-EXCLUIR_AYTO = ("distrit", "districte", "junta", "oficina", "tenencia", "tinencia", "registro", "registre", "juzgado", "pedania", "casa consist")
+EXCLUIR_AYTO = ("distrit", "districte", "junta municipal", "junta de", "oficina", "tenencia", "tinencia", "registro", "registre", "juzgado", "pedania", "casa consist")
 
 
 def _norm(s) -> str:
@@ -29,7 +29,8 @@ def centro_ayuntamiento(cod: str, osm: pd.DataFrame, secs_completas: "pd.DataFra
     """Sede del ayuntamiento (amenity=townhall de OSM): la de nombre del municipio sin «distrito/junta/oficina…»; con varias, el medoide. Devuelve lon, lat y la sección que la contiene."""
     t = osm[(osm.cod_municipio == cod) & (osm.clase == "townhall")].copy()
     t["n"] = t.nombre.map(_norm)
-    c = t[t.n.map(lambda s: any(k in s for k in NOMBRE_CLAVE[cod]) and not any(e in s for e in EXCLUIR_AYTO))]
+    rx = re.compile(r"^(ajuntament|ayuntamiento)( de| d'| del)?( la)? ?(" + "|".join(NOMBRE_CLAVE[cod]) + r")$")
+    c = t[t.n.map(lambda s: bool(rx.match(s.strip())) and not any(e in s for e in EXCLUIR_AYTO))]
     fuente = "OSM amenity=townhall (nombre del municipio)"
     if len(c) == 0:
         return {"lon": np.nan, "lat": np.nan, "fuente": "sin sede en OSM"}
@@ -59,7 +60,7 @@ def _centroide_seccion_que_contiene(lon, lat, cod: str):
 def prox_atractivos(x, y, cod: str, osm: pd.DataFrame, k: int = 3, excluir_grandes: bool = False) -> np.ndarray:
     a = osm[(osm.cod_municipio == cod) & (osm.clase == "attraction")].copy()
     if excluir_grandes:
-        a = a[~a.nombre.fillna("").map(_norm).map(lambda s: any(g in s for g in GRANDES_ATRACTIVOS))]
+        a = a[~a.nombre.fillna("").map(lambda s: _norm(s).strip() in GRANDES_ATRACTIVOS)]
     ax, ay = D.proyectar(a.lon.values, a.lat.values, D.CIUDADES[cod][2])
     d = D.dist_min_k(x, y, ax, ay, k)
     return -np.log(np.maximum(d, 0.05)), len(a)
@@ -142,3 +143,51 @@ def añadir_hut(base: pd.DataFrame, cod: str = "08019") -> tuple[pd.DataFrame, d
     out = out.merge(b, on="cod_seccion", how="left")
     out["cl"] = pd.factorize(out.barrio)[0]
     return out, aud
+
+
+def hut_expediente(P: pd.DataFrame) -> pd.Series:
+    """Variante E1-R1-v5: HUT reconstruida por año de expediente (barrio, acumulada, sin bajas: sesgo de supervivencia) por 100 viviendas del barrio. Devuelve una serie
+    alineada con P (fila a fila)."""
+    e = pd.read_csv(D.RAIZ / "data" / "raw" / "v9" / "bcn_hut" / "bcn_hut_barrio_anio_expediente.csv.gz")
+    assert int(sellado_tope()) >= 2024
+    e["barrio"] = e.codi_barri.astype(int).map("{:02d}".format)
+    e = e[e.barrio.isin(set(P.barrio))]        # solo barrios de las secciones no selladas del panel (sellado.mascara_v15_v16 aplicado en secciones())
+    viv_b = P.drop_duplicates("cod_seccion").groupby("barrio").viv.sum()
+    out = np.full(len(P), np.nan)
+    for a in range(2018, 2025):
+        acum = e[e.anio_expediente <= a].groupby("barrio").n_hut.sum()
+        m = (P.anio == a).values
+        out[m] = (100.0 * P.loc[m, "barrio"].map(acum).fillna(0.0) / P.loc[m, "barrio"].map(viv_b)).values
+    return pd.Series(out, index=P.index)
+
+
+def sellado_tope() -> str:
+    return D.sellado.tope("bcn_hut_expediente", "barrio", "A")
+
+
+def adrh_ln(cods) -> pd.DataFrame:
+    h = pd.read_parquet(D.K.HECHOS, columns=["territorio_codigo", "periodo", "valor", "edicion", "muestra_sellada_v6"],
+                        filters=[("variable", "==", "adrh_renta_neta_persona"), ("nivel", "==", "seccion"), ("frecuencia", "==", "A"), ("territorio_codigo", "in", list(cods))])
+    h = D.K.filtrar(h, "territorio_codigo", "seccion", "periodo", "adrh_renta_neta_persona", "A")
+    h = h[h.valor > 0]
+    return pd.DataFrame({"cod_seccion": h.territorio_codigo.values, "anio": h.periodo.astype(int).values, "ladrh": np.log(h.valor.values)})
+
+
+def construir(osm: pd.DataFrame, trends: pd.Series) -> dict:
+    """Paneles de E1: Barcelona (con HUT, barrio y ADRH) y las otras cuatro ciudades (INE-VUT), más las auditorías de cobertura."""
+    B = panel_largo("08019", osm, trends)
+    B, aud = añadir_hut(B)
+    B["hut_exp"] = hut_expediente(B)
+    B = B.merge(adrh_ln(B.cod_seccion.unique()), on=["cod_seccion", "anio"], how="left")
+    B = B.sort_values(["cod_seccion", "anio"]).reset_index(drop=True)
+    otras = {}
+    for cod in ("46250", "41091", "29067", "03014"):
+        otras[cod] = panel_largo(cod, osm, trends)
+    C = pd.concat(list(otras.values()), ignore_index=True)
+    for X in (B, C):        # postcondición: ninguna sección de los bloques sellados de v6 en los paneles
+        u = X[["cod_seccion"]].drop_duplicates()
+        assert len(D.holdout.excluir_sellados_v6(u, "cod_seccion", "seccion")) == len(u), "secciones de v6 en el panel"
+    C["barrio"] = C.cod_distrito
+    BC = B.copy()
+    return {"B": B, "C": C, "BC": BC, "aud_hut": aud, "centros": {c: (otras[c].attrs.get("centro") if c in otras else None) for c in D.CIUDADES}, "n_atractivos": {c: otras[c].attrs.get("n_atractivos") for c in otras},
+            "n_secciones": {**{c: (otras[c].attrs.get("n_total"), otras[c].attrs.get("n_tras_sellado")) for c in otras}, "08019": (B.attrs.get("n_total"), B.attrs.get("n_tras_sellado"))}}

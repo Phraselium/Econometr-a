@@ -1,0 +1,187 @@
+[
+ {
+  "id": "V18-E1-R3",
+  "indicador": "Coeficiente de la densidad de viviendas turísticas (HUT de 2018T2, por pp) × posterior (2014-2019) sobre el log del alquiler mediano SERPAVI por sección, Barcelona",
+  "valor": 0.004428,
+  "min": 0.001989,
+  "max": 0.006867,
+  "unidad": "log por pp de densidad HUT (por 100 viviendas)",
+  "periodo": "2011-2019",
+  "cobertura": "769 de las 1.068 secciones de Barcelona (sin Gràcia, Sant Andreu y Nou Barris, sellados en V15 y V16), en 48 barrios; 769 con SERPAVI; viviendas del Censo 2021 como denominador",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "Coeficiente de D_s × 1[t ≥ 2014] (dosis = HUT por 100 viviendas de 2018T2) con efectos fijos de sección y de año y los adelantos de 2011 y 2012 como control (base 2013); media de β_k de 2014-2019; CR1 con t(46) por barrio (p 0.0007; Webb 9.999: 0.0102); p corregido por el tamaño del Monte Carlo de este diseño (0.079) y tras Holm: 0.0041. Referencia de Segú (2018), 0,038 por pp (NO VERIFICADA): razón 0.12, etiqueta no coherente (no interviene en la clase). Pretendencias (2011-2012): p = 0.008. Tope SUGESTIVO de la especificación. Lectura: asociación estimada; la clase describe el diseño, no el coeficiente. Clasificación provisional: falta I8 (réplica ciega, B6)."
+ },
+ {
+  "id": "V18-E1-R4",
+  "indicador": "Coeficiente de estar a menos de 500 m de la Sagrada Família × posterior (2014-2019) sobre el log del alquiler mediano SERPAVI por sección, frente al anillo de 500-1.000 m",
+  "valor": 0.001764,
+  "min": -0.044622,
+  "max": 0.041754,
+  "unidad": "log (diferencia entre radio y anillo, posterior frente a 2013)",
+  "periodo": "2011-2019",
+  "cobertura": "22 secciones en el radio y 55 en el anillo, no selladas; el anillo conserva 55 de 70 secciones",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "Secciones a menos de 500 m de la Sagrada Família (22) frente al anillo de 500-1.000 m (55), tratamiento desde 2014, base 2013, efectos fijos de sección y de año; Webb por barrio con 6 clusters (3 con tratadas), p = 0.8182, p tras Holm 1.0000; IC95 por inversión del contraste de Webb. Pretendencias (2011-2012): p = 0.121. Sin referencia en la literatura (δ = 0,05): el IC95 de Webb queda dentro de ±0,05 (equivalencia). Tope SUGESTIVO: un solo grupo tratado. Lectura: asociación estimada; la clase describe el diseño, no el coeficiente. Clasificación provisional: falta I8 (réplica ciega, B6)."
+ },
+ {
+  "id": "V18-E1-P-H3",
+  "indicador": "Coeficiente del % de viviendas turísticas (INE-VUT, por desviación típica intra-sección) sobre el log del alquiler mediano SERPAVI por sección: especificación de H3 de V15 en la muestra V18",
+  "valor": -6.5e-05,
+  "min": -0.000886,
+  "max": 0.000756,
+  "unidad": "log por DT intra-sección",
+  "periodo": "2021-2024",
+  "cobertura": "10004 secciones de España no selladas, 1208 municipios, 2021-2024",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "Coprincipal P (adenda 1.6): repite la especificación de H3 de V15 (efectos de sección y de municipio × año, CR1 por municipio; DT intra-sección 0.624 pp) en la muestra V18; p = 0.8769, p tras Holm 1.0000. Cifra publicada de V15: 0,0030 por DT, p = 0,931. No se clasifica (la clase mostrada es la del diseño de V15: asociación sin identificación; no cambia la de lo publicado)."
+ },
+ {
+  "id": "V18-E1-R1",
+  "indicador": "Barrios de Barcelona cuyo stock de viviendas turísticas cambia al menos un 10 % entre el primer y el último valor anual (mínimo de datos de E1-R1)",
+  "valor": 18.0,
+  "min": null,
+  "max": null,
+  "unidad": "barrios (mínimo 20)",
+  "periodo": "2018-2024",
+  "cobertura": "48 barrios no sellados; stock por barrio a partir de los puntos del registro",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE por datos: barrios con cambio >= 10 % del stock HUT 2018-2024: 18 (mínimo 20). Con ese mínimo la especificación no se estima ni entra en Holm; su MDE80 sería 0.0018 por pp (umbral 0,038). Lo haría estimable: más variación del stock entre barrios (periodo posterior a 2024) o la serie reconstruida de licencias con bajas."
+ },
+ {
+  "id": "V18-E1-R2",
+  "indicador": "F efectivo de la primera etapa de la proximidad a atractivos × Google Trends sobre la densidad de viviendas turísticas (Barcelona, 2018-2024, con distancia al centro × año)",
+  "valor": 0.023264,
+  "min": null,
+  "max": null,
+  "unidad": "F efectivo (MOP)",
+  "periodo": "2018-2024",
+  "cobertura": "769 de las 1.068 secciones de Barcelona (sin Gràcia, Sant Andreu y Nou Barris, sellados en V15 y V16), en 48 barrios; 769 con SERPAVI; viviendas del Censo 2021 como denominador",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)",
+   "OpenStreetMap (ODbL)",
+   "Google Trends (término «airbnb», ES-CT)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE por variación: el contraste de Anderson-Rubin no alcanza el 80 % de potencia con ningún efecto (potencia máxima 0.043); umbral 0,038. La primera etapa es nula: el stock de licencias apenas varía en el tiempo (moratoria desde 2014 y PEUAT desde 2017) y el «cuándo» mueve los anuncios, no las licencias. La variante E1-R2-v5 (INE-VUT como endógena, 2022-2024) tiene F efectivo 16.82 con primera etapa de signo negativo y MDE80 0.0880 (suplementaria: solo MDE, no se estima). Sin estimación del resultado."
+ },
+ {
+  "id": "V18-E1-A1",
+  "indicador": "MDE al 80 % de potencia (Anderson-Rubin) de la ampliación E1-A1: % de viviendas turísticas (INE-VUT) instrumentado con proximidad a atractivos × noches de la NUTS3, València, Sevilla, Málaga y Alicante",
+  "valor": 0.165617,
+  "min": null,
+  "max": null,
+  "unidad": "log por punto porcentual de viviendas turísticas",
+  "periodo": "2021-2024",
+  "cobertura": "1316 secciones, 36 distritos censales, 2021-2024",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)",
+   "OpenStreetMap (ODbL)",
+   "Eurostat tour_ce_oan3"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE por variación: MDE80 0.1656 frente al umbral 0,038 (Segú, 2018, NO VERIFICADA); F efectivo de la primera etapa 4.62. No se estima el resultado ni entra en Holm. Lo haría estimable: una exposición con más variación dentro de la ciudad y el año (INE-VUT con más ediciones posteriores a 2024) o un instrumento más fuerte."
+ },
+ {
+  "id": "V18-E1-A2",
+  "indicador": "Registro de Andalucía con fecha de alta (Málaga y Sevilla), de Chaisemartin-D'Haultfœuille con dosis continua",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "2015-2024",
+  "cobertura": "no estimada",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMADA en esta pasada: el Monte Carlo de V18 valida dCDH solo con aleatorización del calendario entre 8 CCAA y la adenda deja «solo descriptivo» lo que ese Monte Carlo no valida. Lo haría estimable: un Monte Carlo de dCDH con dosis continua y dos ciudades, o más ciudades con registro con fecha de alta."
+ },
+ {
+  "id": "V18-E1-A4",
+  "indicador": "Regulaciones locales (PEUAT y moratorias) como diferencias en diferencias",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: faltan la geometría del PEUAT y las fechas de las moratorias (docs/v18/tareas_autor.md, punto 13)."
+ },
+ {
+  "id": "V18-E1-A5",
+  "indicador": "InsideAirbnb como exposición",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: solo hay instantáneas desde 2025-12; el histórico requiere la Archived Data Request (tareas_autor, punto 14)."
+ },
+ {
+  "id": "V18-E1-X1",
+  "indicador": "Precio de compra por barrio de Barcelona",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "sin cifra",
+  "periodo": "—",
+  "cobertura": "sin datos",
+  "fuentes": [
+   "docs/v18/tareas_autor.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "NO ESTIMABLE: no hay serie de compraventa por barrio en abierto (Open Data BCN solo publica la oferta de segunda mano de 2007-2015)."
+ }
+]

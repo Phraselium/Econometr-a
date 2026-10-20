@@ -1,0 +1,32 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v18-E6-prereg,E6-R1,"ln SERPAVI_ja = Σ_k γ_k·Tr_j·1[k] + β·Tr_j·1[0<=k<=3] + α_(j,pila) + δ_(año,pila) + θ_(mun,año,pila) + ε (secciones contiguas sin la propia; edificios >= 20 viviendas; cohortes 2015-2018; cluster sección del edificio)",,,0,,,,,,,principal o ampliación; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E6-prereg,E6-R2,"IV: ln alquiler_pt = β·(T^Q4_{p,t-1}/media T_p) + α_p + γ_t + ε; Z = duración de las rachas de lluvia de julio a septiembre en t−1 (AEMET), 2011-2024",,,0,,,,,,,principal o ampliación; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E6-prereg,E6-A1,E6-R1 con umbral de 50 viviendas y anillo de 250 m,,,0,,,,,,,principal o ampliación; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E6-prereg,E6-A2,E6-R1 en el resto de España,,,0,,,,,,,principal o ampliación; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E6-prereg,E6-A3,E6-R2 con el IPC de alquiler 2002-2025,,,0,,,,,,,principal o ampliación; registrada antes de estimar (estimabilidad calculada sin coeficientes)
+v18-E6-prereg,E6-R1-v1,variante [M] SERPAVI de vivienda unifamiliar,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R1-v2,variante [E] fecha de evento = terminación − 2,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R1-v3,variante [U] sin València ciudad,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R1-v4,variante [U] con la sección propia,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R1-v5,variante [C] cerca frente a lejos (contiguas de segundo orden),,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R1-v6,variante [U] umbral de 10 viviendas,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R2-v1,variante [U] sin 2019 ni 2024 en València (DANA),,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R2-v2,variante [M] IPC de alquiler trimestral,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R2-v3,variante [U] sin Barcelona,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-prereg,E6-R2-v4,variante [M] lluvia de agosto-septiembre,,,0,,,,,,,"variante enumerada (adenda, anexo A)"
+v18-E6-estimabilidad,E6-R1,"ln SERPAVI_ja = Σ_k γ_k·Tr_j·1[k] + β·Tr_j·1[0<=k<=3] + α_(j,pila) + δ_(año,pila) + θ_(mun,año,pila) + ε (secciones contiguas sin la propia; edificios >= 20 viviendas; cohortes 2015-2018; cluster sección del edificio)",,,1611,,,,,,,MDE80 0.06229511419547269; umbral 0.062; NO ESTIMABLE por variación: MDE80 0.0623 > umbral 0.062; registrada antes de estimar
+v18-E6-no-estimada,E6-R1,"ln SERPAVI_ja = Σ_k γ_k·Tr_j·1[k] + β·Tr_j·1[0<=k<=3] + α_(j,pila) + δ_(año,pila) + θ_(mun,año,pila) + ε (secciones contiguas sin la propia; edificios >= 20 viviendas; cohortes 2015-2018; cluster sección del edificio)",,,0,,,,,,,NO ESTIMABLE por variación: MDE80 0.0623 > umbral 0.062
+v18-E6-no-estimada,E6-A1,E6-R1 con umbral de 50 viviendas y anillo de 250 m,,,0,,,,,,,NO ESTIMABLE por datos: menos de 30 secciones tratadas
+v18-E6-no-estimada,E6-A2,E6-R1 en el resto de España,,,0,,,,,,,NO ESTIMABLE (datos): descarga masiva del Catastro
+v18-E6-no-estimada,E6-R2,"IV: ln alquiler_pt = β·(T^Q4_{p,t-1}/media T_p) + α_p + γ_t + ε; Z = duración de las rachas de lluvia de julio a septiembre en t−1 (AEMET), 2011-2024",,,0,,,,,,,NO ESTIMABLE (X1): sin lluvia de AEMET
+v18-E6-no-estimada,E6-A3,E6-R2 con el IPC de alquiler 2002-2025,,,0,,,,,,,NO ESTIMABLE (X1): sin lluvia de AEMET
+v18-E6-no-estimada,E6-R1-v1,E6-R1-v1,,,0,,,,,,,no estimada (principal NO ESTIMABLE)
+v18-E6-no-estimada,E6-R1-v2,E6-R1-v2,,,0,,,,,,,no estimada (principal NO ESTIMABLE)
+v18-E6-no-estimada,E6-R1-v3,E6-R1-v3,,,0,,,,,,,no estimada (principal NO ESTIMABLE)
+v18-E6-no-estimada,E6-R1-v4,E6-R1-v4,,,0,,,,,,,no estimada (principal NO ESTIMABLE)
+v18-E6-no-estimada,E6-R1-v5,E6-R1-v5,,,0,,,,,,,no estimada (principal NO ESTIMABLE)
+v18-E6-no-estimada,E6-R1-v6,E6-R1-v6,,,0,,,,,,,no estimada (principal NO ESTIMABLE)
+v18-E6-no-estimada,E6-R2-v1,E6-R2-v1,,,0,,,,,,,no estimada (E6-R2 NO ESTIMABLE)
+v18-E6-no-estimada,E6-R2-v2,E6-R2-v2,,,0,,,,,,,no estimada (E6-R2 NO ESTIMABLE)
+v18-E6-no-estimada,E6-R2-v3,E6-R2-v3,,,0,,,,,,,no estimada (E6-R2 NO ESTIMABLE)
+v18-E6-no-estimada,E6-R2-v4,E6-R2-v4,,,0,,,,,,,no estimada (E6-R2 NO ESTIMABLE)

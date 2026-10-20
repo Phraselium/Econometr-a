@@ -1,0 +1,593 @@
+{
+ "rama": "v18/estimacion/e1",
+ "pregunta": "¿Se asocian la densidad de viviendas turísticas (licencias HUT, % INE-VUT) y la proximidad al foco turístico con el alquiler mediano por sección (SERPAVI) en Barcelona y en otras cuatro ciudades no selladas?",
+ "capa": "C4",
+ "datos": "Registro HUT de Barcelona (puntos con coordenadas, 2018-2024), SERPAVI por sección 2011-2024, INE-VUT por sección 2021-2025, Censo 2021, OpenStreetMap (atractivos, ayuntamientos, hospitales, universidades), Google Trends, Eurostat; sin unidades selladas (v6, V15, V16)",
+ "N": {
+  "E1-R3": 6884,
+  "E1-R4": 693,
+  "E1-P-H3": 39951,
+  "secciones_barcelona": 769,
+  "secciones_otras_ciudades": 1390
+ },
+ "metodo": "Estudio de eventos de dosis y diferencias en diferencias con efectos fijos de sección y de año, CR1 con t(G−1) y wild cluster bootstrap de Webb por barrio, Conley (1 y 2 km), Honest DiD (M̄ = 0 informativo), Roth, TOST, Moran; IV con F efectivo de MOP y Anderson-Rubin solo en la estimabilidad",
+ "estimacion": {
+  "E1-R3": 0.004427930211455435,
+  "E1-R4": 0.0017639683636245203,
+  "E1-P-H3": -6.47971971459783e-05
+ },
+ "ic95": {
+  "E1-R3": [
+   0.0019893566721334638,
+   0.006866503750777406
+  ],
+  "E1-R4": [
+   -0.04462166447164599,
+   0.041753559342675294
+  ],
+  "E1-P-H3": [
+   -0.0008855282297202418,
+   0.0007559338354282852
+  ]
+ },
+ "p_ajustado": {
+  "E1-R3": 0.004132531937080888,
+  "E1-R3-v3": 0.39299143094086525,
+  "E1-R4": 1.0,
+  "E1-P-H3": 1.0
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO ESTIMABLE",
+ "clasificaciones": {
+  "E1-R1": "NO ESTIMABLE",
+  "E1-R2": "NO ESTIMABLE",
+  "E1-R3": "ASOCIACIÓN",
+  "E1-R4": "SUGESTIVO (efecto nulo acotado)",
+  "E1-A1": "NO ESTIMABLE",
+  "E1-A2": "NO ESTIMABLE",
+  "E1-A3": "NO ESTIMABLE",
+  "E1-A4": "NO ESTIMABLE",
+  "E1-A5": "NO ESTIMABLE",
+  "E1-X1": "NO ESTIMABLE",
+  "E1-P-H3": "no se clasifica"
+ },
+ "diagnosticos": {
+  "nota_clasificacion_global": "clasificacion_v18 es la de la estimación propia designada para B5, E1-A1 (NO ESTIMABLE); el respaldo E1-R2 también (NO ESTIMABLE por variación): E1 no tiene estimación propia estimable",
+  "estimabilidad": [
+   {
+    "id": "E1-R1",
+    "n_unidades": 766,
+    "n_obs": 5360,
+    "G": 47,
+    "sd_intra_tratamiento": 0.9235909722439191,
+    "minimo_datos": "barrios con cambio >= 10 % del stock HUT 2018-2024: 18 (mínimo 20)",
+    "cumple_minimo": false,
+    "n_barrios_cambian": 18,
+    "umbral": 0.038,
+    "sigma_fuente": "ya vista: residuo de ln SERPAVI 2011-2017 tras efectos de sección y año y tendencias por barrio",
+    "mde80": 0.0018177112569063571,
+    "mde80_nominal": 0.0018177112569063571,
+    "mde80_corregido_tamano": 0.0018177112569063571,
+    "sd_beta_placebo": 0.0006328759823572177,
+    "se_mediana": 0.000613281897097722,
+    "tamano_nominal": 0.045,
+    "critico_empirico": 1.965149736610917,
+    "R": 2000,
+    "sigma_residual_previo": 0.03611108794889441,
+    "decision": "NO ESTIMABLE por datos: barrios con cambio >= 10 % del stock HUT 2018-2024: 18 (mínimo 20)",
+    "estimable": false
+   },
+   {
+    "id": "E1-R2",
+    "n_unidades": 766,
+    "n_obs": 5360,
+    "G": 47,
+    "F_efectivo_primera_etapa": 0.02326374190390434,
+    "pi_primera_etapa": -0.0002682358251733922,
+    "minimo_datos": "primera etapa y instrumento reales; F efectivo publicado (no es un criterio de estimabilidad)",
+    "cumple_minimo": true,
+    "umbral": 0.038,
+    "sigma_fuente": "ya vista: residuo de ln SERPAVI 2011-2017 tras efectos de sección y año y los mismos controles",
+    "mde80": NaN,
+    "tamano_nominal": 0.043,
+    "R": 2000,
+    "sigma_residual_previo": 0.03862665564425524,
+    "potencia_max": 0.043,
+    "rejilla_max": 497.06584241516447,
+    "potencia_en_umbral": null,
+    "decision": "NO ESTIMABLE por variación: el contraste no alcanza el 80 % de potencia con ningún efecto (MDE no definido; umbral 0.0380)",
+    "estimable": false
+   },
+   {
+    "id": "E1-A1",
+    "n_unidades": 1316,
+    "n_obs": 5157,
+    "G": 36,
+    "F_efectivo_primera_etapa": 4.6220660828501146,
+    "pi_primera_etapa": 0.049460457237841884,
+    "minimo_datos": "primera etapa y instrumento reales; F efectivo publicado (no es un criterio de estimabilidad)",
+    "cumple_minimo": true,
+    "umbral": 0.038,
+    "sigma_fuente": "ya vista: residuo de ln SERPAVI 2011-2020 tras efectos de sección y año y los mismos controles",
+    "mde80": 0.1656169396459121,
+    "tamano_nominal": 0.0405,
+    "R": 2000,
+    "sigma_residual_previo": 0.0568842985710613,
+    "potencia_max": 1.0,
+    "rejilla_max": 7.9549713912261195,
+    "potencia_en_umbral": null,
+    "decision": "NO ESTIMABLE por variación: MDE80 0.1656 > umbral 0.0380",
+    "estimable": false
+   },
+   {
+    "id": "E1-R3",
+    "n_unidades": 766,
+    "n_obs": 6884,
+    "G": 47,
+    "sd_intra_tratamiento": 1.999156442824644,
+    "minimo_datos": "dosis de 2018T2 con variación entre secciones y barrios",
+    "cumple_minimo": true,
+    "umbral": 0.07596794482733647,
+    "umbral_unidad": "por desviación típica de la dosis (referencia por pp × DT de la dosis en pp)",
+    "sd_dosis_pp": 1.999156442824644,
+    "sigma_fuente": "ya vista: residuo de ln SERPAVI 2011-2013 (3 años; ventana circular de 9 años) tras efectos de sección y año",
+    "mde80": 0.005986912616262556,
+    "mde80_nominal": 0.005457716630354476,
+    "mde80_corregido_tamano": 0.005986912616262556,
+    "sd_beta_placebo": 0.0020168476368340534,
+    "se_mediana": 0.0016724033501182862,
+    "tamano_nominal": 0.0785,
+    "critico_empirico": 2.2789982607551167,
+    "R": 2000,
+    "sigma_residual_previo": 0.03537430106862151,
+    "decision": "estimable: MDE80 0.0060 <= umbral 0.0760",
+    "estimable": true
+   },
+   {
+    "id": "E1-R4",
+    "minimo_datos": "radio 22/25 y anillo 55/70 secciones no selladas (mínimo 75 % en cada uno)",
+    "cumple_minimo": true,
+    "umbral": 0.1,
+    "umbral_unidad": "2δ (sin referencia; δ = 0,05)",
+    "n_unidades": 77,
+    "n_obs": 693,
+    "G": 6,
+    "n_tratadas": 22,
+    "sigma_fuente": "ya vista: residuo de ln SERPAVI 2011-2013 (3 años; ventana circular) de las secciones del radio y del anillo",
+    "mde80": 0.0406883985380356,
+    "mde80_nominal": 0.027824623705799984,
+    "mde80_corregido_tamano": 0.0406883985380356,
+    "sd_beta_placebo": 0.011460385427035029,
+    "se_mediana": 0.0063641445986013165,
+    "tamano_nominal": 0.1735,
+    "critico_empirico": 4.240903105403666,
+    "R": 2000,
+    "sigma_residual_previo": 0.03018317835849937,
+    "tamano_webb_5pct": 0.06,
+    "R_webb": 400,
+    "B_webb": 499,
+    "decision": "estimable: MDE80 0.0407 <= umbral 0.1000",
+    "estimable": true
+   },
+   {
+    "id": "E1-R2-v5",
+    "n_unidades": 766,
+    "n_obs": 2290,
+    "G": 47,
+    "F_efectivo_primera_etapa": 16.823707979361743,
+    "pi_primera_etapa": -0.22785650096451948,
+    "minimo_datos": "primera etapa y instrumento reales; F efectivo publicado (no es un criterio de estimabilidad)",
+    "cumple_minimo": true,
+    "umbral": 0.038,
+    "sigma_fuente": "ya vista: residuo de ln SERPAVI 2011-2017 tras efectos de sección y año y los mismos controles",
+    "mde80": 0.0880057132218038,
+    "tamano_nominal": 0.044,
+    "R": 2000,
+    "sigma_residual_previo": 0.03862665564425524,
+    "potencia_max": 1.0,
+    "rejilla_max": 12.616421245365945,
+    "potencia_en_umbral": null,
+    "suplementaria": true,
+    "decision": "NO ESTIMABLE por variación: MDE80 0.0880 > umbral 0.0380",
+    "estimable": false
+   }
+  ],
+  "primera_etapa_sin_resultado": [
+   {
+    "id": "E1-R2",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.02326374190390434,
+    "pi": -0.0002682358251733922
+   },
+   {
+    "id": "E1-R2-v1",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.0024810160810344447,
+    "pi": -0.0002488446682002571
+   },
+   {
+    "id": "E1-R2-v2",
+    "n": 3829,
+    "G": 47,
+    "F_efectivo": 0.014631710505834923,
+    "pi": -0.0015423938822025514
+   },
+   {
+    "id": "E1-R2-v3",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.10854665853732663,
+    "pi": -0.0005973414245479157
+   },
+   {
+    "id": "E1-R2-v4",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.06797529119571183,
+    "pi": -0.00047273792109629845
+   },
+   {
+    "id": "E1-R2-v5",
+    "n": 2290,
+    "G": 47,
+    "F_efectivo": 16.823707979361743,
+    "pi": -0.22785650096451948
+   },
+   {
+    "id": "E1-R2-v6",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.012899285568069947,
+    "pi": 0.00016099601357959353
+   },
+   {
+    "id": "E1-R2-v8",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.0050500655305437125,
+    "pi": -0.00014898820565159354
+   },
+   {
+    "id": "E1-R2 [subperiodo 2018-2019]",
+    "n": 1531,
+    "G": 47,
+    "F_efectivo": 0.004937395956778784,
+    "pi": -0.0011044996810497248
+   },
+   {
+    "id": "E1-R2 [subperiodo 2020-2021]",
+    "n": 1531,
+    "G": 47,
+    "F_efectivo": 1.616424531901197,
+    "pi": -0.0022757403246096053
+   },
+   {
+    "id": "E1-R2 [subperiodo 2022-2024]",
+    "n": 2298,
+    "G": 47,
+    "F_efectivo": 0.5530185971490573,
+    "pi": -0.018040574752747243
+   },
+   {
+    "id": "E1-A1",
+    "n": 5157,
+    "G": 36,
+    "F_efectivo": 4.6220660828501146,
+    "pi": 0.049460457237841884
+   },
+   {
+    "id": "E1-A1-v1",
+    "n": 3898,
+    "G": 36,
+    "F_efectivo": 4.500748356938939,
+    "pi": 0.08495865788833752
+   },
+   {
+    "id": "E1-A1-v2",
+    "n": 8204,
+    "G": 43,
+    "F_efectivo": 0.14813811738994842,
+    "pi": 0.009376066415450454
+   },
+   {
+    "id": "E1-A1-v4",
+    "n": 5157,
+    "G": 36,
+    "F_efectivo": 4.376877346285374,
+    "pi": 0.05767365606575952
+   },
+   {
+    "id": "E1-A1-v5",
+    "n": 5161,
+    "G": 36,
+    "F_efectivo": 4.840289087797012,
+    "pi": 0.2539878687586561
+   },
+   {
+    "id": "E1-A1-v6",
+    "n": 1664,
+    "G": 14,
+    "F_efectivo": 4.726576811273247,
+    "pi": -0.04936206714275096
+   },
+   {
+    "id": "E1-A1-v7",
+    "n": 1486,
+    "G": 8,
+    "F_efectivo": 4.16838866049801,
+    "pi": 0.4367504822561927
+   },
+   {
+    "id": "E1-A1-v8",
+    "n": 1275,
+    "G": 8,
+    "F_efectivo": 3.0647796030051477,
+    "pi": 0.0501684473783242
+   },
+   {
+    "id": "E1-A1-v9",
+    "n": 732,
+    "G": 6,
+    "F_efectivo": 52.86441692833869,
+    "pi": 0.024218413560601084
+   },
+   {
+    "id": "E1-A1-v10",
+    "n": 5101,
+    "G": 35,
+    "F_efectivo": 4.33866802712958,
+    "pi": 0.03300051905524132
+   },
+   {
+    "id": "E1-A1-v11",
+    "n": 5157,
+    "G": 36,
+    "F_efectivo": 6.291010914202893,
+    "pi": 0.05104041015405966
+   },
+   {
+    "id": "E1-R2 [placebo hospitales]",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.5709126156084665,
+    "pi": 0.000984211943877101
+   },
+   {
+    "id": "E1-A1 [placebo hospitales]",
+    "n": 5157,
+    "G": 36,
+    "F_efectivo": 0.009025901527521925,
+    "pi": 0.0015075404488763796
+   },
+   {
+    "id": "E1-R2 [placebo universidades]",
+    "n": 5360,
+    "G": 47,
+    "F_efectivo": 0.012651166354557113,
+    "pi": 0.00011103507314675924
+   },
+   {
+    "id": "E1-A1 [placebo universidades]",
+    "n": 5157,
+    "G": 36,
+    "F_efectivo": 5.259936167259141,
+    "pi": -0.03686106750829864
+   }
+  ],
+  "E1-R3": {
+   "pretendencias_p": 0.008375662563836357,
+   "pendiente_detectable_80": 0.0037358510675038624,
+   "sesgo_implicado_post": 0.013075478736263519,
+   "placebo_fecha": {
+    "coef": 0.004711839078847094,
+    "p": 0.054089560874760086,
+    "mismo_signo": null,
+    "n": 2292
+   },
+   "honest": [
+    {
+     "Mbar": 0.0,
+     "ic95": [
+      0.0036949599761345025,
+      0.014009290445084298
+     ],
+     "excluye_cero": true,
+     "G": 47,
+     "k": 8,
+     "rango_V": 8,
+     "lectura": "apto (M̄ = 0)"
+    },
+    {
+     "Mbar": 0.5,
+     "ic95": [
+      -0.008435983807596543,
+      0.025192509532465508
+     ],
+     "excluye_cero": false,
+     "G": 47,
+     "k": 8,
+     "rango_V": 8,
+     "lectura": "válido pero conservador; informativo"
+    },
+    {
+     "Mbar": 1.0,
+     "ic95": [
+      -0.02336949940848777,
+      0.03998662399987008
+     ],
+     "excluye_cero": false,
+     "G": 47,
+     "k": 8,
+     "rango_V": 8,
+     "lectura": "válido pero conservador; informativo"
+    }
+   ],
+   "tendencia_distancia_2011_2013": {
+    "coef": -0.00784141081920449,
+    "p": 0.0026899757386427818,
+    "n": 764
+   },
+   "conley_se": {
+    "1.0": 0.0025225860677741303,
+    "2.0": 0.002197479728720577
+   },
+   "moran_residuos": {
+    "I": -0.03575870663020208,
+    "E_I": -0.00130718954248366,
+    "p_unilateral": 0.965,
+    "p_bilateral": 0.087,
+    "n": 766,
+    "k": 5
+   },
+   "medidas_alternativas": {
+    "y_vu": {
+     "coef": 0.03659127523157797,
+     "ic95": [
+      0.025882481577337014,
+      0.04730006888581893
+     ],
+     "p": 4.157000416259567e-07,
+     "n": 261
+    },
+    "y_mes": {
+     "coef": 0.004196742818033988,
+     "ic95": [
+      0.0009481132143430594,
+      0.007445372421724916
+     ],
+     "p": 0.012480021699374785,
+     "n": 6884
+    },
+    "sin_atipicos": {
+     "coef": 0.004862977990068594,
+     "ic95": [
+      0.002019851154491792,
+      0.007706104825645396
+     ],
+     "p": 0.0012365679352386945,
+     "n": 6740,
+     "n_excluidas": 16
+    }
+   },
+   "razon_con_referencia": 0.11652447924882724,
+   "tamano_mc_cr1": 0.0785,
+   "v3_coprincipal": true,
+   "clasificacion_razones": [
+    "pretendencias p = 0.008 < 0,01"
+   ]
+  },
+  "E1-R4": {
+   "pretendencias_p": 0.1205191749329088,
+   "pendiente_detectable_80": 0.012915403645131772,
+   "sesgo_implicado_post": 0.0452039127579612,
+   "placebo_fecha": {
+    "coef": -0.010918012856329904,
+    "p": 0.19500617878275242,
+    "n": 231
+   },
+   "honest": [
+    {
+     "Mbar": 0.0,
+     "ic95": [
+      -0.013215870998816898,
+      0.016743807726066262
+     ],
+     "excluye_cero": false,
+     "G": 6,
+     "k": 8,
+     "rango_V": 5,
+     "lectura": "apto (M̄ = 0)"
+    },
+    {
+     "Mbar": 0.5,
+     "ic95": [
+      -0.04159445483078099,
+      0.04356364722118921
+     ],
+     "excluye_cero": false,
+     "G": 6,
+     "k": 8,
+     "rango_V": 5,
+     "lectura": "válido pero conservador; informativo"
+    },
+    {
+     "Mbar": 1.0,
+     "ic95": [
+      -0.0766318487772168,
+      0.07901825154774608
+     ],
+     "excluye_cero": false,
+     "G": 6,
+     "k": 8,
+     "rango_V": 5,
+     "lectura": "válido pero conservador; informativo"
+    }
+   ],
+   "moran_residuos": {
+    "I": 0.10189847266805721,
+    "E_I": -0.013157894736842105,
+    "p_unilateral": 0.049,
+    "p_bilateral": 0.077,
+    "n": 77,
+    "k": 5
+   },
+   "medidas_alternativas": {
+    "y_vu": {
+     "coef": NaN,
+     "ic95": [
+      NaN,
+      NaN
+     ],
+     "p": NaN,
+     "n": 0,
+     "error": "division by zero"
+    },
+    "y_mes": {
+     "coef": 0.020252413233793592,
+     "ic95": [
+      -0.011889319158613527,
+      0.05239414562620071
+     ],
+     "p": 0.166218618464417,
+     "n": 693
+    }
+   },
+   "conteos_geometria": {
+    "radio_total": 25,
+    "radio_no_sellado": 22,
+    "anillo_total": 70,
+    "anillo_no_sellado": 55,
+    "cuota_radio": 0.88,
+    "cuota_anillo": 0.7857142857142857
+   },
+   "tamano_webb_mc": 0.06,
+   "clasificacion_razones": [
+    "solo 6 clusters (barrios), 3 con tratadas: fuera del rango del Monte Carlo de V18 (G = 8, 4 tratados)",
+    "mismo signo en 50% de las variantes enumeradas (< 80 %)",
+    "tope de la especificación: SUGESTIVO (un solo grupo tratado: la Sagrada Família)"
+   ]
+  },
+  "E1-P-H3": {
+   "coef": -6.47971971459783e-05,
+   "se": 0.0004183281092470024,
+   "p_principal": 0.8769294939341049,
+   "G": 1208,
+   "n": 39951,
+   "n_secciones": 10004,
+   "sd_intra": 0.6239364796282743,
+   "tamano_mc": null,
+   "inferencia": "CR1 t(G−1) por municipio (la de V15; rechazo placebo 0,052 en su Monte Carlo)",
+   "ventana": "2021-2024",
+   "p_i7": 0.8769294939341049
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no aplica: diseño de evaluación (efectos fijos y eventos), no predictivo; la evaluación sellada diferida de la adenda 1.11 solo incluye E1-A1, que no supera la estimabilidad"
+ },
+ "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Clasificación provisional: falta I8 (réplica ciega, B6). Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
+}

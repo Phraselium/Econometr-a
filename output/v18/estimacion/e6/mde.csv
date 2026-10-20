@@ -1,0 +1,2 @@
+id,tratadas,controles,minimo_datos,cumple_minimo,G,mde80,mde80_nominal,mde80_corregido_tamano,mde80_R10000,umbral,tamano_nominal_cr1,sigma_residual_previo,R,estimable
+E6-R1,33,74,≥ 30 tratadas y ≥ 30 de control,True,37,0.06229511419547269,0.05503032563304923,0.06229511419547269,0.062243715435756575,0.062,0.098,0.053919180465136614,2000,False

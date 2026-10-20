@@ -1,0 +1,16 @@
+id,rol,estado,resultado,tratadas,controles,G,mde80,umbral,clase,nota
+E6-R1,principal,NO ESTIMABLE por variación: MDE80 0.0623 > umbral 0.062,ln SERPAVI (VC) de secciones contiguas a edificios de >= 20 viviendas terminados en 2015-2018,33.0,74.0,37.0,0.06229511419547269,0.062,NO ESTIMABLE,MDE80 con R = 10.000: 0.0622 (sensibilidad; la decisión previa es la de R = 2.000)
+E6-R1-v1,variante,no estimada (principal NO ESTIMABLE),[M] SERPAVI de vivienda unifamiliar,3.0,4.0,,,,NO ESTIMABLE,recuento de pilas (tratadas/controles): 2015: 3/2; 2016: 0/2; 2017: 0/0; 2018: 0/0
+E6-R1-v2,variante,no estimada (principal NO ESTIMABLE),[E] fecha de evento = terminación − 2,34.0,29.0,,,,NO ESTIMABLE,recuento de pilas (tratadas/controles): 2015: 3/22; 2016: 3/7; 2017: 9/0; 2018: 19/0
+E6-R1-v3,variante,no estimada (principal NO ESTIMABLE),[U] sin València ciudad,13.0,4.0,,,,NO ESTIMABLE,recuento de pilas (tratadas/controles): 2015: 13/2; 2016: 0/2; 2017: 0/0; 2018: 0/0
+E6-R1-v4,variante,no estimada (principal NO ESTIMABLE),[U] con la sección propia,38.0,153.0,,,,NO ESTIMABLE,recuento de pilas (tratadas/controles): 2015: 15/79; 2016: 15/43; 2017: 5/24; 2018: 3/7
+E6-R1-v5,variante,no estimada (principal NO ESTIMABLE),[C] cerca frente a lejos (contiguas de segundo orden),33.0,50.0,,,,NO ESTIMABLE,recuento de pilas (tratadas/controles): 2015: 14/16; 2016: 13/20; 2017: 3/3; 2018: 3/11
+E6-R1-v6,variante,no estimada (principal NO ESTIMABLE),[U] umbral de 10 viviendas,7.0,99.0,,,,NO ESTIMABLE,recuento de pilas (tratadas/controles): 2015: 3/49; 2016: 2/32; 2017: 1/15; 2018: 1/3
+E6-A1,principal,NO ESTIMABLE por datos: 0 secciones tratadas con edificios de >= 50 viviendas y anillo de 250 m (mínimo 30),E6-R1 con umbral de 50 viviendas y anillo de 250 m,0.0,40.0,,,,NO ESTIMABLE,recuento de pilas (tratadas/controles): 2015: 0/19; 2016: 0/11; 2017: 0/9; 2018: 0/1
+E6-A2,NO ESTIMABLE,"NO ESTIMABLE (datos): E6-R1 en el resto de España requiere la descarga masiva del Catastro (tareas_autor, punto 1)",E6-R1 en el resto de España,,,,,,NO ESTIMABLE,
+E6-R2,principal,"NO ESTIMABLE (X1): la API de AEMET OpenData exige una clave personal (alta con correo electrónico del autor); la consulta sin clave, hecha el 2026-10-20 desde esta sesión, devuelve una respuesta vacía. Sin la lluvia de AEMET, E6-R2 es NO ESTIMABLE (plan 1.6, X1); no se sustituye por otra fuente (ERA5, Open-Meteo) sin orden expresa del autor","ln alquiler provincial (IPVA) por unidad terminada en el 4T, instrumentada con la lluvia de julio a septiembre",,,,,,NO ESTIMABLE,"datos disponibles: terminadas trimestrales provinciales 2008T1-2026T2, IPVA provincial 2011-2024"
+E6-R2-v1,variante,no estimada (E6-R2 NO ESTIMABLE),[U] sin 2019 ni 2024 en València (DANA),,,,,,NO ESTIMABLE,
+E6-R2-v2,variante,no estimada (E6-R2 NO ESTIMABLE),[M] IPC de alquiler trimestral,,,,,,NO ESTIMABLE,
+E6-R2-v3,variante,no estimada (E6-R2 NO ESTIMABLE),[U] sin Barcelona,,,,,,NO ESTIMABLE,
+E6-R2-v4,variante,no estimada (E6-R2 NO ESTIMABLE),[M] lluvia de agosto-septiembre,,,,,,NO ESTIMABLE,
+E6-A3,principal,NO ESTIMABLE (X1): sin la lluvia de AEMET,E6-R2 con el IPC de alquiler 2002-2025,,,,,,NO ESTIMABLE,

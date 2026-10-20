@@ -535,11 +535,11 @@
  },
  {
   "id": "V18-F3-A2-v1",
-  "indicador": "Elasticidad de largo plazo respecto de el valor tasado real (ln) (F3-A2-v1)",
-  "valor": 1.1405,
-  "min": -0.2636,
-  "max": 2.6821,
-  "unidad": "elasticidad de largo plazo (PMG; IC95 por bootstrap de provincias, sin validación Monte Carlo)",
+  "indicador": "Respuesta de corto plazo del ln ini a la variación de el valor tasado real (ln) (F3-A2-v1)",
+  "valor": 3.5789,
+  "min": 2.7111,
+  "max": 4.3965,
+  "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
   "periodo": "2004-2024",
   "cobertura": "33 provincias",
   "fuentes": [
@@ -553,7 +553,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "ASOCIACIÓN",
-  "nota": "F3 panel provincial; ASOCIACIÓN como máximo. N = 33 provincias no selladas con serie completa (se descartan 5 por huecos), T = 21. Contraste de cointegración de panel tipo Westerlund (Gτ = -3.03; valor crítico 5 % por bootstrap conjunto -2.42; p = 0.001); validación Monte Carlo propia con la estructura del diseño: tamaño 0.020 (banda con valor crítico corregido), potencia 1.00 (R = 200, B = 99; no sustituye al Monte Carlo del agente montecarlo). Westerlund, CIPS y CS-ARDL: NO APTOS en V15/V16. Driscoll-Kraay con T <= 30: NO APTO (tamaño 0,16-0,28): no clasifica. CD de Pesaran sobre residuos: 36.7836 (p = 0.0); correlación media 0.3493. Se rechaza la ausencia de cointegración (BY q = 0.003): se publica el largo plazo. [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+  "nota": "F3 panel provincial; ASOCIACIÓN como máximo. N = 33 provincias no selladas con serie completa (se descartan 5 por huecos), T = 21. Contraste de cointegración de panel tipo Westerlund (Gτ = -3.03; valor crítico 5 % por bootstrap conjunto -2.42; p = 0.001); validación Monte Carlo propia con la estructura del diseño: tamaño 0.020 (banda con valor crítico corregido), potencia 1.00 (R = 200, B = 99; no sustituye al Monte Carlo del agente montecarlo). Westerlund, CIPS y CS-ARDL: NO APTOS en V15/V16. Driscoll-Kraay con T <= 30: NO APTO (tamaño 0,16-0,28): no clasifica. CD de Pesaran sobre residuos: 36.7836 (p = 0.0); correlación media 0.3493. No se rechaza la ausencia de cointegración al 5 % (BY q = 0.003): no se publican elasticidades de largo plazo, sobrevaloración ni comparaciones de F4 con este modelo; solo la dinámica de corto plazo. La variante rechaza por sí sola (p = 0.001; BY q = 0.003) pero su principal (F3-A2) no rechaza tras Holm (0.063): no se publica largo plazo (AD-F es por modelo); queda como señal exploratoria para I5, sin clase propia. [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
  },
  {
   "id": "V18-F3-A2-v2",

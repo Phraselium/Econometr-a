@@ -376,16 +376,16 @@
    "publica_largo_plazo": false
   },
   "F3-A2-v1": {
-   "valor": 1.1405,
+   "valor": 3.5789,
    "ic95": [
-    -0.2636,
-    2.6821
+    2.7111,
+    4.3965
    ],
-   "unidad": "elasticidad de largo plazo (PMG; IC95 por bootstrap de provincias, sin validación Monte Carlo)",
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
    "clasificacion_v18": "ASOCIACIÓN",
    "coint_p_mc": 0.001,
    "p_ajustado": 0.003,
-   "publica_largo_plazo": true
+   "publica_largo_plazo": false
   },
   "F3-A2-v2": {
    "valor": 5.9641,
@@ -674,8 +674,8 @@
    4.5075
   ],
   "F3-A2-v1": [
-   -0.2636,
-   2.6821
+   2.7111,
+   4.3965
   ],
   "F3-A2-v2": [
    5.1802,

@@ -48,7 +48,7 @@ F,F2-R1-v2,F2-R1 sin hogares,2002,2024,874,,,,,-0.10609703469187404,0.994,rechaz
 F,F2-A1,F2-A1 CS-ARDL del IPC de alquiler real,2002,2024,874,,,,,,0.996,rechaza=False; banda=con valor crítico corregido
 F,F2-A1-v1,F2-A1 con SERPAVI,2011,2024,490,,,,,,0.994,rechaza=False; banda=con valor crítico corregido
 F,F3-A2,F3-A2 PMG de ln iniciadas,2004,2024,651,,,,,3.518625669099325,0.007,rechaza=False; banda=apta
-F,F3-A2-v1,F3-A2 sin suelo,2004,2024,693,,,,,1.1404978091349567,0.001,rechaza=True; banda=con valor crítico corregido
+F,F3-A2-v1,F3-A2 sin suelo,2004,2024,693,,,,,3.5789332096034623,0.001,rechaza=False; banda=con valor crítico corregido
 F,F3-A2-v2,F3-A2 sin crédito,2004,2024,651,,,,,5.964067004178967,0.318,rechaza=False; banda=con valor crítico corregido
 F-prereg,F1-P-E1P2,"CS-ARDL(1,0) trimestral: ln valor tasado real ~ ln IPC alquiler real; provincias no selladas",2002T1,2026T2,0,,,,,,,coprincipal; repite_visto=sí (V15 E1-P2 y V16 Q9-c)
 F,F1-P-E1P2,"CS-ARDL(1,0)",2002T1,2026T2,3234,,,,,-0.7460460534028389,,NO APTO: descriptivo

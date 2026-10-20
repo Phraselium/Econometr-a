@@ -6,6 +6,8 @@
 
 En ninguno de los nueve contrastes de cointegración de la familia F (Holm, 5 %) se rechaza la ausencia de cointegración. Por la regla AD-F de la adenda no se publican elasticidades de largo plazo de F1, F2 ni F3, ni la sobrevaloración (F1-A3), y no se hacen las comparaciones de F4. Solo se publica la dinámica de corto plazo, como ASOCIACIÓN. El resultado coincide con lo ya publicado (V7.2 y V8-M4: no se demuestra cointegración) y no cambia ninguna cifra ni conclusión publicada.
 
+**Señales cercanas, declaradas para que conste (ninguna se publica como largo plazo).** Principales entre 0,05 y 0,10 tras Holm: F3-A2 (p bruto 0.007; Holm 0.063). Variantes que rechazan por sí solas mientras su principal no: F3-A2-v1 (p 0.001; BY q 0.003). La regla AD-F es por modelo y la familia de Holm solo cuenta los contrastes de las principales; con T = 21 y N = 31 la validación propia da tamaño 0,05 y potencia 1,0 frente a un ajuste fuerte, y menos frente a un ajuste lento. Queda como señal exploratoria para la fase de revisión.
+
 ## Contrastes de cointegración (familia F, Holm)
 
 | id | muestra | N | estimador | coint_t | coint_F | coint_p_mc | p_ajustado | coint_rechaza_5pct | mde |
@@ -42,7 +44,7 @@ Variantes (BY al 10 % dentro de cada identificador) y coprincipales:
 | F2-R1-v3 | variante | 2014-2024 | 38 | — | — | — | — | — | NO ESTIMABLE |
 | F2-A1-v1 | variante | 2011-2024 | 35 | 0.994 | 0.994 | False | — | — | ASOCIACIÓN |
 | F2-A1-v2 | variante | 2014-2024 | 38 | — | — | — | — | — | NO ESTIMABLE |
-| F3-A2-v1 | variante | 2004-2024 | 33 | 0.001 | 0.003 | True | 1.1405 | elasticidad de largo plazo (PMG; IC95 por bootstrap de provincias, sin validación Monte Carlo) | ASOCIACIÓN |
+| F3-A2-v1 | variante | 2004-2024 | 33 | 0.001 | 0.003 | False | 3.5789 | elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias) | ASOCIACIÓN |
 | F3-A2-v2 | variante | 2004-2024 | 31 | 0.318 | 0.477 | False | 5.9641 | elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias) | ASOCIACIÓN |
 | F3-A2-v3 | variante | 2014-2024 | 36 | — | — | — | — | — | NO ESTIMABLE |
 | F1-P-E1P2 | coprincipal | 2002T1-2026T2 | 33 | — | — | — | -0.746 | θ de largo plazo (NO APTO: descriptivo) | no se clasifica |
@@ -94,7 +96,7 @@ Modelo F1-ECM frente a AR(4) y ECM v1 aproximado; 105 observaciones de prueba. R
 | id | estado | muestra | valor | ic95_lo | ic95_hi | clasificacion_v18 |
 |---|---|---|---|---|---|---|
 | F3-A2 | principal | 2004-2024 | 3.5186 | 2.6773 | 4.5075 | ASOCIACIÓN |
-| F3-A2-v1 | variante | 2004-2024 | 1.1405 | -0.2636 | 2.6821 | ASOCIACIÓN |
+| F3-A2-v1 | variante | 2004-2024 | 3.5789 | 2.7111 | 4.3965 | ASOCIACIÓN |
 | F3-A2-v2 | variante | 2004-2024 | 5.9641 | 5.1802 | 6.7192 | ASOCIACIÓN |
 | F3-A2-v3 | variante | 2014-2024 | — | — | — | NO ESTIMABLE |
 | F2-A2 | principal | 2013-2024 | 0.0091 | 0.0073 | 0.0109 | ASOCIACIÓN |

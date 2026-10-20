@@ -920,7 +920,63 @@
   ],
   "herramientas": "LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella.",
   "tamano_familia_holm": 3,
-  "raiz_maxima_VAR_R2": 0.9462862476285138
+  "raiz_maxima_VAR_R2": 0.9462862476285138,
+  "criterios_I1_I8": {
+   "E7-R1": {
+    "I1_diseno": "LP-IV con sorpresas de alta frecuencia del BCE como instrumento externo (supuestos: relevancia, exclusión y monotonía de la sorpresa monetaria pura); cumple como diseño",
+    "gate_MDE_1.3": "NO supera (MDE no detectable (potencia < 80 % en toda la rejilla) frente a 2.0)",
+    "I2_primera_etapa": "F efectivo 2.58; AR no acotado: no supera (fallo decisivo: F < 5 y AR no acotado)",
+    "I3_pretendencias": "no aplica a una serie temporal con instrumento; se sustituye por los placebos de I4 y por el sup-F de la primera etapa (diagnósticos)",
+    "I4_placebos": {
+     "choque_adelantado_8": "p AR 0.6971 (supera)",
+     "poblacion_total": "p AR 0.3049 (supera)"
+    },
+    "I5_robustez": "0.71 de las variantes con el mismo signo (se exige 0,80): no supera",
+    "I6_etiqueta": "no coherente con San Juan (2023) (-2.0), razón -0.64",
+    "I7_significacion": "fuera de la familia de Holm (no estimable); p AR en 0 = 0.906",
+    "I8_replica_ciega": "pendiente (B6)"
+   },
+   "E7-R1-ipv": {
+    "I1_diseno": "LP-IV con sorpresas de alta frecuencia del BCE como instrumento externo (supuestos: relevancia, exclusión y monotonía de la sorpresa monetaria pura); cumple como diseño",
+    "gate_MDE_1.3": "NO supera (MDE no detectable (potencia < 80 % en toda la rejilla) frente a 2.0)",
+    "I2_primera_etapa": "F efectivo 0.03; AR no acotado: no supera (fallo decisivo: F < 5 y AR no acotado)",
+    "I3_pretendencias": "no aplica a una serie temporal con instrumento; se sustituye por los placebos de I4 y por el sup-F de la primera etapa (diagnósticos)",
+    "I5_robustez": "sin variantes comparables",
+    "I6_etiqueta": "no coherente con San Juan (2023) (-2.0), razón -0.08",
+    "I7_significacion": "fuera de la familia de Holm (no estimable); p AR en 0 = 0.999",
+    "I8_replica_ciega": "pendiente (B6)"
+   },
+   "E7-R1-cv": {
+    "I1_diseno": "LP-IV con sorpresas de alta frecuencia del BCE como instrumento externo (supuestos: relevancia, exclusión y monotonía de la sorpresa monetaria pura); cumple como diseño",
+    "gate_MDE_1.3": "NO supera (MDE no detectable (potencia < 80 % en toda la rejilla) frente a 3.0)",
+    "I2_primera_etapa": "F efectivo 0.15; AR no acotado: no supera (fallo decisivo: F < 5 y AR no acotado)",
+    "I3_pretendencias": "no aplica a una serie temporal con instrumento; se sustituye por los placebos de I4 y por el sup-F de la primera etapa (diagnósticos)",
+    "I5_robustez": "sin variantes comparables",
+    "I6_etiqueta": "no coherente con San Juan (2023) (-3.0), razón 24.58",
+    "I7_significacion": "fuera de la familia de Holm (no estimable); p AR en 0 = 0.783",
+    "I8_replica_ciega": "pendiente (B6)"
+   },
+   "E7-R1-alq": {
+    "I1_diseno": "LP-IV con sorpresas de alta frecuencia del BCE como instrumento externo (supuestos: relevancia, exclusión y monotonía de la sorpresa monetaria pura); cumple como diseño",
+    "gate_MDE_1.3": "NO supera (MDE no detectable (potencia < 80 % en toda la rejilla) frente a 2.0)",
+    "I2_primera_etapa": "F efectivo 0.37; AR no acotado: no supera (fallo decisivo: F < 5 y AR no acotado)",
+    "I3_pretendencias": "no aplica a una serie temporal con instrumento; se sustituye por los placebos de I4 y por el sup-F de la primera etapa (diagnósticos)",
+    "I5_robustez": "sin variantes comparables",
+    "I6_etiqueta": "sin referencia comparable",
+    "I7_significacion": "fuera de la familia de Holm (no estimable); p AR en 0 = 0.044",
+    "I8_replica_ciega": "pendiente (B6)"
+   },
+   "E7-R2": {
+    "I1_diseno": "LP-IV con sorpresas de alta frecuencia del BCE como instrumento externo (supuestos: relevancia, exclusión y monotonía de la sorpresa monetaria pura); cumple como diseño",
+    "gate_MDE_1.3": "NO supera (MDE no detectable (potencia < 80 % en toda la rejilla) frente a 2.0)",
+    "I2_primera_etapa": "F efectivo 0.28; AR no acotado: no supera (fallo decisivo: F < 5 y AR no acotado)",
+    "I3_pretendencias": "no aplica a una serie temporal con instrumento; se sustituye por los placebos de I4 y por el sup-F de la primera etapa (diagnósticos)",
+    "I5_robustez": "sin variantes comparables",
+    "I6_etiqueta": "no coherente con San Juan (2023) (-2.0), razón 5.27",
+    "I7_significacion": "fuera de la familia de Holm (no estimable); p AR en 0 = 0.506",
+    "I8_replica_ciega": "pendiente (B6)"
+   }
+  }
  },
  "fuera_muestra": null,
  "notas": [

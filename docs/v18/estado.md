@@ -45,6 +45,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F4 | montecarlo | grupo A: BHJ, Webb TWFE, IV débil, Driscoll-Kraay, Conley | 185.171 | output/v18/montecarlo/{bhj,webb_twfe,iv_debil,driscoll_kraay,conley}/ |
 | 2026-10-20 | F4 | montecarlo | grupo B: CS y SA con Webb, dCDH, Honest DiD, SDID y Conley-Taber, aleatorización, LP-IV, SVAR proxy, metaanálisis | 453.618 | output/v18/montecarlo/ |
 | 2026-10-20 | F4 | modelizador | E2 topes (Ley 11/2020) y E8 ITP | 569.802 | src/v18/estimacion/{e2,e8}_*.py; output/v18/estimacion/{e2,e8}/ |
+| 2026-10-20 | F4 | modelizador | F1-F3 (sin cointegración: solo corto plazo) y E7 tipos (primera etapa débil: NO ESTIMABLE) | 511.431 | src/v18/estimacion/{f_*,e7_tipos}.py; output/v18/estimacion/{f_conjunto,e7}/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -52,8 +53,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F1 | 1.630.684 |
 | F2 | 183.117 |
 | F3 | 985.262 |
-| F4 | 1.502.705 |
+| F4 | 2.014.136 |
 
-Total V18: 4.561.401 tokens
+Total V18: 5.072.832 tokens
 
 <!-- fin subagentes -->

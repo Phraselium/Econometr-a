@@ -80,8 +80,8 @@ v18-E2-estimada,E2-R1-v9,log renta media de contratos nuevos,,,1010,,,,,-0.00522
 v18-E2-estimada,E2-R1-v10,log renta media de contratos nuevos,,,1859,,,,,-0.03498650952998023,0.0005,variante; clase 
 v18-E2-estimada,E2-R1-v11,log renta media de contratos nuevos,,,1833,,,,,-0.037583039488098054,0.0005,variante; clase 
 v18-E2-estimada,E2-R1-h1,log renta media de contratos nuevos,,,1859,,,,,-0.037784558631517515,0.0005,holgura; clase 
-v18-E2-estimada,E2-R1c,log contratos por 1.000 habitantes,,,2665,,,,,0.017322043900921732,0.4029,principal; clase SUGESTIVO
-v18-E2-no-estimada,E2-R1c-v1,log contratos por 1.000 habitantes,,,0,,,,,,,NO ESTIMABLE
+v18-E2-estimada,E2-R1c,log contratos por 1.000 habitantes,,,2665,,,,,0.017322043900921732,0.4029,principal; clase ASOCIACIÓN
+v18-E2-estimada,E2-R1c-v1,log contratos por 1.000 habitantes,,,0,,,,,,,variante; clase 
 v18-E2-estimada,E2-R1c-v2,log contratos por 1.000 habitantes,,,2665,,,,,0.022453533281677485,,variante; clase 
 v18-E2-estimada,E2-R1c-v3,log contratos por 1.000 habitantes,,,2050,,,,,-0.008530925849076923,0.714,variante; clase 
 v18-E2-estimada,E2-R1c-v4,log contratos por 1.000 habitantes,,,2678,,,,,0.02024402768621148,0.3405,variante; clase 

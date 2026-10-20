@@ -331,12 +331,12 @@ def lectura(ia: dict, ib: dict, ic_: dict, id_: dict, ie: dict, filas: list[dict
                 if sal[1]["est"] < 0 and sal[1]["p"] >= 0.05 else
                 ("El observado es más negativo que la extrapolación y el salto es distinguible." if sal[1]["est"] < 0 else "El observado está por encima de la extrapolación: el coeficiente se aproxima a cero más rápido que la recta.")))
     b = [t[f"E2-R1-B6b-{i}"] for i in (1, 2, 3, 4)]
-    L.append("(b) Covariables por trimestre: " + "; ".join(f"{x['id'].split('-')[-1]} {x['coef']:+.4f} (IC95 {f(x['ic95_lo'])}; {f(x['ic95_hi'])}; p Webb {f(x['p_webb'])})" for x in b)
+    L.append("(b) Covariables por trimestre: " + "; ".join(f"{x['id'][6:]} {x['coef']:+.4f} (IC95 {f(x['ic95_lo'])}; {f(x['ic95_hi'])}; p Webb {f(x['p_webb'])})" for x in b)
              + f"; principal {ib['coef']:+.4f}. HUT × trimestre deja el coeficiente en {b[0]['coef']:+.4f} (por debajo de −0,03); ln(población) × trimestre lo reduce a {b[1]['coef']:+.4f} "
              f"({'no queda' if b[1]['coef'] >= -0.03 else 'queda'} por debajo de −0,03, criterio de la ronda), con IC95 que casi llega a cero.")
     c = [t[f"E2-R1-B6c-{i}"] for i in (1, 2, 3)]
     pl = {i: ic_[f"B6c-{i}"] for i in (4, 5, 6)}
-    L.append("(c) Controles emparejados: " + "; ".join(f"{x['id'].split('-')[-1]} {x['coef']:+.4f} (p Webb {f(x['p_webb'])}; pretendencias p = {ic_[x['id'].split('-')[-1]]['pretend_p']:.2f})" for x in c)
+    L.append("(c) Controles emparejados: " + "; ".join(f"{x['id'][6:]} {x['coef']:+.4f} (p Webb {f(x['p_webb'])}; pretendencias p = {ic_[x['id'][6:]]['pretend_p']:.2f})" for x in c)
              + f". Placebo de 2017: sin tendencia {pl[4]['coef']:+.4f} (p = {pl[4]['p']:.3f}); con tendencia propia de los regulados {pl[5]['coef']:+.4f} (p = {pl[5]['p']:.3f}, de signo contrario al de la principal); "
              f"con tendencia y controles emparejados {pl[6]['coef']:+.4f} (p = {pl[6]['p']:.3f}). El placebo de signo contrario indica que los regulados subían más que los controles en 2017-2019 "
              "(lo que, si se revierte, sesgaría hacia un coeficiente más negativo); el emparejamiento por ese crecimiento no reduce el coeficiente.")

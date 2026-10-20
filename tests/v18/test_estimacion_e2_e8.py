@@ -197,6 +197,39 @@ def test_clasificar_identificado_sugestivo_y_ascociacion():
     assert K.clasificar(_info(inferencia_banda="no fiable"))["clase"] == "ASOCIACIÓN"
 
 
+def test_k7_no_significativo_sin_i1_i5_es_asociacion_solo_con_la_opcion():
+    """K7 (B6): no existe «SUGESTIVO sin significación»; con la opción, un no significativo que no supera I1-I5 es ASOCIACIÓN."""
+    debil = _info(p_holm=0.5, roth_ok=False)
+    assert K.clasificar(debil)["clase"] == "SUGESTIVO"                                  # lectura anterior (E1 y E6 no usan la opción)
+    assert K.clasificar(debil | {"nulo_sin_sugestivo": True})["clase"] == "ASOCIACIÓN"
+    assert K.clasificar(_info(p_holm=0.5) | {"nulo_sin_sugestivo": True})["clase"] == "NO CONCLUYENTE (sin potencia)"
+    assert K.clasificar(_info(p_holm=0.07, roth_ok=False) | {"nulo_sin_sugestivo": True})["clase"] == "SUGESTIVO"     # significación entre 0,05 y 0,10
+    cambio = K.clasificar(_info(robustez={"frac_mismo_signo": 0.9, "cambio_signo": True, "solape_ic": True}, texto_cambio_signo="el signo cambia sin 2012-2013 (B4)"))
+    assert cambio["clase"] == "ASOCIACIÓN" and cambio["razones"] == ["el signo cambia sin 2012-2013 (B4)"]
+
+
+def test_salidas_k7_e2r1c_y_e8r1_son_asociacion():
+    for estudio, clave in (("e2", "E2-R1c"), ("e8", "E8-R1")):
+        f = SALIDAS / estudio / "resultado.json"
+        if not f.exists():
+            pytest.skip("sin salidas")
+        assert json.loads(f.read_text(encoding="utf-8"))["clasificaciones"][clave] == "ASOCIACIÓN"
+    assert json.loads((SALIDAS / "e2" / "resultado.json").read_text(encoding="utf-8"))["clasificaciones"]["E2-R1"] == "SUGESTIVO"
+
+
+def test_robustez_b6_de_e2_formato():
+    f = SALIDAS / "e2" / "robustez_b6.csv"
+    if not f.exists():
+        pytest.skip("sin salidas")
+    r = pd.read_csv(f)
+    assert {"id", "prueba", "coef", "p_webb", "q_bh"} <= set(r.columns)
+    assert set(r.prueba) == {"a", "b", "c", "d", "e"} and "E2-R1c-v1" in set(r.id)
+    h = json.loads((SALIDAS / "e2" / "hechos.json").read_text(encoding="utf-8"))
+    b6 = [x for x in h if x["id"].startswith("V18-E2-B6-")]
+    assert len(b6) >= 4 and all(x["capa"] == "C4" for x in b6)
+    assert "## Robustez B6 (a posteriori)" in (SALIDAS / "e2" / "informe.md").read_text(encoding="utf-8")
+
+
 def test_clasificar_nulos_no_concluyente_y_no_estimable():
     assert K.clasificar(_info(p_holm=0.5))["clase"] == "NO CONCLUYENTE (sin potencia)"
     assert K.clasificar(_info(p_holm=0.5, tost={"equivalente": True}))["clase"] == "IDENTIFICADO (efecto nulo acotado)"

@@ -62,7 +62,7 @@
  "clasificacion_v18": "SUGESTIVO",
  "clasificaciones": {
   "E2-R1": "SUGESTIVO",
-  "E2-R1c": "SUGESTIVO",
+  "E2-R1c": "ASOCIACIÓN",
   "E2-A1": "NO ESTIMABLE",
   "E2-A2": "NO ESTIMABLE",
   "E2-A3": "NO ESTIMABLE",
@@ -302,7 +302,9 @@
     "potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|",
     "placebo de fecha p = 0.001",
     "placebo de resultado sin dato en el repositorio",
-    "mismo signo en 67% de las variantes enumeradas (< 80 %)"
+    "mismo signo en 67% de las variantes enumeradas (< 80 %)",
+    "la diferencia persiste tras la STC 37/2022 (coeficiente +0.0736, p = 0.002): tope de la adenda, AD-E2-R1 (línea 581)",
+    "el placebo de fecha (adopción falsa en 2017) es significativo (coeficiente -0.0793, p = 0.0005): el diseño no es creíble para este resultado (K7)"
    ]
   }
  },

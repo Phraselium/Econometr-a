@@ -181,3 +181,16 @@ def test_manifiesto_v18_ejemplos_de_la_adenda():
     c = m["unidades_excluidas"]["comprobacion_adenda_1_5"]
     assert c["distritos_coinciden"] and c["municipios_coinciden"]
     assert m["etiqueta"]["nombre"] == "plan-replicacion-v18"
+
+
+@pytest.mark.skipif(not sellado.MANIFIESTO.exists(), reason="sin docs/v18/sellado_v18.json")
+def test_claves_añadidas_tras_la_etiqueta_b6():
+    """B6-1: claves añadidas después de la etiqueta con las mismas reglas; el resto del manifiesto no cambia de significado."""
+    m = json.loads(sellado.MANIFIESTO.read_text(encoding="utf-8"))
+    assert sellado.tope("c21md_hogares_muestra", "municipio", "D") == "2021-01-01"      # (e): Censo 2021, corte único
+    assert m["topes"]["c21md_hogares_muestra|municipio|D"]["regla"] == "(e)"
+    assert sellado.tope("mivau_obra_libre_terminadas", "provincia", "A") == "2024"       # (f) con (a): sustituto de terminadas|provincia|A
+    assert m["topes"]["mivau_obra_libre_terminadas|provincia|A"]["regla"] == "(f) (a)"
+    assert "c21md_hogares_muestra|municipio|D" in m["especificaciones"]["E2-R1c"]["variables"]
+    assert "mivau_obra_libre_terminadas|provincia|A" in m["especificaciones"]["E12-A1"]["variables"]
+    assert m["resumen"]["n_variables"] == len(m["topes"]) == 102

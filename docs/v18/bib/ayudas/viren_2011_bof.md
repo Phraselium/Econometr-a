@@ -1,0 +1,8 @@
+### Virén (2013). Is the housing allowance shifted to rental prices? (versión de trabajo «Does housing allowance feed through into rental prices?», 2011)
+- Clave: viren_2011_bof · DOI: 10.1007/s00181-012-0589-x (edición publicada, Empirical Economics 44(3), 1497-1518; Crossref comprobado 2026-10-20) · Revista o serie: Bank of Finland Research Discussion Papers 11/2011 · Licencia de la versión abierta: no declarada en el PDF; descarga libre en el repositorio del Banco de Finlandia
+- Enlace abierto: https://publications.bof.fi/handle/10024/47194 · Leído: solo resumen y conclusiones (resumen, PDF p. 5, y estimación conservadora, p. 18); las tablas no se leyeron · sha256 del PDF: 9d3bb22bf46c
+- Pregunta; datos; diseño; identificación: ¿Se traslada la ayuda al alquiler? Datos: panel de unos 50.000 hogares perceptores en 2000-2008 y cortes transversales repetidos de todos los hogares finlandeses 1989-2008 (más de 10.000 por año). Diseño: modelos de panel y de cortes repetidos con la ayuda como variable explicativa; el detalle de la identificación no se leyó.
+- Resultado principal con su unidad: Estimación conservadora de la traslación: un tercio (θ = 0,33); el autor no descarta que sea del 50 %. La ayuda habría elevado además la demanda de vivienda más de lo que explicaría el efecto renta. Unidad: θ (proporción de la ayuda trasladada al alquiler). Sin error estándar recuperado.
+- Limitaciones y validez externa para España: No se pudo valorar la identificación (no leída); se incluye como contexto del rango y no como diseño cuasi experimental comprobado. Validez externa limitada para España.
+- Paquete de replicación: no (buscado en el repositorio del Banco de Finlandia y RePEc; microdatos de Kela no redistribuibles)
+- Estado: NO VERIFICADA

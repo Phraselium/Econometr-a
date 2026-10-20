@@ -23,12 +23,13 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 |---|---|---|---|---|---|
 | 2026-10-20 | F0 | general-purpose | inventario de datos por estudio (E1-E12, F1-F3) y tareas del autor | 259.633 | src/v18/f0_inventario.py; output/v18/f0/; docs/v18/tareas_autor.md |
 | 2026-10-20 | F1 | bibliotecario | grupo B: inmigración, oferta y suelo, obra nueva, vivienda pública (47 fichas) | 470.079 | docs/v18/bib/{inmigracion,oferta_suelo,obra_nueva,vivienda_publica}/ |
+| 2026-10-20 | F1 | bibliotecario | grupo A: turismo, topes, grandes tenedores, vacías (51 fichas) | 550.339 | docs/v18/bib/{turismo,topes,grandes_tenedores,vacias}/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 259.633 |
-| F1 | 470.079 |
+| F1 | 1.020.418 |
 
-Total V18: 729.712 tokens
+Total V18: 1.280.051 tokens
 
 <!-- fin subagentes -->

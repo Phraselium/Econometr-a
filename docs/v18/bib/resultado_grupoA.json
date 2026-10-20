@@ -1,0 +1,35 @@
+{
+  "rama": "v18-bib",
+  "pregunta": "E1 vivienda turistica (turismo); E2 topes al alquiler (topes); E10 grandes tenedores e inversores institucionales (grandes_tenedores); E11 viviendas vacias (vacias)",
+  "capa": "C4",
+  "datos": "Literatura: Crossref, OpenAlex (por DOI), Unpaywall, DataCite, Zenodo, Dataverse, series de bancos centrales y universidades; PDFs en data/bib/pdf (fuera de git), paquete de replicacion en data/bib/replicacion/chavesfonseca2026, sha256 en data/bib/CHECKSUMS.sha256",
+  "N": 51,
+  "N_por_factor": {"turismo": 22, "topes": 15, "grandes_tenedores": 10, "vacias": 4},
+  "N_texto_completo": 35,
+  "N_solo_resumen": 16,
+  "metodo": "revisión de literatura",
+  "estimacion": null,
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO",
+  "diagnosticos": {
+    "fichas_formato_exacto": true,
+    "citas_max_palabras": 15,
+    "sha256_pdfs_verificados": true,
+    "estado_fichas": "NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)",
+    "estudios_nuevos_fuera_del_plan_y_de_v15_v16": {"turismo": 4, "topes": 2, "grandes_tenedores": 10, "vacias": 1, "tope_por_factor": 15, "dejados_por_el_tope": 0}
+  },
+  "fuera_muestra": {"modelo": null, "rmse": null, "dm_vs_ar4": null},
+  "notas": [
+    "Busqueda sistematica incompleta: OpenAlex 'search' devolvio 429 (cuota diaria agotada, reintento en unas 12 horas); se uso Crossref query.bibliographic, busquedas web y consultas por DOI a OpenAlex/Unpaywall. Repetir con OpenAlex al restablecerse la cuota.",
+    "Descargas bloqueadas por desafios anti-bot o 403 (no se eludieron): ScienceDirect, Springer Link, HAL, EconStor, SSRN, openICPSR, INFORMS, Taylor & Francis, C.D. Howe, Leuphana. Quedan como 'solo resumen' o con la copia de repositorio disponible.",
+    "Paquetes de replicacion: solo hay uno descargado con licencia (chavesfonseca2026, CC BY 4.0, figshare 10.6084/m9.figshare.26263979.v2). Diamond et al. (openICPSR 116215) y Duso et al. (Leuphana 10.48548/pubdata-4449, CC BY 4.0 segun DataCite) existen pero no se pudieron descargar; el suplemento de Barron et al. (INFORMS) devolvio 403; la base HouseInc D3.4 (Zenodo 18432267, CC BY 4.0) devolvio 403 en el xlsx. El resto, no encontrado o con datos comerciales/administrativos.",
+    "Correccion al plan (E2): Monras y Garcia-Montalvo (FRBSF WP 2023-28) usan contratos de Incasol (con precios de referencia de la Agencia de l'Habitatge y datos de Registradores), no anuncios; el plan decia que solo era replicable con anuncios. Perez Garcia (2026) usa datos publicos de la Generalitat (renta media y contratos por municipio-trimestre).",
+    "Versiones: las cifras de koster2021, barron2021, valentin2019, duso2024, hahn2021, mense2019, monras2022/2023 y segu2020 proceden de documentos de trabajo; las publicadas pueden diferir (Valentin: 60 % en el borrador, 30 % en el resumen publicado). Monras y Garcia-Montalvo 2022 y 2023 discrepan en el reparto composicion/efecto.",
+    "Oferta de alquiler en Cataluña 2020-2022: sin caida (Jofre-Monseny et al.), -10 % en contratos nuevos (Monras y Garcia-Montalvo), -30 % en anuncios (Abel et al.); medidas distintas, se reportan las tres.",
+    "No leidos por falta de acceso: Monras y Garcia-Montalvo 2025 (CEPR DP 20018 / SSRN 5677822), Abel, Carrer y Luque 2025 (SSRN 5883882), version publicada de Morin et al. 2025.",
+    "E10: ningun estudio localizado estima el efecto de grandes tenedores con datos de España; la replicacion exigiria datos de titularidad por zona (si no, ASOCIACION o NO ESTIMABLE). E11: ninguna evaluacion empirica del recargo del IBI sobre vacias ni del impuesto catalan; solo Segu (Francia, 6 clusters tratados) con identificacion.",
+    "Excluidos por criterios.md (diseno o datos): Todd et al. 2021, Reina 2026 (mixto), Horn y Merante 2017 y estudios de EE. UU. de topes (Autor et al., Sims, Asquith, Ahern y Giacoletti), Hanson y Coven (borradores), Bo (modelo calibrado), BCREA y Somerville-Wetzel (sector y prensa). Breidenbach et al. 2021 sin version abierta ni resumen accesible.",
+    "Archivos en data/bib/pdf creados y luego retirados por error de descarga: Autor et al. (NBER w18125, descargado en lugar de Koster); INFER 2016 de Segu (version preliminar no citable); duplicado de Segu. Sus lineas se eliminaron de CHECKSUMS.sha256 con flock."
+  ]
+}

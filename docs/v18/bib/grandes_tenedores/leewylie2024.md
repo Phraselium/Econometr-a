@@ -1,0 +1,8 @@
+### Lee y Wylie (2024). Institutional Investors, Rents, and Neighborhood Change in the Single Family Residential Market
+- Clave: leewylie2024 · DOI: 10.21799/frbp.wp.2024.13 · Revista o serie: Federal Reserve Bank of Philadelphia Working Paper 24-13 · Licencia de la versión abierta: sin licencia declarada (serie de la Fed de Filadelfia en abierto)
+- Enlace abierto: https://www.philadelphiafed.org/-/media/frbp/assets/working-papers/2024/wp24-13.pdf · Leído: solo resumen y primeras páginas (el cuerpo no se ha leído) · sha256 del PDF: b67952fec8dc
+- Pregunta: dónde entran los inversores institucionales de vivienda unifamiliar y cómo fijan las rentas; validez externa limitada (EE. UU.); diseño de asociación (contexto). Datos: EE. UU., 2010-2021, registros fiscales, de transmisiones y MLS. Diseño: regresiones de entrada por barrio y de rentas al adquirir; sin instrumento ni grupo de control cuasi experimental en el resumen.
+- Resultado principal. Unidad: tasa de aumento de la renta respecto de la media; sin coeficientes leídos. Resumen: los inversores suben la renta a tasas un 60 % mayores que el aumento medio al adquirir la vivienda; una mayor cuota de inversores en el barrio se correlaciona con subidas más rápidas de renta de los demás arrendadores; sin evidencia de gentrificación.
+- Limitaciones y validez externa para España: asociación; el resultado de «60 % mayores» es una comparación descriptiva con la media y no un efecto causal. Incluido como contexto de comportamiento de fijación de rentas.
+- Paquete de replicación: no (se buscó en DataCite).
+- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)

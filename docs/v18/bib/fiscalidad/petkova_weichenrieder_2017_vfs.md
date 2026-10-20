@@ -1,0 +1,8 @@
+### Petkova y Weichenrieder (2017). Price and quantity effects of the German real estate transfer tax
+- Clave: petkova_weichenrieder_2017_vfs · DOI: sin DOI (documento CESifo WP 6538; versión SSRN 10.2139/ssrn.3004387; no consta publicación en revista a 2026-10-20) · Revista o serie: Conferencia anual del Verein für Socialpolitik 2017 (póster P00-V14); CESifo Working Paper n.º 6538 (2017) · Licencia de la versión abierta: no declarada en el PDF; copia de acceso libre en EconStor
+- Enlace abierto: https://www.econstor.eu/handle/10419/168305 · Leído: resumen (PDF p. 2); tablas no revisadas · sha256 del PDF: 9fd6c7386aca
+- Pregunta; datos; diseño; identificación: ¿Cómo afecta el impuesto alemán de transmisión a las transacciones y los precios, por segmentos? Datos: transacciones de casas unifamiliares y de pisos de Alemania. Diseño: regresiones separadas por segmento con la variación entre Länder y en el tiempo del tipo.
+- Resultado principal con su unidad: Para casas unifamiliares, la elasticidad de las transacciones al impuesto es de −0,23 y no hay efecto significativo sobre los precios de las casas negociadas. Para pisos, no hay efecto significativo en las transacciones y el efecto sobre el precio tiende a ser negativo. Unidad: elasticidad (el resumen no aclara si el cambio del tipo se mide en porcentaje relativo o en puntos).
+- Limitaciones y validez externa para España: Menos precisos que Dolls et al. y con una unidad ambigua; los pisos los tienen inversores societarios. Contexto europeo útil para el mercado español de pisos.
+- Paquete de replicación: no localizado
+- Estado: NO VERIFICADA

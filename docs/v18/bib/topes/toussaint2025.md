@@ -1,0 +1,8 @@
+### Toussaint y Simon (2025). Does rent control increase rental returns? The case of the metropolitan housing market of Lille, France
+- Clave: toussaint2025 · DOI: 10.15396/eres2025_30 (ERES 2025); versión SSRN 10.2139/ssrn.5603186 y artículo del Journal of Real Estate Research (10.1080/08965803.2026.2708533, 2026, no leído) · Revista o serie: 31st Annual ERES Conference (2025) · Licencia de la versión abierta: sin licencia declarada (actas de la ERES)
+- Enlace abierto: https://eres.architexturez.net/system/files/eres2025_30_presentation_P_20250624094050_2221.pdf (presentación, no el texto del artículo) · Leído: solo resumen (resumen de la ERES; la presentación de 34 páginas se guardó, pero no se extrajeron cifras) · sha256 del PDF: 04031316bfdb
+- Pregunta: efecto del control de rentas de Lille (marzo de 2020) sobre rentas, retornos de capital y retornos por alquiler. Datos: mercado metropolitano de Lille; bases de alquileres y de transacciones; retornos estimados por aprendizaje automático. Diseño: diferencias en diferencias; periodo y grupo de control no leídos.
+- Resultado principal. Unidad: sin cifras leídas. Resumen de la ERES: el control de Lille eleva las rentas de las viviendas más grandes, reduce los retornos de capital de todas y eleva los retornos por alquiler de las más grandes. Sin coeficientes ni errores típicos.
+- Limitaciones y validez externa para España: documento de congreso sin estimaciones extraídas; el mecanismo de expectativas de los inversores es relevante para E10 (grandes tenedores) y E2. No puede usarse como cifra.
+- Paquete de replicación: no (se buscó en DataCite y Zenodo).
+- Estado: NO VERIFICADA (lo cambia solo src/v15/verificar_referencias.py)

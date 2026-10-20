@@ -21,8 +21,16 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 
 - 2026-10-20 · **Monte Carlo de herramientas (sección 1.13).** Nueve herramientas validadas con procesos simulados que reproducen la estructura de los diseños de V18 (grupo B; decisión K5): cs_webb APTO CONDICIONADO (solo diseños municipales; NO APTO con 8 clusters), sa_webb APTO, dcdh_aleatorizacion APTO (Webb con 8 clusters NO APTO), honest_did APTO CONDICIONADO (solo M̄ = 0), sdid_conley_taber APTO (con tratados intercambiables), aleatorizacion APTO, lp_iv NO APTO, svar_proxy NO APTO, meta_bayes NO APTO (conservador). R = 2.000 a 5.000. Sin parada G.
 
+- 2026-10-20 · **Fase 3 cerrada.** Etiqueta plan-replicacion-v18 (ad4385c, en la rama remota; la subida de la etiqueta es tarea del autor). Sellado de entrenamiento docs/v18/sellado_v18.json (K4).
+- 2026-10-20 · **Fase 4 cerrada** (make check limpio). Monte Carlo de 15 herramientas (K5; BHJ con pocos choques, Driscoll-Kraay con T corto, LP-IV, SVAR con proxy, BVAR y metaanálisis NO APTOS). Estimaciones (output/v18/estimacion/), todas C4:
+  - E2-R1 (Ley 11/2020, renta): −0,0384, SUGESTIVO con frase de limitación obligatoria (K9); réplica ciega coincide; dos rondas del abogado del diablo.
+  - NO CONCLUYENTE: E3-R1 (inmigración), E1-R4 (Sagrada Família, K8 bis).
+  - ASOCIACIÓN: E8-R1 (ITP), E2-R1c, E1-R3, E10-A1, E12-A2, F1-F3 (corto plazo; sin cointegración), E7 BVAR (informativa).
+  - NO ESTIMABLE: E4, E5, E6, E7 (primera etapa débil), E9, E11 y la mayoría de ampliaciones.
+  - Ninguna IDENTIFICADO; sin parada G. Paquete de herramientas renombrado a src/v18/herr18 (choque con src/v8/herramientas).
+
 ## Siguiente
-- Etiqueta plan-replicacion-v18 y push; sellado_v18.json; fase 4 (estimación).
+- Fase 5: magnitud preferida por factor (B5) y contabilidad de la subida (sección 4 del plan y 1.10 de la adenda).
 
 ## Subagentes y tokens
 

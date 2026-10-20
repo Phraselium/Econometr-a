@@ -1,0 +1,306 @@
+{
+ "rama": "v18/estimacion/e10",
+ "pregunta": "¿Se asocia el peso de los grandes tenedores (titulares de más de 10 inmuebles) con el alquiler municipal por m² (nivel 2024 y variación 2019-2024)? Asociación transversal, sin variación exógena (E10-A1)",
+ "capa": "C4",
+ "datos": "SERPAVI municipal (vivienda colectiva), titularidad del Catastro 2024 (cota inferior), ADRH 2023 y población 2024 vía src/v18/sellado.filtrar; municipios no sellados",
+ "N": {
+  "E10-A1": 1365,
+  "E10-A1-d": 1219,
+  "E10-A1-v1": 1365,
+  "E10-A1-v2": 1364,
+  "E10-A1-v3": 1365,
+  "E10-A1-v4": 395,
+  "E10-A1-vF": 1246,
+  "E10-A1-d-v1": 1219,
+  "E10-A1-d-v2": 1218,
+  "E10-A1-d-v3": 1219,
+  "E10-A1-d-v4": 394,
+  "E10-A1-d-vF": 1100
+ },
+ "metodo": "MCO con efectos de provincia; error agrupado por provincia con WCR de Webb (9.999); Conley a 10 km; Moran de los residuos; BY en variantes; MDE como diagnóstico",
+ "estimacion": {
+  "E10-A1": {
+   "coef": 0.0107,
+   "ic95_t": [
+    -0.0007,
+    0.022
+   ],
+   "p_webb": 0.0648,
+   "q_BY": 0.185
+  },
+  "E10-A1-d": {
+   "coef": 0.001,
+   "ic95_t": [
+    -0.0044,
+    0.0065
+   ],
+   "p_webb": 0.714,
+   "q_BY": 1.0
+  },
+  "E10-A1-v1": {
+   "coef": 0.0271,
+   "ic95_t": [
+    0.0154,
+    0.0387
+   ],
+   "p_webb": 0.0,
+   "q_BY": 0.0
+  },
+  "E10-A1-v2": {
+   "coef": 0.0107,
+   "ic95_t": [
+    -0.0006,
+    0.0221
+   ],
+   "p_webb": 0.063,
+   "q_BY": 0.185
+  },
+  "E10-A1-v3": {
+   "coef": 0.0239,
+   "ic95_t": [
+    0.0122,
+    0.0356
+   ],
+   "p_webb": 0.0,
+   "q_BY": 0.0
+  },
+  "E10-A1-v4": {
+   "coef": -0.0014,
+   "ic95_t": [
+    -0.018,
+    0.0153
+   ],
+   "p_webb": 0.8726,
+   "q_BY": 1.0
+  },
+  "E10-A1-vF": {
+   "coef": 0.0125,
+   "ic95_t": [
+    0.0006,
+    0.0243
+   ],
+   "p_webb": 0.0472,
+   "q_BY": null
+  },
+  "E10-A1-d-v1": {
+   "coef": 0.0043,
+   "ic95_t": [
+    0.001,
+    0.0076
+   ],
+   "p_webb": 0.0244,
+   "q_BY": 0.2786
+  },
+  "E10-A1-d-v2": {
+   "coef": 0.0011,
+   "ic95_t": [
+    -0.0044,
+    0.0065
+   ],
+   "p_webb": 0.7121,
+   "q_BY": 1.0
+  },
+  "E10-A1-d-v3": {
+   "coef": -0.0,
+   "ic95_t": [
+    -0.0047,
+    0.0046
+   ],
+   "p_webb": 0.9894,
+   "q_BY": 1.0
+  },
+  "E10-A1-d-v4": {
+   "coef": -0.0002,
+   "ic95_t": [
+    -0.0041,
+    0.0037
+   ],
+   "p_webb": 0.925,
+   "q_BY": 1.0
+  },
+  "E10-A1-d-vF": {
+   "coef": 0.001,
+   "ic95_t": [
+    -0.0048,
+    0.0069
+   ],
+   "p_webb": 0.7371,
+   "q_BY": null
+  }
+ },
+ "ic95": {
+  "E10-A1": [
+   -0.0007,
+   0.022
+  ],
+  "E10-A1-d": [
+   -0.0044,
+   0.0065
+  ],
+  "E10-A1-v1": [
+   0.0154,
+   0.0387
+  ],
+  "E10-A1-v2": [
+   -0.0006,
+   0.0221
+  ],
+  "E10-A1-v3": [
+   0.0122,
+   0.0356
+  ],
+  "E10-A1-v4": [
+   -0.018,
+   0.0153
+  ],
+  "E10-A1-vF": [
+   0.0006,
+   0.0243
+  ],
+  "E10-A1-d-v1": [
+   0.001,
+   0.0076
+  ],
+  "E10-A1-d-v2": [
+   -0.0044,
+   0.0065
+  ],
+  "E10-A1-d-v3": [
+   -0.0047,
+   0.0046
+  ],
+  "E10-A1-d-v4": [
+   -0.0041,
+   0.0037
+  ],
+  "E10-A1-d-vF": [
+   -0.0048,
+   0.0069
+  ]
+ },
+ "p_ajustado": {
+  "metodo": "fuera de la familia de Holm (tope ASOCIACIÓN, adenda 1.7); BY (10 %) en las variantes de cada resultado",
+  "valores": {
+   "E10-A1": 0.185,
+   "E10-A1-v1": 0.0,
+   "E10-A1-v2": 0.185,
+   "E10-A1-v3": 0.0,
+   "E10-A1-v4": 1.0,
+   "E10-A1-d": 1.0,
+   "E10-A1-d-v1": 0.2786,
+   "E10-A1-d-v2": 1.0,
+   "E10-A1-d-v3": 1.0,
+   "E10-A1-d-v4": 1.0
+  }
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "ASOCIACIÓN",
+ "clasificacion_v18_por_especificacion": {
+  "E10-X1": "NO ESTIMABLE",
+  "E10-A1": "ASOCIACIÓN",
+  "E10-A1-d": "ASOCIACIÓN",
+  "E10-A1-v1": "no se clasifica",
+  "E10-A1-v2": "no se clasifica",
+  "E10-A1-v3": "no se clasifica",
+  "E10-A1-v4": "no se clasifica",
+  "E10-A1-vF": "no se clasifica",
+  "E10-A1-d-v1": "no se clasifica",
+  "E10-A1-d-v2": "no se clasifica",
+  "E10-A1-d-v3": "no se clasifica",
+  "E10-A1-d-v4": "no se clasifica",
+  "E10-A1-d-vF": "no se clasifica"
+ },
+ "diagnosticos": {
+  "I5_mismo_signo_variantes": {
+   "": 0.75,
+   "-d": 0.5
+  },
+  "mde": {
+   "E10-A1": {
+    "mde": 0.017,
+    "sd_regresor": 2.2056
+   },
+   "E10-A1-d": {
+    "mde": 0.0077,
+    "sd_regresor": 2.2118
+   },
+   "E10-A1-v1": {
+    "mde": 0.0206,
+    "sd_regresor": 2.802
+   },
+   "E10-A1-v2": {
+    "mde": 0.0171,
+    "sd_regresor": 2.2027
+   },
+   "E10-A1-v3": {
+    "mde": 0.0234,
+    "sd_regresor": 2.2056
+   },
+   "E10-A1-v4": {
+    "mde": 0.023,
+    "sd_regresor": 2.2481
+   },
+   "E10-A1-vF": {
+    "mde": 0.0186,
+    "sd_regresor": 2.1002
+   },
+   "E10-A1-d-v1": {
+    "mde": 0.0059,
+    "sd_regresor": 2.8081
+   },
+   "E10-A1-d-v2": {
+    "mde": 0.0078,
+    "sd_regresor": 2.2087
+   },
+   "E10-A1-d-v3": {
+    "mde": 0.0065,
+    "sd_regresor": 2.2118
+   },
+   "E10-A1-d-v4": {
+    "mde": 0.0054,
+    "sd_regresor": 2.2201
+   },
+   "E10-A1-d-vF": {
+    "mde": 0.0084,
+    "sd_regresor": 2.102
+   }
+  },
+  "moran": {
+   "E10-A1": {
+    "I": 0.2794,
+    "p_permutacion": 0.001,
+    "k_vecinos": 8,
+    "esperado_bajo_nulo": -0.0007
+   },
+   "E10-A1-d": {
+    "I": 0.0023,
+    "p_permutacion": 0.853,
+    "k_vecinos": 8,
+    "esperado_bajo_nulo": -0.0008
+   }
+  },
+  "conley_10km": {
+   "E10-A1": {
+    "se_conley": 0.0032085071218415553,
+    "t": 3.3294592090116013,
+    "vecinos_medios_en_el_corte": 4.01025641025641,
+    "var_positiva": true
+   },
+   "E10-A1-d": {
+    "se_conley": 0.001781231233147999,
+    "t": 0.5883555016682924,
+    "vecinos_medios_en_el_corte": 3.970467596390484,
+    "var_positiva": true
+   }
+  },
+  "dato_titularidad": "cota inferior: el tramo se cuenta dentro del municipio (la mediana municipal es 0)",
+  "datos_parciales_v17": "V17: titulares de más de 10 viviendas con el 4,2 % del parque (Catastro 2026; V17-AUD-OT-CAT-GT-PARQUE-2026) y entre el 2 y el 12 % del alquiler habitual con supuestos; no se duplica"
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "Tope ASOCIACIÓN: sin variación exógena y con el orden temporal invertido.",
+  "Webb en sección cruzada con efectos de provincia y Moran no tienen Monte Carlo propio: se publican con esa etiqueta.",
+  "Desviaciones y motivos: docs/v18/desviaciones_e4_e7b_e10_e12.md."
+ ]
+}

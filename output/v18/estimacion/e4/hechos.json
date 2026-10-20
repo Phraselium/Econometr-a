@@ -1,0 +1,38 @@
+[
+ {
+  "id": "V18-E4-X1",
+  "indicador": "Réplica de Fack, Gibbons-Manning y Grislain-Letrémy con perceptores de ayudas al alquiler: no estimable con los datos actuales",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/raw/v16/intervenciones/intervenciones.csv (calendario estatal del Bono Alquiler Joven)",
+   "docs/v18/bib/ayudas (fichas)",
+   "output/v17/auditoria/regulacion_ayudas_hechos.json (V17-AUD-RA-AYU-TRASLACION-MEDIANA)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "falta el dato imprescindible: no hay microdatos de perceptores ni convocatorias autonómicas con fecha (solo el calendario estatal del bono). Sin tratamiento medido no hay variación que comprobar por MDE. Lo resolvería: tareas_autor.md, punto 3: microdatos de beneficiarios del Bono Alquiler Joven y de las ayudas autonómicas (edad, tramo de renta, municipio, fecha de solicitud y concesión, importe, alquiler declarado), por el Portal de Transparencia o convenio con anonimización [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E4-L1",
+  "indicador": "Incidencia de las ayudas al alquiler en el alquiler: solo literatura, sin estimación propia",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/raw/v16/intervenciones/intervenciones.csv (calendario estatal del Bono Alquiler Joven)",
+   "docs/v18/bib/ayudas (fichas)",
+   "output/v17/auditoria/regulacion_ayudas_hechos.json (V17-AUD-RA-AYU-TRASLACION-MEDIANA)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Solo literatura, sin estimación propia de V18; la traslación mediana de los estudios con diseño está en V17-AUD-RA-AYU-TRASLACION-MEDIANA (no se duplica). Fichas: Fack (2005, 2006), Gibbons y Manning (2006), Grislain-Letrémy y Trevien (2022). Lo resolvería: microdatos de beneficiarios (tareas_autor, punto 3). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ }
+]

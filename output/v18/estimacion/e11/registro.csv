@@ -1,0 +1,3 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+E11-prereg,E11-X1,Diferencias en diferencias del recargo del IBI sobre la vacancia y el alquiler,,,0,,,,,,,NO ESTIMABLE: falta el tratamiento (ningún municipio con fecha de adopción) y la vacancia solo tiene dos cortes con métodos distintos: una diferencia entre cortes confundiría el método con el efecto
+E11-prereg,E11-X2,Impuesto catalán sobre viviendas vacías,,,0,,,,,,,NO ESTIMABLE: calendario y bases no localizados

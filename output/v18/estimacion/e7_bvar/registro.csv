@@ -1,0 +1,14 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+E7B-prereg,E7-R3,"BVAR(2) Minnesota λ=0.2 μ=0.5; orden compraventas,precio,visados,PIB,IPC,euríbor,crédito (flujo); choque euríbor +100 pb; omit=None",2008Q1,2022Q4,0,,,,,,,principal; repite_visto=no; Monte Carlo de las bandas (previo): NO APTO; tope ASOCIACIÓN; fuera de Holm
+E7B,E7-R3,BVAR(2) h=8 precio,2008Q1,2022Q4,52,,,,,-1.5505719987028928,,banda 68 % [-2.28; -0.87]; MC: NO APTO
+E7B-prereg,E7-R3-v1,"BVAR(2) Minnesota λ=0.5 μ=0.0; orden compraventas,precio,visados,PIB,IPC,euríbor,crédito (flujo); choque euríbor +100 pb; omit=None",2008Q1,2022Q4,0,,,,,,,variante; repite_visto=no; Monte Carlo de las bandas (previo): NO APTO; tope ASOCIACIÓN; fuera de Holm
+E7B,E7-R3-v1,BVAR(2) h=8 precio,2008Q1,2022Q4,52,,,,,-1.5425221180374264,,banda 68 % [-2.58; -0.50]; MC: NO APTO
+E7B-prereg,E7-R3-v2,"BVAR(2) Minnesota λ=0.2 μ=0.5; orden compraventas,precio,visados,PIB,IPC,euríbor,crédito (flujo); choque euríbor +100 pb; omit=None",2008Q1,2019Q4,0,,,,,,,variante; repite_visto=no; Monte Carlo de las bandas (previo): NO APTO; tope ASOCIACIÓN; fuera de Holm
+E7B,E7-R3-v2,BVAR(2) h=8 precio,2008Q1,2019Q4,40,,,,,-0.506239093541653,,banda 68 % [-1.41; 0.38]; MC: NO APTO
+E7B-prereg,E7-A1,"BVAR(2) Minnesota λ=0.2 μ=0.5; orden compraventas,precio,visados,PIB,IPC,euríbor,crédito (flujo); choque euríbor +100 pb; omit=None",2008Q1,2026Q2,0,,,,,,,principal; repite_visto=no; Monte Carlo de las bandas (previo): NO APTO; tope ASOCIACIÓN; fuera de Holm
+E7B,E7-A1,BVAR(2) h=8 precio,2008Q1,2026Q2,66,,,,,-0.3208902089246635,,banda 68 % [-1.90; 1.21]; MC: NO APTO
+E7B-prereg,E7-A1-v1,"BVAR(2) Minnesota λ=0.2 μ=0.5; orden compraventas,precio,visados,PIB,IPC,euríbor,crédito (flujo); choque euríbor +100 pb; omit=('2010Q1', '2013Q4')",2008Q1,2026Q2,0,,,,,,,variante; repite_visto=no; Monte Carlo de las bandas (previo): NO APTO; tope ASOCIACIÓN; fuera de Holm
+E7B,E7-A1-v1,BVAR(2) h=8 precio,2008Q1,2026Q2,50,,,,,-0.6336516759579631,,banda 68 % [-2.04; 0.73]; MC: NO APTO
+E7B-diag,E7-R3-diag-euribor_primero,"BVAR(2) orden [5, 0, 1, 2, 3, 4, 6]",2008Q1,2022Q4,0,,,,,,,diagnóstico de sensibilidad a la identificación; no cuenta en el multiverso
+E7B-diag,E7-R3-diag-sin_credito,"BVAR(2) orden [0, 1, 2, 3, 4, 5]",2008Q1,2022Q4,0,,,,,,,diagnóstico de sensibilidad a la identificación; no cuenta en el multiverso
+E7B-diag,E7-R3-diag-precio_primero,"BVAR(2) orden [1, 0, 2, 3, 4, 5, 6]",2008Q1,2022Q4,0,,,,,,,diagnóstico de sensibilidad a la identificación; no cuenta en el multiverso

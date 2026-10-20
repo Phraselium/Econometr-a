@@ -1,0 +1,40 @@
+[
+ {
+  "id": "V18-E11-X1",
+  "indicador": "Diferencias en diferencias del recargo del IBI sobre la vacancia y el alquiler: no estimable con los datos actuales",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/raw/v16/intervenciones/intervenciones.csv (instrumento ibi_recargo_vacias)",
+   "data/raw/v3/ine_v3_censo2021_municipio_viviendas.csv (vacías 2021 por consumo eléctrico)",
+   "base:censo2011_viviendas",
+   "docs/v18/bib/vacias/segu2020.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "falta el tratamiento (ningún municipio con fecha de adopción) y la vacancia solo tiene dos cortes con métodos distintos: una diferencia entre cortes confundiría el método con el efecto Lo resolvería: tareas_autor.md, punto 12: ordenanzas fiscales con el año de entrada en vigor del recargo del IBI por municipio (Ley 12/2023) y el calendario del impuesto catalán sobre viviendas vacías (Ley 14/2015); además, las vacías por municipio en 2011 (INE, abierto) y la estadística experimental del INE de vacías por consumo, si existe en serie anual [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E11-X2",
+  "indicador": "Impuesto catalán sobre viviendas vacías: no estimable con los datos actuales",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/raw/v16/intervenciones/intervenciones.csv (instrumento ibi_recargo_vacias)",
+   "data/raw/v3/ine_v3_censo2021_municipio_viviendas.csv (vacías 2021 por consumo eléctrico)",
+   "base:censo2011_viviendas",
+   "docs/v18/bib/vacias/segu2020.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "calendario y bases no localizados Lo resolvería: tareas_autor.md, punto 12: ordenanzas fiscales con el año de entrada en vigor del recargo del IBI por municipio (Ley 12/2023) y el calendario del impuesto catalán sobre viviendas vacías (Ley 14/2015); además, las vacías por municipio en 2011 (INE, abierto) y la estadística experimental del INE de vacías por consumo, si existe en serie anual [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ }
+]

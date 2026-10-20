@@ -1,0 +1,43 @@
+{
+ "rama": "v18/estimacion/e11",
+ "pregunta": "¿Se puede estimar el efecto de los recargos e impuestos sobre viviendas vacías en la vacancia y el alquiler (E11 del plan de replicación V18)?",
+ "capa": "C4",
+ "datos": "ninguno suficiente",
+ "N": 0,
+ "metodo": "comprobación de datos y MDE (adenda 1.3); sin estimación",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO ESTIMABLE",
+ "clasificacion_v18_por_especificacion": {
+  "E11-X1": "NO ESTIMABLE",
+  "E11-X2": "NO ESTIMABLE"
+ },
+ "diagnosticos": {
+  "comprobacion_de_datos": {
+   "filas_ibi_recargo_vacias": 3,
+   "ambitos": [
+    "estatal"
+   ],
+   "territorios": [
+    "España"
+   ],
+   "municipios_con_fecha_de_adopcion": 0,
+   "cortes_de_vacancia": {
+    "2011": "Censo 2011 (viviendas vacías por municipio: parcial en la base)",
+    "2021": "Censo 2021 (vacías por consumo eléctrico): método distinto"
+   },
+   "impuesto_catalan_sobre_vacias": "calendario y bases no localizados en el repositorio",
+   "serie_anual_de_vacancia": "no disponible"
+  },
+  "mde": "no aplica: no hay tratamiento con fecha",
+  "tarea_del_autor": "tareas_autor.md, punto 12: ordenanzas fiscales con el año de entrada en vigor del recargo del IBI por municipio (Ley 12/2023) y el calendario del impuesto catalán sobre viviendas vacías (Ley 14/2015); además, las vacías por municipio en 2011 (INE, abierto) y la estadística experimental del INE de vacías por consumo, si existe en serie anual"
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "V17 ya describe las vacías (censo 2021, consumo eléctrico) sin estimar efectos.",
+  "Si llegan los datos se escribirá una adenda antes de mirarlos (plan 1.11, g)."
+ ]
+}

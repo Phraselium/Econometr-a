@@ -37,7 +37,7 @@ MC = RAIZ / "output" / "v18" / "montecarlo" / "bvar" / "resultado.json"
 ROTULO = F.ROTULO
 NOMBRES = ["compraventas", "precio", "visados", "PIB", "IPC", "euríbor", "crédito (flujo)"]
 J_SHOCK = 5
-VARS = {0: "compraventas", 1: "precio", 2: "visados"}
+VARS = {1: "precio", 0: "compraventas", 2: "visados"}
 GAMMA = np.array([1, 1, 1, 1, 0.8, 0.8, 1.0])
 UNIDAD = np.array([100.0, 100.0, 100.0, 100.0, 1.0, 1.0, 100.0])
 PRIORS = {"principal": dict(lam=0.2, mu=0.5), "laxa": dict(lam=0.5, mu=0.0)}

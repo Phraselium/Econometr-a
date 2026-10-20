@@ -1,0 +1,628 @@
+{
+ "rama": "v18/estimacion/e7_bvar",
+ "pregunta": "¿Qué respuesta del precio, las compraventas y los visados a 8 trimestres de un aumento de 100 pb del euríbor da un BVAR recursivo de siete variables (réplica de San Juan, 2023) y cambia al ampliarlo a 2026T2? Asociación condicionada al orden de las variables, sin identificación externa (E7-R3 y E7-A1 del plan de replicación V18)",
+ "capa": "C4",
+ "datos": "base (hechos.parquet) vía src/v18/sellado.filtrar, series nacionales trimestrales 2008T1-2026T2: compraventas, valor tasado nominal, visados, PIB, IPC, euríbor a 1 año y flujo de crédito nuevo",
+ "N": {
+  "R3_filas": 52,
+  "A1_filas": 66,
+  "T_R3": 60,
+  "T_A1": 74
+ },
+ "metodo": "BVAR(2) con prior de Minnesota en observaciones ficticias (normal-Wishart inversa), tres ficticias estacionales, identificación recursiva en el orden de San Juan, 10000 extracciones del posterior, bandas por percentiles 16-84 y 5-95; Monte Carlo previo de la cobertura de las bandas (R = 2.000): NO APTO",
+ "estimacion": {
+  "E7-R3": {
+   "mediana_h8": -1.551,
+   "banda68": [
+    -2.28,
+    -0.867
+   ],
+   "banda90": [
+    -2.837,
+    -0.382
+   ],
+   "variable": "precio",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-cv": {
+   "mediana_h8": -4.825,
+   "banda68": [
+    -9.548,
+    -0.447
+   ],
+   "banda90": [
+    -13.071,
+    2.682
+   ],
+   "variable": "compraventas",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-vis": {
+   "mediana_h8": -6.628,
+   "banda68": [
+    -14.002,
+    0.626
+   ],
+   "banda90": [
+    -19.309,
+    6.122
+   ],
+   "variable": "visados",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-v1": {
+   "mediana_h8": -1.543,
+   "banda68": [
+    -2.582,
+    -0.498
+   ],
+   "banda90": [
+    -3.406,
+    0.255
+   ],
+   "variable": "precio",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-v1-cv": {
+   "mediana_h8": -0.357,
+   "banda68": [
+    -6.741,
+    5.93
+   ],
+   "banda90": [
+    -11.538,
+    10.778
+   ],
+   "variable": "compraventas",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-v1-vis": {
+   "mediana_h8": -4.771,
+   "banda68": [
+    -14.385,
+    5.18
+   ],
+   "banda90": [
+    -21.615,
+    13.03
+   ],
+   "variable": "visados",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-v2": {
+   "mediana_h8": -0.506,
+   "banda68": [
+    -1.414,
+    0.375
+   ],
+   "banda90": [
+    -2.101,
+    1.041
+   ],
+   "variable": "precio",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-v2-cv": {
+   "mediana_h8": 0.407,
+   "banda68": [
+    -4.118,
+    5.234
+   ],
+   "banda90": [
+    -8.062,
+    9.391
+   ],
+   "variable": "compraventas",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-R3-v2-vis": {
+   "mediana_h8": -1.209,
+   "banda68": [
+    -9.953,
+    7.192
+   ],
+   "banda90": [
+    -17.813,
+    13.877
+   ],
+   "variable": "visados",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-A1": {
+   "mediana_h8": -0.321,
+   "banda68": [
+    -1.897,
+    1.206
+   ],
+   "banda90": [
+    -2.981,
+    2.27
+   ],
+   "variable": "precio",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-A1-cv": {
+   "mediana_h8": -2.021,
+   "banda68": [
+    -7.263,
+    3.258
+   ],
+   "banda90": [
+    -11.173,
+    7.22
+   ],
+   "variable": "compraventas",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-A1-vis": {
+   "mediana_h8": -1.108,
+   "banda68": [
+    -8.553,
+    6.431
+   ],
+   "banda90": [
+    -14.092,
+    11.994
+   ],
+   "variable": "visados",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-A1-v1": {
+   "mediana_h8": -0.634,
+   "banda68": [
+    -2.037,
+    0.725
+   ],
+   "banda90": [
+    -3.062,
+    1.711
+   ],
+   "variable": "precio",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-A1-v1-cv": {
+   "mediana_h8": -3.035,
+   "banda68": [
+    -7.983,
+    1.87
+   ],
+   "banda90": [
+    -12.005,
+    5.499
+   ],
+   "variable": "compraventas",
+   "clasificacion_v18": "ASOCIACIÓN"
+  },
+  "E7-A1-v1-vis": {
+   "mediana_h8": -3.219,
+   "banda68": [
+    -9.011,
+    2.536
+   ],
+   "banda90": [
+    -13.455,
+    7.123
+   ],
+   "variable": "visados",
+   "clasificacion_v18": "ASOCIACIÓN"
+  }
+ },
+ "ic95": null,
+ "p_ajustado": {
+  "metodo": "no aplica: bandas de credibilidad al 68 % y al 90 %; fuera de la familia de Holm (adenda 1.7)",
+  "valores": null
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "ASOCIACIÓN",
+ "clasificacion_v18_por_especificacion": {
+  "E7-R3": "ASOCIACIÓN",
+  "E7-R3-cv": "ASOCIACIÓN",
+  "E7-R3-vis": "ASOCIACIÓN",
+  "E7-R3-v1": "ASOCIACIÓN",
+  "E7-R3-v1-cv": "ASOCIACIÓN",
+  "E7-R3-v1-vis": "ASOCIACIÓN",
+  "E7-R3-v2": "ASOCIACIÓN",
+  "E7-R3-v2-cv": "ASOCIACIÓN",
+  "E7-R3-v2-vis": "ASOCIACIÓN",
+  "E7-A1": "ASOCIACIÓN",
+  "E7-A1-cv": "ASOCIACIÓN",
+  "E7-A1-vis": "ASOCIACIÓN",
+  "E7-A1-v1": "ASOCIACIÓN",
+  "E7-A1-v1-cv": "ASOCIACIÓN",
+  "E7-A1-v1-vis": "ASOCIACIÓN"
+ },
+ "solo_informativa": true,
+ "diagnosticos": {
+  "series_adf_kpss": {
+   "cv": {
+    "adf_p_niveles": 0.9334,
+    "adf_p_diferencias": 0.0004,
+    "kpss_p_niveles": 0.01
+   },
+   "p": {
+    "adf_p_niveles": 0.9145,
+    "adf_p_diferencias": 0.5977,
+    "kpss_p_niveles": 0.0905
+   },
+   "vis": {
+    "adf_p_niveles": 0.7188,
+    "adf_p_diferencias": 0.0005,
+    "kpss_p_niveles": 0.0724
+   },
+   "pib": {
+    "adf_p_niveles": 0.8958,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.01
+   },
+   "ipc": {
+    "adf_p_niveles": 0.0313,
+    "adf_p_diferencias": 0.0037,
+    "kpss_p_niveles": 0.1
+   },
+   "eur": {
+    "adf_p_niveles": 0.0062,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.1
+   },
+   "cred": {
+    "adf_p_niveles": 0.514,
+    "adf_p_diferencias": 0.0727,
+    "kpss_p_niveles": 0.0868
+   }
+  },
+  "estabilidad": {
+   "R3_raiz_maxima_media_posterior": 0.943,
+   "R3_proporcion_extracciones_explosivas": 0.15,
+   "A1_raiz_maxima_media_posterior": 0.99,
+   "A1_proporcion_extracciones_explosivas": 0.746
+  },
+  "sensibilidad_orden_R3_h8": {
+   "euribor_primero": {
+    "precio": {
+     "mediana": -1.039,
+     "lo68": -1.926,
+     "hi68": -0.183,
+     "lo90": -2.619,
+     "hi90": 0.444,
+     "p_negativa": 0.884
+    },
+    "compraventas": {
+     "mediana": -3.912,
+     "lo68": -9.324,
+     "hi68": 0.908,
+     "lo90": -13.933,
+     "hi90": 4.319,
+     "p_negativa": 0.792
+    },
+    "visados": {
+     "mediana": -3.197,
+     "lo68": -11.638,
+     "hi68": 5.339,
+     "lo90": -17.942,
+     "hi90": 12.206,
+     "p_negativa": 0.651
+    }
+   },
+   "sin_credito": {
+    "precio": {
+     "mediana": -1.448,
+     "lo68": -2.121,
+     "hi68": -0.757,
+     "lo90": -2.622,
+     "hi90": -0.292,
+     "p_negativa": 0.975
+    },
+    "compraventas": {
+     "mediana": -4.788,
+     "lo68": -9.411,
+     "hi68": -0.406,
+     "lo90": -12.974,
+     "hi90": 2.859,
+     "p_negativa": 0.86
+    },
+    "visados": {
+     "mediana": -6.192,
+     "lo68": -13.143,
+     "hi68": 1.048,
+     "lo90": -18.246,
+     "hi90": 6.371,
+     "p_negativa": 0.807
+    }
+   },
+   "precio_primero": {
+    "precio": {
+     "mediana": -1.567,
+     "lo68": -2.297,
+     "hi68": -0.872,
+     "lo90": -2.814,
+     "hi90": -0.394,
+     "p_negativa": 0.982
+    },
+    "compraventas": {
+     "mediana": -4.727,
+     "lo68": -9.343,
+     "hi68": -0.486,
+     "lo90": -13.083,
+     "hi90": 2.675,
+     "p_negativa": 0.865
+    },
+    "visados": {
+     "mediana": -6.574,
+     "lo68": -13.91,
+     "hi68": 0.616,
+     "lo90": -19.193,
+     "hi90": 5.91,
+     "p_negativa": 0.819
+    }
+   }
+  },
+  "I5_mismo_signo_precio_h8": {
+   "R3": {
+    "v1": true,
+    "v2": true
+   },
+   "A1": true
+  },
+  "mc_bandas": {
+   "veredicto": "NO APTO",
+   "condicion": "T=60|rho=0.97|nulo|compraventas: cobertura 68 % 0.987 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|nulo|precio: cobertura 68 % 0.964 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|nulo|visados: cobertura 68 % 0.988 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|alternativa|compraventas: cobertura 90 % 0.952 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|alternativa|precio: cobertura 68 % 0.016 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.180 fuera de [0.87; 0.93] (insuficiente); T=60|rho=0.97|alternativa|visados: cobertura 68 % 0.420 fuera de [0.63; 0.73] (insuficiente); T=74|rho=0.97|nulo|compraventas: cobertura 68 % 0.981 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|nulo|precio: cobertura 68 % 0.940 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 0.999 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|nulo|visados: cobertura 68 % 0.977 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|alternativa|compraventas: cobertura 68 % 0.608 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.934 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|alternativa|precio: cobertura 68 % 0.005 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.117 fuera de [0.87; 0.93] (insuficiente); T=74|rho=0.97|alternativa|visados: cobertura 68 % 0.316 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.825 fuera de [0.87; 0.93] (insuficiente)",
+   "ruta": "output/v18/montecarlo/bvar/informe.md"
+  },
+  "gate_MDE_1.3": "No aplica de forma frecuentista: un BVAR con prior informativa no tiene un MDE por contraste. Se publican las bandas al 68 % y al 90 % y su anchura; la especificación no entra en la familia de Holm (tope ASOCIACIÓN) ni en B5. Declarado en docs/v18/desviaciones_e4_e7b_e10_e12.md.",
+  "datos": {
+   "filas_R3": 52,
+   "filas_A1": 66,
+   "visados_ausentes": [
+    "2016T2",
+    "2017T2"
+   ],
+   "credito": "flujo (credito_nuevo), no saldo"
+  },
+  "irf_R3_precio": [
+   {
+    "h": 0,
+    "mediana": 0.0,
+    "lo68": 0.0,
+    "hi68": 0.0,
+    "lo90": 0.0,
+    "hi90": 0.0,
+    "p_negativa": 0.0
+   },
+   {
+    "h": 1,
+    "mediana": -0.267,
+    "lo68": -0.44,
+    "hi68": -0.094,
+    "lo90": -0.56,
+    "hi90": 0.015,
+    "p_negativa": 0.939
+   },
+   {
+    "h": 2,
+    "mediana": -0.676,
+    "lo68": -0.937,
+    "hi68": -0.412,
+    "lo90": -1.136,
+    "hi90": -0.239,
+    "p_negativa": 0.994
+   },
+   {
+    "h": 3,
+    "mediana": -1.065,
+    "lo68": -1.419,
+    "hi68": -0.722,
+    "lo90": -1.678,
+    "hi90": -0.482,
+    "p_negativa": 0.998
+   },
+   {
+    "h": 4,
+    "mediana": -1.38,
+    "lo68": -1.814,
+    "hi68": -0.953,
+    "lo90": -2.121,
+    "hi90": -0.669,
+    "p_negativa": 0.999
+   },
+   {
+    "h": 5,
+    "mediana": -1.587,
+    "lo68": -2.096,
+    "hi68": -1.094,
+    "lo90": -2.459,
+    "hi90": -0.766,
+    "p_negativa": 0.998
+   },
+   {
+    "h": 6,
+    "mediana": -1.676,
+    "lo68": -2.261,
+    "hi68": -1.12,
+    "lo90": -2.694,
+    "hi90": -0.756,
+    "p_negativa": 0.996
+   },
+   {
+    "h": 7,
+    "mediana": -1.661,
+    "lo68": -2.313,
+    "hi68": -1.043,
+    "lo90": -2.811,
+    "hi90": -0.613,
+    "p_negativa": 0.992
+   },
+   {
+    "h": 8,
+    "mediana": -1.551,
+    "lo68": -2.28,
+    "hi68": -0.867,
+    "lo90": -2.837,
+    "hi90": -0.382,
+    "p_negativa": 0.983
+   },
+   {
+    "h": 9,
+    "mediana": -1.365,
+    "lo68": -2.175,
+    "hi68": -0.6,
+    "lo90": -2.788,
+    "hi90": -0.059,
+    "p_negativa": 0.957
+   },
+   {
+    "h": 10,
+    "mediana": -1.128,
+    "lo68": -1.999,
+    "hi68": -0.283,
+    "lo90": -2.657,
+    "hi90": 0.319,
+    "p_negativa": 0.906
+   },
+   {
+    "h": 11,
+    "mediana": -0.86,
+    "lo68": -1.797,
+    "hi68": 0.064,
+    "lo90": -2.515,
+    "hi90": 0.773,
+    "p_negativa": 0.823
+   },
+   {
+    "h": 12,
+    "mediana": -0.573,
+    "lo68": -1.565,
+    "hi68": 0.415,
+    "lo90": -2.336,
+    "hi90": 1.235,
+    "p_negativa": 0.724
+   }
+  ],
+  "irf_A1_precio": [
+   {
+    "h": 0,
+    "mediana": 0.0,
+    "lo68": 0.0,
+    "hi68": 0.0,
+    "lo90": 0.0,
+    "hi90": 0.0,
+    "p_negativa": 0.0
+   },
+   {
+    "h": 1,
+    "mediana": -0.03,
+    "lo68": -0.229,
+    "hi68": 0.165,
+    "lo90": -0.356,
+    "hi90": 0.292,
+    "p_negativa": 0.562
+   },
+   {
+    "h": 2,
+    "mediana": -0.151,
+    "lo68": -0.472,
+    "hi68": 0.176,
+    "lo90": -0.709,
+    "hi90": 0.385,
+    "p_negativa": 0.681
+   },
+   {
+    "h": 3,
+    "mediana": -0.274,
+    "lo68": -0.75,
+    "hi68": 0.218,
+    "lo90": -1.094,
+    "hi90": 0.529,
+    "p_negativa": 0.711
+   },
+   {
+    "h": 4,
+    "mediana": -0.35,
+    "lo68": -1.013,
+    "hi68": 0.324,
+    "lo90": -1.483,
+    "hi90": 0.744,
+    "p_negativa": 0.693
+   },
+   {
+    "h": 5,
+    "mediana": -0.38,
+    "lo68": -1.257,
+    "hi68": 0.484,
+    "lo90": -1.86,
+    "hi90": 1.065,
+    "p_negativa": 0.667
+   },
+   {
+    "h": 6,
+    "mediana": -0.382,
+    "lo68": -1.486,
+    "hi68": 0.706,
+    "lo90": -2.246,
+    "hi90": 1.426,
+    "p_negativa": 0.638
+   },
+   {
+    "h": 7,
+    "mediana": -0.355,
+    "lo68": -1.701,
+    "hi68": 0.949,
+    "lo90": -2.62,
+    "hi90": 1.818,
+    "p_negativa": 0.608
+   },
+   {
+    "h": 8,
+    "mediana": -0.321,
+    "lo68": -1.897,
+    "hi68": 1.206,
+    "lo90": -2.981,
+    "hi90": 2.27,
+    "p_negativa": 0.584
+   },
+   {
+    "h": 9,
+    "mediana": -0.288,
+    "lo68": -2.093,
+    "hi68": 1.461,
+    "lo90": -3.335,
+    "hi90": 2.689,
+    "p_negativa": 0.564
+   },
+   {
+    "h": 10,
+    "mediana": -0.268,
+    "lo68": -2.282,
+    "hi68": 1.709,
+    "lo90": -3.69,
+    "hi90": 3.121,
+    "p_negativa": 0.549
+   },
+   {
+    "h": 11,
+    "mediana": -0.25,
+    "lo68": -2.471,
+    "hi68": 1.941,
+    "lo90": -4.089,
+    "hi90": 3.552,
+    "p_negativa": 0.541
+   },
+   {
+    "h": 12,
+    "mediana": -0.224,
+    "lo68": -2.64,
+    "hi68": 2.159,
+    "lo90": -4.468,
+    "hi90": 3.923,
+    "p_negativa": 0.534
+   }
+  ]
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "Clase provisional hasta I8 (réplica ciega, B6); el tope es ASOCIACIÓN en cualquier caso.",
+  "fuera_muestra: no aplica a una réplica de un BVAR de identificación recursiva; la predicción frente a AR(4) y ECM v1 se hace en F1.",
+  "Referencia única: San Juan (2023), −2 % en el precio, −3 % en compraventas y −11 % en visados a 8 trimestres por +100 pb del tipo hipotecario (intervalos al 68 %; ficha VERIFICADA); la unidad no es idéntica (euríbor, crédito en flujo).",
+  "Desviaciones y motivos: docs/v18/desviaciones_e4_e7b_e10_e12.md. Monte Carlo: output/v18/montecarlo/bvar/."
+ ]
+}

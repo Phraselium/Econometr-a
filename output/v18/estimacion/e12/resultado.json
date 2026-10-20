@@ -1,0 +1,261 @@
+{
+ "rama": "v18/estimacion/e12",
+ "pregunta": "¿Desplaza la vivienda protegida calificada a la obra libre iniciada (y cómo se mueve el valor tasado), en las provincias no selladas 2002-2024? Estilo Chapelle (2015), con vivienda protegida, no pública (E12-A1 y E12-A2)",
+ "capa": "C4",
+ "datos": "calificaciones definitivas de vivienda protegida, viviendas libres iniciadas, parque y valor tasado provinciales vía src/v18/sellado.filtrar",
+ "N": {
+  "E12-A1": 874,
+  "E12-A1-v1": 874,
+  "E12-A1-v2": 851,
+  "E12-A1-v4": 456,
+  "E12-A1-sin-atipicos": 828,
+  "E12-A2": 726,
+  "E12-A2-v1": 704,
+  "E12-A2-v2": 363
+ },
+ "metodo": "IV con efectos de provincia y de año y obra libre 1991-95 × año; F efectivo MOP; AR por cluster; WCR de Webb (9.999); Driscoll-Kraay (etiqueta); MDE por Monte Carlo; Holm sobre {A1, A2}; BY en variantes",
+ "estimacion": {
+  "E12-A1": {
+   "beta": 6.5067,
+   "ar95": [
+    -1.1918,
+    170.0367
+   ],
+   "ar_tipo": "intervalo",
+   "F": 7.8993,
+   "p_webb": 0.1125,
+   "p_holm": null
+  },
+  "E12-A1-v1": {
+   "beta": 4.4909,
+   "ar95": [
+    -92.7725,
+    -2.6542
+   ],
+   "ar_tipo": "complemento",
+   "F": 6.3639,
+   "p_webb": 0.321,
+   "p_holm": null
+  },
+  "E12-A1-v2": {
+   "beta": 6.7716,
+   "ar95": [
+    -507.2472,
+    -1.594
+   ],
+   "ar_tipo": "complemento",
+   "F": 6.5222,
+   "p_webb": 0.1511,
+   "p_holm": null
+  },
+  "E12-A1-v4": {
+   "beta": 94.0749,
+   "ar95": [
+    -15.4988,
+    -2.8648
+   ],
+   "ar_tipo": "complemento",
+   "F": 0.0888,
+   "p_webb": 0.0399,
+   "p_holm": null
+  },
+  "E12-A1-sin-atipicos": {
+   "beta": 12.4061,
+   "ar95": [
+    -102.9811,
+    -0.4451
+   ],
+   "ar_tipo": "complemento",
+   "F": 3.2549,
+   "p_webb": 0.026,
+   "p_holm": null
+  },
+  "E12-A2": {
+   "beta": 22.084,
+   "ar95": [
+    -67.9357,
+    9.047
+   ],
+   "ar_tipo": "complemento",
+   "F": 4.3494,
+   "p_webb": 0.0003,
+   "p_holm": 0.0003
+  },
+  "E12-A2-v1": {
+   "beta": 21.9526,
+   "ar95": [
+    -42.5377,
+    8.0786
+   ],
+   "ar_tipo": "complemento",
+   "F": 3.2335,
+   "p_webb": 0.0001,
+   "p_holm": null
+  },
+  "E12-A2-v2": {
+   "beta": 147.2348,
+   "ar95": [
+    null,
+    null
+   ],
+   "ar_tipo": "recta",
+   "F": 0.1416,
+   "p_webb": 0.0782,
+   "p_holm": null
+  }
+ },
+ "ic95": {
+  "E12-A1": [
+   -5.0416,
+   18.0551
+  ],
+  "E12-A1-v1": [
+   -6.3674,
+   15.3492
+  ],
+  "E12-A1-v2": [
+   -6.1609,
+   19.7041
+  ],
+  "E12-A1-v4": [
+   -618.573,
+   806.7228
+  ],
+  "E12-A1-sin-atipicos": [
+   -10.2371,
+   35.0492
+  ],
+  "E12-A2": [
+   -3.2328,
+   47.4007
+  ],
+  "E12-A2-v1": [
+   -7.3361,
+   51.2414
+  ],
+  "E12-A2-v2": [
+   -707.1509,
+   1001.6206
+  ]
+ },
+ "p_ajustado": {
+  "metodo": "Holm sobre las estimables de E12 (p del WCR de Webb del AR en 0); BY en variantes",
+  "m": 1,
+  "valores": {
+   "E12-A2": 0.00030003000300030005
+  }
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO ESTIMABLE",
+ "clasificacion_v18_por_especificacion": {
+  "E12-X1": "NO ESTIMABLE",
+  "E12-A1-v3": "no se clasifica",
+  "E12-A1": "NO ESTIMABLE",
+  "E12-A1-v1": "NO ESTIMABLE",
+  "E12-A1-v2": "NO ESTIMABLE",
+  "E12-A1-v4": "NO ESTIMABLE",
+  "E12-A1-sin-atipicos": "no se clasifica",
+  "E12-A2": "ASOCIACIÓN",
+  "E12-A2-v1": "ASOCIACIÓN",
+  "E12-A2-v2": "ASOCIACIÓN"
+ },
+ "diagnosticos": {
+  "pretendencias_y_exclusion": {
+   "pretendencia_instrumento_2002_2007_sobre_variacion_libre_1996_2001": {
+    "coef": -0.4327,
+    "se_hc1": 0.7278,
+    "p": 0.5559,
+    "N": 38,
+    "unidad": "variación de la obra libre iniciada 1996-2001 frente a 1991-95 por 100 viviendas del parque de 2001, por unidad del instrumento medio"
+   },
+   "exclusion_cuota_sobre_pib_1995_2001": {
+    "p": null,
+    "nota": "NO VERIFICABLE: el PIB provincial (data/raw/ine_v2_cre.csv) empieza en 2000; solo habría el crecimiento 2000-2001. Tope SUGESTIVO (ya es el tope de la especificación)."
+   }
+  },
+  "I5_signo": {
+   "A1": 1.0,
+   "A1_sin_atipicos_mismo_signo": true,
+   "A2": 1.0
+  },
+  "atipicos_excluidos": "A1 sin atípicos (02, 29)",
+  "holm": {
+   "m": 1,
+   "valores": {
+    "E12-A2": 0.00030003000300030005
+   }
+  },
+  "BY_variantes": {
+   "E12-A1-v1": 0.5886,
+   "E12-A1-v2": 0.4156,
+   "E12-A1-v4": 0.2195,
+   "E12-A2-v1": 0.0003,
+   "E12-A2-v2": 0.1173
+  },
+  "cd_pesaran_A1": {
+   "CD": 1.8673,
+   "p": 0.0619,
+   "rho_medio": 0.0147
+  },
+  "mde": {
+   "E12-A1": {
+    "mde_beta": 11.724,
+    "umbral": 1.604,
+    "estimable": false,
+    "R": 2000
+   },
+   "E12-A1-v1": {
+    "mde_beta": 11.386,
+    "umbral": 1.604,
+    "estimable": false,
+    "R": 2000
+   },
+   "E12-A1-v2": {
+    "mde_beta": 12.828,
+    "umbral": 1.604,
+    "estimable": false,
+    "R": 2000
+   },
+   "E12-A1-v4": {
+    "mde_beta": 153.811,
+    "umbral": 1.604,
+    "estimable": false,
+    "R": 2000
+   },
+   "E12-A1-sin-atipicos": {
+    "mde_beta": 18.863,
+    "umbral": 1.604,
+    "estimable": false,
+    "R": 2000
+   },
+   "E12-A2": {
+    "mde_beta": 19.226,
+    "umbral": null,
+    "estimable": true,
+    "R": 2000
+   },
+   "E12-A2-v1": {
+    "mde_beta": 19.203,
+    "umbral": null,
+    "estimable": true,
+    "R": 2000
+   },
+   "E12-A2-v2": {
+    "mde_beta": 231.032,
+    "umbral": null,
+    "estimable": true,
+    "R": 2000
+   }
+  },
+  "driscoll_kraay": "NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay): solo etiqueta",
+  "instrumento": "cuota de protegida 1991-95 × calificaciones de las demás provincias no selladas; 1/HHI no aplica (un solo choque nacional)"
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "Clase provisional hasta I8 (réplica ciega, B6). Tope SUGESTIVO.",
+  "fuera_muestra: no aplica (diseño de identificación; la predicción frente a AR(4) y ECM v1 se hace en F1).",
+  "Mide la vivienda protegida (calificaciones definitivas), no la pública: se rotula así en cada cifra.",
+  "Desviaciones y motivos: docs/v18/desviaciones_e4_e7b_e10_e12.md."
+ ]
+}

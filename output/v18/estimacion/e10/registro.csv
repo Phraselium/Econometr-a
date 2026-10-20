@@ -1,0 +1,26 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+E10-prereg,E10-X1,Réplica de McCarthy (Irlanda) con entrada de grandes tenedores por zona y año,,,0,,,,,,,NO ESTIMABLE: falta la variación temporal: la titularidad por tramo solo tiene tres cortes (2024-2026) y la serie 2012-2023 tiene otra definición; SERPAVI termina en 2024
+E10-prereg,E10-A1,"MCO: ln_alq_2024 ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"principal; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.017; σ de y tras efectos (ya visto); N=1365; G=38"
+E10,E10-A1,ln_alq_2024 ~ pct10,2019,2024,1365,,,,,0.010682593583994674,0.06480648064806481,G=38; Webb B=9999; Conley 10 km se=0.0032
+E10-prereg,E10-A1-d,"MCO: d_ln_alq ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"principal; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.008; σ de y tras efectos (ya visto); N=1219; G=38"
+E10,E10-A1-d,d_ln_alq ~ pct10,2019,2024,1219,,,,,0.001047997195766022,0.713971397139714,G=38; Webb B=9999; Conley 10 km se=0.0018
+E10-prereg,E10-A1-v1,"MCO: ln_alq_2024 ~ pctpj + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.021; σ de y tras efectos (ya visto); N=1365; G=38"
+E10,E10-A1-v1,ln_alq_2024 ~ pctpj,2019,2024,1365,,,,,0.027074972267109063,0.0,G=38; Webb B=9999; Conley 10 km se=0.0028
+E10-prereg,E10-A1-v2,"MCO: ln_alq_2024 ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.017; σ de y tras efectos (ya visto); N=1364; G=38"
+E10,E10-A1-v2,ln_alq_2024 ~ pct10,2019,2024,1364,,,,,0.010716382526898497,0.063006300630063,G=38; Webb B=9999; Conley 10 km se=0.0032
+E10-prereg,E10-A1-v3,"MCO: ln_alq_2024 ~ pct10 + — + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.023; σ de y tras efectos (ya visto); N=1365; G=38"
+E10,E10-A1-v3,ln_alq_2024 ~ pct10,2019,2024,1365,,,,,0.02392633536278535,0.0,G=38; Webb B=9999; Conley 10 km se=0.0038
+E10-prereg,E10-A1-v4,"MCO: ln_alq_2024 ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.023; σ de y tras efectos (ya visto); N=395; G=37"
+E10,E10-A1-v4,ln_alq_2024 ~ pct10,2019,2024,395,,,,,-0.0013512713994399913,0.8725872587258726,G=37; Webb B=9999; Conley 10 km se=0.0056
+E10-prereg,E10-A1-vF,"MCO: ln_alq_2024 ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"holgura; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.019; σ de y tras efectos (ya visto); N=1246; G=36"
+E10,E10-A1-vF,ln_alq_2024 ~ pct10,2019,2024,1246,,,,,0.012459621608649779,0.047204720472047206,G=36; Webb B=9999; Conley 10 km se=0.0033
+E10-prereg,E10-A1-d-v1,"MCO: d_ln_alq ~ pctpj + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.006; σ de y tras efectos (ya visto); N=1219; G=38"
+E10,E10-A1-d-v1,d_ln_alq ~ pctpj,2019,2024,1219,,,,,0.004304426730647706,0.024402440244024402,G=38; Webb B=9999; Conley 10 km se=0.0013
+E10-prereg,E10-A1-d-v2,"MCO: d_ln_alq ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.008; σ de y tras efectos (ya visto); N=1218; G=38"
+E10,E10-A1-d-v2,d_ln_alq ~ pct10,2019,2024,1218,,,,,0.0010694489825905174,0.712071207120712,G=38; Webb B=9999; Conley 10 km se=0.0018
+E10-prereg,E10-A1-d-v3,"MCO: d_ln_alq ~ pct10 + — + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.007; σ de y tras efectos (ya visto); N=1219; G=38"
+E10,E10-A1-d-v3,d_ln_alq ~ pct10,2019,2024,1219,,,,,-3.1135678919210706e-05,0.9893989398939894,G=38; Webb B=9999; Conley 10 km se=0.0016
+E10-prereg,E10-A1-d-v4,"MCO: d_ln_alq ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"variante; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.005; σ de y tras efectos (ya visto); N=394; G=37"
+E10,E10-A1-d-v4,d_ln_alq ~ pct10,2019,2024,394,,,,,-0.00019642381320726166,0.924992499249925,G=37; Webb B=9999; Conley 10 km se=0.0017
+E10-prereg,E10-A1-d-vF,"MCO: d_ln_alq ~ pct10 + ln_renta+ln_pob + FE provincia; cluster provincia (Webb), Conley 10 km",2019,2024,0,,,,,,,"holgura; sin referencia ni δ (Anexo B): el MDE se publica como diagnóstico, sin umbral; MDE=0.008; σ de y tras efectos (ya visto); N=1100; G=36"
+E10,E10-A1-d-vF,d_ln_alq ~ pct10,2019,2024,1100,,,,,0.0010408519746281009,0.7370737073707371,G=36; Webb B=9999; Conley 10 km se=0.0019

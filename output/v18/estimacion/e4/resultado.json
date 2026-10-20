@@ -1,0 +1,58 @@
+{
+ "rama": "v18/estimacion/e4",
+ "pregunta": "¿Se puede estimar con nuestros datos qué parte de una ayuda a la demanda de alquiler acaba en el alquiler (E4 del plan de replicación V18)?",
+ "capa": "C4",
+ "datos": "ninguno suficiente: calendario estatal del Bono Alquiler Joven (data/raw/v16/intervenciones); ECV solo para Q7a (V16)",
+ "N": 0,
+ "metodo": "comprobación de datos y MDE (adenda 1.3); sin estimación",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO ESTIMABLE",
+ "clasificacion_v18_por_especificacion": {
+  "E4-X1": "NO ESTIMABLE",
+  "E4-X2": "no se clasifica",
+  "E4-L1": "no se clasifica"
+ },
+ "diagnosticos": {
+  "comprobacion_de_datos": {
+   "ficheros_con_nombre_de_perceptores_o_bono": [],
+   "n_filas_bono_alquiler_joven_en_intervenciones": 5,
+   "ambitos_bono": [
+    "estatal"
+   ],
+   "convocatorias_autonomicas_con_fecha": 0,
+   "ecv_disponible_q7a": true,
+   "nota": "La ECV no asigna el bono por la edad (Q7a, V16): su estimando es un cambio de generosidad, no la incidencia."
+  },
+  "literatura_sin_combinar": [
+   {
+    "estudio": "Fack (2005, CEPREMAP)",
+    "diseno": "diferencias y triples diferencias con la extensión de las ayudas de los noventa (Francia)",
+    "resultado": "θ = 0,76 (0,26) y 0,39 (0,24) en doble diferencia; 1,42 (0,63) y 1,02 (0,52) en triple",
+    "unidad": "traslación de la ayuda al alquiler (θ)"
+   },
+   {
+    "estudio": "Gibbons y Manning (2006)",
+    "diseno": "recorte del Housing Benefit por fecha de mudanza (Reino Unido)",
+    "resultado": "−10,3 % y −16,2 %; con tendencias por antigüedad −3,5 % y −6,8 %",
+    "unidad": "% del alquiler"
+   },
+   {
+    "estudio": "Grislain-Letrémy y Trevien (2022, Banque de France WP 886)",
+    "diseno": "discontinuidad geográfica difusa, 60 aglomeraciones (Francia)",
+    "resultado": "+0,052 (0,019) en el log del alquiler por m² por un diferencial de 15-40 €/mes",
+    "unidad": "log del alquiler"
+   }
+  ],
+  "mde": "no aplica: no hay variación de tratamiento medida",
+  "tarea_del_autor": "tareas_autor.md, punto 3: microdatos de beneficiarios del Bono Alquiler Joven y de las ayudas autonómicas (edad, tramo de renta, municipio, fecha de solicitud y concesión, importe, alquiler declarado), por el Portal de Transparencia o convenio con anonimización"
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "Sin estimación propia: la magnitud preferida saldrá solo de la literatura, rotulada así (E4-L1).",
+  "Si llegan los microdatos se escribirá una adenda antes de mirarlos (plan 1.4, g)."
+ ]
+}

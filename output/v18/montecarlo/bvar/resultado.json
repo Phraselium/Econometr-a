@@ -1,0 +1,47 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "¿Tienen las bandas bayesianas al 68 % y al 90 % del BVAR recursivo (E7-R3 y E7-A1) una cobertura frecuentista cercana a la nominal con T = 60-74?",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulados (sin datos reales ni muestra sellada)",
+  "N": "VAR(2) de 7 variables, T = 48, 60 y 74; R = 2000; 500 extracciones del posterior por réplica",
+  "metodo": "BVAR de Minnesota (observaciones ficticias, normal-Wishart inversa), identificación recursiva, respuesta a +100 pb del euríbor",
+  "estimacion": {
+    "filas_decisivas": 12,
+    "filas_decisivas_aptas": 0,
+    "cobertura_68_precio_h8": {
+      "T=60|rho=0.97|nulo": 0.9635,
+      "T=60|rho=0.97|alternativa": 0.016,
+      "T=74|rho=0.97|nulo": 0.94,
+      "T=74|rho=0.97|alternativa": 0.0055
+    },
+    "cobertura_90_precio_h8": {
+      "T=60|rho=0.97|nulo": 1.0,
+      "T=60|rho=0.97|alternativa": 0.18,
+      "T=74|rho=0.97|nulo": 0.9985,
+      "T=74|rho=0.97|alternativa": 0.1175
+    }
+  },
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto": "NO APTO",
+    "condicion_en_que_falla": "T=60|rho=0.97|nulo|compraventas: cobertura 68 % 0.987 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|nulo|precio: cobertura 68 % 0.964 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|nulo|visados: cobertura 68 % 0.988 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|alternativa|compraventas: cobertura 90 % 0.952 fuera de [0.87; 0.93] (conservadora); T=60|rho=0.97|alternativa|precio: cobertura 68 % 0.016 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.180 fuera de [0.87; 0.93] (insuficiente); T=60|rho=0.97|alternativa|visados: cobertura 68 % 0.420 fuera de [0.63; 0.73] (insuficiente); T=74|rho=0.97|nulo|compraventas: cobertura 68 % 0.981 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|nulo|precio: cobertura 68 % 0.940 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 0.999 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|nulo|visados: cobertura 68 % 0.977 fuera de [0.63; 0.73] (conservadora) / cobertura 90 % 1.000 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|alternativa|compraventas: cobertura 68 % 0.608 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.934 fuera de [0.87; 0.93] (conservadora); T=74|rho=0.97|alternativa|precio: cobertura 68 % 0.005 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.117 fuera de [0.87; 0.93] (insuficiente); T=74|rho=0.97|alternativa|visados: cobertura 68 % 0.316 fuera de [0.63; 0.73] (insuficiente) / cobertura 90 % 0.825 fuera de [0.87; 0.93] (insuficiente)",
+    "R": 2000,
+    "D": 500,
+    "banda_cobertura_68": [
+      0.63,
+      0.73
+    ],
+    "banda_cobertura_90": [
+      0.87,
+      0.93
+    ],
+    "segundos": 500.1,
+    "regla": "con NO APTO la estimación de E7-R3 y E7-A1 se publica solo como informativa"
+  },
+  "fuera_muestra": null,
+  "notas": "",
+  "herramienta": "bvar",
+  "semilla": 20261010
+}

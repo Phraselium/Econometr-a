@@ -1,0 +1,173 @@
+[
+ {
+  "id": "V18-E12-X1",
+  "indicador": "Promociones públicas por municipio y año: efecto sobre la obra privada y los precios del entorno: no estimable con los datos actuales",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "falta el dato imprescindible: no hay promociones públicas por municipio y año Lo resolvería: tareas_autor.md, punto 11: promociones de vivienda pública por municipio y año con número de viviendas, régimen y fechas de inicio y entrega (MIVAU, CASA 47 y empresas públicas autonómicas) [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A1",
+  "indicador": "Viviendas libres iniciadas: respuesta a la vivienda protegida calificada, IV provincial (E12-A1)",
+  "valor": 6.5067,
+  "min": -1.1918,
+  "max": 170.0367,
+  "unidad": "viviendas libres iniciadas por 100 viviendas del parque, por vivienda protegida calificada (por 100 del parque): viviendas privadas por vivienda protegida",
+  "periodo": "2002-2024",
+  "cobertura": "38 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "IV: libre iniciada frente a protegida, con obra libre 1991-1995 × año. 38 provincias no selladas × 23 años (2002-2024); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 6.507 (error típico agrupado por provincia 5.700; IC95 t[37] [-5.04; 18.06]); F efectivo (MOP) 7.90 (primera etapa π = 0.328); conjunto AR 95 % por cluster [-1.19; 170.04]; p AR en 0 = 0.107; p del WCR de Webb (B = 9999) del AR en 0 = 0.113; Driscoll-Kraay: error típico 2.857, p = 0.033 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 11.72 frente al umbral 1.604 (σ de y tras efectos, ya vista). I6 (etiqueta, no decide): no coherente con Chapelle (2015) (-1.604 (0,219), ficha NO VERIFICADA; estimando distinto: protegida, no pública), razón -4.06. NO ESTIMABLE por variación: MDE 11.72 > 1.604 Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 38 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A1-v1",
+  "indicador": "Viviendas libres iniciadas: respuesta a la vivienda protegida calificada, IV provincial (E12-A1-v1)",
+  "valor": 4.4909,
+  "min": null,
+  "max": null,
+  "unidad": "viviendas libres iniciadas por 100 viviendas del parque, por vivienda protegida calificada (por 100 del parque): viviendas privadas por vivienda protegida",
+  "periodo": "2002-2024",
+  "cobertura": "38 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "A1 sin el control de obra libre 1991-1995 × año. 38 provincias no selladas × 23 años (2002-2024); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 4.491 (error típico agrupado por provincia 5.359; IC95 t[37] [-6.37; 15.35]); F efectivo (MOP) 6.36 (primera etapa π = 0.333); conjunto AR 95 % por cluster toda la recta salvo (-92.77; -2.65): no acotado; p AR en 0 = 0.253; p del WCR de Webb (B = 9999) del AR en 0 = 0.321; Driscoll-Kraay: error típico 1.971, p = 0.033 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 11.39 frente al umbral 1.604 (σ de y tras efectos, ya vista). I6 (etiqueta, no decide): no coherente con Chapelle (2015) (-1.604 (0,219), ficha NO VERIFICADA; estimando distinto: protegida, no pública), razón -2.80.  Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 38 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A1-v2",
+  "indicador": "Viviendas libres iniciadas: respuesta a la vivienda protegida calificada, IV provincial (E12-A1-v2)",
+  "valor": 6.7716,
+  "min": null,
+  "max": null,
+  "unidad": "viviendas libres iniciadas por 100 viviendas del parque, por vivienda protegida calificada (por 100 del parque): viviendas privadas por vivienda protegida",
+  "periodo": "2002-2024",
+  "cobertura": "37 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "A1 sin Barcelona. 37 provincias no selladas × 23 años (2002-2024); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 6.772 (error típico agrupado por provincia 6.377; IC95 t[36] [-6.16; 19.70]); F efectivo (MOP) 6.52 (primera etapa π = 0.310); conjunto AR 95 % por cluster toda la recta salvo (-507.25; -1.59): no acotado; p AR en 0 = 0.126; p del WCR de Webb (B = 9999) del AR en 0 = 0.151; Driscoll-Kraay: error típico 3.172, p = 0.044 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 12.83 frente al umbral 1.604 (σ de y tras efectos, ya vista). I6 (etiqueta, no decide): no coherente con Chapelle (2015) (-1.604 (0,219), ficha NO VERIFICADA; estimando distinto: protegida, no pública), razón -4.22.  Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 37 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A1-v4",
+  "indicador": "Viviendas libres iniciadas: respuesta a la vivienda protegida calificada, IV provincial (E12-A1-v4)",
+  "valor": 94.0749,
+  "min": null,
+  "max": null,
+  "unidad": "viviendas libres iniciadas por 100 viviendas del parque, por vivienda protegida calificada (por 100 del parque): viviendas privadas por vivienda protegida",
+  "periodo": "2002-2013",
+  "cobertura": "38 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "A1 con la ventana 2002-2013. 38 provincias no selladas × 12 años (2002-2013); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 94.075 (error típico agrupado por provincia 351.718; IC95 t[37] [-618.57; 806.72]); F efectivo (MOP) 0.09 (primera etapa π = 0.058); conjunto AR 95 % por cluster toda la recta salvo (-15.50; -2.86): no acotado; p AR en 0 = 0.077; p del WCR de Webb (B = 9999) del AR en 0 = 0.040; Driscoll-Kraay: error típico 337.431, p = 0.786 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 153.81 frente al umbral 1.604 (σ de y tras efectos, ya vista). I6 (etiqueta, no decide): no coherente con Chapelle (2015) (-1.604 (0,219), ficha NO VERIFICADA; estimando distinto: protegida, no pública), razón -58.65.  Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 38 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A1-sin-atipicos",
+  "indicador": "Viviendas libres iniciadas: respuesta a la vivienda protegida calificada, IV provincial (E12-A1-sin-atipicos)",
+  "valor": 12.4061,
+  "min": null,
+  "max": null,
+  "unidad": "viviendas libres iniciadas por 100 viviendas del parque, por vivienda protegida calificada (por 100 del parque): viviendas privadas por vivienda protegida",
+  "periodo": "2002-2024",
+  "cobertura": "36 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "A1 sin atípicos (02, 29). 36 provincias no selladas × 23 años (2002-2024); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 12.406 (error típico agrupado por provincia 11.154; IC95 t[35] [-10.24; 35.05]); F efectivo (MOP) 3.25 (primera etapa π = 0.264); conjunto AR 95 % por cluster toda la recta salvo (-102.98; -0.45): no acotado; p AR en 0 = 0.061; p del WCR de Webb (B = 9999) del AR en 0 = 0.026; Driscoll-Kraay: error típico 5.850, p = 0.045 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 18.86 frente al umbral 1.604 (σ de y tras efectos, ya vista). I6 (etiqueta, no decide): no coherente con Chapelle (2015) (-1.604 (0,219), ficha NO VERIFICADA; estimando distinto: protegida, no pública), razón -7.73.  Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 36 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A2",
+  "indicador": "Viviendas valor tasado: respuesta a la vivienda protegida calificada, IV provincial (E12-A2)",
+  "valor": 22.084,
+  "min": null,
+  "max": null,
+  "unidad": "% del valor tasado real (variación anual) por cada 100 viviendas protegidas calificadas por 100 del parque",
+  "periodo": "2003-2024",
+  "cobertura": "33 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "IV: Δ ln valor tasado real frente a protegida. 33 provincias no selladas × 22 años (2003-2024); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 22.084 (error típico agrupado por provincia 12.429; IC95 t[32] [-3.23; 47.40]); F efectivo (MOP) 4.35 (primera etapa π = 0.305); conjunto AR 95 % por cluster toda la recta salvo (-67.94; 9.05): no acotado; p AR en 0 = 0.001; p del WCR de Webb (B = 9999) del AR en 0 = 0.000; Driscoll-Kraay: error típico 7.534, p = 0.008 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 19.23 frente al umbral sin referencia (δ no definido) (σ de y tras efectos, ya vista). Sin referencia en la misma unidad (Anexo B): I6 no aplicable. tope SUGESTIVO: la vivienda protegida no es la pública y la exclusión del instrumento de tendencia es discutible (Chapelle, 2015); F efectivo < 5 con AR no acotado: fallo decisivo (I2) Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 33 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A2-v1",
+  "indicador": "Viviendas valor tasado: respuesta a la vivienda protegida calificada, IV provincial (E12-A2-v1)",
+  "valor": 21.9526,
+  "min": null,
+  "max": null,
+  "unidad": "% del valor tasado real (variación anual) por cada 100 viviendas protegidas calificadas por 100 del parque",
+  "periodo": "2003-2024",
+  "cobertura": "32 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "A2 sin Barcelona. 32 provincias no selladas × 22 años (2003-2024); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 21.953 (error típico agrupado por provincia 14.361; IC95 t[31] [-7.34; 51.24]); F efectivo (MOP) 3.23 (primera etapa π = 0.281); conjunto AR 95 % por cluster toda la recta salvo (-42.54; 8.08): no acotado; p AR en 0 = 0.001; p del WCR de Webb (B = 9999) del AR en 0 = 0.000; Driscoll-Kraay: error típico 8.443, p = 0.017 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 19.20 frente al umbral sin referencia (δ no definido) (σ de y tras efectos, ya vista). Sin referencia en la misma unidad (Anexo B): I6 no aplicable.  Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 32 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E12-A2-v2",
+  "indicador": "Viviendas valor tasado: respuesta a la vivienda protegida calificada, IV provincial (E12-A2-v2)",
+  "valor": 147.2348,
+  "min": null,
+  "max": null,
+  "unidad": "% del valor tasado real (variación anual) por cada 100 viviendas protegidas calificadas por 100 del parque",
+  "periodo": "2003-2013",
+  "cobertura": "33 provincias",
+  "fuentes": [
+   "data/raw/mivau_v2_protegida.csv (calificaciones definitivas anuales de vivienda protegida, tabla 1.6, MIVAU)",
+   "data/raw/mivau_v2_iniciadas_terminadas_prov.csv (viviendas libres iniciadas)",
+   "data/raw/mivau_parque.csv (parque de viviendas)",
+   "base:valor_tasado provincial y base:deflactor (E12-A2)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "A2 con la ventana 2003-2013. 33 provincias no selladas × 11 años (2003-2013); mide la vivienda PROTEGIDA, no la pública (rótulo). 2SLS 147.235 (error típico agrupado por provincia 419.447; IC95 t[32] [-707.15; 1001.62]); F efectivo (MOP) 0.14 (primera etapa π = 0.077); conjunto AR 95 % por cluster toda la recta (no acotado); p AR en 0 = 0.074; p del WCR de Webb (B = 9999) del AR en 0 = 0.078; Driscoll-Kraay: error típico 301.379, p = 0.636 (NO APTO con T <= 30 (V18 montecarlo/driscoll_kraay)). MDE(β) 231.03 frente al umbral sin referencia (δ no definido) (σ de y tras efectos, ya vista). Sin referencia en la misma unidad (Anexo B): I6 no aplicable.  Inferencia: AR por cluster APTO (V18 montecarlo/iv_debil); Webb con G = 33 (WCR de panel APTO con 30-39 clusters; V18 montecarlo/webb_twfe). Respuesta relativa entre provincias, sin el componente común (efectos de año). [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ }
+]

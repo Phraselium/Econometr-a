@@ -21,17 +21,26 @@ Análisis a posteriori (V17). Auditoría de la fase 3, grupo «oferta_titularida
 **En contra (o matices que faltan).**
 - **Escala.** Cerrar el déficit central supone un 2,65 % del parque (1,97-3,34 %; V17-AUD-OT-OFERTA-DEFICIT-SOBRE-PARQUE). Ilustración, no efecto (V17-AUD-OT-OFERTA-ILUSTRACION-RANGO):
   - Con la elasticidad de Mense, que es **local y de corto plazo**, el alquiler medio bajaría del orden del −0,5 %.
-  - Con la elasticidad implícita en el escenario de construcción de la 1.0 (−0,75 % de alquiler por 1 % de parque en la CCAA mediana; V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71), sería del orden del −2,0 %.
+  - Con la elasticidad implícita en el escenario de construcción de la 1.0 (−1,2 % de alquiler por 1 % de parque en la CCAA mediana de las 9 no selladas; −0,75 con las 17 CCAA del panel de V7.1; V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71), sería del orden del −3,2 %.
   - No se ha localizado una elasticidad agregada de largo plazo verificada. No se puede decir cuál de las dos es más realista a escala nacional.
   - Para comparar: el alquiler SERPAVI (mediana provincial) subió un 33 % **nominal** entre 2015 y 2024. Deflactado por el deflactor del consumo de la CNT (+24,0 %), es un **+7,6 % real**, con un mínimo de −0,9 % y un máximo de +25,2 % (V17-AUD-OT-D32-SERPAVI-REAL-2015-2024).
   - En los dos extremos de la ilustración, cerrar el déficit compensaría solo una parte de la subida real del alquiler.
 - **«Donde hay presión» es justo donde construir es más difícil.**
-  - El potencial del área de Barcelona según el BdE (120.000 viviendas) cubre entre el 0,29 y el 0,51 de la necesidad provincial a 10 años (0,39 en el escenario central; V17-AUD-OT-SUELO-BARCELONA-RATIO). Área y provincia no son el mismo ámbito.
-  - Sevilla da 1,75-2,63, con un máximo inestable porque la necesidad mínima es casi nula (V17-AUD-OT-SUELO-SEVILLA-RATIO). No se usa como conclusión.
+  - El potencial del área de Barcelona según el BdE (120.000 viviendas) cubre entre el 0,29 y el 0,51 de la necesidad **provincial** a 10 años (0,39 en el escenario central; V17-AUD-OT-SUELO-BARCELONA-RATIO). No hay necesidad calculada para el área. Si el área concentra menos necesidad que la provincia, el cociente estaría subestimado.
+  - Sevilla da 1,75-2,63, y hasta unos 93 con la necesidad mínima (1.757), que es casi nula, así que el máximo no es informativo (V17-AUD-OT-SUELO-SEVILLA-RATIO).
+  - **Ejecución (juicio experto).** Si en Sevilla se ejecuta lo previsto al ritmo histórico (28 %), el potencial cubre entre el 0,49 y el 0,74 de la necesidad provincial a 10 años, con la necesidad máxima y la central (V17-AUD-OT-SUELO-SEVILLA-EJECUCION). Con ese supuesto, la ejecución frenaría incluso donde hay suelo previsto.
   - Madrid no se compara, porque está en la muestra sellada v6.
 - **Capacidad.**
-  - Pasar de la producción actual (83.700) a la necesaria a 5 años (293.623, escenario central) exige unos **+0,98 millones de ocupados** con la relación ocupados/terminadas de 2007 (+0,94 millones partiendo de las 92.000 del BdE). El total sería de unos 2,48 millones, cerca del máximo de 2007 (2,70 millones) (V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO).
-  - La capacidad del sector **es un límite plausible**, no algo descartable.
+  - **Cálculo con supuestos y rango (juicio experto).** Ocupados adicionales = (producción necesaria − actual) × ocupados de edificación residencial nueva por vivienda × (1 − ganancia por industrialización). Supuestos:
+    - **Productividad por vivienda, con tres referencias** (V17-AUD-OT-EMPLEO-OCUP-POR-VIVIENDA): 2007, 2,1-3,0 ocupados por vivienda y año; media 2015-2019, 3,3-6,6; 2025, 2,8-5,6. No hay horas por vivienda en el repositorio.
+    - **Parte de la rama F en obra nueva residencial: supuesta,** sin fuente verificada: 45-65 % en 2007 y 15-30 % en 2015-2025. El resto es rehabilitación, obra civil y edificación no residencial. La EPA a dos dígitos (CNAE 41) no está descargada.
+    - **Industrialización y prefabricación,** como escenario: 0, 20 o 40 % menos de trabajo por vivienda, sin fuente verificada.
+    - Producción actual de 83.700 o 92.000 (BdE). Déficit mínimo, central o máximo.
+  - **Resultado** (V17-AUD-OT-EMPLEO-INCREMENTO-RANGO-5A y -10A), frente a 1,50 millones de ocupados hoy y un máximo de 2,70 millones en 2007 (holgura de 1,2 millones):
+    - **a 5 años: +0,65 millones** (rango +0,21 a +1,62);
+    - **a 10 años: +0,43 millones** (rango +0,14 a +1,03).
+  - El extremo alto a 5 años supera el máximo de 2007; el bajo exige industrialización y la productividad de 2007.
+  - La capacidad del sector es un límite plausible a 5 años y menos probable a 10. La cifra anterior (+0,98 millones; V17-AUD-OT-OFERTA-EMPLEO-INCREMENTO) suponía que todo el empleo de la rama F de 2007 era obra nueva residencial: es un extremo alto del mismo cálculo.
   - Sensibilidad (V17-AUD-OT-OFERTA-SENSIBILIDAD-5A y -10A). Con reposición de 6.864 al año o del 0,1-0,3 % del parque, absorción del 0-25 % del déficit por vacías y secundarias, y producción actual de 83.700 o 92.000:
     - a 5 años hay que producir entre 2,8 y 4,4 veces lo actual;
     - a 10 años, entre 2,2 y 3,5 veces.
@@ -42,9 +51,9 @@ Análisis a posteriori (V17). Auditoría de la fase 3, grupo «oferta_titularida
 - Plazos: 3,2 años de obra [C4]; licencias sin dato.
 - Restricciones de suelo y capacidad: arriba (src/v17/f3_oferta_titularidad.py).
 - **Dónde sí y dónde no.**
-  - **No** con el suelo previsto en el área de Barcelona, ni en las capitales en general: 320.000 viviendas potenciales en las seis capitales, el 4,5 % del total (BdE, nota 41).
-  - Sevilla tiene potencial por encima de la necesidad provincial, con la advertencia de su rango inestable.
-  - Para Madrid, las coronas y las ciudades medias **no se puede saber** con los datos del repositorio: no hay SIU municipal ni comparación de necesidad por área.
+  - **Barcelona:** el suelo previsto en el área cubre 0,29-0,51 de la necesidad provincial. Es la única comparación posible, y es entre ámbitos distintos.
+  - **Sevilla:** potencial por encima de la necesidad provincial. Con la ejecución histórica, 0,49-0,74 (juicio experto).
+  - **Capitales en general, Madrid, coronas y ciudades medias: no se puede saber.** El BdE da 320.000 viviendas potenciales en las seis capitales (el 4,5 % del total, donde viven el 16 % de los hogares), pero no hay necesidad por capital con la que compararlas, ni SIU municipal.
 
 ## 4. Literatura
 - **Mense (2025).** *Journal of Political Economy Macroeconomics*. DOI 10.1086/733977, **VERIFICADA** (Crossref, 2026-10-19). Resumen (repositorio de la LSE, vía buscador).
@@ -57,16 +66,17 @@ Análisis a posteriori (V17). Auditoría de la fase 3, grupo «oferta_titularida
 ## 5. Veredicto
 **Se sostiene con matices.** Es la medida mejor respaldada, y la literatura es hoy más sólida de lo que dice la 1.0 (Mense, 2025). Faltan tres matices:
 - El efecto por vivienda es pequeño. Cerrar el déficit compensaría solo una parte de la subida real del alquiler.
-- El volumen necesario (2,2-4,4 veces lo actual) exige un empleo cercano al máximo de 2007.
-- Donde hay más presión, el suelo previsto no basta. Y el plazo incluye el planeamiento y la licencia, no solo la obra.
+- El volumen necesario (2,2-4,4 veces lo actual) exige, con supuestos, entre 0,2 y 1,6 millones de ocupados más a 5 años; en el extremo alto, por encima del máximo de 2007.
+- En Barcelona, el suelo previsto no basta; en las demás capitales no se puede saber. Y el plazo incluye el planeamiento y la licencia, no solo la obra.
 
 ## 6. Texto corregido y confianza
-1. Más oferta donde hay presión: es la medida mejor respaldada. Con diseños creíbles fuera de España, la obra nueva baja el alquiler cercano y libera viviendas para hogares de menor renta. El efecto por vivienda es pequeño, así que hacen falta volúmenes sostenidos: entre 2,2 y 4,4 veces la producción actual para cerrar el déficit en 5 a 10 años, con un empleo en la construcción cercano al de 2007. Donde la presión es mayor, como Barcelona o las capitales, el suelo previsto no basta. Tarda años: más de tres de obra, más el planeamiento y la licencia.
+1. Más oferta donde hay presión: es la medida mejor respaldada. Con diseños creíbles fuera de España, la obra nueva baja el alquiler cercano y libera viviendas para hogares de menor renta. El efecto por vivienda es pequeño, así que hacen falta volúmenes sostenidos: entre 2,2 y 4,4 veces la producción actual para cerrar el déficit en 5 a 10 años. Con supuestos explícitos, eso son entre 0,2 y 1,6 millones de trabajadores más en la construcción a cinco años, según la productividad y la industrialización. En el área de Barcelona el suelo previsto no basta. En el resto de las grandes ciudades no se puede saber con los datos disponibles. Tarda años: más de tres de obra, más el planeamiento y la licencia.
 
 Confianza:
 - Signo: «la evidencia indica».
 - Magnitud en España: «la evidencia sugiere que es pequeña por unidad».
-- Factibilidad local: «es compatible con» en Barcelona y las capitales; «no se puede saber» en el resto.
+- Empleo necesario: cálculo con supuestos (juicio experto).
+- Factibilidad local: «es compatible con» en Barcelona; «no se puede saber» en el resto.
 
 ## 7. PARADA
 No hay.
@@ -78,3 +88,11 @@ No hay.
 - **Sensibilidad de la reposición, la producción actual y la absorción. Aplicado:** ×2,8-4,4 a 5 años y ×2,2-3,5 a 10.
 - **Mense es local y de corto plazo. Aplicado:** la ilustración es ahora un rango entre la elasticidad local y la implícita en la 1.0. No se localizó una elasticidad agregada verificada, así que se retira «3,9 veces más optimista».
 - **33 % de SERPAVI. Declarado nominal y deflactado:** +7,6 % real en la mediana.
+
+## Respuesta a la ronda 2 y al encargo final
+- **Empleo (pedido del autor). Rehecho** como cálculo con supuestos y rango: tres referencias de productividad, parte de la rama F en obra nueva residencial supuesta, industrialización como escenario. +0,65 millones a 5 años (0,21-1,62) y +0,43 millones a 10 años (0,14-1,03). Las cifras nuevas tienen lectura «juicio experto». La de la ronda 1 se conserva, rotulada como extremo alto.
+- **«El suelo previsto no basta en las capitales». Rebajado a «no se puede saber»,** salvo en Barcelona, que es la única con comparación.
+- **Ratio de Barcelona.** No hay necesidad del área. Se declara que es contra la necesidad **provincial**.
+- **Máximo de Sevilla (unos 93). Coherente** con la ficha de hechos, y se dice que no es informativo.
+- **«La ejecución frena». Ahora es juicio experto con su cuenta:** 0,49-0,74 (V17-AUD-OT-SUELO-SEVILLA-EJECUCION).
+- **Guarda v6.** La elasticidad implícita en el escenario V7.1 se calcula ahora sobre la CCAA mediana de las 9 CCAA no selladas: −1,2 en lugar de −0,75. La ilustración pasa a −0,5 a −3,2 %.

@@ -20,7 +20,7 @@ El informe integral (VII.7) y el atlas de V12 ya daban la cifra del Catastro.
 - El del O-HB cubre solo Barcelona ciudad.
 
 Además, el Catastro cuenta por NIF y por unidad catastral. Un grupo con varias sociedades aparece partido, y un edificio sin división horizontal cuenta como un inmueble.
-- **Cómo se cuenta el tramo.** En el fichero nacional, el tramo «más de 10» se cuenta por NIF en todo el territorio común. En el provincial y el municipal, dentro de cada ámbito. Comprobación: el fichero nacional da 1.013.400 viviendas en titulares con más de 10 en 2026, un 8,4 % más que la suma de los provinciales (934.842) (V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026). Las cuotas provinciales y municipales son cotas inferiores.
+- **Cómo se cuenta el tramo.** Cada fichero cuenta el tramo «más de 10» por NIF dentro de su propio ámbito. Comprobación con la guarda v6, en las provincias no selladas: los ficheros provinciales dan 608.269 viviendas en titulares con más de 10 en 2026, un 21 % más que la suma de sus municipios (501.354) (V17-AUD-OT-CAT-GT-PROV-FRENTE-SUMA-MUN-2026). Por analogía, el fichero nacional cuenta por NIF en todo el territorio común. Es coherente con la cifra de transparencia publicada en prensa: 1.046.188, frente a 1.040.955 en la edición 2025. Las cuotas provinciales y municipales son cotas inferiores.
 - **Barcelona, prueba propia.** El Catastro da un 6,8 % del parque municipal en titulares con más de 10 en el municipio (V17-AUD-OT-CAT-GT-BCN-2024; ediciones 2024-2026: 6,6-6,8 %). El O-HB, con otras fuentes y otra agregación, da un 17,1 % del parque total a 1-1-2021. Con el Catastro solo no se puede medir bien la concentración en las ciudades.
 
 **En contra (la primera mitad de la frase es falsa).** Sí hay datos de titularidad. Con datos de stock permiten negar la afirmación a escala nacional.
@@ -32,8 +32,8 @@ Además, el Catastro cuenta por NIF y por unidad catastral. Un grupo con varias 
 - **Alquiler habitual, España.**
   - Banco de España (Informe Anual 2025, cuadro 2.11 y p. 169, datos AEAT 2024; consultado el 2026-10-19): las personas físicas con 11 o más viviendas tienen el 2,4 % de las viviendas alquiladas por personas físicas. Los particulares son «alrededor del 90 %» del alquiler.
   - **Cota sin suelo público** (V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL, la que cita la errata): 2,2-12,2 %, o 2,0-17,0 % con particulares del 85 al 95 %.
-  - **Cota con la vivienda pública como suelo explícito** (V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA): 10,2-12,2 % con particulares al 90 %, y 7,3-17,0 % con 85-95 %. El suelo público va del 8,0 % (Catastro, entidades públicas con más de 10) al 10,7 % (MIVAU, 318.000 viviendas) del alquiler censal (2.983.619 hogares en alquiler, Censo 2021).
-  - **Titulares privados con más de 10, aparte** (V17-AUD-OT-COTA-GT-ALQUILER-PRIVADOS): 2,2-4,1 %, o 2,0-9,0 % con 85-95 %.
+  - **Cota condicionada** (V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA): 10,2-12,2 % con particulares al 90 %, y 7,3-17,0 % con 85-95 %. **No es un suelo**: solo vale si toda la vivienda pública cuenta como alquiler de un gran tenedor dentro del mismo universo que el dato del BdE, lo que no está comprobado. La vivienda pública va del 8,0 % (Catastro, entidades públicas con más de 10) al 10,7 % (MIVAU, 318.000 viviendas) del alquiler censal (2.983.619 hogares en alquiler, Censo 2021).
+  - **Titulares privados con más de 10, aparte** (V17-AUD-OT-COTA-GT-ALQUILER-PRIVADOS): 2,2-4,1 % con particulares al 90 % y **2-9 % con 85-95 %**. Con la misma condición de universos.
   - Con la cifra del MIVAU, la vivienda pública agota por sí sola el 10 % no particular. Los universos (AEAT frente a Censo, cesión incluida o no) no casan exactamente, y la cota con suelo público es menos sólida que la amplia.
 - **Multiarrendadores (2 o más viviendas; no es gran tenedor).**
   - BdE, suma de tramos del cuadro 2.11: 49,3 % de las viviendas alquiladas por personas físicas (2024; V17-AUD-OT-BDE-MULTIARRENDADORES-2024).
@@ -46,7 +46,7 @@ Además, el Catastro cuenta por NIF y por unidad catastral. Un grupo con varias 
 - La cifra de partida del plan, un 15 % de la oferta de alquiler según el Ministerio de Vivienda, no se ha localizado. No se usa.
 
 ## 3. Pruebas mínimas (src/v17/f3_oferta_titularidad.py)
-- **Parque total frente a alquiler.** Arriba. Parque: 4,2 %. Alquiler nacional: cotas de 2-12 % (amplia) y 10-12 % (con suelo público). Privados: 2-4 %.
+- **Parque total frente a alquiler.** Arriba. Parque: 4,2 %. Alquiler nacional: cota amplia de 2-12 % y cota condicionada de 10-12 %. Privados: 2-4 % (2-9 % con 85-95 % de particulares).
 - **España frente a grandes ciudades.** Nacional: 2-12 %. Barcelona: 36,1 %, o 31,7 % sin administraciones. El Catastro municipal infraestima en las ciudades con edificios enteros sin división horizontal.
 - **Concentración.** 26.890 NIF con más de 10 en todo el territorio común. Con datos de stock nacionales no hay una cuota dominante. En mercados locales no se puede descartar, porque no hay cuotas por barrio ni por grupo empresarial.
 - No hay datos de precios por tipo de titular. No se estima ningún efecto.
@@ -63,13 +63,13 @@ Además, el Catastro cuenta por NIF y por unidad catastral. Un grupo con varias 
 ## 5. Veredicto
 **Incorrecta.** «No hay datos de titularidad» es falso: Catastro, Banco de España y O-HB. Con datos de stock, esos datos permiten negar el control a escala nacional:
 - en torno al 4 % del parque;
-- entre el 2 y el 12 % del alquiler habitual, con supuestos amplios;
-- solo un 2-4 % en titulares privados.
+- entre el 2 y el 12 % del alquiler habitual, con supuestos amplios (2-17 % con particulares del 85 al 95 %);
+- entre el 2 y el 9 % en titulares privados, si la vivienda pública se descuenta del alquiler no particular.
 
 No permiten negar un peso alto en grandes ciudades: un 32-36 % del alquiler habitual en Barcelona. Tampoco permiten saber si su presencia sube los alquileres en España.
 
 ## 6. Texto corregido y confianza
-«Los grandes tenedores controlan el mercado»: a escala nacional, con datos de stock, no. Los titulares de más de 10 viviendas tienen en torno al 4 % del parque (Catastro, 2026), y entre el 2 y el 12 % del alquiler habitual según una cota con supuestos explícitos, buena parte de ella vivienda pública. En Barcelona ciudad pesan mucho más: el 36 % del alquiler habitual en 2021, el 32 % sin las administraciones. Si su presencia encarece el alquiler no está medido en España. En EE. UU., más concentración local de grandes caseros se asocia con alquileres más altos.
+«Los grandes tenedores controlan el mercado»: a escala nacional, con datos de stock, no. Los titulares de más de 10 viviendas tienen en torno al 4 % del parque (Catastro, 2026), y entre el 2 y el 12 % del alquiler habitual según una cota con supuestos explícitos; si se descuenta la vivienda pública, los titulares privados tendrían entre el 2 y el 9 %. En Barcelona ciudad pesan mucho más: el 36 % del alquiler habitual en 2021, el 32 % sin las administraciones. Si su presencia encarece el alquiler no está medido en España. En EE. UU., más concentración local de grandes caseros se asocia con alquileres más altos.
 
 Confianza:
 - Peso nacional: «la evidencia indica».
@@ -89,6 +89,11 @@ Confianza:
 - **Cota con la vivienda pública como suelo y privados aparte. Aplicado.** Nuevas V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA (10,2-12,2 %) y -PRIVADOS (2,2-4,1 %). Se conserva la cota amplia (2,2-12,2 %), que es la que cita la errata. Es más robusta porque no exige que el universo AEAT y el del Censo coincidan.
 - **36,1 % sin administraciones. Aplicado.** El O-HB lo permite (figura 5): 31,7 %. Se dice que solo vale para Barcelona ciudad.
 - **«A escala nacional, con datos de stock» en lugar de «en España no». Aplicado** en el texto corregido.
-- **Tramo del Catastro, ¿NIF nacional o suma municipal? Documentado.** El fichero nacional cuenta por NIF en todo el territorio común: supera en un 8,4 % a la suma provincial. Los provinciales y municipales son cotas inferiores.
+- **Tramo del Catastro, ¿NIF nacional o suma municipal? Documentado.** El fichero nacional cuenta por NIF en todo el territorio común: supera en un 8,4 % a la suma provincial. (Comprobación sustituida en la ronda 2 por la de provincias frente a municipios no sellados, para no sumar provincias selladas.) Los provinciales y municipales son cotas inferiores.
 - **49,3 % frente a 52,8 %. Señalado.** Diferencia de fuente, año y universo.
 - **PARADA. Actualizada:** resuelta por el autor.
+
+## Respuesta a la ronda 2
+- **La «cota con suelo público» no es un suelo. Aceptado:** se rotula como cota condicionada a que la vivienda pública cuente como gran tenedor en el mismo universo que el dato del BdE.
+- **Rango privado del 2-9 % en el veredicto. Aplicado,** con su condicional.
+- **Guarda v6.** La comprobación del NIF ya no suma provincias selladas. Se sustituye por la comparación entre los ficheros provinciales y municipales de las provincias no selladas (cociente 1,21). V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026 queda retirada, porque sumaba las 11 provincias selladas. La distribución provincial y el dato de Barcelona pasan por holdout.excluir_sellados_v6.

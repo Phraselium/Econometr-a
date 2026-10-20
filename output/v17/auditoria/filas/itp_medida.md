@@ -9,13 +9,13 @@ Análisis a posteriori (V17). Auditoría de la fase 3, grupo «oferta_titularida
 
 **A favor.** Es cierto que no hay estudio español con diseño:
 - Ficha L4 y dos búsquedas propias del 2026-10-19 sin resultados académicos. Los cambios de Andalucía (2021) y la Comunitat Valenciana (2026), localizados por prensa, no tienen evaluación.
-- La única evidencia española es parcial y trata de la evasión (Montalvo, Piolatto y Raya, 2020): el tipo efectivo es menor que el nominal.
+- La única evidencia española es parcial y trata de la evasión (Montalvo, Piolatto y Raya, 2020, 10.1016/j.regsciurbeco.2020.103526; ficha L4): el precio declarado en escritura puede no ser el real, lo que afecta a cualquier estimación del efecto del ITP con precios registrados.
 - Q6 de V16 no tiene potencia: el efecto mínimo detectable en el valor tasado es de 0,043 log por punto, frente al −0,01 de incidencia plena (V17-AUD-OT-ITP-Q6-p-MDE80).
 
 **En contra.**
 - **La medida está mal agrupada.** Poner el ITP en la misma línea que la vivienda pública, al final de una lista «ordenada por solidez», mezcla dos instrumentos sin relación de mecanismo.
 - **«Sin evidencia» describe mal la literatura.** Para el objetivo declarado en el informe integral (III.4, «abaratar el acceso a la compra»), la literatura con diseño sí tiene evidencia, aunque sea de otros países:
-  - Contra el abaratamiento del precio antes de impuestos en los cambios permanentes: Dachis et al., 2012; Dolls et al., 2025; Davidoff y Leigh, 2013; Kopczuk y Munroe, 2015.
+  - Contra el abaratamiento del precio antes de impuestos en los cambios permanentes: Dachis et al., 2012; Dolls et al., 2025; Davidoff y Leigh, 2013; Kopczuk y Munroe, 2015. Esos estudios miden subidas o impuestos nuevos; aplicarlos a una rebaja supone simetría.
   - Un ahorro del comprador que va de parcial (Besley et al., 2014, rebaja temporal) a casi nulo.
   - Más compraventas: Best y Kleven, 2018; Fritzsche y Vandrei, 2019.
   - Más movilidad ligada a la vivienda: Hilber y Lyytikäinen, 2017.
@@ -40,7 +40,7 @@ Análisis a posteriori (V17). Auditoría de la fase 3, grupo «oferta_titularida
 - La lectura de la literatura: hay evidencia internacional con diseño sobre el volumen (a favor) y sobre el precio (en contra de que baje).
 
 ## 6. Texto corregido y confianza
-6b. Rebajar el ITP: no evaluado en España. Fuera, con diseños creíbles, las rebajas temporales adelantan compras. Las permanentes aumentan las compraventas y la movilidad, pero no bajan el precio de mercado. El comprador ahorra, según el mercado, desde una parte de la rebaja hasta casi nada. Reduce la recaudación donde el tipo está por debajo del máximo de ingresos.
+6b. Rebajar el ITP: no evaluado en España. Fuera, con diseños creíbles, las rebajas temporales adelantan compras. Las permanentes aumentan las compraventas y la movilidad, pero, por simetría con lo medido en las subidas, no bajarían el precio de mercado. El comprador ahorra, según el mercado, desde una parte de la rebaja hasta casi nada. Reduce la recaudación donde el tipo está por debajo del máximo de ingresos.
 
 Confianza:
 - Volumen: «la evidencia sugiere».
@@ -58,3 +58,7 @@ No hay.
 - **Montalvo et al. tratado como evidencia española parcial.**
 - **Búsqueda posterior a 2016. Ampliada,** sin evaluaciones.
 - **«Cuesta recaudación». Ahora con fuente:** Bérard y Trannoy; Määttänen y Terviö. Matizado: depende del tipo de partida.
+
+## Respuesta a la ronda 2
+- **«Por simetría con las subidas». Repuesto** en el argumento y en el texto corregido.
+- **Montalvo et al. Citado desde la ficha L4**, sin la inferencia propia sobre el tipo efectivo.

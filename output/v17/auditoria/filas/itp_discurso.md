@@ -14,10 +14,10 @@ En lo publicado: informe integral III.4 («No evaluable con los datos disponible
 - Las de esta auditoría (2026-10-19, en español e inglés, dos rondas) solo dieron guías fiscales y prensa.
 - Hay cambios posteriores a 2016 sin evaluar. Por prensa, que solo sirve para localizarlos: Andalucía, del 8-10 % al 7 % en 2021; Comunitat Valenciana, del 10 % al 9 % en 2026. Son candidatos a un diseño futuro.
 
-Evidencia española parcial: Montalvo, Piolatto y Raya (2020; DOI verificado según el informe integral; ficha L4, resumen) documentan, con datos españoles de pago real, valor declarado y tasación, que el comprador declara por debajo para pagar menos impuesto. Implicaciones:
-- El tipo efectivo es menor que el nominal.
-- Una rebaja del tipo nominal se traslada menos de lo que dice el tipo.
-- No estiman la incidencia en el precio.
+Evidencia española parcial: Montalvo, Piolatto y Raya (2020), *Regional Science and Urban Economics* 81, DOI 10.1016/j.regsciurbeco.2020.103526, VERIFICADA (ficha docs/v16/literatura/L4_fiscalidad_compra.md, leída en resumen).
+- Según la ficha L4, modelan la evasión del comprador con datos españoles de pago real, valor declarado y tasación. La sobretasación se mueve en sentido inverso a la evasión.
+- La ficha concluye que el precio declarado en escritura puede no ser el real, lo que afecta a cualquier estimación del efecto del ITP con precios registrados.
+- No estiman la incidencia del impuesto en el precio.
 
 El diseño propio (Q6 de V16) no informa (output/v17/lectura_bde/v15_v16_micro/inferencia.csv):
 - Q6-p (valor tasado): −0,0020 log por punto, IC95 [−0,032; 0,028], p = 0,886.
@@ -30,7 +30,7 @@ El diseño propio (Q6 de V16) no informa (output/v17/lectura_bde/v15_v16_micro/i
   - Volumen: −7 % por punto en Alemania (Fritzsche y Vandrei, 2019); −14 % con un tipo medio del 1,1 % en Toronto (Dachis, Duranton y Turner, 2012).
   - Precio antes de impuestos: el impuesto recae sobre todo en el vendedor. Toronto: el precio cae casi tanto como el impuesto. Alemania: −3 % por punto, más que la carga del comprador (Dolls et al., 2025). Davidoff y Leigh (2013), y Kopczuk y Munroe (2015) en el umbral.
   - Hay excepciones sin efecto en el precio: Petkova y Weichenrieder (NO VERIFICADA), en las casas unifamiliares alemanas.
-- **Lectura.** Si la incidencia es simétrica, una rebaja permanente tiende a subir el precio antes de impuestos. El ahorro del comprador va desde una parte de la rebaja (Reino Unido, temporal) hasta casi ninguno (Toronto y Alemania, donde el precio absorbe todo o más). «Abarata la vivienda» es falso para el precio de mercado. Para el coste total del comprador, el resultado es incierto y depende del mercado.
+- **Lectura.** Por simetría con las subidas (los estudios miden subidas, no rebajas permanentes), una rebaja permanente tendería a subir el precio antes de impuestos. Es una extrapolación: la simetría no está contrastada. El ahorro del comprador va desde una parte de la rebaja (Reino Unido, temporal) hasta casi ninguno (Toronto y Alemania, donde el precio absorbe todo o más). «Abarata la vivienda» es falso para el precio de mercado. Para el coste total del comprador, el resultado es incierto y depende del mercado.
 
 ## 3. Pruebas mínimas (src/v17/f3_oferta_titularidad.py)
 - **Potencia de Q6.** Efecto mínimo detectable al 80 % de potencia (5 % bilateral):
@@ -54,7 +54,7 @@ Todas son VERIFICADA (DOI en Crossref; cuartil no verificado) y se leyeron solo 
 - Kopczuk y Munroe (2015), 10.1257/pol.20130361.
 - Davidoff y Leigh (2013), 10.1111/1475-4932.12056.
 - Slemrod, Weber y Shan (2017), 10.1016/j.jue.2017.05.005. Discrepancia: sin bloqueo lejos de las muescas.
-- Montalvo, Piolatto y Raya (2020): evidencia española parcial; DOI verificado según el informe integral III.4; resumen.
+- Montalvo, Piolatto y Raya (2020), 10.1016/j.regsciurbeco.2020.103526: VERIFICADA (ficha L4), resumen. Evidencia española parcial sobre la evasión.
 
 Validez externa: el ITP español (6-13 % según la CCAA, sin verificar aquí) es mucho mayor que los impuestos estudiados (1-4,5 %). Además, solo grava la segunda mano.
 
@@ -62,7 +62,7 @@ Validez externa: el ITP español (6-13 % según la CCAA, sin verificar aquí) es
 **Se sostiene con matices.** Sobre España es cierta: no hay evaluación, el diseño propio no tiene potencia ni separa el ITP del ciclo, y la única evidencia española (evasión) es parcial. Pero es incompleta de un modo que confunde. Fuera, una rebaja permanente no baja el precio de mercado y puede subirlo antes de impuestos. El ahorro del comprador va de parcial a casi nulo según el mercado. Las rebajas temporales sobre todo adelantan compraventas.
 
 ## 6. Texto corregido y confianza
-«Bajar el ITP abarata la vivienda»: en España no se ha medido. Fuera, con diseños creíbles, una rebaja no baja el precio de la vivienda. Las rebajas temporales adelantan compras. Las permanentes aumentan las compraventas, y el precio antes de impuestos tiende a subir. El comprador se ahorra, según el mercado, desde una parte de la rebaja hasta casi nada.
+«Bajar el ITP abarata la vivienda»: en España no se ha medido. Fuera, con diseños creíbles, una rebaja no baja el precio de la vivienda. Las rebajas temporales adelantan compras. Las permanentes aumentan las compraventas, y, por simetría con lo medido en las subidas, el precio antes de impuestos tendería a subir. El comprador se ahorra, según el mercado, desde una parte de la rebaja hasta casi nada.
 
 Confianza:
 - «La evidencia sugiere» (literatura de otros países, con tipos menores, leída en resumen).
@@ -78,3 +78,7 @@ No hay.
 - **Escenario V71-S1-f1 como apoyo (circular). Retirado:** su signo lo fija la fórmula de incidencia, como dice la 1.0.
 - **Montalvo, Piolatto y Raya como evidencia española parcial. Aplicado.**
 - **Búsqueda de cambios posteriores a 2016. Ampliada:** dos búsquedas más. No hay evaluación; se citan Andalucía 2021 y la Comunitat Valenciana 2026 como cambios sin evaluar, localizados solo por prensa.
+
+## Respuesta a la ronda 2
+- **«Por simetría con las subidas». Repuesto** en la lectura y en el texto corregido, con la advertencia de que la simetría no está contrastada.
+- **Montalvo et al. Citado desde la ficha L4** (DOI 10.1016/j.regsciurbeco.2020.103526). Retiro mi inferencia propia («el tipo efectivo es menor que el nominal; una rebaja se traslada menos»), que la ficha no dice. Queda lo que sí dice: el precio declarado puede no ser el real, lo que contamina las estimaciones con precios registrados.

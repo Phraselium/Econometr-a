@@ -43,8 +43,8 @@ Atribución contable ilustrativa del componente población (858.274 hogares) del
 
 | Origen | Propiedad | Alquiler | Otra |
 |---|---|---|---|
-| Nacida en España | 80.0 % | 12.2 % | 7.8 % |
-| Nacida en el extranjero | 49.7 % | 38.3 % | 11.9 % |
+| Nacida en España | 80.5 % | 11.5 % | 8.1 % |
+| Nacida en el extranjero | 50.6 % | 36.8 % | 12.6 % |
 
 Por nacionalidad y año de llegada: `tenencia_por_origen_censo2021.csv`. ECEPOV 2021 no se ha usado (microdatos de 197 MB sin tabulación previa; pendiente).
 
@@ -57,9 +57,9 @@ Cuota de la varianza de la variación anual explicada por el componente común (
 | Valor tasado MIVAU (€/m², media anual) | 2015-2019 | 38 | 5 | 4 % | 2-12 | 2 % | 38 % | 58 % |
 | Valor tasado MIVAU (€/m², media anual) | 2020-2025 | 38 | 6 | 66 % | 61-73 | 2 % | 20 % | 13 % |
 | Valor tasado MIVAU (€/m², media anual) | 2015-2025 | 38 | 11 | 61 % | 55-67 | 2 % | 16 % | 24 % |
-| IPV INE por CCAA (índice, media anual) | 2015-2019 | 17 | 5 | 17 % | 9-51 | 2 % | 64 % | 19 % |
-| IPV INE por CCAA (índice, media anual) | 2020-2025 | 17 | 6 | 91 % | 89-95 | 6 % | 3 % | 6 % |
-| IPV INE por CCAA (índice, media anual) | 2015-2025 | 17 | 11 | 76 % | 67-90 | 5 % | 8 % | 15 % |
+| IPV INE por CCAA (índice, media anual) | 2015-2019 | 9 | 5 | 19 % | 7-65 | 5 % | 58 % | 22 % |
+| IPV INE por CCAA (índice, media anual) | 2020-2025 | 9 | 6 | 92 % | 89-96 | 10 % | 5 % | 3 % |
+| IPV INE por CCAA (índice, media anual) | 2015-2025 | 9 | 11 | 81 % | 70-94 | 10 % | 8 % | 11 % |
 | IPC alquiler INE provincial (índice, media anual) | 2015-2019 | 41 | 5 | 49 % | 43-59 | 2 % | 15 % | 35 % |
 | IPC alquiler INE provincial (índice, media anual) | 2020-2025 | 41 | 6 | 45 % | 40-55 | 2 % | 23 % | 31 % |
 | IPC alquiler INE provincial (índice, media anual) | 2015-2025 | 41 | 11 | 64 % | 59-71 | 2 % | 9 % | 26 % |
@@ -75,7 +75,7 @@ Variación acumulada 2015-2024 por provincia (dispersión), `variacion_acumulada
 | Serie | N | Mediana % | P10 | P90 | Mín | Máx |
 |---|---|---|---|---|---|---|
 | Valor tasado MIVAU (€/m², media anual) | 38 | 11 | -2 | 31 | -10 | 61 |
-| IPV INE por CCAA (índice, media anual) | 17 | 48 | 35 | 71 | 25 | 76 |
+| IPV INE por CCAA (índice, media anual) | 9 | 48 | 27 | 60 | 25 | 69 |
 | IPC alquiler INE provincial (índice, media anual) | 41 | 9 | 5 | 13 | 2 | 20 |
 | IPVA INE provincial (índice anual) | 38 | 21 | 16 | 28 | 10 | 37 |
 | SERPAVI alquiler €/m² mediana provincial | 38 | 33 | 27 | 45 | 23 | 55 |

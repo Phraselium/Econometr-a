@@ -22,17 +22,17 @@ En lo publicado:
 **En contra, o matices que faltan.**
 - **Efecto sobre los ocupantes.** No es una cuestión de evidencia: **es definicional**. El parque social se define por una renta inferior a la de mercado asignada por reglas (OCDE PH4.2). Lo que no está medido en España es la focalización (a quién llega) y el valor del beneficio. La evidencia francesa advierte de que la focalización puede fallar.
 - **Escala.**
-  - España tiene un 1,13 % de parque social (OCDE PH4.2, 2019, 290.000 viviendas, sobre el parque). El MIVAU da un 1,72 % (318.000 viviendas públicas de alquiler, sobre los hogares, Boletín Especial 2024).
+  - España tiene un 1,13 % de parque social (OCDE PH4.2, 2019, 290.000 viviendas, sobre el parque). El MIVAU da 318.000 viviendas públicas de alquiler (Boletín Especial 2024): un 1,72 % de los hogares, o un 1,24 % del mismo parque que usa la OCDE. Es esta última la que se compara con el 7,99 %, que también es sobre parque.
   - **El 7,99 % de la UE es una media simple de los 19 países UE con dato**, con años de referencia distintos. La media simple que calculo coincide con el agregado de la OCDE (V17-AUD-OT-PUB-UE-MEDIA-SIMPLE). No está ponderada por parque.
-  - Igualarla con el parque actual exigiría entre 1,61 millones (desde el 1,72 %) y 1,76 millones (desde el 1,13 %) de viviendas sociales adicionales: 19-21 años de toda la producción actual (V17-AUD-OT-PUB-BRECHA-UE).
+  - Igualarla con el parque actual exigiría entre 1,73 millones (desde el 1,24 %) y 1,76 millones (desde el 1,13 %) de viviendas sociales adicionales: unos 21 años de toda la producción actual (V17-AUD-OT-PUB-BRECHA-UE).
   - Al ritmo de calificaciones definitivas de vivienda protegida de 2021-2025 (11.265 al año, incluida la de venta), añadir un punto de parque social llevaría unos 23 años. Serían 3 si toda la producción actual fuera social. Sin contar las descalificaciones (V17-AUD-OT-PUB-ANIOS-1PP).
-- **Parque protegido en propiedad.** La vivienda protegida española ha sido sobre todo de venta, con protección temporal de 10 a 30 años, tras la cual pasa al mercado libre (Funcas, NO VERIFICADA). Ese parque en propiedad no entra en el 1,13 % ni en el 1,72 %, y no se cuantifica aquí. Hace dos cosas: abarata el acceso a la propiedad de sus compradores, lo que tampoco ha evaluado nadie; y explica en parte por qué el parque social de alquiler es tan pequeño.
-- **El escenario de la 1.0.** Implica una elasticidad alquiler-parque de −3,4 en la CCAA mediana (V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71). No se comprueba si recoge el desplazamiento: lo dice la propia 1.0 (III.7).
+- **Parque protegido en propiedad.** La vivienda protegida española ha sido sobre todo de venta, con protección temporal de 10 a 30 años, tras la cual pasa al mercado libre (Funcas, NO VERIFICADA). Ese parque en propiedad no entra en el 1,13 % ni en el 1,24 %, y no se cuantifica aquí. Abarata el acceso a la propiedad de sus compradores, lo que tampoco se ha evaluado en España.
+- **El escenario de la 1.0.** Implica una elasticidad alquiler-parque de −5,6 en la CCAA mediana de las 9 no selladas (−3,4 con las 17) (V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71). No se comprueba si recoge el desplazamiento: lo dice la propia 1.0 (III.7).
 - **Validez externa** de Viena, los Países Bajos y Francia: son parques construidos durante décadas, con financiación estable y sin descalificación.
 
 ## 3. Pruebas mínimas (src/v17/f3_oferta_titularidad.py)
 - **Ocupantes frente a mercado.** Separados arriba. Para los ocupantes, el beneficio es definicional y su focalización no está medida. Para el mercado, no hay evidencia española y la internacional es mixta.
-- **Escala.** Brecha con la UE de 1,61-1,76 millones de viviendas; unos 23 años por punto de parque social al ritmo actual.
+- **Escala.** Brecha con la UE de 1,73-1,76 millones de viviendas; unos 23 años por punto de parque social al ritmo actual.
 - **Evidencia internacional y validez externa.** Arriba.
 - Para el autor: I.7 del informe integral («sin dato» frente a la UE) está desactualizado. El dato de la OCDE ya está en data/raw/v17/parque_social.
 
@@ -57,10 +57,10 @@ Todas leídas en resumen; cuartil no verificado.
 
 Criterio común con `ayudas_demanda.md`: allí la frase es incorrecta porque la asequibilidad del beneficiario sí tiene estudios con diseño y la frase lo niega. Aquí el beneficio del ocupante no depende de la traslación (es renta regulada), y la frase no lo niega: solo lo omite. Por eso «con matices» y no «incorrecta».
 
-Matiz decisivo: con un parque del 1,1-1,7 %, frente a una media simple europea del 8 %, la escala es compatible con un efecto pequeño sobre los precios nacionales a diez años.
+Matiz decisivo: con un parque social de alquiler del 1,1-1,2 % del parque, frente a una media simple europea del 8 %, la escala es compatible con un efecto pequeño sobre los precios nacionales a diez años.
 
 ## 6. Texto corregido y confianza
-6a. Vivienda pública o social: baja el coste de la vivienda para quien la ocupa; es su definición. A quién llega no está medido en España. Que baje los precios del mercado tampoco. Fuera, parte de la vivienda subvencionada sustituye a promoción privada, y el efecto en el barrio depende de su renta. España parte de un 1,1-1,7 % de parque social de alquiler, frente a una media simple del 8 % en la UE. Igualarla exigiría unos 1,6-1,8 millones de viviendas, unos 20 años de toda la producción actual. Eso es compatible con un efecto pequeño sobre el precio nacional a diez años, que puede ser mayor en mercados locales. Buena parte de la vivienda protegida española fue de venta y pierde la protección con el tiempo.
+6a. Vivienda pública o social: baja el coste de la vivienda para quien la ocupa; es su definición. A quién llega no está medido en España. Que baje los precios del mercado tampoco. Fuera, parte de la vivienda subvencionada sustituye a promoción privada, y el efecto en el barrio depende de su renta. España parte de un 1,1-1,2 % de parque social de alquiler sobre el parque, frente a una media simple del 8 % en la UE. Igualarla exigiría unos 1,7-1,8 millones de viviendas, unos 21 años de toda la producción actual. Eso es compatible con un efecto pequeño sobre el precio nacional a diez años, que puede ser mayor en mercados locales. Buena parte de la vivienda protegida española fue de venta y pierde la protección con el tiempo.
 
 Confianza:
 - Beneficio del ocupante: definicional; su focalización «no permite concluir».
@@ -76,3 +76,8 @@ No hay.
 - **Brecha con el 1,13 % y con el 1,72 %. Aplicado:** 1,61-1,76 millones. El 7,99 % es una media simple: la calculo con el fichero de la OCDE y coincide.
 - **«Ninguna ampliación verosímil» → «es compatible con». Aplicado.**
 - **Parque protegido en propiedad. Añadido,** sin cuantificar: no hay dato en el repositorio.
+
+## Respuesta a la ronda 2
+- **Brecha con 318.000 sobre el parque (1,24 %), no con el 1,72 % sobre hogares. Aplicado:** 1,73-1,76 millones (V17-AUD-OT-PUB-BRECHA-UE, mínimo cambiado). El texto corregido dice 1,7-1,8 millones y un 1,1-1,2 % de partida.
+- **«Explica en parte por qué…». Retirado:** no está demostrado.
+- **Guarda v6.** La elasticidad implícita del escenario se calcula ahora sobre la CCAA mediana de las 9 CCAA no selladas: −5,6 en vivienda pública.

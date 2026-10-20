@@ -52,6 +52,22 @@ def hecho(id_, indicador, valor, minimo, maximo, unidad, periodo, cobertura, fue
                    "fecha_dato": fecha_dato, "ficha": f"output/v17/d3/informe.md#{ficha}", "nota": "a posteriori" + (f"; {nota_extra}" if nota_extra else "")})
 
 
+# Tipo de rango de cada cifra (encargo final de V17): «rango» = intervalo del mismo valor (IC o cota); «referencias» = puntos de
+# referencia de otra cosa (extremos anuales, años de comparación); «sin rango» si falta min o max.
+RANGO = {"HOGARES-ORIGEN-NACIDOS-EXTRANJERO", "TENENCIA-PROPIEDAD-ESP", "TENENCIA-ALQUILER-ESP", "TENENCIA-PROPIEDAD-EXTR",
+         "TENENCIA-ALQUILER-EXTR", "VARIANZA-COMUN-VALOR-TASADO", "VARIANZA-COMUN-IPV-CCAA", "VARIANZA-COMUN-IPVA", "VARIANZA-COMUN-SERPAVI",
+         "VARIANZA-COMUN-IPC-ALQUILER", "PROD-NECESARIA-5A", "PROD-NECESARIA-10A"}
+
+
+def tipo_rango(hechos: list[dict]) -> None:
+    for h in hechos:
+        if h["min"] is None or h["max"] is None:
+            h["tipo_rango"] = "sin rango"
+        else:
+            h["tipo_rango"] = "rango" if h["id"].removeprefix("V17-D3-") in RANGO else "referencias"
+        assert "véase" not in h["cobertura"].lower()
+
+
 def num(s: pd.Series) -> pd.Series:
     """Cifras del INE en CSV con punto de millares."""
     return pd.to_numeric(s.astype(str).str.replace(".", "", regex=False).str.replace(",", ".", regex=False), errors="coerce")
@@ -377,7 +393,7 @@ def factibilidad(dem: pd.DataFrame, def_prov: pd.DataFrame, sel: set[str]) -> tu
     for _, r in esc.iterrows():
         REG.log("v17-d3-escenario", f"prod_{r.deficit_inicial_supuesto[:12]}_{r.horizonte_anios}a", "(D0/N + H_INE + bajas)", 2026, 2026 + r.horizonte_anios, 1, np.nan, np.nan, np.nan,
                 coef_interes=r.produccion_anual_necesaria, notas="escenario contable con supuestos explícitos; sin predicción")
-    cap = pd.DataFrame({"anio": [2005, 2006, 2007, 2008, 2015, 2019, 2024, 2025]})
+    cap = pd.DataFrame({"anio": [2005, 2006, 2007, 2008, 2015, 2016, 2017, 2018, 2019, 2024, 2025]})
     cap["terminadas"] = cap.anio.map(t)
     cap["ocupados_construccion_miles"] = cap.anio.map(ocs)
     cap["terminadas_por_ocupado"] = cap.terminadas / (cap.ocupados_construccion_miles * 1000)
@@ -437,6 +453,7 @@ def main():
     except FileNotFoundError:
         pass
     construir_hechos(dem, h, og, ten, conc, var, niv, cor, esc, cap, inf)
+    tipo_rango(HECHOS)
     json.dump(HECHOS, open(OUT / "hechos.json", "w"), ensure_ascii=False, indent=1)
     REG.flush()
     informe(dem, h, og, ten, conc, var, niv, cor, esc, cap, inf, grupos)
@@ -493,9 +510,9 @@ def construir_hechos(dem, h, og, ten, conc, var, niv, cor, esc, cap, inf):
         v = t.loc[(g, k, "propiedad")]
         a = t.loc[(g, k, "alquiler")]
         hecho(f"TENENCIA-PROPIEDAD-{'ESP' if k == 'si' else 'EXTR'}", f"Hogares en propiedad, persona de mayor edad nacida {'en España' if k == 'si' else 'en el extranjero'}", v.pct, v.ic95_lo, v.ic95_hi, "% de hogares",
-              "1-11-2021 (Censo)", "España (muestra 10 %)", "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)", "OF", "2025-01-01", "tenencia", "")
+              "1-11-2021 (Censo)", "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)", "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)", "OF", "2025-01-01", "tenencia", "")
         hecho(f"TENENCIA-ALQUILER-{'ESP' if k == 'si' else 'EXTR'}", f"Hogares en alquiler, persona de mayor edad nacida {'en España' if k == 'si' else 'en el extranjero'}", a.pct, a.ic95_lo, a.ic95_hi, "% de hogares",
-              "1-11-2021 (Censo)", "España (muestra 10 %)", "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)", "OF", "2025-01-01", "tenencia", "")
+              "1-11-2021 (Censo)", "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)", "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)", "OF", "2025-01-01", "tenencia", "")
     # 2. general o local
     v = var.set_index(["serie", "periodo"])
     for nombre, clave, ident in (("Valor tasado MIVAU (€/m², media anual)", "2015-2025", "VARIANZA-COMUN-VALOR-TASADO"), ("IPV INE por CCAA (índice, media anual)", "2015-2025", "VARIANZA-COMUN-IPV-CCAA"),
@@ -504,7 +521,7 @@ def construir_hechos(dem, h, og, ten, conc, var, niv, cor, esc, cap, inf):
         if (nombre, clave) in v.index:
             r = v.loc[(nombre, clave)]
             hecho(ident, f"Cuota de la varianza de la variación anual de {nombre.split(' (')[0]} debida al componente común (año)", 100 * r.cuota_comun_anio, 100 * r.ic95_lo, 100 * r.ic95_hi, "% (IC95 bootstrap por provincias)",
-                  clave, f"{int(r.N)} unidades sin muestra sellada v6", "INE; MIVAU; SERPAVI (data/base/hechos.parquet, no sellado)", "hecho", "2026-07-01", "general-local",
+                  clave, f"{int(r.N)} {'CCAA' if 'CCAA' in nombre else 'provincias'} sin bloques sellados v6 (holdout.excluir_sellados_v6)", "INE; MIVAU; SERPAVI (data/base/hechos.parquet, no sellado)", "hecho", "2026-07-01", "general-local",
                   f"azar (permutación) {100 * r.azar_media:.1f} %; cuota local provincia×año {100 * r.cuota_local_provincia_x_anio:.1f} %; la cuota es descriptiva, no causal")
     hecho("DEFICIT-CONCENTRACION-50", "Provincias que suman la mitad del déficit positivo 2021-2025 (sin sellada v6)", conc["n50"], None, None, "provincias", "2021-2025", f"{conc['n_prov']} provincias no selladas",
           "output/v5/A4 (ECP INE; MIVAU)", "hecho", "2025-12-31", "general-local", f"publicado en V5 (52 provincias): 6 provincias suman el 50 %; aquí: {conc['top']}")

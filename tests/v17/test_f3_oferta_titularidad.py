@@ -26,6 +26,9 @@ def test_formato(hechos):
         assert h["nota"].startswith("a posteriori")
         assert h["lectura_v17"] in ("OF", "hecho", "cota", "asociación", "juicio experto")
         assert h["fuentes"]
+        assert h["tipo_rango"] in ("rango", "referencias", "sin rango")
+        assert (h["tipo_rango"] == "sin rango") == (h["min"] is None or h["max"] is None)
+        assert h["cobertura"] and "véase" not in h["cobertura"].lower()
 
 
 def test_catastro_reproduce_fuente(hechos):
@@ -46,7 +49,7 @@ def test_vacancia_decrece_con_tamano(hechos):
 
 
 def test_ronda1(hechos):
-    assert hechos["V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026"]["valor"] > 1          # tramo nacional por NIF
+    assert hechos["V17-AUD-OT-CAT-GT-PROV-FRENTE-SUMA-MUN-2026"]["valor"] > 1          # tramo por NIF dentro de cada ámbito
     assert abs(hechos["V17-AUD-OT-PUB-UE-MEDIA-SIMPLE"]["valor"] - 7.99) < 0.01           # media simple de la OCDE
     c = hechos["V17-AUD-OT-COTA-GT-ALQUILER-PRIVADOS"]
     assert c["min"] <= c["max"] <= hechos["V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA"]["max"]
@@ -60,7 +63,7 @@ def test_script_sin_red_ni_sellado():
     for prohibido in ("requests", "urllib", "data/sealed", "evaluate_", "http://", "https://"):
         assert prohibido not in src
     assert "SEED = 20261010" in src
-    assert "muestra_sellada_v6" in src
+    assert "excluir_sellados_v6(" in src
 
 
 def test_determinista(tmp_path):
@@ -71,3 +74,12 @@ def test_determinista(tmp_path):
     assert SALIDA.read_bytes() == primero
     if antes is not None:
         assert antes == primero
+
+
+def test_empleo_y_guarda(hechos):
+    for n in ("5A", "10A"):
+        e = hechos[f"V17-AUD-OT-EMPLEO-INCREMENTO-RANGO-{n}"]
+        assert 0 < e["min"] < e["valor"] < e["max"] and e["lectura_v17"] == "juicio experto"
+    assert hechos["V17-AUD-OT-EMPLEO-INCREMENTO-RANGO-10A"]["max"] < hechos["V17-AUD-OT-EMPLEO-INCREMENTO-RANGO-5A"]["max"]
+    assert "9 CCAA" in hechos["V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71"]["cobertura"]
+    assert "V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026" not in hechos

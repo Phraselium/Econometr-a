@@ -2,8 +2,9 @@
 
 Pruebas mínimas de las filas grandes_tenedores, itp_discurso, itp_medida, mas_oferta, vacias y vivienda_publica (docs/v17/plan.md,
 fase 3, punto 2). Contabilidad, cotas e ilustraciones con parámetros de la literatura: nada de lo calculado aquí es un efecto causal.
-Determinista, sin red, SEED = 20261010. Con la base (data/base/hechos.parquet) solo se lee la lista de provincias con
-muestra_sellada_v6 para EXCLUIRLAS de toda distribución provincial o municipal; no se lee data/sealed ni se ejecuta evaluate_*.
+Determinista, sin red, SEED = 20261010. Guarda de fuga v6 (docs/v17/decisiones.md, K5): toda lectura por debajo del nivel nacional
+(CCAA, provincia, municipio) pasa por holdout.excluir_sellados_v6(); los totales nacionales (Catastro total, Censo nacional, OCDE)
+se leen completos. No se lee data/sealed ni se ejecuta evaluate_*.
 data/raw se lee en solo lectura. Las cifras de documento (Banco de España, O-HB, OCDE, literatura) se toman de
 docs/v17/fuentes/*.md y de las fichas de literatura; no se recalculan.
 Uso: python3 src/v17/f3_oferta_titularidad.py  ->  output/v17/auditoria/oferta_titularidad_hechos.json
@@ -13,6 +14,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import sys
+
 import duckdb
 import numpy as np
 import pandas as pd
@@ -20,6 +23,8 @@ import pandas as pd
 SEED = 20261010
 np.random.seed(SEED)
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from src import holdout  # noqa: E402
 OUT = ROOT / "output" / "v17" / "auditoria"
 CAT = ROOT / "data/raw/v11/catastro_titularidad"
 CENSO_VAC = ROOT / "data/raw/v11/ine_censo2021/censo2021_tpx59531.csv"
@@ -28,7 +33,7 @@ OCDE_PH42 = ROOT / "data/raw/v17/parque_social/oecd_ahd_PH4-2_social_rental_hous
 UE27 = {"Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
         "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania",
         "Slovak republic", "Slovenia", "Spain", "Sweden"}
-CCAA_SELLADAS_V6 = {"02", "03", "04", "05", "13", "14", "15", "17"}   # bloques de CCAA de las provincias con muestra_sellada_v6 (src/holdout.py)
+CCAA_SELLADAS_V6 = set(holdout.ccaa_selladas_v6())   # ocho CCAA de K8 (bloques sellados de v6)
 PROTEGIDA = ROOT / "data/raw/mivau_v2_protegida.csv"
 INFERENCIA = ROOT / "output/v17/lectura_bde/v15_v16_micro/inferencia.csv"
 D3 = ROOT / "output/v17/d3"
@@ -46,6 +51,11 @@ DOC = {
     "mivau_publico_alquiler": 318_000,   # MIVAU, Boletín Especial Vivienda Social 2024
     "bde_terminadas_2025": 92_000,       # BdE IA 2025, pp. 124 y 126 (verificado por el coordinador)
     "bde_potencial_barcelona": 120_000, "bde_potencial_sevilla": 163_000,
+    "bde_ejecucion_sevilla": 0.28,       # BdE IA 2025, pp. 157-158: ejecución de lo previsto en el área de Sevilla
+    # Empleo (encargo final, B): supuestos explícitos SIN fuente verificada, rotulados como tales
+    "cuota_resid_nueva_2007": (0.45, 0.65),   # parte de los ocupados de la rama F en edificación residencial nueva, 2007
+    "cuota_resid_nueva_hoy": (0.15, 0.30),    # ídem 2015-2019 y 2025 (más obra civil, no residencial y rehabilitación)
+    "industrializacion": (0.0, 0.2, 0.4),     # reducción de horas por vivienda con industrialización (escenario)
     "ocde_es_social_pct": 1.13, "ocde_es_social_viv": 290_000, "ocde_ue_social_pct": 7.99,
     "ocde_fr": 14.0, "ocde_at": 23.6, "ocde_nl": 34.1, "ocde_de": 2.6, "ocde_it": 2.4, "ocde_pt": 1.06,
     "segu_reduccion_relativa": 13.0,     # Segú (2020): −13 % de la tasa de vacancia (relativa), Francia 1997-2001
@@ -57,17 +67,65 @@ DOC = {
 HECHOS: list[dict] = []
 
 
-def hecho(id_, indicador, valor, unidad, periodo, fuentes, lectura, ficha, minimo=None, maximo=None, nota=""):
+# Cobertura territorial real de cada cifra (por prefijo del id) y tipo de rango cuando hay min y max
+COBERTURA = [
+    ("CAT-GT-BCN", "municipio de Barcelona (08019), Catastro"),
+    ("CAT-GT-PROV-MEDIANA", "38 provincias de régimen común sin bloques sellados v6"),
+    ("CAT-GT-", "España de régimen común (sin País Vasco ni Navarra), fichero nacional del Catastro"),
+    ("COTA-GT-", "España: alquiler de vivienda habitual (BdE, territorio fiscal común) y hogares en alquiler (Censo 2021, nacional)"),
+    ("BDE-MULTI", "España, territorio fiscal común (AEAT)"),
+    ("OHB-", "Barcelona ciudad"),
+    ("VAC-6PROV", "provincias de Barcelona, València, Alicante, Tarragona, Málaga y Almería"),
+    ("VAC-6CAP", "capitales de esas 6 provincias (no selladas)"),
+    ("VAC-SEGU", "provincias de Barcelona, València, Alicante, Tarragona, Málaga y Almería y sus capitales"),
+    ("VAC-PRESION", "41 provincias sin bloques sellados v6"),
+    ("VAC-TASA-TERCIL", "41 provincias sin bloques sellados v6, por terciles de déficit por vivienda"),
+    ("VAC-", "provincias sin bloques sellados v6 (municipios listados en la tabla 59531 y filas «Resto de provincia»)"),
+    ("ITP-", "8 CCAA del panel de entrenamiento de Q6 (V16)"),
+    ("PUB-UE", "19 países de la UE-27 con dato en OCDE PH4.2"),
+    ("PUB-", "España (agregado nacional)"),
+    ("OFERTA-ELASTICIDAD", "CCAA mediana de las 9 CCAA sin bloques sellados v6 (parque del Censo 2021)"),
+    ("OFERTA-", "España (agregado nacional)"),
+    ("EMPLEO-", "España (agregado nacional)"),
+    ("SUELO-BARCELONA", "área urbana de Barcelona (BdE) frente a la provincia de Barcelona"),
+    ("SUELO-SEVILLA", "área urbana de Sevilla (BdE) frente a la provincia de Sevilla"),
+    ("D32-IPV", "9 CCAA sin bloques sellados v6"),
+    ("D32-SERPAVI", "38 provincias sin bloques sellados v6"),
+]
+TIPO_RANGO = {"CAT-GT-PROV-MEDIANA-2026": "referencias", "CAT-GT-BCN-2024": "referencias", "COTA-GT-ALQUILER-NACIONAL": "rango",
+              "COTA-GT-ALQUILER-CON-PUBLICA": "rango", "COTA-GT-ALQUILER-PRIVADOS": "rango", "VAC-6CAP-VACIAS": "referencias",
+              "PUB-BRECHA-UE": "rango", "OFERTA-DEFICIT-SOBRE-PARQUE": "rango", "OFERTA-MENSE-ILUSTRACION": "rango",
+              "OFERTA-ILUSTRACION-RANGO": "referencias", "OFERTA-SENSIBILIDAD-5A": "rango", "OFERTA-SENSIBILIDAD-10A": "rango",
+              "SUELO-BARCELONA-RATIO": "rango", "SUELO-SEVILLA-RATIO": "rango", "D32-IPV-CCAA-SIN-SELLADAS": "rango",
+              "D32-SERPAVI-REAL-2015-2024": "referencias"}
+
+
+def cobertura_de(id_: str) -> str:
+    return next(c for pref, c in COBERTURA if id_.startswith(pref))
+
+
+def hecho(id_, indicador, valor, unidad, periodo, fuentes, lectura, ficha, minimo=None, maximo=None, nota="", tipo=None, cobertura=None):
+    """tipo: «rango» (intervalo del mismo valor) o «referencias» (puntos de referencia de otra cosa); «sin rango» si falta min o max."""
     assert lectura in ("OF", "hecho", "cota", "asociación", "juicio experto")
+    cobertura = cobertura or cobertura_de(id_)
+    tipo = tipo or TIPO_RANGO.get(id_)
+    assert cobertura and "véase" not in cobertura.lower(), id_
     f = lambda x: None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), 4)
+    if f(minimo) is None or f(maximo) is None:
+        tipo = "sin rango"
+    assert tipo in ("rango", "referencias", "sin rango"), id_
     HECHOS.append({"id": f"V17-AUD-OT-{id_}", "indicador": indicador, "valor": f(valor), "min": f(minimo), "max": f(maximo),
+                   "tipo_rango": tipo, "cobertura": cobertura,
                    "unidad": unidad, "periodo": periodo, "fuentes": fuentes, "capa": "C4", "lectura_v17": lectura,
                    "ficha": (f"output/v17/auditoria/preguntas/{ficha}.md" if ficha.startswith("D3-") else f"{FICHAS}/{ficha}.md"), "nota": "a posteriori" + (f"; {nota}" if nota else "")})
 
 
 def selladas() -> set[str]:
-    d = duckdb.sql(f"select distinct territorio_codigo c from '{HECHOS_BASE}' where nivel='provincia' and muestra_sellada_v6").df()
-    return set(d.c)
+    return set(holdout.provincias_selladas_v6())
+
+
+def sin_selladas(df: pd.DataFrame, col: str, nivel: str) -> pd.DataFrame:
+    return holdout.excluir_sellados_v6(df, col, nivel)
 
 
 def num(s: pd.Series) -> pd.Series:
@@ -116,13 +174,13 @@ def titularidad(sel: set[str]) -> dict:
     hecho("CAT-GT-TITULARES-2026", "Titulares (NIF) con más de 10 inmuebles residenciales", r["tit"], "titulares", "2026", fu, "OF",
           "grandes_tenedores", nota="por NIF; un grupo con varias sociedades aparece fragmentado")
     # Distribución provincial (tramos contados dentro de la provincia: cota inferior), sin provincias selladas v6
-    pv = pd.read_csv(CAT / "p_spi_prov_v.csv.gz")
-    pv = pv[pv.anio_fichero == 2026].copy()
-    mu = pd.read_csv(CAT / "p_spi_mun_v.csv.gz", dtype={"CODINE": str})
+    mu = sin_selladas(pd.read_csv(CAT / "p_spi_mun_v.csv.gz", dtype={"CODINE": str}), "CODINE", "municipio")
     mu["prov"] = mu.CODINE.str[:2]
-    cod = mu[mu.anio_fichero == 2026].groupby("PROVINCIA").prov.first()
-    pv["prov"] = pv.PROVINCIA.map(cod)
-    pv = pv[~pv.prov.isin(sel) & pv.prov.notna()]
+    cod = mu.groupby("PROVINCIA").prov.first()   # nombre de provincia → código INE (solo provincias no selladas)
+    pv_all = pd.read_csv(CAT / "p_spi_prov_v.csv.gz")
+    pv_all["prov"] = pv_all.PROVINCIA.map(cod)
+    pv_all = sin_selladas(pv_all.dropna(subset=["prov"]), "prov", "provincia")   # las selladas no tienen código: fuera
+    pv = pv_all[pv_all.anio_fichero == 2026].copy()
     pv["cuota"] = 100 * grandes(pv) / pv.INMUEBLES
     q = pv.cuota.quantile([0.1, 0.5, 0.9])
     mx = pv.loc[pv.cuota.idxmax()]
@@ -147,15 +205,19 @@ def titularidad(sel: set[str]) -> dict:
           minimo=lo, maximo=hi, nota=("supuestos: particulares = 90 % del alquiler; cota inferior = ninguna persona jurídica es gran tenedor; "
                                       f"cota superior = todas lo son; con particulares = 85 %: {lo_s:.1f}-{hi_s:.1f} %"))
     res["cota"] = (lo, hi, lo_s, hi_s)
-    # Ronda 1: ¿el tramo del fichero total es por NIF nacional? Si lo fuera, el total >10 superaría la suma provincial >10
-    pv25 = pd.read_csv(CAT / "p_spi_prov_v.csv.gz")
+    # ¿Cómo cuenta el Catastro el tramo? Con la guarda v6 no se suman provincias selladas: se compara, en las provincias no
+    # selladas, el fichero provincial con la suma de sus municipios. Si el provincial supera a la suma municipal, cada fichero
+    # cuenta el tramo por NIF dentro de su propio ámbito (y el nacional, en todo el territorio común).
     for a in (2025, 2026):
-        s_prov = float(grandes(pv25[pv25.anio_fichero == a]).sum())
-        res[f"nif_{a}"] = (res[a]["g"], s_prov)
-    hecho("CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026", "Viviendas de titulares con más de 10 inmuebles: fichero nacional frente a suma de los ficheros provinciales",
+        s_prov = float(grandes(pv_all[pv_all.anio_fichero == a]).sum())
+        s_mun = float(grandes(mu[mu.anio_fichero == a]).sum())
+        res[f"nif_{a}"] = (s_prov, s_mun)
+    hecho("CAT-GT-PROV-FRENTE-SUMA-MUN-2026", "Viviendas de titulares con más de 10 inmuebles: ficheros provinciales frente a la suma de sus municipios",
           res["nif_2026"][0] / res["nif_2026"][1], "cociente", "2026", fu, "OF", "grandes_tenedores",
-          nota=(f"nacional {res['nif_2026'][0]:,.0f}; suma provincial {res['nif_2026'][1]:,.0f}; un cociente > 1 indica que el tramo "
-                "del fichero total se cuenta por NIF en todo el territorio común y el provincial dentro de cada provincia"))
+          cobertura="provincias de régimen común sin bloques sellados v6",
+          nota=(f"suma provincial {res['nif_2026'][0]:,.0f}; suma municipal {res['nif_2026'][1]:,.0f}; un cociente > 1 indica que cada fichero "
+                "cuenta el tramo por NIF dentro de su ámbito; sustituye a CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026, retirada porque sumaba "
+                "provincias selladas"))
     # Ronda 1: cota con la vivienda pública como suelo explícito y cota aparte de los PRIVADOS con más de 10
     alq = float(num(pd.read_csv(CENSO_TEN, sep=";", dtype=str, encoding="utf-8-sig")
                     .query("`Régimen de tenencia de la vivienda` == 'En alquiler' and `Tamaño del hogar` == 'Total (tamaño del hogar)'")["Total"]).iloc[0])
@@ -202,7 +264,7 @@ def vacias(sel: set[str]) -> dict:
     w = m.pivot_table(index="cmun", columns="cat", values="val", aggfunc="first")
     w = w.rename(columns={"Viviendas totales": "tot", "Viviendas vacías": "vac", "Viviendas de uso esporádico": "esp"})
     w["cprov"] = w.index.str[:2]
-    w = w[~w.cprov.isin(sel)].dropna(subset=["tot", "vac"])
+    w = sin_selladas(w.reset_index(), "cmun", "municipio").set_index("cmun").dropna(subset=["tot", "vac"])
     # Las filas «xx999 Resto de <provincia>» agregan los municipios pequeños que la tabla no lista: se separan
     resto = w[w.index.str.endswith("999")].copy()
     w = w[~w.index.str.endswith("999")].copy()
@@ -218,13 +280,14 @@ def vacias(sel: set[str]) -> dict:
         hecho(f"VAC-TASA-{idk}", f"Tasa de vacancia por consumo eléctrico, municipios con {k} viviendas", g.loc[k, "tasa"],
               "% de las viviendas", "2021", fu, "OF", "vacias", nota=f"{int(g.loc[k, 'n'])} municipios; {g.loc[k, 'cuota_vac']:.1f} % de las vacías de la muestra; sin provincias selladas v6; la tabla lista {len(w)} municipios y agrupa el resto en filas «Resto de provincia»")
     # Provincias que concentran el déficit (d3) y sus capitales
-    d = pd.read_csv(D3 / "deficit_provincial_concentracion.csv", dtype={"cod_prov": str})
+    d = sin_selladas(pd.read_csv(D3 / "deficit_provincial_concentracion.csv", dtype={"cod_prov": str}), "cod_prov", "provincia")
     d = d[~d.sellada_v6].sort_values("deficit_bajas0", ascending=False)
     top = d.head(6)
     capitales = {"08": "08019", "46": "46250", "03": "03014", "43": "43148", "29": "29067", "04": "04013"}
+    assert set(top.cod_prov) == set(capitales), "las capitales deben ser las de las 6 provincias con más déficit"
     pw = v[(v.mun.isna() | (v.mun.str.strip() == "")) & v.prov.notna() & (v.prov.str.strip() != "")].copy()
     pw["cprov"] = pw.prov.str[:2]
-    pw = pw.pivot_table(index="cprov", columns="cat", values="val", aggfunc="first")
+    pw = sin_selladas(pw, "cprov", "provincia").pivot_table(index="cprov", columns="cat", values="val", aggfunc="first")
     filas = []
     for _, r in top.iterrows():
         c = r.cod_prov
@@ -249,7 +312,7 @@ def vacias(sel: set[str]) -> dict:
                 "supone que las vacías por consumo son vacancia gravable; no es un efecto en precio ni el parque útil"))
     # Ronda 1: cobertura frente al total nacional y provincial (todas las provincias no selladas, incluidos los municipios fuera de la tabla)
     nac_vac = float(v[(v.ccaa.isna() | (v.ccaa.str.strip() == "")) & (v.cat == "Viviendas vacías")].val.iloc[0])
-    pv_ns = pw[~pw.index.isin(sel)]
+    pv_ns = pw   # ya sin provincias selladas
     vac_ns = float(pv_ns["Viviendas vacías"].sum())
     tot_ns = float(pv_ns["Viviendas totales"].sum())
     fuera = float(resto.vac.sum())
@@ -328,7 +391,8 @@ def publica() -> dict:
             if isinstance(cel[i], str) and cel[i].strip() in UE27 and isinstance(cel[i + 1], (int, float)):
                 vals[cel[i].strip()] = float(cel[i + 1])
     simple = float(np.mean(list(vals.values())))
-    nec_mivau = (DOC["ocde_ue_social_pct"] - 1.72) / 100 * stock
+    pct_mivau_parque = 100 * DOC["mivau_publico_alquiler"] / stock   # 318.000 sobre el MISMO parque que la OCDE (no sobre hogares)
+    nec_mivau = (DOC["ocde_ue_social_pct"] - pct_mivau_parque) / 100 * stock
     hecho("PUB-UE-MEDIA-SIMPLE", "Media simple del parque social de los países UE-27 presentes en la figura PH4.2.1 de la OCDE", simple, "% del parque",
           "2022 o último", "OCDE AHD PH4.2 (data/raw/v17/parque_social)", "OF", "vivienda_publica",
           nota=(f"{len(vals)} países con dato, años de referencia distintos; coincide con el agregado UE de la OCDE (7,99 %): es una media "
@@ -336,7 +400,8 @@ def publica() -> dict:
     hecho("PUB-BRECHA-UE", "Viviendas sociales de alquiler adicionales para pasar del parque social español al 7,99 % de la UE (parque constante)",
           nec_ue, "viviendas", "2019 (España) y 2022 o último (UE)", fu + "; MIVAU Boletín Especial 2024", "cota", "vivienda_publica",
           minimo=nec_mivau, maximo=nec_ue,
-          nota=(f"max = desde 1,13 % (OCDE 2019), min = desde 1,72 % (MIVAU 2023, sobre hogares, aplicado al mismo parque); "
+          nota=(f"max = desde 1,13 % (OCDE 2019), min = desde {pct_mivau_parque:.2f} % (MIVAU 2023: 318.000 viviendas sobre el mismo parque "
+                "de la OCDE; el 1,72 % del MIVAU es sobre hogares y no se compara con un 7,99 % sobre parque); "
                 f"parque implícito OCDE {stock:,.0f}; años de toda la producción actual: {nec_mivau / prod:.0f}-{nec_ue / prod:.0f}"))
     hecho("PUB-CALIF-MEDIA-2021-2025", "Calificaciones definitivas de vivienda protegida, media anual 2021-2025", calif, "viviendas/año",
           "2021-2025", "MIVAU, Boletín Online, tabla 1.6 (data/raw/mivau_v2_protegida.csv)", "OF", "vivienda_publica",
@@ -366,7 +431,8 @@ def oferta() -> dict:
     v = pd.read_csv(CENSO_VAC, sep=";", dtype=str, encoding="utf-8-sig")
     v.columns = ["nac", "ccaa", "prov", "mun", "cat", "val"]
     cc = v[v.ccaa.notna() & (v.ccaa.str.strip() != "") & (v.prov.isna() | (v.prov.str.strip() == "")) & (v.cat == "Viviendas totales")]
-    cc = cc[~cc.ccaa.str[:2].isin(["18", "19"])]           # sin Ceuta ni Melilla: 17 CCAA del panel V7
+    cc = cc[~cc.ccaa.str[:2].isin(["18", "19"])].assign(cod=lambda x: x.ccaa.str[:2])   # sin Ceuta ni Melilla (panel V7)
+    cc = sin_selladas(cc, "cod", "ccaa")   # guarda v6: la mediana se toma sobre las 9 CCAA no selladas (V7.1 usó 17)
     med = float(num(cc.val).median())
     cifras = pd.read_csv(ROOT / "output/v5/cifras_clave.csv")
     cifras = cifras.set_index(cifras.columns[0])
@@ -376,7 +442,7 @@ def oferta() -> dict:
         el[k] = (float(cifras.loc[i].iloc[1]) / 100) / (10_000 / med)
     hecho("OFERTA-ELASTICIDAD-IMPLICITA-V71", "Elasticidad alquiler-parque implícita en el escenario V7.1 de construcción (−0,70 puntos % por 10.000 viviendas en la CCAA mediana)",
           el["construccion"], "% de alquiler por 1 % de parque", "2026-2036 (escenario)",
-          "output/v5/cifras_clave.csv (V71-S1-a_construccion-alquiler-efecto_10k); INE Censo 2021 (parque de la CCAA mediana)",
+          "output/v5/cifras_clave.csv (V71-S1-a_construccion-alquiler-efecto_10k); INE Censo 2021 (parque de la CCAA mediana de las 9 no selladas)",
           "juicio experto", "mas_oferta",
           nota=(f"parque de la CCAA mediana {med:,.0f}; vacías {el['vacias']:.2f}; vivienda pública {el['publica']:.2f}; "
                 f"cociente con Mense (2025, {DOC['mense_elasticidad']}): {el['construccion'] / DOC['mense_elasticidad']:.1f}; Mense es local y de "
@@ -403,6 +469,7 @@ def oferta() -> dict:
           "juicio experto", "mas_oferta", minimo=incr_bde, maximo=None,
           nota=(f"min = con 92.000 terminadas (BdE); total resultante {hoy + incr:,.0f} miles frente a {hoy:,.0f} hoy y al máximo de "
                 f"{cap.ocupados_construccion_miles.max():,.0f} en 2007; supone que el empleo actual sigue ocupado en lo que hace hoy"))
+    emp = empleo(h, cap)
     # Sensibilidad de la producción necesaria (D3-3): reposición, producción actual y absorción de vacías y secundarias
     hog = 145_603.0
     filas = []
@@ -433,8 +500,61 @@ def oferta() -> dict:
           nota="área ≠ provincia; min y max con la necesidad máxima y mínima")
     hecho("SUELO-SEVILLA-RATIO", "Potencial del área de Sevilla (BdE) sobre la necesidad provincial a 10 años", sv[1], "cociente", "2025 y 2026-2035",
           "ídem", "cota", "mas_oferta", minimo=sv[0], maximo=sv[2],
-          nota="área ≠ provincia; la necesidad mínima (1.757) hace el máximo inestable; no se usa como conclusión")
-    return dict(pct=pct, il=il, el=el, incr=incr, incr_bde=incr_bde, hoy=hoy, sens=sens, rs=rs)
+          nota="área ≠ provincia; la necesidad mínima (1.757) hace el máximo inestable (≈93); no se usa como conclusión")
+    su_sev = su[su.area_bde == "Sevilla (área)"].iloc[0]
+    ejec = DOC["bde_ejecucion_sevilla"] * DOC["bde_potencial_sevilla"]
+    hecho("SUELO-SEVILLA-EJECUCION", "Potencial del área de Sevilla multiplicado por su ejecución histórica (28 %) sobre la necesidad provincial a 10 años",
+          ejec / su_sev.necesidad_10a_prov_central, "cociente", "2025 y 2026-2035", "BdE IA 2025 (potencial y ejecución); V5.1 (necesidad)",
+          "juicio experto", "mas_oferta", minimo=ejec / su_sev.necesidad_10a_prov_max, maximo=ejec / su_sev.necesidad_10a_prov_central,
+          tipo="rango", cobertura="área urbana de Sevilla (BdE) frente a la provincia de Sevilla",
+          nota="max = necesidad central (con la mínima, 1.757, el cociente no es informativo); supone que la ejecución futura es la histórica")
+    return dict(pct=pct, il=il, el=el, incr=incr, incr_bde=incr_bde, hoy=hoy, sens=sens, rs=rs, emp=emp)
+
+
+def empleo(h: dict, cap: pd.DataFrame) -> dict:
+    """Cálculo con supuestos y rango (juicio experto): ocupados adicionales para pasar de la producción actual a la necesaria.
+
+    L = ocupados de edificación residencial nueva por vivienda terminada al año = cuota_resid × ocupados rama F / terminadas.
+    Referencias de L: 2007, media 2015-2019 y 2025, cada una con su rango de cuota residencial (supuesto, sin fuente verificada).
+    No hay horas por vivienda en el repositorio (EPA por rama a dos dígitos o encuesta de estructura de la construcción: no
+    descargadas). Industrialización: reducción de 0, 20 o 40 % de las horas por vivienda (escenario sin fuente verificada).
+    Δocupados = (necesaria − actual) × L × (1 − industrialización)."""
+    F, T = cap["ocupados_construccion_miles"] * 1000, cap["terminadas"]
+    refs = {"2007": (F[2007] / T[2007], DOC["cuota_resid_nueva_2007"]),
+            "2015-2019": (F.loc[2015:2019].mean() / T.loc[2015:2019].mean(), DOC["cuota_resid_nueva_hoy"]),
+            "2025": (F[2025] / T[2025], DOC["cuota_resid_nueva_hoy"])}
+    L = {k: (f * c[0], f * c[1]) for k, (f, c) in refs.items()}
+    actual = (h["V17-D3-PROD-ACTUAL"]["valor"], float(DOC["bde_terminadas_2025"]))
+    filas = []
+    for n, idn in ((5, "5A"), (10, "10A")):
+        nec = h[f"V17-D3-PROD-NECESARIA-{idn}"]
+        for nec_v in (nec["min"], nec["valor"], nec["max"]):
+            for a in actual:
+                for ref, (lo, hi) in L.items():
+                    for l_ in (lo, hi):
+                        for g in DOC["industrializacion"]:
+                            filas.append(dict(anios=n, necesaria=nec_v, actual=a, ref=ref, L=l_, ind=g,
+                                              delta_miles=(nec_v - a) * l_ * (1 - g) / 1000))
+    e = pd.DataFrame(filas)
+    hoy, max07 = h["V17-D3-OCUPADOS-CONSTRUCCION"]["valor"], float(cap.ocupados_construccion_miles.max())
+    hecho("EMPLEO-OCUP-POR-VIVIENDA", "Ocupados de edificación residencial nueva por vivienda terminada al año: referencias 2007, 2015-2019 y 2025 (con cuota supuesta)",
+          None, "ocupados por vivienda y año", "2007, 2015-2019, 2025", "output/v17/d3/capacidad_construccion_boom_actual.csv (EPA rama F, terminadas MIVAU); supuestos de cuota residencial",
+          "juicio experto", "mas_oferta", minimo=min(min(v) for v in L.values()), maximo=max(max(v) for v in L.values()), tipo="referencias",
+          cobertura="España (agregado nacional)",
+          nota="; ".join(f"{k}: {v[0]:.1f}-{v[1]:.1f}" for k, v in L.items())
+               + "; cuota de la rama F en edificación residencial nueva SUPUESTA (2007: 45-65 %; 2015-2025: 15-30 %), sin fuente verificada; sin horas por vivienda")
+    for n, idn in ((5, "5A"), (10, "10A")):
+        x = e[e.anios == n]
+        c = x[(x.necesaria == h[f"V17-D3-PROD-NECESARIA-{idn}"]["valor"]) & (x.ind == 0.0)]
+        hecho(f"EMPLEO-INCREMENTO-RANGO-{idn}", f"Cálculo con supuestos (juicio experto): ocupados adicionales en construcción para cerrar el déficit en {n} años",
+              float(c.delta_miles.median()), "miles de ocupados", f"2026-{2025 + n}",
+              "V17-D3-PROD-NECESARIA, V17-D3-PROD-ACTUAL, BdE (92.000), EPA rama F; supuestos de cuota residencial e industrialización",
+              "juicio experto", "mas_oferta", minimo=float(x.delta_miles.min()), maximo=float(x.delta_miles.max()), tipo="rango",
+              cobertura="España (agregado nacional)",
+              nota=(f"valor = mediana con déficit central y sin industrialización; rango con déficit mín.-máx., producción actual 83.700 o 92.000, "
+                    f"tres referencias de productividad con cuota residencial supuesta e industrialización 0-40 %; empleo actual {hoy:,.0f} miles, "
+                    f"máximo de 2007 {max07:,.0f} (holgura hasta el máximo: {max07 - hoy:,.0f})"))
+    return dict(e=e, L=L, hoy=hoy, max07=max07)
 
 
 # ---------------------------------------------------------------- D3-2: IPV por CCAA sin bloques sellados y variaciones deflactadas
@@ -451,13 +571,14 @@ def cuotas_varianza(m: np.ndarray) -> tuple[float, float, float]:
 def d3_2() -> dict:
     d = duckdb.sql(f"select territorio_codigo c, periodo p, valor v from '{HECHOS_BASE}' where variable='ipv' and nivel='ccaa' "
                    "and frecuencia='T' and not muestra_sellada_v6").df()
+    d = sin_selladas(d, "c", "ccaa")   # la base no marca las CCAA selladas
     d["a"] = d.p.str[:4].astype(int)
     g = d.groupby(["c", "a"]).v.agg(["mean", "count"])
     g = g[g["count"] == 4]["mean"].unstack("c").loc[2014:2025]
     out = {}
     rng = np.random.default_rng(SEED)
-    for nombre, cols, a1 in (("todas", list(g.columns), 2025), ("sin_selladas", [c for c in g.columns if c not in CCAA_SELLADAS_V6], 2025),
-                             ("sin_selladas_hasta_2024", [c for c in g.columns if c not in CCAA_SELLADAS_V6], 2024)):
+    assert not set(g.columns) & CCAA_SELLADAS_V6
+    for nombre, cols, a1 in (("sin_selladas", list(g.columns), 2025), ("sin_selladas_hasta_2024", list(g.columns), 2024)):
         r = np.log(g.loc[:a1, cols]).diff().dropna()
         for per, (i, j) in {"2015-2019": (2015, 2019), "2020-fin": (2020, a1), "2015-fin": (2015, a1)}.items():
             m = r.loc[i:j].values
@@ -468,9 +589,19 @@ def d3_2() -> dict:
     hecho("D32-IPV-CCAA-SIN-SELLADAS", "Cuota común (año) de la varianza de la variación anual del IPV, 9 CCAA sin bloques sellados v6, 2015-2025",
           100 * x["comun"], "% (IC95 bootstrap por CCAA)", "2015-2025", "INE IPV por CCAA (data/base/hechos.parquet)", "hecho", "D3-2",
           minimo=100 * x["lo"], maximo=100 * x["hi"],
-          nota=(f"V17-D3 usó las 17 CCAA, incluidas 8 de bloques sellados v6 (Madrid y otras uniprovinciales); efecto fijo {100 * x['fija']:.0f} %, "
+          nota=(f"V17-D3 se ha recalculado con la guarda v6 y da la misma cifra (V17-D3-VARIANZA-COMUN-IPV-CCAA); efecto fijo {100 * x['fija']:.0f} %, "
                 f"local {100 * x['local']:.0f} %; 2020-2025: {100 * out[('sin_selladas', '2020-fin')]['comun']:.0f} %; "
                 f"hasta 2024: {100 * out[('sin_selladas_hasta_2024', '2015-fin')]['comun']:.0f} %"))
+    # Jackknife de años (quitando un año cada vez) de la cuota común 2015-2025, 9 CCAA no selladas
+    r_all = np.log(g.loc[:2025]).diff().dropna().loc[2015:2025]
+    jk = [cuotas_varianza(r_all.drop(index=a).values)[0] for a in r_all.index]
+    hecho("D32-IPV-CCAA-JACKKNIFE", "Cuota común del IPV 2015-2025 (9 CCAA no selladas) quitando un año cada vez: mínimo y máximo",
+          100 * x["comun"], "%", "2015-2025", "INE IPV por CCAA (data/base/hechos.parquet)", "hecho", "D3-2",
+          minimo=100 * min(jk), maximo=100 * max(jk), tipo="rango",
+          cobertura="9 CCAA sin bloques sellados v6",
+          nota=(f"año cuya exclusión más baja la cuota: {r_all.index[int(np.argmin(jk))]}; hasta 2024: "
+                f"{100 * out[('sin_selladas_hasta_2024', '2015-fin')]['comun']:.0f} %"))
+    out["jk"] = (min(jk), max(jk), r_all.index[int(np.argmin(jk))], r_all.index[int(np.argmax(jk))])
     # Variación acumulada 2015-2024 deflactada (deflactor del consumo de la CNT y renta disponible agregada de los hogares)
     def anual(var):
         q = duckdb.sql(f"select periodo p, valor v from '{HECHOS_BASE}' where variable='{var}' and nivel='nacional' and frecuencia='T'").df()
@@ -482,6 +613,7 @@ def d3_2() -> dict:
     f_renta = renta.loc[2024] / renta.loc[2015]
     sp = duckdb.sql(f"select territorio_codigo c, periodo p, valor v from '{HECHOS_BASE}' where variable='serpavi_alquiler_m2_mediana' "
                     "and nivel='provincia' and frecuencia='A' and not muestra_sellada_v6").df()
+    sp = sin_selladas(sp, "c", "provincia")
     sp["a"] = sp.p.astype(int)
     sp = sp.pivot_table(index="a", columns="c", values="v").loc[[2015, 2024]].dropna(axis=1)
     nom = sp.loc[2024] / sp.loc[2015]
@@ -513,7 +645,8 @@ def main() -> None:
     print(r["tit"]["grid"].round(2).to_string())
     print("NIF", r["tit"]["nif_2025"], r["tit"]["nif_2026"])
     print(r["vac"]["tg"].round(2).to_string(), r["vac"]["cuotas"])
-    print({k: {kk: round(vv, 3) for kk, vv in v.items()} for k, v in r["d32"]["out"].items()})
+    print({k: (v if isinstance(v, tuple) else {kk: round(vv, 3) for kk, vv in v.items()}) for k, v in r["d32"]["out"].items()})
+    print(r["of"]["emp"]["L"])
     print(r["of"]["sens"].groupby(["anios"]).ratio.describe())
     print("suelo", r["of"]["rs"])
 

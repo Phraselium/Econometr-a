@@ -88,13 +88,32 @@ def test_tenencia_suma_100():
 
 def test_hechos_esquema():
     hs = json.load(open(OUT / "hechos.json"))
-    claves = {"id", "indicador", "valor", "min", "max", "unidad", "periodo", "cobertura", "fuentes", "capa", "lectura_v17", "fecha_dato", "ficha", "nota"}
+    claves = {"id", "indicador", "valor", "min", "max", "unidad", "periodo", "cobertura", "fuentes", "capa", "lectura_v17", "fecha_dato", "ficha", "nota",
+              "tipo_rango"}
     ids = [h["id"] for h in hs]
     assert len(ids) == len(set(ids)) and len(ids) >= 30
     for h in hs:
         assert set(h) == claves
         assert h["id"].startswith("V17-D3-") and h["capa"] == "C4" and h["lectura_v17"] in ("OF", "hecho", "cota", "asociación")
         assert "a posteriori" in h["nota"]
+        assert h["tipo_rango"] in ("rango", "referencias", "sin rango")
+        assert (h["tipo_rango"] == "sin rango") == (h["min"] is None or h["max"] is None)
+        assert h["cobertura"] and "véase" not in h["cobertura"].lower()
         if h["min"] is not None and h["max"] is not None and h["valor"] is not None and not h["unidad"].startswith("índice"):
             pass
     assert (OUT / "informe.md").read_text(encoding="utf-8").startswith("Análisis a posteriori (V17).")
+
+
+def test_guarda_fuga_v6():
+    """Ninguna tabla territorial de D3 contiene unidades de los bloques sellados de v6 (K5)."""
+    sys.path.insert(0, str(ROOT))
+    from src import holdout
+    ccaa, prov = set(holdout.ccaa_selladas_v6()), set(holdout.provincias_selladas_v6())
+    v = pd.read_csv(OUT / "varianza_comun_local.csv")
+    assert (v[v.serie.str.contains("CCAA")].N <= 19 - len(ccaa)).all()
+    e = pd.read_csv(OUT / "esfuerzo_territorial_v16.csv", dtype={"cod_ccaa_ine": str})
+    assert not e.cod_ccaa_ine.isin(ccaa).any()
+    c = pd.read_csv(OUT / "coronas_saldo_capital_resto_provincia.csv", dtype={"cod_prov": str})
+    assert not c.cod_prov.isin(prov).any()
+    d = pd.read_csv(OUT / "deficit_provincial_concentracion.csv", dtype={"cod_prov": str})
+    assert d.loc[d.cod_prov.isin(prov), "deficit_bajas0"].isna().all()

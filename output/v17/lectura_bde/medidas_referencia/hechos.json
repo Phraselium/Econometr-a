@@ -13,6 +13,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-06",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 1987-2025; max = máximo anual (2007)"
@@ -31,6 +32,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-06",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 1987-2025; max = máximo anual (1990)"
@@ -49,6 +51,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-09",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 1987-2025; max = máximo anual (1987)"
@@ -67,6 +70,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-06",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 2004-2025; max = máximo anual (2018)"
@@ -85,6 +89,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-06",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 2004-2025; max = máximo anual (2006)"
@@ -103,6 +108,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-06",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 1995-2025; max = máximo anual (2010)"
@@ -121,6 +127,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-08",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 1995-2025; max = máximo anual (2005)"
@@ -139,6 +146,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "OF",
+  "tipo_rango": "referencias",
   "fecha_dato": "2026-06",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; min = media histórica 1988-2025; max = máximo anual (2014)"
@@ -158,6 +166,7 @@
   ],
   "capa": "C4",
   "lectura_v17": "cota",
+  "tipo_rango": "referencias",
   "fecha_dato": "2025",
   "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
   "nota": "a posteriori; cota inferior: las hipotecas sobre viviendas incluyen las no ligadas a una compra; min y max = rango anual de los años informativos 2012-2025"

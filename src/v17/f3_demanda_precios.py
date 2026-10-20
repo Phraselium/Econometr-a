@@ -228,13 +228,14 @@ def inmigracion() -> dict:
     alq_ext, alq_esp = n_ext * a_ext / 100, n_esp * a_esp / 100
     cuota_hog = 100 * n_ext / (n_ext + n_esp)
     cuota_alq = 100 * alq_ext / (alq_ext + alq_esp)
+    l = ten[(ten.grupo == "llegada_espana") & (ten.tenencia == "alquiler")].set_index("categoria").pct
+    l_rec = l["2016-2021"]
     fu = "output/v17/d3/tenencia_por_origen_censo2021.csv (Censo 2021, muestra del 10 %, persona de mayor edad)"
     hecho("INM-CUOTA-ALQUILER-EXTR", "Hogares en alquiler cuya persona de mayor edad nació en el extranjero, sobre el total de hogares en alquiler",
           cuota_alq, "% de los hogares en alquiler", "2021", fu, "hecho", fi,
-          nota=f"frente a {cuota_hog:.1f} % del total de hogares; la llegada 2016-2021 alquila un 45,5 %")
-    l = ten[(ten.grupo == "llegada_espana") & (ten.tenencia == "alquiler")].set_index("categoria").pct
+          nota=f"frente a {cuota_hog:.1f} % del total de hogares; la llegada 2016-2021 alquila un {l_rec:.1f} %".replace(".", ","))
     hecho("INM-ALQUILER-LLEGADA-RECIENTE", "Hogares en alquiler, persona de mayor edad llegada a España en 2016-2021", l["2016-2021"], "% de los hogares del grupo",
-          "2021", fu, "hecho", fi, minimo=a_esp, maximo=l["2016-2021"], nota="min = nacidos en España (12,2 %)")
+          "2021", fu, "hecho", fi, minimo=a_esp, maximo=l["2016-2021"], nota=f"min = nacidos en España ({a_esp:.1f} %)".replace(".", ","))
     # Demanda de alquiler nueva contable: hogares del componente población 2021-2026 por origen × tasa de alquiler del grupo
     hog_ext = d3["V17-D3-HOGARES-ORIGEN-NACIDOS-EXTRANJERO"]
     lo_h, hi_h = hog_ext.get("min") or hog_ext["valor"], hog_ext.get("max") or hog_ext["valor"]
@@ -468,8 +469,8 @@ RANGO_COBERTURA = {   # id -> (tipo_rango, cobertura territorial real)
     "TUR-GL-ALQ-SEC-P90": ("rango", ESP_NS + "; elasticidad de Barcelona"),
     "TUR-GL-ALQ-SEC-P99": ("rango", ESP_NS + "; elasticidad de Barcelona"),
     "TUR-GL-FRENTE-H3": ("rango", "Secciones de la muestra de entrenamiento de H3 (V15); elasticidad de Barcelona"),
-    "INM-CUOTA-ALQUILER-EXTR": ("sin rango", "España (Censo 2021, muestra del 10 %)"),
-    "INM-ALQUILER-LLEGADA-RECIENTE": ("referencias", "España (Censo 2021, muestra del 10 %)"),
+    "INM-CUOTA-ALQUILER-EXTR": ("sin rango", "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)"),
+    "INM-ALQUILER-LLEGADA-RECIENTE": ("referencias", "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)"),
     "INM-ALQUILER-NUEVO-CONTABLE": ("rango", "España"),
     "D31-LATAM-CUOTA": ("sin rango", "España"), "D31-ASILO-2019-2025": ("sin rango", "España"),
     "INM-GO-ELASTICIDAD": ("rango", "España, provincias (2000-2010)"),

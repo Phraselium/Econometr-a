@@ -31,8 +31,8 @@ La palabra «culpa» no se evalúa: es un juicio moral, no una afirmación empí
   - Los nacidos en el extranjero aumentaron en 4.120.690 y los nacidos en España disminuyeron en 975.687 (V17-D3-NACIDOS-*).
   - El aumento de hogares de 2021-2026 fue de 1.222.836. De él, 858.274 vienen del tamaño de la población, y entre 724.785 y 858.274 corresponden a nacidos en el extranjero, si forman hogares como el resto (V17-D3-HOGARES-*).
 - **La demanda nueva de alquiler es aún más concentrada.** En el Censo 2021:
-  - alquila el 38,3 % de los hogares cuya persona de mayor edad nació fuera, frente al 12,2 % de los nacidos en España; y el 45,5 % de los llegados en 2016-2021;
-  - los nacidos fuera son el 15,0 % de los hogares y el 35,6 % de los hogares en alquiler (V17-AUD-DP-INM-CUOTA-ALQUILER-EXTR);
+  - alquila el 36,8 % de los hogares cuya persona de mayor edad nació fuera, frente al 11,5 % de los nacidos en España; y el 43,3 % de los llegados en 2016-2021 (sin las ocho CCAA selladas v6);
+  - los nacidos fuera son el 13,4 % de los hogares y el 33,2 % de los hogares en alquiler (V17-AUD-DP-INM-CUOTA-ALQUILER-EXTR);
   - aplicando esas tasas, el aumento de hogares de 2021-2026 atribuido a nacidos fuera supone entre 277.730 y 390.506 hogares de alquiler (V17-AUD-DP-INM-ALQUILER-NUEVO-CONTABLE; contabilidad, no efecto).
 - **La literatura con diseño creíble a escala regional sí tiene un signo dominante, y es positivo.**
   - Larkin et al. (2019; metaanálisis de 474 estimaciones de 14 países): la inmigración eleva los precios, y más a escala provincial o estatal que de ciudad.
@@ -54,13 +54,13 @@ Script: src/v17/f3_demanda_precios.py (sin red, SEED 20261010, sin muestra sella
 - **Hogares.** La parte del componente población de 2021-2026 que corresponde a nacidos fuera es del 84-100 %. Por el lado del parque, el envejecimiento suma 473.045 hogares, y el componente edad no depende del origen.
 - **Lectura.** Sin la migración neta, la población habría bajado. Los hogares habrían crecido solo por envejecimiento y por el tamaño medio. Es contabilidad: no dice qué habría pasado con los precios.
 
-**3.2 Tenencia por origen** (Censo 2021, muestra del 10 %, persona de mayor edad):
+**3.2 Tenencia por origen** (Censo 2021, muestra del 10 %, persona de mayor edad; sin las ocho CCAA selladas v6, guarda de la ronda 2):
 
 | Origen | Propiedad | Alquiler |
 |---|---|---|
-| Nacido en España | 80,0 % | 12,2 % |
-| Nacido en el extranjero | 49,7 % | 38,3 % |
-| Llegada 2016-2021 | 40,8 % | 45,5 % |
+| Nacido en España | 80,5 % | 11,5 % |
+| Nacido en el extranjero | 50,6 % | 36,8 % |
+| Llegada 2016-2021 | 42,1 % | 43,3 % |
 
 **3.3 González y Ortega (2013) frente a H4 y Q3** (lectura convencional, output/v17/lectura_bde/v15_v16_micro/inferencia.csv):
 
@@ -101,7 +101,7 @@ Script: src/v17/f3_demanda_precios.py (sin red, SEED 20261010, sin muestra sella
 **Engañosa.** «Lo» se lee como la culpa, es decir, el efecto. Con esa lectura, la frase mezcla una parte defendible (no hay base para un efecto distinto por origen) con dos omisiones: la contabilidad y el signo dominante de la literatura a escala regional.
 - «Correlación frágil» se sostiene para nuestras estimaciones.
 - «La literatura no tiene un signo único» es engañosa. A la escala que importa para el agregado (provincias, ciudades, países), la literatura con diseño, incluida la española, halla un efecto positivo en precio. Los signos negativos son de redistribución dentro de la ciudad.
-- «Atribuirlo a un grupo concreto no tiene base» sería falsa si se refiriera a la contabilidad. Más del 100 % del crecimiento de la población de 2015-2025 procede de la migración neta. La mayor parte del aumento de hogares de 2021-2026 corresponde a nacidos en el extranjero, que además alquilan en una proporción tres veces mayor (38,3 % frente a 12,2 %). Lo que no tiene base es otra afirmación, que la frase no separa: que un hogar inmigrante presione más que un hogar equivalente de otro origen.
+- «Atribuirlo a un grupo concreto no tiene base» sería falsa si se refiriera a la contabilidad. Más del 100 % del crecimiento de la población de 2015-2025 procede de la migración neta. La mayor parte del aumento de hogares de 2021-2026 corresponde a nacidos en el extranjero, que además alquilan en una proporción tres veces mayor (36,8 % frente a 11,5 %). Lo que no tiene base es otra afirmación, que la frase no separa: que un hogar inmigrante presione más que un hogar equivalente de otro origen.
 
 ## 6. Texto corregido y confianza
 
@@ -124,7 +124,7 @@ No hay parada. La frase de D1 no figura en publicacion/. La 1.0 (informe integra
 - **Literatura: aplicado.** Se añaden Torres-Téllez y Montero-Soler (2023), con signo cambiante según la fase, y la escala de Sá (2015), de área local.
 - **González y Ortega: aplicado.** Van con la salvedad de d2_versiones.md: rango del 1,5-2,3 % anual y elasticidad de 1,0-1,5.
 - **Confianza contable: aplicado.** El reparto por origen pasa a «es compatible con» (tope al 100 %, orden del Shapley, composición ≈ −97.000).
-- **«Sobre todo de alquiler»: aplicado.** Se sustituye por la proporción con su denominador: 38,3 % de los hogares de nacidos fuera frente a 12,2 % de los nacidos en España.
+- **«Sobre todo de alquiler»: aplicado.** Se sustituye por la proporción con su denominador: 36,8 % de los hogares de nacidos fuera frente a 11,5 % de los nacidos en España.
 - **Matiz que no se retira.** Torres-Téllez y Montero-Soler refuerzan que el signo depende de la fase, pero no de la escala. A escala provincial, el efecto del aumento de población en la fase de entrada es positivo en todos los trabajos españoles leídos.
 
 ## 9. Respuesta a la ronda 2

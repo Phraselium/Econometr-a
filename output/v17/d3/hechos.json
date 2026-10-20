@@ -13,7 +13,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; ECP vigente (revisada); 1-1-2026 = 49.596.376; nota original 49.570.725"
+  "nota": "a posteriori; ECP vigente (revisada); 1-1-2026 = 49.596.376; nota original 49.570.725",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-SV-ACUMULADO",
@@ -29,7 +30,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-02-18",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; 2025: nacimientos 321.164 menos defunciones 446.982 (nota provisional)"
+  "nota": "a posteriori; 2025: nacimientos 321.164 menos defunciones 446.982 (nota provisional)",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-RESIDUO-MIGRACION",
@@ -45,7 +47,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; identidad contable: ΔPoblación − saldo vegetativo"
+  "nota": "a posteriori; identidad contable: ΔPoblación − saldo vegetativo",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-RESIDUO-PESO",
@@ -61,7 +64,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; más de 100 % porque el saldo vegetativo resta; 2015-2016 se excluye del min-max (crecimiento casi nulo: cociente inestable)"
+  "nota": "a posteriori; más de 100 % porque el saldo vegetativo resta; 2015-2016 se excluye del min-max (crecimiento casi nulo: cociente inestable)",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-SALDO-EXTERIOR-OFICIAL",
@@ -77,7 +81,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2025-12-11",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; 2025: sin EMCR en los datos locales"
+  "nota": "a posteriori; 2025: sin EMCR en los datos locales",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-AJUSTE-ESTADISTICO",
@@ -93,7 +98,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; el año 2020-2021 contiene la rebase al Censo 2021"
+  "nota": "a posteriori; el año 2020-2021 contiene la rebase al Censo 2021",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-NACIDOS-EXTRANJERO-DELTA",
@@ -109,7 +115,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-02-12",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; último año con vintage mixto"
+  "nota": "a posteriori; último año con vintage mixto",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-NACIDOS-ESPANA-DELTA",
@@ -125,7 +132,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-02-12",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; último año con vintage mixto"
+  "nota": "a posteriori; último año con vintage mixto",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-NACIDOS-EXTRANJERO-PESO",
@@ -141,7 +149,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-02-12",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; más de 100 % porque los nacidos en España disminuyen; contable, no dice que la inmigración cause nada; 2025 con vintage mixto"
+  "nota": "a posteriori; más de 100 % porque los nacidos en España disminuyen; contable, no dice que la inmigración cause nada; 2025 con vintage mixto",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-SV-NAC-ESPANOLA",
@@ -157,7 +166,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2025-11-19",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori; proxy por nacionalidad; el MNP microdatos no trae país de nacimiento de la madre"
+  "nota": "a posteriori; proxy por nacionalidad; el MNP microdatos no trae país de nacimiento de la madre",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-SV-NAC-EXTRANJERA",
@@ -173,7 +183,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2025-11-19",
   "ficha": "output/v17/d3/informe.md#demografia",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-HOGARES-CAMBIO-2021-2026",
@@ -189,7 +200,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-08-06",
   "ficha": "output/v17/d3/informe.md#hogares",
-  "nota": "a posteriori; ECP vigente 2T26"
+  "nota": "a posteriori; ECP vigente 2T26",
+  "tipo_rango": "sin rango"
  },
  {
   "id": "V17-D3-HOGARES-MOTOR-POBLACION",
@@ -205,7 +217,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-08-06",
   "ficha": "output/v17/d3/informe.md#hogares",
-  "nota": "a posteriori; 70.2 % del cambio"
+  "nota": "a posteriori; 70.2 % del cambio",
+  "tipo_rango": "sin rango"
  },
  {
   "id": "V17-D3-HOGARES-MOTOR-EDAD",
@@ -221,7 +234,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-08-06",
   "ficha": "output/v17/d3/informe.md#hogares",
-  "nota": "a posteriori; 38.7 % del cambio"
+  "nota": "a posteriori; 38.7 % del cambio",
+  "tipo_rango": "sin rango"
  },
  {
   "id": "V17-D3-HOGARES-MOTOR-JEFATURA",
@@ -237,7 +251,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-08-06",
   "ficha": "output/v17/d3/informe.md#hogares",
-  "nota": "a posteriori; con tasas de jefatura constantes del Censo 2021; incluye emancipación y todo lo no medido"
+  "nota": "a posteriori; con tasas de jefatura constantes del Censo 2021; incluye emancipación y todo lo no medido",
+  "tipo_rango": "sin rango"
  },
  {
   "id": "V17-D3-HOGARES-ORIGEN-NACIDOS-EXTRANJERO",
@@ -253,71 +268,76 @@
   "lectura_v17": "cota",
   "fecha_dato": "2026-08-06",
   "ficha": "output/v17/d3/informe.md#hogares",
-  "nota": "a posteriori; cuota del crecimiento de población: nacidos en el extranjero 125.2 %, nacionalidad extranjera 84.4 %; min = cuota por nacionalidad × componente población; max = cuota por país de nacimiento (acotada a 100 %) × componente población"
+  "nota": "a posteriori; cuota del crecimiento de población: nacidos en el extranjero 125.2 %, nacionalidad extranjera 84.4 %; min = cuota por nacionalidad × componente población; max = cuota por país de nacimiento (acotada a 100 %) × componente población",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-TENENCIA-PROPIEDAD-ESP",
   "indicador": "Hogares en propiedad, persona de mayor edad nacida en España",
-  "valor": 79.96,
-  "min": 79.9007,
-  "max": 80.0193,
+  "valor": 80.4568,
+  "min": 80.3868,
+  "max": 80.5268,
   "unidad": "% de hogares",
   "periodo": "1-11-2021 (Censo)",
-  "cobertura": "España (muestra 10 %)",
+  "cobertura": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
   "fuentes": "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)",
   "capa": "C4",
   "lectura_v17": "OF",
   "fecha_dato": "2025-01-01",
   "ficha": "output/v17/d3/informe.md#tenencia",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-TENENCIA-ALQUILER-ESP",
   "indicador": "Hogares en alquiler, persona de mayor edad nacida en España",
-  "valor": 12.2365,
-  "min": 12.1879,
-  "max": 12.285,
+  "valor": 11.4689,
+  "min": 11.4126,
+  "max": 11.5251,
   "unidad": "% de hogares",
   "periodo": "1-11-2021 (Censo)",
-  "cobertura": "España (muestra 10 %)",
+  "cobertura": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
   "fuentes": "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)",
   "capa": "C4",
   "lectura_v17": "OF",
   "fecha_dato": "2025-01-01",
   "ficha": "output/v17/d3/informe.md#tenencia",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-TENENCIA-PROPIEDAD-EXTR",
   "indicador": "Hogares en propiedad, persona de mayor edad nacida en el extranjero",
-  "valor": 49.7344,
-  "min": 49.558,
-  "max": 49.9108,
+  "valor": 50.6472,
+  "min": 50.4231,
+  "max": 50.8713,
   "unidad": "% de hogares",
   "periodo": "1-11-2021 (Censo)",
-  "cobertura": "España (muestra 10 %)",
+  "cobertura": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
   "fuentes": "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)",
   "capa": "C4",
   "lectura_v17": "OF",
   "fecha_dato": "2025-01-01",
   "ficha": "output/v17/d3/informe.md#tenencia",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-TENENCIA-ALQUILER-EXTR",
   "indicador": "Hogares en alquiler, persona de mayor edad nacida en el extranjero",
-  "valor": 38.3194,
-  "min": 38.1478,
-  "max": 38.4909,
+  "valor": 36.7613,
+  "min": 36.5452,
+  "max": 36.9774,
   "unidad": "% de hogares",
   "periodo": "1-11-2021 (Censo)",
-  "cobertura": "España (muestra 10 %)",
+  "cobertura": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
   "fuentes": "INE Censo 2021 microdatos (hogares_muestra_municipio_nacionalidad)",
   "capa": "C4",
   "lectura_v17": "OF",
   "fecha_dato": "2025-01-01",
   "ficha": "output/v17/d3/informe.md#tenencia",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-VARIANZA-COMUN-VALOR-TASADO",
@@ -327,29 +347,31 @@
   "max": 67.4502,
   "unidad": "% (IC95 bootstrap por provincias)",
   "periodo": "2015-2025",
-  "cobertura": "38 unidades sin muestra sellada v6",
+  "cobertura": "38 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
   "fuentes": "INE; MIVAU; SERPAVI (data/base/hechos.parquet, no sellado)",
   "capa": "C4",
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; azar (permutación) 2.3 %; cuota local provincia×año 23.8 %; la cuota es descriptiva, no causal"
+  "nota": "a posteriori; azar (permutación) 2.3 %; cuota local provincia×año 23.8 %; la cuota es descriptiva, no causal",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-VARIANZA-COMUN-IPV-CCAA",
   "indicador": "Cuota de la varianza de la variación anual de IPV INE por CCAA debida al componente común (año)",
-  "valor": 76.3031,
-  "min": 66.982,
-  "max": 90.4937,
+  "valor": 81.0569,
+  "min": 70.3495,
+  "max": 93.8832,
   "unidad": "% (IC95 bootstrap por provincias)",
   "periodo": "2015-2025",
-  "cobertura": "17 unidades sin muestra sellada v6",
+  "cobertura": "9 CCAA sin bloques sellados v6 (holdout.excluir_sellados_v6)",
   "fuentes": "INE; MIVAU; SERPAVI (data/base/hechos.parquet, no sellado)",
   "capa": "C4",
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; azar (permutación) 5.5 %; cuota local provincia×año 15.3 %; la cuota es descriptiva, no causal"
+  "nota": "a posteriori; azar (permutación) 10.1 %; cuota local provincia×año 10.9 %; la cuota es descriptiva, no causal",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-VARIANZA-COMUN-IPVA",
@@ -359,13 +381,14 @@
   "max": 84.5886,
   "unidad": "% (IC95 bootstrap por provincias)",
   "periodo": "2015-2024",
-  "cobertura": "38 unidades sin muestra sellada v6",
+  "cobertura": "38 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
   "fuentes": "INE; MIVAU; SERPAVI (data/base/hechos.parquet, no sellado)",
   "capa": "C4",
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; azar (permutación) 2.3 %; cuota local provincia×año 11.9 %; la cuota es descriptiva, no causal"
+  "nota": "a posteriori; azar (permutación) 2.3 %; cuota local provincia×año 11.9 %; la cuota es descriptiva, no causal",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-VARIANZA-COMUN-SERPAVI",
@@ -375,13 +398,14 @@
   "max": 79.0915,
   "unidad": "% (IC95 bootstrap por provincias)",
   "periodo": "2015-2024",
-  "cobertura": "38 unidades sin muestra sellada v6",
+  "cobertura": "38 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
   "fuentes": "INE; MIVAU; SERPAVI (data/base/hechos.parquet, no sellado)",
   "capa": "C4",
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; azar (permutación) 2.4 %; cuota local provincia×año 20.8 %; la cuota es descriptiva, no causal"
+  "nota": "a posteriori; azar (permutación) 2.4 %; cuota local provincia×año 20.8 %; la cuota es descriptiva, no causal",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-VARIANZA-COMUN-IPC-ALQUILER",
@@ -391,13 +415,14 @@
   "max": 71.4332,
   "unidad": "% (IC95 bootstrap por provincias)",
   "periodo": "2015-2025",
-  "cobertura": "41 unidades sin muestra sellada v6",
+  "cobertura": "41 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
   "fuentes": "INE; MIVAU; SERPAVI (data/base/hechos.parquet, no sellado)",
   "capa": "C4",
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-01",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; azar (permutación) 2.2 %; cuota local provincia×año 26.5 %; la cuota es descriptiva, no causal"
+  "nota": "a posteriori; azar (permutación) 2.2 %; cuota local provincia×año 26.5 %; la cuota es descriptiva, no causal",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-DEFICIT-CONCENTRACION-50",
@@ -413,7 +438,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2025-12-31",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; publicado en V5 (52 provincias): 6 provincias suman el 50 %; aquí: Barcelona, Valencia/València, Alicante/Alacant, Tarragona, Málaga, Almería"
+  "nota": "a posteriori; publicado en V5 (52 provincias): 6 provincias suman el 50 %; aquí: Barcelona, Valencia/València, Alicante/Alacant, Tarragona, Málaga, Almería",
+  "tipo_rango": "sin rango"
  },
  {
   "id": "V17-D3-DEFICIT-CONCENTRACION-80",
@@ -429,7 +455,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2025-12-31",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; 2 provincias con déficit ≤ 0"
+  "nota": "a posteriori; 2 provincias con déficit ≤ 0",
+  "tipo_rango": "sin rango"
  },
  {
   "id": "V17-D3-CORONAS-SALDO-CAPITAL",
@@ -445,7 +472,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2025-12-11",
   "ficha": "output/v17/d3/informe.md#general-local",
-  "nota": "a posteriori; 7 de 8 capitales con saldo negativo; solo movimientos entre municipios de la misma provincia"
+  "nota": "a posteriori; 7 de 8 capitales con saldo negativo; solo movimientos entre municipios de la misma provincia",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-PROD-ACTUAL",
@@ -461,7 +489,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-06-30",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; 2025 frágil según V6.2; el Banco de España cita unas 92.000 en 2025 (solo prensa; ver correcciones.md)"
+  "nota": "a posteriori; 2025 frágil según V6.2; el Banco de España cita unas 92.000 en 2025 (solo prensa; ver correcciones.md)",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-PROD-BOOM",
@@ -477,7 +506,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-06-30",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori"
+  "nota": "a posteriori",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-PROD-NECESARIA-5A",
@@ -493,7 +523,8 @@
   "lectura_v17": "cota",
   "fecha_dato": "2026-06-17",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; supuestos: hogares +145,603/año (proyección INE lineal), reposición 6,864/año (V5.1, central); ratio sobre la producción actual 3.51; sobre el boom 0.52"
+  "nota": "a posteriori; supuestos: hogares +145,603/año (proyección INE lineal), reposición 6,864/año (V5.1, central); ratio sobre la producción actual 3.51; sobre el boom 0.52",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-PROD-NECESARIA-10A",
@@ -509,7 +540,8 @@
   "lectura_v17": "cota",
   "fecha_dato": "2026-06-17",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; supuestos: hogares +145,603/año (proyección INE lineal), reposición 6,864/año (V5.1, central); ratio sobre la producción actual 2.66; sobre el boom 0.39"
+  "nota": "a posteriori; supuestos: hogares +145,603/año (proyección INE lineal), reposición 6,864/año (V5.1, central); ratio sobre la producción actual 2.66; sobre el boom 0.39",
+  "tipo_rango": "rango"
  },
  {
   "id": "V17-D3-PROD-POR-OCUPADO",
@@ -525,7 +557,8 @@
   "lectura_v17": "hecho",
   "fecha_dato": "2026-07-28",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; enlace CNAE-93 a CNAE-2009 por 2008: x0.9792"
+  "nota": "a posteriori; enlace CNAE-93 a CNAE-2009 por 2008: x0.9792",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-OCUPADOS-CONSTRUCCION",
@@ -541,14 +574,15 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-07-28",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; ratio 2025/2007 = 0.55"
+  "nota": "a posteriori; ratio 2025/2007 = 0.55",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-COSTE-MANO-OBRA-REAL",
   "indicador": "Índice IMM de mano de obra en construcción, deflactado, 2025 respecto a 2007 (=1)",
   "valor": 1.0259,
   "min": 1.0,
-  "max": 1.0712,
+  "max": 1.0722,
   "unidad": "índice (2007=1; min-max: años 2005-2025 disponibles)",
   "periodo": "2007-2025",
   "cobertura": "España",
@@ -557,7 +591,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-09-21",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; deflactor de la base (IPC/PIB según serie); índice de coste de la mano de obra, no coste laboral total"
+  "nota": "a posteriori; deflactor de la base (IPC/PIB según serie); índice de coste de la mano de obra, no coste laboral total",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-BDE-POTENCIAL-6AREAS",
@@ -573,7 +608,8 @@
   "lectura_v17": "OF",
   "fecha_dato": "2026-06-22",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; cifra de documento, no recalculada; el SIU provincial no se pudo descargar (403, V16): suelo por provincia no calculable con datos locales"
+  "nota": "a posteriori; cifra de documento, no recalculada; el SIU provincial no se pudo descargar (403, V16): suelo por provincia no calculable con datos locales",
+  "tipo_rango": "referencias"
  },
  {
   "id": "V17-D3-BDE-POTENCIAL-SOBRE-5A",
@@ -589,6 +625,7 @@
   "lectura_v17": "cota",
   "fecha_dato": "2026-06-22",
   "ficha": "output/v17/d3/informe.md#factibilidad",
-  "nota": "a posteriori; compara un potencial de seis áreas con una necesidad nacional: solo orden de magnitud"
+  "nota": "a posteriori; compara un potencial de seis áreas con una necesidad nacional: solo orden de magnitud",
+  "tipo_rango": "sin rango"
  }
 ]

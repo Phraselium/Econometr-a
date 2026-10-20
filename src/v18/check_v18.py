@@ -1,8 +1,9 @@
 """V18 · Controles de `make check` (plan V18, secciones A, B y fase 6). Solo lectura; sin red; no escribe nada.
 
 1. cifras V18: toda cifra de output/v18/**/hechos.json tiene id V18-*, fuente, capa del proyecto (C1-C4, al lado) y
-   clasificación V18 (IDENTIFICADO, SUGESTIVO, ASOCIACIÓN o NO ESTIMABLE).
-2. lenguaje causal: ninguna cifra V18 por debajo de IDENTIFICADO usa lenguaje causal en su indicador o su nota.
+   clasificación V18 (IDENTIFICADO, SUGESTIVO, ASOCIACIÓN, NO CONCLUYENTE o NO ESTIMABLE); la capa es C4 (K2).
+2. lenguaje causal (K2, decisión del autor): ninguna cifra V18 usa lenguaje causal en su indicador o su nota, tampoco en
+   IDENTIFICADO (toda cifra V18 es C4); la fórmula condicional solo va en las secciones técnicas del Documento de Trabajo.
 3. plan antes de estimar (B1): todo fichero de src/v18/estimacion/ y output/v18/estimacion/ entró en git después del commit de
    la etiqueta plan-replicacion-v18; sin etiqueta, esas carpetas no pueden tener ficheros.
 4. derechos (sección A): ningún PDF versionado en data/bib/ ni en docs/v18/; las citas literales «…» de docs/v18/bib/ tienen 15
@@ -23,8 +24,7 @@ sys.path.insert(0, str(RAIZ / "src" / "v18"))
 import etiqueta  # noqa: E402
 
 OUT = RAIZ / "output" / "v18"
-CLASES = {"IDENTIFICADO", "SUGESTIVO", "ASOCIACIÓN", "NO ESTIMABLE"}
-CAPAS = {"C1", "C2", "C3", "C3s", "C4"}
+CLASES = {"IDENTIFICADO", "SUGESTIVO", "ASOCIACIÓN", "NO CONCLUYENTE", "NO ESTIMABLE"}
 CAUSAL = re.compile(r"\b(causa(?:n|do|da|l|les)?|provoc\w*|efecto causal|debido a|gracias a|se debe a|impacto causal)\b", re.I)
 CITA = re.compile(r"«([^»]*)»")
 MAX_PALABRAS = 15
@@ -48,8 +48,8 @@ def cifras() -> list[str]:
             err.append(f"{rel}: id sin prefijo V18-: {i!r}")
         if not h.get("fuentes") and not h.get("fuente"):
             err.append(f"{rel}: {i} sin fuente")
-        if h.get("capa") not in CAPAS:
-            err.append(f"{rel}: {i} sin capa del proyecto válida")
+        if h.get("capa") != "C4":
+            err.append(f"{rel}: {i} con capa {h.get('capa')!r}: toda cifra V18 es C4 (K2)")
         if h.get("clasificacion_v18") not in CLASES:
             err.append(f"{rel}: {i} sin clasificacion_v18 válida ({sorted(CLASES)})")
     return err
@@ -57,8 +57,7 @@ def cifras() -> list[str]:
 
 def causal() -> list[str]:
     return [f"{p.relative_to(RAIZ)}: {h.get('id')} ({h.get('clasificacion_v18')}) con lenguaje causal"
-            for p, h in _hechos() if h.get("clasificacion_v18") != "IDENTIFICADO"
-            and CAUSAL.search(f"{h.get('indicador', '')} {h.get('nota', '')}")]
+            for p, h in _hechos() if CAUSAL.search(f"{h.get('indicador', '')} {h.get('nota', '')}")]
 
 
 def _primer_commit(p: Path) -> str | None:

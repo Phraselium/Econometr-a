@@ -11,3 +11,11 @@
 - **Guarda (g).** Mira solo las órdenes, no el texto de un heredoc entrecomillado que escribe un fichero.
 - **Lenguaje causal.** check_v18 aplica una lista de expresiones causales a las cifras V18 que no son IDENTIFICADO; el texto del Documento de Trabajo se revisará además con check_texto y con el árbitro.
 - **Fuga v6.** La guarda de check_v17 (K5 de V17) ya cubre src/v18/.
+
+## K2. Lenguaje causal y capas en V18 (decisión del autor, 2026-10-20)
+- Choque señalado por el revisor del pre-registro (hallazgo 4) y por el abogado del diablo (T3): B3 del plan permite hablar de causa en IDENTIFICADO; CLAUDE.md y metodologia/capas.md reservan el lenguaje causal a C3/C3s, y C3 exige evaluación en muestra sellada.
+- **Decisión: opción restrictiva con evaluación sellada diferida.**
+  - Toda cifra V18 es C4 (nivel_evidencia EXPLORATORIO). La clasificación V18 (IDENTIFICADO, SUGESTIVO, ASOCIACIÓN, NO CONCLUYENTE, NO ESTIMABLE) va en el campo clasificacion_v18, al lado de la capa.
+  - En IDENTIFICADO solo cabe la fórmula condicional «con los supuestos X, el diseño identifica…», y solo en las secciones técnicas del Documento de Trabajo (resultados por factor y anexos). Nunca en cifras_clave, la web, la consulta, el resumen ejecutivo ni el resumen no técnico. check_v18 rechaza el lenguaje causal en todas las cifras V18, también en IDENTIFICADO.
+  - Vía a C3: una evaluación sellada diferida (evaluate_v18) con datos posteriores al pre-registro, que se fija en la adenda del plan. Los episodios históricos (Ley 11/2020, auge 2000-2008) no pueden llegar a C3 con la definición actual de capas.md, y se dice.
+- **Diagnóstico de make check (2026-10-20).** El fallo sin test fallido del cuarto make check de V18 lo produjo el worktree del subagente del plan, creado dentro del repositorio mientras corría; pytest en solitario pasa (746). Los worktrees de subagentes se excluyen en .git/info/exclude y no se crean mientras corre make check.

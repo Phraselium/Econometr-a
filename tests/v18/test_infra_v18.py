@@ -48,7 +48,8 @@ def test_lenguaje_causal(tmp_path, monkeypatch):
     (out / "hechos.json").write_text(json.dumps(h, ensure_ascii=False), encoding="utf-8")
     monkeypatch.setattr(check_v18, "OUT", tmp_path / "output" / "v18")
     monkeypatch.setattr(check_v18, "RAIZ", tmp_path)
-    assert [e for e in check_v18.causal()] and all("V18-A" in e for e in check_v18.causal())
+    c = check_v18.causal()
+    assert len(c) == 2 and any("V18-A" in e for e in c) and any("V18-B" in e for e in c)   # K2: tampoco en IDENTIFICADO
     e = check_v18.cifras()
     assert any("prefijo" in x for x in e) and any("sin fuente" in x for x in e) and any("clasificacion_v18" in x for x in e)
 

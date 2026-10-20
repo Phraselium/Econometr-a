@@ -1,0 +1,16 @@
+{
+  "rama": "v18-bib",
+  "pregunta": "E3 inmigracion; E5 oferta y suelo; E6 obra nueva y alquileres cercanos; E12 vivienda publica (grupo B, fase 1)",
+  "capa": "C4",
+  "N": 47,
+  "N_por_factor": {"inmigracion": 17, "oferta_suelo": 15, "obra_nueva": 8, "vivienda_publica": 7},
+  "metodo": "revisión de literatura",
+  "con_pdf_de_acceso_abierto": 38,
+  "solo_resumen": 9,
+  "paquetes_de_replicacion": {
+    "descargados": ["borusyak_hull_jaravel_2022 (GPL-3.0)", "mense_2025 (CC0, 310 MB)", "koster_van_ommeren_2019 (CC0, solo codigo)", "asquith_mast_reed_2023 (CC0, solo codigo)", "baum_snow_han_2024 (CC0, solo 3 ficheros; el paquete completo pesa 19,4 GB)"],
+    "no_descargados": ["ShiftShareSE de Kolesar (licencia por confirmar)", "apendice de datos NBER de Gyourko-Hartley-Krimmel"]
+  },
+  "notas": "Faltan: (1) Saiz 2010, Pennington 2021, Li 2022, Mast 2023, Eriksen-Rosenthal 2010, Degen-Fischer 2017, Caldera-Johansson 2013, Ismail-Wilhelmsson 2022 y la edicion publicada de Gonzalez-Ortega 2013 solo en resumen: no se hallo version abierta autorizada o la descarga automatica fue bloqueada (403/503). (2) OpenAlex devolvio 429 durante toda la sesion; la busqueda sistematica se hizo con busqueda web, Crossref y Dataverse/Zenodo, no con la consulta OpenAlex de criterios.md; queda pendiente repetirla con OpenAlex y el campo oa_url. (3) No hay estudio con identificacion para España en E5 (elasticidad por provincia), E6 (obra nueva y alquileres cercanos) ni E12 (desplazamiento); solo Taltavull (asociacion, MC2E) y el descriptivo BdE DO 2433. (4) Discrepancia con el plan: la ventana 1998-2008 y «un tercio» de Gonzalez y Ortega son del IZA DP 4333 (2009); la edicion publicada (2013) usa 2000-2010 y cifras distintas. (5) La cifra 0,45 de elasticidad atribuida al BdE no figura en DO 2433. (6) Lectura parcial de varios textos (solo tablas principales); cifras no cotejadas contra versiones publicadas. (7) Pendiente de comprobar en Crossref los DOI de Saiz-Wachter, Diamond-McQuade, Baum-Snow-Marion, Sinai-Waldfogel publicado, Eriksen-Rosenthal, Mast, Li, Jaeger et al., Goldsmith-Pinkham et al. y GHK. (8) check_v18 marca 49 PDF de otros bibliotecarios sin sha256; ninguno es de este grupo.",
+  "tokens_aproximados_consumidos": 470000
+}

@@ -1,0 +1,8 @@
+### Eriksen y Rosenthal (2010). Crowd out effects of place-based subsidized rental housing: new evidence from the LIHTC program
+- Clave: eriksen_rosenthal_2010 · DOI: 10.1016/j.jpubeco.2010.07.002 (visto en IDEAS y V16) · Revista o serie: Journal of Public Economics 94(11-12), 953-966 · Licencia de la versión abierta: sin versión abierta localizada (IDEAS: acceso restringido); no se encontró documento de trabajo en PDF
+- Enlace abierto: ninguno · Leído: solo resumen (página de IDEAS y notas del podcast del Lewis Center) · sha256 del PDF: sin PDF
+- Pregunta: si las viviendas LIHTC desplazan a la construcción privada de alquiler sin subsidio. Datos: EE. UU., primeras diferencias 1990-2000, con círculos de 10 millas, condados y áreas metropolitanas (según un resumen secundario de una presentación del NBER). Diseño: efectos fijos geográficos crecientes e instrumentos políticos. Identificación: instrumentos políticos (no detallados en lo leído).
+- Resultado principal (solo de resúmenes secundarios, sin tabla): la estimación IV más robusta implica un desplazamiento de casi el 100% de las unidades LIHTC por menos alquileres sin subsidio construidos, con intervalo amplio; MCO en torno al 15%; los efectos sobre la construcción en propiedad son más moderados e imprecisos. Unidad: viviendas no subsidiadas construidas de menos por unidad LIHTC.
+- Limitaciones y validez externa para España: EE. UU. y créditos fiscales; no leída la tabla ni los errores; la cifra de 100% y la de 15% no están contrastadas con el texto.
+- Paquete de replicación: no (buscado en IDEAS y búsquedas web; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
+- Estado: NO VERIFICADA

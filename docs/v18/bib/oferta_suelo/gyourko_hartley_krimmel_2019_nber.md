@@ -1,0 +1,8 @@
+### Gyourko, Hartley y Krimmel (2019). The local residential land use regulatory environment across U.S. housing markets: evidence from a new Wharton index [descriptivo, solo contexto]
+- Clave: gyourko_hartley_krimmel_2019_nber · DOI: 10.3386/w26573 (versión NBER, DOI visto en el repositorio de la serie; no comprobado en Crossref) · Revista o serie: NBER Working Paper 26573 (diciembre de 2019) · Licencia de la versión abierta: © de los autores; PDF en la serie NBER
+- Enlace abierto: https://www.nber.org/system/files/working_papers/w26573/w26573.pdf · Leído: solo resumen (primera página) · sha256 del PDF: 23863e20cebe
+- Pregunta: medir la regulación local del uso residencial del suelo en EE. UU. Datos: encuesta de más de 2.450 comunidades, sobre todo suburbanas, y comparación con la encuesta anterior. Diseño: descriptivo (no cumple los criterios de diseño de criterios.md; entra solo como contexto). Identificación: ninguna.
+- Resultado principal: las áreas más reguladas están en las dos costas (San Francisco y Nueva York las más reguladas); tras la crisis financiera ningún mercado muy regulado se desreguló de forma apreciable y la regulación aumentó en la mayoría de los grandes mercados costeros (resumen). Unidad: índice de regulación (no se reproducen valores). Sin errores.
+- Limitaciones y validez externa para España: EE. UU. y descriptivo; sirve de referencia para construir un índice de restricciones en España; no se ha localizado uno a escala provincial.
+- Paquete de replicación: sí, solo apéndice de datos anunciado en el documento (http://www.nber.org/data-appendix/w26573); no se ha descargado ni comprobado su licencia.
+- Estado: NO VERIFICADA

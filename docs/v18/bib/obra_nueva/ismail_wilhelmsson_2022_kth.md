@@ -1,0 +1,8 @@
+### Ismail y Wilhelmsson (2022). New housing investments' effects on gentrification and affordability in Stockholm, Sweden
+- Clave: ismail_wilhelmsson_2022_kth · DOI: 10.1007/s10901-024-10115-8 (edición posterior en Springer, según resultados de búsqueda; Journal of Housing and the Built Environment, no comprobada en Crossref) · Revista o serie: KTH Royal Institute of Technology, Working Paper Series 22/8 (agosto de 2022, 25 páginas) · Licencia de la versión abierta: no determinada; el PDF está en el registro DiVA diva2:1687568 (la descarga devolvió 503)
+- Enlace abierto: http://www.diva-portal.org/smash/record.jsf?pid=diva2:1687568 · Leído: solo resumen (IDEAS y resultados de búsqueda) · sha256 del PDF: sin PDF
+- Pregunta: si los proyectos de vivienda nueva cambian el perfil socioeconómico y la asequibilidad del entorno. Datos: Estocolmo, proyectos de obra nueva 2009-2014. Diseño: diferencias en diferencias con emparejamiento por puntuación de propensión y ponderación por probabilidad inversa (según un resumen de la edición de Springer). Identificación: supuesto de tendencias paralelas, no verificado aquí.
+- Resultado principal (según el resumen): efecto limitado sobre la proporción de residentes con estudios superiores y de jóvenes, y efecto positivo sobre la renta y la asequibilidad. Sin cifras, errores ni tablas leídas. Unidad: no consta.
+- Limitaciones y validez externa para España: solo el resumen; no mide alquileres cercanos sino composición del vecindario y asequibilidad; la definición de tratamiento no se ha comprobado. Estudio de contexto europeo.
+- Paquete de replicación: no (buscado en DiVA y IDEAS; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
+- Estado: NO VERIFICADA

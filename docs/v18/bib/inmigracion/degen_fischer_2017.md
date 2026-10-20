@@ -4,5 +4,5 @@
 - Pregunta: efecto de la inmigración sobre los precios de la vivienda en Suiza. Datos: 85 distritos o regiones, 2001-2006 (según la página de la SNB). Diseño: regresión con instrumento de localización previa de los inmigrantes (shift-share).
 - Resultado principal según el resumen: una entrada igual al 1% de la población se asocia con un 2,7% más en el precio de las viviendas unifamiliares y, según un extracto de la editorial, un 3,5% en las multifamiliares; la inmigración explica casi dos tercios del aumento de las unifamiliares. Unidad: % de precio por cada 1% de la población. Sin errores ni tabla (no leída).
 - Limitaciones y validez externa para España: periodo corto, baja inflación de precios, control de alquileres nacional y vivienda unifamiliar; no leídas las tablas. Pendiente de bajar el PDF desde un navegador por el autor del repositorio si se quiere texto completo.
-- Paquete de replicación: no (buscado en la página de la editorial y de la SNB; no localizado).
+- Paquete de replicación: no (buscado en la página de la editorial y de la SNB; no localizado). Búsqueda por título en Harvard Dataverse y Zenodo (2026-10-20) sin resultado.
 - Estado: NO VERIFICADA

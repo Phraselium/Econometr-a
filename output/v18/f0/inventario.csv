@@ -3,9 +3,9 @@ E1,réplica,Viviendas de uso turístico (HUT) por barrio de Barcelona,parcial,da
 E1,réplica,Anuncios de Airbnb por barrio 2012-2016 (exposición del original),falta,,,,"histórico de InsideAirbnb (Archived Data Request, docs/v17/fuentes/turismo_local.md) o datos de AirDNA",sí
 E1,réplica,Alquiler por barrio o sección de Barcelona,parcial,base:serpavi_alquiler_m2_mediana; data/raw/v3/serpavi_secciones_nacional_v3.csv.gz; base:ipva_indice,sección y distrito (SERPAVI); distrito (IPVA),2011-2024 anual,"alquiler trimestral por barrio (Open Data BCN, «lloguer mitjà mensual per barri», de las fianzas de Incasòl; abierto, se descarga sin el autor)",no
 E1,réplica,Precio de compra por barrio de Barcelona,falta,,,,Open Data BCN (precio de compraventa por barrio; por verificar la fuente y la licencia) o anuncios de portales,no
-E1,réplica,Instrumento «dónde»: atractivos turísticos georreferenciados,falta,,,,OpenStreetMap (tourism=attraction; ODbL) o inventario municipal de atractivos; geometría de secciones ya en data/raw/v10/geo/seccionado_2025.zip,no
+E1,réplica,Instrumento «dónde»: atractivos turísticos georreferenciados,falta,,,,OpenStreetMap (tourism=attraction; ODbL) o inventario municipal de atractivos; geometría de secciones ya en data/base/geo/secciones.parquet,no
 E1,réplica,Instrumento «cuándo»: búsquedas en Google de Airbnb,falta,,,,Google Trends (índice de búsquedas; condiciones de uso por verificar),no
-E1,réplica,"Geometría de secciones y barrios (distancias, caso Sagrada Família)",disponible,data/raw/v10/geo/seccionado_2025.zip; data/raw/v3/cartografia/Cartografia_secc.zip,sección censal,2025,,
+E1,réplica,"Geometría de secciones y barrios (distancias, caso Sagrada Família)",disponible,data/base/geo/secciones.parquet; data/base/geo/barrios_valencia.parquet,sección censal,2025,,
 E1,réplica,"Controles por sección (renta, población)",disponible,base:adrh_renta_neta_persona; base:pob_censo_anual; data/raw/v16/renta_parque/_grandes/adrh/*,"seccion; municipio,provincia,seccion",2019–2023; 2021–2025,,
 E1,ampliación,Viviendas turísticas INE (experimental) por sección y distrito,disponible,base:ine_vut_vivienda_turistica; data/raw/v3/ine_v3_vut_seccion.csv.gz,"distrito,seccion",2021-02–2026-05,,
 E1,ampliación,Registros autonómicos de vivienda turística con fecha de alta,parcial,base:vut_registro_gva_reconstruido; data/raw/v9/gva_vut/gva_vut_panel_municipio.csv; data/raw/v16/alquiler_turismo/_terceros/openrta_all_2026-10-17.csv.gz; base:reate_viviendas_uso_turistico; base:idescat_hut_n; data/raw/v9/cat_turisme/registre_turisme_agregat_municipi.csv.gz,"municipio (GVA, IDESCAT, Euskadi) y establecimiento (Andalucía)",GVA 2015-2026; IDESCAT 2015-2025; Andalucía con fecha de alta; Euskadi un corte,"altas con fecha de Cataluña (registre complet), Ibiza y Formentera; Madrid y Baleares están selladas",sí
@@ -40,7 +40,7 @@ E4,ampliación,Alquiler por sección para un diseño por intensidad territorial,
 E5,réplica,Oferta: obra nueva y parque,disponible,base:obra_nueva_neta_catastro; base:obra_nueva_viviendas_inspire; data/raw/mivau_v2_iniciadas_terminadas_prov.csv,municipio,2012–2025; 1900–2026,,
 E5,réplica,Precio de compra municipal y provincial,disponible,base:p_tasado; base:valor_tasado,"ccaa,municipio,nacional,provincia; provincia",1995T1–2026T2,,
 E5,réplica,Restricción física: pendiente (MDT05),falta,,,,MDT05 del CNIG (centro de descargas con registro),sí
-E5,réplica,Restricción física: costa,parcial,data/raw/v10/geo/seccionado_2025.zip,,,línea de costa o DPMT del MITECO (dpmt.zip); hoy solo la geometría municipal,sí
+E5,réplica,Restricción física: costa,parcial,data/base/geo/municipios.parquet,,,línea de costa o DPMT del MITECO (dpmt.zip); hoy solo la geometría municipal,sí
 E5,réplica,Restricción física: agua y suelo no urbanizable,falta,,,,CORINE Land Cover 2018 o SIOSE (cuenta en el CLMS),sí
 E5,réplica,Restricción de planeamiento (SIU),falta,,,,Sistema de Información Urbana del MIVAU (suelo urbano y urbanizable por municipio),sí
 E5,réplica,"Red Natura 2000 (solo control, no instrumento)",parcial,data/raw/v16/oferta_suelo/_terceros/_grandes/n2000_2025_shp.zip,,,licencia por confirmar (en _terceros),sí

@@ -48,9 +48,9 @@ Generado por `python3 src/v18/f0_inventario.py` (2026-10-20); no editar a mano. 
   - Anuncios de Airbnb por barrio 2012-2016 (exposición del original): **falta**. Falta: histórico de InsideAirbnb (Archived Data Request, docs/v17/fuentes/turismo_local.md) o datos de AirDNA. Requiere al autor.
   - Alquiler por barrio o sección de Barcelona: **parcial** (base:serpavi_alquiler_m2_mediana; data/raw/v3/serpavi_secciones_nacional_v3.csv.gz; base:ipva_indice). Falta: alquiler trimestral por barrio (Open Data BCN, «lloguer mitjà mensual per barri», de las fianzas de Incasòl; abierto, se descarga sin el autor).
   - Precio de compra por barrio de Barcelona: **falta**. Falta: Open Data BCN (precio de compraventa por barrio; por verificar la fuente y la licencia) o anuncios de portales.
-  - Instrumento «dónde»: atractivos turísticos georreferenciados: **falta**. Falta: OpenStreetMap (tourism=attraction; ODbL) o inventario municipal de atractivos; geometría de secciones ya en data/raw/v10/geo/seccionado_2025.zip.
+  - Instrumento «dónde»: atractivos turísticos georreferenciados: **falta**. Falta: OpenStreetMap (tourism=attraction; ODbL) o inventario municipal de atractivos; geometría de secciones ya en data/base/geo/secciones.parquet.
   - Instrumento «cuándo»: búsquedas en Google de Airbnb: **falta**. Falta: Google Trends (índice de búsquedas; condiciones de uso por verificar).
-  - Geometría de secciones y barrios (distancias, caso Sagrada Família): **disponible** (data/raw/v10/geo/seccionado_2025.zip; data/raw/v3/cartografia/Cartografia_secc.zip).
+  - Geometría de secciones y barrios (distancias, caso Sagrada Família): **disponible** (data/base/geo/secciones.parquet; data/base/geo/barrios_valencia.parquet).
   - Controles por sección (renta, población): **disponible** (base:adrh_renta_neta_persona; base:pob_censo_anual; data/raw/v16/renta_parque/_grandes/adrh/*).
 - **Ampliación:**
   - Viviendas turísticas INE (experimental) por sección y distrito: **disponible** (base:ine_vut_vivienda_turistica; data/raw/v3/ine_v3_vut_seccion.csv.gz).
@@ -117,7 +117,7 @@ Generado por `python3 src/v18/f0_inventario.py` (2026-10-20); no editar a mano. 
   - Oferta: obra nueva y parque: **disponible** (base:obra_nueva_neta_catastro; base:obra_nueva_viviendas_inspire; data/raw/mivau_v2_iniciadas_terminadas_prov.csv).
   - Precio de compra municipal y provincial: **disponible** (base:p_tasado; base:valor_tasado).
   - Restricción física: pendiente (MDT05): **falta**. Falta: MDT05 del CNIG (centro de descargas con registro). Requiere al autor.
-  - Restricción física: costa: **parcial** (data/raw/v10/geo/seccionado_2025.zip). Falta: línea de costa o DPMT del MITECO (dpmt.zip); hoy solo la geometría municipal. Requiere al autor.
+  - Restricción física: costa: **parcial** (data/base/geo/municipios.parquet). Falta: línea de costa o DPMT del MITECO (dpmt.zip); hoy solo la geometría municipal. Requiere al autor.
   - Restricción física: agua y suelo no urbanizable: **falta**. Falta: CORINE Land Cover 2018 o SIOSE (cuenta en el CLMS). Requiere al autor.
   - Restricción de planeamiento (SIU): **falta**. Falta: Sistema de Información Urbana del MIVAU (suelo urbano y urbanizable por municipio). Requiere al autor.
   - Red Natura 2000 (solo control, no instrumento): **parcial** (data/raw/v16/oferta_suelo/_terceros/_grandes/n2000_2025_shp.zip). Falta: licencia por confirmar (en _terceros). Requiere al autor.
@@ -262,7 +262,7 @@ Generado por `python3 src/v18/f0_inventario.py` (2026-10-20); no editar a mano. 
 - E1 · Viviendas de uso turístico (HUT) por barrio de Barcelona: las licencias dadas de baja antes de 2018 no constan; no reproduce el stock 2012-2016 del original.
 - E1 · Alquiler por barrio o sección de Barcelona: alquiler trimestral por barrio (Open Data BCN, «lloguer mitjà mensual per barri», de las fianzas de Incasòl; abierto, se descarga sin el autor).
 - E1 · Precio de compra por barrio de Barcelona: Open Data BCN (precio de compraventa por barrio; por verificar la fuente y la licencia) o anuncios de portales.
-- E1 · Instrumento «dónde»: atractivos turísticos georreferenciados: OpenStreetMap (tourism=attraction; ODbL) o inventario municipal de atractivos; geometría de secciones ya en data/raw/v10/geo/seccionado_2025.zip.
+- E1 · Instrumento «dónde»: atractivos turísticos georreferenciados: OpenStreetMap (tourism=attraction; ODbL) o inventario municipal de atractivos; geometría de secciones ya en data/base/geo/secciones.parquet.
 - E1 · Instrumento «cuándo»: búsquedas en Google de Airbnb: Google Trends (índice de búsquedas; condiciones de uso por verificar).
 - E2 · Renta de contratos en otras CCAA con zonas (País Vasco): Navarra y Asturias están selladas; A Coruña solo tiene IPVA y SERPAVI anuales hasta 2024.
 - E3 · Cuotas históricas por nacionalidad (asentamientos previos): Censo de 2001 (o 1991) por nacionalidad y provincia: INE, descarga abierta.

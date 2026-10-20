@@ -25,13 +25,13 @@ DOCUMENTO = [
                   "del alquiler de residencia habitual (no incluye personas jurídicas)",
      "valor": 2.4, "min": None, "max": None, "unidad": "% del alquiler de residencia habitual", "periodo": "2024",
      "cobertura": "España", "fuentes": ["Banco de España, Informe Anual 2025, cap. 2, cuadro 2.11, p. 169"],
-     "capa": "C4", "lectura_v17": "OF", "fecha_dato": "2024", "ficha": "docs/v17/fuentes/titularidad.md",
+     "capa": "C4", "lectura_v17": "OF", "tipo_rango": "sin rango", "fecha_dato": "2024", "ficha": "docs/v17/fuentes/titularidad.md",
      "nota": "a posteriori; cifra de documento"},
     {"id": "V17-DOC-OHB-GT-ALQUILER-BCN-2021",
      "indicador": "Viviendas de alquiler habitual de Barcelona ciudad en manos de grandes tenedores (104.958 de 290.416)",
      "valor": 36.1, "min": None, "max": None, "unidad": "% del alquiler habitual de la ciudad", "periodo": "1-1-2021",
      "cobertura": "Barcelona (municipio)", "fuentes": ["Observatori Metropolità de l'Habitatge de Barcelona (O-HB)"],
-     "capa": "C4", "lectura_v17": "OF", "fecha_dato": "2021", "ficha": "docs/v17/fuentes/titularidad.md",
+     "capa": "C4", "lectura_v17": "OF", "tipo_rango": "sin rango", "fecha_dato": "2021", "ficha": "docs/v17/fuentes/titularidad.md",
      "nota": "a posteriori; cifra de documento; solo la ciudad de Barcelona, no la media nacional"},
 ]
 
@@ -43,7 +43,7 @@ def traslacion(retiene: dict) -> dict:
                          "min y max = extremos entre estudios (Eerola et al. 2026 y Fack 2006)",
             "valor": round(100 - retiene["valor"], 1), "min": round(100 - retiene["max"], 1), "max": round(100 - retiene["min"], 1),
             "unidad": "% de la ayuda", "periodo": "estudios publicados 2002-2026", "cobertura": "Francia, Reino Unido, EE. UU., "
-            "Finlandia y Nueva Zelanda", "fuentes": retiene["fuentes"], "capa": "C4", "lectura_v17": "juicio experto",
+            "Finlandia y Nueva Zelanda", "fuentes": retiene["fuentes"], "capa": "C4", "lectura_v17": "juicio experto", "tipo_rango": "rango",
             "fecha_dato": retiene.get("fecha_dato", FECHA), "ficha": "output/v17/auditoria/filas/ayudas_demanda.md",
             "nota": "a posteriori; derivada de V17-AUD-RA-AYU-RETIENE-MEDIANA (θ = 100 − retiene)"}
 
@@ -75,8 +75,6 @@ def main() -> int:
         if not h.get("fecha_dato"):   # fecha del dato: el último año del periodo; si no hay, la de la lectura
             anios = re.findall(r"(?:19|20)\d\d", str(h.get("periodo", "")))
             h["fecha_dato"] = anios[-1] if anios else FECHA
-        if not h.get("cobertura"):
-            h["cobertura"] = "véase la ficha"
         h.setdefault("nota", "a posteriori")
         if "a posteriori" not in str(h["nota"]):
             h["nota"] = f"a posteriori; {h['nota']}"

@@ -89,7 +89,7 @@ def main() -> int:
                        "min": round(r["media_historica"], 3), "max": round(r["max"], 3), "unidad": nombre.split("(")[-1].rstrip(")"),
                        "periodo": r["fecha_ultimo"], "cobertura": "España",
                        "fuentes": ["Banco de España, Síntesis de indicadores del mercado de la vivienda (SI_1_5)"],
-                       "capa": "C4", "lectura_v17": "OF", "fecha_dato": r["fecha_ultimo"],
+                       "capa": "C4", "lectura_v17": "OF", "tipo_rango": "referencias", "fecha_dato": r["fecha_ultimo"],
                        "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
                        "nota": f"a posteriori; min = media histórica {r['inicio']}-{r['fin_media']}; max = máximo anual ({r['anio_max']})"})
     m = pd.DataFrame(filas)
@@ -103,7 +103,7 @@ def main() -> int:
                    "min": round(float(shi.pct_sin_hipoteca_min.min()), 2), "max": round(float(shi.pct_sin_hipoteca_min.max()), 2),
                    "unidad": "% de las compraventas", "periodo": str(int(ult.anio)), "cobertura": "España",
                    "fuentes": ["INE, Estadística de Hipotecas", "INE, Estadística de Transmisiones de Derechos de la Propiedad"],
-                   "capa": "C4", "lectura_v17": "cota", "fecha_dato": str(int(ult.anio)),
+                   "capa": "C4", "lectura_v17": "cota", "tipo_rango": "referencias", "fecha_dato": str(int(ult.anio)),
                    "ficha": "output/v17/lectura_bde/medidas_referencia/informe.md",
                    "nota": "a posteriori; cota inferior: las hipotecas sobre viviendas incluyen las no ligadas a una compra; "
                            f"min y max = rango anual de los años informativos {int(shi.anio.min())}-{int(shi.anio.max())}"})

@@ -110,6 +110,19 @@ def V7_HECHOS() -> list[Path]:   # v7.1 (W2): hechos de V7 (R4, R4b, R5, R6) y d
     return [p for v in ("v7", "v7_1", "v7_2", "v8", "v9", "v10", "v12", "v15", "v16") for p in sorted((RAIZ / "output" / v).glob("*/hechos.json")) if "_smoke" not in p.parent.name] + [p for p in v17 if p.exists()]   # V10: atlas (ids «V10-ATL-»); V9: F5 (ids «V9-»); V12: hechos (ids «V12-»); V15/V16 (fase 7 de V16, K22): ids «V15-»/«V16-»
 
 
+TIPO_RANGO: dict[str, str] = {}   # V17: id -> tipo de rango declarado en su hechos.json
+
+
+def tipo_rango(r) -> str:
+    """V17 (2026-10-20): «rango» si min y max son un intervalo del valor; «referencias» si son puntos de referencia de otra
+    cosa; «sin rango» si falta alguno. Las cifras que lo declaran mandan; el resto se deduce de sentido_min_max."""
+    if r.id in TIPO_RANGO:
+        return TIPO_RANGO[r.id]
+    if pd.isna(r["min"]) or pd.isna(r["max"]):
+        return "sin rango"
+    return "rango" if r.sentido_min_max == "rango" else "referencias"
+
+
 def v5_hechos() -> list[dict]:
     f = []
     for p in sorted(V5.glob("*/hechos.json")) + sorted((RAIZ / "output" / "v5_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_1").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_2").glob("*/hechos.json")) + sorted((RAIZ / "output" / "v6_3").glob("*/hechos.json")) + V7_HECHOS():   # v5.1, v6, v6.1, v6.2, v6.3, v7 y v7.1
@@ -121,6 +134,8 @@ def v5_hechos() -> list[dict]:
             if isinstance(r.get("fuentes"), list):   # listas de fuentes -> texto (revisión E, B2)
                 r["fuentes"] = "; ".join(map(str, r["fuentes"]))
             r["ficha"] = x.get("ficha", "—")
+            if x.get("tipo_rango"):   # V17: tipo de rango declarado por la cifra (rango / referencias / sin rango)
+                TIPO_RANGO[str(x.get("id"))] = x["tipo_rango"]
             r["origen"] = f"{p.relative_to(RAIZ)}:{x.get('id')}"
             f.append(r)
     return f
@@ -157,6 +172,9 @@ def main() -> None:
     ck = ck.sort_values("id", kind="stable")
     # K4a-01: «%.6g» redondeaba a 6 cifras significativas los recuentos >= 1e6 (1.720.537 -> 1.720.540); «%.10g» es exacto hasta 1e10
     ck["sentido_min_max"] = ck.id.map(sentido)
+    ck["tipo_rango"] = [tipo_rango(r) for _, r in ck.iterrows()]
+    v17r = ck.id.str.startswith("V17-") & (ck.tipo_rango == "rango")
+    ck.loc[v17r, "sentido_min_max"] = "rango"   # V17: los intervalos declarados se tratan como rango del valor
     fuera = ck.id.isin(RETIRADAS) | ck.id.str.startswith(NO_DIFUNDIBLE_PREFIJOS)
     sup = ck[fuera].copy()
     sup["sustituida_por"] = [RETIRADAS.get(i, MOTIVO_F2)[0] for i in sup.id]
@@ -168,7 +186,8 @@ def main() -> None:
           "Tabla única de la que leen todos los entregables. Una fila por indicador y periodo. Generada por src/v5/cifras_clave.py.", "",
           "| id | indicador | valor | rango | unidad | periodo | cobertura | fuentes | capa | fecha del dato |", "|---|---|---|---|---|---|---|---|---|---|"]
     for r in ck.itertuples():
-        rango = "" if pd.isna(r.min) else f"{r.min:.4g}–{r.max:.4g}"
+        rango = "" if pd.isna(r.min) or pd.isna(r.max) else (f"{r.min:.4g}–{r.max:.4g}" if r.tipo_rango == "rango"
+                                                            else f"ref.: {r.min:.4g}; {r.max:.4g}")
         val = "" if pd.isna(r.valor) else f"{r.valor:.4g}"
         md.append(f"| {r.id} | {r.indicador} | {val} | {rango} | {r.unidad} | {r.periodo} | {r.cobertura} | {r.fuentes} | {r.capa} | {r.fecha_dato} |")
     md += ["", "## Clases territoriales (A4)", "",

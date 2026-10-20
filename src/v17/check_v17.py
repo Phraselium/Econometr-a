@@ -3,7 +3,7 @@
 1. a posteriori: todo fichero de texto de output/v17/ y de docs/v17/{referencias_bde,correcciones}.md declara «a posteriori»
    (un CSV queda rotulado por el informe .md de su carpeta).
 2. cifras V17: toda cifra de output/v17/**/hechos.json tiene id V17-*, fuente, capa C4 y lectura V17 (columna propia:
-   «OF», «juicio experto», etc.). La lectura V17 nunca va en la capa.
+   «OF», «juicio experto», etc.), tipo_rango (rango, referencias o sin rango) y cobertura real. La lectura V17 nunca va en la capa.
 3. sin promoción: ninguna fila de output/v5/cifras_clave.csv con id V17-* tiene capa distinta de C4.
 4. lo anterior no cambia: lo comprueban check_v8, check_v9, check_v13 y check_v16, que siguen en make check.
 5. fuga v6 (decisión del autor del 2026-10-20; incidente K4): todo script de src/v17/ o posterior que lea datos (data/raw,
@@ -26,6 +26,7 @@ RAIZ = Path(__file__).resolve().parents[2]
 OUT = RAIZ / "output" / "v17"
 TEXTO = (".md", ".csv", ".json")
 MARCA = "a posteriori"
+TIPOS_RANGO = {"rango", "referencias", "sin rango"}
 LECTURAS = {"OF", "hecho", "cota", "asociación", "juicio experto", "juicio experto (calibración)", "no fiable", "no se puede saber", "sin cambio"}
 
 
@@ -62,6 +63,10 @@ def cifras() -> list[str]:
                 err.append(f"{rel}: {i} con capa {h.get('capa')!r}: las cifras V17 son C4 (la lectura va en «lectura_v17»)")
             if h.get("lectura_v17") not in LECTURAS:
                 err.append(f"{rel}: {i} sin lectura_v17 válida ({sorted(LECTURAS)})")
+            if h.get("tipo_rango") not in TIPOS_RANGO:   # decisión del autor del 2026-10-20
+                err.append(f"{rel}: {i} sin tipo_rango válido ({sorted(TIPOS_RANGO)})")
+            if not h.get("cobertura") or "véase" in str(h.get("cobertura")):
+                err.append(f"{rel}: {i} sin cobertura real")
     return err
 
 

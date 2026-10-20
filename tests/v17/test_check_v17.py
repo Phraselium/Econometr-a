@@ -29,7 +29,18 @@ def test_cifra_correcta_pasa(tmp_path, monkeypatch):
     d = tmp_path / "output" / "v17" / "x"
     d.mkdir(parents=True)
     (d / "hechos.json").write_text(json.dumps([{"id": "V17-X", "fuentes": ["INE"], "capa": "C4", "lectura_v17": "OF",
-                                                "nota": "a posteriori"}]))
+                                                "tipo_rango": "sin rango", "cobertura": "España", "nota": "a posteriori"}]))
     monkeypatch.setattr(check_v17, "OUT", tmp_path / "output" / "v17")
     monkeypatch.setattr(check_v17, "RAIZ", tmp_path)
     assert check_v17.cifras() == [] and check_v17.a_posteriori() == []
+
+
+def test_tipo_rango_y_cobertura_obligatorios(tmp_path, monkeypatch):
+    d = tmp_path / "output" / "v17" / "x"
+    d.mkdir(parents=True)
+    (d / "hechos.json").write_text(json.dumps([{"id": "V17-X", "fuentes": ["INE"], "capa": "C4", "lectura_v17": "OF",
+                                                "cobertura": "véase la ficha", "nota": "a posteriori"}]))
+    monkeypatch.setattr(check_v17, "OUT", tmp_path / "output" / "v17")
+    monkeypatch.setattr(check_v17, "RAIZ", tmp_path)
+    e = check_v17.cifras()
+    assert any("tipo_rango" in x for x in e) and any("cobertura" in x for x in e)

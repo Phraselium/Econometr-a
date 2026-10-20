@@ -427,7 +427,7 @@ def datos_v12(figuras: list[dict]) -> dict:
         dec = 0 if abs(v) >= 100 else 1
         txt = f"{v:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
         rango = ""
-        if isinstance(r["min"], str) and r["min"] and isinstance(r["max"], str) and r["max"]:
+        if isinstance(r["min"], str) and r["min"] and isinstance(r["max"], str) and r["max"] and r.get("tipo_rango", "rango") == "rango":
             a, b = float(r["min"]), float(r["max"])
             rango = f"{a:,.{dec}f} a {b:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
         return {"id": i, "indicador": r.indicador, "valor": txt, "rango": rango, "unidad": r.unidad, "periodo": r.periodo, "capa": r.capa,
@@ -503,7 +503,7 @@ def datos_que_causa_que() -> dict:
         for i in ids:
             r = ck.loc[i]
             dec = 0 if r.unidad in ("hogares", "%") and "D7" in i else 2
-            rango = "" if pd.isna(r["min"]) else f" [{n(r['min'], dec)}; {n(r['max'], dec)}]"
+            rango = "" if pd.isna(r["min"]) or r.get("tipo_rango", "rango") != "rango" else f" [{n(r['min'], dec)}; {n(r['max'], dec)}]"   # V17: solo si es un rango
             cifras.append({"id": i, "indicador": r.indicador, "valor": n(r.valor, dec) + rango, "unidad": r.unidad, "capa": r.capa,
                            "periodo": r.periodo, "fuentes": r.fuentes})
         filas.append({"diseno": dis, "pregunta": preg, "cifras": cifras, "script": script, "figura": destino if src.exists() else None})

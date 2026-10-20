@@ -1,0 +1,80 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+F-prereg,F1-R1,y = ln(p_tasado/deflactor) ~ renta + tipo_real + pob; UECM p = 2,1999Q1,2026Q2,0,,,,,,,"principal; repite_visto=sí (V7.2, V8-M4); MDE=4.506 (sin umbral en el Anexo B para F)"
+F-prereg,F1-R1-v2,y = ln(p_tasado/deflactor) ~ renta + tipo_real + pob; UECM p = 2; sin 2008Q1-2013Q4,1999Q1,2026Q2,0,,,,,,,variante; repite_visto=sí; MDE=4.506 (sin umbral en el Anexo B para F)
+F-prereg,F1-R1-v3,y = ln(p_tasado/deflactor) ~ renta + tipo_real + pob; UECM p = 2,2007Q1,2026Q2,0,,,,,,,variante; repite_visto=sí; MDE=4.853 (sin umbral en el Anexo B para F)
+F-prereg,F1-R1-v4,y = ln(p_tasado/deflactor) ~ renta + tipo_nom + pob; UECM p = 2,1999Q1,2026Q2,0,,,,,,,variante; repite_visto=sí; MDE=4.486 (sin umbral en el Anexo B para F)
+F-prereg,F1-R1-v5,y = ln(p_tasado/deflactor) ~ renta + tipo_real; UECM p = 2,1999Q1,2026Q2,0,,,,,,,variante; repite_visto=sí; MDE=1.664 (sin umbral en el Anexo B para F)
+F-prereg,F1-P-M4,y = ln(p_tasado/deflactor) ~ pib + tipo_real + pob; UECM p = 2,1999Q1,2026Q2,0,,,,,,,coprincipal; repite_visto=sí (V8-M4); MDE=2.721 (sin umbral en el Anexo B para F)
+F-prereg,F1-A2,y = ln(p_tasado/deflactor) ~ renta + tipo_real + pob + parque_pc; UECM p = 1,2001,2025,0,,,,,,,"principal; repite_visto=sí (V7.2, V8-M4); MDE=8.932 (sin umbral en el Anexo B para F)"
+F-prereg,F1-A2-v1,y = ln(p_tasado/deflactor) ~ renta + tipo_real + pob; UECM p = 1,2001,2025,0,,,,,,,variante; repite_visto=sí; MDE=9.492 (sin umbral en el Anexo B para F)
+F-prereg,F1-A2-v2,y = ln(p_tasado/deflactor) ~ renta + tipo_real + pob + parque_pc; UECM p = 1; sin 2008-2013,2001,2025,0,,,,,,,variante; repite_visto=sí; MDE=8.932 (sin umbral en el Anexo B para F)
+F-prereg,F1-R2,"ln_p ~ ln_renta + paro + ln_pob; 2002-2018; N = 33, T = 17; DOLS True, PMG False, CS-ARDL False",2002,2018,0,,,,,,,principal; repite_visto=sí (V7.2); MDE=0.723 (sin umbral en el Anexo B para F)
+F-prereg,F1-R2-alt,"ln_p ~ ln_renta + paro + tipo_nom + ln_parque_pc + ln_pob; 2002-2018; N = 33, T = 17; DOLS True, PMG False, CS-ARDL False",2002,2018,0,,,,,,,principal; repite_visto=sí (V7.2); MDE=0.866 (sin umbral en el Anexo B para F)
+F-prereg,F1-R2-pmg,"ln_p ~ ln_renta + paro + ln_pob; 2002-2018; N = 33, T = 17; DOLS False, PMG True, CS-ARDL False",2002,2018,0,,,,,,,principal; repite_visto=sí (V7.2); MDE=0.723 (sin umbral en el Anexo B para F)
+F-prereg,F1-A1,"ln_p ~ ln_renta + paro + ln_pob; 2002-2024; N = 33, T = 23; DOLS True, PMG True, CS-ARDL True",2002,2024,0,,,,,,,"principal; repite_visto=sí (V15 E1-P2, Q9-c); MDE=0.880 (sin umbral en el Anexo B para F)"
+F-prereg,F1-R2-v2,"ln_p ~ ln_renta + paro + ln_pob; 2000-2008; N = 0, T = 9; DOLS False, PMG False, CS-ARDL False",2000,2008,0,,,,,,,NO ESTIMABLE: T < 12 o N < 20 tras el recorte
+F-prereg,F1-R2-alt-v2,"ln_p ~ ln_renta + paro + tipo_nom + ln_parque_pc + ln_pob; 2000-2008; N = 0, T = 9; DOLS False, PMG False, CS-ARDL False",2000,2008,0,,,,,,,NO ESTIMABLE: T < 12 o N < 20 tras el recorte
+F-prereg,F1-R2-pmg-v2,"ln_p ~ ln_renta + paro + ln_pob; 2000-2008; N = 0, T = 9; DOLS False, PMG False, CS-ARDL False",2000,2008,0,,,,,,,NO ESTIMABLE: T < 12 o N < 20 tras el recorte
+F-prereg,F1-A1-v1,"ln_p ~ ln_renta + paro + ln_pob; 2014-2024; N = 38, T = 11; DOLS False, PMG False, CS-ARDL False",2014,2024,0,,,,,,,NO ESTIMABLE: T < 12 o N < 20 tras el recorte
+F-prereg,F1-A1-v3,"ln_p ~ ln_renta + paro + ln_pob; 2002-2024; N = 33, T = 23; DOLS False, PMG False, CS-ARDL True",2002,2024,0,,,,,,,variante; repite_visto=sí; MDE=0.880 (sin umbral en el Anexo B para F)
+F-prereg,F2-R1,"ln_alq ~ ln_renta + ln_pob + ln_parque_pc + tipo_real; 2002-2024; N = 38, T = 23; DOLS False, PMG True, CS-ARDL False",2002,2024,0,,,,,,,principal; repite_visto=no; MDE=0.233 (sin umbral en el Anexo B para F)
+F-prereg,F2-R1-v1,"ln_serp ~ ln_renta + ln_pob + ln_parque_pc + tipo_real; 2011-2024; N = 35, T = 14; DOLS False, PMG True, CS-ARDL False",2011,2024,0,,,,,,,variante; repite_visto=no; MDE=0.259 (sin umbral en el Anexo B para F)
+F-prereg,F2-R1-v2,"ln_alq ~ ln_renta + ln_parque_pc + tipo_real; 2002-2024; N = 38, T = 23; DOLS False, PMG True, CS-ARDL False",2002,2024,0,,,,,,,variante; repite_visto=no; MDE=0.219 (sin umbral en el Anexo B para F)
+F-prereg,F2-R1-v3,"ln_alq ~ ln_renta + ln_pob + ln_parque_pc + tipo_real; 2014-2024; N = 38, T = 11; DOLS False, PMG False, CS-ARDL False",2014,2024,0,,,,,,,NO ESTIMABLE: T < 12 o N < 20 tras el recorte
+F-prereg,F2-A1,"ln_alq ~ ln_renta + ln_pob + ln_parque_pc + tipo_real; 2002-2024; N = 38, T = 23; DOLS False, PMG False, CS-ARDL True",2002,2024,0,,,,,,,principal; repite_visto=no; MDE=0.233 (sin umbral en el Anexo B para F)
+F-prereg,F2-A1-v1,"ln_serp ~ ln_renta + ln_pob + ln_parque_pc + tipo_real; 2011-2024; N = 35, T = 14; DOLS False, PMG False, CS-ARDL True",2011,2024,0,,,,,,,variante; repite_visto=no; MDE=0.259 (sin umbral en el Anexo B para F)
+F-prereg,F2-A1-v2,"ln_alq ~ ln_renta + ln_pob + ln_parque_pc + tipo_real; 2014-2024; N = 38, T = 11; DOLS False, PMG False, CS-ARDL True",2014,2024,0,,,,,,,NO ESTIMABLE: T < 12 o N < 20 tras el recorte
+F-prereg,F3-A2,"ln_ini ~ ln_p + ln_suelo + ln_credprom; 2004-2024; N = 31, T = 21; DOLS False, PMG True, CS-ARDL False",2004,2024,0,,,,,,,principal; repite_visto=no; MDE=3.010 (sin umbral en el Anexo B para F)
+F-prereg,F3-A2-v1,"ln_ini ~ ln_p + ln_credprom; 2004-2024; N = 33, T = 21; DOLS False, PMG True, CS-ARDL False",2004,2024,0,,,,,,,variante; repite_visto=no; MDE=2.845 (sin umbral en el Anexo B para F)
+F-prereg,F3-A2-v2,"ln_ini ~ ln_p + ln_suelo; 2004-2024; N = 31, T = 21; DOLS False, PMG True, CS-ARDL False",2004,2024,0,,,,,,,variante; repite_visto=no; MDE=2.632 (sin umbral en el Anexo B para F)
+F-prereg,F3-A2-v3,"ln_ini ~ ln_p + ln_suelo + ln_credprom; 2014-2024; N = 36, T = 11; DOLS False, PMG False, CS-ARDL False",2014,2024,0,,,,,,,NO ESTIMABLE: T < 12 o N < 20 tras el recorte
+F,F1-R1,"UECM ['renta', 'tipo_real', 'pob']",1999Q1,2026Q2,108,,,,,0.12613311626695925,0.41529235382308843,rechaza=False
+F,F1-R1-v2,"UECM ['renta', 'tipo_real', 'pob']",1999Q1,2026Q2,84,,,,,0.13208043000030775,0.8910544727636182,rechaza=False
+F,F1-R1-v3,"UECM ['renta', 'tipo_real', 'pob']",2007Q1,2026Q2,76,,,,,0.28126719107248505,0.45327336331834084,rechaza=False
+F,F1-R1-v4,"UECM ['renta', 'tipo_nom', 'pob']",1999Q1,2026Q2,108,,,,,0.1592958734678782,0.5797101449275363,rechaza=False
+F,F1-R1-v5,"UECM ['renta', 'tipo_real']",1999Q1,2026Q2,108,,,,,0.08014584882490146,0.8235882058970515,rechaza=False
+F,F1-P-M4,"UECM ['pib', 'tipo_real', 'pob']",1999Q1,2026Q2,108,,,,,0.11806486870350855,0.3023488255872064,rechaza=False
+F,F1-A2,"UECM ['renta', 'tipo_real', 'pob', 'parque_pc']",2001,2025,24,,,,,1.052303038876789,0.239880059970015,rechaza=False
+F,F1-A2-v1,"UECM ['renta', 'tipo_real', 'pob']",2001,2025,24,,,,,0.7017686629117535,0.19090454772613694,rechaza=False
+F,F1-A2-v2,"UECM ['renta', 'tipo_real', 'pob', 'parque_pc']",2001,2025,18,,,,,0.9340300522827988,0.894552723638181,rechaza=False
+F,F1-R2,F1-R2 DOLS-FE vector básico 2002-2018 (2000-2018 no existe),2002,2018,561,,,,,,0.996,rechaza=False; banda=con valor crítico corregido
+F,F1-R2-alt,F1-R2-alt DOLS-FE vector alternativo 2002-2018,2002,2018,561,,,,,,0.778,rechaza=False; banda=con valor crítico corregido
+F,F1-R2-pmg,F1-R2-pmg ECM por PMG vector básico 2002-2018,2002,2018,561,,,,,0.3479272025271119,0.996,rechaza=False; banda=con valor crítico corregido
+F,F1-A1,F1-A1 DOLS-FE y PMG hasta 2024 y CS-ARDL,2002,2024,759,,,,,0.06146238040093048,0.935,rechaza=False; banda=con valor crítico corregido
+F,F1-A1-v3,F1-A1 con CCE-MG (estático),2002,2024,759,,,,,,0.935,rechaza=False; banda=con valor crítico corregido
+F,F2-R1,F2-R1 PMG del IPC de alquiler real (hogares: población como sustituto),2002,2024,874,,,,,-0.10173074926791209,0.996,rechaza=False; banda=con valor crítico corregido
+F,F2-R1-v1,"F2-R1 con SERPAVI (alquiler €/m², 2011-2024)",2011,2024,490,,,,,0.19470636972446886,0.994,rechaza=False; banda=con valor crítico corregido
+F,F2-R1-v2,F2-R1 sin hogares,2002,2024,874,,,,,-0.10609703469187404,0.994,rechaza=False; banda=apta
+F,F2-A1,F2-A1 CS-ARDL del IPC de alquiler real,2002,2024,874,,,,,,0.996,rechaza=False; banda=con valor crítico corregido
+F,F2-A1-v1,F2-A1 con SERPAVI,2011,2024,490,,,,,,0.994,rechaza=False; banda=con valor crítico corregido
+F,F3-A2,F3-A2 PMG de ln iniciadas,2004,2024,651,,,,,3.518625669099325,0.007,rechaza=False; banda=apta
+F,F3-A2-v1,F3-A2 sin suelo,2004,2024,693,,,,,1.1404978091349567,0.001,rechaza=True; banda=con valor crítico corregido
+F,F3-A2-v2,F3-A2 sin crédito,2004,2024,651,,,,,5.964067004178967,0.318,rechaza=False; banda=con valor crítico corregido
+F-prereg,F1-P-E1P2,"CS-ARDL(1,0) trimestral: ln valor tasado real ~ ln IPC alquiler real; provincias no selladas",2002T1,2026T2,0,,,,,,,coprincipal; repite_visto=sí (V15 E1-P2 y V16 Q9-c)
+F,F1-P-E1P2,"CS-ARDL(1,0)",2002T1,2026T2,3234,,,,,-0.7460460534028389,,NO APTO: descriptivo
+F-prereg,F1-P-V72,coprincipal V7.2: contraste de cointegración de panel de CCAA (Westerlund/Pedroni),,,0,,,,,,,NO ESTIMABLE: no reproducible en la muestra V18: el panel de V7.2 usa las 17 CCAA y 8 están selladas por v6; con las 9 no selladas la especificación deja de ser la de origen. La conclusión publicada (no se establece cointegración) se contrasta en F1-R1 y F1-R2 de forma independiente.
+F-prereg,F2-A2,ln(precio/(12 alquiler SERPAVI)) ~ coste de uso (tipo real + 2.0 − ganancia esperada); FE; 2013-2024,2013,2024,0,,,,,,,principal; repite_visto=sí (V15 E1)
+F,F2-A2,ln(precio/(12 alquiler SERPAVI)) ~ coste de uso (tipo real + 2.0 − ganancia esperada); FE; 2013-2024,2013,2024,360,,,,,0.009117440899754282,,DK y CR1 sin banda apta
+F-prereg,F2-A2-v1,ln(precio/(12 alquiler SERPAVI)) ~ coste de uso (tipo real + 3.0 − ganancia esperada); FE; 2013-2024,2013,2024,0,,,,,,,variante; repite_visto=sí (V15 E1)
+F,F2-A2-v1,ln(precio/(12 alquiler SERPAVI)) ~ coste de uso (tipo real + 3.0 − ganancia esperada); FE; 2013-2024,2013,2024,360,,,,,0.009117440899754286,,DK y CR1 sin banda apta
+F-prereg,F2-A2-v2,ln(precio/(12 alquiler SERPAVI)) ~ coste de uso (tipo real + 2.0 − ganancia nula); FE; 2013-2024,2013,2024,0,,,,,,,variante; repite_visto=sí (V15 E1)
+F,F2-A2-v2,ln(precio/(12 alquiler SERPAVI)) ~ coste de uso (tipo real + 2.0 − ganancia nula); FE; 2013-2024,2013,2024,420,,,,,0.018465299770657088,,DK y CR1 sin banda apta
+F-prereg,F3-R1,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MC2E; 1997-2004,1997,2004,0,,,,,,,principal; MDE=1.479; σ = 0.304 (ya visto); sin referencia en el Anexo B para F
+F,F3-R1,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MC2E; 1997-2004,1997,2004,72,,,,,0.46874497894950046,0.41105217175930553,CR1 con 9 clusters: no fiable
+F-prereg,F3-R1-v1,ln(iniciadas libres) ~ ln(valor tasado real) ; FE; MC2E; 1997-2004,1997,2004,0,,,,,,,variante; MDE=0.775; σ = 0.304 (ya visto); sin referencia en el Anexo B para F
+F,F3-R1-v1,ln(iniciadas libres) ~ ln(valor tasado real) ; FE; MC2E; 1997-2004,1997,2004,72,,,,,1.034939234729301,0.0071490765392991686,CR1 con 9 clusters: no fiable
+F-prereg,F3-R1-v2,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MCO; 1997-2004,1997,2004,0,,,,,,,variante; MDE=1.420; σ = 0.304 (ya visto); sin referencia en el Anexo B para F
+F,F3-R1-v2,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MCO; 1997-2004,1997,2004,72,,,,,0.609383447775153,0.2636338337412512,CR1 con 9 clusters: no fiable
+F-prereg,F3-A1,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MC2E; 1997-2024,1997,2024,0,,,,,,,principal; MDE=1.810; σ = 1.060 (ya visto); sin referencia en el Anexo B para F
+F,F3-A1,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MC2E; 1997-2024,1997,2024,252,,,,,-0.3721903290829835,0.08680013036331988,CR1 con 9 clusters: no fiable
+F-prereg,F3-A1-v1,ln(iniciadas libres) ~ ln(valor tasado real) ; FE; MC2E; 1997-2024,1997,2024,0,,,,,,,variante; MDE=1.791; σ = 1.060 (ya visto); sin referencia en el Anexo B para F
+F,F3-A1-v1,ln(iniciadas libres) ~ ln(valor tasado real) ; FE; MC2E; 1997-2024,1997,2024,252,,,,,0.27492126110197274,0.5646417583153776,CR1 con 9 clusters: no fiable
+F-prereg,F3-A1-v2,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MC2E; 1997-2024 sin 2008-2013,1997,2024,0,,,,,,,variante; MDE=1.892; σ = 1.054 (ya visto); sin referencia en el Anexo B para F
+F,F3-A1-v2,ln(iniciadas libres) ~ ln(valor tasado real) + ln(coste real) ; FE; MC2E; 1997-2024 sin 2008-2013,1997,2024,198,,,,,0.1770677791599219,0.48128454092279466,CR1 con 9 clusters: no fiable
+F-prereg,F3-A3,F3-A3 PMG con el precio instrumentado por el Bartik de E5-R1,2004,2024,0,,,,,,,"NO ESTIMABLE: falta el dato imprescindible: la afiliación provincial por sector de 2001 (ss_afiliacion_provincial_cnae_2001, `posterior_prereg`) no está en el repositorio y no hay red; tampoco existe aún la estimación E5-R1 que la versión de conjunto hereda"
+F-prereg,F1-A3,F1-A3 sobrevaloración frente al equilibrio de F1,1999,2026,0,,,,,,,"NO ESTIMABLE: no se publica por la regla AD-F de la adenda: ni el contraste de límites (F1-R1, F1-A2) ni el de panel (F1-R2) rechazan la ausencia de cointegración al 5 % tras Holm; una desviación respecto de un equilibrio sin cointegración es espuria y no se compara con el rango del IEF"
+F-prereg,F4-1,F4-1: población en F1 (precio) frente a E3-R2 y E3-A1,,,0,,,,,,,"NO ESTIMABLE: no se hace: el modelo de conjunto (F1-R1, F1-R2, F1-A1) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E3-R2 y E3-A1"
+F-prereg,F4-2,F4-2: hogares en F2 (alquiler) frente a E3-A2,,,0,,,,,,,"NO ESTIMABLE: no se hace: el modelo de conjunto (F2-R1, F2-A1) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E3-A2"
+F-prereg,F4-3,F4-3: tipo real en F1 (semielasticidad) frente a E7-R1 y E7-R2 convertidas con la velocidad de F1,,,0,,,,,,,"NO ESTIMABLE: no se hace: el modelo de conjunto (F1-R1, F1-A2) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E7-R1 y E7-R2 convertidas con la velocidad de F1"
+F-prereg,F4-4,F4-4: precio en F3 frente a E5-R1,,,0,,,,,,,NO ESTIMABLE: no se hace: el modelo de conjunto (F3-A2) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E5-R1
+F-prereg,F4-5,F4-5: parque per cápita en F1 frente a E6-R2 y E5-R1 (solo signo),,,0,,,,,,,"NO ESTIMABLE: no se hace: el modelo de conjunto (F1-A2, F1-R2-alt) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E6-R2 y E5-R1 (solo signo)"

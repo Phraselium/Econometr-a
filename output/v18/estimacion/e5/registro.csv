@@ -1,0 +1,19 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v18-E5,E5-R1|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2023))",2002,2023,0,,,,,,,principal
+v18-E5,E5-R1-v1|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2007))",2002,2007,0,,,,,,,variante
+v18-E5,E5-R1-v2|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2008, 2013))",2008,2013,0,,,,,,,variante
+v18-E5,E5-R1-v3|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2014, 2023))",2014,2023,0,,,,,,,variante
+v18-E5,E5-R1-v4|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2023))",2002,2023,0,,,,,,,variante
+v18-E5,E5-R1-v5|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2023))",2002,2023,0,,,,,,,variante
+v18-E5,E5-R1-v6|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnter, (2002, 2023))",2002,2023,0,,,,,,,variante
+v18-E5,E5-R1-v7|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2023))",2002,2023,0,,,,,,,variante
+v18-E5,E5-R1-v8|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2023))",2002,2023,0,,,,,,,variante
+v18-E5,E5-R1-v9|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2023))",2002,2023,0,,,,,,,variante
+v18-E5,E5-R1-v10|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2002, 2023))",2002,2023,0,,,,,,,variante
+v18-E5,E5-R1-v11|registrada,"Δln Q ~ Δln P real | Bartik 4 ramas (dlnq, (2009, 2023))",2009,2023,0,,,,,,,variante
+v18-E5,E5-R2|registrada,NO ESTIMABLE,0,0,0,,,,,,,"restricciones físicas (MDT05, agua, costa) y de planeamiento (SIU) no están en el repositorio"
+v18-E5,E5-A2|registrada,NO ESTIMABLE,0,0,0,,,,,,,Atlas de áreas urbanas del MIVAU (`posterior_prereg`) no descargado; la unidad exige el valor tasado y la obra nueva por área
+v18-E5,E5-A3|registrada,NO ESTIMABLE,0,0,0,,,,,,,afiliación municipal por sección de la CNAE anterior a 2011-12 no agregada en el repositorio (solo tres ramas); el Bartik municipal no se puede construir
+v18-E5,E5-P-Q4a|registrada,NO ESTIMABLE,0,0,0,,,,,,,la Red Natura municipal de V16 solo existe como panel de entrenamiento de V16 (data/processed/v16) y su variable no figura en docs/v18/sellado_v18.json: no se puede leer con sellado.filtrar
+v18-E5,E5-A1|registrada,reducida Δln P ~ Z + Z·S (2014-2022),2014,2022,324,,,,,,,principal; ASOCIACIÓN como máximo; fuera de Holm
+v18-E5,E5-A1|estimada,reducida Δln P ~ Z + Z·S,2014,2022,324,,,,,0.0024392985759476506,0.5815815815815816,ASOCIACIÓN como máximo; fuera de Holm

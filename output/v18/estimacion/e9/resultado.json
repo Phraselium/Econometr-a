@@ -1,0 +1,206 @@
+{
+ "rama": "v18/estimacion/e9",
+ "pregunta": "¿Se asocia el riesgo en el país de origen, ponderado por la exposición histórica de cada provincia a cada nacionalidad, con el precio de la vivienda?",
+ "capa": "C4",
+ "datos": "Padrón de 2003 por nacionalidad y provincia (39 provincias de entrenamiento; exposición por residentes, aproximación a la de compradores); series de riesgo de Eurostat y OCDE",
+ "N": 39,
+ "metodo": "recuento de choques efectivos (1/HHI de BHJ) antes de estimar, regla de la adenda: 1/HHI < 10 implica NO ESTIMABLE",
+ "estimacion": null,
+ "ic95": null,
+ "p_ajustado": null,
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO ESTIMABLE",
+ "diagnosticos": {
+  "origenes_con_serie_de_riesgo": [
+   "Alemania",
+   "Francia",
+   "Italia",
+   "Portugal",
+   "Reino Unido",
+   "Rumanía",
+   "Bulgaria",
+   "Polonia"
+  ],
+  "paises_con_serie_eu_hpi": [
+   "AT",
+   "BE",
+   "BG",
+   "CY",
+   "CZ",
+   "DE",
+   "DK",
+   "EE",
+   "ES",
+   "EU27_2020",
+   "FI",
+   "FR",
+   "HR",
+   "HU",
+   "IE",
+   "IS",
+   "IT",
+   "LT",
+   "LU",
+   "LV",
+   "MT",
+   "NL",
+   "NO",
+   "PL",
+   "PT",
+   "RO",
+   "SE",
+   "SI",
+   "SK",
+   "UK"
+  ],
+  "paises_con_serie_oecd": [
+   "AUT",
+   "BEL",
+   "CHE",
+   "CZE",
+   "DEU",
+   "DNK",
+   "ESP",
+   "EST",
+   "FIN",
+   "FRA",
+   "GBR",
+   "GRC",
+   "HUN",
+   "IRL",
+   "ISL",
+   "ITA",
+   "LTU",
+   "LUX",
+   "LVA",
+   "NLD",
+   "NOR",
+   "POL",
+   "PRT",
+   "SVK",
+   "SVN",
+   "SWE",
+   "TUR"
+  ],
+  "inv_hhi": {
+   "origenes_con_serie_de_riesgo|sin pesos": {
+    "n_origenes": 8,
+    "inv_hhi": 6.302147761695298
+   },
+   "origenes_con_serie_de_riesgo|pesos de población 2003": {
+    "n_origenes": 8,
+    "inv_hhi": 5.879898850204221
+   },
+   "todos_los_paises_del_padron_(informacion)|sin pesos": {
+    "n_origenes": 28,
+    "inv_hhi": 11.538973065708868
+   },
+   "todos_los_paises_del_padron_(informacion)|pesos de población 2003": {
+    "n_origenes": 28,
+    "inv_hhi": 11.877448657737215
+   }
+  },
+  "pesos_por_origen_sin_pesos": {
+   "Alemania": 0.11828291963477196,
+   "Francia": 0.08895982533307029,
+   "Italia": 0.060680833120680205,
+   "Portugal": 0.14296744136017228,
+   "Reino Unido": 0.18984796503771378,
+   "Rumanía": 0.24399290604482737,
+   "Bulgaria": 0.1277371006220969,
+   "Polonia": 0.027531008846667187
+  },
+  "origen_trimestre": {
+   "n_trimestres": 76,
+   "inv_hhi_origen_trimestre_si_fueran_independientes": 478.96322988884265,
+   "nota": "cota superior irreal: los choques de un origen son persistentes (PIB y empleo en origen)"
+  },
+  "umbral": 10,
+  "familia_holm": {
+   "m": 0,
+   "nota": "las NO ESTIMABLES salen antes de ajustar (adenda 1.7)"
+  },
+  "doble_computo_E3_E9": "E9 no tiene instrumento estimable: la fila alternativa de E9 en la contabilidad queda vacía y no hay correlación entre instrumentos que publicar (adenda 1.10)",
+  "b5": "E9-R2 es la estimación propia de E9 para B5 y es NO ESTIMABLE por choques efectivos: no hay respaldo; entra solo la literatura (Sá, +2 % por pp de cuota)"
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "no se estima"
+ },
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "sin coeficiente: la regla de choques efectivos de la adenda 1.3 y 1.13 deja NO ESTIMABLES E9-R1, R2, A1 y A2",
+  "signo esperado fijado en la adenda: positivo; no hay resultado que lo contraste",
+  "desviaciones: docs/v18/desviaciones_e3_e5_e9.md (D-E9-1, D-E9-2)"
+ ],
+ "especificaciones": {
+  "E9-R1": {
+   "rol": "principal",
+   "descripcion": "Badarinza-Ramadorai, forma reducida: Δ ln precio sobre exposición a nacionalidades × riesgo en origen (caída del PIB en el quintil superior de su historia, a 4 trimestres)",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por choques efectivos: 1/HHI = 6.30 sin pesos y 5.88 con pesos de población (< 10; adenda 1.3 y 1.13) con 8 orígenes que tienen serie de riesgo",
+   "inv_hhi": 6.302147761695298,
+   "umbral": 10,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "datos_que_lo_harian_estimable": "(i) compras de no residentes por nacionalidad del comprador y provincia (Notariado, Registradores o la estadística del Ministerio con detalle de nacionalidad), para una exposición por compradores y no por residentes, con al menos 10 choques efectivos; (ii) series de riesgo en origen para los países latinoamericanos, africanos y asiáticos (PIB, tipo de cambio) y no solo para 31 países europeos; (iii) autorizaciones de residencia por inversión de la OPI y compras por nacionalidad UE/fuera de la UE y provincia para X1 (tareas_autor, puntos 7 y 14); (iv) el universo de transacciones para X2; (v) las 4 provincias selladas de más cuota de no residentes (Baleares, Las Palmas, Santa Cruz de Tenerife y Murcia), que no se leen"
+  },
+  "E9-R2": {
+   "rol": "principal",
+   "descripcion": "Sá, IV: Δ ln precio sobre Δ cuota de no residentes en las compras, instrumentada por el índice de R1",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por choques efectivos: 1/HHI = 6.30 sin pesos y 5.88 con pesos de población (< 10; adenda 1.3 y 1.13) con 8 orígenes que tienen serie de riesgo",
+   "inv_hhi": 6.302147761695298,
+   "umbral": 10,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "datos_que_lo_harian_estimable": "(i) compras de no residentes por nacionalidad del comprador y provincia (Notariado, Registradores o la estadística del Ministerio con detalle de nacionalidad), para una exposición por compradores y no por residentes, con al menos 10 choques efectivos; (ii) series de riesgo en origen para los países latinoamericanos, africanos y asiáticos (PIB, tipo de cambio) y no solo para 31 países europeos; (iii) autorizaciones de residencia por inversión de la OPI y compras por nacionalidad UE/fuera de la UE y provincia para X1 (tareas_autor, puntos 7 y 14); (iv) el universo de transacciones para X2; (v) las 4 provincias selladas de más cuota de no residentes (Baleares, Las Palmas, Santa Cruz de Tenerife y Murcia), que no se leen"
+  },
+  "E9-A1": {
+   "rol": "principal",
+   "descripcion": "R1 con el tipo de cambio como choque (libra en 2016 y otras monedas fuera del euro)",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por choques efectivos: 1/HHI = 6.30 sin pesos y 5.88 con pesos de población (< 10; adenda 1.3 y 1.13) con 8 orígenes que tienen serie de riesgo",
+   "inv_hhi": 6.302147761695298,
+   "umbral": 10,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "datos_que_lo_harian_estimable": "(i) compras de no residentes por nacionalidad del comprador y provincia (Notariado, Registradores o la estadística del Ministerio con detalle de nacionalidad), para una exposición por compradores y no por residentes, con al menos 10 choques efectivos; (ii) series de riesgo en origen para los países latinoamericanos, africanos y asiáticos (PIB, tipo de cambio) y no solo para 31 países europeos; (iii) autorizaciones de residencia por inversión de la OPI y compras por nacionalidad UE/fuera de la UE y provincia para X1 (tareas_autor, puntos 7 y 14); (iv) el universo de transacciones para X2; (v) las 4 provincias selladas de más cuota de no residentes (Baleares, Las Palmas, Santa Cruz de Tenerife y Murcia), que no se leen"
+  },
+  "E9-A2": {
+   "rol": "principal",
+   "descripcion": "R2 con compras de extranjeros residentes (CCAA, 9 no selladas) como primera etapa alternativa",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por choques efectivos: 1/HHI = 6.30 sin pesos y 5.88 con pesos de población (< 10; adenda 1.3 y 1.13) con 8 orígenes que tienen serie de riesgo",
+   "inv_hhi": 6.302147761695298,
+   "umbral": 10,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "datos_que_lo_harian_estimable": "(i) compras de no residentes por nacionalidad del comprador y provincia (Notariado, Registradores o la estadística del Ministerio con detalle de nacionalidad), para una exposición por compradores y no por residentes, con al menos 10 choques efectivos; (ii) series de riesgo en origen para los países latinoamericanos, africanos y asiáticos (PIB, tipo de cambio) y no solo para 31 países europeos; (iii) autorizaciones de residencia por inversión de la OPI y compras por nacionalidad UE/fuera de la UE y provincia para X1 (tareas_autor, puntos 7 y 14); (iv) el universo de transacciones para X2; (v) las 4 provincias selladas de más cuota de no residentes (Baleares, Las Palmas, Santa Cruz de Tenerife y Murcia), que no se leen"
+  },
+  "E9-X1": {
+   "rol": "principal",
+   "descripcion": "fin de la golden visa (LO 1/2025) como diferencias en diferencias, UE frente a fuera de la UE",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "no hay compras separadas entre la UE y fuera de la UE por provincia ni autorizaciones de la OPI (tareas_autor, puntos 7 y 14)",
+   "inv_hhi": 6.302147761695298,
+   "umbral": 10,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "datos_que_lo_harian_estimable": "(i) compras de no residentes por nacionalidad del comprador y provincia (Notariado, Registradores o la estadística del Ministerio con detalle de nacionalidad), para una exposición por compradores y no por residentes, con al menos 10 choques efectivos; (ii) series de riesgo en origen para los países latinoamericanos, africanos y asiáticos (PIB, tipo de cambio) y no solo para 31 países europeos; (iii) autorizaciones de residencia por inversión de la OPI y compras por nacionalidad UE/fuera de la UE y provincia para X1 (tareas_autor, puntos 7 y 14); (iv) el universo de transacciones para X2; (v) las 4 provincias selladas de más cuota de no residentes (Baleares, Las Palmas, Santa Cruz de Tenerife y Murcia), que no se leen"
+  },
+  "E9-X2": {
+   "rol": "principal",
+   "descripcion": "introducción de 2013 (Martínez-Toledano et al.)",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "requiere el universo de transacciones (Registradores o Notariado)",
+   "inv_hhi": 6.302147761695298,
+   "umbral": 10,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "datos_que_lo_harian_estimable": "(i) compras de no residentes por nacionalidad del comprador y provincia (Notariado, Registradores o la estadística del Ministerio con detalle de nacionalidad), para una exposición por compradores y no por residentes, con al menos 10 choques efectivos; (ii) series de riesgo en origen para los países latinoamericanos, africanos y asiáticos (PIB, tipo de cambio) y no solo para 31 países europeos; (iii) autorizaciones de residencia por inversión de la OPI y compras por nacionalidad UE/fuera de la UE y provincia para X1 (tareas_autor, puntos 7 y 14); (iv) el universo de transacciones para X2; (v) las 4 provincias selladas de más cuota de no residentes (Baleares, Las Palmas, Santa Cruz de Tenerife y Murcia), que no se leen"
+  }
+ }
+}

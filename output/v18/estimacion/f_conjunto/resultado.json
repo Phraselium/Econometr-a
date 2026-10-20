@@ -1,0 +1,1125 @@
+{
+ "rama": "v18/estimacion/f_conjunto",
+ "pregunta": "¿Hay una relación de largo plazo (cointegración) del precio real, el alquiler real y las iniciadas con sus fundamentales, a escala nacional y provincial, y qué dice la dinámica de corto plazo cuando no la hay? (F1, F2, F3 y F4 del plan de replicación V18)",
+ "capa": "C4",
+ "datos": "base (hechos.parquet) y data/raw filtrados con src/v18/sellado.filtrar: nacional trimestral 1999T1-2026T2 y anual 2001-2025; provincias no selladas (v6, V15, V16) anual hasta 2024; 9 CCAA no selladas para F3-R1",
+ "N": {
+  "nacional_trimestral": 108,
+  "nacional_anual": 24,
+  "paneles": {
+   "F1-R2": [
+    33,
+    17
+   ],
+   "F1-R2-alt": [
+    33,
+    17
+   ],
+   "F1-R2-pmg": [
+    33,
+    17
+   ],
+   "F1-A1": [
+    33,
+    23
+   ],
+   "F1-A1-v3": [
+    33,
+    23
+   ],
+   "F2-R1": [
+    38,
+    23
+   ],
+   "F2-R1-v1": [
+    35,
+    14
+   ],
+   "F2-R1-v2": [
+    38,
+    23
+   ],
+   "F2-A1": [
+    38,
+    23
+   ],
+   "F2-A1-v1": [
+    35,
+    14
+   ],
+   "F3-A2": [
+    31,
+    21
+   ],
+   "F3-A2-v1": [
+    33,
+    21
+   ],
+   "F3-A2-v2": [
+    31,
+    21
+   ]
+  }
+ },
+ "metodo": "UECM de Pesaran-Shin-Smith con valores críticos simulados; DOLS (series y panel), PMG, CS-ARDL/CCE-MG; contraste de panel tipo Westerlund con bootstrap conjunto; MC2E de panel en F3-R1; Holm en la familia F (contrastes de cointegración); BY en variantes; fuera de muestra en bloques con embargo",
+ "estimacion": {
+  "F1-R1": {
+   "valor": 0.1261,
+   "ic95": [
+    -0.0227,
+    0.2749
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.4153,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R1-v2": {
+   "valor": 0.1321,
+   "ic95": [
+    -0.0392,
+    0.3034
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.8911,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R1-v3": {
+   "valor": 0.2813,
+   "ic95": [
+    0.0452,
+    0.5173
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.4533,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R1-v4": {
+   "valor": 0.1593,
+   "ic95": [
+    0.01,
+    0.3086
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.5797,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R1-v5": {
+   "valor": 0.0801,
+   "ic95": [
+    -0.0702,
+    0.2305
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.8236,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-P-M4": {
+   "valor": 0.1181,
+   "ic95": [
+    0.0111,
+    0.2251
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.3023,
+   "p_ajustado": 0.3023,
+   "publica_largo_plazo": false
+  },
+  "F1-A2": {
+   "valor": 1.0523,
+   "ic95": [
+    0.1733,
+    1.9313
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.2399,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-A2-v1": {
+   "valor": 0.7018,
+   "ic95": [
+    -0.0804,
+    1.484
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.1909,
+   "p_ajustado": 0.5727,
+   "publica_largo_plazo": false
+  },
+  "F1-A2-v2": {
+   "valor": 0.934,
+   "ic95": [
+    0.1322,
+    1.7358
+   ],
+   "unidad": "elasticidad de impacto en variaciones (corto plazo; MCO clásico)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.8946,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R2": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": "—",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.996,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R2-alt": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": "—",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.778,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R2-pmg": {
+   "valor": 0.3479,
+   "ic95": [
+    0.164,
+    0.5597
+   ],
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.996,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-A1": {
+   "valor": 0.0615,
+   "ic95": [
+    -0.0182,
+    0.2634
+   ],
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.935,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F1-R2-v2": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F1-R2-alt-v2": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F1-R2-pmg-v2": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F1-A1-v1": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F1-A1-v3": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": "—",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.935,
+   "p_ajustado": 0.935,
+   "publica_largo_plazo": false
+  },
+  "F2-R1": {
+   "valor": -0.1017,
+   "ic95": [
+    -0.1203,
+    -0.0786
+   ],
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.996,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F2-R1-v1": {
+   "valor": 0.1947,
+   "ic95": [
+    0.1373,
+    0.2325
+   ],
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.994,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F2-R1-v2": {
+   "valor": -0.1061,
+   "ic95": [
+    -0.1247,
+    -0.0871
+   ],
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.994,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F2-R1-v3": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F2-A1": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": "—",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.996,
+   "p_ajustado": 1.0,
+   "publica_largo_plazo": false
+  },
+  "F2-A1-v1": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": "—",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.994,
+   "p_ajustado": 0.994,
+   "publica_largo_plazo": false
+  },
+  "F2-A1-v2": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-A2": {
+   "valor": 3.5186,
+   "ic95": [
+    2.6773,
+    4.5075
+   ],
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.007,
+   "p_ajustado": 0.063,
+   "publica_largo_plazo": false
+  },
+  "F3-A2-v1": {
+   "valor": 1.1405,
+   "ic95": [
+    -0.2636,
+    2.6821
+   ],
+   "unidad": "elasticidad de largo plazo (PMG; IC95 por bootstrap de provincias, sin validación Monte Carlo)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.001,
+   "p_ajustado": 0.003,
+   "publica_largo_plazo": true
+  },
+  "F3-A2-v2": {
+   "valor": 5.9641,
+   "ic95": [
+    5.1802,
+    6.7192
+   ],
+   "unidad": "elasticidad de impacto en variaciones (PMG, grupo medio; IC95 por bootstrap de provincias)",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": 0.318,
+   "p_ajustado": 0.477,
+   "publica_largo_plazo": false
+  },
+  "F3-A2-v3": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F1-P-E1P2": {
+   "valor": -0.746,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": "θ de largo plazo (NO APTO: descriptivo)",
+   "clasificacion_v18": "no se clasifica",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F1-P-V72": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "no se clasifica",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F2-A2": {
+   "valor": 0.0091,
+   "ic95": [
+    0.0073,
+    0.0109
+   ],
+   "unidad": "semielasticidad del ratio por pp de coste de uso",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F2-A2-v1": {
+   "valor": 0.0091,
+   "ic95": [
+    0.0073,
+    0.0109
+   ],
+   "unidad": "semielasticidad del ratio por pp de coste de uso",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F2-A2-v2": {
+   "valor": 0.0185,
+   "ic95": [
+    0.0159,
+    0.021
+   ],
+   "unidad": "semielasticidad del ratio por pp de coste de uso",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-R1": {
+   "valor": 0.4687,
+   "ic95": [
+    -0.7776,
+    1.7151
+   ],
+   "unidad": "elasticidad de las iniciadas respecto del precio real",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-R1-v1": {
+   "valor": 1.0349,
+   "ic95": [
+    0.369,
+    1.7009
+   ],
+   "unidad": "elasticidad de las iniciadas respecto del precio real",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-R1-v2": {
+   "valor": 0.6094,
+   "ic95": [
+    -0.5594,
+    1.7782
+   ],
+   "unidad": "elasticidad de las iniciadas respecto del precio real",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-A1": {
+   "valor": -0.3722,
+   "ic95": [
+    -0.812,
+    0.0676
+   ],
+   "unidad": "elasticidad de las iniciadas respecto del precio real",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-A1-v1": {
+   "valor": 0.2749,
+   "ic95": [
+    -0.7804,
+    1.3302
+   ],
+   "unidad": "elasticidad de las iniciadas respecto del precio real",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-A1-v2": {
+   "valor": 0.1771,
+   "ic95": [
+    -0.3758,
+    0.7299
+   ],
+   "unidad": "elasticidad de las iniciadas respecto del precio real",
+   "clasificacion_v18": "ASOCIACIÓN",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F3-A3": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  },
+  "F1-A3": {
+   "valor": NaN,
+   "ic95": [
+    NaN,
+    NaN
+   ],
+   "unidad": NaN,
+   "clasificacion_v18": "NO ESTIMABLE",
+   "coint_p_mc": NaN,
+   "p_ajustado": NaN,
+   "publica_largo_plazo": false
+  }
+ },
+ "ic95": {
+  "F1-R1": [
+   -0.0227,
+   0.2749
+  ],
+  "F1-R1-v2": [
+   -0.0392,
+   0.3034
+  ],
+  "F1-R1-v3": [
+   0.0452,
+   0.5173
+  ],
+  "F1-R1-v4": [
+   0.01,
+   0.3086
+  ],
+  "F1-R1-v5": [
+   -0.0702,
+   0.2305
+  ],
+  "F1-P-M4": [
+   0.0111,
+   0.2251
+  ],
+  "F1-A2": [
+   0.1733,
+   1.9313
+  ],
+  "F1-A2-v1": [
+   -0.0804,
+   1.484
+  ],
+  "F1-A2-v2": [
+   0.1322,
+   1.7358
+  ],
+  "F1-R2": [
+   NaN,
+   NaN
+  ],
+  "F1-R2-alt": [
+   NaN,
+   NaN
+  ],
+  "F1-R2-pmg": [
+   0.164,
+   0.5597
+  ],
+  "F1-A1": [
+   -0.0182,
+   0.2634
+  ],
+  "F1-R2-v2": [
+   NaN,
+   NaN
+  ],
+  "F1-R2-alt-v2": [
+   NaN,
+   NaN
+  ],
+  "F1-R2-pmg-v2": [
+   NaN,
+   NaN
+  ],
+  "F1-A1-v1": [
+   NaN,
+   NaN
+  ],
+  "F1-A1-v3": [
+   NaN,
+   NaN
+  ],
+  "F2-R1": [
+   -0.1203,
+   -0.0786
+  ],
+  "F2-R1-v1": [
+   0.1373,
+   0.2325
+  ],
+  "F2-R1-v2": [
+   -0.1247,
+   -0.0871
+  ],
+  "F2-R1-v3": [
+   NaN,
+   NaN
+  ],
+  "F2-A1": [
+   NaN,
+   NaN
+  ],
+  "F2-A1-v1": [
+   NaN,
+   NaN
+  ],
+  "F2-A1-v2": [
+   NaN,
+   NaN
+  ],
+  "F3-A2": [
+   2.6773,
+   4.5075
+  ],
+  "F3-A2-v1": [
+   -0.2636,
+   2.6821
+  ],
+  "F3-A2-v2": [
+   5.1802,
+   6.7192
+  ],
+  "F3-A2-v3": [
+   NaN,
+   NaN
+  ],
+  "F1-P-E1P2": [
+   NaN,
+   NaN
+  ],
+  "F1-P-V72": [
+   NaN,
+   NaN
+  ],
+  "F2-A2": [
+   0.0073,
+   0.0109
+  ],
+  "F2-A2-v1": [
+   0.0073,
+   0.0109
+  ],
+  "F2-A2-v2": [
+   0.0159,
+   0.021
+  ],
+  "F3-R1": [
+   -0.7776,
+   1.7151
+  ],
+  "F3-R1-v1": [
+   0.369,
+   1.7009
+  ],
+  "F3-R1-v2": [
+   -0.5594,
+   1.7782
+  ],
+  "F3-A1": [
+   -0.812,
+   0.0676
+  ],
+  "F3-A1-v1": [
+   -0.7804,
+   1.3302
+  ],
+  "F3-A1-v2": [
+   -0.3758,
+   0.7299
+  ],
+  "F3-A3": [
+   NaN,
+   NaN
+  ],
+  "F1-A3": [
+   NaN,
+   NaN
+  ]
+ },
+ "p_ajustado": {
+  "metodo": "Holm sobre los contrastes de cointegración de las especificaciones principales (familia F); BY en las variantes",
+  "valores": {
+   "F3-A2": 0.063,
+   "F1-A2": 1.0,
+   "F1-R1": 1.0,
+   "F1-R2-alt": 1.0,
+   "F1-A1": 1.0,
+   "F1-R2": 1.0,
+   "F1-R2-pmg": 1.0,
+   "F2-R1": 1.0,
+   "F2-A1": 1.0
+  },
+  "q_by_variantes": {
+   "F1-R1-v2": 1.0,
+   "F1-R1-v3": 1.0,
+   "F1-R1-v4": 1.0,
+   "F1-R1-v5": 1.0,
+   "F1-A2-v1": 0.5727136431784108,
+   "F1-A2-v2": 1.0,
+   "F1-A1-v3": 0.935,
+   "F2-R1-v1": 1.0,
+   "F2-R1-v2": 1.0,
+   "F2-A1-v1": 0.994,
+   "F3-A2-v1": 0.003,
+   "F3-A2-v2": 0.477
+  }
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "ASOCIACIÓN (tope de la familia F; sin diseño cuasi experimental). Clase provisional: falta I8 (réplica ciega, B6)",
+ "clasificacion_v18_por_especificacion": {
+  "F1-R1": "ASOCIACIÓN",
+  "F1-R1-v2": "ASOCIACIÓN",
+  "F1-R1-v3": "ASOCIACIÓN",
+  "F1-R1-v4": "ASOCIACIÓN",
+  "F1-R1-v5": "ASOCIACIÓN",
+  "F1-P-M4": "ASOCIACIÓN",
+  "F1-A2": "ASOCIACIÓN",
+  "F1-A2-v1": "ASOCIACIÓN",
+  "F1-A2-v2": "ASOCIACIÓN",
+  "F1-R2": "ASOCIACIÓN",
+  "F1-R2-alt": "ASOCIACIÓN",
+  "F1-R2-pmg": "ASOCIACIÓN",
+  "F1-A1": "ASOCIACIÓN",
+  "F1-R2-v2": "NO ESTIMABLE",
+  "F1-R2-alt-v2": "NO ESTIMABLE",
+  "F1-R2-pmg-v2": "NO ESTIMABLE",
+  "F1-A1-v1": "NO ESTIMABLE",
+  "F1-A1-v3": "ASOCIACIÓN",
+  "F2-R1": "ASOCIACIÓN",
+  "F2-R1-v1": "ASOCIACIÓN",
+  "F2-R1-v2": "ASOCIACIÓN",
+  "F2-R1-v3": "NO ESTIMABLE",
+  "F2-A1": "ASOCIACIÓN",
+  "F2-A1-v1": "ASOCIACIÓN",
+  "F2-A1-v2": "NO ESTIMABLE",
+  "F3-A2": "ASOCIACIÓN",
+  "F3-A2-v1": "ASOCIACIÓN",
+  "F3-A2-v2": "ASOCIACIÓN",
+  "F3-A2-v3": "NO ESTIMABLE",
+  "F1-P-E1P2": "no se clasifica",
+  "F1-P-V72": "no se clasifica",
+  "F2-A2": "ASOCIACIÓN",
+  "F2-A2-v1": "ASOCIACIÓN",
+  "F2-A2-v2": "ASOCIACIÓN",
+  "F3-R1": "ASOCIACIÓN",
+  "F3-R1-v1": "ASOCIACIÓN",
+  "F3-R1-v2": "ASOCIACIÓN",
+  "F3-A1": "ASOCIACIÓN",
+  "F3-A1-v1": "ASOCIACIÓN",
+  "F3-A1-v2": "ASOCIACIÓN",
+  "F3-A3": "NO ESTIMABLE",
+  "F1-A3": "NO ESTIMABLE",
+  "F4-1": "NO ESTIMABLE",
+  "F4-2": "NO ESTIMABLE",
+  "F4-3": "NO ESTIMABLE",
+  "F4-4": "NO ESTIMABLE",
+  "F4-5": "NO ESTIMABLE"
+ },
+ "diagnosticos": {
+  "series_nacionales": {
+   "y": {
+    "adf_p_niveles": 0.0051,
+    "adf_p_diferencias": 0.3685,
+    "kpss_p_niveles": 0.1
+   },
+   "renta": {
+    "adf_p_niveles": 0.6109,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.01
+   },
+   "tipo_real": {
+    "adf_p_niveles": 0.496,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.056
+   },
+   "pob": {
+    "adf_p_niveles": 0.8433,
+    "adf_p_diferencias": 0.1883,
+    "kpss_p_niveles": 0.01
+   }
+  },
+  "estabilidad_F1_R1": {
+   "chow_en_fechas_fijas": {
+    "2008Q1": 3.7009,
+    "2015Q1": 1.4404
+   },
+   "sup_F_ruptura_unica": 6.709,
+   "nota": "sin valor crítico validado: se publica como descriptivo",
+   "dols_recursivo_primer_regresor": {
+    "ultimos": [
+     -1.901,
+     -2.432,
+     -2.648
+    ],
+    "min": -2.6475,
+    "max": 1.5043,
+    "primero": 1.3678,
+    "n_ventanas": 13
+   }
+  },
+  "dependencia_transversal": {
+   "F1-R2": {
+    "CD": 72.8308,
+    "p": 0.0,
+    "rho_medio": 0.7687
+   },
+   "F1-R2-alt": {
+    "CD": 64.4806,
+    "p": 0.0,
+    "rho_medio": 0.6806
+   },
+   "F1-R2-pmg": {
+    "CD": 72.8308,
+    "p": 0.0,
+    "rho_medio": 0.7687
+   },
+   "F1-A1": {
+    "CD": 90.4018,
+    "p": 0.0,
+    "rho_medio": 0.8203
+   },
+   "F2-R1": {
+    "CD": 58.5341,
+    "p": 0.0,
+    "rho_medio": 0.4603
+   },
+   "F2-R1-v1": {
+    "CD": 63.6008,
+    "p": 0.0,
+    "rho_medio": 0.6969
+   },
+   "F2-R1-v2": {
+    "CD": 58.1094,
+    "p": 0.0,
+    "rho_medio": 0.457
+   },
+   "F3-A2": {
+    "CD": 25.5856,
+    "p": 0.0,
+    "rho_medio": 0.2589
+   },
+   "F3-A2-v1": {
+    "CD": 36.7836,
+    "p": 0.0,
+    "rho_medio": 0.3493
+   },
+   "F3-A2-v2": {
+    "CD": 73.2158,
+    "p": 0.0,
+    "rho_medio": 0.7409
+   }
+  },
+  "raices_unitarias_panel": "CIPS es NO APTO (V16 montecarlo/cips_bootstrap, tamaño 0,006): no se usa; ADF nacional arriba. El contraste de panel es Gτ con bootstrap conjunto.",
+  "moran": "no se calcula aquí: no hay matriz de contigüidad provincial versionada para V18; la dependencia transversal se mide con el CD de Pesaran y el bootstrap del contraste de panel conserva la dependencia entre provincias",
+  "exclusiones": "Madrid, Baleares y Canarias ya están fuera por el sellado de v6; Barcelona permanece (sin variante propia: holgura no usada).",
+  "mde_por_especificacion": {
+   "F1-R1": 4.5062,
+   "F1-R1-v2": 4.5062,
+   "F1-R1-v3": 4.8526,
+   "F1-R1-v4": 4.4863,
+   "F1-R1-v5": 1.664,
+   "F1-P-M4": 2.7208,
+   "F1-A2": 8.9315,
+   "F1-A2-v1": 9.4922,
+   "F1-A2-v2": 8.9315,
+   "F1-R2": 0.7231,
+   "F1-R2-alt": 0.8657,
+   "F1-R2-pmg": 0.7231,
+   "F1-A1": 0.8795,
+   "F1-A1-v3": 0.8795,
+   "F2-R1": 0.2333,
+   "F2-R1-v1": 0.259,
+   "F2-R1-v2": 0.2194,
+   "F2-A1": 0.2333,
+   "F2-A1-v1": 0.259,
+   "F3-A2": 3.0105,
+   "F3-A2-v1": 2.8449,
+   "F3-A2-v2": 2.6324,
+   "F3-R1": 1.4794,
+   "F3-R1-v1": 0.7751,
+   "F3-R1-v2": 1.4199,
+   "F3-A1": 1.8103,
+   "F3-A1-v1": 1.7912,
+   "F3-A1-v2": 1.8922
+  },
+  "validacion_contraste_panel": {
+   "N33_T17_k3": {
+    "tamano_5pct": 0.03,
+    "potencia": 0.84,
+    "R": 200,
+    "B": 99,
+    "N": 33,
+    "T": 17,
+    "k": 3
+   },
+   "N33_T17_k5": {
+    "tamano_5pct": 0.065,
+    "potencia": 0.17,
+    "R": 200,
+    "B": 99,
+    "N": 33,
+    "T": 17,
+    "k": 5
+   },
+   "N33_T23_k3": {
+    "tamano_5pct": 0.08,
+    "potencia": 1.0,
+    "R": 200,
+    "B": 99,
+    "N": 33,
+    "T": 23,
+    "k": 3
+   },
+   "N38_T23_k4": {
+    "tamano_5pct": 0.075,
+    "potencia": 1.0,
+    "R": 200,
+    "B": 99,
+    "N": 38,
+    "T": 23,
+    "k": 4
+   },
+   "N35_T14_k4": {
+    "tamano_5pct": 0.065,
+    "potencia": 0.14,
+    "R": 200,
+    "B": 99,
+    "N": 35,
+    "T": 14,
+    "k": 4
+   },
+   "N38_T23_k3": {
+    "tamano_5pct": 0.06,
+    "potencia": 1.0,
+    "R": 200,
+    "B": 99,
+    "N": 38,
+    "T": 23,
+    "k": 3
+   },
+   "N31_T21_k3": {
+    "tamano_5pct": 0.05,
+    "potencia": 1.0,
+    "R": 200,
+    "B": 99,
+    "N": 31,
+    "T": 21,
+    "k": 3
+   },
+   "N33_T21_k2": {
+    "tamano_5pct": 0.02,
+    "potencia": 1.0,
+    "R": 200,
+    "B": 99,
+    "N": 33,
+    "T": 21,
+    "k": 2
+   },
+   "N31_T21_k2": {
+    "tamano_5pct": 0.025,
+    "potencia": 1.0,
+    "R": 200,
+    "B": 99,
+    "N": 31,
+    "T": 21,
+    "k": 2
+   }
+  },
+  "herramientas_no_aptas": {
+   "driscoll_kraay_T<=30": "NO APTO (tamaño 0,16-0,28 con T = 14-30; V18 montecarlo/driscoll_kraay)",
+   "csardl": "NO APTO (tamaño 0,10; V16 montecarlo/csardl y V15 westerlund_csardl)",
+   "westerlund_cips": "NO APTO (tamaño 0,09-0,20 y 0,01; V15/V16)",
+   "cluster_sin_efectos_de_anio": "NO APTO (tamaño 0,48-0,51 sin efectos de año; V18 montecarlo/driscoll_kraay)"
+  },
+  "f4": {
+   "F4-1": {
+    "hecho": false,
+    "motivo": "no se hace: el modelo de conjunto (F1-R1, F1-R2, F1-A1) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E3-R2 y E3-A1"
+   },
+   "F4-2": {
+    "hecho": false,
+    "motivo": "no se hace: el modelo de conjunto (F2-R1, F2-A1) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E3-A2"
+   },
+   "F4-3": {
+    "hecho": false,
+    "motivo": "no se hace: el modelo de conjunto (F1-R1, F1-A2) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E7-R1 y E7-R2 convertidas con la velocidad de F1"
+   },
+   "F4-4": {
+    "hecho": false,
+    "motivo": "no se hace: el modelo de conjunto (F3-A2) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E5-R1"
+   },
+   "F4-5": {
+    "hecho": false,
+    "motivo": "no se hace: el modelo de conjunto (F1-A2, F1-R2-alt) no rechaza la ausencia de cointegración al 5 % tras Holm (regla AD-F); una elasticidad de largo plazo sin cointegración no se compara con E6-R2 y E5-R1 (solo signo)"
+   }
+  },
+  "F1_P_E1P2": {
+   "N": 33,
+   "T": 98,
+   "ini": "2002T1",
+   "fin": "2026T2",
+   "theta_mg": -0.7460460534028389,
+   "theta_recortada": -0.2149744500468247,
+   "theta_mediana": 0.5986724146148317,
+   "se_mg": 0.8721074399969215,
+   "phi_medio": 0.6259975693026465,
+   "publicado_V15": 0.64,
+   "publicado_V16_q9c": 0.84
+  },
+  "especificaciones_con_cointegracion_rechazada": 0
+ },
+ "fuera_muestra": {
+  "modelo": "F1-ECM (AR(4) + y_{t-1}, X_{t-1}, ΔX_{t-1}); trimestral nacional; bloques con embargo (K = 5, 4 trimestres); misma muestra",
+  "rmse": {
+   "AR(4)": 1.2845,
+   "ECM v1 (aprox.)": 2.0549,
+   "F1-ECM": 1.3576,
+   "deriva": 2.0445
+  },
+  "dm_vs_ar4": {
+   "DM": 1.328,
+   "p": 0.1871,
+   "mean_d": 0.0,
+   "n": 105.0
+  },
+  "dm_vs_ecm_v1": {
+   "DM": -5.0624,
+   "p": 0.0,
+   "mean_d": -0.0002,
+   "n": 105.0
+  },
+  "cw": {
+   "CW": 1.4548,
+   "p_una_cola": 0.0729,
+   "n": 105.0
+  },
+  "gw_vs_ar4": {
+   "GW": 1.9472,
+   "p": 0.3777,
+   "n": 104.0
+  },
+  "mcs": {
+   "p": {
+    "ECM v1 (aprox.)": 0.007,
+    "deriva": 0.007,
+    "F1-ECM": 0.2342,
+    "AR(4)": 1.0
+   },
+   "dentro_90": [
+    "F1-ECM",
+    "AR(4)"
+   ]
+  },
+  "n_prueba": 105,
+  "diseno": "K = 5 bloques contiguos, embargo de 4 trimestres, un paso, ECM v1 aproximado (v6), misma muestra; ninguna selección por p"
+ },
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "Sin lenguaje causal: ninguna estimación de F tiene diseño cuasi experimental (tope ASOCIACIÓN).",
+  "Clase provisional: I8 (réplica ciega) la hace el orquestador (B6).",
+  "Desviaciones y motivos: docs/v18/desviaciones_f_e7.md.",
+  "El panel provincial tiene 33-38 provincias (no 39): huecos en el valor tasado anual y sellado de v6/V15/V16."
+ ]
+}

@@ -1,0 +1,18 @@
+id,rol,padre,nota,ventana,estado,motivo,mde80,F_eff,n,G,clase,beta,se,ic95_webb_ar_lo,ic95_webb_ar_hi,p_webb_ar
+E5-R1,principal,,repite_visto (elección del instrumento tras Q4); Bartik de 4 ramas; 2002-2023; sin pesos,"(2002, 2023)",NO ESTIMABLE,NO ESTIMABLE por variación: MDE inf > |referencia| 0.87,inf,0.03195188530500244,848.0,39.0,NO ESTIMABLE,,,,,
+E5-R1-v1,variante,E5-R1,auge 2002-2007,"(2002, 2007)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v2,variante,E5-R1,caída 2008-2013,"(2008, 2013)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v3,variante,E5-R1,2014-2023,"(2014, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v4,variante,E5-R1,,"(2002, 2023)",NO ESTIMABLE,los diez sectores A*10: a escala NUTS 3 Eurostat solo da seis ramas,,,,,NO ESTIMABLE,,,,,
+E5-R1-v5,variante,E5-R1,"Bartik retardado un año (B_{p,t-1})","(2002, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v6,variante,E5-R1,terminadas en lugar de iniciadas,"(2002, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v7,variante,E5-R1,sin Barcelona,"(2002, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v8,variante,E5-R1,"sin Alicante, Málaga y Girona","(2002, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v9,variante,E5-R1,ponderada por la población de 2001,"(2002, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R1-v10,variante,E5-R1,,"(2002, 2023)",NO ESTIMABLE,exposición a cajas de 2007 × año: no está en el repositorio,,,,,NO ESTIMABLE,,,,,
+E5-R1-v11,variante,E5-R1,2009-2023 (la variante de secciones CNAE-2009 con afiliación no existe: se ejecuta como ventana),"(2009, 2023)",NO ESTIMABLE,su principal E5-R1 es NO ESTIMABLE,,,,,NO ESTIMABLE,,,,,
+E5-R2,principal,,,,NO ESTIMABLE,"restricciones físicas (MDT05, agua, costa) y de planeamiento (SIU) no están en el repositorio",,,,,NO ESTIMABLE,,,,,
+E5-A2,principal,,,,NO ESTIMABLE,Atlas de áreas urbanas del MIVAU (`posterior_prereg`) no descargado; la unidad exige el valor tasado y la obra nueva por área,,,,,NO ESTIMABLE,,,,,
+E5-A3,principal,,,,NO ESTIMABLE,afiliación municipal por sección de la CNAE anterior a 2011-12 no agregada en el repositorio (solo tres ramas); el Bartik municipal no se puede construir,,,,,NO ESTIMABLE,,,,,
+E5-P-Q4a,coprincipal,,,,NO ESTIMABLE,la Red Natura municipal de V16 solo existe como panel de entrenamiento de V16 (data/processed/v16) y su variable no figura en docs/v18/sellado_v18.json: no se puede leer con sellado.filtrar,,,,,NO ESTIMABLE,,,,,
+E5-A1,principal,,,,estimada,,0.013165656879766419,,324.0,36.0,ASOCIACIÓN,0.0024392985759476506,0.0038860952303647078,-0.007942557581320323,0.01033375967212952,0.5815815815815816

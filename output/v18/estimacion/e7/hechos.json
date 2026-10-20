@@ -1,0 +1,477 @@
+[
+ {
+  "id": "V18-E7-R1",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1)",
+  "valor": 1.2765,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. LP-IV, valor tasado real, h = 8, sorpresa monetaria pura (mediana). 2SLS 1.28 (error típico NW h+1 12.15; EHW 11.05); F efectivo (EHW) 2.58; primera etapa π = -0.842 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.906. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 7.46). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-2.0), razón -0.64. NO ESTIMABLE por variación: MDE no detectable (potencia < 80 % en toda la rejilla) > 2.0. Placebos: {\"choque_adelantado_8\": {\"tipo\": \"adelantado\", \"beta\": -27.9843, \"p_ar0\": 0.6971, \"F\": 0.1005, \"n\": 107, \"ar\": \"toda la recta (no acotado)\"}, \"poblacion_total\": {\"tipo\": \"poblacion\", \"beta\": 2.1408, \"p_ar0\": 0.3049, \"F\": 3.1524, \"n\": 102, \"ar\": \"toda la recta (no acotado)\"}} [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v1",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-v1)",
+  "valor": -0.9132,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. E7-R1: sin 2010-2013 (origen). 2SLS -0.91 (error típico NW h+1 12.13; EHW 11.68); F efectivo (EHW) 1.89; primera etapa π = -0.831 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.938. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 7.46). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): coherente con San Juan (2023) (-2.0), razón 0.46. variante: entra en I5 y en BY; sin clase propia, hereda la de la principal.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v3",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-v3)",
+  "valor": 13.2932,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. E7-R1: sorpresa «poor man's». 2SLS 13.29 (error típico NW h+1 15.02; EHW 22.12); F efectivo (EHW) 0.93; primera etapa π = -0.483 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.333. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 7.46). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-2.0), razón -6.65. variante: entra en I5 y en BY; sin clase propia, hereda la de la principal.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v5",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-v5)",
+  "valor": 126.6086,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. E7-R1: choque total (pc1). 2SLS 126.61 (error típico NW h+1 1393.12; EHW 1832.24); F efectivo (EHW) 0.01; primera etapa π = 0.045 (signo esperado); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.536. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 7.46). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-2.0), razón -63.30. variante: entra en I5 y en BY; sin clase propia, hereda la de la principal.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v7",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-v7)",
+  "valor": 3.269,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. E7-R1: euríbor a 1 año como endógena. 2SLS 3.27 (error típico NW h+1 7.81; EHW 7.11); F efectivo (EHW) 1.63; primera etapa π = -1.205 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.632. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 7.46). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-2.0), razón -1.63. variante: entra en I5 y en BY; sin clase propia, hereda la de la principal.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v8",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 4 trimestres (E7-R1-v8)",
+  "valor": 9.4589,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2025Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. E7-R1: h = 4. 2SLS 9.46 (error típico NW h+1 11.55; EHW 11.38); F efectivo (EHW) 2.47; primera etapa π = -0.815 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta salvo (-40.25; -8.66): no acotado; p AR en 0 = 0.270. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 5.28). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-2.0), razón -4.73. variante: entra en I5 y en BY; sin clase propia, hereda la de la principal.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v9",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 12 trimestres (E7-R1-v9)",
+  "valor": -5.4118,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2023Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. E7-R1: h = 12. 2SLS -5.41 (error típico NW h+1 12.12; EHW 11.33); F efectivo (EHW) 2.57; primera etapa π = -0.877 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.634. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 9.14). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): coherente con San Juan (2023) (-2.0), razón 2.71. variante: entra en I5 y en BY; sin clase propia, hereda la de la principal.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v6",
+  "indicador": "Respuesta del precio real (valor tasado) a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-v6)",
+  "valor": 1.2765,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "1999Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. E7-R1 con 2SLS aumentado y errores EHW (la inferencia principal es la misma; se muestra el 2SLS-EHW). 2SLS 1.28 (error típico NW h+1 12.15; EHW 11.05); F efectivo (EHW) 2.58; primera etapa π = -0.842 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.906. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 7.46). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-2.0), razón -0.64. variante: entra en I5 y en BY; sin clase propia, hereda la de la principal.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-ipv",
+  "indicador": "Respuesta del IPV real a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-ipv)",
+  "valor": 0.1671,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (acumulado a h trimestres; LP-IV)",
+  "periodo": "2008Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. LP-IV, IPV real (desde 2007), h = 8. 2SLS 0.17 (error típico NW h+1 81.59; EHW 140.28); F efectivo (EHW) 0.03; primera etapa π = -0.144 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.999. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 6.72). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-2.0), razón -0.08. NO ESTIMABLE por variación: MDE no detectable (potencia < 80 % en toda la rejilla) > 2.0.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-cv",
+  "indicador": "Respuesta de las compraventas a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-cv)",
+  "valor": -73.7383,
+  "min": null,
+  "max": null,
+  "unidad": "% de las compraventas por +100 pb del tipo (LP-IV)",
+  "periodo": "2008Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. LP-IV, compraventas (desde 2007), h = 8. 2SLS -73.74 (error típico NW h+1 295.57; EHW 370.01); F efectivo (EHW) 0.15; primera etapa π = -0.271 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta (no acotado); p AR en 0 = 0.783. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 3.0 (σ 21.27). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): no coherente con San Juan (2023) (-3.0), razón 24.58. NO ESTIMABLE por variación: MDE no detectable (potencia < 80 % en toda la rejilla) > 3.0.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-alq",
+  "indicador": "Respuesta del IPC de alquiler real a un aumento de 100 pb del tipo hipotecario a 8 trimestres (E7-R1-alq)",
+  "valor": 29.1878,
+  "min": null,
+  "max": null,
+  "unidad": "% del IPC de alquiler real por +100 pb del tipo (LP-IV)",
+  "periodo": "2003Q1-2024Q2",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "análisis V18. LP-IV, IPC de alquiler real (desde 2002), h = 8. 2SLS 29.19 (error típico NW h+1 29.30; EHW 46.04); F efectivo (EHW) 0.37; primera etapa π = -0.372 (signo contrario al esperado (cae el tipo ante una sorpresa restrictiva)); conjunto AR 95 % (EHW) toda la recta salvo (-2.45; 2.09): no acotado; p AR en 0 = 0.044. MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0 (σ 2.17). LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella. I6 (etiqueta, no decide): sin referencia comparable. NO ESTIMABLE por variación: MDE no detectable (potencia < 80 % en toda la rejilla) > 2.0.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R2",
+  "indicador": "Respuesta del precio real a +100 pb del tipo hipotecario a 8 trimestres (SVAR con proxy, E7-R2)",
+  "valor": -10.539,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (impacto normalizado; SVAR con proxy)",
+  "periodo": "2007Q1-2025Q3",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "SVAR con instrumento externo (proxy), p = 2, muestra 2007Q1-2025Q3; respuesta del precio real a h = 8 normalizada a +100 pb de impacto en el tipo hipotecario; F robusto del proxy 0.28; AR 95 % toda la recta (no acotado); p AR en 0 = 0.506; raíz máxima del VAR 0.946 (estable si < 1). MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0. SVAR con proxy: NO APTO en el Monte Carlo de V18 (tamaño 0,057-0,072 con F ≈ 27 y cobertura bajo la alternativa 0,87-0,90; conservador con F ≈ 4): se publica con esa etiqueta. I6 (etiqueta): no coherente con San Juan (2023) (-2.0), razón 5.27. NO ESTIMABLE por variación: MDE no detectable (potencia < 80 % en toda la rejilla) > 2.0 [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R2-v1",
+  "indicador": "Respuesta del precio real a +100 pb del tipo hipotecario a 8 trimestres (SVAR con proxy, E7-R2-v1)",
+  "valor": -16.1136,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (impacto normalizado; SVAR con proxy)",
+  "periodo": "2007Q1-2025Q3",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "SVAR con instrumento externo (proxy), p = 2, muestra 2007Q1-2025Q3; respuesta del precio real a h = 8 normalizada a +100 pb de impacto en el tipo hipotecario; F robusto del proxy 0.22; AR 95 % toda la recta (no acotado); p AR en 0 = 0.291; raíz máxima del VAR 0.946 (estable si < 1). MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0. SVAR con proxy: NO APTO en el Monte Carlo de V18 (tamaño 0,057-0,072 con F ≈ 27 y cobertura bajo la alternativa 0,87-0,90; conservador con F ≈ 4): se publica con esa etiqueta. I6 (etiqueta): no coherente con San Juan (2023) (-2.0), razón 8.06. variante: entra en I5 y en BY; hereda la clase de la principal [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R2-v3",
+  "indicador": "Respuesta del precio real a +100 pb del tipo hipotecario a 8 trimestres (SVAR con proxy, E7-R2-v3)",
+  "valor": 42.5953,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (impacto normalizado; SVAR con proxy)",
+  "periodo": "2007Q1-2025Q3",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "SVAR con instrumento externo (proxy), p = 2, muestra 2007Q1-2025Q3; respuesta del precio real a h = 8 normalizada a +100 pb de impacto en el tipo hipotecario; F robusto del proxy 0.55; AR 95 % toda la recta salvo (-17.03; -2.96): no acotado; p AR en 0 = 0.070; raíz máxima del VAR 0.956 (estable si < 1). MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0. SVAR con proxy: NO APTO en el Monte Carlo de V18 (tamaño 0,057-0,072 con F ≈ 27 y cobertura bajo la alternativa 0,87-0,90; conservador con F ≈ 4): se publica con esa etiqueta. I6 (etiqueta): no coherente con San Juan (2023) (-2.0), razón -21.30. variante: entra en I5 y en BY; hereda la clase de la principal [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R2-v4",
+  "indicador": "Respuesta del precio real a +100 pb del tipo hipotecario a 8 trimestres (SVAR con proxy, E7-R2-v4)",
+  "valor": -5.4935,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb del tipo (impacto normalizado; SVAR con proxy)",
+  "periodo": "2007Q1-2025Q3",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "SVAR con instrumento externo (proxy), p = 2, muestra 2007Q1-2025Q3; respuesta del precio real a h = 8 normalizada a +100 pb de impacto en el tipo hipotecario; F robusto del proxy 1.04; AR 95 % toda la recta (no acotado); p AR en 0 = 0.685; raíz máxima del VAR 0.946 (estable si < 1). MDE no detectable (potencia < 80 % en toda la rejilla) frente al umbral 2.0. SVAR con proxy: NO APTO en el Monte Carlo de V18 (tamaño 0,057-0,072 con F ≈ 27 y cobertura bajo la alternativa 0,87-0,90; conservador con F ≈ 4): se publica con esa etiqueta. I6 (etiqueta): coherente con San Juan (2023) (-2.0), razón 2.75. variante: entra en I5 y en BY; hereda la clase de la principal [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A2-h4",
+  "indicador": "Respuesta relativa entre provincias del precio a la sorpresa × exposición hipotecaria a 4 trimestres",
+  "valor": 1.5649,
+  "min": -13.8104,
+  "max": 16.9403,
+  "unidad": "% del precio por pp de sorpresa y por unidad de exposición (relativo entre provincias, sin el componente común)",
+  "periodo": "2002Q2-2025Q2",
+  "cobertura": "33 provincias",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Panel provincial: Δ_h ln p_pt sobre (sorpresa_t × exposición hipotecaria E_p, 2007-2019) con efectos fijos de provincia y de periodo; G = 33 provincias no selladas con serie completa, T = 93 trimestres (2002Q2-2025Q2); h = 4. Error típico agrupado por provincia 7.548; p de Webb (WCR) = 0.840; IC95 t(32); Webb y CR1 t con efectos de año: APTOS con G = 30-39 (V18 montecarlo/webb_twfe). Tope SUGESTIVO: la exposición es endógena al mercado local. Respuesta relativa entre provincias, sin el componente común (los efectos de periodo lo absorben). MDE 43.60 frente a 2δ = 2,0 (la sorpresa tiene una desviación típica de 0.054 pp: +100 pb queda muy fuera del soporte observado). CD de Pesaran -6.6582 (p = 0.0). Falta el peso provincial de la hipoteca variable (E7-A2-X1) y las compras al contado: la exposición es una aproximación. Variante: clase heredada. [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A2",
+  "indicador": "Respuesta relativa entre provincias del precio a la sorpresa × exposición hipotecaria a 8 trimestres",
+  "valor": -19.6738,
+  "min": -36.8538,
+  "max": -2.4937,
+  "unidad": "% del precio por pp de sorpresa y por unidad de exposición (relativo entre provincias, sin el componente común)",
+  "periodo": "2002Q2-2024Q2",
+  "cobertura": "33 provincias",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Panel provincial: Δ_h ln p_pt sobre (sorpresa_t × exposición hipotecaria E_p, 2007-2019) con efectos fijos de provincia y de periodo; G = 33 provincias no selladas con serie completa, T = 89 trimestres (2002Q2-2024Q2); h = 8. Error típico agrupado por provincia 8.434; p de Webb (WCR) = 0.043; IC95 t(32); Webb y CR1 t con efectos de año: APTOS con G = 30-39 (V18 montecarlo/webb_twfe). Tope SUGESTIVO: la exposición es endógena al mercado local. Respuesta relativa entre provincias, sin el componente común (los efectos de periodo lo absorben). MDE 67.81 frente a 2δ = 2,0 (la sorpresa tiene una desviación típica de 0.054 pp: +100 pb queda muy fuera del soporte observado). CD de Pesaran -6.2224 (p = 0.0). Falta el peso provincial de la hipoteca variable (E7-A2-X1) y las compras al contado: la exposición es una aproximación.  [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A2-h12",
+  "indicador": "Respuesta relativa entre provincias del precio a la sorpresa × exposición hipotecaria a 12 trimestres",
+  "valor": -39.4939,
+  "min": -59.2788,
+  "max": -19.7091,
+  "unidad": "% del precio por pp de sorpresa y por unidad de exposición (relativo entre provincias, sin el componente común)",
+  "periodo": "2002Q2-2023Q2",
+  "cobertura": "33 provincias",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Panel provincial: Δ_h ln p_pt sobre (sorpresa_t × exposición hipotecaria E_p, 2007-2019) con efectos fijos de provincia y de periodo; G = 33 provincias no selladas con serie completa, T = 85 trimestres (2002Q2-2023Q2); h = 12. Error típico agrupado por provincia 9.713; p de Webb (WCR) = 0.001; IC95 t(32); Webb y CR1 t con efectos de año: APTOS con G = 30-39 (V18 montecarlo/webb_twfe). Tope SUGESTIVO: la exposición es endógena al mercado local. Respuesta relativa entre provincias, sin el componente común (los efectos de periodo lo absorben). MDE 89.98 frente a 2δ = 2,0 (la sorpresa tiene una desviación típica de 0.054 pp: +100 pb queda muy fuera del soporte observado). CD de Pesaran -5.6714 (p = 0.0). Falta el peso provincial de la hipoteca variable (E7-A2-X1) y las compras al contado: la exposición es una aproximación. Variante: clase heredada. [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A2-v2",
+  "indicador": "Respuesta relativa entre provincias del precio a la sorpresa × exposición hipotecaria a 8 trimestres",
+  "valor": -17.8021,
+  "min": -35.2712,
+  "max": -0.333,
+  "unidad": "% del precio por pp de sorpresa y por unidad de exposición (relativo entre provincias, sin el componente común)",
+  "periodo": "2002Q2-2024Q2",
+  "cobertura": "32 provincias",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Panel provincial: Δ_h ln p_pt sobre (sorpresa_t × exposición hipotecaria E_p, 2007-2019) con efectos fijos de provincia y de periodo; G = 32 provincias no selladas con serie completa, T = 89 trimestres (2002Q2-2024Q2); h = 8. Error típico agrupado por provincia 8.565; p de Webb (WCR) = 0.069; IC95 t(31); Webb y CR1 t con efectos de año: APTOS con G = 30-39 (V18 montecarlo/webb_twfe). Tope SUGESTIVO: la exposición es endógena al mercado local. Respuesta relativa entre provincias, sin el componente común (los efectos de periodo lo absorben). MDE 74.29 frente a 2δ = 2,0 (la sorpresa tiene una desviación típica de 0.054 pp: +100 pb queda muy fuera del soporte observado). CD de Pesaran -6.2074 (p = 0.0). Falta el peso provincial de la hipoteca variable (E7-A2-X1) y las compras al contado: la exposición es una aproximación. Variante: clase heredada. [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A2-v3",
+  "indicador": "Respuesta relativa entre provincias del precio a la sorpresa × exposición hipotecaria a 8 trimestres",
+  "valor": -11.99,
+  "min": -26.9845,
+  "max": 3.0045,
+  "unidad": "% del precio por pp de sorpresa y por unidad de exposición (relativo entre provincias, sin el componente común)",
+  "periodo": "2002Q2-2024Q2",
+  "cobertura": "33 provincias",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Panel provincial: Δ_h ln p_pt sobre (sorpresa_t × exposición hipotecaria E_p, 2007-2019) con efectos fijos de provincia y de periodo; G = 33 provincias no selladas con serie completa, T = 89 trimestres (2002Q2-2024Q2); h = 8. Error típico agrupado por provincia 7.361; p de Webb (WCR) = 0.156; IC95 t(32); Webb y CR1 t con efectos de año: APTOS con G = 30-39 (V18 montecarlo/webb_twfe). Tope SUGESTIVO: la exposición es endógena al mercado local. Respuesta relativa entre provincias, sin el componente común (los efectos de periodo lo absorben). MDE 40.08 frente a 2δ = 2,0 (la sorpresa tiene una desviación típica de 0.054 pp: +100 pb queda muy fuera del soporte observado). CD de Pesaran -6.2244 (p = 0.0). Falta el peso provincial de la hipoteca variable (E7-A2-X1) y las compras al contado: la exposición es una aproximación. Variante: clase heredada. [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A2-v1",
+  "indicador": "E7-A2 con la cuota de compradores extranjeros × choque: no estimable",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "variante no estimada: la cuota provincial de compradores extranjeros (data/raw/mivau_transacciones_residencia.csv) no figura entre las variables del manifiesto de E7-A2 y su carga pertenece a E9; queda como tarea de integración (no es una desviación elegida por su resultado) [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R1-v2",
+  "indicador": "E7-R1 con el diferencial soberano a 10 años como control: no estimable",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "falta el dato: no hay serie trimestral del diferencial soberano a 10 años (solo la anual irt_lt_mcby_a, sin clave en sellado_v18.json); descarga mensual del BCE (`posterior_prereg`) pendiente [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-R2-v2",
+  "indicador": "E7-R2 con el diferencial soberano a 10 años: no estimable",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "falta el dato (ver E7-R1-v2) [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A3",
+  "indicador": "E7-R1 y R2 con EA-MPD como choque alternativo: no estimable",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "no se estima hasta que el autor decida la licencia de EA-MPD (tareas_autor, punto 14) [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ },
+ {
+  "id": "V18-E7-A2-X1",
+  "indicador": "E7-A2 con el peso provincial de la hipoteca variable: no estimable",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "—",
+  "periodo": "",
+  "cobertura": "nacional",
+  "fuentes": [
+   "data/bib/replicacion/jarocinski_karadi2020/shocks_ecb_mpd_me_m.csv (Jarociński y Karadi 2020, actualizado con EA-MPD de Altavilla et al. 2019)",
+   "base:p_tasado (MIVAU) y base:deflactor hasta 2026T2",
+   "base:tipo_hip_bde y base:euribor_1y hasta 2026T2",
+   "base:pib_vol_idx y base:inflacion_ipc_yoy hasta 2026T2"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "falta el dato: Registradores con autorización (tareas_autor, punto 8) o la EFF (punto 6) [análisis V18; capa C4; pre-registro interno plan-replicacion-v18]"
+ }
+]

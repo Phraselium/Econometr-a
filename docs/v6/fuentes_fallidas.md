@@ -26,3 +26,9 @@ Cada entrada: fuente, endpoint probado, edición, fecha de la prueba y error.
   - Error: 403, desafío de Cloudflare («Just a moment...») con dos intentos, también con cabecera de navegador (verificado 2026-10-17).
   - Consecuencia: docs/v15/scimago_cuartiles.csv no se puede generar de forma automática, y las referencias quedan «cuartil no verificado».
   - Alternativa: descarga manual del autor (tareas_autor.md).
+
+## V18, fase 4, E3 (2026-10-20)
+
+- **INE, Censos de Población y Viviendas 2001, resultados definitivos (nacionalidad por provincia).** Endpoint: https://www.ine.es/censo/es/consulta.jsp (aplicación de tablas a medida; flujo `seleccion_ambito.jsp`, `seleccion_colectivo.jsp`, `estructura.jsp?k=MDDB.COLECTIVO_P3`). Error: la aplicación contesta «En estos momentos el servicio se encuentra saturado» a toda consulta, también la más pequeña (Todas las personas × Provincia), en cinco intentos espaciados (verificado 2026-10-20). INEbase solo publica las cifras de población del Censo de 2001 (/t20/e242/p03/a2001/), sin nacionalidad.
+  - Alternativa usada: Eurostat cens_01rsctz (mismo Censo de 2001, población por nacionalidad y NUTS 3), descargada el 2026-10-20 (docs/v18/desviaciones_e3_e5_e9.md, D-E359-1 y D-E359-3).
+- **Seguridad Social, afiliación provincial por sección de la CNAE de 2001.** Sin endpoint publicado antes de 2011-12 (ficheros STAT/MUNCNAE<MMAA>.xlsx desde 2011-12). Alternativa usada para las cuotas sectoriales de 2001 del Bartik de E5: Eurostat nama_10r_3empers (empleo por NUTS 3 y rama A*6, datos del INE), D-E359-2.

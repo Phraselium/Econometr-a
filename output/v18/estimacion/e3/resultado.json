@@ -1,0 +1,1209 @@
+{
+ "rama": "v18/estimacion/e3",
+ "pregunta": "¿Qué asociación hay entre la entrada de inmigrantes y el precio de la vivienda (y el alquiler) por provincia y municipio, identificada con el asentamiento histórico por origen?",
+ "capa": "C4",
+ "datos": "Panel de 39 provincias de entrenamiento (sin las 11 de v6): valor tasado MIVAU, iniciadas MIVAU, padrón (extranjeros y población), entradas por nacionalidad (Eurostat/INE), Censo de 2001 por nacionalidad (Eurostat/INE); municipal: padrón por nacionalidad 2003-2022 y SERPAVI",
+ "N": 234,
+ "metodo": "IV de asentamiento histórico (shift-share) en primeras diferencias con efectos región-año y controles; inferencia por provincia: bootstrap de Webb con nulo impuesto sobre la forma reducida (Webb-AR, 9.999) y Anderson-Rubin exacto agrupado; F efectivo de Montiel Olea-Pflueger; MDE al 80 %",
+ "estimacion": 3.5549447915930315,
+ "ic95": [
+  -53.33196190017087,
+  62.912729902505646
+ ],
+ "p_ajustado": 1.0,
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO CONCLUYENTE (sin potencia)",
+ "especificacion_titular": "E3-R1",
+ "unidad_titular": "€/m² por punto",
+ "diagnosticos": {
+  "b5": {
+   "propia_E3-R2": "NO ESTIMABLE",
+   "respaldo_E3-A1": "NO ESTIMABLE",
+   "lectura": "la estimación propia de E3 para B5 (E3-R2) y su respaldo (E3-A1) son NO ESTIMABLES por variación (adenda 1.3 y 1.9): E3 no aporta magnitud propia a B5; entra solo la literatura"
+  },
+  "familia_holm": {
+   "m": 4,
+   "p_ajustados": {
+    "E3-P-H4": 0.0012257060415936886,
+    "E3-P-Q3c1": 1.0,
+    "E3-P-D4": 1.0,
+    "E3-R1": 1.0
+   }
+  },
+  "inv_hhi_E3-R1": {
+   "por_origen": 7.858302017338602,
+   "pesos_origen": {
+    "G1_UE15": 0.13479619923195574,
+    "G2_AELC": 0.158218089560591,
+    "G3_Europa_resto": 0.11125652873585785,
+    "G4_Africa_norte": 0.13269833704126838,
+    "G5_Africa_resto": 0.11905923139389579,
+    "G6_America_latina_Caribe": 0.09734834069763235,
+    "G7_Asia": 0.12394054003417636,
+    "G8_resto_mundo": 0.12268273330462261
+   },
+   "por_origen_año": 26.04234680800095
+  },
+  "estado_I8": "pendiente (replicador-ciego, B6)",
+  "mde": {
+   "E3-R1": {
+    "mde80": 36.218704888440136,
+    "ref": 44.72,
+    "estimable": true
+   },
+   "E3-R1q": {
+    "mde80": Infinity,
+    "ref": 0.462,
+    "estimable": false
+   },
+   "E3-R2": {
+    "mde80": 2.3481730758343873,
+    "ref": 0.959,
+    "estimable": false
+   },
+   "E3-R2b": {
+    "mde80": 2.131697227260471,
+    "ref": 0.927,
+    "estimable": false
+   },
+   "E3-R2q": {
+    "mde80": 15.949640055313498,
+    "ref": 1.05,
+    "estimable": false
+   },
+   "E3-A1": {
+    "mde80": 10.943125584787994,
+    "ref": 3.046,
+    "estimable": false
+   },
+   "E3-A2": {
+    "mde80": 13.340940667081764,
+    "ref": 0.947,
+    "estimable": false
+   },
+   "E3-A5": {
+    "mde80": 3.936743885773592,
+    "ref": 3.046,
+    "estimable": false
+   },
+   "E3-A3": {
+    "mde80": Infinity,
+    "ref": 0.947,
+    "estimable": false
+   },
+   "E3-P-H4": {
+    "mde80": 0.6128984271780583,
+    "ref": 0.947,
+    "estimable": true
+   }
+  }
+ },
+ "fuera_muestra": {
+  "modelo": null,
+  "rmse": null,
+  "dm_vs_ar4": null,
+  "nota": "diseño de efectos con muestra de entrenamiento; la evaluación sellada (evaluate_v18) es posterior y no se ejecuta en V18"
+ },
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "clasificación provisional: pendiente de I8 (réplica ciega, B6)",
+  "sellado: sin las 11 provincias de v6, sin los municipios de V15 y V16; ningún acceso a data/sealed",
+  "desviaciones: docs/v18/desviaciones_e3_e5_e9.md"
+ ],
+ "especificaciones": {
+  "E3-R1": {
+   "rol": "principal",
+   "padre": null,
+   "estimacion": 3.5549447915930315,
+   "se": 18.768137236593667,
+   "ic95": [
+    -53.33196190017087,
+    62.912729902505646
+   ],
+   "ic95_t": [
+    -34.439162697666106,
+    41.549052280852166
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -39.65765637004722,
+    "hi": 84.41000630849328
+   },
+   "F_efectivo": 81.07373442968849,
+   "p_webb_ar": 0.8748748748748749,
+   "p_ar_exacto": 0.8472905877247983,
+   "p_final": 0.8748748748748749,
+   "p_ajustado": 1.0,
+   "q_BY": null,
+   "N": 234,
+   "clusters": 39,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "repite_visto (V9-D4)",
+   "mco": 7.885962120181237,
+   "clasificacion_v18": "NO CONCLUYENTE (sin potencia)",
+   "razones": [
+    "potencia de las pretendencias (Roth): el sesgo implicado supera la mitad de |referencia|",
+    "placebo de resultado p = 0.060",
+    "mismo signo en 71% de las variantes enumeradas (< 80 %)",
+    "tope SUGESTIVO: año base 2001 tras el F de 3,4-4,6 de V9-D4 (adenda 1.6)",
+    "sin significación (p de Holm ≥ 0,10) y sin equivalencia: se rotula NO CONCLUYENTE con las pruebas débiles listadas (D-E359-17)"
+   ],
+   "i6": {
+    "razon": 0.0794933987386635,
+    "coherente": true,
+    "via": "solape de IC95",
+    "referencia": "González y Ortega (2009, IZA): 44,72 €/m² por punto de población",
+    "estado_ficha": "NO VERIFICADA",
+    "texto": "coherente con González y Ortega (2009, IZA): 44,72 €/m² por punto de población (NO VERIFICADA), razón 0.08"
+   },
+   "tost": {
+    "equivalente": false,
+    "ic90": [
+     -31.813440294371794,
+     54.17702344704523
+    ],
+    "delta": 22.4
+   },
+   "robustez": {
+    "n_variantes": 7,
+    "frac_mismo_signo": 0.7142857142857143,
+    "cambio_signo": false,
+    "solape_ic": true
+   },
+   "mde": {
+    "mde80": 36.218704888440136,
+    "tamano_nulo": 0.03,
+    "se_ref": 8.587940334372403,
+    "R": 500,
+    "sigma": 25.404256788936127,
+    "rho": 0.4142936903417717,
+    "ref": 44.72,
+    "estimable": true,
+    "n": 234,
+    "G": 39,
+    "k": 42,
+    "n_pre": 234,
+    "inv_hhi_origen": {
+     "por_origen": 7.858302017338602,
+     "pesos_origen": {
+      "G1_UE15": 0.13479619923195574,
+      "G2_AELC": 0.158218089560591,
+      "G3_Europa_resto": 0.11125652873585785,
+      "G4_Africa_norte": 0.13269833704126838,
+      "G5_Africa_resto": 0.11905923139389579,
+      "G6_America_latina_Caribe": 0.09734834069763235,
+      "G7_Asia": 0.12394054003417636,
+      "G8_resto_mundo": 0.12268273330462261
+     },
+     "por_origen_año": 26.04234680800095
+    },
+    "F_eff": 81.07373442968849
+   },
+   "diagnosticos": {
+    "pretendencia": {
+     "pendiente": 8.921673305196784,
+     "se": 6.214320980075366,
+     "p_t": 0.15927921892035535,
+     "p_webb": 0.2872872872872873,
+     "pendiente_detectable80": 17.410041657779146,
+     "primera_etapa_cs": 0.6536217774920264,
+     "sesgo_detectable_beta": 26.63626313765461,
+     "n": 39,
+     "roth_ok": false
+    },
+    "placebo_fecha": {
+     "coef": 10.257040189659298,
+     "se": 8.40241530930883,
+     "p_webb": 0.32232232232232233,
+     "p_t": 0.22971089750659818,
+     "n": 195,
+     "mismo_signo_mitad": true
+    },
+    "placebo_resultado": {
+     "coef": 0.00865496739462055,
+     "se": 0.005051534515128972,
+     "p_webb_ar": 0.06006006006006006,
+     "p_ar_exacto": 0.09411146892853568,
+     "n": 234
+    },
+    "balance": {
+     "por_caracteristica": {
+      "cuota empleo construcción 2001": {
+       "pendiente": -0.006113163389903355,
+       "t": -0.12203416919390966,
+       "p": 0.9068566436894626,
+       "p_holm": 1.0
+      },
+      "cuota empleo industria 2001": {
+       "pendiente": 0.023810061973011026,
+       "t": 0.23784849116903203,
+       "p": 0.8199127240395795,
+       "p_holm": 1.0
+      },
+      "log población 2001": {
+       "pendiente": -0.35758711015221784,
+       "t": -0.2658210005415271,
+       "p": 0.7992751009235018,
+       "p_holm": 1.0
+      },
+      "cuota de extranjeros 2001": {
+       "pendiente": -0.01046903772440863,
+       "t": -0.3753025093437625,
+       "p": 0.7203449761442655,
+       "p_holm": 1.0
+      }
+     },
+     "p_holm_min": 1.0,
+     "choques": {
+      "G1_UE15": 0.2956668480514096,
+      "G2_AELC": 0.17851004563503822,
+      "G3_Europa_resto": 1.0894578193788917,
+      "G4_Africa_norte": 0.288169966730665,
+      "G5_Africa_resto": 0.4383066517746339,
+      "G6_America_latina_Caribe": 0.41234597870259354,
+      "G7_Asia": 0.5167669948188746,
+      "G8_resto_mundo": 0.22438641552511415
+     },
+     "n_choques": 8,
+     "nota": "con 8 choques la potencia es mínima; renta, paro y cuota urbana de 2001 no están a escala provincial en el repositorio"
+    },
+    "balance_provincial_info": {
+     "F": 46.71438651402419,
+     "p": 1.8113108049717894e-12,
+     "coef_std": [
+      -0.009964375260020723,
+      0.07634442608112663,
+      -0.09200192895180731,
+      0.7090022181631791
+     ],
+     "n": 39,
+     "m": 4
+    },
+    "rotemberg": {
+     "alpha": {
+      "G1_UE15": 0.19188504980086932,
+      "G2_AELC": 0.010773226261562352,
+      "G3_Europa_resto": 0.42256656370230383,
+      "G4_Africa_norte": 0.16806704259794492,
+      "G5_Africa_resto": 0.06972106030039761,
+      "G6_America_latina_Caribe": 0.1385713675341755,
+      "G7_Asia": -0.0016147446619138343,
+      "G8_resto_mundo": 3.043446466021256e-05
+     },
+     "beta_por_origen": {
+      "G1_UE15": -6.546499797607769,
+      "G2_AELC": -39.07479727930631,
+      "G3_Europa_resto": -23.02319851888842,
+      "G4_Africa_norte": 27.357038577963078,
+      "G5_Africa_resto": 18.48021419637294,
+      "G6_America_latina_Caribe": 35.882569668980004,
+      "G7_Asia": -2305.9617965122243,
+      "G8_resto_mundo": 12446.507725136073
+     },
+     "excluidos": [
+      "G3_Europa_resto",
+      "G1_UE15"
+     ],
+     "beta_sin_top": 37.7123977795734,
+     "se": 32.56211921629892,
+     "F_eff": 23.654886681133874,
+     "ic_webb_ar": {
+      "lo": -14.979447052099275,
+      "hi": 398.4739079597248,
+      "acotado": true,
+      "vacio": false
+     },
+     "mismo_signo": true,
+     "dentro_ic": true
+    },
+    "jrs": {
+     "beta": 47.18521212901036,
+     "se": 25.931020905642537,
+     "F_eff": 141.7071999895761,
+     "n": 195,
+     "dentro_ic": true,
+     "nota": "instrumento de t-4 como control (D-E359-10); se pierden los años cuyo retardo cae en 2003"
+    },
+    "sin_atipicos": {
+     "excluidas": [
+      "04",
+      "48"
+     ],
+     "beta": 16.75637936688623,
+     "se": 23.92076106541017,
+     "mismo_signo": true,
+     "n": 222
+    },
+    "con_suma_exposicion": {
+     "beta": 3.6132252757864656,
+     "se": 22.821648301937167,
+     "F_eff": 58.97604039374142,
+     "ic_webb_ar": {
+      "lo": -80.59940913671146,
+      "hi": 71.94793189325378,
+      "acotado": true,
+      "vacio": false
+     },
+     "n": 234,
+     "nota": "información adicional (no preinscrita): control de la suma de cuotas × año, como en V9-D4 y la recomendación de BHJ con cuotas incompletas"
+    },
+    "bhj_alternativa": {
+     "beta": 3.613225275680102,
+     "se": 53.662047713404874,
+     "F1": 1.4695960619196002,
+     "n_choques": 48,
+     "G": 8,
+     "etiqueta": "no fiable (Monte Carlo de V18: BHJ con 10-30 choques NO APTO)"
+    }
+   }
+  },
+  "E3-R1-v2": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": -1.0289966773098902,
+   "se": 24.195092774960905,
+   "ic95": [
+    -149.4450834263289,
+    65.92616743831144
+   ],
+   "ic95_t": [
+    -50.0094012862494,
+    47.95140793162962
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -65.37032961840367,
+    "hi": 74.0141669110445
+   },
+   "F_efectivo": 20.038615598224396,
+   "p_webb_ar": 0.9669669669669669,
+   "p_ar_exacto": 0.9661197201247274,
+   "p_final": 0.9669669669669669,
+   "p_ajustado": null,
+   "q_BY": 1.0,
+   "N": 234,
+   "clusters": 39,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "cuotas del padrón de 2003 (dentro de la ventana: contaminadas; máximo ASOCIACIÓN si fuera la principal)",
+   "mco": 7.885962120181237
+  },
+  "E3-R1-v4": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": 3.1122248708229288,
+   "se": 10.37314490229123,
+   "ic95": [
+    -18.88290699429234,
+    28.430004712453353
+   ],
+   "ic95_t": [
+    -17.887109130788634,
+    24.11155887243449
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -21.741762642571395,
+    "hi": 37.8931317301603
+   },
+   "F_efectivo": 51.79636341069083,
+   "p_webb_ar": 0.7537537537537538,
+   "p_ar_exacto": 0.761419235030073,
+   "p_final": 0.761419235030073,
+   "p_ajustado": null,
+   "q_BY": 1.0,
+   "N": 234,
+   "clusters": 39,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "sin ponderar",
+   "mco": 9.715766088375792
+  },
+  "E3-R1-v5": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": 6.561906528175994,
+   "se": 14.469125600586024,
+   "ic95": [
+    -21.479530888365005,
+    46.34007973767282
+   ],
+   "ic95_t": [
+    -22.72930689455962,
+    35.85311995091161
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -15.819592356885531,
+    "hi": 149.4015827162399
+   },
+   "F_efectivo": 67.02441507696712,
+   "p_webb_ar": 0.6866866866866866,
+   "p_ar_exacto": 0.6105213186015961,
+   "p_final": 0.6866866866866866,
+   "p_ajustado": null,
+   "q_BY": 1.0,
+   "N": 234,
+   "clusters": 39,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "sin los grupos 1 y 2 (UE-15 y AELC)",
+   "mco": 7.885962120181237
+  },
+  "E3-R1-v6": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": 5.863945286652897,
+   "se": 17.619611410629435,
+   "ic95": [
+    -63.806325430627545,
+    47.51103276796032
+   ],
+   "ic95_t": [
+    -29.805093223422073,
+    41.53298379672787
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -42.0561133584254,
+    "hi": 59.73867560270865
+   },
+   "F_efectivo": 215.84279588824677,
+   "p_webb_ar": 0.7807807807807807,
+   "p_ar_exacto": 0.7395287718886023,
+   "p_final": 0.7807807807807807,
+   "p_ajustado": null,
+   "q_BY": 1.0,
+   "N": 234,
+   "clusters": 39,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "sin construcción ni costa × año",
+   "mco": 5.811161465720061
+  },
+  "E3-R1-v7": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": -3.860178738458671,
+   "se": 21.207933308709876,
+   "ic95": [
+    -93.26545508627422,
+    62.58483033356531
+   ],
+   "ic95_t": [
+    -46.79339515724521,
+    39.073037680327865
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -57.79008664667459,
+    "hi": 69.44610477443989
+   },
+   "F_efectivo": 54.17719142700249,
+   "p_webb_ar": 0.8768768768768769,
+   "p_ar_exacto": 0.857238967594231,
+   "p_final": 0.8768768768768769,
+   "p_ajustado": null,
+   "q_BY": 1.0,
+   "N": 234,
+   "clusters": 39,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "ficticias de 2005 y 2006 × cuota no comunitaria de 2001",
+   "mco": 5.745088817704986
+  },
+  "E3-R1-v8": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": 1.0083987683751092,
+   "se": 10.767021246168042,
+   "ic95": [
+    -24.263937202893278,
+    30.844758333066174
+   ],
+   "ic95_t": [
+    -20.807658529884865,
+    22.824456066635083
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -21.489100117698975,
+    "hi": 52.04529675319585
+   },
+   "F_efectivo": 63.75121684368124,
+   "p_webb_ar": 0.9309309309309309,
+   "p_ar_exacto": 0.9244859352093073,
+   "p_final": 0.9309309309309309,
+   "p_ajustado": null,
+   "q_BY": 1.0,
+   "N": 228,
+   "clusters": 38,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "sin Barcelona",
+   "mco": 13.837952756425784
+  },
+  "E3-R1-v9": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": 4.903479449894411,
+   "se": 12.934862749203004,
+   "ic95": [
+    -42.22500561144885,
+    47.88166095456285
+   ],
+   "ic95_t": [
+    -21.329638095269694,
+    31.136596995058518
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -21.7828169971339,
+    "hi": 419.77950099248994
+   },
+   "F_efectivo": 81.17500834141491,
+   "p_webb_ar": 0.7657657657657657,
+   "p_ar_exacto": 0.6832747756022349,
+   "p_final": 0.7657657657657657,
+   "p_ajustado": null,
+   "q_BY": 1.0,
+   "N": 222,
+   "clusters": 37,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "sin Alicante ni Málaga",
+   "mco": 3.8629274693125533
+  },
+  "E3-R1-v11": {
+   "rol": "variante",
+   "padre": "E3-R1",
+   "estimacion": 7.196380274950724,
+   "se": 19.636416075906954,
+   "ic95": [
+    -38.56699211484378,
+    69.18760139935097
+   ],
+   "ic95_t": [
+    -32.55546582926249,
+    46.94822637916394
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": -35.410436040615416,
+    "hi": 95.2890951519184
+   },
+   "F_efectivo": 96.43844900848124,
+   "p_webb_ar": 0.7477477477477478,
+   "p_ar_exacto": 0.70452586524242,
+   "p_final": 0.7477477477477478,
+   "p_ajustado": null,
+   "q_BY": null,
+   "N": 273,
+   "clusters": 39,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "holgura nº 1: 2003 con la composición interpolada (marcada)",
+   "mco": 11.521457890876558
+  },
+  "E3-R1-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "ventana 1998-2008: sin stock provincial de extranjeros antes de 2002",
+   "mde80": null,
+   "referencia": 44.72,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R1-v3": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "Censo de 1991 no está en el repositorio",
+   "mde80": null,
+   "referencia": 44.72,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R1-v10": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "choque sin la propia provincia con el padrón por nacionalidad: no reconstruye los 8 grupos",
+   "mde80": null,
+   "referencia": 44.72,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R1q": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE inf > |referencia| 0.462 (viviendas por inmigrante)",
+   "mde80": Infinity,
+   "referencia": 0.462,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R1q-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R1q es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.462,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R1q-v2": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "ventana 1998-2008: sin stock provincial de extranjeros antes de 2002",
+   "mde80": null,
+   "referencia": 0.462,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE 2.35 > |referencia| 0.959 (elasticidad)",
+   "mde80": 2.3481730758343873,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v2": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v3": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v4": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v5": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v6": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v8": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2-v7": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "Censo de 1991 no está en el repositorio",
+   "mde80": null,
+   "referencia": 0.959,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2b": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE 2.13 > |referencia| 0.927 (elasticidad)",
+   "mde80": 2.131697227260471,
+   "referencia": 0.927,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2b-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2b es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.927,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2q": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE 15.9 > |referencia| 1.05 (elasticidad)",
+   "mde80": 15.949640055313498,
+   "referencia": 1.05,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-R2q-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-R2q es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 1.05,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A1": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE 10.9 > |referencia| 3.05 (% por punto)",
+   "mde80": 10.943125584787994,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A1-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A1 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A1-v2": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A1 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A1-v3": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A1 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A1-v5": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A1 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A1-v6": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A1 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A1-v4": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "IPV por CCAA: nueve clusters, inferencia sin Monte Carlo apto (Webb con 8 clusters: NO APTO)",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A2": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE 13.3 > |referencia| 0.947 (% por punto)",
+   "mde80": 13.340940667081764,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A2-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A2-v2": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A2-v3": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A2-v4": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A2-v5": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A2-v6": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A2 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A5": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE 3.94 > |referencia| 3.05 (% por punto)",
+   "mde80": 3.936743885773592,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A5-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "choque sin la propia provincia con el padrón por nacionalidad: no reconstruye los 8 grupos",
+   "mde80": null,
+   "referencia": 3.046,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A3": {
+   "rol": "principal",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "NO ESTIMABLE por variación: MDE inf > |referencia| 0.947 (% por punto)",
+   "mde80": Infinity,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A3-v1": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "valor tasado municipal: el fichero de MIVAU (309 municipios) no trae código INE y la base solo lo tiene para un municipio",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A3-v2": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A3 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A3-v3": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A3 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A3-v4": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A3 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-A3-v5": {
+   "rol": "variante",
+   "clasificacion_v18": "NO ESTIMABLE",
+   "motivo": "su principal E3-A3 es NO ESTIMABLE",
+   "mde80": null,
+   "referencia": 0.947,
+   "datos_que_lo_harian_estimable": "(i) flujos de entrada por nacionalidad (país) y provincia de destino (EVR 1998-2021 y EMCR 2021-2024 por provincia y país: hoy solo por continente en el repositorio) para el choque sin la propia provincia y con los 16 grupos del original; (ii) el Censo de 2001 por país de nacionalidad y provincia (INE; hoy solo accesible por Eurostat con 8 grupos); (iii) más años de variación del instrumento dentro de región-año (padrón por provincia anterior a 2002) o unidades más finas (municipios con el padrón por nacionalidad anterior a 2003); (iv) las 11 provincias selladas de v6, que no se leen",
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-P-H4": {
+   "rol": "coprincipal",
+   "padre": null,
+   "estimacion": 3.350662188511083,
+   "se": 0.40111317805345104,
+   "ic95": [
+    2.482273212550089,
+    4.228843966670647
+   ],
+   "ic95_t": [
+    2.5379296903175272,
+    4.163394686704638
+   ],
+   "ar": {
+    "tipo": "intervalo",
+    "lo": 2.6266897211900826,
+    "hi": 4.6746871352765265
+   },
+   "F_efectivo": 224.02950739297074,
+   "p_webb_ar": 0.0,
+   "p_ar_exacto": 0.00030642651039842215,
+   "p_final": 0.00030642651039842215,
+   "p_ajustado": 0.0012257060415936886,
+   "q_BY": null,
+   "N": 11759,
+   "clusters": 38,
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO",
+   "nota": "réplica de H4 (V16, src/v16/replica/h4.py): 23 orígenes, 2012-2022, sin pesos; publicado: 2SLS 0,29 % por punto (N = 13.442 en V16)",
+   "mco": 0.9194470945063101,
+   "clasificacion_v18": "no se clasifica",
+   "razones": [
+    "coprincipal P (adenda 1.6)"
+   ],
+   "i6": null,
+   "tost": null,
+   "robustez": null,
+   "mde": {
+    "mde80": 0.6128984271780583,
+    "tamano_nulo": 0.064,
+    "se_ref": 0.17883966264162185,
+    "R": 500,
+    "sigma": 9.128330586920757,
+    "rho": 0.0,
+    "ref": 0.947,
+    "estimable": true,
+    "n": 11759,
+    "G": 38,
+    "k": 418,
+    "n_pre": null,
+    "F_eff": 224.02950739297074,
+    "inv_hhi_origen": {
+     "por_origen": 7.165235075555203,
+     "pesos_origen": {
+      "Argelia": 0.00951411739803755,
+      "Argentina": 0.07965729804261479,
+      "Bolivia": 0.016580141755495104,
+      "Brasil": 0.018506595328301952,
+      "Bulgaria": 0.04032322870419727,
+      "Chile": 0.011196884303547365,
+      "China": 0.007846636714180313,
+      "Colombia": 0.2513562667160191,
+      "Cuba": 0.013425350212818493,
+      "Ecuador": 0.19043912266553514,
+      "Marruecos": 0.1541758966334286,
+      "Nigeria": 0.0012951882310934903,
+      "Pakistán": 0.005315586627893604,
+      "Paraguay": 0.0012976920560286793,
+      "Perú": 0.02223762083072174,
+      "Polonia": 0.010936517717388062,
+      "República Dominicana": 0.010493021491436388,
+      "Rumanía": 0.06931836281343917,
+      "Rusia": 0.01682307274367721,
+      "Senegal": 0.007312687936161825,
+      "Ucrania": 0.018718083904508458,
+      "Uruguay": 0.013966620462483054,
+      "Venezuela": 0.02926400671099255
+     }
+    }
+   }
+  },
+  "E3-P-D4": {
+   "rol": "coprincipal",
+   "clasificacion_v18": "no se clasifica",
+   "estimacion": 0.005357671449618167,
+   "se": 0.03049246748756738,
+   "ic95": [
+    -Infinity,
+    Infinity
+   ],
+   "F_efectivo": 0.3688220342660325,
+   "p_ajustado": 1.0,
+   "detalle": {
+    "valor tasado": {
+     "beta": 0.005357671449618167,
+     "se": 0.03049246748756738,
+     "F_eff": 0.3688220342660325,
+     "p_webb_ar": 0.8728728728728729,
+     "p_ar": 0.8539542789756756,
+     "ic_webb_ar": {
+      "lo": -Infinity,
+      "hi": Infinity,
+      "acotado": false,
+      "vacio": false
+     },
+     "n": 34,
+     "G": 34,
+     "pi": 0.09756278610044603,
+     "ar": {
+      "tipo": "recta",
+      "lo": -Infinity,
+      "hi": Infinity,
+      "acotado": false,
+      "p_beta0": 0.8539542789756756,
+      "nota": "iv_debil.ar_ic_1 (APTO) con el factor c = G/(G-1)·(n-1)/(n-k)"
+     },
+     "ic95_t": [
+      -0.05667972011081426,
+      0.06739506301005059
+     ],
+     "rf": 0.0005227093536355639,
+     "p_t": 0.861599657301814
+    },
+    "IPC de alquiler": {
+     "beta": -0.007523701147007295,
+     "se": 0.028555334604707827,
+     "F_eff": 0.6906817398533777,
+     "p_webb_ar": 0.8978978978978979,
+     "p_ar": 0.7561559994031124,
+     "ic_webb_ar": {
+      "lo": -Infinity,
+      "hi": Infinity,
+      "acotado": false,
+      "vacio": false
+     },
+     "n": 39,
+     "G": 39,
+     "pi": 0.14573993444953437,
+     "ar": {
+      "tipo": "complemento",
+      "lo": 0.03313786051412735,
+      "hi": 0.04667293546839964,
+      "acotado": false,
+      "p_beta0": 0.7561559994031124,
+      "nota": "iv_debil.ar_ic_1 (APTO) con el factor c = G/(G-1)·(n-1)/(n-k)"
+     },
+     "ic95_t": [
+      -0.06533095386933133,
+      0.050283551575316734
+     ],
+     "rf": -0.0010965037119827297,
+     "p_t": 0.7936057312907411
+    },
+    "publicado_v9": {
+     "IPC de alquiler 2003-2012": 0.0072,
+     "valor tasado 2003-2012": -0.0029,
+     "F efectivo V9": "3,4 a 4,6"
+    }
+   },
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  },
+  "E3-P-Q3c1": {
+   "rol": "coprincipal",
+   "clasificacion_v18": "no se clasifica",
+   "estimacion": 0.008202960682063696,
+   "se": 0.0068851267883851715,
+   "ic95": [
+    -0.011508572346256301,
+    0.02564186396968624
+   ],
+   "p_ajustado": 1.0,
+   "detalle": {
+    "beta": 0.008202960682063696,
+    "se": 0.0068851267883851715,
+    "p_webb": 0.34134134134134136,
+    "ic_webb": [
+     -0.011508572346256301,
+     0.02564186396968624
+    ],
+    "n": 408,
+    "G": 34,
+    "T": 12,
+    "publicado_v16": 0.0119,
+    "unidad": "log del valor tasado por punto de población de 2003"
+   },
+   "capa": "C4",
+   "nivel_evidencia": "EXPLORATORIO"
+  }
+ }
+}

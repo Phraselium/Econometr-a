@@ -1,0 +1,934 @@
+{
+ "rama": "v18/estimacion/e7",
+ "pregunta": "¿Cuánto cambia el precio real de la vivienda (y las compraventas y el alquiler) ante un aumento de 100 pb del tipo hipotecario, identificado con las sorpresas de política monetaria del BCE (Jarociński-Karadi)? Proyección local con instrumento, SVAR con proxy y panel provincial con exposición (E7 del plan de replicación V18)",
+ "capa": "C4",
+ "datos": "base (hechos.parquet) vía src/v18/sellado.filtrar; sorpresas de data/bib/replicacion/jarocinski_karadi2020 (mensuales, 1999-2025-10; trimestrales hasta 2025T3); hipotecas y compraventas provinciales de data/raw (INE) para la exposición",
+ "N": {
+  "LP-IV_h8": 102,
+  "SVAR": 73,
+  "panel": {
+   "E7-A2-h4": [
+    33,
+    93
+   ],
+   "E7-A2-h8": [
+    33,
+    89
+   ],
+   "E7-A2-h12": [
+    33,
+    85
+   ],
+   "E7-A2-v2": [
+    32,
+    89
+   ],
+   "E7-A2-v3": [
+    33,
+    89
+   ]
+  }
+ },
+ "metodo": "LP-IV con 4 rezagos de y y de Δi y de los controles (PIB, inflación): 2SLS con Newey-West h+1 y con EHW aumentado, F efectivo, conjunto de Anderson-Rubin; SVAR con proxy (p = 2) con AR por método delta; panel provincial con WCR de Webb (B = 9.999); MDE por Monte Carlo; Holm sobre la familia E7",
+ "estimacion": {
+  "E7-R1": {
+   "beta": 1.2765,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 2.5761,
+   "p_ar0": 0.9061,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v1": {
+   "beta": -0.9132,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 1.8855,
+   "p_ar0": 0.9383,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v3": {
+   "beta": 13.2932,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 0.9288,
+   "p_ar0": 0.3335,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v5": {
+   "beta": 126.6086,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 0.0051,
+   "p_ar0": 0.5362,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v7": {
+   "beta": 3.269,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 1.6266,
+   "p_ar0": 0.6324,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v8": {
+   "beta": 9.4589,
+   "ar95": [
+    -40.2494,
+    -8.6625
+   ],
+   "F": 2.4745,
+   "p_ar0": 0.2697,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v9": {
+   "beta": -5.4118,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 2.573,
+   "p_ar0": 0.6343,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v6": {
+   "beta": 1.2765,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 2.5761,
+   "p_ar0": 0.9061,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-ipv": {
+   "beta": 0.1671,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 0.0346,
+   "p_ar0": 0.999,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-cv": {
+   "beta": -73.7383,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 0.1496,
+   "p_ar0": 0.7832,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-alq": {
+   "beta": 29.1878,
+   "ar95": [
+    -2.4475,
+    2.0878
+   ],
+   "F": 0.3659,
+   "p_ar0": 0.0436,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-P-Q5": {
+   "beta": -12.0289,
+   "ar95": [
+    -24.0561,
+    2.3352
+   ],
+   "F": 23.2219,
+   "p_ar0": 0.0885,
+   "p_holm": 0.2655,
+   "mde": 31.8323,
+   "clasificacion_v18": "no se clasifica"
+  },
+  "E7-P-H8-5": {
+   "beta": 2.0836,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 1.9666,
+   "p_ar0": 0.7725,
+   "p_holm": 1.0,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "no se clasifica"
+  },
+  "E7-P-H8-6": {
+   "beta": 1.7048,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 0.623,
+   "p_ar0": 0.6726,
+   "p_holm": 1.0,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "no se clasifica"
+  },
+  "E7-R2": {
+   "beta": -10.539,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 0.2765,
+   "p_ar0": 0.5062,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R2-v1": {
+   "beta": -16.1136,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 0.2182,
+   "p_ar0": 0.2912,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R2-v3": {
+   "beta": 42.5953,
+   "ar95": [
+    -17.0312,
+    -2.9609
+   ],
+   "F": 0.5463,
+   "p_ar0": 0.0697,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R2-v4": {
+   "beta": -5.4935,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": 1.0364,
+   "p_ar0": 0.6851,
+   "p_holm": NaN,
+   "mde": "no detectable (potencia < 80 % en toda la rejilla)",
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-A2-h4": {
+   "beta": 1.5649,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": 0.8398,
+   "p_holm": NaN,
+   "mde": 43.6008,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-A2": {
+   "beta": -19.6738,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": 0.0433,
+   "p_holm": NaN,
+   "mde": 67.8082,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-A2-h12": {
+   "beta": -39.4939,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": 0.001,
+   "p_holm": NaN,
+   "mde": 89.9761,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-A2-v2": {
+   "beta": -17.8021,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": 0.0691,
+   "p_holm": NaN,
+   "mde": 74.2929,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-A2-v3": {
+   "beta": -11.99,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": 0.1562,
+   "p_holm": NaN,
+   "mde": 40.0816,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-A2-v1": {
+   "beta": NaN,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": NaN,
+   "p_holm": NaN,
+   "mde": NaN,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R1-v2": {
+   "beta": NaN,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": NaN,
+   "p_holm": NaN,
+   "mde": NaN,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-R2-v2": {
+   "beta": NaN,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": NaN,
+   "p_holm": NaN,
+   "mde": NaN,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-P-H8-7": {
+   "beta": NaN,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": NaN,
+   "p_holm": NaN,
+   "mde": NaN,
+   "clasificacion_v18": "no se clasifica"
+  },
+  "E7-P-D5": {
+   "beta": NaN,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": NaN,
+   "p_holm": NaN,
+   "mde": NaN,
+   "clasificacion_v18": "no se clasifica"
+  },
+  "E7-A3": {
+   "beta": NaN,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": NaN,
+   "p_holm": NaN,
+   "mde": NaN,
+   "clasificacion_v18": "NO ESTIMABLE"
+  },
+  "E7-A2-X1": {
+   "beta": NaN,
+   "ar95": [
+    NaN,
+    NaN
+   ],
+   "F": NaN,
+   "p_ar0": NaN,
+   "p_holm": NaN,
+   "mde": NaN,
+   "clasificacion_v18": "NO ESTIMABLE"
+  }
+ },
+ "ic95": {
+  "E7-R1": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-v1": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-v3": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-v5": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-v7": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-v8": [
+   -40.2494,
+   -8.6625
+  ],
+  "E7-R1-v9": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-v6": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-ipv": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-cv": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-alq": [
+   -2.4475,
+   2.0878
+  ],
+  "E7-P-Q5": [
+   -24.0561,
+   2.3352
+  ],
+  "E7-P-H8-5": [
+   NaN,
+   NaN
+  ],
+  "E7-P-H8-6": [
+   NaN,
+   NaN
+  ],
+  "E7-R2": [
+   NaN,
+   NaN
+  ],
+  "E7-R2-v1": [
+   NaN,
+   NaN
+  ],
+  "E7-R2-v3": [
+   -17.0312,
+   -2.9609
+  ],
+  "E7-R2-v4": [
+   NaN,
+   NaN
+  ],
+  "E7-A2-h4": [
+   NaN,
+   NaN
+  ],
+  "E7-A2": [
+   NaN,
+   NaN
+  ],
+  "E7-A2-h12": [
+   NaN,
+   NaN
+  ],
+  "E7-A2-v2": [
+   NaN,
+   NaN
+  ],
+  "E7-A2-v3": [
+   NaN,
+   NaN
+  ],
+  "E7-A2-v1": [
+   NaN,
+   NaN
+  ],
+  "E7-R1-v2": [
+   NaN,
+   NaN
+  ],
+  "E7-R2-v2": [
+   NaN,
+   NaN
+  ],
+  "E7-P-H8-7": [
+   NaN,
+   NaN
+  ],
+  "E7-P-D5": [
+   NaN,
+   NaN
+  ],
+  "E7-A3": [
+   NaN,
+   NaN
+  ],
+  "E7-A2-X1": [
+   NaN,
+   NaN
+  ]
+ },
+ "p_ajustado": {
+  "metodo": "Holm sobre las estimables de E7 (p de AR con EHW, AR delta o Webb); m = tamaño de la familia tras las comprobaciones de MDE",
+  "m": 3,
+  "valores": {
+   "E7-P-Q5": 0.26551038921069026,
+   "E7-P-H8-6": 1.0,
+   "E7-P-H8-5": 1.0
+  }
+ },
+ "nivel_evidencia": "EXPLORATORIO",
+ "clasificacion_v18": "NO ESTIMABLE",
+ "clasificacion_v18_por_especificacion": {
+  "E7-R1": "NO ESTIMABLE",
+  "E7-R1-v1": "NO ESTIMABLE",
+  "E7-R1-v3": "NO ESTIMABLE",
+  "E7-R1-v5": "NO ESTIMABLE",
+  "E7-R1-v7": "NO ESTIMABLE",
+  "E7-R1-v8": "NO ESTIMABLE",
+  "E7-R1-v9": "NO ESTIMABLE",
+  "E7-R1-v6": "NO ESTIMABLE",
+  "E7-R1-ipv": "NO ESTIMABLE",
+  "E7-R1-cv": "NO ESTIMABLE",
+  "E7-R1-alq": "NO ESTIMABLE",
+  "E7-P-Q5": "no se clasifica",
+  "E7-P-H8-5": "no se clasifica",
+  "E7-P-H8-6": "no se clasifica",
+  "E7-R2": "NO ESTIMABLE",
+  "E7-R2-v1": "NO ESTIMABLE",
+  "E7-R2-v3": "NO ESTIMABLE",
+  "E7-R2-v4": "NO ESTIMABLE",
+  "E7-A2-h4": "NO ESTIMABLE",
+  "E7-A2": "NO ESTIMABLE",
+  "E7-A2-h12": "NO ESTIMABLE",
+  "E7-A2-v2": "NO ESTIMABLE",
+  "E7-A2-v3": "NO ESTIMABLE",
+  "E7-A2-v1": "NO ESTIMABLE",
+  "E7-R1-v2": "NO ESTIMABLE",
+  "E7-R2-v2": "NO ESTIMABLE",
+  "E7-P-H8-7": "no se clasifica",
+  "E7-P-D5": "no se clasifica",
+  "E7-A3": "NO ESTIMABLE",
+  "E7-A2-X1": "NO ESTIMABLE"
+ },
+ "diagnosticos": {
+  "series": {
+   "y_p": {
+    "adf_p_niveles": 0.0188,
+    "adf_p_diferencias": 0.3806,
+    "kpss_p_niveles": 0.0272
+   },
+   "hip": {
+    "adf_p_niveles": 0.001,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.01
+   },
+   "eur": {
+    "adf_p_niveles": 0.0713,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.01
+   },
+   "pib": {
+    "adf_p_niveles": 0.4743,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.01
+   },
+   "infl": {
+    "adf_p_niveles": 0.3417,
+    "adf_p_diferencias": 0.0,
+    "kpss_p_niveles": 0.1
+   }
+  },
+  "placebos_R1": {
+   "choque_adelantado_8": {
+    "tipo": "adelantado",
+    "beta": -27.9843,
+    "p_ar0": 0.6971,
+    "F": 0.1005,
+    "n": 107,
+    "ar": "toda la recta (no acotado)"
+   },
+   "poblacion_total": {
+    "tipo": "poblacion",
+    "beta": 2.1408,
+    "p_ar0": 0.3049,
+    "F": 3.1524,
+    "n": 102,
+    "ar": "toda la recta (no acotado)"
+   }
+  },
+  "estabilidad_primera_etapa": {
+   "2008Q1": 1.4947,
+   "2015Q1": 3.635
+  },
+  "sensibilidad_a_la_identificacion": {
+   "E7-R1": {
+    "beta_2sls": 1.2765,
+    "F": 2.5761,
+    "ar": "toda la recta (no acotado)"
+   },
+   "E7-R1-v3": {
+    "beta_2sls": 13.2932,
+    "F": 0.9288,
+    "ar": "toda la recta (no acotado)"
+   },
+   "E7-R1-v5": {
+    "beta_2sls": 126.6086,
+    "F": 0.0051,
+    "ar": "toda la recta (no acotado)"
+   },
+   "E7-R1-v7": {
+    "beta_2sls": 3.269,
+    "F": 1.6266,
+    "ar": "toda la recta (no acotado)"
+   }
+  },
+  "sostenido_h12": {
+   "razon": -2.1972,
+   "se_delta": 4.026,
+   "ic95": [
+    -10.0883,
+    5.6938
+   ],
+   "n": 98,
+   "respuesta_propia_tipo_h12_por_pp_sorpresa": -2.1608,
+   "nota": "razón de formas reducidas a h = 12; sin cambio sostenido más allá del horizonte estimado: «fuera del horizonte estimado», sin cifra"
+  },
+  "primera_etapa_signo": "V8 y Q5 ya dieron signo contrario o F de 2,1 a 2,9: aquí se publica la π estimada de cada especificación",
+  "diferencial_soberano": "NO ESTIMABLE: no hay serie trimestral del diferencial soberano a 10 años en el repositorio (solo anual, irt_lt_mcby_a, sin clave en sellado_v18.json); se necesita la serie mensual del BCE",
+  "I5_proporcion_mismo_signo_R1": {
+   "proporcion": 0.7143,
+   "variantes": [
+    "E7-R1-v1",
+    "E7-R1-v3",
+    "E7-R1-v5",
+    "E7-R1-v7",
+    "E7-R1-v8",
+    "E7-R1-v9",
+    "E7-R1-v6"
+   ],
+   "nota": "v2 (diferencial soberano) es NO ESTIMABLE y v4 (mediana) coincide con la principal"
+  },
+  "mde_R1": {
+   "mde": Infinity,
+   "potencia_en_rejilla_max": 0.461,
+   "R": 2000,
+   "rejilla_max": 128.0
+  },
+  "mde_R2": {
+   "mde": Infinity,
+   "potencia_en_rejilla": {
+    "0.25": 0.057,
+    "0.5": 0.056,
+    "1": 0.054,
+    "1.5": 0.055,
+    "2": 0.055,
+    "3": 0.054,
+    "4": 0.053,
+    "6": 0.054,
+    "8": 0.054,
+    "12": 0.055,
+    "16": 0.058,
+    "24": 0.08,
+    "32": 0.1
+   },
+   "R": 2000
+  },
+  "irf_R1": [
+   {
+    "h": 0,
+    "beta": 4.6186,
+    "se_nw": 3.6237,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 2.4781,
+    "n": 107
+   },
+   {
+    "h": 1,
+    "beta": 10.0673,
+    "se_nw": 6.9565,
+    "ar": "no_acotado",
+    "ar_lo": -17.0787,
+    "ar_hi": -3.7855,
+    "F": 2.4781,
+    "n": 107
+   },
+   {
+    "h": 2,
+    "beta": 8.9065,
+    "se_nw": 7.7848,
+    "ar": "no_acotado",
+    "ar_lo": -20.2135,
+    "ar_hi": -6.1566,
+    "F": 2.4781,
+    "n": 107
+   },
+   {
+    "h": 3,
+    "beta": 9.706,
+    "se_nw": 9.8905,
+    "ar": "no_acotado",
+    "ar_lo": -32.7512,
+    "ar_hi": -5.0112,
+    "F": 2.4781,
+    "n": 107
+   },
+   {
+    "h": 4,
+    "beta": 9.4589,
+    "se_nw": 11.5548,
+    "ar": "no_acotado",
+    "ar_lo": -40.2494,
+    "ar_hi": -8.6625,
+    "F": 2.4745,
+    "n": 106
+   },
+   {
+    "h": 5,
+    "beta": 8.8846,
+    "se_nw": 11.8539,
+    "ar": "no_acotado",
+    "ar_lo": -27.5017,
+    "ar_hi": -15.0618,
+    "F": 2.4526,
+    "n": 105
+   },
+   {
+    "h": 6,
+    "beta": 6.954,
+    "se_nw": 12.5237,
+    "ar": "no_acotado",
+    "ar_lo": -30.1689,
+    "ar_hi": -18.8214,
+    "F": 2.5396,
+    "n": 104
+   },
+   {
+    "h": 7,
+    "beta": 3.8268,
+    "se_nw": 12.1316,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 2.6058,
+    "n": 103
+   },
+   {
+    "h": 8,
+    "beta": 1.2765,
+    "se_nw": 12.1453,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 2.5761,
+    "n": 102
+   },
+   {
+    "h": 9,
+    "beta": 1.3472,
+    "se_nw": 11.8586,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 2.5434,
+    "n": 101
+   },
+   {
+    "h": 10,
+    "beta": -2.4751,
+    "se_nw": 10.0061,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 2.9306,
+    "n": 100
+   },
+   {
+    "h": 11,
+    "beta": -2.4281,
+    "se_nw": 11.3876,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 2.8541,
+    "n": 99
+   },
+   {
+    "h": 12,
+    "beta": -5.4118,
+    "se_nw": 12.1215,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 2.573,
+    "n": 98
+   }
+  ],
+  "irf_R2": [
+   {
+    "h": 0,
+    "beta": -23.238,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 1,
+    "beta": -20.7826,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 2,
+    "beta": -16.641,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 3,
+    "beta": -13.8288,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 4,
+    "beta": -12.1455,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 5,
+    "beta": -11.8034,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 6,
+    "beta": -11.7199,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 7,
+    "beta": -11.4001,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 8,
+    "beta": -10.539,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 9,
+    "beta": -9.1949,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 10,
+    "beta": -7.4803,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 11,
+    "beta": -5.5441,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   },
+   {
+    "h": 12,
+    "beta": -3.5052,
+    "ar": "recta",
+    "ar_lo": null,
+    "ar_hi": null,
+    "F": 0.2765
+   }
+  ],
+  "herramientas": "LP-IV con Newey-West (h + 1): NO APTO en el Monte Carlo de V16 y de V18 (tamaño 0,07-0,115 con instrumento fuerte); AR aumentado con EHW, el único cercano al nominal bajo el nulo (0,049-0,069), con cobertura bajo la alternativa de 0,77-0,96 por la atenuación con T = 108 (10 %, 22 % y 38 % a h = 4, 8 y 12). Se publica con esa etiqueta y la clasificación no se apoya en ella.",
+  "tamano_familia_holm": 3,
+  "raiz_maxima_VAR_R2": 0.9462862476285138
+ },
+ "fuera_muestra": null,
+ "notas": [
+  "análisis V18; capa C4; pre-registro interno plan-replicacion-v18",
+  "Clase provisional hasta I8 (réplica ciega, B6).",
+  "fuera_muestra: no aplica a E7 (modelos de identificación; la predicción frente a AR(4) y ECM v1 se hace en F1).",
+  "Referencia única: San Juan (2023), −2 % por +100 pb a 8 trimestres (intervalos al 68 %: sin vía de solapamiento); la del BCE (−5 %) va al lado sin función en I6.",
+  "Fuente de las sorpresas: Jarociński y Karadi (2020), DOI 10.1257/mac.20180090, actualización con EA-MPD (Altavilla et al., 2019, DOI 10.1016/j.jmoneco.2019.08.016); sin licencia declarada: solo local.",
+  "Desviaciones y motivos: docs/v18/desviaciones_f_e7.md. E7-R3 y E7-A1 (BVAR de San Juan) no se encargaron a este módulo."
+ ]
+}

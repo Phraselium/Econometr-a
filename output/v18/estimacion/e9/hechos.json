@@ -1,0 +1,56 @@
+[
+ {
+  "id": "V18-E9-1HHI-origenes",
+  "indicador": "E9: número efectivo de choques (1/HHI de los pesos por origen) con exposición del padrón de 2003 y serie de riesgo en origen, sin pesos",
+  "valor": 6.302148,
+  "min": null,
+  "max": null,
+  "unidad": "choques efectivos",
+  "periodo": "2003 (exposición); 2007-2025 (riesgo)",
+  "cobertura": "8 orígenes con serie de riesgo; 39 provincias de entrenamiento",
+  "fuentes": [
+   "Padrón por nacionalidad 2003 (INE)",
+   "Eurostat eu_hpi",
+   "OCDE house prices"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Umbral de la adenda: 10. Orígenes: Alemania, Francia, Italia, Portugal, Reino Unido, Rumanía, Bulgaria, Polonia."
+ },
+ {
+  "id": "V18-E9-1HHI-pesos-poblacion",
+  "indicador": "E9: número efectivo de choques con pesos de población de 2003",
+  "valor": 5.879899,
+  "min": null,
+  "max": null,
+  "unidad": "choques efectivos",
+  "periodo": "2003",
+  "cobertura": "8 orígenes",
+  "fuentes": [
+   "Padrón por nacionalidad 2003 (INE)",
+   "Eurostat eu_hpi",
+   "OCDE house prices"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Umbral de la adenda: 10."
+ },
+ {
+  "id": "V18-E9-1HHI-todos-paises",
+  "indicador": "E9: número efectivo de choques si los 28 países del padrón tuvieran serie de riesgo (información)",
+  "valor": 11.538973,
+  "min": null,
+  "max": null,
+  "unidad": "choques efectivos",
+  "periodo": "2003",
+  "cobertura": "28 países del padrón",
+  "fuentes": [
+   "Padrón por nacionalidad 2003 (INE)",
+   "Eurostat eu_hpi",
+   "OCDE house prices"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Solo información: los países no europeos no tienen serie de riesgo en el repositorio."
+ }
+]

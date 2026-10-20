@@ -1,0 +1,64 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+v18-E3,E3-R1|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,principal; ref R1
+v18-E3,E3-R1-v2|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v4|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v5|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v6|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v7|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v8|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v9|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v11|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v1|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v3|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1-v10|registrada,"y~x|z (dprecio; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1
+v18-E3,E3-R1q|registrada,"y~x|z (ini_pc; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,principal; ref R1q
+v18-E3,E3-R1q-v1|registrada,"y~x|z (ter_pc; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1q
+v18-E3,E3-R1q-v2|registrada,"y~x|z (ini_pc; pp_ext; (2002, 2008))",2002,2008,0,,,,,,,variante; ref R1q
+v18-E3,E3-R2|registrada,"y~x|z (dlnp; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,principal; ref R2
+v18-E3,E3-R2-v1|registrada,"y~x|z (dlnp; dln_wap; (2000, 2010))",2000,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2-v2|registrada,"y~x|z (dlnp; dln_pob; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2-v3|registrada,"y~x|z (dlnp; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2-v4|registrada,"y~x|z (dlnp; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2-v5|registrada,"y~x|z (dlnp; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2-v6|registrada,"y~x|z (dlnp; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2-v8|registrada,"y~x|z (dlnp; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2-v7|registrada,"y~x|z (dlnp; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2
+v18-E3,E3-R2b|registrada,"y~x|z (dlnp; dln_wap; (2002, 2008))",2002,2008,0,,,,,,,principal; ref R2b
+v18-E3,E3-R2b-v1|registrada,"y~x|z (dlnp; dln_wap; (2001, 2008))",2001,2008,0,,,,,,,variante; ref R2b
+v18-E3,E3-R2q|registrada,"y~x|z (dlnini; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,principal; ref R2q
+v18-E3,E3-R2q-v1|registrada,"y~x|z (dlnter; dln_wap; (2002, 2010))",2002,2010,0,,,,,,,variante; ref R2q
+v18-E3,E3-A1|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,principal; ref A1
+v18-E3,E3-A1-v1|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A1
+v18-E3,E3-A1-v2|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A1
+v18-E3,E3-A1-v3|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A1
+v18-E3,E3-A1-v5|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A1
+v18-E3,E3-A1-v6|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A1
+v18-E3,E3-A1-v4|registrada,"y~x|z (dlnp100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A1
+v18-E3,E3-A2|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,principal; ref A2
+v18-E3,E3-A2-v1|registrada,"y~x|z (dlnipva100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
+v18-E3,E3-A2-v2|registrada,"y~x|z (dlnipc100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
+v18-E3,E3-A2-v3|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
+v18-E3,E3-A2-v4|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
+v18-E3,E3-A2-v5|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
+v18-E3,E3-A2-v6|registrada,"y~x|z (dlnrent100; pp_ext; (2014, 2022))",2014,2022,0,,,,,,,variante; ref A2
+v18-E3,E3-A5|registrada,"y~x|z (dlnp100; pp_ext; (2002, 2019))",2002,2019,0,,,,,,,principal; ref A5
+v18-E3,E3-A5-v1|registrada,"y~x|z (dlnp100; pp_ext; (2002, 2019))",2002,2019,0,,,,,,,variante; ref A5
+v18-E3,E3-A3|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True})",2014,2022,0,,,,,,,principal; ref A3
+v18-E3,E3-A3-v1|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True, 'resultado': 'tasado'})",2014,2022,0,,,,,,,variante; ref A3
+v18-E3,E3-A3-v2|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True, 'sin_distritos_sellados': True})",2014,2022,0,,,,,,,variante; ref A3
+v18-E3,E3-A3-v3|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': False})",2014,2022,0,,,,,,,variante; ref A3
+v18-E3,E3-A3-v4|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True, 'mun_min_pob': 20000})",2014,2022,0,,,,,,,variante; ref A3
+v18-E3,E3-A3-v5|registrada,"y~x|z municipal ({'ventana': (2014, 2022), 'peso_pob0': True, 'origenes': 'sin_res'})",2014,2022,0,,,,,,,variante; ref A3
+v18-E3,E3-P-H4|registrada,"y~x|z municipal ({'ventana': (2012, 2022), 'peso_pob0': False, 'origenes': 'sin_res'})",2012,2022,0,,,,,,,coprincipal; ref A3
+v18-E3,E3-R1|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,3.5549447915930315,0.8748748748748749,repite_visto (V9-D4)
+v18-E3,E3-R1-v2|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,-1.0289966773098902,0.9669669669669669,cuotas del padrón de 2003 (dentro de la ventana: contaminadas; máximo ASOCIACIÓN si fuera la principal)
+v18-E3,E3-R1-v4|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,3.1122248708229288,0.761419235030073,sin ponderar
+v18-E3,E3-R1-v5|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,6.561906528175994,0.6866866866866866,sin los grupos 1 y 2 (UE-15 y AELC)
+v18-E3,E3-R1-v6|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,5.863945286652897,0.7807807807807807,sin construcción ni costa × año
+v18-E3,E3-R1-v7|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,234,,,,,-3.860178738458671,0.8768768768768769,ficticias de 2005 y 2006 × cuota no comunitaria de 2001
+v18-E3,E3-R1-v8|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,228,,,,,1.0083987683751092,0.9309309309309309,sin Barcelona
+v18-E3,E3-R1-v9|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,222,,,,,4.903479449894411,0.7657657657657657,sin Alicante ni Málaga
+v18-E3,E3-R1-v11|estimada,2SLS por provincia; Webb-AR (999) + AR,2002,2008,273,,,,,7.196380274950724,0.7477477477477478,holgura nº 1: 2003 con la composición interpolada (marcada)
+v18-E3,E3-P-H4|estimada,2SLS municipal; Webb-AR (999) + AR,2012,2022,11759,,,,,3.350662188511083,0.00030642651039842215,"réplica de H4 (V16, src/v16/replica/h4.py): 23 orígenes, 2012-2022, sin pesos; publicado: 2SLS 0,29 % por punto (N = 13.442 en V16)"
+v18-E3,E3-P-D4|estimada,"V9-D4 2003-2012, valor tasado",2003,2012,34,,,,,0.005357671449618167,0.8728728728728729,coprincipal
+v18-E3,E3-P-Q3c1|estimada,V16 Q3-c1 TWFE 2011-2022,2011,2022,408,,,,,0.008202960682063696,0.34134134134134136,coprincipal

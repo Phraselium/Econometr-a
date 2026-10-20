@@ -1,0 +1,54 @@
+fase,modelo_id,formula,muestra_ini,muestra_fin,n,r2_adj,aic,bic,rmse_oos,coef_interes,p_interes,notas
+E7-prereg,E7-R1,y=y_p; x=dx_hip; z=z_med; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"principal; repite_visto=sí (Q5; V8 H8-5 a H8-7); MDE=inf frente a 2.0; σ = 7.46 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1,LP-IV h=8,1995Q1,2026Q2,102,,,,,1.27652387721613,0.9061057375352805,F=2.58; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-v1,"y=y_p; x=dx_hip; z=z_med; h=8; omit=('2010Q1', '2013Q4')",1995Q1,2026Q2,0,,,,,,,"variante; repite_visto=sí; MDE=inf frente a 2.0; σ = 7.46 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1-v1,LP-IV h=8,1995Q1,2026Q2,86,,,,,-0.9132018351083528,0.9382671209952568,F=1.89; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-v3,y=y_p; x=dx_hip; z=z_pm; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"variante; repite_visto=sí; MDE=inf frente a 2.0; σ = 7.46 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1-v3,LP-IV h=8,1995Q1,2026Q2,102,,,,,13.293202082750884,0.3334577515864757,F=0.93; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-v5,y=y_p; x=dx_hip; z=z_tot; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"variante; repite_visto=sí; MDE=inf frente a 2.0; σ = 7.46 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1-v5,LP-IV h=8,1995Q1,2026Q2,102,,,,,126.60860613038584,0.5361993094766684,F=0.01; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-v7,y=y_p; x=dx_eur; z=z_med; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"variante; repite_visto=sí; MDE=inf frente a 2.0; σ = 7.46 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1-v7,LP-IV h=8,1995Q1,2026Q2,102,,,,,3.2689527424602187,0.6324378337377303,F=1.63; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-v8,y=y_p; x=dx_hip; z=z_med; h=4; omit=None,1995Q1,2026Q2,0,,,,,,,"variante; repite_visto=sí; MDE=inf frente a 2.0; σ = 5.28 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1-v8,LP-IV h=4,1995Q1,2026Q2,106,,,,,9.458903754526384,0.26966751072884043,F=2.47; AR=toda la recta salvo (-40.25; -8.66): no acotado; NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-v9,y=y_p; x=dx_hip; z=z_med; h=12; omit=None,1995Q1,2026Q2,0,,,,,,,"variante; repite_visto=sí; MDE=inf frente a 2.0; σ = 9.14 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1-v9,LP-IV h=12,1995Q1,2026Q2,98,,,,,-5.41180484916666,0.6342676587902311,F=2.57; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-v6,y=y_p; x=dx_hip; z=z_med; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"variante; repite_visto=sí; MDE=inf frente a 2.0; σ = 7.46 (V16 Q5, ya visto); estimable=False"
+E7,E7-R1-v6,LP-IV h=8,1995Q1,2026Q2,102,,,,,1.27652387721613,0.9061057375352805,F=2.58; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-ipv,y=y_ipv; x=dx_hip; z=z_med; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"principal; repite_visto=sí; MDE=inf frente a 2.0; σ = 6.72 (residuo propio, ya visto); estimable=False"
+E7,E7-R1-ipv,LP-IV h=8,1995Q1,2026Q2,66,,,,,0.1670933518360892,0.999048086812873,F=0.03; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-cv,y=y_cv; x=dx_hip; z=z_med; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"principal; repite_visto=sí; MDE=inf frente a 3.0; σ = 21.27 (residuo propio, ya visto); estimable=False"
+E7,E7-R1-cv,LP-IV h=8,1995Q1,2026Q2,66,,,,,-73.73830063170142,0.7831569556670077,F=0.15; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R1-alq,y=y_alq; x=dx_hip; z=z_med; h=8; omit=None,1995Q1,2026Q2,0,,,,,,,"principal; repite_visto=sí; MDE=inf frente a 2.0; σ = 2.17 (residuo propio, ya visto); estimable=False"
+E7,E7-R1-alq,LP-IV h=8,1995Q1,2026Q2,86,,,,,29.18782656016838,0.043560559621139756,F=0.37; AR=toda la recta salvo (-2.45; 2.09): no acotado; NO APTO: etiqueta de distorsión
+E7-prereg,E7-P-Q5,y=y_p; x=z_med; z=z_med; h=4; omit=None,1995Q1,2026Q2,0,,,,,,,"coprincipal; repite_visto=sí (V16 Q5); MDE=31.83 frente a None; σ = 5.28 (V16 Q5, ya visto); estimable=True"
+E7,E7-P-Q5,LP-IV h=4,1995Q1,2026Q2,102,,,,,-12.028939714188496,0.08850346307023008,F=23.22; AR=[-24.06; 2.34]; NO APTO: etiqueta de distorsión
+E7-prereg,E7-P-H8-5,"y=y_p; x=dx_eur; z=z_med; h=[4, 5, 6, 7, 8]; omit=None",1995Q1,2026Q2,0,,,,,,,"coprincipal; repite_visto=sí (V8 H8-5); MDE=inf frente a None; σ = 6.46 (V16 Q5, ya visto); estimable=True"
+E7,E7-P-H8-5,LP-IV h=4-8 (media),1995Q1,2026Q2,102,,,,,2.083574263703425,0.7725034381834217,F=1.97; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-P-H8-6,"y=y_alq; x=dx_eur; z=z_med; h=[4, 5, 6, 7, 8]; omit=None",1995Q1,2026Q2,0,,,,,,,"coprincipal; repite_visto=sí (V8 H8-6); MDE=inf frente a None; σ = 2.04 (residuo propio, ya visto); estimable=True"
+E7,E7-P-H8-6,LP-IV h=4-8 (media),1995Q1,2026Q2,88,,,,,1.7048418463666093,0.6726226437539713,F=0.62; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R2,"SVAR proxy ['hip', 'y_p', 'y_cv', 'pib', 'infl', 'eur']; p=2; h=8; omit=None",2007Q1,2025Q3,0,,,,,,,principal; repite_visto=sí (V8 H8-5 a H8-7); MDE=inf frente a 2.0; estimable=False
+E7,E7-R2,SVAR proxy h=8,2007Q1,2025Q3,73,,,,,-10.538982655281997,0.5062013751331322,F=0.28; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R2-v1,"SVAR proxy ['hip', 'y_p', 'y_cv', 'pib', 'infl', 'eur']; p=2; h=8; omit=('2010Q1', '2013Q4')",2007Q1,2025Q3,0,,,,,,,variante; repite_visto=sí; MDE=inf frente a 2.0; estimable=False
+E7,E7-R2-v1,SVAR proxy h=8,2007Q1,2025Q3,73,,,,,-16.113614206148945,0.29123819403915663,F=0.22; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-R2-v3,"SVAR proxy ['hip', 'y_p', 'pib', 'infl']; p=2; h=8; omit=None",2007Q1,2025Q3,0,,,,,,,variante; repite_visto=sí; MDE=inf frente a 2.0; estimable=False
+E7,E7-R2-v3,SVAR proxy h=8,2007Q1,2025Q3,73,,,,,42.59526427161676,0.06970589302336491,F=0.55; AR=toda la recta salvo (-17.03; -2.96): no acotado; NO APTO: etiqueta de distorsión
+E7-prereg,E7-R2-v4,"SVAR proxy ['hip', 'y_p', 'y_cv', 'pib', 'infl', 'eur']; p=2; h=8; omit=None",2007Q1,2025Q3,0,,,,,,,variante; repite_visto=sí; MDE=inf frente a 2.0; estimable=False
+E7,E7-R2-v4,SVAR proxy h=8,2007Q1,2025Q3,73,,,,,-5.493474157464862,0.6850808597749124,F=1.04; AR=toda la recta (no acotado); NO APTO: etiqueta de distorsión
+E7-prereg,E7-A2-h4,panel: Δ_4 ln p ~ choque × E_p; FE de provincia y de periodo,2002Q2,2025Q2,0,,,,,,,"variante; repite_visto=sí (V9-D5); MDE=43.601 (sin referencia: 2δ = 2,0 en pp); σ de los residuos de dos vías (ya visto)"
+E7,E7-A2-h4,panel h=4,2002Q2,2025Q2,3069,,,,,1.5649259456975326,0.8398398398398398,G=33; Webb B=999
+E7-prereg,E7-A2,panel: Δ_8 ln p ~ choque × E_p; FE de provincia y de periodo,2002Q2,2024Q2,0,,,,,,,"principal; repite_visto=sí (V9-D5); MDE=67.808 (sin referencia: 2δ = 2,0 en pp); σ de los residuos de dos vías (ya visto)"
+E7,E7-A2,panel h=8,2002Q2,2024Q2,2937,,,,,-19.673780577705223,0.043304330433043305,G=33; Webb B=9999
+E7-prereg,E7-A2-h12,panel: Δ_12 ln p ~ choque × E_p; FE de provincia y de periodo,2002Q2,2023Q2,0,,,,,,,"variante; repite_visto=sí (V9-D5); MDE=89.976 (sin referencia: 2δ = 2,0 en pp); σ de los residuos de dos vías (ya visto)"
+E7,E7-A2-h12,panel h=12,2002Q2,2023Q2,2805,,,,,-39.49393144475972,0.001001001001001001,G=33; Webb B=999
+E7-prereg,E7-A2-v2,panel: Δ_8 ln p ~ choque × E_p; FE de provincia y de periodo,2002Q2,2024Q2,0,,,,,,,"variante; repite_visto=sí; MDE=74.293 (sin referencia: 2δ = 2,0 en pp); σ de los residuos de dos vías (ya visto)"
+E7,E7-A2-v2,panel h=8,2002Q2,2024Q2,2848,,,,,-17.802096892754914,0.06906906906906907,G=32; Webb B=999
+E7-prereg,E7-A2-v3,panel: Δ_8 ln p ~ choque × E_p; FE de provincia y de periodo,2002Q2,2024Q2,0,,,,,,,"variante; repite_visto=sí; MDE=40.082 (sin referencia: 2δ = 2,0 en pp); σ de los residuos de dos vías (ya visto)"
+E7,E7-A2-v3,panel h=8,2002Q2,2024Q2,2937,,,,,-11.989988007817749,0.15615615615615616,G=33; Webb B=999
+E7-prereg,E7-A2-v1,E7-A2 con la cuota de compradores extranjeros × choque,,,0,,,,,,,NO ESTIMABLE: variante no estimada: la cuota provincial de compradores extranjeros (data/raw/mivau_transacciones_residencia.csv) no figura entre las variables del manifiesto de E7-A2 y su carga pertenece a E9; queda como tarea de integración (no es una desviación elegida por su resultado)
+E7-prereg,E7-R1-v2,E7-R1 con el diferencial soberano a 10 años como control,,,0,,,,,,,"NO ESTIMABLE: falta el dato: no hay serie trimestral del diferencial soberano a 10 años (solo la anual irt_lt_mcby_a, sin clave en sellado_v18.json); descarga mensual del BCE (`posterior_prereg`) pendiente"
+E7-prereg,E7-R2-v2,E7-R2 con el diferencial soberano a 10 años,,,0,,,,,,,NO ESTIMABLE: falta el dato (ver E7-R1-v2)
+E7-prereg,E7-P-H8-7,"V8 H8-7 (empuje migratorio, IV2)",,,0,,,,,,,NO ESTIMABLE: no es una especificación de tipos de interés (IV2 es el empuje migratorio anual por cuotas de nacionalidad: pertenece a E3); se deja a la fase de E3
+E7-prereg,E7-P-D5,"V9-D5 (panel de 18 países, tipo variable × choques)",,,0,,,,,,,"NO ESTIMABLE: no reproducible: el panel de países de V9-D5 usa el BIS y la exposición de cada país a la hipoteca variable, que no están en sellado_v18.json; el contraste provincial es E7-A2"
+E7-prereg,E7-A3,E7-R1 y R2 con EA-MPD como choque alternativo,,,0,,,,,,,"NO ESTIMABLE: no se estima hasta que el autor decida la licencia de EA-MPD (tareas_autor, punto 14)"
+E7-prereg,E7-A2-X1,E7-A2 con el peso provincial de la hipoteca variable,,,0,,,,,,,"NO ESTIMABLE: falta el dato: Registradores con autorización (tareas_autor, punto 8) o la EFF (punto 6)"

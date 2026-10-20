@@ -1,0 +1,164 @@
+[
+ {
+  "id": "V18-E5-R1-MDE80",
+  "indicador": "E5-R1: efecto mínimo detectable al 80 % de potencia con la variación real del Bartik y del precio",
+  "valor": null,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad",
+  "periodo": "2002-2023",
+  "cobertura": "39 provincias de entrenamiento; N = 848; R = 500",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Referencia única 0,87 (Taltavull). MDE infinito: con el Bartik de cuatro ramas el diseño no detecta ninguna elasticidad con el 80 % de potencia. σ del preperiodo declarada."
+ },
+ {
+  "id": "V18-E5-R1-F",
+  "indicador": "E5-R1: F efectivo de Montiel Olea-Pflueger de la primera etapa del Bartik de cuatro ramas",
+  "valor": 0.031952,
+  "min": null,
+  "max": null,
+  "unidad": "estadístico F",
+  "periodo": "2002-2023",
+  "cobertura": "39 provincias",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Primera etapa sin fuerza: el Bartik de cuatro ramas no predice el precio real."
+ },
+ {
+  "id": "V18-E5-1HHI",
+  "indicador": "E5: número efectivo de choques del Bartik (1/HHI de los pesos por rama)",
+  "valor": 3.326436,
+  "min": null,
+  "max": null,
+  "unidad": "choques efectivos",
+  "periodo": "2002-2023",
+  "cobertura": "4 ramas",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Menos de 20 por construcción: inferencia principal por provincia con Webb más AR (adenda 1.13)."
+ },
+ {
+  "id": "V18-E5-R1-F-2002-2007",
+  "indicador": "E5-R1: F efectivo de la primera etapa en la ventana 2002-2007",
+  "valor": 6.580349,
+  "min": null,
+  "max": null,
+  "unidad": "estadístico F",
+  "periodo": "2002-2007",
+  "cobertura": "N = 234",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Información de la comprobación previa; no usa el resultado."
+ },
+ {
+  "id": "V18-E5-R1-F-2008-2013",
+  "indicador": "E5-R1: F efectivo de la primera etapa en la ventana 2008-2013",
+  "valor": 0.001793,
+  "min": null,
+  "max": null,
+  "unidad": "estadístico F",
+  "periodo": "2008-2013",
+  "cobertura": "N = 224",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Información de la comprobación previa; no usa el resultado."
+ },
+ {
+  "id": "V18-E5-R1-F-2014-2023",
+  "indicador": "E5-R1: F efectivo de la primera etapa en la ventana 2014-2023",
+  "valor": 0.181668,
+  "min": null,
+  "max": null,
+  "unidad": "estadístico F",
+  "periodo": "2014-2023",
+  "cobertura": "N = 390",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Información de la comprobación previa; no usa el resultado."
+ },
+ {
+  "id": "V18-E5-R1-F-2002-2023",
+  "indicador": "E5-R1: F efectivo de la primera etapa en la ventana 2002-2023",
+  "valor": 0.031952,
+  "min": null,
+  "max": null,
+  "unidad": "estadístico F",
+  "periodo": "2002-2023",
+  "cobertura": "N = 848",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "Información de la comprobación previa; no usa el resultado."
+ },
+ {
+  "id": "V18-E5-A1-MDE80",
+  "indicador": "E5-A1: efecto mínimo detectable al 80 % de la interacción del instrumento de inmigración con los solares por vivienda",
+  "valor": 0.013166,
+  "min": null,
+  "max": null,
+  "unidad": "Δ ln P por punto de Z y por desviación típica de S",
+  "periodo": "2014-2022",
+  "cobertura": "N = 324",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "Umbral 2δ = 0,10 sin referencia (Anexo B); S es endógena al mercado: tope ASOCIACIÓN."
+ },
+ {
+  "id": "V18-E5-A1-psi",
+  "indicador": "E5-A1: coeficiente de la interacción (forma reducida, asociación)",
+  "valor": 0.002439,
+  "min": -0.007943,
+  "max": 0.010334,
+  "unidad": "Δ ln P por punto de Z y por desviación típica de S",
+  "periodo": "2014-2022",
+  "cobertura": "N = 324",
+  "fuentes": [
+   "MIVAU valor tasado e iniciadas",
+   "Eurostat nama_10r_3empers (INE)",
+   "deflactor del proyecto"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "ASOCIACIÓN",
+  "nota": "S_p (solares por vivienda de 2012) es endógena al mercado; IC95 Webb-AR."
+ }
+]

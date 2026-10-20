@@ -26,8 +26,14 @@ V17 se ejecuta dentro de V18 (docs/v17/decisiones.md, K0): fases 0-3 y 5; la 4 s
   - apoyo cuantitativo a D3 (output/v17/d3/);
   - tres auditores (demanda y precios; oferta y titularidad; regulación y ayudas) con el encargo docs/v17/brief_f3_auditoria.md.
 
+- 2026-10-19 · Paradas P1 (ayudas, III.8) y P2 (grandes tenedores) resueltas por el autor; ERRATA, publicación, web y consulta regeneradas.
+- 2026-10-20 · Guarda de fuga v6 en make check (K5) y columna tipo_rango de las cifras V17 (rango, referencias o sin rango; cobertura real).
+- 2026-10-20 · **Fase 3 cerrada.** Dos rondas del abogado del diablo por fila; decisiones del autor sobre la ronda 2 (K6: prórroga del bono del RD 326/2026, A3, A4, excepción de sumas nacionales en D3). Cifras V17 recalculadas sin unidades selladas (ERRATA). Tabla final: output/v17/auditoria/tabla_final.md (15 filas: 2 incorrectas, 4 engañosas, 9 se sostienen con matices). B4 en docs/v17/mejor_estimacion.csv.
+- 2026-10-20 · tipo_rango limitado a las cifras V17: un efecto no buscado quitaba las bandas de cifras anteriores en los entregables (ERRATA; tests/v17/test_tipo_rango.py).
+- 2026-10-20 · **Fase 5 (integración).** check_v17 con 0 errores; f5_hechos con 162 cifras V17 (C4); make publicacion, web y consulta regenerados; make check en solitario.
+
 ## Siguiente
-- Cerrar la fase 0 (referencias_bde.md y tabla de comparación), la fase 2 (B4-B5) y la fase 3 (auditoría).
+- V17 cerrada salvo la fase 4, que pasa al Documento de Trabajo de la fase 6 de V18 (K0). Seguir con V18 (docs/v18/plan.md).
 
 ## Subagentes y tokens
 

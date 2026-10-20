@@ -17,7 +17,8 @@ FASES: dict[str, list[str]] = {
     "f1": ["src/v17/f1_inventario.py"],
     "f2": ["src/v17/f2_inferencia_v15_v16_micro.py", "src/v17/f2_inferencia_series_v8_v9_v12.py",
            "src/v17/f2_medidas_referencia.py", "src/v17/f2_lectura_bde.py"],
-    "f3": ["src/v17/d3_cuantitativo.py", "src/v17/f3_auditoria.py"],
+    "f3": ["src/v17/d3_cuantitativo.py", "src/v17/f3_demanda_precios.py", "src/v17/f3_oferta_titularidad.py",
+           "src/v17/f3_regulacion_ayudas.py", "src/v17/f3_auditoria.py"],
     "f4": [],
     "f5": ["src/v17/f5_hechos.py"],
 }

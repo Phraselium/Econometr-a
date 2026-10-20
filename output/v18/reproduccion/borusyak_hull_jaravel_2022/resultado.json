@@ -1,0 +1,46 @@
+{
+  "rama": "v18-reproduccion",
+  "pregunta": "borusyak_hull_jaravel_2022",
+  "capa": "C4",
+  "datos": "ADH.zip del paquete de replicación de BHJ (2022): CZ 1990-2000, 2000-2007 (Autor, Dorn y Hanson 2013)",
+  "N": 794,
+  "metodo": "IV shift-share a nivel de sector (ssaggregate traducido a Python; shock g; aw=s_n; cluster sic3), conjunto de controles 5 de la Tabla 4 (columna 5 del artículo)",
+  "estimacion": -0.31,
+  "ic95": [
+    -0.5736,
+    -0.0464
+  ],
+  "p_ajustado": null,
+  "nivel_evidencia": "DESCRIPTIVO (reproducción metodológica; no vivienda)",
+  "diagnosticos": {
+    "fs_f_conjunto5": 64.59,
+    "se_conjunto5_py": 0.1345,
+    "se_conjunto5_pub": 0.134,
+    "beta_conjunto5_pub": -0.31,
+    "conjuntos_beta_coinciden": "11/11",
+    "conjuntos_se_coinciden": "11/11",
+    "max_abs_dif_beta": 0.000408,
+    "max_abs_dif_se": 0.001459,
+    "agregacion_vs_industry_level_ext": {
+      "n_comun": 796,
+      "n_py": 796,
+      "n_pub": 796,
+      "max_abs_dif_s_n": 2.969227086424553e-10,
+      "max_abs_dif_y1": 1.144846004663691e-07,
+      "max_abs_dif_x1": 1.5065505554190395e-07,
+      "max_abs_dif_y5": 9.256613964225835e-08,
+      "max_abs_dif_x5": 7.670600976616981e-08,
+      "max_abs_dif_y7": 2.784244734765906e-08,
+      "max_abs_dif_x7": 3.1116376364437315e-08,
+      "max_abs_dif_y9": 1.1537176725084919e-07,
+      "max_abs_dif_x9": 7.37367435998948e-08
+    },
+    "ajuste_varianza_principal": "ninguno"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": "Veredicto: coincide. Reproducción del estudio original con sus datos; no usa datos del proyecto. Herramienta validada para E3: ssaggregate + IV robusto a la exposición. Ver informe.md."
+}

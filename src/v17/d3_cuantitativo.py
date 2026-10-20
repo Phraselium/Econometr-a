@@ -32,6 +32,10 @@ HECHOS: list[dict] = []
 REG = Registry(OUT / "registro.csv")
 CAPITALES = {"28": "28079", "08": "08019", "46": "46250", "41": "41091", "29": "29067", "50": "50297", "03": "03014", "07": "07040",
              "48": "48020", "30": "30030", "47": "47186", "14": "14021", "35": "35016"}
+# NUTS 2 (esfuerzo de V16) → código INE de CCAA, para la guarda de fuga v6
+NUTS2_INE = {"ES11": "12", "ES12": "03", "ES13": "06", "ES21": "16", "ES22": "15", "ES23": "17", "ES24": "02", "ES30": "13", "ES41": "07",
+             "ES42": "08", "ES43": "11", "ES51": "09", "ES52": "10", "ES53": "04", "ES61": "01", "ES62": "14", "ES63": "18", "ES64": "19",
+             "ES70": "05"}
 # Cifras de documento (no se recalculan): ver docs/v17/referencias/ine_demografia.md y docs/v17/fuentes/oferta_capacidad.md
 DOC = {"nac2026_extr": 10004581, "nac2026_esp": 39566144, "ecp2026_nota4t": 49570725,
        "nac2025": 321164, "def2025": 446982, "sv2025_tabla": -125818, "sv2025_texto": -122167,
@@ -69,6 +73,7 @@ def base(variable: str, nivel: str, freq: str) -> pd.DataFrame:
 def _base(variable: str, nivel: str, freq: str) -> pd.DataFrame:
     d = duckdb.sql(f"select territorio_codigo c, periodo p, valor v from '{HECHOS_BASE}' where variable='{variable}' and nivel='{nivel}' "
                       f"and frecuencia='{freq}' and not muestra_sellada_v6").df()
+    return sin_selladas(d, "c", nivel)   # la base no marca las filas de CCAA: la guarda las excluye
 
 
 # =============================================================================== 1. DEMOGRAFÍA 2015-2025
@@ -195,7 +200,8 @@ def origen_hogares(dem: pd.DataFrame, h: pd.DataFrame) -> dict:
 
 # =============================================================================== 1c. TENENCIA (Censo 2021, muestra 10 %)
 def tenencia() -> pd.DataFrame:
-    h = pd.read_csv(ROOT / "data/raw/v11/ine_censo2021/hogares_muestra_municipio_nacionalidad.csv.gz")
+    h = pd.read_csv(ROOT / "data/raw/v11/ine_censo2021/hogares_muestra_municipio_nacionalidad.csv.gz", dtype={"cod_municipio": str})
+    h = sin_selladas(h, "cod_municipio", "municipio")   # «PP99x» = municipios pequeños de la provincia PP: también se filtran
     h = h[h.tenencia.isin([2, 3, 4])]
     filas = []
     for g in ("nac_primera_persona", "nacido_en_espana", "llegada_espana"):
@@ -273,10 +279,12 @@ def deficit_provincial(sel: set[str]) -> tuple[pd.DataFrame, dict]:
     a = a[a.periodo == "2021-2025"][["cod_prov", "provincia", "delta_hogares", "altas_libres", "altas_protegidas", "deficit_bajas0"]].copy()
     n = pd.read_csv(ROOT / "output/v5_1/T3/tablas/necesidad_provincial.csv", dtype={"cod_prov": str})[["cod_prov", "N10_min", "N10_central", "N10_max"]]
     a = a.merge(n, on="cod_prov", how="left")
-    a["sellada_v6"] = a.cod_prov.isin(sel)
-    cols = [c for c in a.columns if c not in ("cod_prov", "provincia", "sellada_v6")]
-    pub = a.copy()  # publicado en V5 (para totales nacionales)
-    a.loc[a.sellada_v6, cols] = np.nan   # detalle provincial de las selladas en blanco
+    pub = a.copy()  # publicado en V5: solo se usa su SUMA nacional (total publicado), nunca el detalle de las selladas
+    cols = [c for c in a.columns if c not in ("cod_prov", "provincia")]
+    ns = sin_selladas(a, "cod_prov", "provincia")
+    a.loc[~a.index.isin(ns.index), cols] = np.nan   # detalle provincial de las selladas en blanco (solo código y nombre)
+    a["sellada_v6"] = ~a.index.isin(ns.index)
+    assert set(a.loc[a.sellada_v6, "cod_prov"]) == sel
     b = a[~a.sellada_v6].sort_values("deficit_bajas0", ascending=False)
     pos = b[b.deficit_bajas0 > 0].copy()
     pos["cuota_pct"] = 100 * pos.deficit_bajas0 / pos.deficit_bajas0.sum()
@@ -295,6 +303,7 @@ def coronas(sel: set[str]) -> pd.DataFrame:
         o = pd.read_parquet(f)
         o["anio"] = y
         o = o[o.origen.str[:2].eq(o.destino.str[:2])]
+        o = sin_selladas(sin_selladas(o, "origen", "municipio"), "destino", "municipio")
         partes.append(o.groupby(["anio", "origen", "destino"], as_index=False).n.sum())
     o = pd.concat(partes)
     filas = []
@@ -421,8 +430,11 @@ def main():
     inf["suelo"].round(2).to_csv(OUT / "suelo_potencial_bde_vs_necesidad.csv", index=False)
     try:
         ep = pd.read_csv(ROOT / "output/v16/f2_esfuerzo/esfuerzo_cambios.csv")
-        ep[ep.dimension.str.lower().str.contains("ccaa|comunidad|provincia")].to_csv(OUT / "esfuerzo_territorial_v16.csv", index=False)
-    except Exception:
+        ep = ep[ep.dimension.str.lower().str.contains("ccaa|comunidad|provincia")].copy()
+        ep["cod_ccaa_ine"] = ep.categoria.map(NUTS2_INE)
+        assert ep.cod_ccaa_ine.notna().all(), "categoría NUTS2 sin código INE de CCAA"
+        sin_selladas(ep, "cod_ccaa_ine", "ccaa").to_csv(OUT / "esfuerzo_territorial_v16.csv", index=False)
+    except FileNotFoundError:
         pass
     construir_hechos(dem, h, og, ten, conc, var, niv, cor, esc, cap, inf)
     json.dump(HECHOS, open(OUT / "hechos.json", "w"), ensure_ascii=False, indent=1)

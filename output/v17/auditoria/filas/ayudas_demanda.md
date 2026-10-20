@@ -175,7 +175,7 @@ Esta sección es una recomendación. No se ha aplicado ningún cambio.
 
 **Frase que habría que cambiar.** «La parte trasladada sube el alquiler de los no beneficiarios» → «la ayuda se asocia con alquileres más altos también para quienes no la reciben (EE. UU. y Francia; en el Reino Unido no se detecta)». En Grislain-Letrémy y Trevien la subida es la misma para perceptores y no perceptores: no es «la parte trasladada».
 
-### Propuestas de texto para A3 y A4 (ronda 2; no aplicadas)
+### Propuestas de texto para A3 y A4 (ronda 2; aplicadas por decisión del autor del 2026-10-20, docs/v17/decisiones.md K6)
 
 - **A3. Confianza de la frase sobre la rigidez de la oferta.**
   - Texto propuesto para III.8 (i): «La evidencia es compatible con que la parte que retiene el perceptor sea menor donde la oferta es más rígida (Fack, 2006; Grislain-Letrémy y Trevien, 2022; Eriksen y Ross, 2015)».

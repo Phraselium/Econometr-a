@@ -11,9 +11,9 @@
  },
  "referencia_modelizacion": "V8",
  "referencia_deficit_y_necesidad": "v7.1 con correcciones de v7.2",
- "commit": "6b638fd",
+ "commit": "9b6d716",
  "commit_nota": "commit del último cambio de contenido de output/ (git log -1 --format=%h -- output), no HEAD: HEAD cambia con cada commit y rompería la comparación con lo versionado",
- "fecha": "2026-10-19",
+ "fecha": "2026-10-20",
  "doi": "PENDIENTE",
  "doi_preregistro_v8": "PENDIENTE",
  "repositorio": "https://github.com/Phraselium/vivienda-espana-evidencia",
@@ -32,8 +32,8 @@
   "Enviar la revisión externa",
   "Pendientes que no bloquean la 1.0"
  ],
- "n_cifras_clave": 1579,
- "sha256_cifras_clave": "c68ef942b0206d78aaf170f33820248949a218a6c990741783392fbb3fdbe54e",
+ "n_cifras_clave": 1591,
+ "sha256_cifras_clave": "143849d1c697de6b7862d690c3cfdcd0d9acc58ce2a4a0078a303f69af478e3b",
  "autor": "Borja Romero, economista (firma individual, independiente)",
  "difusion": "V10: base única, atlas descriptivo, figuras, web y monitor (sin modelos nuevos)",
  "web_prevista": "https://phraselium.github.io/vivienda-espana-evidencia/"

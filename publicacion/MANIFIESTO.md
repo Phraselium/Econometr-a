@@ -28,15 +28,15 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
 | atlas_v12.md | output/v12/atlas_v12.md | `ee7f40631a403531230053edeb8c5a3710d511068ad58b746004e75f53f24ec8` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `c68ef942b0206d78aaf170f33820248949a218a6c990741783392fbb3fdbe54e` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `143849d1c697de6b7862d690c3cfdcd0d9acc58ce2a4a0078a303f69af478e3b` |
 | cifras_no_publicadas_1_0.csv | proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv | `01c846704182f19e7b3297045a0a692fddd10a26920e43a758dd8640a986cd87` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `09824f977a1643c772ff48a09359c7f9e8c026fd758575e993a25952ac880f8e` |
-| informe_integral/informe_integral.md | output/v16/informe/informe_integral.md | `e9ebf4012a639357618ab658c14f3b8c5946a82b42f16787afcd602b0782601a` |
-| informe_tecnico.md | output/v5/informe_tecnico.md | `f8967bff9aea1349c3938f0077a9c5dddd6444c1741177c373d8219ee3cc9a51` |
+| informe_integral/informe_integral.md | output/v16/informe/informe_integral.md | `3b6626520e755167c0c92ce29f823447f8189d9b9c1904e18e3fa916d032ed55` |
+| informe_tecnico.md | output/v5/informe_tecnico.md | `72c1006a471df5bdc1ac84217344b9a6ec88de09ccd0a8e3fb1254f0af0e3931` |
 | informe_v9.md | output/v9/informe_v9.md | `bde71cee9bdaf6f11941c9c703bb7d92bb79bd8c9b2eb6d13a8771f6ae219c35` |
-| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `f0d2af82cfe36acb84c0a6b7f39e95fabc5a126eb4c5009e1f93e4903ed303df` |
+| lo_que_sabemos.md | output/v5/lo_que_sabemos.md | `9b787df5d28de1be3fdfa54b22b93b5f4277269d00f7dacec03a8bc3a8056cc6` |
 | nota_metodologica.md | output/v5/nota_metodologica.md | `42a718ba6ef57a976b84c757885d65fccef9295f58838854bff2794ad084a9b4` |
 | policy_brief.md | output/v5/policy_brief.md | `524ee8b2ff00738326b89681a213d76aa773f826ff98368345eb9f86f0147366` |
 | ponencia/diapositivas.md | output/v5/ponencia/diapositivas.md | `810849207e47f5b6ad01dab44fd149f8d1ab3b7ee0b88a52691c8f80128cf062` |

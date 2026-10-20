@@ -186,7 +186,7 @@ def main() -> None:
           "Tabla única de la que leen todos los entregables. Una fila por indicador y periodo. Generada por src/v5/cifras_clave.py.", "",
           "| id | indicador | valor | rango | unidad | periodo | cobertura | fuentes | capa | fecha del dato |", "|---|---|---|---|---|---|---|---|---|---|"]
     for r in ck.itertuples():
-        rango = "" if pd.isna(r.min) or pd.isna(r.max) else (f"{r.min:.4g}–{r.max:.4g}" if r.tipo_rango == "rango"
+        rango = "" if pd.isna(r.min) or pd.isna(r.max) else (f"{r.min:.4g}–{r.max:.4g}" if r.tipo_rango == "rango" or not r.id.startswith("V17-")
                                                             else f"ref.: {r.min:.4g}; {r.max:.4g}")
         val = "" if pd.isna(r.valor) else f"{r.valor:.4g}"
         md.append(f"| {r.id} | {r.indicador} | {val} | {rango} | {r.unidad} | {r.periodo} | {r.cobertura} | {r.fuentes} | {r.capa} | {r.fecha_dato} |")

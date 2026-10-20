@@ -15,7 +15,7 @@
   "C3s",
   "C4"
  ],
- "n": 1727,
+ "n": 1739,
  "hallazgos": [
   {
    "id": "compradores_extranjeros",
@@ -36942,7 +36942,7 @@
    "rango": null,
    "unidad": "%",
    "periodo": "2019-2025",
-   "ambito": "véase la ficha",
+   "ambito": "Cataluña, municipios con contratos en 2019 y 2025",
    "mercado": "alquiler (contratos nuevos)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -36963,10 +36963,13 @@
    "id": "V17-AUD-DP-ALQ-INCASOL-NUEVOS-POND",
    "enunciado": "Renta media de contratos nuevos (Incasòl), Cataluña, ponderada por contratos de 2019 (Laspeyres municipal), 2019-2025",
    "cifra": 19.9784,
-   "rango": null,
+   "rango": [
+    17.125,
+    19.9784
+   ],
    "unidad": "%",
    "periodo": "2019-2025",
-   "ambito": "véase la ficha",
+   "ambito": "Cataluña, municipios con contratos en 2019 y 2025",
    "mercado": "alquiler (contratos nuevos)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -36976,11 +36979,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "19,98 %",
+   "cifra_texto": "19,98 % (17,12 a 19,98)",
    "min_max": [
     17.125,
     19.9784,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -36990,7 +36993,7 @@
    "rango": null,
    "unidad": "%",
    "periodo": "2019-2025 (medias anuales)",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37014,7 +37017,7 @@
    "rango": null,
    "unidad": "puntos de PIB",
    "periodo": "2026-06 frente a 2007",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37035,10 +37038,13 @@
    "id": "V17-AUD-DP-BUR-GSADF-POTENCIA",
    "enunciado": "Potencia del GSADF de Q9-g (factor común, bootstrap salvaje) frente a una alternativa explosiva simulada (Monte Carlo V16); no calculada para el GSADF nacional de V7.2",
    "cifra": 0.064,
-   "rango": null,
+   "rango": [
+    0.064,
+    0.132
+   ],
    "unidad": "fracción de rechazos al 5 % nominal",
    "periodo": "simulación T = 98",
-   "ambito": "véase la ficha",
+   "ambito": "Simulación con la estructura del factor común de Q9-g (provincias de V16)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37048,11 +37054,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "0,064 fracción de rechazos al 5 % n…",
+   "cifra_texto": "0,064 fracción de rechazos al 5 % n… (0,064 a 0,132)",
    "min_max": [
     0.064,
     0.132,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37062,7 +37068,7 @@
    "rango": null,
    "unidad": "%",
    "periodo": "2026-06 frente a 2007",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37086,7 +37092,7 @@
    "rango": null,
    "unidad": "personas (solicitudes)",
    "periodo": "2019-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37110,7 +37116,7 @@
    "rango": null,
    "unidad": "% de la variación del grupo",
    "periodo": "1-1-2015 a 1-1-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37130,11 +37136,11 @@
   {
    "id": "V17-AUD-DP-INM-ALQUILER-LLEGADA-RECIENTE",
    "enunciado": "Hogares en alquiler, persona de mayor edad llegada a España en 2016-2021",
-   "cifra": 45.499,
+   "cifra": 43.284,
    "rango": null,
    "unidad": "% de los hogares del grupo",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37144,21 +37150,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2021",
-   "cifra_texto": "45,5 % de los hogares del grupo",
+   "cifra_texto": "43,28 % de los hogares del grupo",
    "min_max": [
-    12.236,
-    45.499,
+    11.469,
+    43.284,
     "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
    ]
   },
   {
    "id": "V17-AUD-DP-INM-ALQUILER-NUEVO-CONTABLE",
    "enunciado": "Hogares en alquiler implícitos en el aumento de hogares 2021-2026 atribuido a nacidos en el extranjero (contabilidad)",
-   "cifra": 334118.2659,
-   "rango": null,
+   "cifra": 318966.8038,
+   "rango": [
+    266438.1161,
+    371495.4916
+   ],
    "unidad": "hogares",
    "periodo": "2021-2026",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37168,21 +37177,21 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026",
-   "cifra_texto": "334.118 hogares",
+   "cifra_texto": "318.967 hogares (266.438 a 371.495)",
    "min_max": [
-    277730.2622,
-    390506.2696,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    266438.1161,
+    371495.4916,
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-INM-CUOTA-ALQUILER-EXTR",
    "enunciado": "Hogares en alquiler cuya persona de mayor edad nació en el extranjero, sobre el total de hogares en alquiler",
-   "cifra": 35.5561,
+   "cifra": 33.2115,
    "rango": null,
    "unidad": "% de los hogares en alquiler",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37192,7 +37201,7 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2021",
-   "cifra_texto": "35,56 % de los hogares en alquiler",
+   "cifra_texto": "33,21 % de los hogares en alquiler",
    "min_max": [
     null,
     null,
@@ -37203,10 +37212,13 @@
    "id": "V17-AUD-DP-INM-GO-ELASTICIDAD",
    "enunciado": "Elasticidad implícita del precio de la vivienda a la población en González y Ortega (2013): 2 % anual de precio por 1,5 % anual de población",
    "cifra": 1.3333,
-   "rango": null,
+   "rango": [
+    1.0,
+    1.5333
+   ],
    "unidad": "% de precio por 1 % de población",
    "periodo": "2000-2010",
-   "ambito": "véase la ficha",
+   "ambito": "España, provincias (2000-2010)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37216,11 +37228,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2010",
-   "cifra_texto": "1,33 % de precio por 1 % de poblac…",
+   "cifra_texto": "1,33 % de precio por 1 % de poblac… (1 a 1,53)",
    "min_max": [
     1.0,
     1.5333,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37230,7 +37242,7 @@
    "rango": null,
    "unidad": "puntos porcentuales de variación 2019-2025",
    "periodo": "2019-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (38 provincias con datos completos)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37251,10 +37263,13 @@
    "id": "V17-AUD-DP-PRE-IPV-REAL-RENTA",
    "enunciado": "IPV deflactado por la renta disponible bruta por hogar, 2019-2025",
    "cifra": 12.9204,
-   "rango": null,
+   "rango": [
+    11.9563,
+    12.9204
+   ],
    "unidad": "%",
    "periodo": "2019-2025 (medias anuales)",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37264,11 +37279,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "12,92 %",
+   "cifra_texto": "12,92 % (11,96 a 12,92)",
    "min_max": [
     11.9563,
     12.9204,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37278,7 +37293,7 @@
    "rango": null,
    "unidad": "%",
    "periodo": "2019-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37302,7 +37317,7 @@
    "rango": null,
    "unidad": "%",
    "periodo": "2019-2025 (medias anuales)",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37323,10 +37338,13 @@
    "id": "V17-AUD-DP-TIP-CALIBRACION-DESCONTADO",
    "enunciado": "Calibración: variación del IPV 2021T4-2024T4 una vez descontado el efecto calibrado del tipo hipotecario (nominal)",
    "cifra": 37.9517,
-   "rango": null,
+   "rango": [
+    37.9517,
+    57.974
+   ],
    "unidad": "%",
    "periodo": "2021T4-2024T4",
-   "ambito": "véase la ficha",
+   "ambito": "España (elasticidades de la zona del euro)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37336,21 +37354,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "37,95 %",
+   "cifra_texto": "37,95 % (37,95 a 57,97)",
    "min_max": [
     37.9517,
     57.974,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TIP-CALIBRACION-DESCONTADO-REAL",
    "enunciado": "Calibración: variación del IPV REAL 2021T4-2024T4 una vez descontado el efecto calibrado del tipo de política",
    "cifra": 34.5767,
-   "rango": null,
+   "rango": [
+    21.0665,
+    51.4809
+   ],
    "unidad": "%",
    "periodo": "2021T4-2024T4",
-   "ambito": "véase la ficha",
+   "ambito": "España (elasticidades internacionales)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37360,21 +37381,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "34,58 %",
+   "cifra_texto": "34,58 % (21,07 a 51,48)",
    "min_max": [
     21.0665,
     51.4809,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TIP-CALIBRACION-EFECTO-HIPOTECARIO",
    "enunciado": "Calibración: efecto en el precio a unos dos años de la subida del tipo hipotecario 2022-2023 (semielasticidades del BCE para la zona euro: −5 %/pp lineal; −9 %/pp no lineal con tipos bajos)",
    "cifra": -11.3613,
-   "rango": null,
+   "rango": [
+    -22.5957,
+    -11.3613
+   ],
    "unidad": "% del nivel de precios",
    "periodo": "2022-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España (elasticidades de la zona del euro)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37384,21 +37408,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "-11,36 % del nivel de precios",
+   "cifra_texto": "-11,36 % del nivel de precios (-22,6 a -11,36)",
    "min_max": [
     -22.5957,
     -11.3613,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TIP-CALIBRACION-EFECTO-POLITICA",
    "enunciado": "Calibración: efecto en el precio REAL a unos dos años de la subida del tipo de política 2022-2023 (semielasticidades de −2,3 y −6,3 %/pp del tipo corto)",
    "cifra": -19.35,
-   "rango": null,
+   "rango": [
+    -28.35,
+    -10.35
+   ],
    "unidad": "% del precio real",
    "periodo": "2022-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España (elasticidades internacionales)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37408,21 +37435,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "-19,35 % del precio real",
+   "cifra_texto": "-19,35 % del precio real (-28,35 a -10,35)",
    "min_max": [
     -28.35,
     -10.35,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TIP-CALIBRACION-SOLO-HIPOTECA",
    "enunciado": "Calibración: efecto del tipo hipotecario si solo se transmite a la parte de compras con hipoteca (52 %)",
    "cifra": -5.9079,
-   "rango": null,
+   "rango": [
+    -11.7498,
+    -5.9079
+   ],
    "unidad": "% del nivel de precios",
    "periodo": "2022-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España (elasticidades de la zona del euro)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37432,11 +37462,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "-5,91 % del nivel de precios",
+   "cifra_texto": "-5,91 % del nivel de precios (-11,75 a -5,91)",
    "min_max": [
     -11.7498,
     -5.9079,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37446,7 +37476,7 @@
    "rango": null,
    "unidad": "puntos porcentuales",
    "periodo": "2021T4-2023T4",
-   "ambito": "véase la ficha",
+   "ambito": "Zona del euro (tipo del BCE)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37467,10 +37497,13 @@
    "id": "V17-AUD-DP-TIP-DELTA-TAE",
    "enunciado": "Subida del tipo de las nuevas hipotecas (TAE), 2021T4 al máximo de 2023T3",
    "cifra": 2.5106,
-   "rango": null,
+   "rango": [
+    2.2723,
+    2.5106
+   ],
    "unidad": "puntos porcentuales",
    "periodo": "2021T4-2023T3",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37480,11 +37513,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2023",
-   "cifra_texto": "2,51 puntos porcentuales",
+   "cifra_texto": "2,51 puntos porcentuales (2,27 a 2,51)",
    "min_max": [
     2.2723,
     2.5106,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37494,7 +37527,7 @@
    "rango": null,
    "unidad": "%",
    "periodo": "2021T4-2024T4",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37518,7 +37551,7 @@
    "rango": null,
    "unidad": "%",
    "periodo": "2021-2024",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37539,10 +37572,13 @@
    "id": "V17-AUD-DP-TUR-GL-ALQ-NAC",
    "enunciado": "Alquiler compatible con la densidad turística (NAC) según los coeficientes de Garcia-López et al. (ilustración)",
    "cifra": 1.5753,
-   "rango": null,
+   "rango": [
+    1.03,
+    2.1206
+   ],
    "unidad": "% de alquiler (nivel acumulado frente a densidad cero)",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España (densidad); elasticidad de Barcelona",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37552,21 +37588,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "1,58 % de alquiler",
+   "cifra_texto": "1,58 % de alquiler (1,03 a 2,12)",
    "min_max": [
     1.03,
     2.1206,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TUR-GL-ALQ-SEC-P50",
    "enunciado": "Alquiler compatible con la densidad turística (SEC-P50) según los coeficientes de Garcia-López et al. (ilustración)",
    "cifra": 0.2967,
-   "rango": null,
+   "rango": [
+    0.194,
+    0.3994
+   ],
    "unidad": "% de alquiler (nivel acumulado frente a densidad cero)",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales); elasticidad de Barcelona",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37576,21 +37615,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "0,297 % de alquiler",
+   "cifra_texto": "0,297 % de alquiler (0,194 a 0,399)",
    "min_max": [
     0.194,
     0.3994,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TUR-GL-ALQ-SEC-P90",
    "enunciado": "Alquiler compatible con la densidad turística (SEC-P90) según los coeficientes de Garcia-López et al. (ilustración)",
    "cifra": 2.5952,
-   "rango": null,
+   "rango": [
+    1.6969,
+    3.4935
+   ],
    "unidad": "% de alquiler (nivel acumulado frente a densidad cero)",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales); elasticidad de Barcelona",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37600,21 +37642,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "2,6 % de alquiler",
+   "cifra_texto": "2,6 % de alquiler (1,7 a 3,49)",
    "min_max": [
     1.6969,
     3.4935,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TUR-GL-ALQ-SEC-P99",
    "enunciado": "Alquiler compatible con la densidad turística (SEC-P99) según los coeficientes de Garcia-López et al. (ilustración)",
    "cifra": 10.632,
-   "rango": null,
+   "rango": [
+    6.9517,
+    14.3123
+   ],
    "unidad": "% de alquiler (nivel acumulado frente a densidad cero)",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales); elasticidad de Barcelona",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37624,21 +37669,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "10,63 % de alquiler",
+   "cifra_texto": "10,63 % de alquiler (6,95 a 14,31)",
    "min_max": [
     6.9517,
     14.3123,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-DP-TUR-GL-FRENTE-H3",
    "enunciado": "Pendiente por DT intra-sección que implicarían los coeficientes de Garcia-López et al., frente a H3 (V15)",
    "cifra": 0.6366,
-   "rango": null,
+   "rango": [
+    0.4163,
+    0.857
+   ],
    "unidad": "% de alquiler por DT intra-sección",
    "periodo": "2021-2024",
-   "ambito": "véase la ficha",
+   "ambito": "Secciones de la muestra de entrenamiento de H3 (V15); elasticidad de Barcelona",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37648,11 +37696,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "0,637 % de alquiler por DT intra-se…",
+   "cifra_texto": "0,637 % de alquiler por DT intra-se… (0,416 a 0,857)",
    "min_max": [
     0.4163,
     0.857,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37662,7 +37710,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler de la sección",
    "periodo": "2026-09",
-   "ambito": "véase la ficha",
+   "ambito": "Áreas rastreadas por Inside Airbnb fuera de los bloques sellados v6 (secciones)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37686,7 +37734,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler del municipio",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (municipios, suma de secciones)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37707,10 +37755,13 @@
    "id": "V17-AUD-DP-TUR-NAC-AUMENTO-2020-2024",
    "enunciado": "Aumento de viviendas turísticas 2020M08-2024M08 sobre el parque de alquiler (reproduce B4-v3-vut-cantidad)",
    "cifra": 2.7458,
-   "rango": null,
+   "rango": [
+    2.4229,
+    2.7458
+   ],
    "unidad": "% del parque de alquiler",
    "periodo": "2020M08-2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37720,11 +37771,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "2,75 % del parque de alquiler",
+   "cifra_texto": "2,75 % del parque de alquiler (2,42 a 2,75)",
    "min_max": [
     2.4229,
     2.7458,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37734,7 +37785,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler",
    "periodo": "2024M02",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37755,10 +37806,13 @@
    "id": "V17-AUD-DP-TUR-NAC-STOCK-2024M08",
    "enunciado": "Viviendas turísticas (stock) sobre el parque de alquiler, España",
    "cifra": 13.5411,
-   "rango": null,
+   "rango": [
+    11.9489,
+    13.5411
+   ],
    "unidad": "% del parque de alquiler",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37768,11 +37822,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "13,54 % del parque de alquiler",
+   "cifra_texto": "13,54 % del parque de alquiler (11,95 a 13,54)",
    "min_max": [
     11.9489,
     13.5411,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -37782,7 +37836,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler",
    "periodo": "2026M05",
-   "ambito": "véase la ficha",
+   "ambito": "España",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37806,7 +37860,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37830,7 +37884,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37854,7 +37908,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler de la sección",
    "periodo": "2021M08-2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37878,7 +37932,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler de la sección",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37902,7 +37956,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler de la sección",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37926,7 +37980,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler de la sección",
    "periodo": "2026M05",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37950,7 +38004,7 @@
    "rango": null,
    "unidad": "% del parque de alquiler de la sección",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37974,7 +38028,7 @@
    "rango": null,
    "unidad": "% de las viviendas",
    "periodo": "2024M08",
-   "ambito": "véase la ficha",
+   "ambito": "España sin provincias ni CCAA selladas v6 (secciones censales)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -37998,7 +38052,7 @@
    "rango": null,
    "unidad": "% de las viviendas alquiladas por personas físicas",
    "periodo": "2024",
-   "ambito": "véase la ficha",
+   "ambito": "España, territorio fiscal común (AEAT)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38022,7 +38076,7 @@
    "rango": null,
    "unidad": "% del parque municipal",
    "periodo": "2024",
-   "ambito": "véase la ficha",
+   "ambito": "municipio de Barcelona (08019), Catastro",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38046,7 +38100,7 @@
    "rango": null,
    "unidad": "% del parque",
    "periodo": "2026",
-   "ambito": "véase la ficha",
+   "ambito": "España de régimen común (sin País Vasco ni Navarra), fichero nacional del Catastro",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38070,7 +38124,7 @@
    "rango": null,
    "unidad": "% del parque",
    "periodo": "2026",
-   "ambito": "véase la ficha",
+   "ambito": "España de régimen común (sin País Vasco ni Navarra), fichero nacional del Catastro",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38094,7 +38148,7 @@
    "rango": null,
    "unidad": "% del parque",
    "periodo": "2026",
-   "ambito": "véase la ficha",
+   "ambito": "España de régimen común (sin País Vasco ni Navarra), fichero nacional del Catastro",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38112,13 +38166,37 @@
    ]
   },
   {
+   "id": "V17-AUD-OT-CAT-GT-PROV-FRENTE-SUMA-MUN-2026",
+   "enunciado": "Viviendas de titulares con más de 10 inmuebles: ficheros provinciales frente a la suma de sus municipios",
+   "cifra": 1.2133,
+   "rango": null,
+   "unidad": "cociente",
+   "periodo": "2026",
+   "ambito": "provincias de régimen común sin bloques sellados v6",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Catastro, estadística de titularidad (data/raw/v11/catastro_titularidad/p_spi_total_v*.csv.gz)",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026",
+   "cifra_texto": "1,21 cociente",
+   "min_max": [
+    null,
+    null,
+    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+   ]
+  },
+  {
    "id": "V17-AUD-OT-CAT-GT-PROV-MEDIANA-2026",
    "enunciado": "Cuota de viviendas de titulares con más de 10 inmuebles, mediana provincial (tramo contado en la provincia)",
    "cifra": 2.7519,
    "rango": null,
    "unidad": "% del parque provincial",
    "periodo": "2026",
-   "ambito": "véase la ficha",
+   "ambito": "38 provincias de régimen común sin bloques sellados v6",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38142,7 +38220,7 @@
    "rango": null,
    "unidad": "% del parque",
    "periodo": "2026",
-   "ambito": "véase la ficha",
+   "ambito": "España de régimen común (sin País Vasco ni Navarra), fichero nacional del Catastro",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38166,7 +38244,7 @@
    "rango": null,
    "unidad": "% del parque",
    "periodo": "2026",
-   "ambito": "véase la ficha",
+   "ambito": "España de régimen común (sin País Vasco ni Navarra), fichero nacional del Catastro",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38190,7 +38268,7 @@
    "rango": null,
    "unidad": "titulares",
    "periodo": "2026",
-   "ambito": "véase la ficha",
+   "ambito": "España de régimen común (sin País Vasco ni Navarra), fichero nacional del Catastro",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38208,37 +38286,16 @@
    ]
   },
   {
-   "id": "V17-AUD-OT-CAT-GT-TOTAL-FRENTE-SUMA-PROV-2026",
-   "enunciado": "Viviendas de titulares con más de 10 inmuebles: fichero nacional frente a suma de los ficheros provinciales",
-   "cifra": 1.084,
-   "rango": null,
-   "unidad": "cociente",
-   "periodo": "2026",
-   "ambito": "véase la ficha",
-   "mercado": "no aplica",
-   "capa": "C4",
-   "metodo": "ver ficha de origen",
-   "fuente": "Catastro, estadística de titularidad (data/raw/v11/catastro_titularidad/p_spi_total_v*.csv.gz)",
-   "ruta": "output/v17/f5/hechos.json",
-   "version": "v17",
-   "estado": "vigente",
-   "tipo": "cifra",
-   "fecha_dato": "2026",
-   "cifra_texto": "1,08 cociente",
-   "min_max": [
-    null,
-    null,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
-   ]
-  },
-  {
    "id": "V17-AUD-OT-COTA-GT-ALQUILER-CON-PUBLICA",
    "enunciado": "Cota de los titulares con más de 10 viviendas en el alquiler habitual con la vivienda pública como suelo explícito",
    "cifra": null,
-   "rango": null,
+   "rango": [
+    10.1848,
+    12.16
+   ],
    "unidad": "% del alquiler habitual",
    "periodo": "2021-2024",
-   "ambito": "véase la ficha",
+   "ambito": "España: alquiler de vivienda habitual (BdE, territorio fiscal común) y hogares en alquiler (Censo 2021, nacional)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38248,21 +38305,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "sin valor puntual % del alquiler habitual",
+   "cifra_texto": "10,18 a 12,16 % del alquiler habitual",
    "min_max": [
     10.1848,
     12.16,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-OT-COTA-GT-ALQUILER-NACIONAL",
    "enunciado": "Cota del peso de los titulares con 11+ viviendas en el alquiler de vivienda habitual, España",
    "cifra": null,
-   "rango": null,
+   "rango": [
+    2.16,
+    12.16
+   ],
    "unidad": "% del alquiler habitual",
    "periodo": "2024",
-   "ambito": "véase la ficha",
+   "ambito": "España: alquiler de vivienda habitual (BdE, territorio fiscal común) y hogares en alquiler (Censo 2021, nacional)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38272,21 +38332,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "sin valor puntual % del alquiler habitual",
+   "cifra_texto": "2,16 a 12,16 % del alquiler habitual",
    "min_max": [
     2.16,
     12.16,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-OT-COTA-GT-ALQUILER-PRIVADOS",
    "enunciado": "Cota de los titulares PRIVADOS (personas físicas y jurídicas) con más de 10 viviendas en el alquiler habitual",
    "cifra": null,
-   "rango": null,
+   "rango": [
+    2.16,
+    4.1352
+   ],
    "unidad": "% del alquiler habitual",
    "periodo": "2021-2024",
-   "ambito": "véase la ficha",
+   "ambito": "España: alquiler de vivienda habitual (BdE, territorio fiscal común) y hogares en alquiler (Censo 2021, nacional)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38296,21 +38359,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2024",
-   "cifra_texto": "sin valor puntual % del alquiler habitual",
+   "cifra_texto": "2,16 a 4,14 % del alquiler habitual",
    "min_max": [
     2.16,
     4.1352,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
-   "id": "V17-AUD-OT-D32-IPV-CCAA-SIN-SELLADAS",
-   "enunciado": "Cuota común (año) de la varianza de la variación anual del IPV, 9 CCAA sin bloques sellados v6, 2015-2025",
+   "id": "V17-AUD-OT-D32-IPV-CCAA-JACKKNIFE",
+   "enunciado": "Cuota común del IPV 2015-2025 (9 CCAA no selladas) quitando un año cada vez: mínimo y máximo",
    "cifra": 81.0569,
-   "rango": null,
-   "unidad": "% (IC95 bootstrap por CCAA)",
+   "rango": [
+    62.6691,
+    85.7836
+   ],
+   "unidad": "%",
    "periodo": "2015-2025",
-   "ambito": "véase la ficha",
+   "ambito": "9 CCAA sin bloques sellados v6",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38320,11 +38386,38 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "81,06 %",
+   "cifra_texto": "81,06 % (62,67 a 85,78)",
    "min_max": [
-    70.165,
-    92.9,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    62.6691,
+    85.7836,
+    "rango"
+   ]
+  },
+  {
+   "id": "V17-AUD-OT-D32-IPV-CCAA-SIN-SELLADAS",
+   "enunciado": "Cuota común (año) de la varianza de la variación anual del IPV, 9 CCAA sin bloques sellados v6, 2015-2025",
+   "cifra": 81.0569,
+   "rango": [
+    71.841,
+    92.8585
+   ],
+   "unidad": "% (IC95 bootstrap por CCAA)",
+   "periodo": "2015-2025",
+   "ambito": "9 CCAA sin bloques sellados v6",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "INE IPV por CCAA (data/base/hechos.parquet)",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "81,06 % (71,84 a 92,86)",
+   "min_max": [
+    71.841,
+    92.8585,
+    "rango"
    ]
   },
   {
@@ -38334,7 +38427,7 @@
    "rango": null,
    "unidad": "% real",
    "periodo": "2015-2024",
-   "ambito": "véase la ficha",
+   "ambito": "38 provincias sin bloques sellados v6",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38352,13 +38445,91 @@
    ]
   },
   {
+   "id": "V17-AUD-OT-EMPLEO-INCREMENTO-RANGO-10A",
+   "enunciado": "Cálculo con supuestos (juicio experto): ocupados adicionales en construcción para cerrar el déficit en 10 años",
+   "cifra": 425.9753,
+   "rango": [
+    142.0735,
+    1032.9091
+   ],
+   "unidad": "miles de ocupados",
+   "periodo": "2026-2035",
+   "ambito": "España (agregado nacional)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "V17-D3-PROD-NECESARIA, V17-D3-PROD-ACTUAL, BdE (92.000), EPA rama F; supuestos de cuota residencial e industrialización",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2035",
+   "cifra_texto": "426 miles de ocupados (142,1 a 1.033)",
+   "min_max": [
+    142.0735,
+    1032.9091,
+    "rango"
+   ]
+  },
+  {
+   "id": "V17-AUD-OT-EMPLEO-INCREMENTO-RANGO-5A",
+   "enunciado": "Cálculo con supuestos (juicio experto): ocupados adicionales en construcción para cerrar el déficit en 5 años",
+   "cifra": 648.6206,
+   "rango": [
+    208.0064,
+    1615.0123
+   ],
+   "unidad": "miles de ocupados",
+   "periodo": "2026-2030",
+   "ambito": "España (agregado nacional)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "V17-D3-PROD-NECESARIA, V17-D3-PROD-ACTUAL, BdE (92.000), EPA rama F; supuestos de cuota residencial e industrialización",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2030",
+   "cifra_texto": "648,6 miles de ocupados (208 a 1.615)",
+   "min_max": [
+    208.0064,
+    1615.0123,
+    "rango"
+   ]
+  },
+  {
+   "id": "V17-AUD-OT-EMPLEO-OCUP-POR-VIVIENDA",
+   "enunciado": "Ocupados de edificación residencial nueva por vivienda terminada al año: referencias 2007, 2015-2019 y 2025 (con cuota supuesta)",
+   "cifra": null,
+   "rango": null,
+   "unidad": "ocupados por vivienda y año",
+   "periodo": "2007, 2015-2019, 2025",
+   "ambito": "España (agregado nacional)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v17/d3/capacidad_construccion_boom_actual.csv (EPA rama F, terminadas MIVAU); supuestos de cuota residencial",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2025",
+   "cifra_texto": "sin valor puntual ocupados por vivienda y año",
+   "min_max": [
+    2.0987,
+    6.5556,
+    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+   ]
+  },
+  {
    "id": "V17-AUD-OT-ITP-Q6-p-MDE80",
    "enunciado": "Efecto mínimo detectable al 80 % de potencia y 5 % bilateral, Q6-p (valor tasado), por punto de tipo del ITP",
    "cifra": 0.0433,
    "rango": null,
    "unidad": "log por punto de tipo",
    "periodo": "panel de entrenamiento V16",
-   "ambito": "véase la ficha",
+   "ambito": "8 CCAA del panel de entrenamiento de Q6 (V16)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38382,7 +38553,7 @@
    "rango": null,
    "unidad": "log por punto de tipo",
    "periodo": "panel de entrenamiento V16",
-   "ambito": "véase la ficha",
+   "ambito": "8 CCAA del panel de entrenamiento de Q6 (V16)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38403,10 +38574,13 @@
    "id": "V17-AUD-OT-OFERTA-DEFICIT-SOBRE-PARQUE",
    "enunciado": "Déficit 2021-2025 de la 1.0 (L3-DEF-2125) sobre el parque de viviendas familiares (Censo 2021)",
    "cifra": 2.6509,
-   "rango": null,
+   "rango": [
+    1.9667,
+    3.3352
+   ],
    "unidad": "% del parque",
    "periodo": "2021-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38416,31 +38590,31 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025",
-   "cifra_texto": "2,65 % del parque",
+   "cifra_texto": "2,65 % del parque (1,97 a 3,34)",
    "min_max": [
     1.9667,
     3.3352,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-OT-OFERTA-ELASTICIDAD-IMPLICITA-V71",
    "enunciado": "Elasticidad alquiler-parque implícita en el escenario V7.1 de construcción (−0,70 puntos % por 10.000 viviendas en la CCAA mediana)",
-   "cifra": -0.7484,
+   "cifra": -1.2236,
    "rango": null,
    "unidad": "% de alquiler por 1 % de parque",
    "periodo": "2026-2036 (escenario)",
-   "ambito": "véase la ficha",
+   "ambito": "CCAA mediana de las 9 CCAA sin bloques sellados v6 (parque del Censo 2021)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
-   "fuente": "output/v5/cifras_clave.csv (V71-S1-a_construccion-alquiler-efecto_10k); INE Censo 2021 (parque de la CCAA mediana)",
+   "fuente": "output/v5/cifras_clave.csv (V71-S1-a_construccion-alquiler-efecto_10k); INE Censo 2021 (parque de la CCAA mediana de las 9 no selladas)",
    "ruta": "output/v17/f5/hechos.json",
    "version": "v17",
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2036",
-   "cifra_texto": "-0,748 % de alquiler por 1 % de parq…",
+   "cifra_texto": "-1,22 % de alquiler por 1 % de parq…",
    "min_max": [
     null,
     null,
@@ -38454,7 +38628,7 @@
    "rango": null,
    "unidad": "miles de ocupados",
    "periodo": "2007 y 2026-2030",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38478,7 +38652,7 @@
    "rango": null,
    "unidad": "miles de ocupados",
    "periodo": "2007 y 2026-2030",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38502,7 +38676,7 @@
    "rango": null,
    "unidad": "% del alquiler medio",
    "periodo": "orden de magnitud",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38514,7 +38688,7 @@
    "fecha_dato": "2026-10-19",
    "cifra_texto": "-0,504 % del alquiler medio",
    "min_max": [
-    -1.9838,
+    -3.2436,
     -0.5037,
     "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
    ]
@@ -38523,10 +38697,13 @@
    "id": "V17-AUD-OT-OFERTA-MENSE-ILUSTRACION",
    "enunciado": "Ilustración: variación del alquiler medio si se cerrase el déficit central, con la elasticidad local de corto plazo de Mense (2025)",
    "cifra": -0.5037,
-   "rango": null,
+   "rango": [
+    -0.6337,
+    -0.3737
+   ],
    "unidad": "% del alquiler medio",
    "periodo": "orden de magnitud",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38536,21 +38713,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "-0,504 % del alquiler medio",
+   "cifra_texto": "-0,504 % del alquiler medio (-0,634 a -0,374)",
    "min_max": [
     -0.6337,
     -0.3737,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-OT-OFERTA-SENSIBILIDAD-10A",
    "enunciado": "Ídem a 10 años",
    "cifra": null,
-   "rango": null,
+   "rango": [
+    2.2326,
+    3.537
+   ],
    "unidad": "veces la producción actual",
    "periodo": "2026-2035",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38560,21 +38740,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2035",
-   "cifra_texto": "sin valor puntual veces la producción actual",
+   "cifra_texto": "2,23 a 3,54 veces la producción actual",
    "min_max": [
     2.2326,
     3.537,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-OT-OFERTA-SENSIBILIDAD-5A",
    "enunciado": "Producción necesaria a 5 años (déficit central) frente a la actual: rango de sensibilidad",
    "cifra": null,
-   "rango": null,
+   "rango": [
+    2.808,
+    4.3803
+   ],
    "unidad": "veces la producción actual",
    "periodo": "2026-2030",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38584,11 +38767,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2030",
-   "cifra_texto": "sin valor puntual veces la producción actual",
+   "cifra_texto": "2,81 a 4,38 veces la producción actual",
    "min_max": [
     2.808,
     4.3803,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -38598,7 +38781,7 @@
    "rango": null,
    "unidad": "% del alquiler habitual",
    "periodo": "1-1-2021",
-   "ambito": "véase la ficha",
+   "ambito": "Barcelona ciudad",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38622,7 +38805,7 @@
    "rango": null,
    "unidad": "años",
    "periodo": "2021-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38643,10 +38826,13 @@
    "id": "V17-AUD-OT-PUB-BRECHA-UE",
    "enunciado": "Viviendas sociales de alquiler adicionales para pasar del parque social español al 7,99 % de la UE (parque constante)",
    "cifra": 1760530.974,
-   "rango": null,
+   "rango": [
+    1732530.974,
+    1760530.974
+   ],
    "unidad": "viviendas",
    "periodo": "2019 (España) y 2022 o último (UE)",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38656,11 +38842,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2022",
-   "cifra_texto": "1.760.531 viviendas",
+   "cifra_texto": "1.760.531 viviendas (1.732.531 a 1.760.531)",
    "min_max": [
-    1609115.044,
+    1732530.974,
     1760530.974,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -38670,7 +38856,7 @@
    "rango": null,
    "unidad": "viviendas/año",
    "periodo": "2021-2025",
-   "ambito": "véase la ficha",
+   "ambito": "España (agregado nacional)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38694,7 +38880,7 @@
    "rango": null,
    "unidad": "% del parque",
    "periodo": "2022 o último",
-   "ambito": "véase la ficha",
+   "ambito": "19 países de la UE-27 con dato en OCDE PH4.2",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38715,10 +38901,13 @@
    "id": "V17-AUD-OT-SUELO-BARCELONA-RATIO",
    "enunciado": "Potencial del área de Barcelona (BdE) sobre la necesidad provincial a 10 años",
    "cifra": 0.3888,
-   "rango": null,
+   "rango": [
+    0.2867,
+    0.512
+   ],
    "unidad": "cociente",
    "periodo": "2025 y 2026-2035",
-   "ambito": "véase la ficha",
+   "ambito": "área urbana de Barcelona (BdE) frente a la provincia de Barcelona",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38728,21 +38917,51 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2035",
-   "cifra_texto": "0,389 cociente",
+   "cifra_texto": "0,389 cociente (0,287 a 0,512)",
    "min_max": [
     0.2867,
     0.512,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
+   ]
+  },
+  {
+   "id": "V17-AUD-OT-SUELO-SEVILLA-EJECUCION",
+   "enunciado": "Potencial del área de Sevilla multiplicado por su ejecución histórica (28 %) sobre la necesidad provincial a 10 años",
+   "cifra": 0.7359,
+   "rango": [
+    0.4896,
+    0.7359
+   ],
+   "unidad": "cociente",
+   "periodo": "2025 y 2026-2035",
+   "ambito": "área urbana de Sevilla (BdE) frente a la provincia de Sevilla",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "BdE IA 2025 (potencial y ejecución); V5.1 (necesidad)",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2035",
+   "cifra_texto": "0,736 cociente (0,49 a 0,736)",
+   "min_max": [
+    0.4896,
+    0.7359,
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-OT-SUELO-SEVILLA-RATIO",
    "enunciado": "Potencial del área de Sevilla (BdE) sobre la necesidad provincial a 10 años",
    "cifra": 2.6281,
-   "rango": null,
+   "rango": [
+    1.7484,
+    92.7718
+   ],
    "unidad": "cociente",
    "periodo": "2025 y 2026-2035",
-   "ambito": "véase la ficha",
+   "ambito": "área urbana de Sevilla (BdE) frente a la provincia de Sevilla",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38752,11 +38971,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2035",
-   "cifra_texto": "2,63 cociente",
+   "cifra_texto": "2,63 cociente (1,75 a 92,77)",
    "min_max": [
     1.7484,
     92.7718,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -38766,7 +38985,7 @@
    "rango": null,
    "unidad": "viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "capitales de esas 6 provincias (no selladas)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38790,7 +39009,7 @@
    "rango": null,
    "unidad": "viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias de Barcelona, València, Alicante, Tarragona, Málaga y Almería",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38814,7 +39033,7 @@
    "rango": null,
    "unidad": "viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias sin bloques sellados v6 (municipios listados en la tabla 59531 y filas «Resto de provincia»)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38838,7 +39057,7 @@
    "rango": null,
    "unidad": "% de las vacías",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias sin bloques sellados v6 (municipios listados en la tabla 59531 y filas «Resto de provincia»)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38862,7 +39081,7 @@
    "rango": null,
    "unidad": "rho de Spearman",
    "periodo": "2021 y 2021-2025",
-   "ambito": "véase la ficha",
+   "ambito": "41 provincias sin bloques sellados v6",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38886,7 +39105,7 @@
    "rango": null,
    "unidad": "viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias de Barcelona, València, Alicante, Tarragona, Málaga y Almería y sus capitales",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38910,7 +39129,7 @@
    "rango": null,
    "unidad": "% de las viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias sin bloques sellados v6 (municipios listados en la tabla 59531 y filas «Resto de provincia»)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38934,7 +39153,7 @@
    "rango": null,
    "unidad": "% de las viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias sin bloques sellados v6 (municipios listados en la tabla 59531 y filas «Resto de provincia»)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38958,7 +39177,7 @@
    "rango": null,
    "unidad": "% de las viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias sin bloques sellados v6 (municipios listados en la tabla 59531 y filas «Resto de provincia»)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -38982,7 +39201,7 @@
    "rango": null,
    "unidad": "% de las viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "provincias sin bloques sellados v6 (municipios listados en la tabla 59531 y filas «Resto de provincia»)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -39006,7 +39225,7 @@
    "rango": null,
    "unidad": "% de las viviendas",
    "periodo": "2021",
-   "ambito": "véase la ficha",
+   "ambito": "41 provincias sin bloques sellados v6, por terciles de déficit por vivienda",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -39027,10 +39246,13 @@
    "id": "V17-AUD-RA-AYU-BONO-DURACION",
    "enunciado": "Ganancia neta del perceptor del Bono Alquiler Joven en todo el contrato si la subida θ·250 se mantiene los 60 meses de la LAU y la ayuda solo dura 24 (valor: θ = mediana de siete estudios; min/max: θ de Fack 2006 y de Eerola et al. 2026)",
    "cifra": -900.0,
-   "rango": null,
+   "rango": [
+    -5700.0,
+    5460.0
+   ],
    "unidad": "euros por contrato",
    "periodo": "escenario",
-   "ambito": "España (sin evaluación propia)",
+   "ambito": "España (escenario; sin evaluación)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -39040,21 +39262,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "-900 euros por contrato",
+   "cifra_texto": "-900 euros por contrato (-5.700 a 5.460)",
    "min_max": [
     -5700.0,
     5460.0,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-RA-AYU-Q7",
    "enunciado": "Q7a (V16) con inferencia convencional: diferencia en discontinuidades del log del alquiler en el corte de 35 años (valor: estimación; min/max: IC 95 %)",
    "cifra": -0.12,
-   "rango": null,
+   "rango": [
+    -0.26,
+    0.02
+   ],
    "unidad": "Δlog",
    "periodo": "2018-2021 / 2023-2025",
-   "ambito": "inquilinos de mercado de la ECV",
+   "ambito": "España, inquilinos de mercado de la ECV (muestra de V16 Q7a, grupo A de entrenamiento)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -39064,25 +39289,25 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "-0,12 Δlog",
+   "cifra_texto": "-0,12 Δlog (-0,26 a 0,02)",
    "min_max": [
     -0.26,
     0.02,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-RA-AYU-RETIENE-MEDIANA",
-   "enunciado": "Parte de la ayuda al alquiler que retiene el perceptor (1 - θ), mediana de los mismos siete estudios (valor: mediana; min/max: Fack 2006 y Eerola et al. 2026)",
+   "enunciado": "Parte de la ayuda al alquiler que retiene el perceptor (1 - θ), mediana de los siete estudios (valor: mediana; min/max: Fack 2006 y Eerola et al. 2026)",
    "cifra": 54.0,
    "rango": null,
    "unidad": "% de la ayuda",
    "periodo": "1984-2020",
-   "ambito": "ídem",
+   "ambito": "Francia, Reino Unido, EE. UU., Finlandia y Nueva Zelanda (ningún estudio español)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
-   "fuente": "ídem",
+   "fuente": "docs/v16/literatura/L5_ayudas_demanda_efectos.csv; Fack (2006) y Gibbons y Manning (2006), resúmenes",
    "ruta": "output/v17/f5/hechos.json",
    "version": "v17",
    "estado": "vigente",
@@ -39096,13 +39321,40 @@
    ]
   },
   {
+   "id": "V17-AUD-RA-AYU-THETA-GLT",
+   "enunciado": "θ implícita en perceptores de Grislain-Letrémy y Trevien (2022): 0,052 log × 454 euros / diferencial de ayuda de 22-27 euros (valor: punto medio; min/max: diferencial de 40 y de 15 euros)",
+   "cifra": 96.3592,
+   "rango": [
+    59.02,
+    157.3867
+   ],
+   "unidad": "% del diferencial de ayuda",
+   "periodo": "2000-2016",
+   "ambito": "Francia, aglomeraciones de 50.000 a 180.000 habitantes",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Banque de France WP 886, tablas 1 y 7 (docs/v17/referencias/no_beneficiarios.md); cálculo del auditor",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-19",
+   "cifra_texto": "96,36 % del diferencial de ayuda (59,02 a 157,4)",
+   "min_max": [
+    59.02,
+    157.3867,
+    "rango"
+   ]
+  },
+  {
    "id": "V17-AUD-RA-AYU-TRASLACION-MEDIANA",
-   "enunciado": "Traslación al alquiler de las ayudas a perceptores (θ), mediana de siete estudios con diseño, un valor por estudio (valor: mediana; min/max: Eerola et al. 2026 y Fack 2006)",
+   "enunciado": "Traslación al alquiler de las ayudas a perceptores (θ), mediana de siete estudios con diseño, un valor por estudio (valor: mediana; min/max: θ de Eerola et al. 2026 y de Fack 2006)",
    "cifra": 46.0,
    "rango": null,
    "unidad": "% de la ayuda",
    "periodo": "1984-2020",
-   "ambito": "Francia, Reino Unido, EE. UU., Finlandia, Nueva Zelanda",
+   "ambito": "Francia, Reino Unido, EE. UU., Finlandia y Nueva Zelanda (ningún estudio español)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -39120,17 +39372,17 @@
    ]
   },
   {
-   "id": "V17-AUD-RA-AYU-TRASLACION-SENS",
-   "enunciado": "Traslación mediana con otras composiciones (valor: ocho estudios con la θ implícita de Grislain-Letrémy y Trevien; min/max: extremos de las sensibilidades de la ficha)",
+   "id": "V17-AUD-RA-AYU-TRASLACION-MEDIANA-8",
+   "enunciado": "Traslación al alquiler de las ayudas a perceptores (θ), mediana de ocho estudios con diseño (los siete y la θ implícita de Grislain-Letrémy y Trevien) (valor: mediana; min/max: θ de Eerola et al. 2026 y de Grislain-Letrémy y Trevien 2022)",
    "cifra": 54.6667,
    "rango": null,
    "unidad": "% de la ayuda",
    "periodo": "1984-2020",
-   "ambito": "ídem",
-   "mercado": "no aplica",
+   "ambito": "Francia, Reino Unido, EE. UU., Finlandia y Nueva Zelanda (ningún estudio español)",
+   "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
-   "fuente": "ídem; docs/v17/referencias/no_beneficiarios.md",
+   "fuente": "docs/v16/literatura/L5_ayudas_demanda_efectos.csv; Fack (2006) y Gibbons y Manning (2006), resúmenes; docs/v17/referencias/no_beneficiarios.md",
    "ruta": "output/v17/f5/hechos.json",
    "version": "v17",
    "estado": "vigente",
@@ -39138,8 +39390,107 @@
    "fecha_dato": "2026-10-19",
    "cifra_texto": "54,67 % de la ayuda",
    "min_max": [
+    3.6,
+    96.3592,
+    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+   ]
+  },
+  {
+   "id": "V17-AUD-RA-AYU-TRASLACION-MERCADO",
+   "enunciado": "θ mediana de los diseños a nivel de mercado o zona (Collinson y Ganong, Hyslop y Rea, Grislain-Letrémy y Trevien) (valor: mediana; min/max: extremos)",
+   "cifra": 46.0,
+   "rango": null,
+   "unidad": "% de la ayuda",
+   "periodo": "1993-2016",
+   "ambito": "EE. UU., Nueva Zelanda y Francia",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "docs/v16/literatura/L5_ayudas_demanda_efectos.csv; Fack (2006) y Gibbons y Manning (2006), resúmenes",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-19",
+   "cifra_texto": "46 % de la ayuda",
+   "min_max": [
+    36.0,
+    96.3592,
+    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+   ]
+  },
+  {
+   "id": "V17-AUD-RA-AYU-TRASLACION-SENS",
+   "enunciado": "Traslación mediana con otras composiciones (valor: ocho estudios; min/max: extremos de las sensibilidades de la ficha)",
+   "cifra": 54.6667,
+   "rango": [
+    41.0,
+    65.0
+   ],
+   "unidad": "% de la ayuda",
+   "periodo": "1984-2020",
+   "ambito": "Francia, Reino Unido, EE. UU., Finlandia y Nueva Zelanda (ningún estudio español)",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "docs/v16/literatura/L5_ayudas_demanda_efectos.csv; Fack (2006) y Gibbons y Manning (2006), resúmenes; docs/v17/referencias/no_beneficiarios.md",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-19",
+   "cifra_texto": "54,67 % de la ayuda (41 a 65)",
+   "min_max": [
     41.0,
     65.0,
+    "rango"
+   ]
+  },
+  {
+   "id": "V17-AUD-RA-AYU-UMBRAL-24M",
+   "enunciado": "Umbral de traslación θ* = meses de ayuda / meses de contrato, ayuda de 24 meses (Bono Alquiler Joven, RD 42/2022, art. 12; RD 326/2026, art. 134) (valor: contrato de 5 años; min: 7 años, persona jurídica; max: 3 años)",
+   "cifra": 40.0,
+   "rango": null,
+   "unidad": "% (θ*)",
+   "periodo": "normas vigentes",
+   "ambito": "España",
+   "mercado": "alquiler",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "RD 42/2022; RD 326/2026 (BOE-A-2026-8872), art. 134; Ley 29/1994, art. 9.1",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-19",
+   "cifra_texto": "40 %",
+   "min_max": [
+    28.5714,
+    66.6667,
+    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+   ]
+  },
+  {
+   "id": "V17-AUD-RA-AYU-UMBRAL-48M",
+   "enunciado": "Umbral de traslación θ* con la ayuda joven del Plan Estatal 2026-2030 prorrogada (2 + 2 años, RD 326/2026, art. 134) (valor: contrato de 5 años; min: 7 años; max: 3 años)",
+   "cifra": 80.0,
+   "rango": null,
+   "unidad": "% (θ*)",
+   "periodo": "normas vigentes",
+   "ambito": "España",
+   "mercado": "no aplica",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "RD 326/2026 (BOE-A-2026-8872), arts. 134 y 137; Ley 29/1994, art. 9.1",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-19",
+   "cifra_texto": "80 %",
+   "min_max": [
+    57.1429,
+    133.3333,
     "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
    ]
   },
@@ -39147,7 +39498,10 @@
    "id": "V17-AUD-RA-TOP-CONTRATOS-DIF",
    "enunciado": "Diferencia entre las estimaciones de contratos nuevos de Jofre-Monseny et al. (0,001; RSUE 2023, tabla 3) y Monràs y García-Montalvo (-0,102; UPF WP 1836, abril de 2022, tabla IV, PPML), Ley 11/2020 (valor: diferencia en log; min/max: IC 95 % de la diferencia suponiendo independencia)",
    "cifra": 0.103,
-   "rango": null,
+   "rango": [
+    0.0247,
+    0.1813
+   ],
    "unidad": "log contratos",
    "periodo": "2016-2022",
    "ambito": "Cataluña, municipios",
@@ -39160,18 +39514,21 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "0,103 log contratos",
+   "cifra_texto": "0,103 log contratos (0,025 a 0,181)",
    "min_max": [
     0.0247,
     0.1813,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-RA-TOP-H2-SDID",
    "enunciado": "H2 (V15), contratos nuevos en zonas tensionadas de Cataluña 2024, SDID: lectura convencional (valor: estimación; min/max: IC 95 % Webb)",
    "cifra": -14.1605,
-   "rango": null,
+   "rango": [
+    -19.2848,
+    -8.7108
+   ],
    "unidad": "%",
    "periodo": "2024T2-2026T1",
    "ambito": "Cataluña, municipios",
@@ -39184,18 +39541,21 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "-14,16 %",
+   "cifra_texto": "-14,16 % (-19,28 a -8,71)",
    "min_max": [
     -19.2848,
     -8.7108,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-RA-TOP-INC-CONTRATOS-RANGO",
    "enunciado": "Ley 11/2020, contratos nuevos: rango de las 60 especificaciones de cantidad (3 ventanas × 4 controles × log y log per cápita con y sin ponderar, y PPML) (valor: mediana; min/max: extremos; no es IC)",
    "cifra": 3.5619,
-   "rango": null,
+   "rango": [
+    -1.3312,
+    7.5915
+   ],
    "unidad": "%",
    "periodo": "2019T1-2022T1",
    "ambito": "Cataluña, municipios",
@@ -39208,18 +39568,21 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "3,56 %",
+   "cifra_texto": "3,56 % (-1,33 a 7,59)",
    "min_max": [
     -1.3312,
     7.5915,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-RA-TOP-INC-CONTRATOS-REF",
    "enunciado": "Ley 11/2020, contratos nuevos (Incasòl, municipio-trimestre): DiD en log, control = todos los municipios catalanes no tratados, sin ponderar (valor: exp(b)-1; min/max: IC 95 %)",
    "cifra": 0.9008,
-   "rango": null,
+   "rango": [
+    -2.5442,
+    4.4676
+   ],
    "unidad": "%",
    "periodo": "2019T1-2022T1",
    "ambito": "Cataluña, 60 tratados y 356 controles (panel equilibrado)",
@@ -39232,10 +39595,34 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "0,901 %",
+   "cifra_texto": "0,901 % (-2,54 a 4,47)",
    "min_max": [
     -2.5442,
     4.4676,
+    "rango"
+   ]
+  },
+  {
+   "id": "V17-AUD-RA-TOP-INC-EVENTOS-PRE",
+   "enunciado": "Ley 11/2020, contratos nuevos (log, referencia): estudio de eventos, mayor coeficiente previo en valor absoluto (valor) y media de los coeficientes posteriores (min = max = media posterior)",
+   "cifra": -7.9642,
+   "rango": null,
+   "unidad": "puntos log × 100",
+   "periodo": "2019T1-2022T1",
+   "ambito": "Cataluña, municipios",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl; elaboración propia",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-19",
+   "cifra_texto": "-7,96 puntos log × 100",
+   "min_max": [
+    null,
+    null,
     "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
    ]
   },
@@ -39243,7 +39630,10 @@
    "id": "V17-AUD-RA-TOP-INC-RENTA-RANGO",
    "enunciado": "Ley 11/2020, renta media de los contratos nuevos: rango de las 24 especificaciones (3 ventanas × 4 controles × con y sin ponderar) (valor: mediana; min/max: extremos; no es IC)",
    "cifra": -5.8212,
-   "rango": null,
+   "rango": [
+    -6.836,
+    -5.0818
+   ],
    "unidad": "%",
    "periodo": "2019T1-2022T1",
    "ambito": "Cataluña, municipios",
@@ -39256,11 +39646,38 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "-5,82 %",
+   "cifra_texto": "-5,82 % (-6,84 a -5,08)",
    "min_max": [
     -6.836,
     -5.0818,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
+   ]
+  },
+  {
+   "id": "V17-AUD-RA-TOP-INC-T1-RANGO",
+   "enunciado": "Ley 11/2020, contratos nuevos: variantes contra el confusor turístico (periodo posterior × densidad de viviendas de uso turístico de 2019; sin Barcelona; sin el decil más turístico), log y PPML (valor: mediana; min/max: extremos; no es IC)",
+   "cifra": 1.1105,
+   "rango": [
+    -0.8601,
+    4.8258
+   ],
+   "unidad": "%",
+   "periodo": "2019T1-2022T1",
+   "ambito": "Cataluña, municipios con densidad turística de 2019",
+   "mercado": "alquiler (contratos nuevos)",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "Incasòl; IDESCAT (habitatges d'ús turístic, 2019); padrón; elaboración propia",
+   "ruta": "output/v17/f5/hechos.json",
+   "version": "v17",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026-10-19",
+   "cifra_texto": "1,11 % (-0,86 a 4,83)",
+   "min_max": [
+    -0.8601,
+    4.8258,
+    "rango"
    ]
   },
   {
@@ -39315,7 +39732,10 @@
    "id": "V17-AUD-RA-TUR-BCN-TRASLACION",
    "enunciado": "Traslación orientativa a alquiler del freno a los anuncios en Barcelona: anuncios evitados según el contrafactual de Gyódi et al. (2025) repartidos por igual entre las 220 áreas de García-López et al. (2020) y multiplicados por su efecto por anuncio (valor: reparto uniforme; min: solo la mitad de los anuncios evitados vuelve al alquiler residencial; max: los anuncios evitados se concentran en la mitad de las áreas)",
    "cifra": 1.4874,
-   "rango": null,
+   "rango": [
+    0.7437,
+    2.9747
+   ],
    "unidad": "% de alquiler (área media)",
    "periodo": "2015-2023",
    "ambito": "Barcelona",
@@ -39328,20 +39748,20 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "1,49 % de alquiler",
+   "cifra_texto": "1,49 % de alquiler (0,744 a 2,97)",
    "min_max": [
     0.7437,
     2.9747,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-AUD-RA-TUR-CUOTA-STOCK",
-   "enunciado": "Viviendas turísticas (stock, INE VUT) sobre alquiler habitual (Censo 2021) + turísticas: mismo numerador que el Banco de España (valor: agosto de 2024 con el Censo; min/max: otras fechas y stock ECV × ECP)",
-   "cifra": 11.9262,
+   "enunciado": "Viviendas turísticas (stock, INE VUT) sobre alquiler habitual + turísticas: mismo numerador que el Banco de España (valor: mayo de 2026 con el Censo 2021, la fecha más reciente; min/max: mayo de 2026 con el stock ECV 2021 × ECP y agosto de 2024 con el Censo)",
+   "cifra": 10.2739,
    "rango": null,
    "unidad": "% de (alquiler habitual + turísticas)",
-   "periodo": "2024M08 (y 2026M05)",
+   "periodo": "2024M08 y 2026M05",
    "ambito": "España",
    "mercado": "alquiler (parque)",
    "capa": "C4",
@@ -39352,7 +39772,7 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "11,93 % de",
+   "cifra_texto": "10,27 % de",
    "min_max": [
     9.1767,
     11.9262,
@@ -39363,7 +39783,10 @@
    "id": "V17-AUD-RA-TUR-Q2A",
    "enunciado": "Q2a (V16) con inferencia convencional: Δlog IPC de alquiler por DT del log de la exposición turística (valor: estimación; min/max: IC 95 %)",
    "cifra": 0.0132,
-   "rango": null,
+   "rango": [
+    0.0055,
+    0.0208
+   ],
    "unidad": "Δlog por DT",
    "periodo": "2017-2019 frente a 2022-2025",
    "ambito": "41 provincias de entrenamiento",
@@ -39376,11 +39799,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-10-19",
-   "cifra_texto": "0,013 Δlog por DT",
+   "cifra_texto": "0,013 Δlog por DT (0,0055 a 0,021)",
    "min_max": [
     0.0055,
     0.0208,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -39715,7 +40138,7 @@
    "cifra_texto": "1,03 índice",
    "min_max": [
     1.0,
-    1.0712,
+    1.0722,
     "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
    ]
   },
@@ -39867,7 +40290,10 @@
    "id": "V17-D3-HOGARES-ORIGEN-NACIDOS-EXTRANJERO",
    "enunciado": "Parte del componente población del cambio de hogares 2021-2026 que corresponde a nacidos en el extranjero (misma formación de hogares; ilustrativo)",
    "cifra": 791529.5673,
-   "rango": null,
+   "rango": [
+    724784.734,
+    858274.4007
+   ],
    "unidad": "hogares",
    "periodo": "2021-2026",
    "ambito": "España",
@@ -39880,11 +40306,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-08-06",
-   "cifra_texto": "791.530 hogares",
+   "cifra_texto": "791.530 hogares (724.785 a 858.274)",
    "min_max": [
     724784.734,
     858274.4007,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -40059,7 +40485,10 @@
    "id": "V17-D3-PROD-NECESARIA-10A",
    "enunciado": "Producción anual necesaria para cerrar el déficit inicial en 10 años y absorber los hogares nuevos y la reposición (escenario contable)",
    "cifra": 223045.02,
-   "rango": null,
+   "rango": [
+    204827.82,
+    241262.22
+   ],
    "unidad": "viviendas/año (valor = déficit central 705.778; min-max = déficit 523.606-887.950)",
    "periodo": "2026-2035",
    "ambito": "España",
@@ -40072,18 +40501,21 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-06-17",
-   "cifra_texto": "223.045 viviendas/año",
+   "cifra_texto": "223.045 viviendas/año (204.828 a 241.262)",
    "min_max": [
     204827.82,
     241262.22,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-D3-PROD-NECESARIA-5A",
    "enunciado": "Producción anual necesaria para cerrar el déficit inicial en 5 años y absorber los hogares nuevos y la reposición (escenario contable)",
    "cifra": 293622.82,
-   "rango": null,
+   "rango": [
+    257188.42,
+    330057.22
+   ],
    "unidad": "viviendas/año (valor = déficit central 705.778; min-max = déficit 523.606-887.950)",
    "periodo": "2026-2030",
    "ambito": "España",
@@ -40096,11 +40528,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-06-17",
-   "cifra_texto": "293.623 viviendas/año",
+   "cifra_texto": "293.623 viviendas/año (257.188 a 330.057)",
    "min_max": [
     257188.42,
     330057.22,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
@@ -40274,11 +40706,14 @@
   {
    "id": "V17-D3-TENENCIA-ALQUILER-ESP",
    "enunciado": "Hogares en alquiler, persona de mayor edad nacida en España",
-   "cifra": 12.2365,
-   "rango": null,
+   "cifra": 11.4689,
+   "rango": [
+    11.4126,
+    11.5251
+   ],
    "unidad": "% de hogares",
    "periodo": "1-11-2021 (Censo)",
-   "ambito": "España (muestra 10 %)",
+   "ambito": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40288,21 +40723,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025-01-01",
-   "cifra_texto": "12,24 % de hogares",
+   "cifra_texto": "11,47 % de hogares (11,41 a 11,53)",
    "min_max": [
-    12.1879,
-    12.285,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    11.4126,
+    11.5251,
+    "rango"
    ]
   },
   {
    "id": "V17-D3-TENENCIA-ALQUILER-EXTR",
    "enunciado": "Hogares en alquiler, persona de mayor edad nacida en el extranjero",
-   "cifra": 38.3194,
-   "rango": null,
+   "cifra": 36.7613,
+   "rango": [
+    36.5452,
+    36.9774
+   ],
    "unidad": "% de hogares",
    "periodo": "1-11-2021 (Censo)",
-   "ambito": "España (muestra 10 %)",
+   "ambito": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
    "mercado": "alquiler",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40312,21 +40750,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025-01-01",
-   "cifra_texto": "38,32 % de hogares",
+   "cifra_texto": "36,76 % de hogares (36,55 a 36,98)",
    "min_max": [
-    38.1478,
-    38.4909,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    36.5452,
+    36.9774,
+    "rango"
    ]
   },
   {
    "id": "V17-D3-TENENCIA-PROPIEDAD-ESP",
    "enunciado": "Hogares en propiedad, persona de mayor edad nacida en España",
-   "cifra": 79.96,
-   "rango": null,
+   "cifra": 80.4568,
+   "rango": [
+    80.3868,
+    80.5268
+   ],
    "unidad": "% de hogares",
    "periodo": "1-11-2021 (Censo)",
-   "ambito": "España (muestra 10 %)",
+   "ambito": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40336,21 +40777,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025-01-01",
-   "cifra_texto": "79,96 % de hogares",
+   "cifra_texto": "80,46 % de hogares (80,39 a 80,53)",
    "min_max": [
-    79.9007,
-    80.0193,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    80.3868,
+    80.5268,
+    "rango"
    ]
   },
   {
    "id": "V17-D3-TENENCIA-PROPIEDAD-EXTR",
    "enunciado": "Hogares en propiedad, persona de mayor edad nacida en el extranjero",
-   "cifra": 49.7344,
-   "rango": null,
+   "cifra": 50.6472,
+   "rango": [
+    50.4231,
+    50.8713
+   ],
    "unidad": "% de hogares",
    "periodo": "1-11-2021 (Censo)",
-   "ambito": "España (muestra 10 %)",
+   "ambito": "España sin las CCAA selladas v6 (Censo 2021, muestra del 10 %)",
    "mercado": "no aplica",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40360,21 +40804,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2025-01-01",
-   "cifra_texto": "49,73 % de hogares",
+   "cifra_texto": "50,65 % de hogares (50,42 a 50,87)",
    "min_max": [
-    49.558,
-    49.9108,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    50.4231,
+    50.8713,
+    "rango"
    ]
   },
   {
    "id": "V17-D3-VARIANZA-COMUN-IPC-ALQUILER",
    "enunciado": "Cuota de la varianza de la variación anual de IPC alquiler INE provincial debida al componente común (año)",
    "cifra": 64.221,
-   "rango": null,
+   "rango": [
+    59.2821,
+    71.4332
+   ],
    "unidad": "% (IC95 bootstrap por provincias)",
    "periodo": "2015-2025",
-   "ambito": "41 unidades sin muestra sellada v6",
+   "ambito": "41 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40384,21 +40831,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-07-01",
-   "cifra_texto": "64,22 %",
+   "cifra_texto": "64,22 % (59,28 a 71,43)",
    "min_max": [
     59.2821,
     71.4332,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-D3-VARIANZA-COMUN-IPV-CCAA",
    "enunciado": "Cuota de la varianza de la variación anual de IPV INE por CCAA debida al componente común (año)",
-   "cifra": 76.3031,
-   "rango": null,
+   "cifra": 81.0569,
+   "rango": [
+    70.3495,
+    93.8832
+   ],
    "unidad": "% (IC95 bootstrap por provincias)",
    "periodo": "2015-2025",
-   "ambito": "17 unidades sin muestra sellada v6",
+   "ambito": "9 CCAA sin bloques sellados v6 (holdout.excluir_sellados_v6)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40408,21 +40858,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-07-01",
-   "cifra_texto": "76,3 %",
+   "cifra_texto": "81,06 % (70,35 a 93,88)",
    "min_max": [
-    66.982,
-    90.4937,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    70.3495,
+    93.8832,
+    "rango"
    ]
   },
   {
    "id": "V17-D3-VARIANZA-COMUN-IPVA",
    "enunciado": "Cuota de la varianza de la variación anual de IPVA INE provincial debida al componente común (año)",
    "cifra": 76.9067,
-   "rango": null,
+   "rango": [
+    70.3578,
+    84.5886
+   ],
    "unidad": "% (IC95 bootstrap por provincias)",
    "periodo": "2015-2024",
-   "ambito": "38 unidades sin muestra sellada v6",
+   "ambito": "38 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40432,21 +40885,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-07-01",
-   "cifra_texto": "76,91 %",
+   "cifra_texto": "76,91 % (70,36 a 84,59)",
    "min_max": [
     70.3578,
     84.5886,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-D3-VARIANZA-COMUN-SERPAVI",
    "enunciado": "Cuota de la varianza de la variación anual de SERPAVI alquiler €/m² mediana provincial debida al componente común (año)",
    "cifra": 70.8004,
-   "rango": null,
+   "rango": [
+    64.8305,
+    79.0915
+   ],
    "unidad": "% (IC95 bootstrap por provincias)",
    "periodo": "2015-2024",
-   "ambito": "38 unidades sin muestra sellada v6",
+   "ambito": "38 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
    "mercado": "alquiler (parque)",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40456,21 +40912,24 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-07-01",
-   "cifra_texto": "70,8 %",
+   "cifra_texto": "70,8 % (64,83 a 79,09)",
    "min_max": [
     64.8305,
     79.0915,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {
    "id": "V17-D3-VARIANZA-COMUN-VALOR-TASADO",
    "enunciado": "Cuota de la varianza de la variación anual de Valor tasado MIVAU debida al componente común (año)",
    "cifra": 60.6808,
-   "rango": null,
+   "rango": [
+    55.1995,
+    67.4502
+   ],
    "unidad": "% (IC95 bootstrap por provincias)",
    "periodo": "2015-2025",
-   "ambito": "38 unidades sin muestra sellada v6",
+   "ambito": "38 provincias sin bloques sellados v6 (holdout.excluir_sellados_v6)",
    "mercado": "compra",
    "capa": "C4",
    "metodo": "ver ficha de origen",
@@ -40480,11 +40939,11 @@
    "estado": "vigente",
    "tipo": "cifra",
    "fecha_dato": "2026-07-01",
-   "cifra_texto": "60,68 %",
+   "cifra_texto": "60,68 % (55,2 a 67,45)",
    "min_max": [
     55.1995,
     67.4502,
-    "min y max según la nota de la cifra V17 (rango, referencia histórica como la media o 2007, o extremos entre estudios)"
+    "rango"
    ]
   },
   {

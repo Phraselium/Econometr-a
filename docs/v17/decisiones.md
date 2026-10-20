@@ -38,3 +38,10 @@
 - **Incidente de D3.** La guarda lo habría detectado: tests/v17/test_fuga_v6.py lo comprueba con la versión del script del commit 415eb90.
 - **Límite.** Es un control estático. Comprueba que el script usa el filtro, no que lo aplique en cada lectura. La revisión de cada script (y el abogado del diablo) cubre el resto.
 - **V18.** Todos los scripts de V18 quedan sometidos a esta guarda.
+
+## K6. Ronda 2 del abogado del diablo: decisiones del autor (2026-10-20)
+- **Excepción a la guarda v6 en D3 (aceptada).** src/v17/d3_cuantitativo.py lee completos los nacidos por provincia, el MNP y la EVR municipal porque solo los SUMA para reconstruir el total nacional publicado por el INE; no usa ningún detalle territorial. Filtrar cambiaría cifras nacionales que dejarían de coincidir con el INE. La excepción está declarada en el docstring del script. Toda tabla con detalle territorial sigue pasando por holdout.excluir_sellados_v6() (la tenencia del Censo 2021, el IPV y el esfuerzo por CCAA, ya recalculados; ERRATA.md, 2026-10-20).
+- **III.8, duración del bono (corregida).** El RD 326/2026 (art. 134) fija dos años de ayuda joven, prorrogables otros dos si la comunidad lo acuerda; el umbral de pérdida en un contrato de cinco años es del 40 % con dos años y del 80 % con la prórroga (V17-AUD-RA-AYU-UMBRAL-24M y -48M).
+- **A3 (aplicada).** La frase sobre la rigidez de la oferta pasa a «la evidencia es compatible con...»: la relación entre estudios no es un contraste.
+- **A4 (aplicada).** III.1 precisa que una etiqueta puede aplicarse a un resultado distinto del objetivo declarado si la ficha lo nombra, y que una versión de trabajo leída entera cuenta como leída completa. III.8 (ii) lo dice de forma explícita. III.10 deja de afirmar que ninguna fila llega a «evidencia en contra».
+- Ningún veredicto cambia. Entrada en ERRATA.md del 2026-10-20.

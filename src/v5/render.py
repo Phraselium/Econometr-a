@@ -36,6 +36,12 @@ CONTEOS = {"instrumentos", "variables", "hipótesis", "CCAA", "referencias", "af
            "series", "entidades", "tareas", "clase", "declarantes", "hechos/anio", "procedimientos/anio", "lanzamientos/anio"}
 
 
+def muestra_rango(r) -> bool:
+    """V17 (2026-10-20): una cifra V17 solo se escribe como «valor (mín.-máx.)» si su tipo_rango es «rango». Las cifras anteriores
+    se escriben como en su versión publicada."""
+    return r.get("tipo_rango", "rango") == "rango" or not str(r.get("id", "")).startswith("V17-")
+
+
 def fmt_num(x: float, unidad: str = "") -> str:
     if pd.isna(x):
         return "—"
@@ -96,13 +102,13 @@ def texto(r: pd.Series, campo: str | None) -> str:
         return rango if campo != "cita" else f"{rango} ({r.periodo}; {r.fuentes}; dato de {r.fecha_dato}; {r.capa})"
     if campo in (None, "valor_rango"):
         base = f"{fmt_num(r.valor, u)}{sep}{u}".strip()
-        if campo is None and pd.notna(r["min"]) and pd.notna(r["max"]) and r.get("tipo_rango", "rango") == "rango":   # V17: no si son referencias
+        if campo is None and pd.notna(r["min"]) and pd.notna(r["max"]) and muestra_rango(r):   # V17: no si son referencias
             base += f" ({fmt_num(r['min'], u)}{_guion(r['min'])}{fmt_num(r['max'], u)}{sep}{u})".rstrip()
         return base
     if campo in ("breve", "rango_breve"):
         div, esc = escala(r.valor if pd.notna(r.valor) else r["max"])
         red = lambda v, uu: redondeo(v, uu, div)  # noqa: E731
-        hay_rango = pd.notna(r["min"]) and pd.notna(r["max"]) and r.get("tipo_rango", "rango") == "rango"
+        hay_rango = pd.notna(r["min"]) and pd.notna(r["max"]) and muestra_rango(r)
         if hay_rango and red(r["min"], u) == red(r["max"], u):
             div, esc = 1.0, ""
             red = fmt_num   # rango estrecho: el redondeo lo colapsaría («17-17»); se dan las cifras completas

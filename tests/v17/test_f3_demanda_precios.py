@@ -30,6 +30,10 @@ def test_formato(hechos):
         assert h["nota"].startswith("a posteriori")
         assert h["lectura_v17"] in ("OF", "hecho", "cota", "asociación", "juicio experto", "juicio experto (calibración)")
         assert h["fuentes"]
+        assert h["tipo_rango"] in ("rango", "referencias", "sin rango"), i
+        assert h["cobertura"] and "véase" not in h["cobertura"], i
+        if h["min"] is None or h["max"] is None:
+            assert h["tipo_rango"] == "sin rango", i
         if h["min"] is not None and h["max"] is not None and h["unidad"].startswith("%"):
             assert h["min"] <= h["max"] + 1e-9, i
 
@@ -78,6 +82,7 @@ def test_script_sin_red_ni_sellado():
         assert prohibido not in src
     assert "SEED = 20261010" in src
     assert "not muestra_sellada_v6" in src
+    assert "excluir_sellados_v6(" in src   # guarda de fuga v6 (docs/v17/decisiones.md K5)
 
 
 def test_determinista():

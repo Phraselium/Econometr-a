@@ -56,14 +56,15 @@ Generada por src/v17/registro_subagentes.py (fuente: docs/v17/subagentes.csv). T
 | 2026-10-19 | F3 | auditor | revisión ronda 1 demanda y precios | 62.629 | output/v17/auditoria/ (demanda_precios) |
 | 2026-10-19 | F3 | auditor | revisión ronda 1 oferta y titularidad | 107.046 | output/v17/auditoria/ (oferta_titularidad) |
 | 2026-10-19 | F3 | auditor | revisión ronda 1 regulación y ayudas (descomposición de topes: 84 especificaciones) | 125.786 | output/v17/auditoria/ (regulacion_ayudas) |
+| 2026-10-20 | F3 | auditor | revisión ronda 2 demanda y precios (guarda v6, tipo de rango, cobertura) | 27.097 | output/v17/auditoria/ (demanda_precios) |
 
 | Fase | Tokens de subagentes |
 |---|---|
 | F0 | 822.687 |
 | F1 | 346.740 |
 | F2 | 443.477 |
-| F3 | 2.178.422 |
+| F3 | 2.205.519 |
 
-Total V17: 3.791.326 tokens
+Total V17: 3.818.423 tokens
 
 <!-- fin subagentes -->

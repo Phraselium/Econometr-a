@@ -195,8 +195,9 @@ def escribir(tab, salida):
         g = g.set_index("razon_soporte_corte")
         p1 = g.loc[1.0, "veredicto"] == "APTO"
         p05 = g.loc[0.5, "veredicto"] == "APTO"
+        p2 = g.loc[2.0, "veredicto"] == "APTO"
         if p1 and p05:
-            v = "APTO"
+            v = "APTO" if p2 else "APTO si el alcance de la dependencia no supera el corte; NO APTO si lo duplica"
         elif p05:
             v = "APTO solo si el alcance de la dependencia es de a lo sumo la mitad del corte; NO APTO si llega al corte"
         else:
@@ -227,4 +228,9 @@ def escribir(tab, salida):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--R", type=int, default=2000)
-    main(ap.parse_args().R)
+    ap.add_argument("--solo-informe", action="store_true", help="regenera resultado.json e informe.md desde tabla.csv (sin simular)")
+    a = ap.parse_args()
+    if a.solo_informe:
+        escribir(pd.read_csv(SALIDA / "tabla.csv"), SALIDA)
+    else:
+        main(a.R)

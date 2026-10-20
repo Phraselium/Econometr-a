@@ -1,0 +1,81 @@
+{
+  "rama": "v18/montecarlo",
+  "pregunta": "validación del wild cluster bootstrap de Webb en TWFE (E5, E6-R2, E7-A2, E8, E9, E12)",
+  "capa": "validación de herramienta (sin capa de evidencia)",
+  "datos": "simulación; sin datos reales",
+  "N": "G = 8, 30, 39 clusters; T = 14 (y 30); tratamiento escalonado",
+  "metodo": "TWFE con CR1 y WCR con pesos de Webb (H0 impuesta)",
+  "estimacion": null,
+  "ic95": null,
+  "p_ajustado": null,
+  "nivel_evidencia": "no aplica (validación Monte Carlo)",
+  "diagnosticos": {
+    "veredicto_por_inferencia": {
+      "CR1 (normal)": {
+        "veredicto": "APTO CONDICIONADO",
+        "aptos": [
+          "G=30",
+          "G=39"
+        ],
+        "fallan": [
+          "G=8 (tamaño 0.0955, cobertura 0.9045)"
+        ]
+      },
+      "CR1 (t de Student, G-1)": {
+        "veredicto": "APTO",
+        "aptos": [
+          "G=8",
+          "G=30",
+          "G=39"
+        ],
+        "fallan": []
+      },
+      "wild cluster bootstrap (Webb)": {
+        "veredicto": "APTO",
+        "aptos": [
+          "G=8",
+          "G=30",
+          "G=39"
+        ],
+        "fallan": []
+      }
+    },
+    "R": 2000,
+    "B": 9999,
+    "semilla": 20261010,
+    "criterio": "tamaño [0,03; 0,08], cobertura [0,92; 0,97], R >= 2.000",
+    "bandas_adenda_1_12": {
+      "CR1 (normal) G=8 T=14 tratados=4": "con valor crítico corregido",
+      "CR1 (t de Student, G-1) G=8 T=14 tratados=4": "apta",
+      "wild cluster bootstrap (Webb) G=8 T=14 tratados=4": "apta",
+      "CR1 (normal) G=30 T=14 tratados=15": "apta",
+      "CR1 (t de Student, G-1) G=30 T=14 tratados=15": "apta",
+      "wild cluster bootstrap (Webb) G=30 T=14 tratados=15": "apta",
+      "CR1 (normal) G=39 T=14 tratados=20": "apta",
+      "CR1 (t de Student, G-1) G=39 T=14 tratados=20": "apta",
+      "wild cluster bootstrap (Webb) G=39 T=14 tratados=20": "apta",
+      "CR1 (normal) G=8 T=14 tratados=1": "no fiable",
+      "CR1 (t de Student, G-1) G=8 T=14 tratados=1": "no fiable",
+      "wild cluster bootstrap (Webb) G=8 T=14 tratados=1": "no fiable",
+      "CR1 (normal) G=30 T=14 tratados=3": "con valor crítico corregido",
+      "CR1 (t de Student, G-1) G=30 T=14 tratados=3": "con valor crítico corregido",
+      "wild cluster bootstrap (Webb) G=30 T=14 tratados=3": "no fiable",
+      "CR1 (normal) G=39 T=14 tratados=4": "con valor crítico corregido",
+      "CR1 (t de Student, G-1) G=39 T=14 tratados=4": "con valor crítico corregido",
+      "wild cluster bootstrap (Webb) G=39 T=14 tratados=4": "apta",
+      "CR1 (normal) G=39 T=30 tratados=20": "apta",
+      "CR1 (t de Student, G-1) G=39 T=30 tratados=20": "apta",
+      "wild cluster bootstrap (Webb) G=39 T=30 tratados=20": "apta"
+    },
+    "alcance_territorial": "sin lectura de datos"
+  },
+  "fuera_muestra": {
+    "modelo": null,
+    "rmse": null,
+    "dm_vs_ar4": null
+  },
+  "notas": [
+    "simulación; sin datos reales",
+    "Cobertura del IC por inversión = 1 - tasa de rechazo de H0: beta = beta verdadero (equivariancia)."
+  ]
+}

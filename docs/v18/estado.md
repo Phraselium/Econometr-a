@@ -40,6 +40,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F3 | revisor-preregistro | revisión del plan de replicación (28 hallazgos; APTO CON CAMBIOS) | 181.919 | docs/v18/revision_plan/revisor_preregistro.md |
 | 2026-10-20 | F3 | general-purpose | adenda del plan de replicación (respuesta a 28 + AD hallazgos) | 321.538 | docs/v18/plan_replicacion_adenda.md; src/v18/f0_inventario.py |
 | 2026-10-20 | F4 | general-purpose | sellado de entrenamiento (sellado_v18.json, sellado.py) | 294.114 | src/v18/{f3_sellado,sellado}.py; docs/v18/sellado_v18.json |
+| 2026-10-20 | F4 | montecarlo | grupo A: BHJ, Webb TWFE, IV débil, Driscoll-Kraay, Conley | 185.171 | output/v18/montecarlo/{bhj,webb_twfe,iv_debil,driscoll_kraay,conley}/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -47,8 +48,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F1 | 1.630.684 |
 | F2 | 183.117 |
 | F3 | 985.262 |
-| F4 | 294.114 |
+| F4 | 479.285 |
 
-Total V18: 3.352.810 tokens
+Total V18: 3.537.981 tokens
 
 <!-- fin subagentes -->

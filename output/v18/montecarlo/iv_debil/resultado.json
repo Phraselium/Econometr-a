@@ -47,20 +47,20 @@
       "p=2 · 2SLS beta_1 (normal)": {
         "veredicto": "APTO CONDICIONADO",
         "aptos": [
-          "p=2, ambas fuertes (0,5; 0,5)",
+          "p=2, ambas fuertes (1; 1)",
           "p=2, ambas débiles (0,06; 0,06)"
         ],
         "fallan": [
-          "p=2, una débil (0,5; 0,05) (tamaño 0.0115)"
+          "p=2, una débil (1; 0,05) (tamaño 0.0090)"
         ]
       },
       "p=2 · 2SLS beta_1 (t de Student, G-1)": {
         "veredicto": "APTO CONDICIONADO",
         "aptos": [
-          "p=2, ambas fuertes (0,5; 0,5)"
+          "p=2, ambas fuertes (1; 1)"
         ],
         "fallan": [
-          "p=2, una débil (0,5; 0,05) (tamaño 0.0105)",
+          "p=2, una débil (1; 0,05) (tamaño 0.0060)",
           "p=2, ambas débiles (0,06; 0,06) (tamaño 0.0265)"
         ]
       },
@@ -70,16 +70,16 @@
           "p=2, ambas débiles (0,06; 0,06)"
         ],
         "fallan": [
-          "p=2, ambas fuertes (0,5; 0,5) (tamaño 0.0295)",
-          "p=2, una débil (0,5; 0,05) (tamaño 0.0285)"
+          "p=2, ambas fuertes (1; 1) (tamaño 0.0295)",
+          "p=2, una débil (1; 0,05) (tamaño 0.0285)"
         ]
       },
       "p=2 · AR de subvector beta_1 (proyección)": {
         "veredicto": "NO APTO",
         "aptos": [],
         "fallan": [
-          "p=2, ambas fuertes (0,5; 0,5) (tamaño 0.0070)",
-          "p=2, una débil (0,5; 0,05) (tamaño 0.0000)",
+          "p=2, ambas fuertes (1; 1) (tamaño 0.0070)",
+          "p=2, una débil (1; 0,05) (tamaño 0.0000)",
           "p=2, ambas débiles (0,06; 0,06) (tamaño 0.0000)"
         ]
       },
@@ -91,8 +91,8 @@
           "p=1, pi=0.1": null,
           "p=1, pi=0.2": 0.1927,
           "p=1, pi=0.5": 0.0713,
-          "p=2, ambas fuertes (0,5; 0,5)": 0.0638,
-          "p=2, una débil (0,5; 0,05)": null,
+          "p=2, ambas fuertes (1; 1)": 0.062,
+          "p=2, una débil (1; 0,05)": null,
           "p=2, ambas débiles (0,06; 0,06)": null
         }
       }
@@ -118,15 +118,15 @@
       "p=1, pi=0.5 · 2SLS (t de Student, G-1)": "con valor crítico corregido",
       "p=1, pi=0.5 · AR (IC exacto por cluster)": "apta",
       "p=1, pi=0.5 · 2SLS (normal) | regla F efectivo >= 10": "con valor crítico corregido",
-      "p=2, ambas fuertes (0,5; 0,5) · 2SLS beta_1 (normal)": "apta",
-      "p=2, ambas fuertes (0,5; 0,5) · 2SLS beta_1 (t de Student, G-1)": "apta",
-      "p=2, ambas fuertes (0,5; 0,5) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",
-      "p=2, ambas fuertes (0,5; 0,5) · AR de subvector beta_1 (proyección)": "no fiable",
-      "p=2, ambas fuertes (0,5; 0,5) · 2SLS beta_1 (normal) | regla min F efectivo >= 10": "con valor crítico corregido",
-      "p=2, una débil (0,5; 0,05) · 2SLS beta_1 (normal)": "no fiable",
-      "p=2, una débil (0,5; 0,05) · 2SLS beta_1 (t de Student, G-1)": "no fiable",
-      "p=2, una débil (0,5; 0,05) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",
-      "p=2, una débil (0,5; 0,05) · AR de subvector beta_1 (proyección)": "no fiable",
+      "p=2, ambas fuertes (1; 1) · 2SLS beta_1 (normal)": "con valor crítico corregido",
+      "p=2, ambas fuertes (1; 1) · 2SLS beta_1 (t de Student, G-1)": "apta",
+      "p=2, ambas fuertes (1; 1) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",
+      "p=2, ambas fuertes (1; 1) · AR de subvector beta_1 (proyección)": "no fiable",
+      "p=2, ambas fuertes (1; 1) · 2SLS beta_1 (normal) | regla min F efectivo >= 10": "con valor crítico corregido",
+      "p=2, una débil (1; 0,05) · 2SLS beta_1 (normal)": "no fiable",
+      "p=2, una débil (1; 0,05) · 2SLS beta_1 (t de Student, G-1)": "no fiable",
+      "p=2, una débil (1; 0,05) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",
+      "p=2, una débil (1; 0,05) · AR de subvector beta_1 (proyección)": "no fiable",
       "p=2, ambas débiles (0,06; 0,06) · 2SLS beta_1 (normal)": "con valor crítico corregido",
       "p=2, ambas débiles (0,06; 0,06) · 2SLS beta_1 (t de Student, G-1)": "con valor crítico corregido",
       "p=2, ambas débiles (0,06; 0,06) · AR conjunto (chi2, 2 gl)": "con valor crítico corregido",

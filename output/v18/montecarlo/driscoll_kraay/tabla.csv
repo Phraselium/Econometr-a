@@ -27,3 +27,7 @@ inferencia,T,rho_f,efectos_ano,R,tamano_5pct,tamano_ic95,cobertura_95,potencia,s
 "Driscoll-Kraay (m = 4, t de T-1 gl)",30,0.5,True,2000,0.135,"[0.12, 0.15]",0.865,0.9995,0.0014304982886630643,0.046344259355550727,False,NO APTO,con valor crítico corregido
 "cluster por provincia (CR1, t de N-1 gl)",30,0.5,True,2000,0.053,"[0.0432, 0.0628]",0.947,0.999,0.0014304982886630643,0.046344259355550727,False,APTO,apta
 "HC1 (normal, referencia)",30,0.5,True,2000,0.126,"[0.1115, 0.1405]",0.874,1.0,0.0014304982886630643,0.046344259355550727,False,NO APTO,con valor crítico corregido
+"Driscoll-Kraay (m = 4, t de T-1 gl)",200,0.5,False,2000,0.077,"[0.0653, 0.0887]",0.923,1.0,-0.0005785805744263824,0.041852698536372426,False,APTO,con valor crítico corregido
+"Driscoll-Kraay (m = 6, t de T-1 gl)",200,0.5,False,2000,0.0765,"[0.0649, 0.0881]",0.9235,1.0,-0.0005785805744263824,0.041852698536372426,False,APTO,con valor crítico corregido
+"cluster por provincia (CR1, t de N-1 gl)",200,0.5,False,2000,0.5,"[0.4781, 0.5219]",0.5,1.0,-0.0005785805744263824,0.041852698536372426,False,NO APTO,no fiable
+"HC1 (normal, referencia)",200,0.5,False,2000,0.5485,"[0.5267, 0.5703]",0.4515,1.0,-0.0005785805744263824,0.041852698536372426,False,NO APTO,no fiable

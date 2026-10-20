@@ -1,11 +1,13 @@
 """V18 · BHJ a nivel de choque: herramienta y Monte Carlo (simulación; sin datos reales)."""
 import importlib.util
+import os
 import sys
 from pathlib import Path
 
 import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[2]
+os.environ["V18_MC_JOBS"] = "1"
 
 
 def _cargar(nombre, ruta):

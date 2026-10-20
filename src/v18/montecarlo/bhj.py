@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import math
 import sys
 from pathlib import Path
@@ -108,7 +109,7 @@ def paralelo(k, R, **kw):
     from joblib import Parallel, delayed
     base, extra = divmod(R, 40)
     tr = [base + (1 if i < extra else 0) for i in range(40)]
-    res = Parallel(n_jobs=4)(delayed(f_rep)(np.random.default_rng([SEED, k, i]), n, **kw) for i, n in enumerate(tr) if n > 0)
+    res = Parallel(n_jobs=int(os.environ.get("V18_MC_JOBS", "4")))(delayed(f_rep)(np.random.default_rng([SEED, k, i]), n, **kw) for i, n in enumerate(tr) if n > 0)
     return np.vstack(res)
 
 

@@ -73,7 +73,11 @@
       "Driscoll-Kraay (m = 3, t de T-1 gl) T=30 rho_f=0.5 año=True": "con valor crítico corregido",
       "Driscoll-Kraay (m = 4, t de T-1 gl) T=30 rho_f=0.5 año=True": "con valor crítico corregido",
       "cluster por provincia (CR1, t de N-1 gl) T=30 rho_f=0.5 año=True": "apta",
-      "HC1 (normal, referencia) T=30 rho_f=0.5 año=True": "con valor crítico corregido"
+      "HC1 (normal, referencia) T=30 rho_f=0.5 año=True": "con valor crítico corregido",
+      "Driscoll-Kraay (m = 4, t de T-1 gl) T=200 rho_f=0.5 año=False": "con valor crítico corregido",
+      "Driscoll-Kraay (m = 6, t de T-1 gl) T=200 rho_f=0.5 año=False": "con valor crítico corregido",
+      "cluster por provincia (CR1, t de N-1 gl) T=200 rho_f=0.5 año=False": "no fiable",
+      "HC1 (normal, referencia) T=200 rho_f=0.5 año=False": "no fiable"
     },
     "alcance_territorial": "sin lectura de datos"
   },

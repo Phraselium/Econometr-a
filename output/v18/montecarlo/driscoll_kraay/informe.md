@@ -36,6 +36,10 @@ Proceso generador: ver el docstring de src/v18/montecarlo/driscoll_kraay.py.
 | Driscoll-Kraay (m = 4, t de T-1 gl)      |  30 |     0.5 | True          | 2000 |        0.135  |         0.865  |     0.9995 | NO APTO     | con valor crítico corregido | False       |
 | cluster por provincia (CR1, t de N-1 gl) |  30 |     0.5 | True          | 2000 |        0.053  |         0.947  |     0.999  | APTO        | apta                        | False       |
 | HC1 (normal, referencia)                 |  30 |     0.5 | True          | 2000 |        0.126  |         0.874  |     1      | NO APTO     | con valor crítico corregido | False       |
+| Driscoll-Kraay (m = 4, t de T-1 gl)      | 200 |     0.5 | False         | 2000 |        0.077  |         0.923  |     1      | APTO        | con valor crítico corregido | False       |
+| Driscoll-Kraay (m = 6, t de T-1 gl)      | 200 |     0.5 | False         | 2000 |        0.0765 |         0.9235 |     1      | APTO        | con valor crítico corregido | False       |
+| cluster por provincia (CR1, t de N-1 gl) | 200 |     0.5 | False         | 2000 |        0.5    |         0.5    |     1      | NO APTO     | no fiable                   | False       |
+| HC1 (normal, referencia)                 | 200 |     0.5 | False         | 2000 |        0.5485 |         0.4515 |     1      | NO APTO     | no fiable                   | False       |
 
 ## Veredicto (escenarios principales)
 

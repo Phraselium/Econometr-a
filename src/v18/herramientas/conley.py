@@ -18,7 +18,10 @@ N_CORONA, N_MUN_CORONA = 3200, 310
 def distancias(c1, c2=None):
     c2 = c1 if c2 is None else c2
     d2 = (c1 ** 2).sum(1)[:, None] + (c2 ** 2).sum(1)[None, :] - 2 * c1 @ c2.T
-    return np.sqrt(np.maximum(d2, 0.0))
+    d = np.sqrt(np.maximum(d2, 0.0))
+    if c2 is c1:
+        np.fill_diagonal(d, 0.0)
+    return d
 
 
 def nucleo_bartlett(coords, corte_km):

@@ -54,6 +54,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F4 | replicador-ciego | réplica ciega E1-R4 (difiere en la muestra; TOST no acota) | 96.878 | src/v18/replica/e1_r4.py; output/v18/replica/e1_r4/ |
 | 2026-10-20 | F4 | modelizador | B6: robustez de E2-R1, claves de sellado nuevas, K7 en scripts | 247.707 | src/v18/estimacion/e2_robustez.py; output/v18/estimacion/e2/robustez_b6.csv |
 | 2026-10-20 | F4 | modelizador | corrección de E1-R4 (geometría, TOST con Webb) | 78.403 | src/v18/estimacion/e1_*.py; output/v18/estimacion/e1/ |
+| 2026-10-20 | F4 | abogado-del-diablo | ronda 2 B6: E2-R1 (SUGESTIVO con limitación) | 71.619 | docs/v18/revision_estimaciones/ronda2_e2r1.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -61,8 +62,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F1 | 1.630.684 |
 | F2 | 183.117 |
 | F3 | 985.262 |
-| F4 | 4.475.366 |
+| F4 | 4.546.985 |
 
-Total V18: 7.534.062 tokens
+Total V18: 7.605.681 tokens
 
 <!-- fin subagentes -->

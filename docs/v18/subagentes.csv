@@ -23,3 +23,4 @@ fecha,fase,rol,tarea,tokens,ficheros
 2026-10-20,F4,replicador-ciego,réplica ciega E1-R4 (difiere en la muestra; TOST no acota),96878,src/v18/replica/e1_r4.py; output/v18/replica/e1_r4/
 2026-10-20,F4,modelizador,"B6: robustez de E2-R1, claves de sellado nuevas, K7 en scripts",247707,src/v18/estimacion/e2_robustez.py; output/v18/estimacion/e2/robustez_b6.csv
 2026-10-20,F4,modelizador,"corrección de E1-R4 (geometría, TOST con Webb)",78403,src/v18/estimacion/e1_*.py; output/v18/estimacion/e1/
+2026-10-20,F4,abogado-del-diablo,ronda 2 B6: E2-R1 (SUGESTIVO con limitación),71619,docs/v18/revision_estimaciones/ronda2_e2r1.md

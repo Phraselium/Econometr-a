@@ -269,3 +269,22 @@ def test_e1_r4_principal_es_el_anillo_y_la_clase_exige_el_tost_con_ic90_de_webb(
         assert clase.startswith(("NO CONCLUYENTE", "SUGESTIVO", "ASOCIACIÓN")) and "nulo acotado" not in clase
     tabla = pd.read_csv(SALIDAS / "e1" / "tabla.csv").set_index("id")
     assert "E1-R4-v1" in tabla.index and "resto de Barcelona" in tabla.loc["E1-R4-v1", "resultado"]
+
+
+def test_e1_r4_k8_bis_principal_sin_adelantos_y_variante_con_adelantos():
+    ruta = SALIDAS / "e1" / "resultado.json"
+    if not ruta.exists():
+        pytest.skip("salidas todavía no generadas")
+    res = json.loads(ruta.read_text(encoding="utf-8"))
+    d = res["diagnosticos"]["E1-R4"]
+    v3 = d["variante_con_adelantos_E1-R4-v3"]
+    lo, hi = v3["ic90_webb"]
+    assert v3["equivalente"] == (lo > -0.05 and hi < 0.05)
+    assert ("nulo acotado" in res["clasificaciones"]["E1-R4-v3"]) == v3["equivalente"]
+    t = d["tost_delta_0_05"]
+    if not t["equivalente"]:
+        assert res["clasificaciones"]["E1-R4"].startswith("NO CONCLUYENTE")
+    tabla = pd.read_csv(SALIDAS / "e1" / "tabla.csv").set_index("id")
+    assert "estudio de eventos con adelantos" in tabla.loc["E1-R4-v3", "resultado"]
+    assert "sin los adelantos" in tabla.loc["E1-R4", "resultado"]
+    assert tabla.loc["E1-R4-v3", "coef"] == pytest.approx(v3["coef"])

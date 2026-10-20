@@ -1,12 +1,12 @@
 # V18 · E1 · Vivienda turística (Barcelona con registro HUT y SERPAVI; otras ciudades no selladas)
 
 **Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en el campo `clasificacion_v18` y no cambia la capa. Clasificación provisional: falta I8 (réplica ciega, B6).
-Código: `src/v18/estimacion/e1_turismo.py` (+ `e1_adquisicion.py`, `e1_datos.py`, `e1_diseno.py`, `e1_estim.py`, `e1_mde.py`, `e1_nucleo.py`, `e1_resultados.py`, `e1_salidas.py`); SEED 20261010; sin red en la estimación; 244 s.
+Código: `src/v18/estimacion/e1_turismo.py` (+ `e1_adquisicion.py`, `e1_datos.py`, `e1_diseno.py`, `e1_estim.py`, `e1_mde.py`, `e1_nucleo.py`, `e1_resultados.py`, `e1_salidas.py`); SEED 20261010; sin red en la estimación; 157 s.
 
 ## 1. Resumen
 - **Lo que supera la estimabilidad (adenda 1.3)**: E1-R3 (estudio de eventos de dosis, 2011-2019) y E1-R4 (Sagrada Família), más la coprincipal E1-P-H3 (H3 de V15 en la muestra V18).
 - **E1-R3**: coeficiente por pp de densidad HUT de 2018T2 = **0.0044** (IC95 0.0020; 0.0069; p corregido tras Holm 0.0041). Clase V18: **ASOCIACIÓN**. Razón con la referencia (0,038): 0.12, etiqueta no coherente.
-- **E1-R4**: 0.0026 (IC95 de Webb -0.0389; 0.0420; p de Webb 0.7422, tras Holm 1.0000). Clase V18: **SUGESTIVO (efecto nulo acotado)**.
+- **E1-R4**: 0.0017 (IC95 de Webb -0.0346; 0.0672; p de Webb 0.7396, tras Holm 1.0000). Clase V18: **NO CONCLUYENTE (sin potencia)**. Es la diferencia en diferencias del radio de 500 m frente al anillo de 500-1.000 m sin los adelantos de 2011-2012 como regresores (K8 bis); la versión con adelantos (E1-R4-v3, estudio de eventos) da 0.0026, IC90 de Webb (-0.0257; 0.0394), clase SUGESTIVO (efecto nulo acotado).
 - **E1-P-H3**: -0.0001 por DT intra-sección (IC95 -0.0009; 0.0008; p 0.8769). Cifra de V15: 0,0030, p = 0,931. No se clasifica.
 - **NO ESTIMABLES por la regla previa** (se publica el MDE, no el coeficiente): **E1-R1** (solo 18 barrios con un cambio del stock HUT de al menos el 10 %, mínimo 20; MDE80 0.0018), **E1-R2** (primera etapa nula: F efectivo 0.023) y **E1-A1** (MDE80 0.166 frente a 0,038; F efectivo 4.62).
 - Consecuencia para B5: la estimación propia designada de E1 es E1-A1 y su respaldo E1-R2; las dos son NO ESTIMABLES por variación, de modo que **E1 no tiene estimación propia estimable** (la adenda 1.9 solo prevé el respaldo cuando la propia es NO ESTIMABLE, y también lo es). Lo dice el informe; no se sustituye por E1-R3 ni E1-R4.
@@ -84,7 +84,7 @@ Primera etapa de las especificaciones con instrumento y de sus variantes, **sin 
 | id | n_obs | n_unidades | G | coef | ic95_lo | ic95_hi | p_cr1 | p_webb | p_i7 | p_holm | clase |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | E1-R3 | 6884 | 766 | 47 | 0.0044 | 0.0020 | 0.0069 | 0.0007 | 0.0102 | 0.0010 | 0.0041 | ASOCIACIÓN |
-| E1-R4 | 693 | 77 | 5 | 0.0026 | -0.0389 | 0.0420 | 0.7598 | 0.7422 | 0.9277 | 1.0000 | SUGESTIVO (efecto nulo acotado) |
+| E1-R4 | 693 | 77 | 5 | 0.0017 | -0.0346 | 0.0672 | 0.8247 | 0.7396 | 0.9245 | 1.0000 | NO CONCLUYENTE (sin potencia) |
 | E1-P-H3 | 39951 | 10004 | 1208 | -0.0001 | -0.0009 | 0.0008 | 0.8769 | — | 0.8769 | 1.0000 | no se clasifica |
 
 p_cr1 = CR1 con t(G−1) por barrio (E1-R3) o por municipio (E1-P-H3); en E1-R4 la inferencia principal es Webb. p_i7 = p con el valor crítico corregido por el tamaño del Monte Carlo de cada diseño (E1-R3: 0.079 con CR1; E1-R4: 0.062 con Webb). Holm sobre la familia E1 estimada (m = 4: E1-R3, E1-R4, E1-P-H3, E1-R3-v3); E1-R1, R2 y A1 salen antes de ajustar; P-D2 y P-Q2b no se han estimado (desviación D7). Las coprincipales P no se clasifican.
@@ -133,7 +133,7 @@ Coeficiente de E1-R3 por desviación típica de la dosis (1.999 pp): 0.0089 (EE 
 | 2018 | 0.0029 | 0.0110 |
 | 2019 | 0.0020 | 0.0111 |
 
-- Equivalencia (TOST, δ = 0,05): el IC90 por inversión del contraste de Webb (-0.0259; 0.0394) queda dentro de ±0,05: el nulo queda acotado. Con 5 clusters, 3 con tratadas (la mitad), el Monte Carlo de V18 da el Webb por barrio como apto (tamaño propio del diseño 0.062).
+- Equivalencia (TOST, δ = 0,05): el IC90 por inversión del contraste de Webb (-0.0267; 0.0518) no queda dentro de ±0,05: el nulo no queda acotado y la clase es NO CONCLUYENTE (sin potencia) si el diseño es válido. Variante con adelantos (E1-R4-v3): IC90 de Webb (-0.0257; 0.0394), dentro de ±0,05; clase SUGESTIVO (efecto nulo acotado). Con 5 clusters, 3 con tratadas (la mitad), el Monte Carlo de V18 mide el Webb por barrio con un tamaño propio de 0.062 (medido sobre el diseño con adelantos: sin ellos la ventana circular del Monte Carlo es degenerada; desviación D14). IC por inversión con 9.999 réplicas.
 - Adelantos (2011 y 2012): p = 0.186; pendiente detectable 0.0124; sesgo implicado 0.0435 (umbral δ = 0,05). Placebo de fecha (adopción falsa en 2012): -0.0087, p = 0.298.
 - Honest DiD:
 
@@ -144,11 +144,11 @@ Coeficiente de E1-R3 por desviación típica de la dosis (1.999 pp): 0.0089 (EE 
 | 1.0 | (-0.0740; 0.0675) | False | válido pero conservador; informativo |
 
 - Geometría: radio 22 de 25 secciones no selladas (0.88) y anillo 55 de 70 (0.79): se cumple el 75 % de la adenda 1.5. 5 barrios, 3 con tratadas.
-- Réplica ciega (B6, K8): 693 es el número de observaciones (77 secciones × 9 años), no de secciones; esta principal ya usa el anillo de 500-1.000 m como control y «resto de Barcelona» es E1-R4-v1. La réplica da 21 y 56 secciones (0801902055 está a 499,7 m del templo con la geometría del INE y a 507,3 m con la del Ajuntament) y un coeficiente de 0,0011 con diferencias en diferencias sin los adelantos de 2011-2012 como regresores; aquí los adelantos entran (base 2013 sola) y el coeficiente es 0.0026. Con el estimador de la réplica sobre estas mismas 22 y 55 secciones el coeficiente es 0,0017 y el IC90 de Webb (−0,026; 0,053) no queda dentro de ±0,05: la equivalencia depende de esa lectura de la ficha.
-- Medida alternativa: €/mes 0.0197; vivienda unifamiliar —. Moran de los residuos: I = 0.229, p unilateral 0.002.
+- Réplica ciega (B6, K8 y K8 bis): 693 era el número de observaciones (77 secciones × 9 años), no de secciones; el control principal ya era el anillo de 500-1.000 m y «resto de Barcelona» es E1-R4-v1. La réplica da 21 y 56 secciones (0801902055 está a 499,7 m del templo con la geometría del INE y a 507,3 m con la del Ajuntament). La diferencia entre las dos estimaciones era una lectura de la ficha: según K8 bis la principal es la diferencia en diferencias sin los adelantos de 2011-2012 como regresores (coeficiente 0.0017); los adelantos quedan como diagnóstico de pretendencias y su estimación con ellos pasa a la variante E1-R4-v3 (estudio de eventos con adelantos): 0.0026, IC90 de Webb (-0.0257; 0.0394). Cuando la ficha admite dos lecturas con clases distintas se toma la más prudente.
+- Medida alternativa: €/mes 0.0152; vivienda unifamiliar —. Moran de los residuos: I = -0.174, p unilateral 0.999.
 
 ## 6. Variantes enumeradas (anexo A)
-Benjamini-Yekutieli al 10 % dentro de cada identificador. E1-R3 y E1-R4 con CR1 (E1-R4-v2, con 1.999 réplicas de Webb). Las variantes de E1-R1, E1-R2 y E1-A1 no se estiman (principal NO ESTIMABLE). E1-R3-v3 figura además como coprincipal en la familia de Holm cuando la tendencia por distancia de 2011-2013 es significativa al 10 % (adenda R-15); el q de cada variante es el de Benjamini-Yekutieli con su p de CR1 (E1-R4-v2: con su p de Webb).
+Benjamini-Yekutieli al 10 % dentro de cada identificador. E1-R3 y E1-R4 con CR1 (E1-R4-v2 y E1-R4-v3, con 1.999 réplicas de Webb). Las variantes de E1-R1, E1-R2 y E1-A1 no se estiman (principal NO ESTIMABLE). E1-R3-v3 figura además como coprincipal en la familia de Holm cuando la tendencia por distancia de 2011-2013 es significativa al 10 % (adenda R-15); el q de cada variante es el de Benjamini-Yekutieli con su p de CR1 (E1-R4-v2 y v3: con su p de Webb).
 
 | id | resultado | n_obs | coef | ic95_lo | ic95_hi | p_cr1 | p_webb | q_by |
 |---|---|---|---|---|---|---|---|---|
@@ -157,12 +157,13 @@ Benjamini-Yekutieli al 10 % dentro de cada identificador. E1-R3 y E1-R4 con CR1 
 | E1-R3-v3 | [C] distancia × año | 6884 | 0.0023 | -0.0003 | 0.0049 | 0.0834 | — | 0.1905 |
 | E1-R3-v4 | [U] barrio como unidad | 416 | 0.0071 | 0.0019 | 0.0122 | 0.0079 | — | 0.0302 |
 | E1-R3-v5 | [U] sin el 1 % superior | 6812 | 0.0047 | 0.0017 | 0.0076 | 0.0025 | — | 0.0143 |
-| E1-R4-v1 | [C] resto de Barcelona como control | 6884 | -0.0020 | -0.0138 | 0.0098 | 0.7302 | — | 1.0000 |
-| E1-R4-v2 | [E] radios de 300 m y 300-800 m | 432 | 0.0208 | 0.0075 | 0.0341 | 0.0157 | 0.8450 | 1.0000 |
+| E1-R4-v1 | [C] resto de Barcelona como control | 6884 | 0.0002 | -0.0103 | 0.0108 | 0.9623 | — | 1.0000 |
+| E1-R4-v2 | [E] radios de 300 m y 300-800 m | 432 | 0.0005 | -0.0207 | 0.0216 | 0.9498 | 0.9310 | 1.0000 |
+| E1-R4-v3 | [E] estudio de eventos con adelantos de 2011-2012 como regresores | 693 | 0.0026 | -0.0387 | 0.0414 | 0.7598 | 0.7400 | 1.0000 |
 
 ## 7. Clasificación (I1-I8 revisados)
 - **E1-R3: ASOCIACIÓN.** Fallos decisivos: pretendencias p = 0.008 < 0,01. Pruebas débiles: inferencia con valor crítico corregido por tamaño (tamaño del Monte Carlo de este diseño: 0.079); placebo de fecha p = 0.054. Topes: tope de la especificación: SUGESTIVO (sin instrumento; la exogeneidad estricta no se contrasta).
-- **E1-R4: SUGESTIVO (efecto nulo acotado).** Fallos decisivos: —. Pruebas débiles: mismo signo en 50% de las variantes enumeradas (< 80 %). Topes: tope de la especificación: SUGESTIVO (un solo grupo tratado: la Sagrada Família).
+- **E1-R4: NO CONCLUYENTE (sin potencia).** Fallos decisivos: —. Pruebas débiles: —. Topes: tope de la especificación: SUGESTIVO (un solo grupo tratado: la Sagrada Família).
 - E1-P-H3, coprincipal: no se clasifica; su cifra publicada (V15) se muestra al lado.
 - I6 como etiqueta: Segú (2018), IV lineal, por pp de densidad: 0,038 (0,012), ficha NO VERIFICADA (adenda, anexo B). E1-R3: razón 0.12, no coherente. La magnitud difiere de la referencia por la medida (licencias HUT, no anuncios activos), por SERPAVI (contratos vigentes declarados: stock, que diluye el cambio) y por el periodo (2014-2019, con la dosis medida en 2018T2). No interviene en la clase ni en B5.
 - I8 pendiente en todas (replicador-ciego). En las dos especificaciones estimadas la clase describe el diseño; el lenguaje es el de una asociación estimada.

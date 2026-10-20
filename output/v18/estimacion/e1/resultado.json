@@ -13,7 +13,7 @@
  "metodo": "Estudio de eventos de dosis y diferencias en diferencias con efectos fijos de sección y de año, CR1 con t(G−1) y wild cluster bootstrap de Webb por barrio, Conley (1 y 2 km), Honest DiD (M̄ = 0 informativo), Roth, TOST, Moran; IV con F efectivo de MOP y Anderson-Rubin solo en la estimabilidad",
  "estimacion": {
   "E1-R3": 0.004427930211455435,
-  "E1-R4": 0.002585658430255755,
+  "E1-R4": 0.001659351778797914,
   "E1-P-H3": -6.47971971459783e-05
  },
  "ic95": {
@@ -22,8 +22,8 @@
    0.006866503750777406
   ],
   "E1-R4": [
-   -0.038861316700460946,
-   0.04198816353038422
+   -0.03459711365714763,
+   0.06716651399637028
   ],
   "E1-P-H3": [
    -0.0008855282297202418,
@@ -42,7 +42,8 @@
   "E1-R1": "NO ESTIMABLE",
   "E1-R2": "NO ESTIMABLE",
   "E1-R3": "ASOCIACIÓN",
-  "E1-R4": "SUGESTIVO (efecto nulo acotado)",
+  "E1-R4": "NO CONCLUYENTE (sin potencia)",
+  "E1-R4-v3": "SUGESTIVO (efecto nulo acotado)",
   "E1-A1": "NO ESTIMABLE",
   "E1-A2": "NO ESTIMABLE",
   "E1-A3": "NO ESTIMABLE",
@@ -481,11 +482,11 @@
   "E1-R4": {
    "tost_delta_0_05": {
     "ic90_webb": [
-     -0.025909029641954538,
-     0.039417481982639294
+     -0.026692679307723215,
+     0.05180862493570179
     ],
     "delta": 0.05,
-    "equivalente": true
+    "equivalente": false
    },
    "pretendencias_p": 0.18607925026497638,
    "pendiente_detectable_80": 0.012423657297749533,
@@ -534,10 +535,10 @@
     }
    ],
    "moran_residuos": {
-    "I": 0.2287006853283038,
+    "I": -0.17426402497308016,
     "E_I": -0.013157894736842105,
-    "p_unilateral": 0.002,
-    "p_bilateral": 0.002,
+    "p_unilateral": 0.999,
+    "p_bilateral": 0.021,
     "n": 77,
     "k": 5
    },
@@ -553,14 +554,27 @@
      "error": "division by zero"
     },
     "y_mes": {
-     "coef": 0.019650438922545456,
+     "coef": 0.015211292235600114,
      "ic95": [
-      -0.01401200889305819,
-      0.0533128867381491
+      -0.008251485328550374,
+      0.038674069799750604
      ],
-     "p": 0.18038793913258058,
+     "p": 0.14623607307074757,
      "n": 693
     }
+   },
+   "variante_con_adelantos_E1-R4-v3": {
+    "coef": 0.002585658430255755,
+    "ic95_webb": [
+     -0.03871164197143115,
+     0.04139199534639838
+    ],
+    "ic90_webb": [
+     -0.025677106118590726,
+     0.03939271696104861
+    ],
+    "equivalente": true,
+    "clase": "SUGESTIVO (efecto nulo acotado)"
    },
    "conteos_geometria": {
     "radio_total": 25,
@@ -572,7 +586,6 @@
    },
    "tamano_webb_mc": 0.0625,
    "clasificacion_razones": [
-    "mismo signo en 50% de las variantes enumeradas (< 80 %)",
     "tope de la especificación: SUGESTIVO (un solo grupo tratado: la Sagrada Família)"
    ]
   },

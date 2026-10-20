@@ -108,15 +108,15 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
     cnt = E.r4_conteos(gsf)
     r4 = E.r4(B, gsf, None, webb_B=B_PRINCIPAL, rng=rng)
     M4 = r4["_res"]["modelo"]
-    ic4 = M4.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA))
+    ic4 = M4.webb_ic(B_PRINCIPAL, np.random.default_rng(K.SEMILLA))
     ev4 = E.r4_eventos(r4["_d"])
     var4 = {}
     for suf in ("v1", "v2", "v3"):
         var4[suf] = E.r4(B, gsf, suf, webb_B=B_VAR if suf in ("v2", "v3") else 0, rng=np.random.default_rng(K.SEMILLA))
     # K8 bis: la variante con adelantos (E1-R4-v3, estudio de eventos) se publica al lado con su IC95 y su IC90 por inversión del contraste de Webb
     M4v3 = var4["v3"]["_res"]["modelo"]
-    ic95_v3 = M4v3.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA))
-    ic90_v3 = M4v3.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA), nivel=0.10)
+    ic95_v3 = M4v3.webb_ic(B_PRINCIPAL, np.random.default_rng(K.SEMILLA))
+    ic90_v3 = M4v3.webb_ic(B_PRINCIPAL, np.random.default_rng(K.SEMILLA), nivel=0.10)
     var4["v3"]["ic95"] = (float(ic95_v3[0]), float(ic95_v3[1]))
     med4 = {}
     for nombre, col in (("y_vu", "y_vu"), ("y_mes", "y_mes")):
@@ -165,7 +165,7 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
     d4_ = E.DELTA["E1-R4"]
     r4_ic = ic4
     # TOST (adenda 1.1; K8): equivalencia con el IC90 por inversión del contraste de Webb (la inferencia principal), no con el IC de CR1 con 5 clusters
-    ic90_4 = M4.webb_ic(B_VAR, np.random.default_rng(K.SEMILLA), nivel=0.10)
+    ic90_4 = M4.webb_ic(B_PRINCIPAL, np.random.default_rng(K.SEMILLA), nivel=0.10)   # 9.999 réplicas: el límite superior está en el borde de δ y con 1.999 oscila ±0,005 según la semilla
     tost4 = {"ic90": (float(ic90_4[0]), float(ic90_4[1])), "delta": d4_, "equivalente": bool(ic90_4[0] > -d4_ and ic90_4[1] < d4_), "metodo": "IC90 por inversión del contraste de Webb"}
     pre4 = ev4["pretend"]
     rob4 = robustez(r4["coef"], r4_ic, [{"coef": v["coef"], "ic95": v["ic95"], "comparable": True} for v in var4.values()], [med4["y_vu"], med4["y_mes"]])
@@ -207,7 +207,7 @@ def estimar_todo(B: pd.DataFrame, C: pd.DataFrame, gsf: pd.DataFrame, est: dict,
 
     filas.append(_fila("E1-R4", "principal", "estimada", "ln SERPAVI (VC): < 500 m de la Sagrada Família frente al anillo 500-1.000 m, 2014-2019 frente a 2013, sin los adelantos de 2011-2012 como regresores (K8 bis)", n_obs=r4["n"], n_unidades=r4["n_unidades"], G=r4["G"],
                        ventana=r4["ventana"], coef=r4["coef"], se=r4["se"], ic95_lo=ic4[0], ic95_hi=ic4[1], p_cr1=r4["p_principal"], p_webb=r4["_res"]["p_webb"], p_i7=p4, p_holm=holm["E1-R4"], mde80=est["E1-R4"]["mde80"],
-                       umbral=est["E1-R4"]["umbral"], inferencia="wild cluster bootstrap de Webb (9.999) por barrio; IC por inversión (1.999)", banda=("apta" if (np.isfinite(tam4) and 0.04 <= tam4 <= 0.06) else K.banda_mc(tam4) if np.isfinite(tam4) else "sin medida"),
+                       umbral=est["E1-R4"]["umbral"], inferencia="wild cluster bootstrap de Webb (9.999) por barrio; IC por inversión (9.999)", banda=("apta" if (np.isfinite(tam4) and 0.04 <= tam4 <= 0.06) else K.banda_mc(tam4) if np.isfinite(tam4) else "sin medida"),
                        clase=cl4["clase"], nota=f"{r4['n_tratadas']} secciones tratadas en {r4['G_tratados']} barrios y {r4['n_control']} de control"))
     for suf, dim, desc in A["E1-R4"]:
         v = var4[suf]

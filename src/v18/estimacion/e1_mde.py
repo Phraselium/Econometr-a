@@ -109,7 +109,7 @@ def estimabilidad_r4(P: pd.DataFrame, g: pd.DataFrame) -> dict:
     d = d[(d.tr == 1) | (d.anillo == 1)].copy().sort_values(["cod_seccion", "anio"]).reset_index(drop=True)
     d["u"], d["t"], d["cl"] = pd.factorize(d.cod_seccion)[0], pd.factorize(d.anio)[0], pd.factorize(d.barrio)[0]
     d["Dpost"] = d.tr * (d.anio >= 2014).astype(float)
-    lead = None          # K8 bis: la principal no lleva los adelantos como regresores
+    lead = np.column_stack([(d.anio.values == k) * d.tr.values for k in (2011, 2012)])   # K8 bis, D14: el Monte Carlo se mide con los adelantos (sin ellos la ventana circular es degenerada)
     M = K.Modelo(np.zeros(len(d)), d.Dpost.values, d.u.values, d.t.values, extra=lead, cluster=d.cl.values)
     uo, to, unidades = _posiciones(d)
     pool = _pool(P, unidades, [2011, 2012, 2013], "barrio", None)

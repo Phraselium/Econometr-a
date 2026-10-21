@@ -244,6 +244,21 @@ def obs_territorios(dat: Datos, resultado: str, a: int, b: int, ys: int) -> pd.D
         nac = resultado_real(dat, dat.alq_nac, a, b)
         prov = resultado_real(dat, dat.alq_prov, a, b).reindex(dat.provincias)
         ciu = pd.DataFrame(columns=["obs", "ventana"])
+    # K14 (árbitro, ronda 2, N10): si las provincias no empiezan todas a la vez (1995T1-2007T4: la Comunitat Valenciana desde 1995T1, el resto
+    # desde 2002T1), las filas relativas usan la ventana común (el inicio más tardío) en todas las provincias y ciudades, con los mismos datos y
+    # el mismo cálculo; así la media simple de referencia y cada fila relativa cubren el mismo periodo. La fila nacional no cambia.
+    ini = prov.ventana[prov.ventana.astype(str).str.len() > 0].str.slice(0, 6)
+    comun = ""
+    if ini.nunique() > 1:
+        comun = ("; todas las provincias con la ventana común desde " + qs(max(qi(q) for q in ini.unique())) + ", también las que tienen serie "
+                 "desde antes (" + ", ".join(f"{n} desde {i}" for i, n in ini.value_counts().items()) + "), para que la media de referencia y "
+                 "cada fila cubran el mismo periodo (K14)")
+        a_com = max(qi(q) for q in ini.unique())
+        W = dat.precio_prov if resultado == "precio" else dat.alq_prov
+        prov = resultado_real(dat, W, a_com, b).reindex(dat.provincias)
+        ys = a_com // 4   # peso: población provincial al inicio de la ventana común
+        if len(ciu):
+            ciu = resultado_real(dat, dat.precio_val, a_com, b)
     filas = [("nacional", "00", "Nacional", nac.iloc[0].obs, nac.iloc[0].ventana)]
     py = min(max(ys, dat.pob_prov.index.min()), dat.pob_prov.index.max())
     w = dat.pob_prov.loc[py]
@@ -259,6 +274,7 @@ def obs_territorios(dat: Datos, resultado: str, a: int, b: int, ys: int) -> pd.D
     media = df[df.tipo == "provincia"].obs.mean()
     df["obs_rel"] = np.where(df.tipo == "nacional", np.nan, df.obs - media)
     df["media_provincial"] = media
+    df["ventana_comun"] = comun
     return df
 
 
@@ -601,12 +617,13 @@ def construir_principal(dat: Datos, periodos, alineacion: str, filas: list[dict]
                               "factor": "OBS", "tipo_fila": "observado", "origen_magnitud": "", "magnitud_centro": np.nan, "clase_estimacion_propia": "", "variacion_factor": np.nan,
                               "ventana_factor": o.ventana, "obs_pp": v, "contrib_med": np.nan, "p16": np.nan, "p84": np.nan, "p05": np.nan, "p95": np.nan, "pct_de_obs": 100.0 if abs(v) >= 1 else np.nan,
                               "soporte": "", "rotulo": "" if o.tipo == "nacional" else REL, "en_suma": False,
-                              "nota": "variación observada del resultado real (100·Δln, valor tasado o IPC de alquiler menos deflactor)" + ("" if o.tipo == "nacional" else "; fila relativa a la media simple de las provincias no selladas con dato")})
+                              "nota": "variación observada del resultado real (100·Δln, valor tasado o IPC de alquiler menos deflactor)" + ("" if o.tipo == "nacional" else "; fila relativa a la media simple de las provincias no selladas con dato" + o.ventana_comun)})
                 filas.append({"marco": "principal", "alineacion": alineacion, "resultado": resultado, "periodo": nombre, "territorio_tipo": o.tipo, "territorio": o.codigo, "nombre": o.nombre,
                               "factor": "NOEXPL", "tipo_fila": "no_explicado", "origen_magnitud": "", "magnitud_centro": np.nan, "clase_estimacion_propia": "", "variacion_factor": np.nan,
                               "ventana_factor": o.ventana, "obs_pp": v, "contrib_med": v, "p16": v, "p84": v, "p05": v, "p95": v, "pct_de_obs": 100.0 if abs(v) >= 1 else np.nan, "soporte": "",
                               "rotulo": "" if o.tipo == "nacional" else REL, "en_suma": True,
-                              "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores"})
+                              "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores"
+                                      + ("" if o.tipo == "nacional" else o.ventana_comun)})
 
 
 def estados_b5() -> dict:
@@ -735,8 +752,13 @@ def hechos(mag: pd.DataFrame, cp: pd.DataFrame, ci: pd.DataFrame) -> list[dict]:
         hi = _v(r.ic_hi) if str(r.ic_hi) not in ("", "nan") else _v(r.rango_hi)
         propia = str(r.origen).startswith("propia")
         lim = "" if str(r.limitacion) in ("", "nan") else f"{r.limitacion}. "
+        # K14 (árbitro, ronda 2, N1): cobertura sin paréntesis anidados, para que el documento la use como frase
+        n = int(r.n_estudios)
+        cob = ((f"{n} estudios con error típico en la unidad; método: {r.metodo}" if n > 1 else
+                ("1 estudio con error típico en la unidad" if n == 1 else "ningún estudio con error típico en la unidad"))
+               + f"; estado B5: {r.estado_b5}")
         h.append({"id": f"V18-B5-{r.factor}", "indicador": f"Magnitud preferida de {NOMBRE_FACTOR[r.factor]} ({r.factor}): {r.unidad}", "valor": mu, "min": lo, "max": hi, "unidad": r.unidad,
-                  "periodo": _periodo_estudios(r.factor), "cobertura": f"{int(r.n_estudios)} estudios con error típico en la unidad ({r.metodo}); estado B5: {r.estado_b5}", "fuentes": fuentes_b,
+                  "periodo": _periodo_estudios(r.factor), "cobertura": cob, "fuentes": fuentes_b,
                   "capa": "C4", "clasificacion_v18": _clase(r.clase_estimacion_propia),
                   "nota": f"{r.origen}. Estimación propia designada {r.estimacion_propia}: {r.clase_estimacion_propia}. {lim}" + ("" if propia else "Magnitud de la literatura; ")
                   + "la clasificación es la de la estimación propia designada del factor, no la de la magnitud ni la del rango (K12); "
@@ -768,7 +790,19 @@ def hechos(mag: pd.DataFrame, cp: pd.DataFrame, ci: pd.DataFrame) -> list[dict]:
                       "periodo": per, "cobertura": f"{r.nombre}; {r.ventana_factor}", "fuentes": ["output/v18/f5/contabilidad.csv", "data/base/hechos.parquet (valor tasado, IPC de alquiler, deflactor)"], "capa": "C4",
                       "clasificacion_v18": "NO ESTIMABLE", "nota": f"{r.nota}; {aviso}{rot}{ROTULO}.".replace("  ", " ")})
     # ilustración: nacional, CCAA y ciudades
-    sub = ci[ci.territorio_tipo.isin(["nacional", "ccaa", "ciudad"]) & (ci.alineacion == "plan")]
+    # K14 (árbitro, ronda 2, N4): las filas «no explicado» de la ilustración no entran en hechos.json. En la nacional se restan de la
+    # variación nacional magnitudes relativas entre provincias (E3, E9) y una nacional (E7): la resta mezcla componentes y no se interpreta;
+    # en las demás, la ilustración no es una atribución y la diferencia no añade nada a las filas de cada factor. Siguen en
+    # contabilidad_ilustracion.csv con su rótulo. Para leer cada fila de factor frente a lo observado: la variación observada está en las
+    # filas V18-C5 (nacional y comunidades) y, en las unidades locales del alquiler de contratos nuevos, en las filas OBS de abajo.
+    sub = ci[ci.territorio_tipo.isin(["nacional", "ccaa", "ciudad"]) & (ci.alineacion == "plan") & ~ci.tipo_fila.str.startswith("no_explicado")]
+    loc = sub[sub.resultado == "alquiler_contratos_nuevos"].drop_duplicates(["periodo", "territorio"])
+    for r in loc.itertuples():
+        h.append({"id": f"V18-C5I-{r.periodo}-{r.territorio}-OBS-N", "indicador": f"Variación observada de la renta real de los contratos nuevos de alquiler (Incasòl), {r.periodo}, {r.nombre}",
+                  "valor": _v(r.obs_pp), "min": None, "max": None, "unidad": "pp (100·Δln)", "periodo": r.periodo, "cobertura": r.nombre,
+                  "fuentes": ["output/v18/f5/contabilidad_ilustracion.csv", "data/base/hechos.parquet"], "capa": "C4", "clasificacion_v18": "NO ESTIMABLE",
+                  "nota": "variación observada (renta nominal de los contratos nuevos del Incasòl menos el deflactor), no un resultado de factores; "
+                          f"se lee al lado de las filas de la ilustración, sin restarlas (K14). {ROTULO}."})
     for r in sub.itertuples():
         ab = {"precio": "P", "alquiler": "A", "alquiler_contratos_nuevos": "N"}[r.resultado]
         fac = r.factor + ("-" + r.tipo_fila.split("_")[1] if r.tipo_fila in ("factor_extremos", "factor_vigencia") else "")
@@ -779,9 +813,6 @@ def hechos(mag: pd.DataFrame, cp: pd.DataFrame, ci: pd.DataFrame) -> list[dict]:
         origen = "magnitud de la literatura" if not es_e2 else ("sin magnitud preferida para E2 (B5); ilustración con E2-R1 propia sola, fuera de B5: "
                                                                 "la clase de E2-R1 (SUGESTIVO) no se traslada a esta fila")
         aviso = ""
-        if r.territorio_tipo == "nacional" and r.tipo_fila.startswith("no_explicado"):
-            aviso = ("resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente "
-                     "común): no se lee como parte nacional sin explicar; ")
         nombre_f = NOMBRE_FACTOR.get(r.factor, "variación sin explicar")
         h.append({"id": pid, "indicador": f"Ilustración: {nombre_f}, {r.resultado} real, {r.periodo}, {r.nombre} ({r.tipo_fila})", "valor": _v(r.contrib_med), "min": _v(r.p05), "max": _v(r.p95), "unidad": "pp (100·Δln)",
                   "periodo": r.periodo, "cobertura": f"{r.nombre}; {r.ventana_factor}", "fuentes": ["output/v18/f5/contabilidad_ilustracion.csv", "data/base/hechos.parquet", "output/v18/f5/magnitudes.csv"],

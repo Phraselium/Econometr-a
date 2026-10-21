@@ -32,8 +32,8 @@
   "Enviar la revisión externa",
   "Pendientes que no bloquean la 1.0"
  ],
- "n_cifras_clave": 2176,
- "sha256_cifras_clave": "c4cf949a7e8ea5a25902f327357fff3871e348a5f9b3cc8df517daa3380c70b5",
+ "n_cifras_clave": 2094,
+ "sha256_cifras_clave": "50f201b8373f1569fdd99ac7e2fbdf8d488b3a80289b826f0e8172951fe929f4",
  "autor": "Borja Romero, economista (firma individual, independiente)",
  "difusion": "V10: base única, atlas descriptivo, figuras, web y monitor (sin modelos nuevos)",
  "web_prevista": "https://phraselium.github.io/vivienda-espana-evidencia/"

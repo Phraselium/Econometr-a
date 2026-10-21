@@ -109,3 +109,12 @@ def test_contabilidad_determinista_y_sin_cifras_en_la_principal(tmp_path, monkey
     assert all(x["capa"] == "C4" and x["clasificacion_v18"] in check_v18.CLASES and x["id"].startswith("V18-") for x in h)
     assert not [x["id"] for x in h if check_v18.CAUSAL.search(f"{x['indicador']} {x['nota']}")]
     assert len({x["id"] for x in h}) == len(h)
+    # K14 (N4): sin filas «no explicado» de la ilustración en hechos.json; las unidades locales llevan su variación observada (OBS)
+    assert not [x["id"] for x in h if x["id"].startswith("V18-C5I-") and "NOEXPL" in x["id"]]
+    obs = {x["id"]: x for x in h if x["id"].startswith("V18-C5I-") and x["id"].endswith("-OBS-N")}
+    assert "V18-C5I-2020T1-2022T2-08019-OBS-N" in obs and "V18-C5I-2020T1-2022T2-09-OBS-N" in obs
+    # K14 (N10): en 1995T1-2007T4 todas las provincias usan la ventana común 2002T1-2007T4 (la Comunitat Valenciana incluida)
+    p1 = cp[(cp.periodo == "1995T1-2007T4") & (cp.territorio_tipo == "provincia") & (cp.tipo_fila == "observado")]
+    assert set(p1.ventana_factor.dropna().str.slice(0, 6)) == {"2002T1"}
+    hv = {x["id"]: x for x in h}
+    assert hv["V18-C5-1995T1-2007T4-10-NOEXPL-P"]["periodo"] == "2002T1-2007T4"

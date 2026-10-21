@@ -20,13 +20,14 @@
   "70_limitaciones.md",
   "90_anexos.md"
  ],
- "marcadores": 363,
+ "marcadores": 364,
  "ids_por_capa": {
-  "C4": 362
+  "C4": 363
  },
  "ids_v18_por_clasificacion": {
-  "NO ESTIMABLE": 241,
-  "diagnóstico o variante (sin clase propia)": 23,
+  "NO ESTIMABLE": 173,
+  "literatura (sin clase propia)": 68,
+  "diagnóstico o variante (sin clase propia)": 24,
   "ASOCIACIÓN": 12,
   "robustez a posteriori": 6,
   "NO CONCLUYENTE": 5,

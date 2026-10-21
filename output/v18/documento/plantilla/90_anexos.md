@@ -4,7 +4,7 @@ La fase 1 fijó los criterios antes de buscar (docs/v18/bib/criterios.md): dise�
 
 Los PDF y los paquetes de replicación están solo en disco, con sha256 en data/bib/CHECKSUMS.sha256, y no se versionan. Al repositorio van la ficha, el enlace, el DOI, la licencia y las notas, con citas breves. Estado: VERIFICADA es DOI comprobado con Crossref o DataCite; el cuartil de Scimago no está verificado (tarea del autor). DISCREPANTE es una ficha de versión de trabajo cuyo DOI corresponde a la versión publicada (otro año o título), y se trata como NO VERIFICADA. No se cita ninguna cifra de la versión publicada sin leerla.
 
-Estudios con error típico en la unidad para inmigración (E3): {{V18-B5-E3:cobertura}}.
+Inmigración (E3). {{V18-B5-E3:cobertura}}.
 
 **Referencias de la magnitud preferida y de la etiqueta I6.**
 
@@ -33,10 +33,10 @@ Estudios con error típico en la unidad para inmigración (E3): {{V18-B5-E3:cobe
 | E4 | Kangasharju (2008) | VERIFICADA | No: sin error típico |
 | E4 | Hyslop y Rea (2018) | VERIFICADA | No: sin error típico |
 | E5 | Taltavull (2006) | NO VERIFICADA | Sí |
-| E5 | Baum-Snow y Han (versión de trabajo) | DISCREPANTE | Sí |
+| E5 | Baum-Snow y Han (2020, versión de trabajo; publicado en 2024) | DISCREPANTE | Sí |
 | E5 | Paciorek (2012) | VERIFICADA | Sí |
 | E6 | Mense (2025) | VERIFICADA | Sí (único estudio) |
-| E6 | Asquith, Mast y Reed (2020) | DISCREPANTE | No: otra unidad |
+| E6 | Asquith, Mast y Reed (2020, versión de trabajo; publicado en 2023) | DISCREPANTE | No: otra unidad |
 | E7 | San Juan (2023) | VERIFICADA | No: intervalos solo en un gráfico |
 | E7 | BCE, Boletín Económico 6/2022 | NO VERIFICADA | No: sin error típico |
 | E8 | Dolls et al. (2020) | VERIFICADA | No: sin error típico recuperado |
@@ -63,7 +63,7 @@ Los artículos de Chaves-Fonseca y de Mense publican el error típico y no el in
 | Mense (2025), tabla 3A | IV-2SLS en panel con efectos fijos de región y año, instrumento de lluvia; alquiler | coincide |
 | Borusyak, Hull y Jaravel (2022), tabla 4 | IV shift-share a nivel de sector, aplicación de Autor, Dorn y Hanson | coincide; la herramienta (src/v18/reproduccion/bhj_lib.py) queda validada |
 
-Sin reproducción por falta de paquete con datos: Garcia-López et al. (2020), Jofre-Monseny et al. (2023), Monràs y García-Montalvo (2023), González y Ortega (2013), Fack, Gibbons y Manning y Grislain-Letrémy y Trevien (E4), Saiz (2010), Best y Kleven (2018) y Besley et al. (2014), Badarinza y Ramadorai (2018) y Cvijanović y Spaenjers (2021), la literatura de grandes tenedores, Segú (2020) y Koster y van Ommeren (2019). Baum-Snow y Han (2024) solo tiene código y su paquete completo no cabe en el disco; Asquith, Mast y Reed (2023) solo tiene código, sin datos. Jarociński y Karadi (2020) y Altavilla et al. (2019) aportan series de choques, que se usan como dato.
+Sin reproducción por falta de paquete con datos: Garcia-López et al. (2020), Jofre-Monseny et al. (2023), Monràs y García-Montalvo (2023), González y Ortega (2013), Fack, Gibbons y Manning y Grislain-Letrémy y Trevien (E4), Saiz (2010), Best y Kleven (2018) y Besley et al. (2014), Badarinza y Ramadorai (2018) y Cvijanović y Spaenjers (2021), la literatura de grandes tenedores, Segú (2020; impuesto sobre la vivienda vacía en Francia, otro trabajo que Segú 2018) y Koster y van Ommeren (2019). Baum-Snow y Han (2020) solo tiene código y su paquete completo no cabe en el disco; Asquith, Mast y Reed (2020) solo tiene código, sin datos. Jarociński y Karadi (2020) y Altavilla et al. (2019) aportan series de choques, que se usan como dato.
 
 ## Anexo C. Planes de replicación
 
@@ -131,7 +131,7 @@ Los coeficientes de corto plazo de los paneles con PMG (F1-R2-pmg, F2-R1, F3-A2)
 
 Cada herramienta nueva se validó antes de usarse con procesos generadores que reproducen la estructura de los diseños de V18 (output/v18/montecarlo/<herramienta>/). Se simula bajo el nulo y bajo la alternativa, con semilla fija y sin ningún dato real de resultado ni muestra sellada.
 
-Hay dos criterios de «apto», y los dos se publican. El del encargo del Monte Carlo, más amplio, pide un tamaño al 5 % entre {{V18-AUX-CRIT-ENCARGO-TAM:min_num}} y {{V18-AUX-CRIT-ENCARGO-TAM:max_num}} y una cobertura al 95 % entre {{V18-AUX-CRIT-ENCARGO-COB:min_num}} y {{V18-AUX-CRIT-ENCARGO-COB:max_num}}, bajo el nulo y bajo la alternativa; con él se escribió el veredicto de cada herramienta (columna «Veredicto» de la segunda tabla). Las bandas de la adenda 1.12, más estrictas, piden un tamaño entre {{V18-AUX-CRIT-ADENDA-TAM:min_num}} y {{V18-AUX-CRIT-ADENDA-TAM:max_num}} y una cobertura entre {{V18-AUX-CRIT-ADENDA-COB:min_num}} y {{V18-AUX-CRIT-ADENDA-COB:max_num}}; son las que deciden en la inferencia de cada estimación (por ejemplo, el valor crítico corregido cuando el tamaño cae fuera de su banda) y están en la columna banda_112 de cada tabla.csv. Cuando los dos criterios difieren, la inferencia sigue el de la adenda, que es el del pre-registro (adenda 1.12 e I7); el criterio del encargo solo rotula la herramienta. La tabla da, por herramienta, el mínimo y el máximo entre las filas que deciden su veredicto (columna «principal», «entra_en_veredicto» o «decisivo» de su tabla.csv; si no la hay, la variante principal, con h = 8 en las proyecciones locales y el proxy-SVAR); el valor de cada condición está en output/v18/montecarlo/<herramienta>/tabla.csv y el veredicto en su resultado.json. En meta_bayes la cobertura es la de μ.
+Hay dos criterios de «apto», y los dos se publican. El del encargo del Monte Carlo, más amplio, pide un tamaño al 5 % entre {{V18-AUX-CRIT-ENCARGO-TAM:min_num}} y {{V18-AUX-CRIT-ENCARGO-TAM:max_num}} y una cobertura al 95 % entre {{V18-AUX-CRIT-ENCARGO-COB:min_num}} y {{V18-AUX-CRIT-ENCARGO-COB:max_num}}, bajo el nulo y bajo la alternativa; con él se escribió el veredicto de cada herramienta (columna «Veredicto» de la segunda tabla). Las bandas de la adenda 1.12, más estrictas, piden un tamaño entre {{V18-AUX-CRIT-ADENDA-TAM:min_num}} y {{V18-AUX-CRIT-ADENDA-TAM:max_num}} y una cobertura entre {{V18-AUX-CRIT-ADENDA-COB:min_num}} y {{V18-AUX-CRIT-ADENDA-COB:max_num}}; son las que deciden en la inferencia de cada estimación (por ejemplo, el valor crítico corregido cuando el tamaño cae fuera de su banda) y están en la columna banda_112 de cada tabla.csv. Cuando los dos criterios difieren, la inferencia sigue el de la adenda, que es el del pre-registro (adenda 1.12 e I7); el criterio del encargo solo rotula la herramienta. La tabla da, por herramienta, el mínimo y el máximo entre las filas que deciden su veredicto (columna «principal», «entra_en_veredicto» o «decisivo» de su tabla.csv; si no la hay, la variante principal, con h = 8 en las proyecciones locales y el proxy-SVAR). Los escenarios de diagnóstico (rotulados así en su tabla.csv, como los de pocos controles o de variabilidad distinta) no deciden el veredicto y no entran en el mínimo ni en el máximo; en webb_twfe solo entran las filas del bootstrap de Webb, porque las de CR1 son otra inferencia (su veredicto está en la segunda tabla). El valor de cada condición está en output/v18/montecarlo/<herramienta>/tabla.csv y el veredicto en su resultado.json. En meta_bayes la cobertura es la de μ.
 
 | Herramienta | Tamaño al 5 %: mínimo a máximo | Cobertura al 95 %: mínimo a máximo |
 |---|---|---|
@@ -156,11 +156,11 @@ El BVAR se valida con sus bandas del 68 % y del 90 %, que son aptas si cubren en
 |---|---|---|
 | Callaway-Sant'Anna con Webb | APTO CONDICIONADO | Diseños municipales con muchos tratados y controles; NO APTO con ocho clusters |
 | Sun-Abraham con Webb | APTO | Frágil si las comunidades de control son pocas |
-| de Chaisemartin-D'Haultfœuille con aleatorización del calendario | APTO | Aleatorización entre ocho comunidades; el bootstrap de Webb con ocho clusters es NO APTO |
+| de Chaisemartin-D'Haultfœuille con aleatorización del calendario | APTO | Aleatorización entre ocho comunidades. El t de Student con siete grados de libertad es apto con valor crítico corregido (banda de la adenda 1.12); solo el bootstrap de Webb con ocho clusters es NO APTO |
 | Aleatorización | APTO | Entre municipios y entre comunidades |
 | Honest DiD | APTO CONDICIONADO | Solo sin desviación de tendencias paralelas; con desviaciones mayores es válido pero conservador y sin potencia |
 | DiD sintético con Conley-Taber | APTO | Si los tratados son intercambiables con los controles; no si son más variables |
-| Webb en TWFE | APTO y APTO CONDICIONADO | Según el diseño |
+| Webb en TWFE | APTO | Con 8, 30 y 39 clusters. En la misma tabla, CR1 con la normal es APTO CONDICIONADO (NO APTO con ocho clusters) y CR1 con t de Student de G − 1 grados de libertad es APTO; los diseños con muy pocos tratados son NO APTOS |
 | Conley | Mixto | Apto si el alcance de la dependencia no supera el corte; NO APTO si lo duplica |
 | IV débil | Mixto | APTO con instrumento fuerte; APTO CONDICIONADO o NO APTO en los diseños más débiles |
 | BHJ con pocos choques | NO APTO | Con pocos choques efectivos; por eso, con menos de {{V18-AUX-CRIT-HHI-INFERENCIA:sig}}, la inferencia principal de E3, E5, E9 y E12 es Webb por provincia con Anderson-Rubin y BHJ queda como alternativa (adenda 1.13) |
@@ -170,7 +170,7 @@ El BVAR se valida con sus bandas del 68 % y del 90 %, que son aptas si cubren en
 | BVAR recursivo | NO APTO | Bandas conservadoras o con cobertura distinta de la nominal |
 | Metaanálisis bayesiano | NO APTO por conservador | Intervalos que cubren de más; con dos estudios y heterogeneidad el efecto fijo no cubre la media verdadera |
 
-En la simulación, con ocho comunidades, la inferencia por aleatorización del calendario es la única apta; la muestra de E8-R1 tiene {{V18-AUX-E8-R1-NCCAA:sig}}. Las herramientas NO APTAS se publican con esa etiqueta y la clasificación no se apoya en ellas.
+En la simulación, con ocho comunidades, la aleatorización del calendario es apta; el t de Student con siete grados de libertad lo es con valor crítico corregido, y el bootstrap de Webb es NO APTO. La muestra de E8-R1 tiene {{V18-AUX-E8-R1-NCCAA:sig}} comunidades. Las herramientas NO APTAS se publican con esa etiqueta y la clasificación no se apoya en ellas.
 
 ## Anexo F. Pre-registro interno y análisis a posteriori
 

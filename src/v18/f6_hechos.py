@@ -39,8 +39,8 @@ OUT = RAIZ / "output" / "v18"
 BIB = RAIZ / "docs" / "v18" / "bib"
 SALIDA = OUT / "f6" / "hechos.json"
 FECHA = "2026-10-20"
-N_BASE = 570          # cifras de los hechos.json de estimación y de f5
-N_AUX = 162           # cifras V18-AUX-* de auxiliares() (135 de K11 y 27 de K12)
+N_BASE = 487          # cifras de los hechos.json de estimación y de f5 (570 en K12; K14: −87 filas «no explicado» de la ilustración, +4 OBS)
+N_AUX = 163           # cifras V18-AUX-* de auxiliares() (135 de K11, 27 de K12 y 1 de K14: V18-AUX-F1-OOS-GW-P)
 N_ESPERADO = N_BASE + N_AUX
 TIPOS_RANGO = ("rango", "referencias", "sin rango")
 
@@ -88,8 +88,12 @@ def cobertura_real(h: dict, paises: dict[str, str]) -> str:
         return c
     m = re.match(r"V18-B5-(E\d+)", i)
     if m:   # B5: magnitud de la literatura y, en su caso, estimación propia; la cobertura es la de los estudios
-        terr = f"estudios de {paises[m.group(1)]}" if m.group(1) in paises else "literatura sin estudios con error típico en la unidad"
-        return f"{terr} ({c})" if c else terr
+        # K14 (árbitro, ronda 2, N1): frase completa con mayúscula inicial y sin paréntesis anidados (el documento la cita sola)
+        if m.group(1) in paises:
+            return f"Estudios de {paises[m.group(1)]}: {c}" if c else f"Estudios de {paises[m.group(1)]}"
+        resto = "; ".join(x for x in c.split("; ") if x and not x.startswith("ningún estudio"))
+        terr = "Literatura sin estudios con error típico en la unidad"
+        return f"{terr}; {resto}" if resto else terr
     if c and TERR.search(c):
         return c
     e = re.match(r"V18-((?:E|F)\d+)(?:-([A-Z]+\d+))?", i)
@@ -338,7 +342,10 @@ MC_FILAS = {
     "sdid_conley_taber": lambda t: t.variante == "conley_taber_sdid",
     "lp_iv": lambda t: t.variante.isin(["AR_aumentado_EHW", "2SLS_NeweyWest_h+1", "2SLS_aumentado_EHW"]) & (t.h == 8),
     "svar_proxy": lambda t: t.variante.isin(["AR_delta_NeweyWest4", "Wald_delta"]) & (t.h == 8),
+    # K14 (árbitro, ronda 2, N2): la herramienta es Webb; las filas CR1 de la misma tabla son otra inferencia
+    "webb_twfe": lambda t: _verdadero(t.principal) & t.inferencia.astype(str).str.startswith("wild cluster bootstrap (Webb)"),
 }
+DIAG_MC = "(diagnóstico)"   # K14 (N2): los escenarios de diagnóstico no deciden el veredicto y no entran en el mínimo y el máximo
 
 
 def _verdadero(s: pd.Series) -> pd.Series:
@@ -352,9 +359,14 @@ def _aux_montecarlo() -> list[dict]:
         rj = json.loads((d / "resultado.json").read_text(encoding="utf-8"))
         if d.name in MC_FILAS:
             sel, criterio = MC_FILAS[d.name](t), "variante principal del resultado.json"
+            if d.name == "webb_twfe":
+                criterio = "filas «principal» del bootstrap de Webb; las de CR1 son otra inferencia y no entran"
         else:
             col = next(c for c in ("principal", "entra_en_veredicto", "decisivo") if c in t.columns)
             sel, criterio = _verdadero(t[col]), f"columna «{col}»"
+        if "escenario" in t.columns and t.escenario.astype(str).str.contains(DIAG_MC, regex=False).any():
+            sel = sel & ~t.escenario.astype(str).str.contains(DIAG_MC, regex=False)
+            criterio += ", sin los escenarios de diagnóstico"
         f = t[sel]
         if f.empty:
             raise ValueError(f"{_rel(d)}: sin filas decisivas")
@@ -464,6 +476,9 @@ def _aux_k12() -> list[dict]:
                       unidad="p-valor", nota=nota, **comun))
     res.append(_cifra("V18-AUX-F1-OOS-CW-P", "p unilateral del contraste de Clark-West (AR(4) anidado en F1-ECM)", fm["cw"]["p_una_cola"],
                       unidad="p-valor", nota=nota, **comun))
+    # K14 (árbitro, ronda 2, N7): el Giacomini-White frente al AR(4), que el documento no daba
+    res.append(_cifra("V18-AUX-F1-OOS-GW-P", "p del contraste de Giacomini-White de F1-ECM frente a AR(4)", fm["gw_vs_ar4"]["p"],
+                      unidad="p-valor", nota=nota + f"; {int(fm['gw_vs_ar4']['n'])} observaciones en el contraste", **comun))
     res.append(_cifra("V18-AUX-F1-OOS-MCS-P", "p del conjunto de confianza de modelos (MCS) para F1-ECM", fm["mcs"]["p"]["F1-ECM"],
                       unidad="p-valor", nota=nota + f"; dentro del MCS al 90 %: {', '.join(fm['mcs']['dentro_90'])}", **comun))
     # E1-R3: pretendencias, unidades de la estimación y razón con la referencia
@@ -569,9 +584,18 @@ def _aux_d3() -> list[dict]:
     return res
 
 
+LIT_AUX = re.compile(r"V18-AUX-(LIT|REP)-")   # valores de la literatura (publicados o reproducidos con los datos de sus autores)
+
+
 def auxiliares() -> list[dict]:
-    return (_aux_literatura() + _aux_fichas() + _aux_f5() + _aux_reproduccion() + _aux_montecarlo() + _aux_estimacion()
-            + _aux_catalogo() + _aux_d3() + _aux_k12())
+    res = (_aux_literatura() + _aux_fichas() + _aux_f5() + _aux_reproduccion() + _aux_montecarlo() + _aux_estimacion()
+           + _aux_catalogo() + _aux_d3() + _aux_k12())
+    # K14 (árbitro, ronda 2, N8): la clase V18 es de un factor o de una estimación propia, no de un valor publicado; los valores de la
+    # literatura llevan «literatura (sin clase propia)» en lugar de NO ESTIMABLE
+    for h in res:
+        if LIT_AUX.match(h["id"]):
+            h["clasificacion_v18"] = check_v18.LITERATURA
+    return res
 
 
 # ---------------------------------------------------------------------------------------------------------------------------

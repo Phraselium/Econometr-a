@@ -1,5 +1,6 @@
 """V18 · fase 6: cifras V18 consolidadas (f6_hechos), Documento de Trabajo (f6_documento) y control de lenguaje causal de check_v18."""
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -25,7 +26,10 @@ def test_cobertura_real():
     assert H.cobertura_real({"id": "V18-E1-A4", "cobertura": "sin datos"}, {}).startswith("ciudades españolas")
     assert H.cobertura_real({"id": "V18-F4-1", "cobertura": "—"}, {}) == "España (no estimada)"
     assert H.cobertura_real({"id": "V18-C5I-x", "cobertura": "Andalucía; "}, {}) == "Andalucía"
-    assert H.cobertura_real({"id": "V18-B5-E4", "cobertura": "2 estudios"}, {"E4": "Francia, Finlandia"}).startswith("estudios de Francia")
+    assert H.cobertura_real({"id": "V18-B5-E4", "cobertura": "2 estudios"}, {"E4": "Francia, Finlandia"}) == "Estudios de Francia, Finlandia: 2 estudios"
+    # K14 (N1): sin paréntesis anidados y sin repetir «ningún estudio» cuando no hay estudios con error típico
+    c = H.cobertura_real({"id": "V18-B5-E7", "cobertura": "ningún estudio con error típico en la unidad; estado B5: rango (sin IC)"}, {})
+    assert c == "Literatura sin estudios con error típico en la unidad; estado B5: rango (sin IC)"
 
 
 def test_consolidado_al_dia_y_valido():
@@ -59,6 +63,26 @@ def test_clases_k12_en_check_v18():
     assert check_v18.SIN_CLASIFICAR == "sin clasificar (coprincipal informativa)"
     assert check_v18.ROBUSTEZ_POSTERIORI == "robustez a posteriori"
     assert not [e for e in check_v18.cifras() if "clasificacion_v18" in e]
+
+
+def test_literatura_sin_clase_propia_k14():
+    """K14 (árbitro, ronda 2, N8): los valores de la literatura no llevan la clase del factor (NO ESTIMABLE), sino una propia."""
+    assert check_v18.LITERATURA == "literatura (sin clase propia)" and check_v18.LITERATURA in check_v18.CLASES
+    aux = {h["id"]: h for h in H.auxiliares()}
+    lit = {i: h for i, h in aux.items() if i.startswith(("V18-AUX-LIT-", "V18-AUX-REP-"))}
+    assert lit and all(h["clasificacion_v18"] == check_v18.LITERATURA for h in lit.values())
+    assert all(h["clasificacion_v18"] != check_v18.LITERATURA for i, h in aux.items() if i not in lit)
+    filas = {h["id"]: h for h in json.loads(H.SALIDA.read_text(encoding="utf-8"))}
+    assert filas["V18-AUX-LIT-GL2020-BARRIO-MEDIO"]["clasificacion_v18"] == check_v18.LITERATURA
+    assert filas["V18-B5-E3"]["clasificacion_v18"] != check_v18.LITERATURA          # B5: clase de la designada (K12)
+
+
+def test_ilustracion_sin_no_explicado_k14():
+    """K14 (N4): ninguna fila «no explicado» de la ilustración llega a cifras_clave; las locales llevan su variación observada."""
+    filas = {h["id"]: h for h in json.loads(H.SALIDA.read_text(encoding="utf-8"))}
+    assert not [i for i in filas if i.startswith("V18-C5I-") and "NOEXPL" in i]
+    assert filas["V18-C5I-2020T1-2022T2-08019-OBS-N"]["valor"] is not None
+    assert filas["V18-C5-1995T1-2007T4-10-NOEXPL-P"]["periodo"] == "2002T1-2007T4"   # N10: ventana común
 
 
 def test_clase_propia_por_especificacion():
@@ -112,6 +136,16 @@ def test_tabla_impactos_no_llama_ic95_al_efecto_fijo_con_dos_estudios():
     t, falta = D.tabla_impactos(ck, pd.read_csv(D.MAG))
     fila_e4 = next(x for x in t.splitlines() if "(E4)" in x)
     assert falta == [] and "no es un IC95 fiable" in fila_e4
+
+
+def test_signo_menos_tipografico_en_campos_de_render_k14():
+    """K14 (N5): num, min_num y max_num llevan el signo menos tipográfico, como sig; los periodos no cambian."""
+    ck = _ck()
+    ck.loc["V18-B5-E1", ["valor", "min", "max", "periodo"]] = [-0.5, -0.9, -0.1, "2002T1-2007T4"]
+    txt, falta = D.render_texto("{{V18-B5-E1:num}} ({{V18-B5-E1:min_num}} a {{V18-B5-E1:max_num}}); {{V18-B5-E1:periodo}}", ck,
+                                pd.read_csv(D.MAG))
+    assert falta == [] and "−" in txt and "2002T1-2007T4" in txt
+    assert not re.search(r"(?<![\w])-\d", txt)
 
 
 def test_min_sig_max_sig():

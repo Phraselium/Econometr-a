@@ -53,12 +53,14 @@ AZUL, NEGRO, VERDE, NEGRITA = Font(color="1F4E99"), Font(color="000000"), Font(c
 TABLA = re.compile(r"\{\{tabla\.([a-z_]+)\}\}")
 RESTO = re.compile(r"\{\{[^{}]*\}\}")
 COMENTARIO = re.compile(r"<!--.*?-->\n?", re.S)
+MENOS = re.compile(r"(?<![\w.,])-(?=\d)")
+TEXTUALES = {"periodo", "cobertura", "fuentes", "unidad", "indicador", "capa", "ficha", "origen"}
 CAB = """# Factores de la subida del precio de la vivienda en España: reproducción, réplica y magnitudes (Documento de Trabajo V18)
 
 Borja Romero, economista (firma individual, independiente). Documento de Trabajo de la versión V18 del proyecto (docs/v18/plan.md,
 fase 6). Toda cifra procede de output/v5/cifras_clave.csv con su id. Toda cifra V18 es de capa C4 (nivel de evidencia EXPLORATORIO)
 y lleva al lado su clasificación V18 (IDENTIFICADO, SUGESTIVO, ASOCIACIÓN, NO CONCLUYENTE o NO ESTIMABLE; docs/v18/decisiones.md,
-K2). Pre-registro interno sin sello de tiempo externo (etiqueta plan-replicacion-v18). Generado por src/v18/f6_documento.py; no se
+K2); las cifras sin clase propia lo dicen (diagnóstico o variante, robustez a posteriori, literatura; K12 y K14). Pre-registro interno sin sello de tiempo externo (etiqueta plan-replicacion-v18). Generado por src/v18/f6_documento.py; no se
 edita a mano.
 """
 
@@ -214,7 +216,10 @@ def render_texto(txt: str, ck: pd.DataFrame, mag: pd.DataFrame) -> tuple[str, li
             return _dec(abs(float(x)), 1, en)   # abs_un_dec: valor absoluto con un decimal («un 3,8 % por debajo»)
         r = r.copy()
         r["id"] = i   # render.muestra_rango lee el id de la fila (V17/V18: rango solo si tipo_rango = «rango»)
-        return R.texto(r, campo)
+        s = R.texto(r, campo)
+        # K14 (árbitro, ronda 2, N5): signo menos tipográfico también en los campos de render.py (num, min_num, rango…), como en
+        # «sig»; solo el guion que precede a una cifra y no sigue a una letra o cifra (no toca periodos como 2002T1-2007T4)
+        return s if campo in TEXTUALES else MENOS.sub("−", s)
 
     out = R.MARC.sub(sub, TABLA.sub(tabla, txt))
     falta += [f"sin resolver: {x}" for x in RESTO.findall(out) if x not in falta]

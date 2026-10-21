@@ -3832,7 +3832,7 @@
   "max": 0.0615,
   "unidad": "Δln del alquiler por +1 pp de viviendas turísticas sobre el parque",
   "periodo": "estudios 2009-2016",
-  "cobertura": "estudios de España (1 estudios con error típico en la unidad (un solo estudio en la unidad); estado B5: magnitud de un solo estudio)",
+  "cobertura": "Estudios de España: 1 estudio con error típico en la unidad; estado B5: magnitud de un solo estudio",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -3853,7 +3853,7 @@
   "max": 0.0029,
   "unidad": "diferencia en ln de la renta de los contratos regulados",
   "periodo": "estudios 2016-2024",
-  "cobertura": "estudios de España, Francia, Alemania (5 estudios con error típico en la unidad (metaanálisis bayesiano de efectos aleatorios (3 priors)); estado B5: rango sin magnitud preferida (la decisión no coincide en las tres priors))",
+  "cobertura": "Estudios de España, Francia, Alemania: 5 estudios con error típico en la unidad; método: metaanálisis bayesiano de efectos aleatorios (3 priors); estado B5: rango sin magnitud preferida (la decisión no coincide en las tres priors)",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -3874,7 +3874,7 @@
   "max": 3.5146,
   "unidad": "% de precio por +1 % de población por entrada de inmigrantes",
   "periodo": "estudios 1983-2020",
-  "cobertura": "estudios de España, EE. UU., Reino Unido, Alemania (5 estudios con error típico en la unidad (metaanálisis bayesiano de efectos aleatorios (3 priors)); estado B5: rango sin magnitud preferida (I² > 75 % y el intervalo de predicción cambia de signo))",
+  "cobertura": "Estudios de España, EE. UU., Reino Unido, Alemania: 5 estudios con error típico en la unidad; método: metaanálisis bayesiano de efectos aleatorios (3 priors); estado B5: rango sin magnitud preferida (I² > 75 % y el intervalo de predicción cambia de signo)",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -3895,7 +3895,7 @@
   "max": 0.0953,
   "unidad": "θ: euros de alquiler por euro de ayuda",
   "periodo": "estudios 1984-2015",
-  "cobertura": "estudios de Francia, Finlandia (2 estudios con error típico en la unidad (media ponderada por la inversa de la varianza (efecto fijo)); estado B5: magnitud preferida)",
+  "cobertura": "Estudios de Francia, Finlandia: 2 estudios con error típico en la unidad; método: media ponderada por la inversa de la varianza (efecto fijo); estado B5: magnitud preferida",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -3916,7 +3916,7 @@
   "max": 1.4847,
   "unidad": "elasticidad precio de la oferta de unidades",
   "periodo": "estudios 1990-2010",
-  "cobertura": "estudios de España, EE. UU. (3 estudios con error típico en la unidad (metaanálisis bayesiano de efectos aleatorios (3 priors)); estado B5: rango sin magnitud preferida (I² > 75 % y el intervalo de predicción cambia de signo))",
+  "cobertura": "Estudios de España, EE. UU.: 3 estudios con error típico en la unidad; método: metaanálisis bayesiano de efectos aleatorios (3 priors); estado B5: rango sin magnitud preferida (I² > 75 % y el intervalo de predicción cambia de signo)",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -3937,7 +3937,7 @@
   "max": -0.0646,
   "unidad": "elasticidad del alquiler respecto a la oferta nueva (% por 1 %)",
   "periodo": "estudios 2010-2017",
-  "cobertura": "estudios de Alemania (1 estudios con error típico en la unidad (un solo estudio en la unidad); estado B5: magnitud de un solo estudio)",
+  "cobertura": "Estudios de Alemania: 1 estudio con error típico en la unidad; estado B5: magnitud de un solo estudio",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -3958,7 +3958,7 @@
   "max": -2.0,
   "unidad": "% del precio por +100 pb del tipo hipotecario, a 8 trimestres",
   "periodo": "estudios 2004-2022",
-  "cobertura": "literatura sin estudios con error típico en la unidad (0 estudios con error típico en la unidad (sin estudios con error típico en la unidad); estado B5: rango de la literatura, sin error típico (no hay metaanálisis ni intervalo estadístico))",
+  "cobertura": "Literatura sin estudios con error típico en la unidad; estado B5: rango de la literatura, sin error típico (no hay metaanálisis ni intervalo estadístico)",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -3979,7 +3979,7 @@
   "max": -3.0,
   "unidad": "% de precio por +1 pp del ITP, a 12 meses",
   "periodo": "estudios 2005-2018",
-  "cobertura": "literatura sin estudios con error típico en la unidad (0 estudios con error típico en la unidad (sin estudios con error típico en la unidad); estado B5: rango de la literatura, sin error típico (no hay metaanálisis ni intervalo estadístico))",
+  "cobertura": "Literatura sin estudios con error típico en la unidad; estado B5: rango de la literatura, sin error típico (no hay metaanálisis ni intervalo estadístico)",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -4000,7 +4000,7 @@
   "max": 2.1,
   "unidad": "% de precio por +1 pp de cuota de compras de no residentes",
   "periodo": "estudios 1999-2014",
-  "cobertura": "literatura sin estudios con error típico en la unidad (0 estudios con error típico en la unidad (sin estudios con error típico en la unidad); estado B5: rango de la literatura, sin error típico (no hay metaanálisis ni intervalo estadístico))",
+  "cobertura": "Literatura sin estudios con error típico en la unidad; estado B5: rango de la literatura, sin error típico (no hay metaanálisis ni intervalo estadístico)",
   "fuentes": [
    "output/v18/f5/magnitudes_estudios.csv",
    "output/v18/f1/catalogo.csv",
@@ -4207,9 +4207,9 @@
  {
   "id": "V18-C5-1995T1-2007T4-01-NOEXPL-P",
   "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, Andalucía (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": 9.2104,
-  "min": 9.2104,
-  "max": 9.2104,
+  "valor": 12.2826,
+  "min": 12.2826,
+  "max": 12.2826,
   "unidad": "pp (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "Andalucía; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
@@ -4219,7 +4219,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -4227,9 +4227,9 @@
  {
   "id": "V18-C5-1995T1-2007T4-07-NOEXPL-P",
   "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, Castilla y León (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": -13.1981,
-  "min": -13.1981,
-  "max": -13.1981,
+  "valor": -10.1259,
+  "min": -10.1259,
+  "max": -10.1259,
   "unidad": "pp (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "Castilla y León; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
@@ -4239,7 +4239,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -4247,9 +4247,9 @@
  {
   "id": "V18-C5-1995T1-2007T4-08-NOEXPL-P",
   "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, Castilla-La Mancha (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": 2.7742,
-  "min": 2.7742,
-  "max": 2.7742,
+  "valor": 5.8464,
+  "min": 5.8464,
+  "max": 5.8464,
   "unidad": "pp (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "Castilla-La Mancha; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
@@ -4259,7 +4259,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -4267,9 +4267,9 @@
  {
   "id": "V18-C5-1995T1-2007T4-09-NOEXPL-P",
   "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, Cataluña (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": -3.4503,
-  "min": -3.4503,
-  "max": -3.4503,
+  "valor": -0.3781,
+  "min": -0.3781,
+  "max": -0.3781,
   "unidad": "pp (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "Cataluña; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
@@ -4279,27 +4279,27 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
  },
  {
   "id": "V18-C5-1995T1-2007T4-10-NOEXPL-P",
-  "indicador": "Variación del precio real sin explicar, 1995T1-2007T4, Comunitat Valenciana (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": 37.8577,
-  "min": 37.8577,
-  "max": 37.8577,
+  "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, Comunitat Valenciana (relativa a la media de las provincias no selladas, sin el componente común)",
+  "valor": 3.1956,
+  "min": 3.1956,
+  "max": 3.1956,
   "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Comunitat Valenciana; 1995T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
+  "periodo": "2002T1-2007T4",
+  "cobertura": "Comunitat Valenciana; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
   "fuentes": [
    "output/v18/f5/contabilidad.csv",
    "data/base/hechos.parquet (valor tasado, IPC de alquiler, deflactor)"
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -4307,9 +4307,9 @@
  {
   "id": "V18-C5-1995T1-2007T4-11-NOEXPL-P",
   "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, Extremadura (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": -7.0038,
-  "min": -7.0038,
-  "max": -7.0038,
+  "valor": -3.9316,
+  "min": -3.9316,
+  "max": -3.9316,
   "unidad": "pp (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "Extremadura; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
@@ -4319,7 +4319,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -4327,9 +4327,9 @@
  {
   "id": "V18-C5-1995T1-2007T4-12-NOEXPL-P",
   "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, Galicia (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": -1.406,
-  "min": -1.406,
-  "max": -1.406,
+  "valor": 1.6662,
+  "min": 1.6662,
+  "max": 1.6662,
   "unidad": "pp (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "Galicia; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
@@ -4339,7 +4339,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -4347,9 +4347,9 @@
  {
   "id": "V18-C5-1995T1-2007T4-16-NOEXPL-P",
   "indicador": "Variación del precio real sin explicar, 2002T1-2007T4, País Vasco (relativa a la media de las provincias no selladas, sin el componente común)",
-  "valor": -13.8328,
-  "min": -13.8328,
-  "max": -13.8328,
+  "valor": -10.7606,
+  "min": -10.7606,
+  "max": -10.7606,
   "unidad": "pp (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "País Vasco; 2002T1 a 2007T4 (media de provincias no selladas, ponderada por población)",
@@ -4359,7 +4359,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las filas relativas de este periodo no son comparables entre sí; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "nota": "ningún factor tiene magnitud preferida con estimación propia (B5): todo queda sin explicar; la variación observada no es un resultado de factores; todas las provincias con la ventana común desde 2002T1, también las que tienen serie desde antes (35 desde 2002T1, 3 desde 1995T1), para que la media de referencia y cada fila cubran el mismo periodo (K14); periodo del dato 2002T1-2007T4 (la serie empieza después del inicio del periodo del plan 1995T1-2007T4); relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la cifra nacional; análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -7524,6 +7524,86 @@
   "fecha_dato": "2026"
  },
  {
+  "id": "V18-C5I-2020T1-2022T2-09-OBS-N",
+  "indicador": "Variación observada de la renta real de los contratos nuevos de alquiler (Incasòl), 2020T1-2022T2, Cataluña (sin Barcelona ciudad)",
+  "valor": -2.8124,
+  "min": null,
+  "max": null,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2020T1-2022T2",
+  "cobertura": "Cataluña (sin Barcelona ciudad)",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv",
+   "data/base/hechos.parquet"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "variación observada (renta nominal de los contratos nuevos del Incasòl menos el deflactor), no un resultado de factores; se lee al lado de las filas de la ilustración, sin restarlas (K14). análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "ficha": "output/v18/f5/hechos.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-C5I-2022T3-2026T2-09-OBS-N",
+  "indicador": "Variación observada de la renta real de los contratos nuevos de alquiler (Incasòl), 2022T3-2026T2, Cataluña (sin Barcelona ciudad)",
+  "valor": -1.8068,
+  "min": null,
+  "max": null,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2022T3-2026T2",
+  "cobertura": "Cataluña (sin Barcelona ciudad)",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv",
+   "data/base/hechos.parquet"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "variación observada (renta nominal de los contratos nuevos del Incasòl menos el deflactor), no un resultado de factores; se lee al lado de las filas de la ilustración, sin restarlas (K14). análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "ficha": "output/v18/f5/hechos.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-C5I-2020T1-2022T2-08019-OBS-N",
+  "indicador": "Variación observada de la renta real de los contratos nuevos de alquiler (Incasòl), 2020T1-2022T2, Barcelona",
+  "valor": -6.1317,
+  "min": null,
+  "max": null,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2020T1-2022T2",
+  "cobertura": "Barcelona",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv",
+   "data/base/hechos.parquet"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "variación observada (renta nominal de los contratos nuevos del Incasòl menos el deflactor), no un resultado de factores; se lee al lado de las filas de la ilustración, sin restarlas (K14). análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "ficha": "output/v18/f5/hechos.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-C5I-2022T3-2026T2-08019-OBS-N",
+  "indicador": "Variación observada de la renta real de los contratos nuevos de alquiler (Incasòl), 2022T3-2026T2, Barcelona",
+  "valor": -2.0856,
+  "min": null,
+  "max": null,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2022T3-2026T2",
+  "cobertura": "Barcelona",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv",
+   "data/base/hechos.parquet"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "variación observada (renta nominal de los contratos nuevos del Incasòl menos el deflactor), no un resultado de factores; se lee al lado de las filas de la ilustración, sin restarlas (K14). análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
+  "ficha": "output/v18/f5/hechos.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
   "id": "V18-C5I-1995T1-2007T4-00-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 1995T1-2007T4, Nacional (factor)",
   "valor": 6.8614,
@@ -7566,27 +7646,6 @@
   "fecha_dato": "2007"
  },
  {
-  "id": "V18-C5I-1995T1-2007T4-00-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Nacional (no_explicado)",
-  "valor": 62.1196,
-  "min": 44.7342,
-  "max": 80.3252,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común (mezcla componentes). Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
   "id": "V18-C5I-1995T1-2007T4-01-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 1995T1-2007T4, Andalucía (factor)",
   "valor": -1.4709,
@@ -7603,27 +7662,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
-  "id": "V18-C5I-1995T1-2007T4-01-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Andalucía (no_explicado)",
-  "valor": 10.6813,
-  "min": 6.7785,
-  "max": 14.4082,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -7650,27 +7688,6 @@
   "fecha_dato": "2007"
  },
  {
-  "id": "V18-C5I-1995T1-2007T4-07-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Castilla y León (no_explicado)",
-  "valor": -11.077,
-  "min": -16.705,
-  "max": -5.7026,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
   "id": "V18-C5I-1995T1-2007T4-08-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 1995T1-2007T4, Castilla-La Mancha (factor)",
   "valor": 1.5172,
@@ -7687,27 +7704,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
-  "id": "V18-C5I-1995T1-2007T4-08-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Castilla-La Mancha (no_explicado)",
-  "valor": 1.2569,
-  "min": -2.5875,
-  "max": 5.2827,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -7734,27 +7730,6 @@
   "fecha_dato": "2007"
  },
  {
-  "id": "V18-C5I-1995T1-2007T4-09-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Cataluña (no_explicado)",
-  "valor": -7.4926,
-  "min": -17.7352,
-  "max": 3.2332,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
   "id": "V18-C5I-1995T1-2007T4-10-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 1995T1-2007T4, Comunitat Valenciana (factor)",
   "valor": 4.9001,
@@ -7771,27 +7746,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
-  "id": "V18-C5I-1995T1-2007T4-10-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Comunitat Valenciana (no_explicado)",
-  "valor": 32.9576,
-  "min": 20.5417,
-  "max": 45.9593,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -7818,27 +7772,6 @@
   "fecha_dato": "2007"
  },
  {
-  "id": "V18-C5I-1995T1-2007T4-11-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Extremadura (no_explicado)",
-  "valor": -2.8181,
-  "min": -13.9242,
-  "max": 7.7876,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
   "id": "V18-C5I-1995T1-2007T4-12-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 1995T1-2007T4, Galicia (factor)",
   "valor": -4.2139,
@@ -7855,27 +7788,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
-  "id": "V18-C5I-1995T1-2007T4-12-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, Galicia (no_explicado)",
-  "valor": 2.808,
-  "min": -8.3731,
-  "max": 13.4852,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -7902,27 +7814,6 @@
   "fecha_dato": "2007"
  },
  {
-  "id": "V18-C5I-1995T1-2007T4-16-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, País Vasco (no_explicado)",
-  "valor": -11.5918,
-  "min": -17.5379,
-  "max": -5.9136,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
   "id": "V18-C5I-1995T1-2007T4-46250-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 1995T1-2007T4, València (factor)",
   "valor": 2.2896,
@@ -7939,27 +7830,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2007"
- },
- {
-  "id": "V18-C5I-1995T1-2007T4-46250-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 1995T1-2007T4, València (no_explicado)",
-  "valor": -22.1326,
-  "min": -27.9341,
-  "max": -16.0574,
-  "unidad": "pp (100·Δln)",
-  "periodo": "1995T1-2007T4",
-  "cobertura": "València",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -8028,48 +7898,6 @@
   "fecha_dato": "2013"
  },
  {
-  "id": "V18-C5I-2008T1-2013T4-00-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Nacional (no_explicado)",
-  "valor": -37.0263,
-  "min": -39.0759,
-  "max": -35.0696,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común (mezcla componentes). Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-00-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Nacional (no_explicado_alternativa)",
-  "valor": -48.9614,
-  "min": -51.0707,
-  "max": -46.9022,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
   "id": "V18-C5I-2008T1-2013T4-01-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2008T1-2013T4, Andalucía (factor)",
   "valor": 0.6779,
@@ -8128,48 +7956,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-01-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Andalucía (no_explicado)",
-  "valor": -5.9306,
-  "min": -7.6585,
-  "max": -4.1396,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-01-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Andalucía (no_explicado_alternativa)",
-  "valor": -12.4983,
-  "min": -13.8225,
-  "max": -11.2109,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2013"
@@ -8238,48 +8024,6 @@
   "fecha_dato": "2013"
  },
  {
-  "id": "V18-C5I-2008T1-2013T4-07-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Castilla y León (no_explicado)",
-  "valor": -2.657,
-  "min": -2.9381,
-  "max": -2.3811,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-07-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Castilla y León (no_explicado_alternativa)",
-  "valor": 1.1457,
-  "min": 0.4284,
-  "max": 1.8725,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
   "id": "V18-C5I-2008T1-2013T4-08-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2008T1-2013T4, Castilla-La Mancha (factor)",
   "valor": -0.3085,
@@ -8338,48 +8082,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-08-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Castilla-La Mancha (no_explicado)",
-  "valor": -11.3296,
-  "min": -12.1582,
-  "max": -10.532,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-08-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Castilla-La Mancha (no_explicado_alternativa)",
-  "valor": -7.4956,
-  "min": -8.2555,
-  "max": -6.7216,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2013"
@@ -8448,48 +8150,6 @@
   "fecha_dato": "2013"
  },
  {
-  "id": "V18-C5I-2008T1-2013T4-09-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Cataluña (no_explicado)",
-  "valor": -0.8578,
-  "min": -3.5076,
-  "max": 1.701,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-09-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Cataluña (no_explicado_alternativa)",
-  "valor": -10.5356,
-  "min": -12.1429,
-  "max": -8.9695,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
   "id": "V18-C5I-2008T1-2013T4-10-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2008T1-2013T4, Comunitat Valenciana (factor)",
   "valor": null,
@@ -8548,48 +8208,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-10-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Comunitat Valenciana (no_explicado)",
-  "valor": -2.3683,
-  "min": -2.6453,
-  "max": -2.0838,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-10-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Comunitat Valenciana (no_explicado_alternativa)",
-  "valor": -24.6936,
-  "min": -28.7865,
-  "max": -20.6874,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2013"
@@ -8658,48 +8276,6 @@
   "fecha_dato": "2013"
  },
  {
-  "id": "V18-C5I-2008T1-2013T4-11-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Extremadura (no_explicado)",
-  "valor": 10.8049,
-  "min": 9.7581,
-  "max": 11.888,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-11-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Extremadura (no_explicado_alternativa)",
-  "valor": 15.2656,
-  "min": 14.519,
-  "max": 16.0246,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
   "id": "V18-C5I-2008T1-2013T4-12-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2008T1-2013T4, Galicia (factor)",
   "valor": 0.2842,
@@ -8763,48 +8339,6 @@
   "fecha_dato": "2013"
  },
  {
-  "id": "V18-C5I-2008T1-2013T4-12-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Galicia (no_explicado)",
-  "valor": 10.568,
-  "min": 9.7695,
-  "max": 11.378,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-12-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, Galicia (no_explicado_alternativa)",
-  "valor": 13.8407,
-  "min": 13.2091,
-  "max": 14.4868,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
   "id": "V18-C5I-2008T1-2013T4-16-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2008T1-2013T4, País Vasco (factor)",
   "valor": 0.1691,
@@ -8842,48 +8376,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-16-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, País Vasco (no_explicado)",
-  "valor": 13.9403,
-  "min": 13.5119,
-  "max": 14.389,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2013"
- },
- {
-  "id": "V18-C5I-2008T1-2013T4-16-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2008T1-2013T4, País Vasco (no_explicado_alternativa)",
-  "valor": 17.9542,
-  "min": 17.2658,
-  "max": 18.6583,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2008T1-2013T4",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2013"
@@ -8973,48 +8465,6 @@
   "fecha_dato": "2019"
  },
  {
-  "id": "V18-C5I-2014T1-2019T4-00-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Nacional (no_explicado)",
-  "valor": 4.9749,
-  "min": 2.3797,
-  "max": 7.6783,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común (mezcla componentes). Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-00-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Nacional (no_explicado_alternativa)",
-  "valor": 10.2246,
-  "min": 9.4626,
-  "max": 11.0077,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
   "id": "V18-C5I-2014T1-2019T4-01-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2014T1-2019T4, Andalucía (factor)",
   "valor": 0.0258,
@@ -9073,48 +8523,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-01-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Andalucía (no_explicado)",
-  "valor": 4.4523,
-  "min": 4.3368,
-  "max": 4.5662,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-01-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Andalucía (no_explicado_alternativa)",
-  "valor": 8.1763,
-  "min": 7.5165,
-  "max": 8.8556,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2019"
@@ -9183,48 +8591,6 @@
   "fecha_dato": "2019"
  },
  {
-  "id": "V18-C5I-2014T1-2019T4-07-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Castilla y León (no_explicado)",
-  "valor": -4.4904,
-  "min": -6.0975,
-  "max": -2.9474,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-07-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Castilla y León (no_explicado_alternativa)",
-  "valor": -6.3781,
-  "min": -6.6335,
-  "max": -6.127,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
   "id": "V18-C5I-2014T1-2019T4-08-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2014T1-2019T4, Castilla-La Mancha (factor)",
   "valor": -0.6163,
@@ -9283,48 +8649,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-08-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Castilla-La Mancha (no_explicado)",
-  "valor": -0.2044,
-  "min": -1.8328,
-  "max": 1.3658,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-08-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Castilla-La Mancha (no_explicado_alternativa)",
-  "valor": -2.03,
-  "min": -2.3039,
-  "max": -1.7545,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2019"
@@ -9393,48 +8717,6 @@
   "fecha_dato": "2019"
  },
  {
-  "id": "V18-C5I-2014T1-2019T4-09-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Cataluña (no_explicado)",
-  "valor": 18.0328,
-  "min": 17.9475,
-  "max": 18.1159,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-09-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Cataluña (no_explicado_alternativa)",
-  "valor": 23.1214,
-  "min": 22.2123,
-  "max": 24.0549,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
   "id": "V18-C5I-2014T1-2019T4-10-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2014T1-2019T4, Comunitat Valenciana (factor)",
   "valor": 0.3065,
@@ -9493,48 +8775,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-10-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Comunitat Valenciana (no_explicado)",
-  "valor": 6.9557,
-  "min": 6.1724,
-  "max": 7.7663,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-10-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Comunitat Valenciana (no_explicado_alternativa)",
-  "valor": 12.582,
-  "min": 11.6299,
-  "max": 13.5589,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2019"
@@ -9603,48 +8843,6 @@
   "fecha_dato": "2019"
  },
  {
-  "id": "V18-C5I-2014T1-2019T4-11-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Extremadura (no_explicado)",
-  "valor": 0.4287,
-  "min": -1.2885,
-  "max": 2.0783,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-11-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Extremadura (no_explicado_alternativa)",
-  "valor": -1.1055,
-  "min": -1.2975,
-  "max": -0.9176,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
   "id": "V18-C5I-2014T1-2019T4-12-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2014T1-2019T4, Galicia (factor)",
   "valor": -0.0206,
@@ -9708,48 +8906,6 @@
   "fecha_dato": "2019"
  },
  {
-  "id": "V18-C5I-2014T1-2019T4-12-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Galicia (no_explicado)",
-  "valor": -0.3476,
-  "min": -0.453,
-  "max": -0.2414,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-12-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, Galicia (no_explicado_alternativa)",
-  "valor": -1.3251,
-  "min": -1.5285,
-  "max": -1.1259,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
   "id": "V18-C5I-2014T1-2019T4-16-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2014T1-2019T4, País Vasco (factor)",
   "valor": 1.4051,
@@ -9792,48 +8948,6 @@
   "fecha_dato": "2019"
  },
  {
-  "id": "V18-C5I-2014T1-2019T4-16-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, País Vasco (no_explicado)",
-  "valor": -2.9837,
-  "min": -6.544,
-  "max": 0.7445,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-16-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, País Vasco (no_explicado_alternativa)",
-  "valor": -3.0552,
-  "min": -3.3256,
-  "max": -2.7908,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
   "id": "V18-C5I-2014T1-2019T4-46250-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2014T1-2019T4, València (factor)",
   "valor": 0.9183,
@@ -9850,27 +8964,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2019"
- },
- {
-  "id": "V18-C5I-2014T1-2019T4-46250-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2014T1-2019T4, València (no_explicado)",
-  "valor": 12.7079,
-  "min": 10.3812,
-  "max": 15.1443,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2014T1-2019T4",
-  "cobertura": "València",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2019"
@@ -9939,48 +9032,6 @@
   "fecha_dato": "2022"
  },
  {
-  "id": "V18-C5I-2020T1-2022T2-00-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Nacional (no_explicado)",
-  "valor": -1.8508,
-  "min": -3.06,
-  "max": -0.5924,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común (mezcla componentes). Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-00-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Nacional (no_explicado_alternativa)",
-  "valor": -1.3746,
-  "min": -1.4998,
-  "max": -1.2482,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
   "id": "V18-C5I-2020T1-2022T2-01-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2020T1-2022T2, Andalucía (factor)",
   "valor": 0.0992,
@@ -10039,48 +9090,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-01-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Andalucía (no_explicado)",
-  "valor": -1.0571,
-  "min": -1.3804,
-  "max": -0.7286,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-01-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Andalucía (no_explicado_alternativa)",
-  "valor": -0.9584,
-  "min": -1.1291,
-  "max": -0.7922,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2022"
@@ -10149,48 +9158,6 @@
   "fecha_dato": "2022"
  },
  {
-  "id": "V18-C5I-2020T1-2022T2-07-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Castilla y León (no_explicado)",
-  "valor": -0.8856,
-  "min": -1.3446,
-  "max": -0.4426,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-07-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Castilla y León (no_explicado_alternativa)",
-  "valor": -0.5699,
-  "min": -0.6794,
-  "max": -0.4585,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
   "id": "V18-C5I-2020T1-2022T2-08-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2020T1-2022T2, Castilla-La Mancha (factor)",
   "valor": 0.0129,
@@ -10249,48 +9216,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-08-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Castilla-La Mancha (no_explicado)",
-  "valor": 0.0905,
-  "min": 0.0208,
-  "max": 0.1594,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-08-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Castilla-La Mancha (no_explicado_alternativa)",
-  "valor": -0.1386,
-  "min": -0.2127,
-  "max": -0.0621,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2022"
@@ -10359,48 +9284,6 @@
   "fecha_dato": "2022"
  },
  {
-  "id": "V18-C5I-2020T1-2022T2-09-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Cataluña (no_explicado)",
-  "valor": 2.1537,
-  "min": 1.9471,
-  "max": 2.3669,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-09-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Cataluña (no_explicado_alternativa)",
-  "valor": 2.7338,
-  "min": 2.622,
-  "max": 2.8476,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
   "id": "V18-C5I-2020T1-2022T2-10-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2020T1-2022T2, Comunitat Valenciana (factor)",
   "valor": 0.4777,
@@ -10459,48 +9342,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-10-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Comunitat Valenciana (no_explicado)",
-  "valor": 3.8838,
-  "min": 2.6702,
-  "max": 5.1477,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-10-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Comunitat Valenciana (no_explicado_alternativa)",
-  "valor": 4.1845,
-  "min": 4.1187,
-  "max": 4.2527,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2022"
@@ -10569,48 +9410,6 @@
   "fecha_dato": "2022"
  },
  {
-  "id": "V18-C5I-2020T1-2022T2-11-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Extremadura (no_explicado)",
-  "valor": -0.0849,
-  "min": -0.8883,
-  "max": 0.6821,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-11-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Extremadura (no_explicado_alternativa)",
-  "valor": 0.0365,
-  "min": -0.0636,
-  "max": 0.1389,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
   "id": "V18-C5I-2020T1-2022T2-12-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2020T1-2022T2, Galicia (factor)",
   "valor": -0.1009,
@@ -10674,48 +9473,6 @@
   "fecha_dato": "2022"
  },
  {
-  "id": "V18-C5I-2020T1-2022T2-12-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Galicia (no_explicado)",
-  "valor": -0.6793,
-  "min": -1.0108,
-  "max": -0.3539,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-12-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, Galicia (no_explicado_alternativa)",
-  "valor": -0.219,
-  "min": -0.4287,
-  "max": -0.0174,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
   "id": "V18-C5I-2020T1-2022T2-16-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2020T1-2022T2, País Vasco (factor)",
   "valor": -0.061,
@@ -10758,48 +9515,6 @@
   "fecha_dato": "2022"
  },
  {
-  "id": "V18-C5I-2020T1-2022T2-16-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, País Vasco (no_explicado)",
-  "valor": -0.1072,
-  "min": -0.269,
-  "max": 0.0474,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-16-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, País Vasco (no_explicado_alternativa)",
-  "valor": 0.2767,
-  "min": 0.197,
-  "max": 0.3582,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
   "id": "V18-C5I-2020T1-2022T2-46250-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2020T1-2022T2, València (factor)",
   "valor": 0.0661,
@@ -10816,27 +9531,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-46250-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2020T1-2022T2, València (no_explicado)",
-  "valor": 10.1565,
-  "min": 9.9889,
-  "max": 10.332,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "València",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2022"
@@ -10905,48 +9599,6 @@
   "fecha_dato": "2026"
  },
  {
-  "id": "V18-C5I-2022T3-2026T2-00-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Nacional (no_explicado)",
-  "valor": 10.2117,
-  "min": 5.5656,
-  "max": 15.0334,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común (mezcla componentes). Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-00-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Nacional (no_explicado_alternativa)",
-  "valor": 15.3129,
-  "min": 13.9831,
-  "max": 16.6575,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Nacional",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente común): no se lee como parte nacional sin explicar; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
   "id": "V18-C5I-2022T3-2026T2-01-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2022T3-2026T2, Andalucía (factor)",
   "valor": -0.3804,
@@ -11005,48 +9657,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-01-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Andalucía (no_explicado)",
-  "valor": 6.7847,
-  "min": 5.7784,
-  "max": 7.7529,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-01-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Andalucía (no_explicado_alternativa)",
-  "valor": 6.4051,
-  "min": 6.322,
-  "max": 6.4904,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Andalucía",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -11115,48 +9725,6 @@
   "fecha_dato": "2026"
  },
  {
-  "id": "V18-C5I-2022T3-2026T2-07-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Castilla y León (no_explicado)",
-  "valor": 0.405,
-  "min": -0.0604,
-  "max": 0.8533,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-07-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Castilla y León (no_explicado_alternativa)",
-  "valor": -0.9187,
-  "min": -1.1501,
-  "max": -0.6892,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Castilla y León",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
   "id": "V18-C5I-2022T3-2026T2-08-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2022T3-2026T2, Castilla-La Mancha (factor)",
   "valor": 0.2488,
@@ -11215,48 +9783,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-08-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Castilla-La Mancha (no_explicado)",
-  "valor": 2.9933,
-  "min": 2.3631,
-  "max": 3.6519,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-08-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Castilla-La Mancha (no_explicado_alternativa)",
-  "valor": 2.976,
-  "min": 2.8767,
-  "max": 3.079,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Castilla-La Mancha",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -11325,48 +9851,6 @@
   "fecha_dato": "2026"
  },
  {
-  "id": "V18-C5I-2022T3-2026T2-09-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Cataluña (no_explicado)",
-  "valor": -1.1215,
-  "min": -3.082,
-  "max": 0.9233,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-09-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Cataluña (no_explicado_alternativa)",
-  "valor": 1.4736,
-  "min": 1.1364,
-  "max": 1.8227,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Cataluña",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
   "id": "V18-C5I-2022T3-2026T2-10-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2022T3-2026T2, Comunitat Valenciana (factor)",
   "valor": null,
@@ -11425,48 +9909,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-10-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Comunitat Valenciana (no_explicado)",
-  "valor": 10.5651,
-  "min": 10.4228,
-  "max": 10.7036,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-10-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Comunitat Valenciana (no_explicado_alternativa)",
-  "valor": 13.355,
-  "min": 12.8314,
-  "max": 13.8859,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "España (Comunitat Valenciana)",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -11535,48 +9977,6 @@
   "fecha_dato": "2026"
  },
  {
-  "id": "V18-C5I-2022T3-2026T2-11-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Extremadura (no_explicado)",
-  "valor": -11.9179,
-  "min": -12.001,
-  "max": -11.8325,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-11-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Extremadura (no_explicado_alternativa)",
-  "valor": -13.2048,
-  "min": -13.4572,
-  "max": -12.9541,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Extremadura",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
   "id": "V18-C5I-2022T3-2026T2-12-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2022T3-2026T2, Galicia (factor)",
   "valor": -0.3602,
@@ -11640,48 +10040,6 @@
   "fecha_dato": "2026"
  },
  {
-  "id": "V18-C5I-2022T3-2026T2-12-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Galicia (no_explicado)",
-  "valor": -0.5802,
-  "min": -1.5341,
-  "max": 0.3376,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-12-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, Galicia (no_explicado_alternativa)",
-  "valor": -1.8257,
-  "min": -2.056,
-  "max": -1.5988,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Galicia",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
   "id": "V18-C5I-2022T3-2026T2-16-E3-P",
   "indicador": "Ilustración: inmigración, precio real, 2022T3-2026T2, País Vasco (factor)",
   "valor": -0.2242,
@@ -11724,48 +10082,6 @@
   "fecha_dato": "2026"
  },
  {
-  "id": "V18-C5I-2022T3-2026T2-16-NOEXPL-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, País Vasco (no_explicado)",
-  "valor": -4.1923,
-  "min": -4.7871,
-  "max": -3.6243,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
-  "id": "V18-C5I-2022T3-2026T2-16-NOEXPL_alt_E9-P",
-  "indicador": "Ilustración: variación sin explicar, precio real, 2022T3-2026T2, País Vasco (no_explicado_alternativa)",
-  "valor": -5.3839,
-  "min": -5.5611,
-  "max": -5.2107,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "País Vasco",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
   "id": "V18-C5I-2020T1-2022T2-09-E2-extremos-N",
   "indicador": "Ilustración: topes al alquiler, alquiler_contratos_nuevos real, 2020T1-2022T2, Cataluña (sin Barcelona ciudad) (factor_extremos)",
   "valor": 0.0,
@@ -11782,27 +10098,6 @@
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
   "nota": "sin magnitud preferida para E2 (B5); ilustración con E2-R1 propia sola, fuera de B5: la clase de E2-R1 (SUGESTIVO) no se traslada a esta fila; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; dentro del soporte (cuota entre 0 y 1: combinación de municipios tratados y de control de la muestra); relativa entre municipios (regulados frente a no regulados de Cataluña), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
-  "id": "V18-C5I-2020T1-2022T2-09-NOEXPL-N",
-  "indicador": "Ilustración: variación sin explicar, alquiler_contratos_nuevos real, 2020T1-2022T2, Cataluña (sin Barcelona ciudad) (no_explicado)",
-  "valor": -2.8124,
-  "min": -2.8124,
-  "max": -2.8124,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Cataluña (sin Barcelona ciudad); 2019T4 a 2022T2",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre municipios, sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2022"
@@ -11871,27 +10166,6 @@
   "fecha_dato": "2022"
  },
  {
-  "id": "V18-C5I-2020T1-2022T2-08019-NOEXPL-N",
-  "indicador": "Ilustración: variación sin explicar, alquiler_contratos_nuevos real, 2020T1-2022T2, Barcelona (no_explicado)",
-  "valor": -6.0475,
-  "min": -6.0913,
-  "max": -6.0041,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2020T1-2022T2",
-  "cobertura": "Barcelona; 2019T4 a 2022T2",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2022"
- },
- {
   "id": "V18-C5I-2022T3-2026T2-08019-E1-N",
   "indicador": "Ilustración: vivienda turística, alquiler_contratos_nuevos real, 2022T3-2026T2, Barcelona (factor)",
   "valor": 0.4979,
@@ -11913,27 +10187,6 @@
   "fecha_dato": "2026"
  },
  {
-  "id": "V18-C5I-2022T3-2026T2-08019-NOEXPL-N",
-  "indicador": "Ilustración: variación sin explicar, alquiler_contratos_nuevos real, 2022T3-2026T2, Barcelona (no_explicado)",
-  "valor": -2.5835,
-  "min": -2.8401,
-  "max": -2.3244,
-  "unidad": "pp (100·Δln)",
-  "periodo": "2022T3-2026T2",
-  "cobertura": "Barcelona; 2022T2 a 2026T1",
-  "fuentes": [
-   "output/v18/f5/contabilidad_ilustracion.csv",
-   "data/base/hechos.parquet",
-   "output/v18/f5/magnitudes.csv"
-  ],
-  "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "magnitud de la literatura; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; ; relativa entre provincias (o unidades), sin el componente común. Contabilidad con elasticidades, no descomposición estructural. análisis V18; capa C4; pre-registro interno plan-replicacion-v18.",
-  "ficha": "output/v18/f5/hechos.json",
-  "tipo_rango": "rango",
-  "fecha_dato": "2026"
- },
- {
   "id": "V18-AUX-LIT-SEGU2018",
   "indicador": "Valor publicado por Segú (2018), Barcelona, 2009-2016 (factor E1, literatura)",
   "valor": 0.038,
@@ -11947,7 +10200,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/turismo/segu2018.md",
   "tipo_rango": "sin rango",
@@ -11967,7 +10220,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/turismo/segu2018.md",
   "tipo_rango": "sin rango",
@@ -11987,7 +10240,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
   "tipo_rango": "sin rango",
@@ -12007,7 +10260,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
   "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
   "tipo_rango": "sin rango",
@@ -12027,7 +10280,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/turismo/chavesfonseca2026.md",
   "tipo_rango": "sin rango",
@@ -12047,7 +10300,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
   "ficha": "docs/v18/bib/turismo/chavesfonseca2026.md",
   "tipo_rango": "sin rango",
@@ -12067,7 +10320,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/topes/jofremonseny2023.md",
   "tipo_rango": "sin rango",
@@ -12087,7 +10340,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/topes/jofremonseny2023.md",
   "tipo_rango": "sin rango",
@@ -12107,7 +10360,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/topes/monras2023.md",
   "tipo_rango": "sin rango",
@@ -12127,7 +10380,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/topes/monras2023.md",
   "tipo_rango": "sin rango",
@@ -12147,7 +10400,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/topes/breuille2025.md",
   "tipo_rango": "sin rango",
@@ -12167,7 +10420,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/topes/breuille2025.md",
   "tipo_rango": "sin rango",
@@ -12187,7 +10440,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/topes/hahn2021.md",
   "tipo_rango": "sin rango",
@@ -12207,7 +10460,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/topes/hahn2021.md",
   "tipo_rango": "sin rango",
@@ -12227,7 +10480,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/topes/perezgarcia2026.md",
   "tipo_rango": "sin rango",
@@ -12247,7 +10500,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
   "ficha": "docs/v18/bib/topes/perezgarcia2026.md",
   "tipo_rango": "sin rango",
@@ -12267,7 +10520,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
   "tipo_rango": "sin rango",
@@ -12287,7 +10540,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: reconstruido por proporcionalidad con el error de 18,58 €/m² sobre 44,72 €/m²",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
   "tipo_rango": "sin rango",
@@ -12307,7 +10560,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
   "tipo_rango": "sin rango",
@@ -12327,7 +10580,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
   "tipo_rango": "sin rango",
@@ -12347,7 +10600,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/inmigracion/sanchis_guarner_2017_lse.md",
   "tipo_rango": "sin rango",
@@ -12367,7 +10620,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/inmigracion/sanchis_guarner_2017_lse.md",
   "tipo_rango": "sin rango",
@@ -12387,7 +10640,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/inmigracion/saiz_2007_philly.md",
   "tipo_rango": "sin rango",
@@ -12407,7 +10660,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/inmigracion/saiz_2007_philly.md",
   "tipo_rango": "sin rango",
@@ -12427,7 +10680,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/inmigracion/sa_2015_iza.md",
   "tipo_rango": "sin rango",
@@ -12447,7 +10700,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/inmigracion/sa_2015_iza.md",
   "tipo_rango": "sin rango",
@@ -12467,7 +10720,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/inmigracion/unal_2022_marburg.md",
   "tipo_rango": "sin rango",
@@ -12487,7 +10740,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/inmigracion/unal_2022_marburg.md",
   "tipo_rango": "sin rango",
@@ -12507,7 +10760,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/inmigracion/accetturo_2012_bdi.md",
   "tipo_rango": "sin rango",
@@ -12527,7 +10780,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
   "ficha": "docs/v18/bib/inmigracion/accetturo_2012_bdi.md",
   "tipo_rango": "sin rango",
@@ -12547,7 +10800,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/inmigracion/torres_montero_2023_cytet.md",
   "tipo_rango": "sin rango",
@@ -12567,7 +10820,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/ayudas/fack_2005_cepremap.md",
   "tipo_rango": "sin rango",
@@ -12587,7 +10840,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/ayudas/fack_2005_cepremap.md",
   "tipo_rango": "sin rango",
@@ -12607,7 +10860,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/ayudas/eerola_etal_2026_jpube.md",
   "tipo_rango": "sin rango",
@@ -12627,7 +10880,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/ayudas/eerola_etal_2026_jpube.md",
   "tipo_rango": "sin rango",
@@ -12647,7 +10900,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/ayudas/kangasharju_2008_vatt458.md",
   "tipo_rango": "sin rango",
@@ -12667,7 +10920,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/ayudas/hyslop_rea_2018_motu.md",
   "tipo_rango": "sin rango",
@@ -12687,7 +10940,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/oferta_suelo/taltavull_2006_funcas.md",
   "tipo_rango": "sin rango",
@@ -12707,7 +10960,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: reconstruido desde t = 6,96",
   "ficha": "docs/v18/bib/oferta_suelo/taltavull_2006_funcas.md",
   "tipo_rango": "sin rango",
@@ -12727,7 +10980,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/oferta_suelo/baum_snow_han_2020_nberconf.md",
   "tipo_rango": "sin rango",
@@ -12747,7 +11000,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/oferta_suelo/baum_snow_han_2020_nberconf.md",
   "tipo_rango": "sin rango",
@@ -12767,7 +11020,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/oferta_suelo/paciorek_2012_feds.md",
   "tipo_rango": "sin rango",
@@ -12787,7 +11040,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/oferta_suelo/paciorek_2012_feds.md",
   "tipo_rango": "sin rango",
@@ -12807,7 +11060,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
   "ficha": "docs/v18/bib/obra_nueva/mense_2025_jpemacro.md",
   "tipo_rango": "sin rango",
@@ -12827,7 +11080,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
   "ficha": "docs/v18/bib/obra_nueva/mense_2025_jpemacro.md",
   "tipo_rango": "sin rango",
@@ -12847,7 +11100,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/obra_nueva/asquith_mast_reed_2020_philly.md",
   "tipo_rango": "sin rango",
@@ -12867,7 +11120,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
   "ficha": "docs/v18/bib/obra_nueva/asquith_mast_reed_2020_philly.md",
   "tipo_rango": "sin rango",
@@ -12887,7 +11140,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/tipos/sanjuan_2023_bde_be2302art09.md",
   "tipo_rango": "sin rango",
@@ -12907,7 +11160,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/tipos/bce_eb_2022_6_battistini_gareis_roma.md",
   "tipo_rango": "sin rango",
@@ -12927,7 +11180,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/fiscalidad/dolls_etal_2020_vfs.md",
   "tipo_rango": "sin rango",
@@ -12947,7 +11200,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/no_residentes/sa_2016_lse_cfm2016_39.md",
   "tipo_rango": "sin rango",
@@ -12967,7 +11220,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
   "ficha": "docs/v18/bib/no_residentes/alvarez_blanco_garciaposada_2020_bde_be2002art14.md",
   "tipo_rango": "sin rango",
@@ -12987,7 +11240,7 @@
    "output/v18/f5/magnitudes_estudios.csv"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
   "ficha": "docs/v18/bib/no_residentes/alvarez_blanco_garciaposada_2020_bde_be2002art14.md",
   "tipo_rango": "sin rango",
@@ -13006,7 +11259,7 @@
    "docs/v18/bib/turismo/garcialopez2020.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; cifra del resumen de los autores (p. 1)",
   "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
   "tipo_rango": "sin rango",
@@ -13025,7 +11278,7 @@
    "docs/v18/bib/turismo/garcialopez2020.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; cifra del resumen de los autores (p. 1)",
   "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
   "tipo_rango": "sin rango",
@@ -13044,7 +11297,7 @@
    "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; versión IZA de 2009 de González y Ortega",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
   "tipo_rango": "sin rango",
@@ -13063,7 +11316,7 @@
    "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; versión IZA de 2009 de González y Ortega",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
   "tipo_rango": "sin rango",
@@ -13082,7 +11335,7 @@
    "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; versión IZA de 2009 de González y Ortega; no es una fracción de la subida observada",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
   "tipo_rango": "sin rango",
@@ -13101,7 +11354,7 @@
    "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; cifra del resumen de los autores",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
   "tipo_rango": "sin rango",
@@ -13120,7 +11373,7 @@
    "docs/v18/bib/inmigracion/gonzalez_ortega_2013.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; «un cuarto» del resumen escrito como 25 % (transcripción, sin cálculo)",
   "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2013.md",
   "tipo_rango": "sin rango",
@@ -13250,8 +11503,8 @@
   "id": "V18-AUX-CONT-PROV-PRECIO-1995T1-2007T4",
   "indicador": "Variación observada del precio real relativa a la media de las provincias no selladas, 2002T1-2007T4: mínimo y máximo entre provincias (igual a la variación sin explicar)",
   "valor": null,
-  "min": -33.0066,
-  "max": 47.3052,
+  "min": -29.9344,
+  "max": 20.0608,
   "unidad": "puntos (100·Δln)",
   "periodo": "2002T1-2007T4",
   "cobertura": "España (38 provincias no selladas)",
@@ -13261,7 +11514,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada; relativa a la media simple de las provincias no selladas con dato, sin el componente común; la media provincial mezcla ventanas (35 provincias desde 2002T1; 3 provincias desde 1995T1): las provincias de ventana distinta no son comparables con el resto",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada; relativa a la media simple de las provincias no selladas con dato, sin el componente común",
   "ficha": "output/v18/f5/contabilidad.csv",
   "tipo_rango": "rango",
   "fecha_dato": "2007"
@@ -13437,7 +11690,7 @@
    "output/v18/reproduccion/borusyak_hull_jaravel_2022/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de sus autores (no usa datos del proyecto); conjunto de controles 5; IC95 por inversión con el nulo impuesto; veredicto: coincide",
   "ficha": "output/v18/reproduccion/borusyak_hull_jaravel_2022/resultado.json",
   "tipo_rango": "rango",
@@ -13458,7 +11711,7 @@
    "output/v18/reproduccion/borusyak_hull_jaravel_2022/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de sus autores (no usa datos del proyecto); conjunto de controles 5; IC95 por inversión con el nulo impuesto; veredicto: coincide",
   "ficha": "output/v18/reproduccion/borusyak_hull_jaravel_2022/resultado.json",
   "tipo_rango": "rango",
@@ -13479,7 +11732,7 @@
    "output/v18/reproduccion/chavesfonseca2026/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
   "ficha": "output/v18/reproduccion/chavesfonseca2026/resultado.json",
   "tipo_rango": "sin rango",
@@ -13500,7 +11753,7 @@
    "output/v18/reproduccion/chavesfonseca2026/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
   "ficha": "output/v18/reproduccion/chavesfonseca2026/resultado.json",
   "tipo_rango": "sin rango",
@@ -13521,7 +11774,7 @@
    "output/v18/reproduccion/chavesfonseca2026/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
   "ficha": "output/v18/reproduccion/chavesfonseca2026/resultado.json",
   "tipo_rango": "rango",
@@ -13542,7 +11795,7 @@
    "output/v18/reproduccion/mense_2025/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
   "ficha": "output/v18/reproduccion/mense_2025/resultado.json",
   "tipo_rango": "sin rango",
@@ -13563,7 +11816,7 @@
    "output/v18/reproduccion/mense_2025/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
   "ficha": "output/v18/reproduccion/mense_2025/resultado.json",
   "tipo_rango": "sin rango",
@@ -13584,7 +11837,7 @@
    "output/v18/reproduccion/mense_2025/informe.md"
   ],
   "capa": "C4",
-  "clasificacion_v18": "NO ESTIMABLE",
+  "clasificacion_v18": "literatura (sin clase propia)",
   "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
   "ficha": "output/v18/reproduccion/mense_2025/resultado.json",
   "tipo_rango": "rango",
@@ -13754,7 +12007,7 @@
   "id": "V18-AUX-MC-CS-WEBB-TAM",
   "indicador": "Tamaño empírico al 5 % de cs_webb (filas decisivas)",
   "valor": null,
-  "min": 0.0005,
+  "min": 0.0565,
   "max": 0.178,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
@@ -13765,7 +12018,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO CONDICIONADO (solo en: cat_trim_S, cat_trim_M, cat_trim_L, cat_anual, zt2024_2cohortes, pocos_tratados)",
+  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json, sin los escenarios de diagnóstico); veredicto: APTO CONDICIONADO (solo en: cat_trim_S, cat_trim_M, cat_trim_L, cat_anual, zt2024_2cohortes, pocos_tratados)",
   "ficha": "output/v18/montecarlo/cs_webb/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -13775,7 +12028,7 @@
   "indicador": "Cobertura empírica al 95 % de cs_webb (filas decisivas)",
   "valor": null,
   "min": 0.822,
-  "max": 0.9995,
+  "max": 0.9435,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
   "cobertura": "simulación sin datos reales (50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000)",
@@ -13785,7 +12038,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO CONDICIONADO (solo en: cat_trim_S, cat_trim_M, cat_trim_L, cat_anual, zt2024_2cohortes, pocos_tratados)",
+  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json, sin los escenarios de diagnóstico); veredicto: APTO CONDICIONADO (solo en: cat_trim_S, cat_trim_M, cat_trim_L, cat_anual, zt2024_2cohortes, pocos_tratados)",
   "ficha": "output/v18/montecarlo/cs_webb/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -14035,7 +12288,7 @@
   "indicador": "Tamaño empírico al 5 % de sa_webb (filas decisivas)",
   "valor": null,
   "min": 0.0575,
-  "max": 0.092,
+  "max": 0.071,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
   "cobertura": "simulación sin datos reales (50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000)",
@@ -14045,7 +12298,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json, sin los escenarios de diagnóstico); veredicto: APTO",
   "ficha": "output/v18/montecarlo/sa_webb/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -14054,7 +12307,7 @@
   "id": "V18-AUX-MC-SA-WEBB-COB",
   "indicador": "Cobertura empírica al 95 % de sa_webb (filas decisivas)",
   "valor": null,
-  "min": 0.908,
+  "min": 0.929,
   "max": 0.9425,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
@@ -14065,7 +12318,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json, sin los escenarios de diagnóstico); veredicto: APTO",
   "ficha": "output/v18/montecarlo/sa_webb/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -14074,8 +12327,8 @@
   "id": "V18-AUX-MC-SDID-CONLEY-TABER-TAM",
   "indicador": "Tamaño empírico al 5 % de sdid_conley_taber (filas decisivas)",
   "valor": null,
-  "min": 0.033,
-  "max": 0.4435,
+  "min": 0.0445,
+  "max": 0.056,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
   "cobertura": "simulación sin datos reales (2-25 tratados y 150-200 controles; T = 17 y 40; R = 2000)",
@@ -14085,7 +12338,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "nota": "validación Monte Carlo; mínimo y máximo de 5 filas decisivas (variante principal del resultado.json, sin los escenarios de diagnóstico); veredicto: APTO",
   "ficha": "output/v18/montecarlo/sdid_conley_taber/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -14094,8 +12347,8 @@
   "id": "V18-AUX-MC-SDID-CONLEY-TABER-COB",
   "indicador": "Cobertura empírica al 95 % de sdid_conley_taber (filas decisivas)",
   "valor": null,
-  "min": 0.5565,
-  "max": 0.967,
+  "min": 0.944,
+  "max": 0.9555,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
   "cobertura": "simulación sin datos reales (2-25 tratados y 150-200 controles; T = 17 y 40; R = 2000)",
@@ -14105,7 +12358,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "nota": "validación Monte Carlo; mínimo y máximo de 5 filas decisivas (variante principal del resultado.json, sin los escenarios de diagnóstico); veredicto: APTO",
   "ficha": "output/v18/montecarlo/sdid_conley_taber/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -14154,8 +12407,8 @@
   "id": "V18-AUX-MC-WEBB-TWFE-TAM",
   "indicador": "Tamaño empírico al 5 % de webb_twfe (filas decisivas)",
   "valor": null,
-  "min": 0.0425,
-  "max": 0.0955,
+  "min": 0.0465,
+  "max": 0.0595,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
   "cobertura": "simulación sin datos reales (G = 8, 30, 39 clusters; T = 14 (y 30); tratamiento escalonado)",
@@ -14165,7 +12418,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (columna «principal»); veredicto: CR1 (normal): APTO CONDICIONADO; CR1 (t de Student, G-1): APTO; wild cluster bootstrap (Webb): APTO",
+  "nota": "validación Monte Carlo; mínimo y máximo de 3 filas decisivas (filas «principal» del bootstrap de Webb; las de CR1 son otra inferencia y no entran); veredicto: CR1 (normal): APTO CONDICIONADO; CR1 (t de Student, G-1): APTO; wild cluster bootstrap (Webb): APTO",
   "ficha": "output/v18/montecarlo/webb_twfe/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -14174,8 +12427,8 @@
   "id": "V18-AUX-MC-WEBB-TWFE-COB",
   "indicador": "Cobertura empírica al 95 % de webb_twfe (filas decisivas)",
   "valor": null,
-  "min": 0.9045,
-  "max": 0.9575,
+  "min": 0.9405,
+  "max": 0.9535,
   "unidad": "proporción",
   "periodo": "simulación (semilla 20261010)",
   "cobertura": "simulación sin datos reales (G = 8, 30, 39 clusters; T = 14 (y 30); tratamiento escalonado)",
@@ -14185,7 +12438,7 @@
   ],
   "capa": "C4",
   "clasificacion_v18": "NO ESTIMABLE",
-  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (columna «principal»); veredicto: CR1 (normal): APTO CONDICIONADO; CR1 (t de Student, G-1): APTO; wild cluster bootstrap (Webb): APTO",
+  "nota": "validación Monte Carlo; mínimo y máximo de 3 filas decisivas (filas «principal» del bootstrap de Webb; las de CR1 son otra inferencia y no entran); veredicto: CR1 (normal): APTO CONDICIONADO; CR1 (t de Student, G-1): APTO; wild cluster bootstrap (Webb): APTO",
   "ficha": "output/v18/montecarlo/webb_twfe/resultado.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
@@ -14880,6 +13133,30 @@
   "capa": "C4",
   "clasificacion_v18": "diagnóstico o variante (sin clase propia)",
   "nota": "fuera_muestra de resultado.json: K = 5 bloques contiguos, embargo de 4 trimestres, un paso, ECM v1 aproximado (v6), misma muestra; ninguna selección por p; 105 observaciones de prueba; misma muestra para todos los modelos",
+  "ficha": "output/v18/estimacion/f_conjunto/resultado.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-F1-OOS-GW-P",
+  "indicador": "p del contraste de Giacomini-White de F1-ECM frente a AR(4)",
+  "valor": 0.3777,
+  "min": null,
+  "max": null,
+  "unidad": "p-valor",
+  "periodo": "1999T1-2026T2",
+  "cobertura": "España (nacional trimestral; bloques con embargo)",
+  "fuentes": [
+   "base:p_tasado (MIVAU, valor tasado nacional) hasta 2026T2",
+   "base:deflactor hasta 2026T2",
+   "base:renta_hog_real (INE CNT; cálculo propio) hasta 2026T2",
+   "base:tipo_hip_real_bde hasta 2026T2",
+   "base:pob_total (INE ECP; 44 trimestres interpolados 1999-2020)",
+   "output/v18/estimacion/f_conjunto/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "diagnóstico o variante (sin clase propia)",
+  "nota": "fuera_muestra de resultado.json: K = 5 bloques contiguos, embargo de 4 trimestres, un paso, ECM v1 aproximado (v6), misma muestra; ninguna selección por p; 105 observaciones de prueba; misma muestra para todos los modelos; 104 observaciones en el contraste",
   "ficha": "output/v18/estimacion/f_conjunto/resultado.json",
   "tipo_rango": "sin rango",
   "fecha_dato": "2026"

@@ -34,7 +34,11 @@ OUT = RAIZ / "output" / "v18"
 SIN_CLASIFICAR = "sin clasificar (coprincipal informativa)"
 ROBUSTEZ_POSTERIORI = "robustez a posteriori"
 DIAGNOSTICO = "diagnóstico o variante (sin clase propia)"
-CLASES = {"IDENTIFICADO", "SUGESTIVO", "ASOCIACIÓN", "NO CONCLUYENTE", "NO ESTIMABLE", SIN_CLASIFICAR, ROBUSTEZ_POSTERIORI, DIAGNOSTICO}
+# K14 (árbitro, ronda 2, N8): los valores publicados por la literatura (o reproducidos con los datos de sus autores) no tienen clase V18
+# propia; la clase NO ESTIMABLE es del factor, no del valor.
+LITERATURA = "literatura (sin clase propia)"
+CLASES = {"IDENTIFICADO", "SUGESTIVO", "ASOCIACIÓN", "NO CONCLUYENTE", "NO ESTIMABLE", SIN_CLASIFICAR, ROBUSTEZ_POSTERIORI, DIAGNOSTICO,
+          LITERATURA}
 CAUSAL = re.compile(r"\b(causa(?:n|do|da|l|les)?|provoc\w*|efecto causal|debido a|gracias a|se debe a|impacto causal)\b", re.I)
 CITA = re.compile(r"«([^»]*)»")
 MAX_PALABRAS = 15

@@ -75,6 +75,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F6 | redactor | redacción del Documento de Trabajo (16 secciones) | 496.360 | output/v18/documento/plantilla/ |
 | 2026-10-21 | F6 | general-purpose | cifras V18-AUX y marcadores de los 14 huecos | 234.898 | src/v18/f6_hechos.py; output/v18/documento/plantilla/ |
 | 2026-10-21 | F6 | arbitro-final | revisión del Documento de Trabajo (REVISAR, 23 hallazgos) | 157.261 | docs/v18/revision_documento/arbitro_ronda1.md |
+| 2026-10-21 | F6 | verificador-cifras | verificación de cifras del Documento (0 discrepancias numéricas; 4 de texto; 7 cifras libres) | 145.784 | docs/v18/revision_documento/verificador_ronda1.md |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -84,8 +85,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F3 | 985.262 |
 | F4 | 4.734.404 |
 | F5 | 350.040 |
-| F6 | 1.158.732 |
+| F6 | 1.304.516 |
 
-Total V18: 9.301.872 tokens
+Total V18: 9.447.656 tokens
 
 <!-- fin subagentes -->

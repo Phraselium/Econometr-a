@@ -76,7 +76,9 @@ def test_guardas_de_fuga_v6():
 
 
 def test_fase_f5_registrada():
-    fase = importlib.import_module("fase")
+    spec = importlib.util.spec_from_file_location("fase_v18", RAIZ / "src" / "v18" / "fase.py")   # «fase» a secas puede ser la de otra versión
+    fase = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fase)
     assert fase.FASES["f5"] == ["src/v18/f5_magnitudes.py", "src/v18/f5_contabilidad.py"]
 
 

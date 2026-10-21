@@ -181,5 +181,5 @@
   "dm_vs_ar4": null,
   "nota": "no aplica: diseño de evaluación (dCDH), no predictivo; E8 es episodio histórico y no entra en la evaluación sellada diferida (adenda 1.11)"
  },
- "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Clasificación provisional: falta I8 (réplica ciega, B6). Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
+ "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. I8 cumplido: la réplica ciega de E8-R1 coincide (output/v18/replica/e8_r1); clase final tras la ronda 1 del abogado del diablo (K7). Las demás especificaciones de E8 son NO ESTIMABLES y no necesitan réplica. Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
 }

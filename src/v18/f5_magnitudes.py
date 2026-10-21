@@ -46,7 +46,7 @@ RHOS_SENS = (0.5, 1.0)
 S_F = {"E1": 0.1, "E2": 0.1, "E3": 3.0, "E4": 1.0, "E5": 2.0, "E6": 0.5, "E7": 10.0, "E8": 5.0, "E9": 5.0}
 UNIDAD = {
     "E1": "Δln del alquiler por +1 pp de viviendas turísticas sobre el parque",
-    "E2": "ATT en ln de la renta de los contratos regulados",
+    "E2": "diferencia en ln de la renta de los contratos regulados",
     "E3": "% de precio por +1 % de población por entrada de inmigrantes",
     "E4": "θ: euros de alquiler por euro de ayuda",
     "E5": "elasticidad precio de la oferta de unidades",
@@ -177,7 +177,7 @@ def propia_e2() -> Estudio:
     t = pd.read_csv(EST / "e2" / "tabla.csv")
     r = t[t["id"] == "E2-R1"].iloc[0]
     return Estudio("E2", "E2-R1", "", "Estimación propia E2-R1 (Ley 11/2020, Incasòl, 2019T1-2022T1)", float(r["coef"]), float(r["se_cr1"]), "España", True, True,
-                   "ATT en ln de la renta de los contratos regulados", True, "", se_origen="error típico CR1 por municipio (el IC95 de Webb es −0,051 a −0,026)",
+                   "diferencia en ln de la renta de los contratos regulados", True, "", se_origen="error típico CR1 por municipio (el IC95 de Webb es −0,051 a −0,026)",
                    episodio="CAT-2020-22", propia=True, nota="clase SUGESTIVO; 49 municipios regulados y 94 controles")
 
 
@@ -423,6 +423,9 @@ def fila_factor(factor: str, est: list[Estudio], est_fichas: dict) -> tuple[dict
         lo, hi, nombres = rango_estudios(factor, est)
         base.update({"estado_b5": "rango de la literatura, sin error típico (no hay metaanálisis ni intervalo estadístico)" if np.isfinite(lo) else "sin magnitud",
                      "magnitud": "", "ic_lo": "", "ic_hi": "", "rango_lo": _fmt(lo), "rango_hi": _fmt(hi), "tau": "", "I2": "", "decision_coincide_3_priors": ""})
+        if nombres:   # K12 (árbitro, hallazgo 10): el rango se declara con el número de estudios que lo forman
+            lim.append(f"rango de un solo estudio ({nombres[0]}; valores de sus versiones o especificaciones)" if len(nombres) == 1
+                       else f"rango de {len(nombres)} estudios ({', '.join(nombres)})")
     if entra_propia:
         lim.append("episodio compartido con el original: cuenta una vez (rho = 0,8)")
     base["limitacion"] = "; ".join(lim)

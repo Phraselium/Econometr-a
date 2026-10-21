@@ -19,6 +19,7 @@ Sellado: toda serie con detalle territorial o temporal pasa por sellado.filtrar 
 from __future__ import annotations
 
 import json
+import re
 import sys
 import warnings
 from pathlib import Path
@@ -42,6 +43,8 @@ RAW = RAIZ / "data" / "raw"
 OUT = RAIZ / "output" / "v18" / "f5"
 ROTULO = "análisis V18; capa C4; pre-registro interno plan-replicacion-v18"
 REL = "relativa entre provincias (o unidades), sin el componente común"
+REL_PROV = ("relativa a la media simple de las provincias no selladas con dato, sin el componente común: no se suma ni se compara con la "
+            "cifra nacional")
 
 PERIODOS = [("1995T1-2007T4", "1995T1", "2007T4"), ("2008T1-2013T4", "2008T1", "2013T4"), ("2014T1-2019T4", "2014T1", "2019T4"),
             ("2020T1-2022T2", "2020T1", "2022T2"), ("2022T3-2026T2", "2022T3", "2026T2")]
@@ -526,10 +529,10 @@ def construir_ilustracion_locales(dat: Datos, dist: dict, filas: list[dict]) -> 
             tipo = "ccaa" if cod == "09" else "provincia"
             nom = "Cataluña (sin Barcelona ciudad)" if cod == "09" else f"provincia {cod} (sin Barcelona ciudad)"
             if nombre == "2020T1-2022T2":
-                # variación entre extremos: el régimen no está vigente al final (STC 37/2022): 0; contribución durante la vigencia: ATT × cuota
+                # variación entre extremos: el régimen no está vigente al final (STC 37/2022): 0; diferencia asociada durante la vigencia: coeficiente × cuota
                 x = dist["E2_propia"]["x"]
                 for sub, delta, rot, nota in (("extremos", 0.0, "variación entre extremos del periodo", "el régimen de la Ley 11/2020 ya no estaba vigente en 2022T2 (STC 37/2022; reversión estimada −0,0016): la variación entre extremos del factor es 0"),
-                                              ("vigencia", share, "durante la vigencia 2020T4-2022T1 (nivel medio, no cambio entre extremos)", "ATT × cuota de contratos en municipios regulados; nivel medio durante la vigencia")):
+                                              ("vigencia", share, "durante la vigencia 2020T4-2022T1 (nivel medio, no cambio entre extremos)", "diferencia de E2-R1 × cuota de contratos en municipios regulados; nivel medio durante la vigencia")):
                     contrib = x * 100.0 * delta + 0.0
                     e = estad(contrib)
                     filas.append({"marco": "ilustracion", "alineacion": "plan", "resultado": "alquiler_contratos_nuevos", "periodo": nombre, "territorio_tipo": tipo, "territorio": cod, "nombre": nom,
@@ -598,7 +601,7 @@ def construir_principal(dat: Datos, periodos, alineacion: str, filas: list[dict]
                               "factor": "OBS", "tipo_fila": "observado", "origen_magnitud": "", "magnitud_centro": np.nan, "clase_estimacion_propia": "", "variacion_factor": np.nan,
                               "ventana_factor": o.ventana, "obs_pp": v, "contrib_med": np.nan, "p16": np.nan, "p84": np.nan, "p05": np.nan, "p95": np.nan, "pct_de_obs": 100.0 if abs(v) >= 1 else np.nan,
                               "soporte": "", "rotulo": "" if o.tipo == "nacional" else REL, "en_suma": False,
-                              "nota": "variación observada del resultado real (100·Δln, valor tasado o IPC de alquiler menos deflactor)" + ("" if o.tipo == "nacional" else "; fila relativa a la media de las 39 provincias no selladas")})
+                              "nota": "variación observada del resultado real (100·Δln, valor tasado o IPC de alquiler menos deflactor)" + ("" if o.tipo == "nacional" else "; fila relativa a la media simple de las provincias no selladas con dato")})
                 filas.append({"marco": "principal", "alineacion": alineacion, "resultado": resultado, "periodo": nombre, "territorio_tipo": o.tipo, "territorio": o.codigo, "nombre": o.nombre,
                               "factor": "NOEXPL", "tipo_fila": "no_explicado", "origen_magnitud": "", "magnitud_centro": np.nan, "clase_estimacion_propia": "", "variacion_factor": np.nan,
                               "ventana_factor": o.ventana, "obs_pp": v, "contrib_med": v, "p16": v, "p84": v, "p05": v, "p95": v, "pct_de_obs": 100.0 if abs(v) >= 1 else np.nan, "soporte": "",
@@ -689,11 +692,33 @@ CLASE_HECHO = {"SUGESTIVO": "SUGESTIVO", "ASOCIACIÓN": "ASOCIACIÓN", "NO ESTIM
 
 
 def _clase(s: str) -> str:
+    """Clase de la estimación propia designada, también cuando magnitudes.csv la escribe como «no entra (ASOCIACIÓN)» (K12)."""
     s = str(s)
     for k in ("SUGESTIVO", "ASOCIACIÓN", "NO CONCLUYENTE"):
-        if s.startswith(k):
+        if s.startswith(k) or f"({k}" in s:
             return k
     return "NO ESTIMABLE"
+
+
+def _periodo_estudios(factor: str) -> str:
+    """Periodo de los datos de los estudios que forman la magnitud o el rango de B5 del factor (K12; antes «estudios 1983-2024» en todos)."""
+    e = pd.read_csv(OUT / "magnitudes_estudios.csv")
+    e = e[(e.factor == factor) & e.valor.notna()]
+    if (e.entra_en_B5 == "sí").any():
+        e = e[e.entra_en_B5 == "sí"]
+    else:   # sin metaanálisis: los estudios que forman el rango de la literatura
+        e = e[e.estudio.isin(MAG.rango_estudios(factor, MAG.estudios_todos())[2])]
+    anios = [int(a) for ref in e.referencia for a in re.findall(r"\b((?:19|20)\d\d)", str(ref).split("), ", 1)[-1])]
+    return f"estudios {min(anios)}-{max(anios)}" if anios else "estudios (sin periodo en la ficha)"
+
+
+def _periodo_real(nombre: str, ventana: str) -> str:
+    """Periodo del dato: el del plan, salvo que la serie empiece después (por ejemplo, provincias desde 2002T1; árbitro, hallazgo 1)."""
+    m = re.match(r"(\d{4}T\d) a (\d{4}T\d)", str(ventana))
+    if not m:
+        return nombre
+    pa, pb = nombre.split("-")
+    return nombre if m.group(1) in (pa, qs(ini_nivel(pa))) else f"{m.group(1)}-{m.group(2)}"
 
 
 def _v(x):
@@ -709,12 +734,21 @@ def hechos(mag: pd.DataFrame, cp: pd.DataFrame, ci: pd.DataFrame) -> list[dict]:
         lo = _v(r.ic_lo) if str(r.ic_lo) not in ("", "nan") else _v(r.rango_lo)
         hi = _v(r.ic_hi) if str(r.ic_hi) not in ("", "nan") else _v(r.rango_hi)
         propia = str(r.origen).startswith("propia")
+        lim = "" if str(r.limitacion) in ("", "nan") else f"{r.limitacion}. "
         h.append({"id": f"V18-B5-{r.factor}", "indicador": f"Magnitud preferida de {NOMBRE_FACTOR[r.factor]} ({r.factor}): {r.unidad}", "valor": mu, "min": lo, "max": hi, "unidad": r.unidad,
-                  "periodo": "estudios 1983-2024", "cobertura": f"{int(r.n_estudios)} estudios con error típico en la unidad ({r.metodo}); estado B5: {r.estado_b5}", "fuentes": fuentes_b,
-                  "capa": "C4", "clasificacion_v18": "SUGESTIVO" if propia else "NO ESTIMABLE",
-                  "nota": f"{r.origen}. Estimación propia designada {r.estimacion_propia}: {r.clase_estimacion_propia}. {r.limitacion}. " + ("" if propia else "Magnitud de la literatura; ")
+                  "periodo": _periodo_estudios(r.factor), "cobertura": f"{int(r.n_estudios)} estudios con error típico en la unidad ({r.metodo}); estado B5: {r.estado_b5}", "fuentes": fuentes_b,
+                  "capa": "C4", "clasificacion_v18": _clase(r.clase_estimacion_propia),
+                  "nota": f"{r.origen}. Estimación propia designada {r.estimacion_propia}: {r.clase_estimacion_propia}. {lim}" + ("" if propia else "Magnitud de la literatura; ")
+                  + "la clasificación es la de la estimación propia designada del factor, no la de la magnitud ni la del rango (K12); "
                   + f"{ROTULO}."})
-    # principal: nacional y CCAA
+    # principal: nacional y CCAA. Si las provincias no empiezan todas a la vez, la media provincial mezcla ventanas (K12, árbitro, hallazgo 1)
+    pv = cp[(cp.territorio_tipo == "provincia") & (cp.tipo_fila == "no_explicado") & (cp.alineacion == "plan")]
+    mezcla = {}
+    for (res_, per_), g in pv.groupby(["resultado", "periodo"]):
+        ini = g.ventana_factor.str.slice(0, 6).value_counts()
+        if len(ini) > 1:
+            mezcla[(res_, per_)] = ("la media provincial mezcla ventanas (" + "; ".join(f"{n} provincias desde {i}" for i, n in ini.items())
+                                    + "): las filas relativas de este periodo no son comparables entre sí; ")
     for r in cp[(cp.tipo_fila != "observado")].itertuples():
         if r.territorio_tipo not in ("nacional", "ccaa") or r.alineacion != "plan":
             continue
@@ -725,9 +759,14 @@ def hechos(mag: pd.DataFrame, cp: pd.DataFrame, ci: pd.DataFrame) -> list[dict]:
                       "unidad": "pp (100·Δln)", "periodo": r.periodo, "cobertura": r.nombre, "fuentes": ["output/v18/f5/contabilidad.csv"], "capa": "C4", "clasificacion_v18": _clase(r.clase_estimacion_propia),
                       "nota": f"sin magnitud: {r.nota}. Contabilidad con elasticidades, no descomposición estructural. {ROTULO}."})
         else:
-            h.append({"id": pid, "indicador": f"Variación del {r.resultado} real sin explicar, {r.periodo}, {r.nombre}", "valor": _v(r.contrib_med), "min": _v(r.p05), "max": _v(r.p95), "unidad": "pp (100·Δln)",
-                      "periodo": r.periodo, "cobertura": f"{r.nombre}; {r.ventana_factor}", "fuentes": ["output/v18/f5/contabilidad.csv", "data/base/hechos.parquet (valor tasado, IPC de alquiler, deflactor)"], "capa": "C4",
-                      "clasificacion_v18": "NO ESTIMABLE", "nota": f"{r.nota}. {r.rotulo} {ROTULO}.".replace("  ", " ")})
+            per = _periodo_real(r.periodo, r.ventana_factor)
+            rel = r.territorio_tipo != "nacional"
+            ind = f"Variación del {r.resultado} real sin explicar, {per}, {r.nombre}" + (" (relativa a la media de las provincias no selladas, sin el componente común)" if rel else "")
+            rot = f"{REL_PROV}; {mezcla.get((r.resultado, r.periodo), '')}" if rel else ""
+            aviso = f"periodo del dato {per} (la serie empieza después del inicio del periodo del plan {r.periodo}); " if per != r.periodo else ""
+            h.append({"id": pid, "indicador": ind, "valor": _v(r.contrib_med), "min": _v(r.p05), "max": _v(r.p95), "unidad": "pp (100·Δln)",
+                      "periodo": per, "cobertura": f"{r.nombre}; {r.ventana_factor}", "fuentes": ["output/v18/f5/contabilidad.csv", "data/base/hechos.parquet (valor tasado, IPC de alquiler, deflactor)"], "capa": "C4",
+                      "clasificacion_v18": "NO ESTIMABLE", "nota": f"{r.nota}; {aviso}{rot}{ROTULO}.".replace("  ", " ")})
     # ilustración: nacional, CCAA y ciudades
     sub = ci[ci.territorio_tipo.isin(["nacional", "ccaa", "ciudad"]) & (ci.alineacion == "plan")]
     for r in sub.itertuples():
@@ -735,14 +774,19 @@ def hechos(mag: pd.DataFrame, cp: pd.DataFrame, ci: pd.DataFrame) -> list[dict]:
         fac = r.factor + ("-" + r.tipo_fila.split("_")[1] if r.tipo_fila in ("factor_extremos", "factor_vigencia") else "")
         pid = f"V18-C5I-{r.periodo}-{r.territorio}-{fac}-{ab}"
         es_e2 = r.factor == "E2"
-        clase = "SUGESTIVO" if es_e2 and r.tipo_fila.startswith("factor_") and r.tipo_fila != "factor_sin_magnitud" else "NO ESTIMABLE"
-        if r.tipo_fila.startswith("no_explicado"):
-            clase = "NO ESTIMABLE"
+        # K12 (árbitro, hallazgos 2 y 6): la clase de E2-R1 no se traslada a la ilustración, porque E2 no tiene magnitud preferida en B5
+        clase = "NO ESTIMABLE"
+        origen = "magnitud de la literatura" if not es_e2 else ("sin magnitud preferida para E2 (B5); ilustración con E2-R1 propia sola, fuera de B5: "
+                                                                "la clase de E2-R1 (SUGESTIVO) no se traslada a esta fila")
+        aviso = ""
+        if r.territorio_tipo == "nacional" and r.tipo_fila.startswith("no_explicado"):
+            aviso = ("resta de la variación nacional las filas de E3 o E9, que proceden de diseños de panel relativos entre provincias (sin el componente "
+                     "común): no se lee como parte nacional sin explicar; ")
         nombre_f = NOMBRE_FACTOR.get(r.factor, "variación sin explicar")
         h.append({"id": pid, "indicador": f"Ilustración: {nombre_f}, {r.resultado} real, {r.periodo}, {r.nombre} ({r.tipo_fila})", "valor": _v(r.contrib_med), "min": _v(r.p05), "max": _v(r.p95), "unidad": "pp (100·Δln)",
                   "periodo": r.periodo, "cobertura": f"{r.nombre}; {r.ventana_factor}", "fuentes": ["output/v18/f5/contabilidad_ilustracion.csv", "data/base/hechos.parquet", "output/v18/f5/magnitudes.csv"],
                   "capa": "C4", "clasificacion_v18": clase,
-                  "nota": f"{'magnitud de la literatura' if not es_e2 else 'E2-R1 propia sola, fuera de B5'}; ilustración, no atribución; {r.soporte}; {r.rotulo}. Contabilidad con elasticidades, no descomposición estructural. {ROTULO}.".replace("nan", "")})
+                  "nota": f"{origen}; ilustración, no atribución; mínimo y máximo: percentiles 5 y 95 de la propagación; {aviso}{r.soporte}; {r.rotulo}. Contabilidad con elasticidades, no descomposición estructural. {ROTULO}.".replace("nan", "")})
     return h
 
 
@@ -847,7 +891,7 @@ def informe(mag: pd.DataFrame, est: pd.DataFrame, sens: pd.DataFrame, cp: pd.Dat
     L.append("### Cataluña (E2-R1 propia sola) y Barcelona (E1)\n")
     L.append(tabla_md(loc, ["periodo", "nombre", "factor", "tipo_fila", "variacion_factor", "contrib_med", "p16", "p84", "obs_pp"],
                       ["periodo", "territorio", "factor", "fila", "variación", "mediana (pp)", "p16", "p84", "Δ obs. (pp)"]))
-    L.append("\nEn 2020T1-2022T2 el régimen de la Ley 11/2020 no estaba vigente al final (STC 37/2022; reversión estimada −0,0016): la variación entre extremos del factor es 0 y su contribución a la variación del periodo es 0; durante la vigencia (2020T4-2022T1) el nivel medio de la renta de los contratos nuevos fue −2,7 pp menor en Cataluña por la cuota de contratos regulados (mediana; la cifra requiere la frase de limitación de la sección 2). La renta observada es la de contratos nuevos del Incasòl (sin Barcelona ciudad), no el IPC. Barcelona ciudad no estaba en la muestra de E2-R1 (criterio de Jofre-Monseny et al.) y no lleva cifra de E2; su cifra de E1 mide viviendas HUT por 100 viviendas con una magnitud definida por anuncios de Airbnb. En 2022T3-2026T2 la zona tensionada de 2024 es otro régimen: sin magnitud.\n")
+    L.append("\nEn 2020T1-2022T2 el régimen de la Ley 11/2020 no estaba vigente al final (STC 37/2022; reversión estimada −0,0016): la variación entre extremos del factor es 0 y su contribución a la variación del periodo es 0; durante la vigencia (2020T4-2022T1), con E2-R1 sola (E2 no tiene magnitud preferida en B5; ilustración, no atribución), la diferencia asociada en el nivel medio de la renta de los contratos nuevos de Cataluña, ponderada por la cuota de contratos regulados, es de −2,7 pp (mediana; la cifra requiere la frase de limitación de la sección 2). La renta observada es la de contratos nuevos del Incasòl (sin Barcelona ciudad), no el IPC. Barcelona ciudad no estaba en la muestra de E2-R1 (criterio de Jofre-Monseny et al.) y no lleva cifra de E2; su cifra de E1 mide viviendas HUT por 100 viviendas con una magnitud definida por anuncios de Airbnb. En 2022T3-2026T2 la zona tensionada de 2024 es otro régimen: sin magnitud.\n")
     # respuesta
     L.append("## 5. Respuesta por periodo y territorio\n")
     L.append("Descripción sin interpretación de efectos: lo que sigue indica cuánta de la variación observada se asocia en la ilustración con cada factor y cuánta queda sin explicar. La confianza usa la escala del Banco de España (V17) y no supera la clase del factor de menor nivel que la sostiene: sin estimación propia estimable, «la evidencia no permite concluir»; E2 en Cataluña, «la evidencia sugiere» (SUGESTIVO).\n")

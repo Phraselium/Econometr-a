@@ -9,7 +9,9 @@
 - **Herramientas.** El BVAR, la proyección local con Newey-West, el SVAR con proxy y el metaanálisis bayesiano son NO APTOS en el Monte Carlo, y la herramienta de Honest DiD es apta solo sin desviación de tendencias paralelas. Sus resultados se publican con esa etiqueta.
 - **Sellado y muestra.** Las comunidades y provincias selladas de v6 (entre ellas Madrid, Baleares y Canarias) y los bloques de V15 y V16 quedan fuera. Las ciudades con más presión turística y de alquiler no están en la muestra, salvo Barcelona con tres distritos menos.
 - **Medidas.** El precio se mide con el valor tasado, el IPV por comunidad o el IPVA; el alquiler, con SERPAVI, el IPC de alquiler o los contratos nuevos del Incasòl (solo Cataluña). No son equivalentes.
-- **Contabilidad.** Es contabilidad con elasticidades estimadas, sin interacciones ni efectos de equilibrio general. La variación observada no tiene error. Las contribuciones de los paneles son relativas entre territorios.
+- **Contabilidad.** Es contabilidad con elasticidades estimadas, sin interacciones ni efectos de equilibrio general, y no una atribución. La variación observada no tiene error. Las diferencias asociadas que proceden de paneles son relativas entre territorios y no se restan de la variación nacional.
+- **Réplica ciega.** Solo E2-R1, E8-R1 y E1-R4 tienen réplica ciega; las clases de las demás estimaciones con cifra son provisionales (sección 3.3).
+- **Modelos de conjunto.** F1 no predice mejor que el AR(4) fuera de muestra, y los coeficientes de corto plazo de los paneles con PMG no se publican porque suponen una cointegración que no se encuentra (sección 4.11).
 - **Fechas del ITP.** Proceden de memorias de Hacienda y no están contrastadas con el BOE.
 
 ### 7.2 Qué falta por factor y qué dato lo resolvería

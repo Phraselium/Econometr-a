@@ -5,6 +5,10 @@
    - {{id}}, {{id:campo}} como en render.py (valor, min, max, rango, cita, breve, sig, periodo, cobertura, fuentes, capa…);
    - {{id:clasificacion}}: la clasificacion_v18 de la cifra (K2; columna propia de cifras_clave, al lado de la capa);
    - {{id:min_sig}}, {{id:max_sig}}: extremos del intervalo con 3 cifras significativas (como «sig»; para intervalos pequeños);
+     «sig» y sus extremos nunca usan notación científica (K12);
+   - {{id:tres_dec}}, {{id:un_dec}}, {{id:abs_un_dec}} (con min_/max_): 3 o 1 decimales fijos; abs_un_dec da el valor absoluto
+     (la frase de limitación de E2-R1, K9, da sus cifras así); sufijo _en en sig, tres_dec, un_dec, abs_un_dec y num: punto
+     decimal, para el abstract en inglés (K12);
    - {{tabla.impactos}}: la tabla de impactos del resumen ejecutivo (factor | magnitud preferida | intervalo | clasificación |
      confianza | limitación principal), con las cifras V18-B5-E* de cifras_clave y el estado B5 de output/v18/f5/magnitudes.csv.
    Falla (código 1) si algún marcador no existe en cifras_clave, si una cifra pedida con :clasificacion no la tiene o si queda
@@ -20,6 +24,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -66,9 +71,30 @@ def leer_ck(ruta: Path = CK) -> pd.DataFrame:
     return ck
 
 
-def _sig(x) -> str:
-    """Tres cifras significativas con coma decimal y signo menos tipográfico (presentación; la cifra es la de cifras_clave)."""
-    return "—" if pd.isna(x) else f"{float(x):.3g}".replace("-", "−").replace(".", ",")
+def _sig(x, en: bool = False) -> str:
+    """Tres cifras significativas con coma decimal (punto en inglés) y signo menos tipográfico, sin notación científica (K12:
+    −6,5e−05 pasa a −0,000065). Presentación; la cifra es la de cifras_clave."""
+    if pd.isna(x):
+        return "—"
+    s = f"{float(x):.3g}"
+    if "e" in s:   # %g usa exponente fuera de [1e-4, 1e3): se escribe en decimal con las mismas tres cifras significativas
+        v = float(s)
+        dec = max(0, 2 - math.floor(math.log10(abs(v)))) if v else 0
+        s = f"{v:.{dec}f}"
+        s = s.rstrip("0").rstrip(".") if "." in s else s
+    return s.replace("-", "−") if en else s.replace("-", "−").replace(".", ",")
+
+
+def _dec(x, n: int, en: bool = False) -> str:
+    """n decimales fijos (K12: la frase de limitación de E2-R1 da sus cifras a 3 decimales), signo menos tipográfico."""
+    s = f"{float(x):.{n}f}"
+    if float(s) == 0:
+        s = s.lstrip("-")
+    return s.replace("-", "−") if en else s.replace("-", "−").replace(".", ",")
+
+
+# Campos de marcador propios del Documento de Trabajo (además de los de render.py). Sufijo «_en»: punto decimal (abstract en inglés).
+CAMPOS_PROPIOS = re.compile(r"^(min_|max_)?(sig|tres_dec|un_dec|abs_un_dec)(_en)?$|^(min_|max_)?num_en$")
 
 
 def factor_nombre(ind: str) -> str:
@@ -95,7 +121,9 @@ def limitacion(m: pd.Series) -> str:
     elif estado.startswith("rango sin magnitud preferida"):
         base = "heterogeneidad alta entre estudios: rango sin magnitud preferida"
     elif estado.startswith("rango de la literatura"):
-        base = "sin error típico en la literatura: rango sin intervalo estadístico"
+        lim = str(m.limitacion)
+        n = re.search(r"rango de (un solo estudio|\d+ estudios)", lim)   # K12 (árbitro, hallazgo 10): cuántos estudios forman el rango
+        base = "sin error típico en la literatura: " + (f"{n.group(0)}, sin intervalo estadístico" if n else "rango sin intervalo estadístico")
     else:
         base = "pocos estudios con error típico; heterogeneidad declarada"
     propia = str(m.clase_estimacion_propia)
@@ -113,7 +141,12 @@ def tabla_impactos(ck: pd.DataFrame, mag: pd.DataFrame) -> tuple[str, list[str]]
         r, mm = ck.loc[f"V18-B5-{f}"], m.loc[f]
         hay = pd.notna(r.valor) and str(mm.estado_b5).startswith("magnitud")
         mag_txt = _sig(r.valor) if hay else "sin magnitud preferida"
-        inter = "—" if pd.isna(r["min"]) or pd.isna(r["max"]) else f"[{_sig(r['min'])}; {_sig(r['max'])}] ({'IC95' if hay else 'rango'})"
+        k = int(mm.n_unidades_meta)
+        if hay:   # K12 (árbitro, hallazgo 8): con dos estudios el efecto fijo no da un IC95 fiable (Monte Carlo de meta_bayes)
+            tipo = "IC95" if k >= 3 else ("IC95 del único estudio" if k == 1 else "intervalo del efecto fijo con dos estudios; no es un IC95 fiable")
+        else:
+            tipo = "rango"
+        inter = "—" if pd.isna(r["min"]) or pd.isna(r["max"]) else f"[{_sig(r['min'])}; {_sig(r['max'])}] ({tipo})"
         L.append(f"| {factor_nombre(r.indicador)} | {mag_txt} | {inter} | {r.clasificacion_v18} | "
                  f"{confianza(str(mm.estado_b5), int(mm.n_unidades_meta))} | {limitacion(mm)} |")
         unidades.append(f"{f}: {r.unidad}")
@@ -156,12 +189,29 @@ def render_texto(txt: str, ck: pd.DataFrame, mag: pd.DataFrame) -> tuple[str, li
                 falta.append(f"{i}:clasificacion")
                 return m.group(0)
             return str(r.clasificacion_v18)
-        if campo in ("min_sig", "max_sig"):   # extremo del intervalo con 3 cifras significativas (como «sig» para el valor)
-            x = r[campo[:3]]
+        if campo and CAMPOS_PROPIOS.match(campo):
+            # sig, tres_dec, un_dec, abs_un_dec, con prefijo min_/max_ (extremo del intervalo) y sufijo _en (punto decimal)
+            en = campo.endswith("_en")
+            base = campo[:-3] if en else campo
+            col = "valor"
+            if base.startswith(("min_", "max_")):
+                col, base = base[:3], base[4:]
+            if base == "num":   # num_en: el «num» de render.py con los separadores ingleses
+                r2 = r.copy()
+                r2["id"] = i
+                s = R.texto(r2, "num" if col == "valor" else f"{col}_num")
+                return s.translate(str.maketrans({",": ".", ".": ","})).replace("-", "−")
+            x = r[col]
             if pd.isna(x):
                 falta.append(f"{i}:{campo}")
                 return m.group(0)
-            return f"{float(x):.3g}".replace("-", "−").replace(".", ",")
+            if base == "sig":
+                return _sig(x, en)
+            if base == "tres_dec":
+                return _dec(x, 3, en)
+            if base == "un_dec":
+                return _dec(x, 1, en)
+            return _dec(abs(float(x)), 1, en)   # abs_un_dec: valor absoluto con un decimal («un 3,8 % por debajo»)
         r = r.copy()
         r["id"] = i   # render.muestra_rango lee el id de la fila (V17/V18: rango solo si tipo_rango = «rango»)
         return R.texto(r, campo)

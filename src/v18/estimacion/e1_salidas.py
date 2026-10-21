@@ -18,7 +18,8 @@ import e1_estim as E  # noqa: E402
 ALCANCE_TERRITORIAL = "sin lectura de datos"     # solo escribe salidas a partir de las tablas que recibe
 FUENTES = ["SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024", "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
            "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)", "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"]
-I8 = "Clasificación provisional: falta I8 (réplica ciega, B6)"
+I8 = ("I8: la réplica ciega de E1-R4 se hizo y, con la lectura de la ficha de K8 bis, coincide con la principal "
+      "(output/v18/replica/e1_r4); E1-R3 no tiene réplica ciega y su clase es provisional hasta I8")   # K12 (árbitro, hallazgo 18)
 
 
 def f(x, n=4):
@@ -239,7 +240,7 @@ Benjamini-Yekutieli al 10 % dentro de cada identificador. E1-R3 y E1-R4 con CR1 
 - **E1-R4: {cl4['clase']}.** Fallos decisivos: {'; '.join(cl4['decisivos']) if cl4['decisivos'] else '—'}. Pruebas débiles: {'; '.join(cl4['debiles']) if cl4['debiles'] else '—'}. Topes: {'; '.join(cl4['topes']) if cl4['topes'] else '—'}.
 - E1-P-H3, coprincipal: no se clasifica; su cifra publicada (V15) se muestra al lado.
 - I6 como etiqueta: {ref_lit}. E1-R3: razón {f(razon3, 2)}, {'coherente' if r3['coherente_ref'] else 'no coherente'}. La magnitud difiere de la referencia por la medida (licencias HUT, no anuncios activos), por SERPAVI (contratos vigentes declarados: stock, que diluye el cambio) y por el periodo (2014-2019, con la dosis medida en 2018T2). No interviene en la clase ni en B5.
-- I8 pendiente en todas (replicador-ciego). En las dos especificaciones estimadas la clase describe el diseño; el lenguaje es el de una asociación estimada.
+- {I8}. En las dos especificaciones estimadas la clase describe el diseño; el lenguaje es el de una asociación estimada.
 
 ## 8. Comparación con lo ya visto en el proyecto
 - H3 (V15): 0,0030 por DT intra-sección, p = 0,931 (2021-2024, toda España en entrenamiento). E1-P-H3 lo repite en la muestra V18: {f(PH['coef'])} (p {f(PH['p_principal'], 3)}).

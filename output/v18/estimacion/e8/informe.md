@@ -1,7 +1,7 @@
 # V18 · E8 · Fiscalidad de la compra: ITP por comunidades
 
-**Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en `clasificacion_v18` y no cambia la capa. Clasificación provisional: falta I8 (réplica ciega, B6).
-Código: `src/v18/estimacion/e8_itp.py` (+ `e8_datos.py`, `e8_diseno.py`, `e8_estim.py`, `e8_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; 32 s.
+**Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en `clasificacion_v18` y no cambia la capa. I8 cumplido: la réplica ciega de E8-R1 coincide (output/v18/replica/e8_r1); clase final tras la ronda 1 del abogado del diablo (K7). Las demás especificaciones de E8 son NO ESTIMABLES y no necesitan réplica.
+Código: `src/v18/estimacion/e8_itp.py` (+ `e8_datos.py`, `e8_diseno.py`, `e8_estim.py`, `e8_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; 28 s.
 Rótulo del plan (1.8): no se conoce una evaluación española del ITP con diseño (ficha L4); esta sería la primera, con las reservas de la clasificación.
 
 ## 1. Resumen

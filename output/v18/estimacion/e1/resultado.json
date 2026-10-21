@@ -609,5 +609,5 @@
   "dm_vs_ar4": null,
   "nota": "no aplica: diseño de evaluación (efectos fijos y eventos), no predictivo; la evaluación sellada diferida de la adenda 1.11 solo incluye E1-A1, que no supera la estimabilidad"
  },
- "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Clasificación provisional: falta I8 (réplica ciega, B6). Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
+ "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. I8: la réplica ciega de E1-R4 se hizo y, con la lectura de la ficha de K8 bis, coincide con la principal (output/v18/replica/e1_r4); E1-R3 no tiene réplica ciega y su clase es provisional hasta I8. Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
 }

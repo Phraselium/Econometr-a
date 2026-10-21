@@ -48,6 +48,16 @@ def test_solo_e2_entra_con_estimacion_propia_y_reglas_de_b5():
         assert np.isfinite(lo)
 
 
+def test_clase_designada_y_periodo_real():
+    """K12 (árbitro, hallazgos 1 y 3): la fila B5 lleva la clase de la designada aunque no entre; periodo real del dato."""
+    assert C._clase("no entra (ASOCIACIÓN)") == "ASOCIACIÓN" and C._clase("SUGESTIVO") == "SUGESTIVO"
+    assert C._clase("no entra (NO ESTIMABLE)") == "NO ESTIMABLE"
+    assert C._periodo_real("1995T1-2007T4", "2002T1 a 2007T4 (media de provincias no selladas)") == "2002T1-2007T4"
+    assert C._periodo_real("1995T1-2007T4", "1995T1 a 2007T4") == "1995T1-2007T4"
+    assert C._periodo_real("2014T1-2019T4", "2013T4 a 2019T4") == "2014T1-2019T4"   # nivel de partida: el trimestre anterior
+    assert "ATT" not in M.UNIDAD["E2"]
+
+
 def test_magnitudes_deterministas():
     est = M.estudios_todos()
     a = [M.fila_factor(f, est, {})[0] for f in sorted(M.S_F)]

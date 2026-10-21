@@ -15,7 +15,8 @@ import _e2e8_comun as K  # noqa: E402
 import e8_diseno as DS  # noqa: E402
 
 ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6"
-I8 = "Clasificación provisional: falta I8 (réplica ciega, B6)"
+I8 = ("I8 cumplido: la réplica ciega de E8-R1 coincide (output/v18/replica/e8_r1); clase final tras la ronda 1 del abogado del diablo (K7). "
+      "Las demás especificaciones de E8 son NO ESTIMABLES y no necesitan réplica")   # K12 (árbitro, hallazgo 18)
 FUENTES = ["intervenciones.csv de V16 (tipos generales del ITP, memorias del Ministerio de Hacienda: fuente secundaria, fechas sin contraste con el BOE)",
            "MIVAU, valor tasado de vivienda libre por provincia", "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"]
 

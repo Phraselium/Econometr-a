@@ -39,11 +39,11 @@ Estudios con error típico en la unidad para inmigración (E3): {{V18-B5-E3:cobe
 | E6 | Asquith, Mast y Reed (2020) | DISCREPANTE | No: otra unidad |
 | E7 | San Juan (2023) | VERIFICADA | No: intervalos solo en un gráfico |
 | E7 | BCE, Boletín Económico 6/2022 | NO VERIFICADA | No: sin error típico |
-| E8 | Dölls et al. (2020) | VERIFICADA | No: sin error típico recuperado |
+| E8 | Dolls et al. (2020) | VERIFICADA | No: sin error típico recuperado |
 | E9 | Sá (2016) | VERIFICADA | No: sin error típico extraído |
 | E9 | Álvarez, Blanco y García-Posada (2020) | NO VERIFICADA | No: regresión transversal sin instrumento |
 
-Los valores por estudio están en output/v18/f5/magnitudes_estudios.csv y no en cifras_clave (véase la sección 4).
+Los valores por estudio están en output/v18/f5/magnitudes_estudios.csv y también en cifras_clave, con ids V18-AUX-LIT-* (tabla 4.0 de la sección 4).
 
 ## Anexo B. Reproducciones
 
@@ -51,7 +51,7 @@ La fase 2 reproduce con el paquete de su autor, y sin datos del proyecto, los es
 
 | Estudio (especificación) | Publicado | Reproducido |
 |---|---|---|
-| Borusyak, Hull y Jaravel (2022), conjunto de controles 5; IC95 con el nulo impuesto | {{V18-AUX-REP-BHJ-PUB:sig}} (IC95 {{V18-AUX-REP-BHJ-PUB:min_sig}} a {{V18-AUX-REP-BHJ-PUB:max_sig}}) | {{V18-AUX-REP-BHJ-REP:sig}} (IC95 {{V18-AUX-REP-BHJ-REP:min_sig}} a {{V18-AUX-REP-BHJ-REP:max_sig}}) |
+| Borusyak, Hull y Jaravel (2022), columna 5 de la tabla 4 del artículo; IC95 con el nulo impuesto | {{V18-AUX-REP-BHJ-PUB:sig}} (IC95 {{V18-AUX-REP-BHJ-PUB:min_sig}} a {{V18-AUX-REP-BHJ-PUB:max_sig}}) | {{V18-AUX-REP-BHJ-REP:sig}} (IC95 {{V18-AUX-REP-BHJ-REP:min_sig}} a {{V18-AUX-REP-BHJ-REP:max_sig}}) |
 | Chaves-Fonseca (2026), columna 6 (IV), Madrid | {{V18-AUX-REP-CHAVES-PUB:sig}} (error típico {{V18-AUX-REP-CHAVES-PUB-ET:sig}}) | {{V18-AUX-REP-CHAVES-REP:sig}} (IC95 {{V18-AUX-REP-CHAVES-REP:min_sig}} a {{V18-AUX-REP-CHAVES-REP:max_sig}}) |
 | Mense (2025), columna 3 (IV), Alemania | {{V18-AUX-REP-MENSE-PUB:sig}} (error típico {{V18-AUX-REP-MENSE-PUB-ET:sig}}) | {{V18-AUX-REP-MENSE-REP:sig}} (IC95 {{V18-AUX-REP-MENSE-REP:min_sig}} a {{V18-AUX-REP-MENSE-REP:max_sig}}) |
 
@@ -85,22 +85,21 @@ Las pruebas son las de B4 de cada diseño (pretendencias y potencia de Roth, pla
 | E1-R3 | Log del alquiler por punto de densidad HUT (estudio de eventos) | {{V18-E1-R3:sig}} | No | {{V18-E1-R3:clasificacion}} |
 | E1-R4 | Log, secciones del radio frente al anillo (Sagrada Família) | {{V18-E1-R4:sig}} | Sí | {{V18-E1-R4:clasificacion}} |
 | E1-P-H3 | Log del alquiler por desviación típica intra-sección (coprincipal) | {{V18-E1-P-H3:sig}} | Sí | {{V18-E1-P-H3:clasificacion}} |
-| E2-R1 | Log de la renta media de contratos nuevos | {{V18-E2-R1:sig}} | No | {{V18-E2-R1:clasificacion}} |
+| E2-R1 | Log de la renta media de contratos nuevos (cifra solo con la frase de limitación de 4.2) | {{V18-E2-R1:tres_dec}} | No | {{V18-E2-R1:clasificacion}} |
 | E2-R1c | Log de contratos por 1.000 habitantes | {{V18-E2-R1c:sig}} | Sí | {{V18-E2-R1c:clasificacion}} |
 | E2-R1-REV | Reversión tras la STC 37/2022 (log de la renta) | {{V18-E2-R1-REV:sig}} | Sí | {{V18-E2-R1-REV:clasificacion}} |
 | E3-R1 | €/m² por punto de población (IV, Webb-AR) | {{V18-E3-R1-beta:sig}} | Sí | {{V18-E3-R1-beta:clasificacion}} |
 | E5-A1 | Interacción del instrumento de inmigración con solares (Δ ln P) | {{V18-E5-A1-psi:sig}} | Sí | {{V18-E5-A1-psi:clasificacion}} |
 | E7-R1 | % del precio por +100 pb a ocho trimestres (LP-IV); AR no acotado | {{V18-E7-R1:sig}} | No aplicable | {{V18-E7-R1:clasificacion}} |
-| E7-R3 | % del precio por +100 pb del euríbor a ocho trimestres (BVAR; banda del 68 %) | {{V18-E7-R3:sig}} | No (banda del 68 %) | {{V18-E7-R3:clasificacion}} |
-| E7-A2 | Respuesta relativa entre provincias (panel) | {{V18-E7-A2:sig}} | No | {{V18-E7-A2:clasificacion}} |
+| E7-R3 | % del precio por +100 pb del euríbor a ocho trimestres (BVAR; banda del 68 %, con un {{V18-AUX-E7-R3-EXPLOSIVAS:sig}} % de extracciones explosivas) | {{V18-E7-R3:sig}} | No (banda del 68 %) | {{V18-E7-R3:clasificacion}} |
+| E7-A2 | {{V18-E7-A2:unidad}} | {{V18-E7-A2:sig}} | No | {{V18-E7-A2:clasificacion}} |
 | E8-R1 | Log del valor tasado a cuatro trimestres por punto del tipo general del ITP | {{V18-E8-R1:sig}} | No (aleatorización) | {{V18-E8-R1:clasificacion}} |
 | E10-A1 | % del alquiler por m² por punto de viviendas de grandes tenedores | {{V18-E10-A1:sig}} | Sí | {{V18-E10-A1:clasificacion}} |
 | E12-A1 | Viviendas libres iniciadas por vivienda protegida calificada (IV) | {{V18-E12-A1:num}} | Sí (conjunto AR) | {{V18-E12-A1:clasificacion}} |
-| E12-A2 | % del valor tasado real por vivienda protegida calificada (IV) | {{V18-E12-A2:num}} | AR no acotado | {{V18-E12-A2:clasificacion}} |
+| E12-A2 | {{V18-E12-A2:unidad}} (IV) | {{V18-E12-A2:num}} | AR no acotado | {{V18-E12-A2:clasificacion}} |
 | F1-R1 | Elasticidad de impacto, precio frente a renta de los hogares (nacional) | {{V18-F1-R1:sig}} | Sí | {{V18-F1-R1:clasificacion}} |
-| F1-R2-pmg | Elasticidad de corto plazo, panel provincial (PMG) | {{V18-F1-R2-pmg:sig}} | No | {{V18-F1-R2-pmg:clasificacion}} |
-| F2-R1 | Elasticidad de corto plazo del alquiler a la renta (PMG) | {{V18-F2-R1:sig}} | No | {{V18-F2-R1:clasificacion}} |
-| F3-A2 | Elasticidad de corto plazo de las iniciadas al valor tasado (PMG) | {{V18-F3-A2:sig}} | No | {{V18-F3-A2:clasificacion}} |
+
+Los coeficientes de corto plazo de los paneles con PMG (F1-R2-pmg, F2-R1, F3-A2) no se publican: el PMG supone una cointegración que los contrastes no encuentran (sección 4.11).
 
 **D.2 Estimaciones NO ESTIMABLES: la comprobación previa.** Se publica la magnitud mínima detectable (MDE), el F efectivo o el recuento de datos, no el coeficiente.
 
@@ -118,7 +117,7 @@ Las pruebas son las de B4 de cada diseño (pretendencias y potencia de Roth, pla
 | E8-R2 | MDE (log por punto) | {{V18-E8-R2:sig}} | {{V18-E8-R2:clasificacion}} |
 | E9 | Número efectivo de choques (sin pesos) | {{V18-E9-1HHI-origenes:num}} | {{V18-E9-1HHI-origenes:clasificacion}} |
 
-**D.3 E2-R1: robustez a posteriori (B6).** Los resultados de esta tabla se añadieron después de ver los de E2-R1 y no deciden su clase.
+**D.3 E2-R1: robustez a posteriori (B6).** Los resultados de esta tabla se añadieron después de ver los de E2-R1 y no deciden su clase; su clase propia es «{{V18-E2-B6-A:clasificacion}}».
 
 | Id | Prueba | Estimación | ¿IC incluye el cero? |
 |---|---|---|---|
@@ -130,7 +129,9 @@ Las pruebas son las de B4 de cada diseño (pretendencias y potencia de Roth, pla
 
 ## Anexo E. Monte Carlo de las herramientas
 
-Cada herramienta nueva se validó antes de usarse con procesos generadores que reproducen la estructura de los diseños de V18 (output/v18/montecarlo/<herramienta>/). Se simula bajo el nulo y bajo la alternativa, con semilla fija y sin ningún dato real de resultado ni muestra sellada. Un resultado es apto si el tamaño al 5 % y la cobertura al 95 % caen en las bandas de la adenda 1.12. La tabla da, por herramienta, el mínimo y el máximo entre las filas que deciden su veredicto (columna «principal», «entra_en_veredicto» o «decisivo» de su tabla.csv; si no la hay, la variante principal, con h = 8 en las proyecciones locales y el proxy-SVAR); el valor de cada condición está en output/v18/montecarlo/<herramienta>/tabla.csv y el veredicto en su resultado.json. En meta_bayes la cobertura es la de μ.
+Cada herramienta nueva se validó antes de usarse con procesos generadores que reproducen la estructura de los diseños de V18 (output/v18/montecarlo/<herramienta>/). Se simula bajo el nulo y bajo la alternativa, con semilla fija y sin ningún dato real de resultado ni muestra sellada.
+
+Hay dos criterios de «apto», y los dos se publican. El del encargo del Monte Carlo, más amplio, pide un tamaño al 5 % entre {{V18-AUX-CRIT-ENCARGO-TAM:min_num}} y {{V18-AUX-CRIT-ENCARGO-TAM:max_num}} y una cobertura al 95 % entre {{V18-AUX-CRIT-ENCARGO-COB:min_num}} y {{V18-AUX-CRIT-ENCARGO-COB:max_num}}, bajo el nulo y bajo la alternativa; con él se escribió el veredicto de cada herramienta (columna «Veredicto» de la segunda tabla). Las bandas de la adenda 1.12, más estrictas, piden un tamaño entre {{V18-AUX-CRIT-ADENDA-TAM:min_num}} y {{V18-AUX-CRIT-ADENDA-TAM:max_num}} y una cobertura entre {{V18-AUX-CRIT-ADENDA-COB:min_num}} y {{V18-AUX-CRIT-ADENDA-COB:max_num}}; son las que deciden en la inferencia de cada estimación (por ejemplo, el valor crítico corregido cuando el tamaño cae fuera de su banda) y están en la columna banda_112 de cada tabla.csv. Cuando los dos criterios difieren, la inferencia sigue el de la adenda, que es el del pre-registro (adenda 1.12 e I7); el criterio del encargo solo rotula la herramienta. La tabla da, por herramienta, el mínimo y el máximo entre las filas que deciden su veredicto (columna «principal», «entra_en_veredicto» o «decisivo» de su tabla.csv; si no la hay, la variante principal, con h = 8 en las proyecciones locales y el proxy-SVAR); el valor de cada condición está en output/v18/montecarlo/<herramienta>/tabla.csv y el veredicto en su resultado.json. En meta_bayes la cobertura es la de μ.
 
 | Herramienta | Tamaño al 5 %: mínimo a máximo | Cobertura al 95 %: mínimo a máximo |
 |---|---|---|
@@ -149,7 +150,7 @@ Cada herramienta nueva se validó antes de usarse con procesos generadores que r
 | svar_proxy | {{V18-AUX-MC-SVAR-PROXY-TAM:min_sig}} a {{V18-AUX-MC-SVAR-PROXY-TAM:max_sig}} | {{V18-AUX-MC-SVAR-PROXY-COB:min_sig}} a {{V18-AUX-MC-SVAR-PROXY-COB:max_sig}} |
 | webb_twfe | {{V18-AUX-MC-WEBB-TWFE-TAM:min_sig}} a {{V18-AUX-MC-WEBB-TWFE-TAM:max_sig}} | {{V18-AUX-MC-WEBB-TWFE-COB:min_sig}} a {{V18-AUX-MC-WEBB-TWFE-COB:max_sig}} |
 
-El BVAR se valida con bandas del 68 % y del 90 % (bandas [0,63; 0,73] y [0,87; 0,93]); en sus filas decisivas la cobertura al 68 % va de {{V18-AUX-MC-BVAR-COB68:min_sig}} a {{V18-AUX-MC-BVAR-COB68:max_sig}} y la del 90 % de {{V18-AUX-MC-BVAR-COB90:min_sig}} a {{V18-AUX-MC-BVAR-COB90:max_sig}}.
+El BVAR se valida con sus bandas del 68 % y del 90 %, que son aptas si cubren entre {{V18-AUX-CRIT-BVAR-COB68:min_num}} y {{V18-AUX-CRIT-BVAR-COB68:max_num}} y entre {{V18-AUX-CRIT-BVAR-COB90:min_num}} y {{V18-AUX-CRIT-BVAR-COB90:max_num}}, respectivamente; en sus filas decisivas la cobertura al 68 % va de {{V18-AUX-MC-BVAR-COB68:min_sig}} a {{V18-AUX-MC-BVAR-COB68:max_sig}} y la del 90 % de {{V18-AUX-MC-BVAR-COB90:min_sig}} a {{V18-AUX-MC-BVAR-COB90:max_sig}}.
 
 | Herramienta | Veredicto | Condición |
 |---|---|---|
@@ -162,14 +163,14 @@ El BVAR se valida con bandas del 68 % y del 90 % (bandas [0,63; 0,73] y [0,87; 0
 | Webb en TWFE | APTO y APTO CONDICIONADO | Según el diseño |
 | Conley | Mixto | Apto si el alcance de la dependencia no supera el corte; NO APTO si lo duplica |
 | IV débil | Mixto | APTO con instrumento fuerte; APTO CONDICIONADO o NO APTO en los diseños más débiles |
-| BHJ con pocos choques | NO APTO | Con pocos choques efectivos |
+| BHJ con pocos choques | NO APTO | Con pocos choques efectivos; por eso, con menos de {{V18-AUX-CRIT-HHI-INFERENCIA:sig}}, la inferencia principal de E3, E5, E9 y E12 es Webb por provincia con Anderson-Rubin y BHJ queda como alternativa (adenda 1.13) |
 | Driscoll-Kraay con T corto | NO APTO | Con series temporales cortas |
 | Proyección local con instrumento | NO APTO | Newey-West subestima la incertidumbre; el AR aumentado con EHW es el más cercano al nominal bajo el nulo; con T corto la respuesta a horizontes largos queda atenuada |
 | SVAR con proxy | NO APTO | AR por método delta apto solo con F cercano a diez |
 | BVAR recursivo | NO APTO | Bandas conservadoras o con cobertura distinta de la nominal |
 | Metaanálisis bayesiano | NO APTO por conservador | Intervalos que cubren de más; con dos estudios y heterogeneidad el efecto fijo no cubre la media verdadera |
 
-En la simulación, la inferencia por aleatorización del calendario es la única apta con ocho comunidades (E8). Las herramientas NO APTAS se publican con esa etiqueta y la clasificación no se apoya en ellas.
+En la simulación, con ocho comunidades, la inferencia por aleatorización del calendario es la única apta; la muestra de E8-R1 tiene {{V18-AUX-E8-R1-NCCAA:sig}}. Las herramientas NO APTAS se publican con esa etiqueta y la clasificación no se apoya en ellas.
 
 ## Anexo F. Pre-registro interno y análisis a posteriori
 
@@ -185,7 +186,8 @@ En la simulación, la inferencia por aleatorización del calendario es la única
 - *Todo V17.* La auditoría de afirmaciones y medidas, la demografía, el análisis general o local, la factibilidad y las cifras V17-* se hicieron sin pre-registro y se integran aquí como análisis a posteriori de capa C4.
 - *La robustez B6 de E2-R1 y E2-R1c.* Se añadió después de ver los resultados, por petición del abogado del diablo (anexo D.3). No cambia la especificación principal ni su clase por sí sola.
 - *Las desviaciones.* Toda desviación respecto al plan (docs/v18/desviaciones*.md) se declaró con fecha y motivo. Entre ellas: el paro registrado de E2 (una versión anterior de la desviación era errónea y se corrigió); la geometría y la lectura de la ficha de E1-R4 (K8 bis); la lectura restrictiva de la contabilidad (K10); el deflactor del PIB en lugar del IPC; los ocho grupos de origen en E3.
-- *Decisiones tomadas tras ver resultados de otras especificaciones.* K7 (clasificación de E8-R1 y E2-R1c tras la ronda 1 del abogado del diablo), K8 y K8 bis (E1-R4) y K9 (E2-R1 tras la ronda 2, con su frase de limitación).
+- *Decisiones tomadas tras ver resultados de otras especificaciones.* K7 (clasificación de E8-R1 y E2-R1c tras la ronda 1 del abogado del diablo), K8 y K8 bis (E1-R4), K9 (E2-R1 tras la ronda 2, con su frase de limitación) y K12 (clase propia por especificación y correcciones de esta revisión, sin estimar de nuevo).
+- *La estrategia A para extraer la magnitud de Hahn et al. (E2).* Se fijó en la fase 5 (K10), antes de combinar pero después de la etiqueta y de ver E2-R1, por ser la primera de la ficha. Es una decisión a posteriori: con la estrategia B, E2 tendría magnitud preferida (sensibilidad de B5, sección 4.2).
 - *Datos descargados después de la etiqueta.* Marcados `posterior_prereg`.
 - *La ilustración de la contabilidad* con magnitudes de la literatura.
 - *Réplicas del plan sobre preguntas ya vistas.* Las especificaciones que repiten una pregunta cuyo resultado ya se conocía llevan la marca `repite_visto` (plan, 0.2).

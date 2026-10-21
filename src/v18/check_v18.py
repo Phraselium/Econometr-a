@@ -1,7 +1,8 @@
 """V18 · Controles de `make check` (plan V18, secciones A, B y fase 6). Solo lectura; sin red; no escribe nada.
 
 1. cifras V18: toda cifra de output/v18/**/hechos.json tiene id V18-*, fuente, capa del proyecto (C1-C4, al lado) y
-   clasificación V18 (IDENTIFICADO, SUGESTIVO, ASOCIACIÓN, NO CONCLUYENTE o NO ESTIMABLE); la capa es C4 (K2).
+   clasificación V18 (IDENTIFICADO, SUGESTIVO, ASOCIACIÓN, NO CONCLUYENTE o NO ESTIMABLE; o, para cifras sin clase propia, «sin
+   clasificar (coprincipal informativa)», «robustez a posteriori» o «diagnóstico o variante (sin clase propia)», K12); la capa es C4 (K2).
 2. lenguaje causal (K2, decisión del autor): ninguna cifra V18 usa lenguaje causal en su indicador o su nota, tampoco en
    IDENTIFICADO (toda cifra V18 es C4); la fórmula condicional solo va en las secciones técnicas del Documento de Trabajo.
 3. plan antes de estimar (B1): todo fichero de src/v18/estimacion/ y output/v18/estimacion/ entró en git después del commit de
@@ -28,7 +29,12 @@ sys.path.insert(0, str(RAIZ / "src" / "v18"))
 import etiqueta  # noqa: E402
 
 OUT = RAIZ / "output" / "v18"
-CLASES = {"IDENTIFICADO", "SUGESTIVO", "ASOCIACIÓN", "NO CONCLUYENTE", "NO ESTIMABLE"}
+# Clases V18 del plan (B3, adenda 1.2) y, desde K12, tres valores para cifras que no tienen clase propia: la coprincipal que el plan
+# no clasifica (E1-P-H3), las robusteces añadidas tras ver el resultado (B6) y los diagnósticos o variantes de una estimación.
+SIN_CLASIFICAR = "sin clasificar (coprincipal informativa)"
+ROBUSTEZ_POSTERIORI = "robustez a posteriori"
+DIAGNOSTICO = "diagnóstico o variante (sin clase propia)"
+CLASES = {"IDENTIFICADO", "SUGESTIVO", "ASOCIACIÓN", "NO CONCLUYENTE", "NO ESTIMABLE", SIN_CLASIFICAR, ROBUSTEZ_POSTERIORI, DIAGNOSTICO}
 CAUSAL = re.compile(r"\b(causa(?:n|do|da|l|les)?|provoc\w*|efecto causal|debido a|gracias a|se debe a|impacto causal)\b", re.I)
 CITA = re.compile(r"«([^»]*)»")
 MAX_PALABRAS = 15

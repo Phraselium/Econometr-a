@@ -1,7 +1,7 @@
 # V18 · E1 · Vivienda turística (Barcelona con registro HUT y SERPAVI; otras ciudades no selladas)
 
-**Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en el campo `clasificacion_v18` y no cambia la capa. Clasificación provisional: falta I8 (réplica ciega, B6).
-Código: `src/v18/estimacion/e1_turismo.py` (+ `e1_adquisicion.py`, `e1_datos.py`, `e1_diseno.py`, `e1_estim.py`, `e1_mde.py`, `e1_nucleo.py`, `e1_resultados.py`, `e1_salidas.py`); SEED 20261010; sin red en la estimación; 157 s.
+**Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en el campo `clasificacion_v18` y no cambia la capa. I8: la réplica ciega de E1-R4 se hizo y, con la lectura de la ficha de K8 bis, coincide con la principal (output/v18/replica/e1_r4); E1-R3 no tiene réplica ciega y su clase es provisional hasta I8.
+Código: `src/v18/estimacion/e1_turismo.py` (+ `e1_adquisicion.py`, `e1_datos.py`, `e1_diseno.py`, `e1_estim.py`, `e1_mde.py`, `e1_nucleo.py`, `e1_resultados.py`, `e1_salidas.py`); SEED 20261010; sin red en la estimación; 137 s.
 
 ## 1. Resumen
 - **Lo que supera la estimabilidad (adenda 1.3)**: E1-R3 (estudio de eventos de dosis, 2011-2019) y E1-R4 (Sagrada Família), más la coprincipal E1-P-H3 (H3 de V15 en la muestra V18).
@@ -166,7 +166,7 @@ Benjamini-Yekutieli al 10 % dentro de cada identificador. E1-R3 y E1-R4 con CR1 
 - **E1-R4: NO CONCLUYENTE (sin potencia).** Fallos decisivos: —. Pruebas débiles: —. Topes: tope de la especificación: SUGESTIVO (un solo grupo tratado: la Sagrada Família).
 - E1-P-H3, coprincipal: no se clasifica; su cifra publicada (V15) se muestra al lado.
 - I6 como etiqueta: Segú (2018), IV lineal, por pp de densidad: 0,038 (0,012), ficha NO VERIFICADA (adenda, anexo B). E1-R3: razón 0.12, no coherente. La magnitud difiere de la referencia por la medida (licencias HUT, no anuncios activos), por SERPAVI (contratos vigentes declarados: stock, que diluye el cambio) y por el periodo (2014-2019, con la dosis medida en 2018T2). No interviene en la clase ni en B5.
-- I8 pendiente en todas (replicador-ciego). En las dos especificaciones estimadas la clase describe el diseño; el lenguaje es el de una asociación estimada.
+- I8: la réplica ciega de E1-R4 se hizo y, con la lectura de la ficha de K8 bis, coincide con la principal (output/v18/replica/e1_r4); E1-R3 no tiene réplica ciega y su clase es provisional hasta I8. En las dos especificaciones estimadas la clase describe el diseño; el lenguaje es el de una asociación estimada.
 
 ## 8. Comparación con lo ya visto en el proyecto
 - H3 (V15): 0,0030 por DT intra-sección, p = 0,931 (2021-2024, toda España en entrenamiento). E1-P-H3 lo repite en la muestra V18: -0.0001 (p 0.877).

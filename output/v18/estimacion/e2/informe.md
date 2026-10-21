@@ -1,7 +1,7 @@
 # V18 · E2 · Topes al alquiler (Ley 11/2020 de Cataluña, Incasòl)
 
 **Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en el campo `clasificacion_v18` y no cambia la capa.
-Clasificaciones provisionales: falta I8 (réplica ciega, B6). Código: `src/v18/estimacion/e2_topes.py` (+ `e2_datos.py`, `e2_diseno.py`, `e2_estim.py`, `e2_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; 107 s.
+I8: la réplica ciega de E2-R1 coincide (output/v18/replica/e2_r1); E2-R1c no tiene réplica ciega y su clase es provisional hasta I8. Código: `src/v18/estimacion/e2_topes.py` (+ `e2_datos.py`, `e2_diseno.py`, `e2_estim.py`, `e2_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; 98 s.
 
 ## 1. Resumen
 - **E2-R1 (principal)**: coeficiente de Reg × Post sobre el log de la renta media de contratos nuevos = **-0.0384** (IC95 de Webb -0.0509; -0.0262; p tras Holm 0.00057). Clase V18: **SUGESTIVO**. Razón con la referencia (−0,045 de Jofre-Monseny et al., 2023): 0.85, etiqueta «coherente» (razón en [1/3; 3]; no interviene en la clase).
@@ -100,7 +100,7 @@ Ajuste de Benjamini-Yekutieli al 10 % dentro de cada identificador (q_by). Webb 
 - **E2-R1: SUGESTIVO.** Razones: potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|; placebo de fecha p = 0.056; placebo de resultado sin dato en el repositorio; IC95 de alguna robustez no solapa con el principal; tope SUGESTIVO por corrección de un fallo conocido de V9-D1b: grupo de control y ventana (adenda 1.6; Honest M̄ de ruptura 0,5).
 - **E2-R1c: ASOCIACIÓN.** Razones: potencia de Roth: el sesgo implicado por la pendiente detectable supera la mitad de |referencia|; placebo de fecha p = 0.001; placebo de resultado sin dato en el repositorio; mismo signo en 67% de las variantes enumeradas (< 80 %); la diferencia persiste tras la STC 37/2022 (coeficiente +0.0736, p = 0.002): tope de la adenda, AD-E2-R1 (línea 581); el placebo de fecha (adopción falsa en 2017) es significativo (coeficiente -0.0793, p = 0.0005): el diseño no es creíble para este resultado (K7). Lectura: coeficiente no significativo; no hay clase SUGESTIVO sin significación (K7): al no superar I1-I5 (placebo de fecha, persistencia tras la STC) la clase es ASOCIACIÓN, no NO CONCLUYENTE.
 - I6 se publica como etiqueta (razón con la referencia); no interviene en la clase ni en B5.
-- I8 pendiente para ambas (replicador-ciego). El lenguaje de ambas cifras es el de una asociación estimada.
+- I8: la réplica ciega de E2-R1 coincide (output/v18/replica/e2_r1); E2-R1c no tiene réplica ciega y su clase es provisional hasta I8. El lenguaje de ambas cifras es el de una asociación estimada.
 
 ## 8. Desviaciones y lecturas de las reglas (se recogen en docs/v18/desviaciones.md)
 - **D1 (corregida en K9). Paro registrado.** La versión anterior de esta desviación («el paro de 2020 no está en la base») era falsa: el fichero mensual del SEPE por municipio (fichero paro_registrado_municipio_mensual.csv.gz de sepe_municipios, v9) cubre 2006-2026. La principal lleva ln(1 + paro) como media trimestral de los meses del fichero (adenda R-1); falta diciembre de 2020 en el fichero, así que 2020T4 es la media de octubre y noviembre. E2-R1-v5 («sin paro») es ahora una variante estimada y desaparece la holgura E2-R1-h1. Los ERTE por municipio no están en el repositorio.
@@ -126,7 +126,7 @@ Microdatos de contratos del registro de fianzas con renta, renta anterior, super
 
 Pruebas pedidas por la ronda 1 del abogado del diablo (hallazgos 1, 2, 4, 5 y 6; docs/v18/revision_estimaciones/ronda1_e2_e8.md). **Se declaran a posteriori**: se añadieron después de ver los
 resultados de E2, no cambian la especificación principal ni su clase por sí solas y entran como robustez (desviación B6-2 de docs/v18/desviaciones_e2_e8.md). Código: `src/v18/estimacion/e2_robustez.py`;
-SEED 20261010; 21 s; inferencia de Webb con 4.999 réplicas por municipio en las variantes (9.999 en E2-R1c-v1) y 999 placebos de Conley-Taber en el SDID. q_bh: Benjamini-Hochberg al 10 % sobre las variantes de la renta de esta sección (B6b, B6c-1 a B6c-3, B6d; exploratorias);
+SEED 20261010; 19 s; inferencia de Webb con 4.999 réplicas por municipio en las variantes (9.999 en E2-R1c-v1) y 999 placebos de Conley-Taber en el SDID. q_bh: Benjamini-Hochberg al 10 % sobre las variantes de la renta de esta sección (B6b, B6c-1 a B6c-3, B6d; exploratorias);
 los diagnósticos, los placebos y E2-R1c-v1 (una sola variante) llevan su p propio, sin ajuste. Análisis V18; capa C4; nivel de evidencia EXPLORATORIO.
 
 ### Lectura

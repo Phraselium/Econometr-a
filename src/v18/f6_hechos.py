@@ -40,7 +40,7 @@ BIB = RAIZ / "docs" / "v18" / "bib"
 SALIDA = OUT / "f6" / "hechos.json"
 FECHA = "2026-10-20"
 N_BASE = 570          # cifras de los hechos.json de estimación y de f5
-N_AUX = 135           # cifras V18-AUX-* de auxiliares()
+N_AUX = 162           # cifras V18-AUX-* de auxiliares() (135 de K11 y 27 de K12)
 N_ESPERADO = N_BASE + N_AUX
 TIPOS_RANGO = ("rango", "referencias", "sin rango")
 
@@ -121,6 +121,12 @@ def _f(x) -> float | None:
     except (TypeError, ValueError):
         return None
     return None if math.isnan(v) else float(f"{v:.10g}")   # 10 cifras significativas: quita el ruido de coma flotante
+
+
+def _qant(p: str) -> str:
+    """Trimestre anterior a «AAAATn» (nivel de partida de un periodo; el primero de la serie, 1995T1, es su propio nivel)."""
+    y, q = int(p[:4]), int(p[-1])
+    return p if p == "1995T1" else (f"{y - 1}T4" if q == 1 else f"{y}T{q - 1}")
 
 
 def _cifra(i: str, indicador: str, valor, unidad: str, periodo: str, cobertura: str, fuentes: list[str], clase: str, nota: str,
@@ -232,17 +238,28 @@ def _aux_f5() -> list[dict]:
     if not ((obs - noe.reindex(obs.index)).abs().fillna(0) < 1e-9).all():
         raise ValueError("contabilidad.csv: la variación no explicada provincial ya no es igual a la observada (revisar el texto)")
     fu = [_rel(src), "output/v18/f5/informe.md"]
+    ven = p[p.tipo_fila == "observado"].set_index(["resultado", "periodo", "territorio"]).ventana_factor
     nprov = int(p.territorio.nunique())
     res.append(_cifra("V18-AUX-CONT-PROV-N", "Provincias no selladas con detalle de contabilidad (variación observada y sin explicar)",
                       nprov, unidad="provincias", periodo="1995-2026", cobertura="España (provincias no selladas)", fuentes=fu,
                       clase="NO ESTIMABLE", nota="recuento de provincias de contabilidad.csv", ficha=_rel(src)))
     for (res_, per), g in obs.dropna().groupby(level=[0, 1]):
         k = f"V18-AUX-CONT-PROV-{res_.upper()}-{per}"
-        res.append(_cifra(k, f"Variación observada del {res_} real relativa a la media de las provincias no selladas, {per}: mínimo "
+        # periodo real del dato (K12, árbitro, hallazgo 1): las provincias pueden empezar después del inicio del periodo del plan
+        ini = ven.loc[g.index].str.slice(0, 6).value_counts()
+        base = f"{_qant(per.split('-')[0])}"
+        per_real, aviso = per, ""
+        if ini.index[0] not in (per.split("-")[0], base):
+            per_real = f"{ini.index[0]}-{per.split('-')[1]}"
+        if len(ini) > 1:
+            aviso = ("; la media provincial mezcla ventanas (" + "; ".join(f"{n} provincias desde {i}" for i, n in ini.items())
+                     + "): las provincias de ventana distinta no son comparables con el resto")
+        res.append(_cifra(k, f"Variación observada del {res_} real relativa a la media de las provincias no selladas, {per_real}: mínimo "
                           "y máximo entre provincias (igual a la variación sin explicar)", None, unidad="puntos (100·Δln)",
-                          periodo=per, cobertura=f"España ({len(g)} provincias no selladas)", fuentes=fu, clase="NO ESTIMABLE",
+                          periodo=per_real, cobertura=f"España ({len(g)} provincias no selladas)", fuentes=fu, clase="NO ESTIMABLE",
                           nota="mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación "
-                          "propia, por lo que la variación sin explicar coincide con la observada", ficha=_rel(src),
+                          "propia, por lo que la variación sin explicar coincide con la observada; relativa a la media simple de las "
+                          f"provincias no selladas con dato, sin el componente común{aviso}", ficha=_rel(src),
                           mn=g.min(), mx=g.max()))
     # Comparación con V8
     src = OUT / "f5" / "comparacion_v8.csv"
@@ -369,8 +386,10 @@ def _aux_estimacion() -> list[dict]:
     res.append(_cifra("V18-AUX-E1-R4-V3", "Coeficiente de E1-R4 con los adelantos de 2011-2012 como regresores (variante), con "
                       "IC90 de Webb", r.coef, unidad=e1["V18-E1-R4"]["unidad"], periodo=str(r.ventana),
                       cobertura=f"Barcelona (barrios; {r.nota.split(';')[0]})", fuentes=e1["V18-E1-R4"]["fuentes"],
-                      clase=str(r.clase).split(" (")[0], nota=f"variante [E] de E1-R4; clase de la variante: {r.clase}; IC90 por "
-                      "inversión de Webb; IC95 en tabla.csv", ficha=_rel(src), mn=float(m.group(1)), mx=float(m.group(2))))
+                      clase=check_v18.DIAGNOSTICO, nota=f"variante [E] de E1-R4; tabla.csv y resultado.json la rotulan «{r.clase}», pero por "
+                      "K8 bis la clase de E1-R4 es la de la principal (NO CONCLUYENTE) y la variante no tiene réplica ciega coincidente: "
+                      "sin clase propia (K12); IC90 por inversión de Webb; IC95 en tabla.csv", ficha=_rel(src), mn=float(m.group(1)),
+                      mx=float(m.group(2))))
     # E2-R1: estudio de eventos (2021T1 = k 8, base 2019T4), trayectorias por tamaño (B6b-2) y transformación porcentual
     d = OUT / "estimacion" / "e2"
     e2 = {h["id"]: h for h in json.loads((d / "hechos.json").read_text(encoding="utf-8"))}
@@ -379,18 +398,134 @@ def _aux_estimacion() -> list[dict]:
     ev = pd.read_csv(d / "estudio_eventos.csv")
     k8 = ev[(ev.spec == "E2-R1") & (ev.k == 8)].iloc[0]
     _buscar((d / "informe.md").read_text(encoding="utf-8"), r"k = 0\.\.12 es 2019T1\.\.2022T1", _rel(d / "informe.md"))
-    comun = dict(periodo="2019T1-2022T1", cobertura=h["cobertura"], fuentes=h["fuentes"], clase=h["clasificacion_v18"])
+    comun = dict(periodo="2019T1-2022T1", cobertura=h["cobertura"], fuentes=h["fuentes"])
     res.append(_cifra("V18-AUX-E2-R1-EV-2021T1", "Coeficiente de 2021T1 del estudio de eventos de E2-R1 (base 2019T4)", k8.coef,
                       unidad="log de la renta media de los contratos nuevos", nota=f"estudio de eventos de E2-R1, k = 8 (2021T1); "
-                      f"error típico {k8.se}", ficha=_rel(d / "estudio_eventos.csv"), **comun))
+                      f"error típico {k8.se}; diagnóstico de E2-R1, sin clase propia (K12)", ficha=_rel(d / "estudio_eventos.csv"),
+                      clase=check_v18.DIAGNOSTICO, **comun))
     rb = pd.read_csv(d / "robustez_b6.csv").set_index("id").loc["E2-R1-B6b-2"]
     res.append(_cifra("V18-AUX-E2-R1-B6B2", "Coeficiente de E2-R1 con trayectorias trimestrales por tamaño del municipio "
                       "(ln de la población de 2019 × trimestre), con IC95", rb.coef, unidad="log de la renta media de los contratos "
                       "nuevos", nota=f"robustez a posteriori (B6b-2): {rb.descripcion}; {rb.nota}", ficha=_rel(d / "robustez_b6.csv"),
-                      mn=rb.ic95_lo, mx=rb.ic95_hi, **comun))
+                      mn=rb.ic95_lo, mx=rb.ic95_hi, clase=check_v18.ROBUSTEZ_POSTERIORI, **comun))
     res.append(_cifra("V18-AUX-E2-R1-PCT", "Diferencia porcentual equivalente al coeficiente logarítmico de E2-R1", 100 * math.expm1(
                       float(tab.coef)), unidad="%", nota=f"transformación 100·(exp(b)−1) del coeficiente log {tab.coef} de "
-                      "E2-R1 (tabla.csv); no es una estimación nueva", ficha=_rel(d / "tabla.csv"), **comun))
+                      "E2-R1 (tabla.csv); no es una estimación nueva", ficha=_rel(d / "tabla.csv"), clase=h["clasificacion_v18"], **comun))
+    # K12 (árbitro, hallazgos 4 y 5): variantes enumeradas del multiverso, SERPAVI, sesgo indetectable de Roth, Honest DiD con M̄ = 0,5
+    t = pd.read_csv(d / "tabla.csv").set_index("id")
+    mv = t.loc[[i for i in t.index if re.fullmatch(r"E2-R1(-v\d+)?", i) and pd.notna(t.loc[i, "coef"])]]
+    rj = json.loads((d / "resultado.json").read_text(encoding="utf-8"))["diagnosticos"]["E2-R1"]
+    hon = next(x for x in rj["honest"] if x["Mbar"] == 0.5)
+    v9 = t.loc["E2-R1-v9"]
+    diag = dict(clase=check_v18.DIAGNOSTICO, **comun)
+    res.append(_cifra("V18-AUX-E2-R1-N-REGULADOS", "Municipios sujetos a la Ley 11/2020 en la muestra de E2-R1 (sin Barcelona ciudad)",
+                      tab.n_tratados, unidad="municipios", nota=f"n_tratados de tabla.csv (controles: {int(tab.n_controles)}); recuento de "
+                      "la muestra de E2-R1", ficha=_rel(d / "tabla.csv"), **diag))
+    res.append(_cifra("V18-AUX-E2-R1-MULTIVERSO", f"Coeficiente de E2-R1 en su multiverso enumerado (principal y {len(mv) - 1} "
+                      "variantes del anexo A de la adenda): mínimo y máximo", None, unidad="log de la renta media de los contratos nuevos",
+                      nota="mínimo y máximo de coef de E2-R1 y E2-R1-v1 a v11 en tabla.csv (variantes pre-registradas; no es un intervalo "
+                      f"de confianza); mínimo en {mv.coef.idxmin()}, máximo en {mv.coef.idxmax()}", ficha=_rel(d / "tabla.csv"),
+                      mn=mv.coef.min(), mx=mv.coef.max(), **diag))
+    res.append(_cifra("V18-AUX-E2-R1-SERPAVI", "Coeficiente de la variante de E2-R1 con el alquiler mediano de SERPAVI por municipio "
+                      "(anual 2016-2021), con IC95", v9.coef, unidad="log del alquiler mediano de SERPAVI (stock de contratos)",
+                      nota=f"variante E2-R1-v9 de tabla.csv ({v9.nota}); SERPAVI mide la renta del stock de contratos, no la de los "
+                      "contratos nuevos", ficha=_rel(d / "tabla.csv"), mn=v9.ic95_lo, mx=v9.ic95_hi,
+                      **{**diag, "periodo": "2016-2021"}))
+    res.append(_cifra("V18-AUX-E2-R1-ROTH-SESGO", "Sesgo en la ventana posterior que implicaría la pendiente previa detectable al 80 % "
+                      "(potencia de Roth) en E2-R1", rj["sesgo_implicado_post"], unidad="log de la renta media de los contratos nuevos",
+                      nota=f"diagnosticos.E2-R1.sesgo_implicado_post de resultado.json (pendiente detectable "
+                      f"{rj['pendiente_detectable_80']:.4f} por trimestre); un sesgo de este tamaño no se detectaría con la prueba de "
+                      "pretendencias", ficha=_rel(d / "resultado.json"), **diag))
+    res.append(_cifra("V18-AUX-E2-R1-HONEST-M05", "Intervalo de Honest DiD de E2-R1 con M̄ = 0,5 (IC95)", None,
+                      unidad="log de la renta media de los contratos nuevos", nota="diagnosticos.E2-R1.honest (M̄ = 0,5) de resultado.json; "
+                      "con M̄ > 0 la herramienta es válida pero conservadora y sin potencia en el Monte Carlo (adenda 1.12): informativo, "
+                      "no decide la clase", ficha=_rel(d / "resultado.json"), mn=hon["ic95"][0], mx=hon["ic95"][1], **diag))
+    return res
+
+
+def _aux_k12() -> list[dict]:
+    """Cifras que el Documento de Trabajo cita tras la revisión de la ronda 1 (K12): F1 fuera de muestra, E1-R3, E8-R1, BVAR, umbrales."""
+    res = []
+    est = OUT / "estimacion"
+    # F1 fuera de muestra (K1 de v6.1: «predice mejor» solo si supera a la línea base más exigente)
+    src = est / "f_conjunto" / "resultado.json"
+    fm = json.loads(src.read_text(encoding="utf-8"))["fuera_muestra"]
+    fh = json.loads((est / "f_conjunto" / "hechos.json").read_text(encoding="utf-8"))
+    fu = next(h["fuentes"] for h in fh if h["id"] == "V18-F1-R1")
+    comun = dict(periodo="1999T1-2026T2", cobertura="España (nacional trimestral; bloques con embargo)", fuentes=fu + [_rel(src)],
+                 clase=check_v18.DIAGNOSTICO, ficha=_rel(src))
+    nota = f"fuera_muestra de resultado.json: {fm['diseno']}; {fm['n_prueba']} observaciones de prueba; misma muestra para todos los modelos"
+    for k, nom in (("F1-ECM", "ECM"), ("AR(4)", "AR4"), ("ECM v1 (aprox.)", "ECMV1")):
+        res.append(_cifra(f"V18-AUX-F1-OOS-RMSE-{nom}", f"RMSE fuera de muestra a un paso del modelo {k} (precio real, trimestral)",
+                          fm["rmse"][k], unidad="% (variación trimestral del precio real)", nota=nota, **comun))
+    res.append(_cifra("V18-AUX-F1-OOS-N", "Observaciones de prueba de la evaluación fuera de muestra de F1", fm["n_prueba"],
+                      unidad="trimestres", nota=nota, **comun))
+    res.append(_cifra("V18-AUX-F1-OOS-DM-P", "p del contraste de Diebold-Mariano (HLN) de F1-ECM frente a AR(4)", fm["dm_vs_ar4"]["p"],
+                      unidad="p-valor", nota=nota, **comun))
+    res.append(_cifra("V18-AUX-F1-OOS-CW-P", "p unilateral del contraste de Clark-West (AR(4) anidado en F1-ECM)", fm["cw"]["p_una_cola"],
+                      unidad="p-valor", nota=nota, **comun))
+    res.append(_cifra("V18-AUX-F1-OOS-MCS-P", "p del conjunto de confianza de modelos (MCS) para F1-ECM", fm["mcs"]["p"]["F1-ECM"],
+                      unidad="p-valor", nota=nota + f"; dentro del MCS al 90 %: {', '.join(fm['mcs']['dentro_90'])}", **comun))
+    # E1-R3: pretendencias, unidades de la estimación y razón con la referencia
+    t = pd.read_csv(est / "e1" / "tabla.csv").set_index("id").loc["E1-R3"]
+    rj = json.loads((est / "e1" / "resultado.json").read_text(encoding="utf-8"))["diagnosticos"]["E1-R3"]
+    e1 = {h["id"]: h for h in json.loads((est / "e1" / "hechos.json").read_text(encoding="utf-8"))}["V18-E1-R3"]
+    comun = dict(periodo=str(t.ventana), cobertura="Barcelona (secciones censales no selladas)", fuentes=e1["fuentes"],
+                 clase=check_v18.DIAGNOSTICO, ficha=_rel(est / "e1" / "tabla.csv"))
+    res.append(_cifra("V18-AUX-E1-R3-PRETEND-P", "p del contraste conjunto de los adelantos de 2011 y 2012 en E1-R3 (pretendencias)",
+                      rj["pretendencias_p"], unidad="p-valor", nota="diagnosticos.E1-R3.pretendencias_p de resultado.json; con p < 0,01 "
+                      "la regla del plan lo trata como fallo decisivo", **comun))
+    res.append(_cifra("V18-AUX-E1-R3-N", "Secciones censales con dato en la estimación de E1-R3", t.n_unidades, unidad="secciones",
+                      nota="n_unidades de tabla.csv (la cobertura de V18-E1-R3 cuenta las secciones de la muestra antes de exigir "
+                      "SERPAVI en todo el periodo)", **comun))
+    res.append(_cifra("V18-AUX-E1-R3-RAZON", "Razón entre el coeficiente de E1-R3 y la referencia de Segú (2018)", t.razon_ref,
+                      unidad="razón", nota="razon_ref de tabla.csv (etiqueta I6, no interviene en la clase)", **comun))
+    # E8-R1: p tras Holm y número de comunidades
+    t = pd.read_csv(est / "e8" / "tabla.csv").set_index("id").loc["E8-R1"]
+    e8 = {h["id"]: h for h in json.loads((est / "e8" / "hechos.json").read_text(encoding="utf-8"))}["V18-E8-R1"]
+    comun = dict(periodo=e8["periodo"], cobertura="España (provincias de las comunidades de régimen común no selladas)",
+                 fuentes=e8["fuentes"], clase=check_v18.DIAGNOSTICO, ficha=_rel(est / "e8" / "tabla.csv"))
+    res.append(_cifra("V18-AUX-E8-R1-P-HOLM", "p de E8-R1 tras la corrección de Holm con la coprincipal V16-Q6-p", t.p_holm,
+                      unidad="p-valor", nota="p_holm de tabla.csv (p de aleatorización de calendarios corregido por Holm)", **comun))
+    res.append(_cifra("V18-AUX-E8-R1-NCCAA", "Comunidades autónomas en la muestra de E8-R1", t.n_comunidades, unidad="comunidades",
+                      nota="n_comunidades de tabla.csv", **comun))
+    # BVAR: proporción de extracciones explosivas del posterior
+    src = est / "e7_bvar" / "resultado.json"
+    eb = json.loads(src.read_text(encoding="utf-8"))["diagnosticos"]["estabilidad"]
+    for k, per in (("R3", "2008T1-2022T4"), ("A1", "2008T1-2026T2")):
+        res.append(_cifra(f"V18-AUX-E7-{k}-EXPLOSIVAS", f"Extracciones del posterior con raíz máxima mayor que 1 en E7-{k} (BVAR)",
+                          100 * eb[f"{k}_proporcion_extracciones_explosivas"], unidad="% de las extracciones", periodo=per,
+                          cobertura="España (nacional)", fuentes=[_rel(src)], clase=check_v18.DIAGNOSTICO, ficha=_rel(src),
+                          nota=f"diagnosticos.estabilidad.{k}_proporcion_extracciones_explosivas de resultado.json, en %; raíz máxima "
+                          f"media del posterior {eb[f'{k}_raiz_maxima_media_posterior']}"))
+    # Umbrales y bandas fijados antes de estimar (copiados del texto del plan, de la adenda y del Monte Carlo)
+    ad = RAIZ / "docs" / "v18" / "plan_replicacion_adenda.md"
+    ta = ad.read_text(encoding="utf-8")
+    bv = OUT / "montecarlo" / "bvar" / "informe.md"
+    tb = bv.read_text(encoding="utf-8")
+    num = r"(\d+,\d+)"
+    m_ad = _buscar(ta, rf"\*\*Apta\.\*\* Tamaño al 5 % en \[{num}; {num}\] y cobertura al 95 % en \[{num}; {num}\]", _rel(ad))
+    m_en = _buscar(tb, rf"Criterio del encargo: APTO si el tamaño al 5 % está en \[{num}; {num}\] y la cobertura al 95 % .*? en "
+                       rf"\[{num}; {num}\]", _rel(bv))
+    m_bv = _buscar(tb, r"cobertura 68 % [\d.]+ fuera de \[([\d.]+); ([\d.]+)\].*?cobertura 90 % [\d.]+ fuera de \[([\d.]+); ([\d.]+)\]", _rel(bv))
+    m_h20 = _buscar(ta, r"Si 1/HHI < (\d+), la inferencia principal es el cluster por provincia", _rel(ad))
+    m_h10 = _buscar(ta, r"En E9, 1/HHI < (\d+) implica NO ESTIMABLE", _rel(ad))
+    comun = dict(periodo="2026", cobertura="regla del pre-registro interno (sin datos)", clase="NO ESTIMABLE")
+    for k, ind, mn, mx, fuente in (
+            ("CRIT-ADENDA-TAM", "Banda de tamaño al 5 % de una herramienta apta (adenda 1.12)", m_ad.group(1), m_ad.group(2), ad),
+            ("CRIT-ADENDA-COB", "Banda de cobertura al 95 % de una herramienta apta (adenda 1.12)", m_ad.group(3), m_ad.group(4), ad),
+            ("CRIT-ENCARGO-TAM", "Banda de tamaño al 5 % del criterio del encargo del Monte Carlo", m_en.group(1), m_en.group(2), bv),
+            ("CRIT-ENCARGO-COB", "Banda de cobertura al 95 % del criterio del encargo del Monte Carlo", m_en.group(3), m_en.group(4), bv),
+            ("CRIT-BVAR-COB68", "Banda de cobertura de las bandas del 68 % del BVAR (Monte Carlo)", m_bv.group(1), m_bv.group(2), bv),
+            ("CRIT-BVAR-COB90", "Banda de cobertura de las bandas del 90 % del BVAR (Monte Carlo)", m_bv.group(3), m_bv.group(4), bv)):
+        res.append(_cifra(f"V18-AUX-{k}", ind, None, unidad="proporción", fuentes=[_rel(fuente)], ficha=_rel(fuente),
+                          nota="constante fijada antes de estimar, copiada del texto de origen", mn=_num_es(mn), mx=_num_es(mx), **comun))
+    for k, ind, m in (("CRIT-HHI-INFERENCIA", "Choques efectivos (1/HHI) por debajo de los cuales la inferencia principal de un "
+                       "shift-share pasa a Webb por provincia con AR (adenda 1.13)", m_h20),
+                      ("CRIT-HHI-E9", "Choques efectivos (1/HHI) por debajo de los cuales E9 es NO ESTIMABLE (adenda 1.13)", m_h10)):
+        res.append(_cifra(f"V18-AUX-{k}", ind, int(m.group(1)), unidad="choques efectivos", fuentes=[_rel(ad)], ficha=_rel(ad),
+                          nota="constante fijada antes de estimar, copiada de la adenda; el umbral de NO ESTIMABLE solo existe en E9",
+                          **comun))
     return res
 
 
@@ -436,19 +571,61 @@ def _aux_d3() -> list[dict]:
 
 def auxiliares() -> list[dict]:
     return (_aux_literatura() + _aux_fichas() + _aux_f5() + _aux_reproduccion() + _aux_montecarlo() + _aux_estimacion()
-            + _aux_catalogo() + _aux_d3())
+            + _aux_catalogo() + _aux_d3() + _aux_k12())
+
+
+# ---------------------------------------------------------------------------------------------------------------------------
+# Clase propia por especificación (K12; árbitro, hallazgo 2): cada cifra lleva la clase de su propia especificación, no la del
+# estudio. Las robusteces B6 son «robustez a posteriori»; las especificaciones que su resultado.json declara «no se clasifica» son
+# «sin clasificar (coprincipal informativa)» (coprincipales, -P-) o «diagnóstico o variante (sin clase propia)»; la prueba de
+# reversión de E2-R1 es un diagnóstico. La única estimación designada de clase SUGESTIVO es E2-R1.
+# ---------------------------------------------------------------------------------------------------------------------------
+CLASE_FIJA = {"V18-E2-R1-REV": (check_v18.DIAGNOSTICO, "prueba de reversión de E2-R1 (adenda, AD-E2-R1): diagnóstico, sin clase propia")}
+SUGESTIVO_PERMITIDO = {"V18-E2-R1", "V18-AUX-E2-R1-PCT", "V18-B5-E2"}   # E2-R1, su transformación en % y la fila B5 (clase de la designada)
+
+
+def _no_se_clasifica() -> set[str]:
+    ids = set()
+    for p in sorted((OUT / "estimacion").glob("*/resultado.json")):
+        r = json.loads(p.read_text(encoding="utf-8"))
+        c = r.get("clasificaciones") or r.get("clasificacion_v18_por_especificacion") or {}
+        ids |= {f"V18-{k}" for k, v in c.items() if str(v).startswith("no se clasifica")}
+    return ids
+
+
+def clase_propia(h: dict, no_clasif: set[str]) -> tuple[str, str]:
+    """(clase, motivo) de la cifra según su propia especificación; motivo vacío si la clase no cambia."""
+    i, c = str(h["id"]), h.get("clasificacion_v18")
+    if i in CLASE_FIJA:
+        return CLASE_FIJA[i]
+    if re.match(r"V18-E\d+-B6-", i):
+        return check_v18.ROBUSTEZ_POSTERIORI, "robustez añadida tras ver el resultado (B6): no decide la clase"
+    if i in no_clasif and any(h.get(k) is not None for k in ("valor", "min", "max")):
+        if "-P-" in i:
+            return check_v18.SIN_CLASIFICAR, "coprincipal que el plan no clasifica (resultado.json: «no se clasifica»)"
+        return check_v18.DIAGNOSTICO, "variante que su resultado.json no clasifica"
+    return c, ""
 
 
 def consolidar() -> tuple[list[dict], list[str]]:
     filas, err = [], []
     paises = _paises_b5()
+    no_clasif = _no_se_clasifica()
     for p in fuentes_hechos():
         rel = str(p.relative_to(RAIZ))
         for h in json.loads(p.read_text(encoding="utf-8")):
             h = dict(h)
             h.setdefault("ficha", rel)
+            clase, motivo = clase_propia(h, no_clasif)
+            if motivo and clase != h.get("clasificacion_v18"):
+                h["nota"] = f"{h.get('nota', '')} Clase propia de la especificación (K12): {clase}; {motivo}.".strip()
+                h["clasificacion_v18"] = clase
             filas.append(h)
     filas += auxiliares()
+    con_cifra = [h for h in filas if any(h.get(k) is not None for k in ("valor", "min", "max"))]
+    sobran = sorted(h["id"] for h in con_cifra if h.get("clasificacion_v18") == "SUGESTIVO" and h["id"] not in SUGESTIVO_PERMITIDO)
+    if sobran:
+        err.append(f"cifras SUGESTIVO fuera de E2-R1 (K12): {sobran}")
     vistos: set[str] = set()
     for h in filas:
         i = str(h.get("id", ""))

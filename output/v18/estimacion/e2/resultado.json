@@ -314,5 +314,5 @@
   "dm_vs_ar4": null,
   "nota": "no aplica: diseño de evaluación (diferencias en diferencias), no predictivo; la evaluación sellada diferida de la adenda 1.11 no incluye a E2-R1 (episodio histórico)"
  },
- "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. Clasificación provisional: falta I8 (réplica ciega, B6). Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
+ "notas": "Análisis V18; capa C4; pre-registro interno plan-replicacion-v18. I8: la réplica ciega de E2-R1 coincide (output/v18/replica/e2_r1); E2-R1c no tiene réplica ciega y su clase es provisional hasta I8. Ninguna estimación IDENTIFICADO: sin contradicción con lo publicado (parada G no activada)."
 }

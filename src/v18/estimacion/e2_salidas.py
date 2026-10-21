@@ -17,7 +17,8 @@ import e2_diseno as DS  # noqa: E402
 ALCANCE_TERRITORIAL = "lectura con sellado.filtrar y holdout.excluir_sellados_v6"
 FUENTES = ["Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)", "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
            "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"]
-I8 = "Clasificación provisional: falta I8 (réplica ciega, B6)"
+I8 = ("I8: la réplica ciega de E2-R1 coincide (output/v18/replica/e2_r1); E2-R1c no tiene réplica ciega y su clase es provisional "
+      "hasta I8")   # K12 (árbitro, hallazgo 18)
 FRASE_K9 = ("Entre 2020T4 y 2022T1, la renta media de los contratos nuevos registrados en el Incasòl en los 49 municipios sujetos a la Ley 11/2020 (sin Barcelona ciudad) se situó, "
             "respecto a 2019, un 3,8 % por debajo (log −0,038; IC95 −0,051 a −0,026) de la de municipios catalanes no regulados con mercado tensionado. La diferencia no es estable: "
             "es máxima en 2021T1 (−0,058), se reduce de forma gradual hasta no distinguirse de cero en 2022T1, antes de la STC 37/2022, sin cambio posterior, y baja a −0,023 "
@@ -163,7 +164,7 @@ def escribir(OUT: Path, d: dict, est: pd.DataFrame, tab: pd.DataFrame, diag: dic
     txt = f"""# V18 · E2 · Topes al alquiler (Ley 11/2020 de Cataluña, Incasòl)
 
 **Análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Nivel de evidencia EXPLORATORIO. La clasificación V18 va en el campo `clasificacion_v18` y no cambia la capa.
-Clasificaciones provisionales: falta I8 (réplica ciega, B6). Código: `src/v18/estimacion/e2_topes.py` (+ `e2_datos.py`, `e2_diseno.py`, `e2_estim.py`, `e2_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; {segundos:.0f} s.
+{I8}. Código: `src/v18/estimacion/e2_topes.py` (+ `e2_datos.py`, `e2_diseno.py`, `e2_estim.py`, `e2_salidas.py`, `_e2e8_comun.py`); SEED 20261010; sin red; {segundos:.0f} s.
 
 ## 1. Resumen
 - **E2-R1 (principal)**: coeficiente de Reg × Post sobre el log de la renta media de contratos nuevos = **{f(t.loc['E2-R1','coef'])}** (IC95 de Webb {f(t.loc['E2-R1','ic95_lo'])}; {f(t.loc['E2-R1','ic95_hi'])}; p tras Holm {f(t.loc['E2-R1','p_holm'], 5)}). Clase V18: **{cls['E2-R1']['clase']}**. Razón con la referencia (−0,045 de Jofre-Monseny et al., 2023): {f(razon, 2)}, etiqueta «coherente» (razón en [1/3; 3]; no interviene en la clase).
@@ -217,7 +218,7 @@ Ajuste de Benjamini-Yekutieli al 10 % dentro de cada identificador (q_by). Webb 
 - **E2-R1: {cls['E2-R1']['clase']}.** Razones: {'; '.join(cls['E2-R1']['razones'])}.
 - **E2-R1c: {cls['E2-R1c']['clase']}.** Razones: {'; '.join(cls['E2-R1c']['razones'])}. Lectura: coeficiente no significativo; no hay clase SUGESTIVO sin significación (K7): al no superar I1-I5 (placebo de fecha, persistencia tras la STC) la clase es ASOCIACIÓN, no NO CONCLUYENTE.
 - I6 se publica como etiqueta (razón con la referencia); no interviene en la clase ni en B5.
-- I8 pendiente para ambas (replicador-ciego). El lenguaje de ambas cifras es el de una asociación estimada.
+- {I8}. El lenguaje de ambas cifras es el de una asociación estimada.
 
 ## 8. Desviaciones y lecturas de las reglas (se recogen en docs/v18/desviaciones.md)
 - **D1 (corregida en K9). Paro registrado.** La versión anterior de esta desviación («el paro de 2020 no está en la base») era falsa: el fichero mensual del SEPE por municipio (fichero paro_registrado_municipio_mensual.csv.gz de sepe_municipios, v9) cubre 2006-2026. La principal lleva ln(1 + paro) como media trimestral de los meses del fichero (adenda R-1); falta diciembre de 2020 en el fichero, así que 2020T4 es la media de octubre y noviembre. E2-R1-v5 («sin paro») es ahora una variante estimada y desaparece la holgura E2-R1-h1. Los ERTE por municipio no están en el repositorio.

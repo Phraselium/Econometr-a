@@ -33,9 +33,11 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 
 - 2026-10-20 · **Fase 6, primera parte (infraestructura del Documento de Trabajo; pendiente de make del orquestador).** src/v18/f6_hechos.py (570 cifras -> output/v18/f6/hechos.json; FASES["f6"] = f6_hechos, cifras_clave, f6_documento); cifras_clave lee ese fichero y añade la columna clasificacion_v18 (423 filas V18- nuevas; las anteriores sin cambios, comprobado sobre una copia); check_v13 admite V18- solo con origen output/v18/f6/hechos.json; prefijos V18- en tests/test_k4a_cifras.py; render.muestra_rango trata V18 como V17. src/v18/f6_documento.py: esqueleto en output/v18/documento/plantilla/ -> documento_v18.md (falla si un marcador no existe) y tablas_v18.xlsx (impactos, magnitudes, estimaciones, contabilidad). publicacion.py copia ambos a publicacion/documento_v18/. check_v18, control 6: documento publicado y lenguaje causal por sección. Escrituras autorizadas de cifras_clave.csv/.md registradas. Decisiones en K11.
 
+- 2026-10-20 · **Fase 5 cerrada.** Magnitudes preferidas y contabilidad (K10): 100 % «no explicado» en la tabla principal.
+- 2026-10-21 · **Fase 6 cerrada.** Documento de Trabajo en publicacion/documento_v18/ (árbitro: dos rondas; verificador de cifras: dos rondas, 0 discrepancias numéricas); cifras V18 en cifras_clave con ERRATA de sus correcciones (K11-K14); make publicacion, make web y make check limpios. Resumen final: docs/v18/resumen_final.md.
+
 ## Siguiente
-- Orquestador: `python3 src/v5/cifras_clave.py`, `python3 src/v18/f6_documento.py`, `make publicacion` y `make check` (hasta entonces check_v18 da 2 errores, publicacion/documento_v18/ no existe, y tests/v7_1/test_publicacion y tests/v18/test_infra_v18::test_repositorio_pasa fallan).
-- Fase 6, segunda parte: redacción del Documento de Trabajo sobre la plantilla, árbitro-final y verificador-cifras.
+- V18 cerrada. Tareas del autor en docs/v18/tareas_autor.md y en el resumen final.
 
 ## Subagentes y tokens
 

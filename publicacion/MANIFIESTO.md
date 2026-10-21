@@ -28,9 +28,11 @@ Generado por `make publicacion` (src/v7_1/publicacion.py). Ningún fichero de es
 | atlas_regional/guia_lectura.md | output/v7_1/atlas/guia_lectura.md | `5c9b4b7374468d5d4598fc35c1e62742a23a85047163c2c703970fddd969c872` |
 | atlas_regional/tablas_regionales.xlsx | output/v7_1/atlas/tablas_regionales.xlsx | `566261bdf785de32fa6cf61b545bf0948eec59301aa82e463d1c7b76ab41de34` |
 | atlas_v12.md | output/v12/atlas_v12.md | `ee7f40631a403531230053edeb8c5a3710d511068ad58b746004e75f53f24ec8` |
-| cifras_clave.csv | output/v5/cifras_clave.csv | `143849d1c697de6b7862d690c3cfdcd0d9acc58ce2a4a0078a303f69af478e3b` |
+| cifras_clave.csv | output/v5/cifras_clave.csv | `c4cf949a7e8ea5a25902f327357fff3871e348a5f9b3cc8df517daa3380c70b5` |
 | cifras_no_publicadas_1_0.csv | proyecto.json (terceros_1_0) y docs/v14/cifras_terceros.csv | `01c846704182f19e7b3297045a0a692fddd10a26920e43a758dd8640a986cd87` |
 | cotas_v9.md | output/v9/f4/cotas.md | `896fa98d33b01c934c5e7543d3453d01120d628c3512cbb3056c2c087aed0940` |
+| documento_v18/documento_v18.md | output/v18/documento/documento_v18.md | `865d649d0421c597a22c4f433ab03c721dda5ad946e10310d971bd70c2c1a1d7` |
+| documento_v18/tablas_v18.xlsx | output/v18/documento/tablas_v18.xlsx | `7dbc491eb22b109e255c0da0d9be25684e31a055f18351c3c1f01198398f5bcc` |
 | dosis_coste.csv | output/v7_1/S1/dosis_coste.csv | `6e7c2b8fa8ada5992399be00de87309a274ccc607a7aba04c88f3f0590c6f822` |
 | informe_econometrico_v8.md | output/v8/informe_econometrico.md | `09824f977a1643c772ff48a09359c7f9e8c026fd758575e993a25952ac880f8e` |
 | informe_integral/informe_integral.md | output/v16/informe/informe_integral.md | `3b6626520e755167c0c92ce29f823447f8189d9b9c1904e18e3fa916d032ed55` |

@@ -9,25 +9,39 @@ palabra causal en el indicador ni en la nota (K2; mismas expresiones que check_v
 - cobertura real: el territorio de la cifra. Las coberturas que solo describen la muestra («N = 234», «4 ramas», «sin datos»,
   «—», el número de estudios de B5…) se sustituyen por el territorio del diseño, con la descripción original entre paréntesis;
 - fecha_dato (último año del periodo) y ficha (el hechos.json de origen).
-Determinista; sin red; solo lee output/v18. Uso: python3 src/v18/f6_hechos.py
+Además (auxiliares(), ids V18-AUX-*) copia, sin recalcular, las cifras que el Documento de Trabajo cita y que no tenían id:
+valores publicados de la literatura (output/v18/f5/magnitudes_estudios.csv y fichas de docs/v18/bib), contabilidad provincial,
+comparación con V8 y sensibilidad de B5 (output/v18/f5), reproducciones (output/v18/reproduccion), Monte Carlo
+(output/v18/montecarlo), variantes de E1 y E2 (output/v18/estimacion), recuentos del catálogo (output/v18/f1) y cuotas por
+subperiodo de V17-D3 (output/v17/d3; las del periodo completo ya son V17-D3-VARIANZA-COMUN-* y no se duplican). Las únicas
+operaciones son selección de filas, recuentos, mínimo y máximo de filas ya publicadas, el cambio de unidad de proporción a %
+y la transformación 100·(exp(b)−1) de E2-R1, marcada como tal.
+Determinista; sin red; solo lee salidas ya generadas (output/v17, output/v18) y fichas (docs/v18/bib).
+Uso: python3 src/v18/f6_hechos.py
 """
 from __future__ import annotations
 
 import csv
 import json
+import math
 import re
 import sys
 from pathlib import Path
+
+import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ / "src" / "v18"))
 import check_v18  # noqa: E402
 
-ALCANCE_TERRITORIAL = "sin lectura de datos"   # solo lee salidas V18 ya generadas (guarda de fuga v6 de check_v17)
+ALCANCE_TERRITORIAL = "sin lectura de datos"   # solo lee salidas V17/V18 ya generadas y fichas (guarda de fuga v6 de check_v17)
 OUT = RAIZ / "output" / "v18"
+BIB = RAIZ / "docs" / "v18" / "bib"
 SALIDA = OUT / "f6" / "hechos.json"
 FECHA = "2026-10-20"
-N_ESPERADO = 570
+N_BASE = 570          # cifras de los hechos.json de estimación y de f5
+N_AUX = 135           # cifras V18-AUX-* de auxiliares()
+N_ESPERADO = N_BASE + N_AUX
 TIPOS_RANGO = ("rango", "referencias", "sin rango")
 
 # Territorio del diseño de cada estimación (docs/v18/plan_replicacion.md), para las coberturas que solo describen la muestra.
@@ -70,6 +84,8 @@ def _paises_b5() -> dict[str, str]:
 def cobertura_real(h: dict, paises: dict[str, str]) -> str:
     c = re.sub(r"[;\s]+$", "", str(h.get("cobertura") or "").strip())
     i = str(h["id"])
+    if i.startswith("V18-AUX-") and c:   # auxiliares: la cobertura ya es el territorio (o la simulación) de la fila de origen
+        return c
     m = re.match(r"V18-B5-(E\d+)", i)
     if m:   # B5: magnitud de la literatura y, en su caso, estimación propia; la cobertura es la de los estudios
         terr = f"estudios de {paises[m.group(1)]}" if m.group(1) in paises else "literatura sin estudios con error típico en la unidad"
@@ -91,6 +107,338 @@ def fuentes_hechos() -> list[Path]:
     return sorted((OUT / "estimacion").glob("*/hechos.json")) + [OUT / "f5" / "hechos.json"]
 
 
+# ---------------------------------------------------------------------------------------------------------------------------
+# Cifras auxiliares V18-AUX-* (citadas en el Documento de Trabajo; copiadas de su salida de origen, sin recalcular)
+# ---------------------------------------------------------------------------------------------------------------------------
+NOTA_LIT = "magnitud de la literatura ({estado}); valor del autor en su unidad, sin conversión; no es estimación del proyecto"
+_PREPLAN = "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+
+
+def _f(x) -> float | None:
+    """Número o None (NaN, vacío o texto no numérico)."""
+    try:
+        v = float(x)
+    except (TypeError, ValueError):
+        return None
+    return None if math.isnan(v) else float(f"{v:.10g}")   # 10 cifras significativas: quita el ruido de coma flotante
+
+
+def _cifra(i: str, indicador: str, valor, unidad: str, periodo: str, cobertura: str, fuentes: list[str], clase: str, nota: str,
+           ficha: str, mn=None, mx=None) -> dict:
+    return {"id": i, "indicador": indicador, "valor": _f(valor), "min": _f(mn), "max": _f(mx), "unidad": unidad,
+            "periodo": periodo, "cobertura": cobertura, "fuentes": fuentes, "capa": "C4", "clasificacion_v18": clase,
+            "nota": nota, "ficha": ficha}
+
+
+def _rel(p: Path) -> str:
+    return str(p.relative_to(RAIZ))
+
+
+def _num_es(s: str) -> float:
+    return float(s.replace(".", "").replace(",", ".")) if "," in s else float(s)
+
+
+def _buscar(texto: str, patron: str, donde: str) -> re.Match:
+    m = re.search(patron, texto)
+    if not m:
+        raise ValueError(f"{donde}: no se encuentra «{patron}» (la ficha cambió: revisar auxiliares())")
+    return m
+
+
+def _fichas_bib() -> dict[str, Path]:
+    return {p.stem: p for p in BIB.glob("*/*.md")}
+
+
+def _aux_literatura() -> list[dict]:
+    """Valor publicado y error típico de cada estudio de la literatura (magnitudes_estudios.csv), con la ficha como fuente."""
+    src = OUT / "f5" / "magnitudes_estudios.csv"
+    fichas = _fichas_bib()
+    res = []
+    for r in pd.read_csv(src).itertuples():
+        if str(r.estado_ficha).startswith("estimación propia") or _f(r.valor) is None:
+            continue
+        clave = re.sub(r"[^A-Z0-9]+", "-", str(r.estudio).upper()).strip("-")
+        ficha = _rel(fichas[r.estudio]) if r.estudio in fichas else _rel(src)
+        lugar = str(r.referencia).split("), ", 1)[-1]
+        per = re.findall(r"\d{4}(?:T\d)?-\d{4}", lugar) or re.findall(r"\((\d{4})", str(r.referencia))
+        nota = NOTA_LIT.format(estado=r.estado_ficha) + f"; entra en la magnitud preferida (B5): {r.entra_en_B5}"
+        comun = dict(unidad=str(r.unidad_del_autor), periodo=per[-1] if per else str(r.referencia),
+                     cobertura=f"{r.pais}: {lugar}", fuentes=[ficha, _rel(src)], clase="NO ESTIMABLE", ficha=ficha)
+        res.append(_cifra(f"V18-AUX-LIT-{clave}", f"Valor publicado por {r.referencia} (factor {r.factor}, literatura)", r.valor,
+                          nota=nota, **comun))
+        if _f(r.error_tipico) is not None:
+            res.append(_cifra(f"V18-AUX-LIT-{clave}-ET", f"Error típico del valor publicado por {r.referencia} (factor {r.factor})",
+                              r.error_tipico, nota=nota + f"; origen del error: {r.origen_error}", **comun))
+    return res
+
+
+def _aux_fichas() -> list[dict]:
+    """García-López et al. (2020) y González y Ortega (2009, 2011, 2013): cifras del texto de los autores, leídas de la ficha."""
+    f = _fichas_bib()
+    res = []
+    gl = f["garcialopez2020"]
+    t = gl.read_text(encoding="utf-8")
+    m = _buscar(t, r"barrio medio \(nivel de 2016\): \+(\d+(?:,\d+)?) % en alquileres", _rel(gl))
+    d = _buscar(t, r"decil superior de actividad: \+(\d+(?:,\d+)?) %", _rel(gl))
+    comun = dict(unidad="% del alquiler anunciado (valor de los autores)", periodo="2016",
+                 cobertura="Barcelona (áreas estadísticas básicas)", fuentes=[_rel(gl)], clase="NO ESTIMABLE", ficha=_rel(gl))
+    nota = NOTA_LIT.format(estado="VERIFICADA") + "; cifra del resumen de los autores (p. 1)"
+    res.append(_cifra("V18-AUX-LIT-GL2020-BARRIO-MEDIO", "Variación del alquiler asociada a Airbnb en el barrio medio según "
+                      "García-López et al. (2020), Barcelona", _num_es(m.group(1)), nota=nota, **comun))
+    res.append(_cifra("V18-AUX-LIT-GL2020-DECIL-ALTO", "Variación del alquiler asociada a Airbnb en el decil de mayor actividad "
+                      "según García-López et al. (2020), Barcelona", _num_es(d.group(1)), nota=nota, **comun))
+    iza = f["gonzalez_ortega_2009_iza"]
+    t = iza.read_text(encoding="utf-8")
+    b = _buscar(t, r"(\d+(?:,\d+)?) euros/m² por cada punto de población de entrada de extranjeros, error típico (\d+(?:,\d+)?)", _rel(iza))
+    a = _buscar(t, r"eleva el precio en torno al (\d+)%", _rel(iza))
+    comun = dict(periodo="1998-2008", cobertura="España (50 provincias)", fuentes=[_rel(iza)], clase="NO ESTIMABLE", ficha=_rel(iza))
+    nota = NOTA_LIT.format(estado="NO VERIFICADA") + "; versión IZA de 2009 de González y Ortega"
+    res.append(_cifra("V18-AUX-LIT-GO2009-EUR", "Coeficiente de la entrada de extranjeros sobre el precio en la versión IZA de "
+                      "2009 de González y Ortega (tabla 3, panel IV, col. 5)", _num_es(b.group(1)),
+                      unidad="€/m² por punto de población", nota=nota, **comun))
+    res.append(_cifra("V18-AUX-LIT-GO2009-EUR-ET", "Error típico del coeficiente de la versión IZA de 2009 de González y Ortega",
+                      _num_es(b.group(2)), unidad="€/m² por punto de población", nota=nota, **comun))
+    res.append(_cifra("V18-AUX-LIT-GO2009-PRECIO-ACUM", "Aumento acumulado del precio asociado a la entrada media de "
+                      "extranjeros en la versión IZA de 2009 de González y Ortega (extrapolación lineal de los autores)",
+                      _num_es(a.group(1)), unidad="% del precio", nota=nota + "; no es una fracción de la subida observada", **comun))
+    chi = f["gonzalez_ortega_2011_chicagofed"]
+    t = chi.read_text(encoding="utf-8")
+    c = _buscar(t, r"en torno al (\d+)% del aumento de precios", _rel(chi))
+    res.append(_cifra("V18-AUX-LIT-GO2011-FRACCION", "Fracción del aumento de precios asociada a la inmigración según la versión "
+                      "Chicago Fed de 2011 de González y Ortega (resumen)", _num_es(c.group(1)), unidad="% del aumento de precios",
+                      periodo="2001-2010", cobertura="España (provincias)", fuentes=[_rel(chi)], clase="NO ESTIMABLE",
+                      nota=NOTA_LIT.format(estado="NO VERIFICADA") + "; cifra del resumen de los autores", ficha=_rel(chi)))
+    go = f["gonzalez_ortega_2013"]
+    t = go.read_text(encoding="utf-8")
+    _buscar(t, r"un cuarto del aumento de precios", _rel(go))
+    cat = pd.read_csv(OUT / "f1" / "catalogo.csv")
+    estado = str(cat.loc[cat.fichero == "gonzalez_ortega_2013.md", "estado"].iloc[0])
+    res.append(_cifra("V18-AUX-LIT-GO2013-FRACCION", "Fracción del aumento de precios asociada a la inmigración según la edición "
+                      "de 2013 de González y Ortega (resumen: «un cuarto»)", 25, unidad="% del aumento de precios",
+                      periodo="2000-2010", cobertura="España (provincias)", fuentes=[_rel(go)], clase="NO ESTIMABLE",
+                      nota=NOTA_LIT.format(estado=estado) + "; «un cuarto» del resumen escrito como 25 % (transcripción, sin cálculo)",
+                      ficha=_rel(go)))
+    return res
+
+
+def _aux_f5() -> list[dict]:
+    res = []
+    # Contabilidad provincial: rango entre provincias de la variación observada relativa (la no explicada es idéntica)
+    src = OUT / "f5" / "contabilidad.csv"
+    c = pd.read_csv(src)
+    p = c[c.territorio_tipo == "provincia"]
+    obs = p[p.tipo_fila == "observado"].set_index(["resultado", "periodo", "territorio"]).obs_pp
+    noe = p[p.tipo_fila == "no_explicado"].set_index(["resultado", "periodo", "territorio"]).contrib_med
+    if not ((obs - noe.reindex(obs.index)).abs().fillna(0) < 1e-9).all():
+        raise ValueError("contabilidad.csv: la variación no explicada provincial ya no es igual a la observada (revisar el texto)")
+    fu = [_rel(src), "output/v18/f5/informe.md"]
+    nprov = int(p.territorio.nunique())
+    res.append(_cifra("V18-AUX-CONT-PROV-N", "Provincias no selladas con detalle de contabilidad (variación observada y sin explicar)",
+                      nprov, unidad="provincias", periodo="1995-2026", cobertura="España (provincias no selladas)", fuentes=fu,
+                      clase="NO ESTIMABLE", nota="recuento de provincias de contabilidad.csv", ficha=_rel(src)))
+    for (res_, per), g in obs.dropna().groupby(level=[0, 1]):
+        k = f"V18-AUX-CONT-PROV-{res_.upper()}-{per}"
+        res.append(_cifra(k, f"Variación observada del {res_} real relativa a la media de las provincias no selladas, {per}: mínimo "
+                          "y máximo entre provincias (igual a la variación sin explicar)", None, unidad="puntos (100·Δln)",
+                          periodo=per, cobertura=f"España ({len(g)} provincias no selladas)", fuentes=fu, clase="NO ESTIMABLE",
+                          nota="mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación "
+                          "propia, por lo que la variación sin explicar coincide con la observada", ficha=_rel(src),
+                          mn=g.min(), mx=g.max()))
+    # Comparación con V8
+    src = OUT / "f5" / "comparacion_v8.csv"
+    v = pd.read_csv(src)
+    ambos = v[v.v18_mediana.notna() & v.v8_mediana.notna()]
+    sig = ambos.mismo_signo.astype(str).str.lower().eq("true")
+    sol = ambos.intervalos_solapan.astype(str).str.lower().eq("true")
+    fact = ", ".join(sorted(ambos.factor_v18.unique()))
+    comun = dict(unidad="comparaciones", periodo="1995-2026", cobertura="España", fuentes=[_rel(src)], clase="NO ESTIMABLE",
+                 ficha=_rel(src))
+    nota = f"recuento de filas de comparacion_v8.csv con cifra en V8 y en V18 (factores {fact})"
+    res.append(_cifra("V18-AUX-V8-N", "Comparaciones con V8 con cifra en ambos lados", len(ambos), nota=nota, **comun))
+    res.append(_cifra("V18-AUX-V8-SIGNO", "Comparaciones con V8 en las que el signo coincide", int(sig.sum()), nota=nota, **comun))
+    res.append(_cifra("V18-AUX-V8-SOLAPE", "Comparaciones con V8 en las que las bandas se solapan", int(sol.sum()), nota=nota, **comun))
+    # Sensibilidad de B5: estrategia B de Hahn et al. en E2
+    src = OUT / "f5" / "sensibilidad_b5.csv"
+    s = pd.read_csv(src)
+    r = s[(s.factor == "E2") & (s.variante == "hahn_estrategia_B")].iloc[0]
+    res.append(_cifra("V18-AUX-B5-E2-HAHN-B", "Magnitud preferida de topes al alquiler (E2) con la estrategia B de Hahn et al. "
+                      "(sensibilidad de B5)", r.mu, unidad="log de la renta de los contratos regulados", periodo="2016-2024",
+                      cobertura=f"estudios de España, Francia y Alemania ({r.unidades})", fuentes=[_rel(src)], clase="NO ESTIMABLE",
+                      nota=f"sensibilidad: {r.estado}; I² {r.I2}; no cambia la tabla de magnitudes preferidas (regla fijada antes "
+                      "de combinar)", ficha=_rel(src), mn=r.lo, mx=r.hi))
+    return res
+
+
+def _aux_reproduccion() -> list[dict]:
+    res = []
+    base = OUT / "reproduccion"
+    # Borusyak, Hull y Jaravel (2022): conjunto de controles 5 (el de resultado.json); IC con el nulo impuesto, publicado y propio
+    d = base / "borusyak_hull_jaravel_2022"
+    t = pd.read_csv(d / "tabla.csv")
+    r = t[t.conjunto_controles == 5].iloc[0]
+    rj = json.loads((d / "resultado.json").read_text(encoding="utf-8"))
+    comun = dict(unidad="coeficiente IV (ADH 2013, nivel de choque)", periodo="1990-2007",
+                 cobertura=f"Estados Unidos ({int(r.n_py)} zonas de desplazamiento por periodo)",
+                 fuentes=[_rel(d / "tabla.csv"), _rel(d / "resultado.json"), _rel(d / "informe.md")], clase="NO ESTIMABLE",
+                 ficha=_rel(d / "resultado.json"))
+    nota = "reproducción del estudio original con los datos de sus autores (no usa datos del proyecto); conjunto de controles 5; " \
+           f"IC95 por inversión con el nulo impuesto; veredicto: {r.veredicto_beta}"
+    res.append(_cifra("V18-AUX-REP-BHJ-PUB", "Coeficiente publicado por Borusyak, Hull y Jaravel (2022), con su IC95", r.beta_pub,
+                      nota=nota, mn=r.ic_nulo_pub_izq, mx=r.ic_nulo_pub_der, **comun))
+    res.append(_cifra("V18-AUX-REP-BHJ-REP", "Coeficiente reproducido de Borusyak, Hull y Jaravel (2022), con su IC95", r.beta_py,
+                      nota=nota, mn=r.ic_nulo_py_izq, mx=r.ic_nulo_py_der, **comun))
+    assert rj["N"] == int(r.n_py)
+    # Chaves-Fonseca (2026), columna 6 (IV); Mense (2025), columna 3 (IV)
+    for clave, carpeta, fila, col_pub, col_se, col_rep, unidad, periodo, cob in (
+            ("CHAVES", "chavesfonseca2026", lambda t: t[t.columna == 6].iloc[0], "coef_publicado", "se_publicado", "coef_repro",
+             "ln del precio por 100 anuncios en el barrio (IV)", "2010-2018", "Madrid (barrios), 1.029 observaciones barrio-año"),
+            ("MENSE", "mense_2025", lambda t: t[(t.columna == 3) & t.parametro.str.startswith("oferta_nueva")].iloc[0],
+             "publicado", "se_publicado", "reproducido", "elasticidad del alquiler respecto a la oferta nueva (IV)", "2011-2018",
+             "Alemania (94 regiones de planificación)")):
+        d = base / carpeta
+        r = fila(pd.read_csv(d / "tabla.csv"))
+        rj = json.loads((d / "resultado.json").read_text(encoding="utf-8"))
+        comun = dict(unidad=unidad, periodo=periodo, cobertura=cob,
+                     fuentes=[_rel(d / "tabla.csv"), _rel(d / "resultado.json"), _rel(d / "informe.md")], clase="NO ESTIMABLE",
+                     ficha=_rel(d / "resultado.json"))
+        nota = "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); " \
+               f"veredicto: {r.veredicto}"
+        ref = "Chaves-Fonseca (2026)" if clave == "CHAVES" else "Mense (2025)"
+        res.append(_cifra(f"V18-AUX-REP-{clave}-PUB", f"Coeficiente publicado por {ref}", r[col_pub], nota=nota, **comun))
+        res.append(_cifra(f"V18-AUX-REP-{clave}-PUB-ET", f"Error típico publicado por {ref}", r[col_se], nota=nota, **comun))
+        res.append(_cifra(f"V18-AUX-REP-{clave}-REP", f"Coeficiente reproducido de {ref}, con su IC95", r[col_rep], nota=nota,
+                          mn=rj["ic95"][0], mx=rj["ic95"][1], **comun))
+    return res
+
+
+# Filas que deciden el veredicto de cada herramienta (columna «principal», «entra_en_veredicto» o «decisivo» cuando existe;
+# si no, la variante principal que nombra su resultado.json, en el horizonte decisivo h = 8 cuando lo hay).
+MC_FILAS = {
+    "aleatorizacion": lambda t: t.variante.str.contains("(plan)", regex=False),
+    "cs_webb": lambda t: t.variante == "webb_WCR_t_cluster_principal",
+    "sa_webb": lambda t: t.variante == "webb_WCR_t_cluster_principal",
+    "dcdh_aleatorizacion": lambda t: t.variante == "aleatorizacion_estudentizada",
+    "sdid_conley_taber": lambda t: t.variante == "conley_taber_sdid",
+    "lp_iv": lambda t: t.variante.isin(["AR_aumentado_EHW", "2SLS_NeweyWest_h+1", "2SLS_aumentado_EHW"]) & (t.h == 8),
+    "svar_proxy": lambda t: t.variante.isin(["AR_delta_NeweyWest4", "Wald_delta"]) & (t.h == 8),
+}
+
+
+def _verdadero(s: pd.Series) -> pd.Series:
+    return s.astype(str).str.lower().isin(["true", "1", "sí"])
+
+
+def _aux_montecarlo() -> list[dict]:
+    res = []
+    for d in sorted(p for p in (OUT / "montecarlo").iterdir() if (p / "tabla.csv").exists()):
+        t = pd.read_csv(d / "tabla.csv")
+        rj = json.loads((d / "resultado.json").read_text(encoding="utf-8"))
+        if d.name in MC_FILAS:
+            sel, criterio = MC_FILAS[d.name](t), "variante principal del resultado.json"
+        else:
+            col = next(c for c in ("principal", "entra_en_veredicto", "decisivo") if c in t.columns)
+            sel, criterio = _verdadero(t[col]), f"columna «{col}»"
+        f = t[sel]
+        if f.empty:
+            raise ValueError(f"{_rel(d)}: sin filas decisivas")
+        diag = rj.get("diagnosticos", {})
+        ver = diag.get("veredicto") or "; ".join(f"{k}: {v['veredicto']}" for k, v in diag.get("veredicto_por_inferencia", {}).items())
+        clave = d.name.upper().replace("_", "-")
+        comun = dict(periodo="simulación (semilla 20261010)", cobertura=f"simulación sin datos reales ({rj.get('N')})",
+                     fuentes=[_rel(d / "tabla.csv"), _rel(d / "resultado.json")], clase="NO ESTIMABLE", ficha=_rel(d / "resultado.json"))
+        nota = f"validación Monte Carlo; mínimo y máximo de {len(f)} filas decisivas ({criterio}); veredicto: {ver}"
+        cols = [("TAM", "tamano_5pct", "Tamaño empírico al 5 %"),
+                ("COB", next((c for c in ("cobertura_95", "cobertura_nulo", "cobertura_mu") if c in t.columns), None),
+                 "Cobertura empírica al 95 %"),
+                ("COB68", "cobertura_68", "Cobertura empírica al 68 %"), ("COB90", "cobertura_90", "Cobertura empírica al 90 %")]
+        for suf, col, nombre in cols:
+            if col is None or col not in t.columns or f[col].dropna().empty:
+                continue
+            res.append(_cifra(f"V18-AUX-MC-{clave}-{suf}", f"{nombre} de {d.name} (filas decisivas)", None, unidad="proporción",
+                              nota=nota, mn=f[col].min(), mx=f[col].max(), **comun))
+    return res
+
+
+def _aux_estimacion() -> list[dict]:
+    res = []
+    # E1-R4-v3: estudio de eventos con los adelantos como regresores; IC90 de la nota de tabla.csv (inversión de Webb)
+    src = OUT / "estimacion" / "e1" / "tabla.csv"
+    r = pd.read_csv(src).set_index("id").loc["E1-R4-v3"]
+    m = _buscar(str(r.nota), r"IC90 \((-?[\d.]+); (-?[\d.]+)\)", _rel(src))
+    e1 = {h["id"]: h for h in json.loads((OUT / "estimacion" / "e1" / "hechos.json").read_text(encoding="utf-8"))}
+    res.append(_cifra("V18-AUX-E1-R4-V3", "Coeficiente de E1-R4 con los adelantos de 2011-2012 como regresores (variante), con "
+                      "IC90 de Webb", r.coef, unidad=e1["V18-E1-R4"]["unidad"], periodo=str(r.ventana),
+                      cobertura=f"Barcelona (barrios; {r.nota.split(';')[0]})", fuentes=e1["V18-E1-R4"]["fuentes"],
+                      clase=str(r.clase).split(" (")[0], nota=f"variante [E] de E1-R4; clase de la variante: {r.clase}; IC90 por "
+                      "inversión de Webb; IC95 en tabla.csv", ficha=_rel(src), mn=float(m.group(1)), mx=float(m.group(2))))
+    # E2-R1: estudio de eventos (2021T1 = k 8, base 2019T4), trayectorias por tamaño (B6b-2) y transformación porcentual
+    d = OUT / "estimacion" / "e2"
+    e2 = {h["id"]: h for h in json.loads((d / "hechos.json").read_text(encoding="utf-8"))}
+    h = e2["V18-E2-R1"]
+    tab = pd.read_csv(d / "tabla.csv").set_index("id").loc["E2-R1"]
+    ev = pd.read_csv(d / "estudio_eventos.csv")
+    k8 = ev[(ev.spec == "E2-R1") & (ev.k == 8)].iloc[0]
+    _buscar((d / "informe.md").read_text(encoding="utf-8"), r"k = 0\.\.12 es 2019T1\.\.2022T1", _rel(d / "informe.md"))
+    comun = dict(periodo="2019T1-2022T1", cobertura=h["cobertura"], fuentes=h["fuentes"], clase=h["clasificacion_v18"])
+    res.append(_cifra("V18-AUX-E2-R1-EV-2021T1", "Coeficiente de 2021T1 del estudio de eventos de E2-R1 (base 2019T4)", k8.coef,
+                      unidad="log de la renta media de los contratos nuevos", nota=f"estudio de eventos de E2-R1, k = 8 (2021T1); "
+                      f"error típico {k8.se}", ficha=_rel(d / "estudio_eventos.csv"), **comun))
+    rb = pd.read_csv(d / "robustez_b6.csv").set_index("id").loc["E2-R1-B6b-2"]
+    res.append(_cifra("V18-AUX-E2-R1-B6B2", "Coeficiente de E2-R1 con trayectorias trimestrales por tamaño del municipio "
+                      "(ln de la población de 2019 × trimestre), con IC95", rb.coef, unidad="log de la renta media de los contratos "
+                      "nuevos", nota=f"robustez a posteriori (B6b-2): {rb.descripcion}; {rb.nota}", ficha=_rel(d / "robustez_b6.csv"),
+                      mn=rb.ic95_lo, mx=rb.ic95_hi, **comun))
+    res.append(_cifra("V18-AUX-E2-R1-PCT", "Diferencia porcentual equivalente al coeficiente logarítmico de E2-R1", 100 * math.expm1(
+                      float(tab.coef)), unidad="%", nota=f"transformación 100·(exp(b)−1) del coeficiente log {tab.coef} de "
+                      "E2-R1 (tabla.csv); no es una estimación nueva", ficha=_rel(d / "tabla.csv"), **comun))
+    return res
+
+
+def _aux_catalogo() -> list[dict]:
+    src = OUT / "f1" / "catalogo.csv"
+    c = pd.read_csv(src)
+    comun = dict(unidad="fichas", periodo="2026", cobertura="literatura (todos los países del catálogo)",
+                 fuentes=[_rel(src), "output/v18/f1/informe.md"], clase="NO ESTIMABLE", ficha=_rel(src))
+    nota = "recuento de filas de catalogo.csv (fase 1)"
+    cuentas = [("FICHAS", "Fichas del catálogo de la literatura", len(c)),
+               ("TEXTO-COMPLETO", "Fichas leídas en texto completo", int((c.leido == "texto completo").sum())),
+               ("SOLO-RESUMEN", "Fichas leídas solo por el resumen", int((c.leido == "solo resumen").sum())),
+               ("SIN-INDICAR", "Fichas sin indicar el grado de lectura", int((c.leido == "sin indicar").sum())),
+               ("PAQUETE", "Fichas con paquete de replicación", int((c.paquete == "sí").sum())),
+               ("VERIFICADA", "Fichas con referencia VERIFICADA", int((c.estado == "VERIFICADA").sum())),
+               ("NO-VERIFICADA", "Fichas con referencia NO VERIFICADA", int((c.estado == "NO VERIFICADA").sum())),
+               ("DISCREPANTE", "Fichas con referencia DISCREPANTE", int((c.estado == "DISCREPANTE").sum()))]
+    return [_cifra(f"V18-AUX-CAT-{k}", ind, n, nota=nota, **comun) for k, ind, n in cuentas]
+
+
+D3_SERIES = {"Valor tasado": "VALOR-TASADO", "IPV INE por CCAA": "IPV-CCAA", "IPC alquiler": "IPC-ALQUILER", "IPVA": "IPVA",
+             "SERPAVI": "SERPAVI"}
+
+
+def _aux_d3() -> list[dict]:
+    """Cuotas del componente común por subperiodo (V17-D3); las del periodo completo ya están como V17-D3-VARIANZA-COMUN-*."""
+    src = RAIZ / "output" / "v17" / "d3" / "varianza_comun_local.csv"
+    v = pd.read_csv(src)
+    res = []
+    for serie, g in v.groupby("serie", sort=False):
+        clave = next(k for p, k in D3_SERIES.items() if str(serie).startswith(p))
+        completo = g.periodo.map(lambda s: int(s[-4:]) - int(s[:4])).idxmax()
+        for r in g.drop(index=completo).itertuples():
+            res.append(_cifra(f"V18-AUX-D3-{clave}-{r.periodo}", f"Cuota de la varianza de la variación anual de {serie} debida al "
+                              f"componente común (año), {r.periodo}", 100 * r.cuota_comun_anio,
+                              unidad="% (IC95 bootstrap por provincias)", periodo=r.periodo,
+                              cobertura=f"España ({r.N} unidades sin bloques sellados v6)",
+                              fuentes=[_rel(src), "output/v17/d3/informe.md"], clase="NO ESTIMABLE",
+                              nota="subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo "
+                              "es V17-D3-VARIANZA-COMUN-*", ficha=_rel(src), mn=100 * r.ic95_lo, mx=100 * r.ic95_hi))
+    return res
+
+
+def auxiliares() -> list[dict]:
+    return (_aux_literatura() + _aux_fichas() + _aux_f5() + _aux_reproduccion() + _aux_montecarlo() + _aux_estimacion()
+            + _aux_catalogo() + _aux_d3())
+
+
 def consolidar() -> tuple[list[dict], list[str]]:
     filas, err = [], []
     paises = _paises_b5()
@@ -100,6 +448,7 @@ def consolidar() -> tuple[list[dict], list[str]]:
             h = dict(h)
             h.setdefault("ficha", rel)
             filas.append(h)
+    filas += auxiliares()
     vistos: set[str] = set()
     for h in filas:
         i = str(h.get("id", ""))
@@ -144,7 +493,10 @@ def main() -> int:
     (SALIDA.parent / "informe.md").write_text(
         "# V18 · Fase 6 · Cifras V18 para cifras_clave\n\n"
         "**análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Generado por src/v18/f6_hechos.py: "
-        f"{len(filas)} cifras V18 (todas C4, con su clasificacion_v18 al lado) de {len(fuentes_hechos())} ficheros. "
+        f"{len(filas)} cifras V18 (todas C4, con su clasificacion_v18 al lado): {len(filas) - N_AUX} de {len(fuentes_hechos())} "
+        "ficheros hechos.json y "
+        f"{N_AUX} cifras auxiliares V18-AUX-* copiadas de sus salidas de origen (literatura, contabilidad, reproducciones, "
+        "Monte Carlo, variantes de E1 y E2, catálogo y subperiodos de V17-D3) para el Documento de Trabajo. "
         f"{n_cifra} tienen valor, mínimo o máximo y entran en output/v5/cifras_clave.csv; el resto (sin ninguna cifra) no entra. "
         f"Tipo de rango: {tipos['rango']} rango, {tipos['referencias']} referencias, {tipos['sin rango']} sin rango.\n",
         encoding="utf-8")

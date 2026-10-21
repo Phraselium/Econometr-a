@@ -1,3 +1,3 @@
 # V18 · Fase 6 · Cifras V18 para cifras_clave
 
-**análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Generado por src/v18/f6_hechos.py: 570 cifras V18 (todas C4, con su clasificacion_v18 al lado) de 15 ficheros. 423 tienen valor, mínimo o máximo y entran en output/v5/cifras_clave.csv; el resto (sin ninguna cifra) no entra. Tipo de rango: 371 rango, 0 referencias, 199 sin rango.
+**análisis V18; capa C4; pre-registro interno plan-replicacion-v18.** Generado por src/v18/f6_hechos.py: 705 cifras V18 (todas C4, con su clasificacion_v18 al lado): 570 de 15 ficheros hechos.json y 135 cifras auxiliares V18-AUX-* copiadas de sus salidas de origen (literatura, contabilidad, reproducciones, Monte Carlo, variantes de E1 y E2, catálogo y subperiodos de V17-D3) para el Documento de Trabajo. 558 tienen valor, mínimo o máximo y entran en output/v5/cifras_clave.csv; el resto (sin ninguna cifra) no entra. Tipo de rango: 428 rango, 0 referencias, 277 sin rango.

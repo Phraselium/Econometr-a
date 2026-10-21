@@ -11932,5 +11932,2707 @@
   "ficha": "output/v18/f5/hechos.json",
   "tipo_rango": "rango",
   "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-LIT-SEGU2018",
+  "indicador": "Valor publicado por Segú (2018), Barcelona, 2009-2016 (factor E1, literatura)",
+  "valor": 0.038,
+  "min": null,
+  "max": null,
+  "unidad": "Δln alquiler por punto de densidad de Airbnb",
+  "periodo": "2009-2016",
+  "cobertura": "España: Barcelona, 2009-2016",
+  "fuentes": [
+   "docs/v18/bib/turismo/segu2018.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/turismo/segu2018.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2016"
+ },
+ {
+  "id": "V18-AUX-LIT-SEGU2018-ET",
+  "indicador": "Error típico del valor publicado por Segú (2018), Barcelona, 2009-2016 (factor E1)",
+  "valor": 0.012,
+  "min": null,
+  "max": null,
+  "unidad": "Δln alquiler por punto de densidad de Airbnb",
+  "periodo": "2009-2016",
+  "cobertura": "España: Barcelona, 2009-2016",
+  "fuentes": [
+   "docs/v18/bib/turismo/segu2018.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/turismo/segu2018.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2016"
+ },
+ {
+  "id": "V18-AUX-LIT-GARCIALOPEZ2020",
+  "indicador": "Valor publicado por García-López et al. (2020), Barcelona, 2007-2017 (factor E1, literatura)",
+  "valor": 0.022,
+  "min": null,
+  "max": null,
+  "unidad": "ln por cada 100 anuncios en la BSA (IV, alquileres)",
+  "periodo": "2007-2017",
+  "cobertura": "España: Barcelona, 2007-2017",
+  "fuentes": [
+   "docs/v18/bib/turismo/garcialopez2020.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2017"
+ },
+ {
+  "id": "V18-AUX-LIT-GARCIALOPEZ2020-ET",
+  "indicador": "Error típico del valor publicado por García-López et al. (2020), Barcelona, 2007-2017 (factor E1)",
+  "valor": 0.011,
+  "min": null,
+  "max": null,
+  "unidad": "ln por cada 100 anuncios en la BSA (IV, alquileres)",
+  "periodo": "2007-2017",
+  "cobertura": "España: Barcelona, 2007-2017",
+  "fuentes": [
+   "docs/v18/bib/turismo/garcialopez2020.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
+  "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2017"
+ },
+ {
+  "id": "V18-AUX-LIT-CHAVESFONSECA2026",
+  "indicador": "Valor publicado por Chaves-Fonseca (2026), Madrid, 2010-2018 (factor E1, literatura)",
+  "valor": 0.02,
+  "min": null,
+  "max": null,
+  "unidad": "ln del precio por 100 anuncios en el barrio",
+  "periodo": "2010-2018",
+  "cobertura": "España: Madrid, 2010-2018",
+  "fuentes": [
+   "docs/v18/bib/turismo/chavesfonseca2026.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/turismo/chavesfonseca2026.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-LIT-CHAVESFONSECA2026-ET",
+  "indicador": "Error típico del valor publicado por Chaves-Fonseca (2026), Madrid, 2010-2018 (factor E1)",
+  "valor": 0.004,
+  "min": null,
+  "max": null,
+  "unidad": "ln del precio por 100 anuncios en el barrio",
+  "periodo": "2010-2018",
+  "cobertura": "España: Madrid, 2010-2018",
+  "fuentes": [
+   "docs/v18/bib/turismo/chavesfonseca2026.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
+  "ficha": "docs/v18/bib/turismo/chavesfonseca2026.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-LIT-JOFREMONSENY2023",
+  "indicador": "Valor publicado por Jofre-Monseny et al. (2023), Cataluña, 2020-2022 (factor E2, literatura)",
+  "valor": -0.044,
+  "min": null,
+  "max": null,
+  "unidad": "ln de la renta media, tabla 2",
+  "periodo": "2020-2022",
+  "cobertura": "España: Cataluña, 2020-2022",
+  "fuentes": [
+   "docs/v18/bib/topes/jofremonseny2023.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/topes/jofremonseny2023.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-LIT-JOFREMONSENY2023-ET",
+  "indicador": "Error típico del valor publicado por Jofre-Monseny et al. (2023), Cataluña, 2020-2022 (factor E2)",
+  "valor": 0.006,
+  "min": null,
+  "max": null,
+  "unidad": "ln de la renta media, tabla 2",
+  "periodo": "2020-2022",
+  "cobertura": "España: Cataluña, 2020-2022",
+  "fuentes": [
+   "docs/v18/bib/topes/jofremonseny2023.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/topes/jofremonseny2023.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-LIT-MONRAS2023",
+  "indicador": "Valor publicado por Monràs y García-Montalvo (2023), Cataluña, 2016-2021 (factor E2, literatura)",
+  "valor": -0.058,
+  "min": null,
+  "max": null,
+  "unidad": "ln del precio del contrato (sin efectos fijos de unidad)",
+  "periodo": "2016-2021",
+  "cobertura": "España: Cataluña, 2016-2021",
+  "fuentes": [
+   "docs/v18/bib/topes/monras2023.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/topes/monras2023.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2021"
+ },
+ {
+  "id": "V18-AUX-LIT-MONRAS2023-ET",
+  "indicador": "Error típico del valor publicado por Monràs y García-Montalvo (2023), Cataluña, 2016-2021 (factor E2)",
+  "valor": 0.014,
+  "min": null,
+  "max": null,
+  "unidad": "ln del precio del contrato (sin efectos fijos de unidad)",
+  "periodo": "2016-2021",
+  "cobertura": "España: Cataluña, 2016-2021",
+  "fuentes": [
+   "docs/v18/bib/topes/monras2023.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/topes/monras2023.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2021"
+ },
+ {
+  "id": "V18-AUX-LIT-BREUILLE2025",
+  "indicador": "Valor publicado por Breuille et al. (2025), París y cinco ciudades, 2018-2024 (factor E2, literatura)",
+  "valor": -0.051,
+  "min": null,
+  "max": null,
+  "unidad": "ln de la renta por m²",
+  "periodo": "2018-2024",
+  "cobertura": "Francia: París y cinco ciudades, 2018-2024",
+  "fuentes": [
+   "docs/v18/bib/topes/breuille2025.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/topes/breuille2025.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "V18-AUX-LIT-BREUILLE2025-ET",
+  "indicador": "Error típico del valor publicado por Breuille et al. (2025), París y cinco ciudades, 2018-2024 (factor E2)",
+  "valor": 0.007,
+  "min": null,
+  "max": null,
+  "unidad": "ln de la renta por m²",
+  "periodo": "2018-2024",
+  "cobertura": "Francia: París y cinco ciudades, 2018-2024",
+  "fuentes": [
+   "docs/v18/bib/topes/breuille2025.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/topes/breuille2025.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "V18-AUX-LIT-HAHN2021",
+  "indicador": "Valor publicado por Hahn et al. (2021), Berlín, 2019-2020 (factor E2, literatura)",
+  "valor": -0.113,
+  "min": null,
+  "max": null,
+  "unidad": "ln de la renta anunciada (estrategia A; B: −0,075)",
+  "periodo": "2019-2020",
+  "cobertura": "Alemania: Berlín, 2019-2020",
+  "fuentes": [
+   "docs/v18/bib/topes/hahn2021.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/topes/hahn2021.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2020"
+ },
+ {
+  "id": "V18-AUX-LIT-HAHN2021-ET",
+  "indicador": "Error típico del valor publicado por Hahn et al. (2021), Berlín, 2019-2020 (factor E2)",
+  "valor": 0.019,
+  "min": null,
+  "max": null,
+  "unidad": "ln de la renta anunciada (estrategia A; B: −0,075)",
+  "periodo": "2019-2020",
+  "cobertura": "Alemania: Berlín, 2019-2020",
+  "fuentes": [
+   "docs/v18/bib/topes/hahn2021.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/topes/hahn2021.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2020"
+ },
+ {
+  "id": "V18-AUX-LIT-PEREZGARCIA2026",
+  "indicador": "Valor publicado por Pérez García (2026), zonas tensionadas 2024 (factor E2, literatura)",
+  "valor": -0.0298,
+  "min": null,
+  "max": null,
+  "unidad": "puntos de crecimiento de la renta",
+  "periodo": "2026",
+  "cobertura": "España: zonas tensionadas 2024",
+  "fuentes": [
+   "docs/v18/bib/topes/perezgarcia2026.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/topes/perezgarcia2026.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-LIT-PEREZGARCIA2026-ET",
+  "indicador": "Error típico del valor publicado por Pérez García (2026), zonas tensionadas 2024 (factor E2)",
+  "valor": 0.0113,
+  "min": null,
+  "max": null,
+  "unidad": "puntos de crecimiento de la renta",
+  "periodo": "2026",
+  "cobertura": "España: zonas tensionadas 2024",
+  "fuentes": [
+   "docs/v18/bib/topes/perezgarcia2026.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
+  "ficha": "docs/v18/bib/topes/perezgarcia2026.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-LIT-GONZALEZ-ORTEGA-2009-IZA",
+  "indicador": "Valor publicado por González y Ortega (2009, IZA), 50 provincias, 1998-2008 (factor E3, literatura)",
+  "valor": 3.2,
+  "min": null,
+  "max": null,
+  "unidad": "% de precio por 1 % de población (euros/m²: 44,72 con error 18,58)",
+  "periodo": "1998-2008",
+  "cobertura": "España: 50 provincias, 1998-2008",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2008"
+ },
+ {
+  "id": "V18-AUX-LIT-GONZALEZ-ORTEGA-2009-IZA-ET",
+  "indicador": "Error típico del valor publicado por González y Ortega (2009, IZA), 50 provincias, 1998-2008 (factor E3)",
+  "valor": 1.3295,
+  "min": null,
+  "max": null,
+  "unidad": "% de precio por 1 % de población (euros/m²: 44,72 con error 18,58)",
+  "periodo": "1998-2008",
+  "cobertura": "España: 50 provincias, 1998-2008",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: reconstruido por proporcionalidad con el error de 18,58 €/m² sobre 44,72 €/m²",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2008"
+ },
+ {
+  "id": "V18-AUX-LIT-GONZALEZ-ORTEGA-2011-CHICAGOFED",
+  "indicador": "Valor publicado por González y Ortega (2011, Chicago Fed), provincias, 2001-2010 (factor E3, literatura)",
+  "valor": 0.866,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad respecto a la población en edad de trabajar",
+  "periodo": "2001-2010",
+  "cobertura": "España: provincias, 2001-2010",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-LIT-GONZALEZ-ORTEGA-2011-CHICAGOFED-ET",
+  "indicador": "Error típico del valor publicado por González y Ortega (2011, Chicago Fed), provincias, 2001-2010 (factor E3)",
+  "valor": 0.803,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad respecto a la población en edad de trabajar",
+  "periodo": "2001-2010",
+  "cobertura": "España: provincias, 2001-2010",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-LIT-SANCHIS-GUARNER-2017-LSE",
+  "indicador": "Valor publicado por Sanchis-Guarner (2017), provincias, 2001-2012 (factor E3, literatura)",
+  "valor": 3.046,
+  "min": null,
+  "max": null,
+  "unidad": "puntos de crecimiento del precio por punto de tasa de inmigración (semielasticidad ≈ % por 1 %)",
+  "periodo": "2001-2012",
+  "cobertura": "España: provincias, 2001-2012",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/sanchis_guarner_2017_lse.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/inmigracion/sanchis_guarner_2017_lse.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2012"
+ },
+ {
+  "id": "V18-AUX-LIT-SANCHIS-GUARNER-2017-LSE-ET",
+  "indicador": "Error típico del valor publicado por Sanchis-Guarner (2017), provincias, 2001-2012 (factor E3)",
+  "valor": 1.214,
+  "min": null,
+  "max": null,
+  "unidad": "puntos de crecimiento del precio por punto de tasa de inmigración (semielasticidad ≈ % por 1 %)",
+  "periodo": "2001-2012",
+  "cobertura": "España: provincias, 2001-2012",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/sanchis_guarner_2017_lse.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/inmigracion/sanchis_guarner_2017_lse.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2012"
+ },
+ {
+  "id": "V18-AUX-LIT-SAIZ-2007-PHILLY",
+  "indicador": "Valor publicado por Saiz (2007), áreas metropolitanas de EE. UU., 1983-1998 (factor E3, literatura)",
+  "valor": 1.607,
+  "min": null,
+  "max": null,
+  "unidad": "Δln precio por 1 % de población en inmigrantes",
+  "periodo": "1983-1998",
+  "cobertura": "EE. UU.: áreas metropolitanas de EE. UU., 1983-1998",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/saiz_2007_philly.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/inmigracion/saiz_2007_philly.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "1998"
+ },
+ {
+  "id": "V18-AUX-LIT-SAIZ-2007-PHILLY-ET",
+  "indicador": "Error típico del valor publicado por Saiz (2007), áreas metropolitanas de EE. UU., 1983-1998 (factor E3)",
+  "valor": 0.326,
+  "min": null,
+  "max": null,
+  "unidad": "Δln precio por 1 % de población en inmigrantes",
+  "periodo": "1983-1998",
+  "cobertura": "EE. UU.: áreas metropolitanas de EE. UU., 1983-1998",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/saiz_2007_philly.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/inmigracion/saiz_2007_philly.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "1998"
+ },
+ {
+  "id": "V18-AUX-LIT-SA-2015-IZA",
+  "indicador": "Valor publicado por Sá (2015), autoridades locales de Inglaterra y Gales, 2004-2010 (factor E3, literatura)",
+  "valor": -1.627,
+  "min": null,
+  "max": null,
+  "unidad": "% de precio por 1 % de población",
+  "periodo": "2004-2010",
+  "cobertura": "Reino Unido: autoridades locales de Inglaterra y Gales, 2004-2010",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/sa_2015_iza.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/inmigracion/sa_2015_iza.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-LIT-SA-2015-IZA-ET",
+  "indicador": "Error típico del valor publicado por Sá (2015), autoridades locales de Inglaterra y Gales, 2004-2010 (factor E3)",
+  "valor": 0.366,
+  "min": null,
+  "max": null,
+  "unidad": "% de precio por 1 % de población",
+  "periodo": "2004-2010",
+  "cobertura": "Reino Unido: autoridades locales de Inglaterra y Gales, 2004-2010",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/sa_2015_iza.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/inmigracion/sa_2015_iza.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-LIT-UNAL-2022-MARBURG",
+  "indicador": "Valor publicado por Unal (2022), distritos de Alemania, 2004-2020 (factor E3, literatura)",
+  "valor": 2.689,
+  "min": null,
+  "max": null,
+  "unidad": "% por 1 % de población inicial (pisos)",
+  "periodo": "2004-2020",
+  "cobertura": "Alemania: distritos de Alemania, 2004-2020",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/unal_2022_marburg.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/inmigracion/unal_2022_marburg.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2020"
+ },
+ {
+  "id": "V18-AUX-LIT-UNAL-2022-MARBURG-ET",
+  "indicador": "Error típico del valor publicado por Unal (2022), distritos de Alemania, 2004-2020 (factor E3)",
+  "valor": 0.648,
+  "min": null,
+  "max": null,
+  "unidad": "% por 1 % de población inicial (pisos)",
+  "periodo": "2004-2020",
+  "cobertura": "Alemania: distritos de Alemania, 2004-2020",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/unal_2022_marburg.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/inmigracion/unal_2022_marburg.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2020"
+ },
+ {
+  "id": "V18-AUX-LIT-ACCETTURO-2012-BDI",
+  "indicador": "Valor publicado por Accetturo et al. (2012), distritos de 20 ciudades de Italia (factor E3, literatura)",
+  "valor": 0.16,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad log-log (ciudad)",
+  "periodo": "2012",
+  "cobertura": "Italia: distritos de 20 ciudades de Italia",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/accetturo_2012_bdi.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/inmigracion/accetturo_2012_bdi.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2012"
+ },
+ {
+  "id": "V18-AUX-LIT-ACCETTURO-2012-BDI-ET",
+  "indicador": "Error típico del valor publicado por Accetturo et al. (2012), distritos de 20 ciudades de Italia (factor E3)",
+  "valor": 0.053,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad log-log (ciudad)",
+  "periodo": "2012",
+  "cobertura": "Italia: distritos de 20 ciudades de Italia",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/accetturo_2012_bdi.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
+  "ficha": "docs/v18/bib/inmigracion/accetturo_2012_bdi.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2012"
+ },
+ {
+  "id": "V18-AUX-LIT-TORRES-MONTERO-2023-CYTET",
+  "indicador": "Valor publicado por Torres y Montero (2023), 50 provincias, 2001-2019 (factor E3, literatura)",
+  "valor": -0.95,
+  "min": null,
+  "max": null,
+  "unidad": "% de precio por 1 % de población (texto)",
+  "periodo": "2001-2019",
+  "cobertura": "España: 50 provincias, 2001-2019",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/torres_montero_2023_cytet.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/inmigracion/torres_montero_2023_cytet.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-LIT-FACK-2005-CEPREMAP",
+  "indicador": "Valor publicado por Fack (2005), Francia, 1984-2002 (factor E4, literatura)",
+  "valor": 0.39,
+  "min": null,
+  "max": null,
+  "unidad": "θ (DD con controles; sin controles 0,76 con error 0,26)",
+  "periodo": "1984-2002",
+  "cobertura": "Francia: Francia, 1984-2002",
+  "fuentes": [
+   "docs/v18/bib/ayudas/fack_2005_cepremap.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/ayudas/fack_2005_cepremap.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2002"
+ },
+ {
+  "id": "V18-AUX-LIT-FACK-2005-CEPREMAP-ET",
+  "indicador": "Error típico del valor publicado por Fack (2005), Francia, 1984-2002 (factor E4)",
+  "valor": 0.24,
+  "min": null,
+  "max": null,
+  "unidad": "θ (DD con controles; sin controles 0,76 con error 0,26)",
+  "periodo": "1984-2002",
+  "cobertura": "Francia: Francia, 1984-2002",
+  "fuentes": [
+   "docs/v18/bib/ayudas/fack_2005_cepremap.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/ayudas/fack_2005_cepremap.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2002"
+ },
+ {
+  "id": "V18-AUX-LIT-EEROLA-ETAL-2026-JPUBE",
+  "indicador": "Valor publicado por Eerola et al. (2026), Finlandia, reforma de 2015 (factor E4, literatura)",
+  "valor": 0.036,
+  "min": null,
+  "max": null,
+  "unidad": "θ",
+  "periodo": "2026",
+  "cobertura": "Finlandia: Finlandia, reforma de 2015",
+  "fuentes": [
+   "docs/v18/bib/ayudas/eerola_etal_2026_jpube.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/ayudas/eerola_etal_2026_jpube.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-LIT-EEROLA-ETAL-2026-JPUBE-ET",
+  "indicador": "Error típico del valor publicado por Eerola et al. (2026), Finlandia, reforma de 2015 (factor E4)",
+  "valor": 0.028,
+  "min": null,
+  "max": null,
+  "unidad": "θ",
+  "periodo": "2026",
+  "cobertura": "Finlandia: Finlandia, reforma de 2015",
+  "fuentes": [
+   "docs/v18/bib/ayudas/eerola_etal_2026_jpube.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/ayudas/eerola_etal_2026_jpube.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-LIT-KANGASHARJU-2008-VATT458",
+  "indicador": "Valor publicado por Kangasharju (2008), Finlandia (factor E4, literatura)",
+  "valor": 0.57,
+  "min": null,
+  "max": null,
+  "unidad": "θ (IV)",
+  "periodo": "2008",
+  "cobertura": "Finlandia: Finlandia",
+  "fuentes": [
+   "docs/v18/bib/ayudas/kangasharju_2008_vatt458.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/ayudas/kangasharju_2008_vatt458.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2008"
+ },
+ {
+  "id": "V18-AUX-LIT-HYSLOP-REA-2018-MOTU",
+  "indicador": "Valor publicado por Hyslop y Rea (2018), Nueva Zelanda (factor E4, literatura)",
+  "valor": 0.36,
+  "min": null,
+  "max": null,
+  "unidad": "θ",
+  "periodo": "2018",
+  "cobertura": "Nueva Zelanda: Nueva Zelanda",
+  "fuentes": [
+   "docs/v18/bib/ayudas/hyslop_rea_2018_motu.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/ayudas/hyslop_rea_2018_motu.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-LIT-TALTAVULL-2006-FUNCAS",
+  "indicador": "Valor publicado por Taltavull (2006), panel de CCAA, 1990-2004 (factor E5, literatura)",
+  "valor": 0.87,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad precio de los inicios de obra (error desde t = 6,96)",
+  "periodo": "1990-2004",
+  "cobertura": "España: panel de CCAA, 1990-2004",
+  "fuentes": [
+   "docs/v18/bib/oferta_suelo/taltavull_2006_funcas.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/oferta_suelo/taltavull_2006_funcas.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2004"
+ },
+ {
+  "id": "V18-AUX-LIT-TALTAVULL-2006-FUNCAS-ET",
+  "indicador": "Error típico del valor publicado por Taltavull (2006), panel de CCAA, 1990-2004 (factor E5)",
+  "valor": 0.125,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad precio de los inicios de obra (error desde t = 6,96)",
+  "periodo": "1990-2004",
+  "cobertura": "España: panel de CCAA, 1990-2004",
+  "fuentes": [
+   "docs/v18/bib/oferta_suelo/taltavull_2006_funcas.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: reconstruido desde t = 6,96",
+  "ficha": "docs/v18/bib/oferta_suelo/taltavull_2006_funcas.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2004"
+ },
+ {
+  "id": "V18-AUX-LIT-BAUM-SNOW-HAN-2020-NBERCONF",
+  "indicador": "Valor publicado por Baum-Snow y Han (2020), tractos de EE. UU., 2000-2010 (factor E5, literatura)",
+  "valor": 0.26,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad precio de la oferta de unidades",
+  "periodo": "2000-2010",
+  "cobertura": "EE. UU.: tractos de EE. UU., 2000-2010",
+  "fuentes": [
+   "docs/v18/bib/oferta_suelo/baum_snow_han_2020_nberconf.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/oferta_suelo/baum_snow_han_2020_nberconf.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-LIT-BAUM-SNOW-HAN-2020-NBERCONF-ET",
+  "indicador": "Error típico del valor publicado por Baum-Snow y Han (2020), tractos de EE. UU., 2000-2010 (factor E5)",
+  "valor": 0.11,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad precio de la oferta de unidades",
+  "periodo": "2000-2010",
+  "cobertura": "EE. UU.: tractos de EE. UU., 2000-2010",
+  "fuentes": [
+   "docs/v18/bib/oferta_suelo/baum_snow_han_2020_nberconf.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/oferta_suelo/baum_snow_han_2020_nberconf.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-LIT-PACIOREK-2012-FEDS",
+  "indicador": "Valor publicado por Paciorek (2012), EE. UU. (factor E5, literatura)",
+  "valor": 0.84,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad de permisos al precio (IV)",
+  "periodo": "2012",
+  "cobertura": "EE. UU.: EE. UU.",
+  "fuentes": [
+   "docs/v18/bib/oferta_suelo/paciorek_2012_feds.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/oferta_suelo/paciorek_2012_feds.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2012"
+ },
+ {
+  "id": "V18-AUX-LIT-PACIOREK-2012-FEDS-ET",
+  "indicador": "Error típico del valor publicado por Paciorek (2012), EE. UU. (factor E5)",
+  "valor": 0.1,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad de permisos al precio (IV)",
+  "periodo": "2012",
+  "cobertura": "EE. UU.: EE. UU.",
+  "fuentes": [
+   "docs/v18/bib/oferta_suelo/paciorek_2012_feds.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/oferta_suelo/paciorek_2012_feds.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2012"
+ },
+ {
+  "id": "V18-AUX-LIT-MENSE-2025-JPEMACRO",
+  "indicador": "Valor publicado por Mense (2025), 94 regiones de Alemania, 2010-2017 (factor E6, literatura)",
+  "valor": -0.192,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad del alquiler respecto a la oferta nueva",
+  "periodo": "2010-2017",
+  "cobertura": "Alemania: 94 regiones de Alemania, 2010-2017",
+  "fuentes": [
+   "docs/v18/bib/obra_nueva/mense_2025_jpemacro.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí",
+  "ficha": "docs/v18/bib/obra_nueva/mense_2025_jpemacro.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2017"
+ },
+ {
+  "id": "V18-AUX-LIT-MENSE-2025-JPEMACRO-ET",
+  "indicador": "Error típico del valor publicado por Mense (2025), 94 regiones de Alemania, 2010-2017 (factor E6)",
+  "valor": 0.065,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad del alquiler respecto a la oferta nueva",
+  "periodo": "2010-2017",
+  "cobertura": "Alemania: 94 regiones de Alemania, 2010-2017",
+  "fuentes": [
+   "docs/v18/bib/obra_nueva/mense_2025_jpemacro.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): sí; origen del error: publicado",
+  "ficha": "docs/v18/bib/obra_nueva/mense_2025_jpemacro.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2017"
+ },
+ {
+  "id": "V18-AUX-LIT-ASQUITH-MAST-REED-2020-PHILLY",
+  "indicador": "Valor publicado por Asquith et al. (2020), EE. UU. (factor E6, literatura)",
+  "valor": -0.062,
+  "min": null,
+  "max": null,
+  "unidad": "Δln cerca de un edificio nuevo",
+  "periodo": "2020",
+  "cobertura": "EE. UU.: EE. UU.",
+  "fuentes": [
+   "docs/v18/bib/obra_nueva/asquith_mast_reed_2020_philly.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/obra_nueva/asquith_mast_reed_2020_philly.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2020"
+ },
+ {
+  "id": "V18-AUX-LIT-ASQUITH-MAST-REED-2020-PHILLY-ET",
+  "indicador": "Error típico del valor publicado por Asquith et al. (2020), EE. UU. (factor E6)",
+  "valor": 0.037,
+  "min": null,
+  "max": null,
+  "unidad": "Δln cerca de un edificio nuevo",
+  "periodo": "2020",
+  "cobertura": "EE. UU.: EE. UU.",
+  "fuentes": [
+   "docs/v18/bib/obra_nueva/asquith_mast_reed_2020_philly.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (DISCREPANTE); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
+  "ficha": "docs/v18/bib/obra_nueva/asquith_mast_reed_2020_philly.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2020"
+ },
+ {
+  "id": "V18-AUX-LIT-SANJUAN-2023-BDE-BE2302ART09",
+  "indicador": "Valor publicado por San Juan (2023, Banco de España), BVAR, 2004-2022 (factor E7, literatura)",
+  "valor": -2.0,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +100 pb a 8 trimestres",
+  "periodo": "2004-2022",
+  "cobertura": "España: BVAR, 2004-2022",
+  "fuentes": [
+   "docs/v18/bib/tipos/sanjuan_2023_bde_be2302art09.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/tipos/sanjuan_2023_bde_be2302art09.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-LIT-BCE-EB-2022-6-BATTISTINI-GAREIS-ROMA",
+  "indicador": "Valor publicado por Battistini et al. (2022, BCE), proyecciones locales, área del euro (factor E7, literatura)",
+  "valor": -5.0,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio por +1 pp del tipo hipotecario a ~2 años",
+  "periodo": "2022",
+  "cobertura": "Área del euro: proyecciones locales, área del euro",
+  "fuentes": [
+   "docs/v18/bib/tipos/bce_eb_2022_6_battistini_gareis_roma.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/tipos/bce_eb_2022_6_battistini_gareis_roma.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-LIT-DOLLS-ETAL-2020-VFS",
+  "indicador": "Valor publicado por Dolls et al. (2020), Länder de Alemania, 2005-2018 (factor E8, literatura)",
+  "valor": -3.0,
+  "min": null,
+  "max": null,
+  "unidad": "% de precio por +1 pp del tipo, a 12 meses (publicada −3; WP −3,5)",
+  "periodo": "2005-2018",
+  "cobertura": "Alemania: Länder de Alemania, 2005-2018",
+  "fuentes": [
+   "docs/v18/bib/fiscalidad/dolls_etal_2020_vfs.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/fiscalidad/dolls_etal_2020_vfs.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-LIT-SA-2016-LSE-CFM2016-39",
+  "indicador": "Valor publicado por Sá (2016), Inglaterra y Gales, 1999-2014 (factor E9, literatura)",
+  "valor": 2.0,
+  "min": null,
+  "max": null,
+  "unidad": "% de precio por +1 pp de cuota (IV en volumen: 2,0; valor: 1,4; principal 2,1)",
+  "periodo": "1999-2014",
+  "cobertura": "Reino Unido: Inglaterra y Gales, 1999-2014",
+  "fuentes": [
+   "docs/v18/bib/no_residentes/sa_2016_lse_cfm2016_39.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/no_residentes/sa_2016_lse_cfm2016_39.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2014"
+ },
+ {
+  "id": "V18-AUX-LIT-ALVAREZ-BLANCO-GARCIAPOSADA-2020-BDE-BE2002ART14",
+  "indicador": "Valor publicado por Álvarez et al. (2020, Banco de España), 50 provincias, 2013T4-2019 (factor E9, literatura)",
+  "valor": 2.55,
+  "min": null,
+  "max": null,
+  "unidad": "% de crecimiento acumulado por +1 pp de compras netas sobre el parque",
+  "periodo": "2013T4-2019",
+  "cobertura": "España: 50 provincias, 2013T4-2019",
+  "fuentes": [
+   "docs/v18/bib/no_residentes/alvarez_blanco_garciaposada_2020_bde_be2002art14.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no",
+  "ficha": "docs/v18/bib/no_residentes/alvarez_blanco_garciaposada_2020_bde_be2002art14.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-LIT-ALVAREZ-BLANCO-GARCIAPOSADA-2020-BDE-BE2002ART14-ET",
+  "indicador": "Error típico del valor publicado por Álvarez et al. (2020, Banco de España), 50 provincias, 2013T4-2019 (factor E9)",
+  "valor": 2.26,
+  "min": null,
+  "max": null,
+  "unidad": "% de crecimiento acumulado por +1 pp de compras netas sobre el parque",
+  "periodo": "2013T4-2019",
+  "cobertura": "España: 50 provincias, 2013T4-2019",
+  "fuentes": [
+   "docs/v18/bib/no_residentes/alvarez_blanco_garciaposada_2020_bde_be2002art14.md",
+   "output/v18/f5/magnitudes_estudios.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; entra en la magnitud preferida (B5): no; origen del error: publicado",
+  "ficha": "docs/v18/bib/no_residentes/alvarez_blanco_garciaposada_2020_bde_be2002art14.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-LIT-GL2020-BARRIO-MEDIO",
+  "indicador": "Variación del alquiler asociada a Airbnb en el barrio medio según García-López et al. (2020), Barcelona",
+  "valor": 1.9,
+  "min": null,
+  "max": null,
+  "unidad": "% del alquiler anunciado (valor de los autores)",
+  "periodo": "2016",
+  "cobertura": "Barcelona (áreas estadísticas básicas)",
+  "fuentes": [
+   "docs/v18/bib/turismo/garcialopez2020.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; cifra del resumen de los autores (p. 1)",
+  "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2016"
+ },
+ {
+  "id": "V18-AUX-LIT-GL2020-DECIL-ALTO",
+  "indicador": "Variación del alquiler asociada a Airbnb en el decil de mayor actividad según García-López et al. (2020), Barcelona",
+  "valor": 7.0,
+  "min": null,
+  "max": null,
+  "unidad": "% del alquiler anunciado (valor de los autores)",
+  "periodo": "2016",
+  "cobertura": "Barcelona (áreas estadísticas básicas)",
+  "fuentes": [
+   "docs/v18/bib/turismo/garcialopez2020.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; cifra del resumen de los autores (p. 1)",
+  "ficha": "docs/v18/bib/turismo/garcialopez2020.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2016"
+ },
+ {
+  "id": "V18-AUX-LIT-GO2009-EUR",
+  "indicador": "Coeficiente de la entrada de extranjeros sobre el precio en la versión IZA de 2009 de González y Ortega (tabla 3, panel IV, col. 5)",
+  "valor": 44.72,
+  "min": null,
+  "max": null,
+  "unidad": "€/m² por punto de población",
+  "periodo": "1998-2008",
+  "cobertura": "España (50 provincias)",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; versión IZA de 2009 de González y Ortega",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2008"
+ },
+ {
+  "id": "V18-AUX-LIT-GO2009-EUR-ET",
+  "indicador": "Error típico del coeficiente de la versión IZA de 2009 de González y Ortega",
+  "valor": 18.58,
+  "min": null,
+  "max": null,
+  "unidad": "€/m² por punto de población",
+  "periodo": "1998-2008",
+  "cobertura": "España (50 provincias)",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; versión IZA de 2009 de González y Ortega",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2008"
+ },
+ {
+  "id": "V18-AUX-LIT-GO2009-PRECIO-ACUM",
+  "indicador": "Aumento acumulado del precio asociado a la entrada media de extranjeros en la versión IZA de 2009 de González y Ortega (extrapolación lineal de los autores)",
+  "valor": 52.0,
+  "min": null,
+  "max": null,
+  "unidad": "% del precio",
+  "periodo": "1998-2008",
+  "cobertura": "España (50 provincias)",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; versión IZA de 2009 de González y Ortega; no es una fracción de la subida observada",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2009_iza.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2008"
+ },
+ {
+  "id": "V18-AUX-LIT-GO2011-FRACCION",
+  "indicador": "Fracción del aumento de precios asociada a la inmigración según la versión Chicago Fed de 2011 de González y Ortega (resumen)",
+  "valor": 25.0,
+  "min": null,
+  "max": null,
+  "unidad": "% del aumento de precios",
+  "periodo": "2001-2010",
+  "cobertura": "España (provincias)",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (NO VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; cifra del resumen de los autores",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2011_chicagofed.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-LIT-GO2013-FRACCION",
+  "indicador": "Fracción del aumento de precios asociada a la inmigración según la edición de 2013 de González y Ortega (resumen: «un cuarto»)",
+  "valor": 25.0,
+  "min": null,
+  "max": null,
+  "unidad": "% del aumento de precios",
+  "periodo": "2000-2010",
+  "cobertura": "España (provincias)",
+  "fuentes": [
+   "docs/v18/bib/inmigracion/gonzalez_ortega_2013.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "magnitud de la literatura (VERIFICADA); valor del autor en su unidad, sin conversión; no es estimación del proyecto; «un cuarto» del resumen escrito como 25 % (transcripción, sin cálculo)",
+  "ficha": "docs/v18/bib/inmigracion/gonzalez_ortega_2013.md",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2010"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-N",
+  "indicador": "Provincias no selladas con detalle de contabilidad (variación observada y sin explicar)",
+  "valor": 38.0,
+  "min": null,
+  "max": null,
+  "unidad": "provincias",
+  "periodo": "1995-2026",
+  "cobertura": "España (provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de provincias de contabilidad.csv",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-ALQUILER-1995T1-2007T4",
+  "indicador": "Variación observada del alquiler real relativa a la media de las provincias no selladas, 1995T1-2007T4: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -12.0719,
+  "max": 12.7745,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "1995T1-2007T4",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2007"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-ALQUILER-2008T1-2013T4",
+  "indicador": "Variación observada del alquiler real relativa a la media de las provincias no selladas, 2008T1-2013T4: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -7.4619,
+  "max": 8.022,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2008T1-2013T4",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2013"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-ALQUILER-2014T1-2019T4",
+  "indicador": "Variación observada del alquiler real relativa a la media de las provincias no selladas, 2014T1-2019T4: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -4.3415,
+  "max": 4.6769,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2014T1-2019T4",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-ALQUILER-2020T1-2022T2",
+  "indicador": "Variación observada del alquiler real relativa a la media de las provincias no selladas, 2020T1-2022T2: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -2.2807,
+  "max": 1.9353,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2020T1-2022T2",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-ALQUILER-2022T3-2026T2",
+  "indicador": "Variación observada del alquiler real relativa a la media de las provincias no selladas, 2022T3-2026T2: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -4.0006,
+  "max": 5.1401,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2022T3-2026T2",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-PRECIO-1995T1-2007T4",
+  "indicador": "Variación observada del precio real relativa a la media de las provincias no selladas, 1995T1-2007T4: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -33.0066,
+  "max": 47.3052,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "1995T1-2007T4",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2007"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-PRECIO-2008T1-2013T4",
+  "indicador": "Variación observada del precio real relativa a la media de las provincias no selladas, 2008T1-2013T4: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -26.5998,
+  "max": 23.7394,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2008T1-2013T4",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2013"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-PRECIO-2014T1-2019T4",
+  "indicador": "Variación observada del precio real relativa a la media de las provincias no selladas, 2014T1-2019T4: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -18.6016,
+  "max": 24.8206,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2014T1-2019T4",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-PRECIO-2020T1-2022T2",
+  "indicador": "Variación observada del precio real relativa a la media de las provincias no selladas, 2020T1-2022T2: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -9.2745,
+  "max": 6.0966,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2020T1-2022T2",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-CONT-PROV-PRECIO-2022T3-2026T2",
+  "indicador": "Variación observada del precio real relativa a la media de las provincias no selladas, 2022T3-2026T2: mínimo y máximo entre provincias (igual a la variación sin explicar)",
+  "valor": null,
+  "min": -13.8842,
+  "max": 16.493,
+  "unidad": "puntos (100·Δln)",
+  "periodo": "2022T3-2026T2",
+  "cobertura": "España (38 provincias no selladas)",
+  "fuentes": [
+   "output/v18/f5/contabilidad.csv",
+   "output/v18/f5/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "mínimo y máximo de obs_pp entre provincias; ningún factor tiene magnitud preferida con estimación propia, por lo que la variación sin explicar coincide con la observada",
+  "ficha": "output/v18/f5/contabilidad.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-V8-N",
+  "indicador": "Comparaciones con V8 con cifra en ambos lados",
+  "valor": 12.0,
+  "min": null,
+  "max": null,
+  "unidad": "comparaciones",
+  "periodo": "1995-2026",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/comparacion_v8.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de comparacion_v8.csv con cifra en V8 y en V18 (factores E3, E7, E9)",
+  "ficha": "output/v18/f5/comparacion_v8.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-V8-SIGNO",
+  "indicador": "Comparaciones con V8 en las que el signo coincide",
+  "valor": 7.0,
+  "min": null,
+  "max": null,
+  "unidad": "comparaciones",
+  "periodo": "1995-2026",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/comparacion_v8.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de comparacion_v8.csv con cifra en V8 y en V18 (factores E3, E7, E9)",
+  "ficha": "output/v18/f5/comparacion_v8.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-V8-SOLAPE",
+  "indicador": "Comparaciones con V8 en las que las bandas se solapan",
+  "valor": 10.0,
+  "min": null,
+  "max": null,
+  "unidad": "comparaciones",
+  "periodo": "1995-2026",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/comparacion_v8.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de comparacion_v8.csv con cifra en V8 y en V18 (factores E3, E7, E9)",
+  "ficha": "output/v18/f5/comparacion_v8.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-B5-E2-HAHN-B",
+  "indicador": "Magnitud preferida de topes al alquiler (E2) con la estrategia B de Hahn et al. (sensibilidad de B5)",
+  "valor": -0.0487,
+  "min": -0.0835,
+  "max": -0.0179,
+  "unidad": "log de la renta de los contratos regulados",
+  "periodo": "2016-2024",
+  "cobertura": "estudios de España, Francia y Alemania (breuille2025; hahn2021; episodio CAT-2020-22)",
+  "fuentes": [
+   "output/v18/f5/sensibilidad_b5.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "sensibilidad: magnitud preferida; I² 0.7; no cambia la tabla de magnitudes preferidas (regla fijada antes de combinar)",
+  "ficha": "output/v18/f5/sensibilidad_b5.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "V18-AUX-REP-BHJ-PUB",
+  "indicador": "Coeficiente publicado por Borusyak, Hull y Jaravel (2022), con su IC95",
+  "valor": -0.31,
+  "min": -0.705,
+  "max": -0.002,
+  "unidad": "coeficiente IV (ADH 2013, nivel de choque)",
+  "periodo": "1990-2007",
+  "cobertura": "Estados Unidos (794 zonas de desplazamiento por periodo)",
+  "fuentes": [
+   "output/v18/reproduccion/borusyak_hull_jaravel_2022/tabla.csv",
+   "output/v18/reproduccion/borusyak_hull_jaravel_2022/resultado.json",
+   "output/v18/reproduccion/borusyak_hull_jaravel_2022/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de sus autores (no usa datos del proyecto); conjunto de controles 5; IC95 por inversión con el nulo impuesto; veredicto: coincide",
+  "ficha": "output/v18/reproduccion/borusyak_hull_jaravel_2022/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2007"
+ },
+ {
+  "id": "V18-AUX-REP-BHJ-REP",
+  "indicador": "Coeficiente reproducido de Borusyak, Hull y Jaravel (2022), con su IC95",
+  "valor": -0.309961,
+  "min": -0.7055,
+  "max": -0.0022,
+  "unidad": "coeficiente IV (ADH 2013, nivel de choque)",
+  "periodo": "1990-2007",
+  "cobertura": "Estados Unidos (794 zonas de desplazamiento por periodo)",
+  "fuentes": [
+   "output/v18/reproduccion/borusyak_hull_jaravel_2022/tabla.csv",
+   "output/v18/reproduccion/borusyak_hull_jaravel_2022/resultado.json",
+   "output/v18/reproduccion/borusyak_hull_jaravel_2022/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de sus autores (no usa datos del proyecto); conjunto de controles 5; IC95 por inversión con el nulo impuesto; veredicto: coincide",
+  "ficha": "output/v18/reproduccion/borusyak_hull_jaravel_2022/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2007"
+ },
+ {
+  "id": "V18-AUX-REP-CHAVES-PUB",
+  "indicador": "Coeficiente publicado por Chaves-Fonseca (2026)",
+  "valor": 0.02,
+  "min": null,
+  "max": null,
+  "unidad": "ln del precio por 100 anuncios en el barrio (IV)",
+  "periodo": "2010-2018",
+  "cobertura": "Madrid (barrios), 1.029 observaciones barrio-año",
+  "fuentes": [
+   "output/v18/reproduccion/chavesfonseca2026/tabla.csv",
+   "output/v18/reproduccion/chavesfonseca2026/resultado.json",
+   "output/v18/reproduccion/chavesfonseca2026/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
+  "ficha": "output/v18/reproduccion/chavesfonseca2026/resultado.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-REP-CHAVES-PUB-ET",
+  "indicador": "Error típico publicado por Chaves-Fonseca (2026)",
+  "valor": 0.004,
+  "min": null,
+  "max": null,
+  "unidad": "ln del precio por 100 anuncios en el barrio (IV)",
+  "periodo": "2010-2018",
+  "cobertura": "Madrid (barrios), 1.029 observaciones barrio-año",
+  "fuentes": [
+   "output/v18/reproduccion/chavesfonseca2026/tabla.csv",
+   "output/v18/reproduccion/chavesfonseca2026/resultado.json",
+   "output/v18/reproduccion/chavesfonseca2026/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
+  "ficha": "output/v18/reproduccion/chavesfonseca2026/resultado.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-REP-CHAVES-REP",
+  "indicador": "Coeficiente reproducido de Chaves-Fonseca (2026), con su IC95",
+  "valor": 0.01965,
+  "min": 0.011,
+  "max": 0.0283,
+  "unidad": "ln del precio por 100 anuncios en el barrio (IV)",
+  "periodo": "2010-2018",
+  "cobertura": "Madrid (barrios), 1.029 observaciones barrio-año",
+  "fuentes": [
+   "output/v18/reproduccion/chavesfonseca2026/tabla.csv",
+   "output/v18/reproduccion/chavesfonseca2026/resultado.json",
+   "output/v18/reproduccion/chavesfonseca2026/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
+  "ficha": "output/v18/reproduccion/chavesfonseca2026/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-REP-MENSE-PUB",
+  "indicador": "Coeficiente publicado por Mense (2025)",
+  "valor": -0.192,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad del alquiler respecto a la oferta nueva (IV)",
+  "periodo": "2011-2018",
+  "cobertura": "Alemania (94 regiones de planificación)",
+  "fuentes": [
+   "output/v18/reproduccion/mense_2025/tabla.csv",
+   "output/v18/reproduccion/mense_2025/resultado.json",
+   "output/v18/reproduccion/mense_2025/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
+  "ficha": "output/v18/reproduccion/mense_2025/resultado.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-REP-MENSE-PUB-ET",
+  "indicador": "Error típico publicado por Mense (2025)",
+  "valor": 0.065,
+  "min": null,
+  "max": null,
+  "unidad": "elasticidad del alquiler respecto a la oferta nueva (IV)",
+  "periodo": "2011-2018",
+  "cobertura": "Alemania (94 regiones de planificación)",
+  "fuentes": [
+   "output/v18/reproduccion/mense_2025/tabla.csv",
+   "output/v18/reproduccion/mense_2025/resultado.json",
+   "output/v18/reproduccion/mense_2025/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
+  "ficha": "output/v18/reproduccion/mense_2025/resultado.json",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-REP-MENSE-REP",
+  "indicador": "Coeficiente reproducido de Mense (2025), con su IC95",
+  "valor": -0.19163,
+  "min": -0.3175,
+  "max": -0.0658,
+  "unidad": "elasticidad del alquiler respecto a la oferta nueva (IV)",
+  "periodo": "2011-2018",
+  "cobertura": "Alemania (94 regiones de planificación)",
+  "fuentes": [
+   "output/v18/reproduccion/mense_2025/tabla.csv",
+   "output/v18/reproduccion/mense_2025/resultado.json",
+   "output/v18/reproduccion/mense_2025/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "reproducción del estudio original con los datos de su autor (no usa datos del proyecto); veredicto: coincide",
+  "ficha": "output/v18/reproduccion/mense_2025/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2018"
+ },
+ {
+  "id": "V18-AUX-MC-ALEATORIZACION-TAM",
+  "indicador": "Tamaño empírico al 5 % de aleatorizacion (filas decisivas)",
+  "valor": null,
+  "min": 0.053,
+  "max": 0.0635,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (E2: 100/200 y 10/150 municipios x 13 trimestres; E8: 36 provincias en 8 CCAA x 24 trimestres; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/aleatorizacion/tabla.csv",
+   "output/v18/montecarlo/aleatorizacion/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 4 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/aleatorizacion/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-ALEATORIZACION-COB",
+  "indicador": "Cobertura empírica al 95 % de aleatorizacion (filas decisivas)",
+  "valor": null,
+  "min": 0.9365,
+  "max": 0.947,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (E2: 100/200 y 10/150 municipios x 13 trimestres; E8: 36 provincias en 8 CCAA x 24 trimestres; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/aleatorizacion/tabla.csv",
+   "output/v18/montecarlo/aleatorizacion/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 4 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/aleatorizacion/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-BHJ-TAM",
+  "indicador": "Tamaño empírico al 5 % de bhj (filas decisivas)",
+  "valor": null,
+  "min": 0.0015,
+  "max": 0.2615,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (39 provincias; K = 10, 20, 30 choques; HHI 0,1-0,3)",
+  "fuentes": [
+   "output/v18/montecarlo/bhj/tabla.csv",
+   "output/v18/montecarlo/bhj/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 27 filas decisivas (columna «principal»); veredicto: AR (ar_ic_nulo_impuesto): NO APTO; iv_cluster (normal): NO APTO; iv_cluster (t de Student): NO APTO",
+  "ficha": "output/v18/montecarlo/bhj/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-BHJ-COB",
+  "indicador": "Cobertura empírica al 95 % de bhj (filas decisivas)",
+  "valor": null,
+  "min": 0.7385,
+  "max": 0.9985,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (39 provincias; K = 10, 20, 30 choques; HHI 0,1-0,3)",
+  "fuentes": [
+   "output/v18/montecarlo/bhj/tabla.csv",
+   "output/v18/montecarlo/bhj/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 27 filas decisivas (columna «principal»); veredicto: AR (ar_ic_nulo_impuesto): NO APTO; iv_cluster (normal): NO APTO; iv_cluster (t de Student): NO APTO",
+  "ficha": "output/v18/montecarlo/bhj/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-BVAR-COB68",
+  "indicador": "Cobertura empírica al 68 % de bvar (filas decisivas)",
+  "valor": null,
+  "min": 0.0055,
+  "max": 0.988,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (VAR(2) de 7 variables, T = 48, 60 y 74; R = 2000; 500 extracciones del posterior por réplica)",
+  "fuentes": [
+   "output/v18/montecarlo/bvar/tabla.csv",
+   "output/v18/montecarlo/bvar/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 12 filas decisivas (columna «decisivo»); veredicto: NO APTO",
+  "ficha": "output/v18/montecarlo/bvar/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-BVAR-COB90",
+  "indicador": "Cobertura empírica al 90 % de bvar (filas decisivas)",
+  "valor": null,
+  "min": 0.1175,
+  "max": 1.0,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (VAR(2) de 7 variables, T = 48, 60 y 74; R = 2000; 500 extracciones del posterior por réplica)",
+  "fuentes": [
+   "output/v18/montecarlo/bvar/tabla.csv",
+   "output/v18/montecarlo/bvar/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 12 filas decisivas (columna «decisivo»); veredicto: NO APTO",
+  "ficha": "output/v18/montecarlo/bvar/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-CONLEY-TAM",
+  "indicador": "Tamaño empírico al 5 % de conley (filas decisivas)",
+  "valor": null,
+  "min": 0.052,
+  "max": 0.261,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (sección: 4.000 secciones (800 en la ciudad); municipio: 311)",
+  "fuentes": [
+   "output/v18/montecarlo/conley/tabla.csv",
+   "output/v18/montecarlo/conley/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 20 filas decisivas (columna «principal»); veredicto: ",
+  "ficha": "output/v18/montecarlo/conley/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-CONLEY-COB",
+  "indicador": "Cobertura empírica al 95 % de conley (filas decisivas)",
+  "valor": null,
+  "min": 0.739,
+  "max": 0.948,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (sección: 4.000 secciones (800 en la ciudad); municipio: 311)",
+  "fuentes": [
+   "output/v18/montecarlo/conley/tabla.csv",
+   "output/v18/montecarlo/conley/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 20 filas decisivas (columna «principal»); veredicto: ",
+  "ficha": "output/v18/montecarlo/conley/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-CS-WEBB-TAM",
+  "indicador": "Tamaño empírico al 5 % de cs_webb (filas decisivas)",
+  "valor": null,
+  "min": 0.0005,
+  "max": 0.178,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/cs_webb/tabla.csv",
+   "output/v18/montecarlo/cs_webb/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO CONDICIONADO (solo en: cat_trim_S, cat_trim_M, cat_trim_L, cat_anual, zt2024_2cohortes, pocos_tratados)",
+  "ficha": "output/v18/montecarlo/cs_webb/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-CS-WEBB-COB",
+  "indicador": "Cobertura empírica al 95 % de cs_webb (filas decisivas)",
+  "valor": null,
+  "min": 0.822,
+  "max": 0.9995,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/cs_webb/tabla.csv",
+   "output/v18/montecarlo/cs_webb/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO CONDICIONADO (solo en: cat_trim_S, cat_trim_M, cat_trim_L, cat_anual, zt2024_2cohortes, pocos_tratados)",
+  "ficha": "output/v18/montecarlo/cs_webb/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-DCDH-ALEATORIZACION-TAM",
+  "indicador": "Tamaño empírico al 5 % de dcdh_aleatorizacion (filas decisivas)",
+  "valor": null,
+  "min": 0.0455,
+  "max": 0.0535,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (36 provincias, 8 CCAA, T = 24; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/dcdh_aleatorizacion/tabla.csv",
+   "output/v18/montecarlo/dcdh_aleatorizacion/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 4 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/dcdh_aleatorizacion/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-DCDH-ALEATORIZACION-COB",
+  "indicador": "Cobertura empírica al 95 % de dcdh_aleatorizacion (filas decisivas)",
+  "valor": null,
+  "min": 0.9465,
+  "max": 0.9545,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (36 provincias, 8 CCAA, T = 24; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/dcdh_aleatorizacion/tabla.csv",
+   "output/v18/montecarlo/dcdh_aleatorizacion/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 4 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/dcdh_aleatorizacion/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-DRISCOLL-KRAAY-TAM",
+  "indicador": "Tamaño empírico al 5 % de driscoll_kraay (filas decisivas)",
+  "valor": null,
+  "min": 0.16,
+  "max": 0.5655,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (39 provincias; T = 14, 20, 30)",
+  "fuentes": [
+   "output/v18/montecarlo/driscoll_kraay/tabla.csv",
+   "output/v18/montecarlo/driscoll_kraay/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 12 filas decisivas (columna «principal»); veredicto: Driscoll-Kraay (m = ancho, t de T-1 gl): NO APTO; HC1 (normal, referencia): NO APTO; cluster por provincia (CR1, t de N-1 gl): NO APTO",
+  "ficha": "output/v18/montecarlo/driscoll_kraay/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-DRISCOLL-KRAAY-COB",
+  "indicador": "Cobertura empírica al 95 % de driscoll_kraay (filas decisivas)",
+  "valor": null,
+  "min": 0.4345,
+  "max": 0.84,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (39 provincias; T = 14, 20, 30)",
+  "fuentes": [
+   "output/v18/montecarlo/driscoll_kraay/tabla.csv",
+   "output/v18/montecarlo/driscoll_kraay/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 12 filas decisivas (columna «principal»); veredicto: Driscoll-Kraay (m = ancho, t de T-1 gl): NO APTO; HC1 (normal, referencia): NO APTO; cluster por provincia (CR1, t de N-1 gl): NO APTO",
+  "ficha": "output/v18/montecarlo/driscoll_kraay/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-HONEST-DID-TAM",
+  "indicador": "Tamaño empírico al 5 % de honest_did (filas decisivas)",
+  "valor": null,
+  "min": 0.0,
+  "max": 0.0845,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (Cataluña 150-450 municipios x 13 trimestres; 36 provincias x 24 trimestres; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/honest_did/tabla.csv",
+   "output/v18/montecarlo/honest_did/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 21 filas decisivas (columna «entra_en_veredicto»); veredicto: APTO CONDICIONADO (solo en: cat_S_M0_PTexacta, cat_L_M0_PTexacta)",
+  "ficha": "output/v18/montecarlo/honest_did/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-HONEST-DID-COB",
+  "indicador": "Cobertura empírica al 95 % de honest_did (filas decisivas)",
+  "valor": null,
+  "min": 0.9155,
+  "max": 1.0,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (Cataluña 150-450 municipios x 13 trimestres; 36 provincias x 24 trimestres; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/honest_did/tabla.csv",
+   "output/v18/montecarlo/honest_did/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 21 filas decisivas (columna «entra_en_veredicto»); veredicto: APTO CONDICIONADO (solo en: cat_S_M0_PTexacta, cat_L_M0_PTexacta)",
+  "ficha": "output/v18/montecarlo/honest_did/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-IV-DEBIL-TAM",
+  "indicador": "Tamaño empírico al 5 % de iv_debil (filas decisivas)",
+  "valor": null,
+  "min": 0.0,
+  "max": 0.1926605505,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (39 clusters x 14 años; p = 1 y p = 2)",
+  "fuentes": [
+   "output/v18/montecarlo/iv_debil/tabla.csv",
+   "output/v18/montecarlo/iv_debil/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 35 filas decisivas (columna «principal»); veredicto: p=1 · 2SLS (normal): APTO; p=1 · 2SLS (t de Student, G-1): APTO; p=1 · AR (IC exacto por cluster): APTO; p=2 · 2SLS beta_1 (normal): APTO CONDICIONADO; p=2 · 2SLS beta_1 (t de Student, G-1): APTO CONDICIONADO; p=2 · AR conjunto (chi2, 2 gl): APTO CONDICIONADO; p=2 · AR de subvector beta_1 (proyección): NO APTO; regla F efectivo >= 10 (2SLS condicionado): NO APTO",
+  "ficha": "output/v18/montecarlo/iv_debil/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-IV-DEBIL-COB",
+  "indicador": "Cobertura empírica al 95 % de iv_debil (filas decisivas)",
+  "valor": null,
+  "min": 0.8073394495,
+  "max": 1.0,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (39 clusters x 14 años; p = 1 y p = 2)",
+  "fuentes": [
+   "output/v18/montecarlo/iv_debil/tabla.csv",
+   "output/v18/montecarlo/iv_debil/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 35 filas decisivas (columna «principal»); veredicto: p=1 · 2SLS (normal): APTO; p=1 · 2SLS (t de Student, G-1): APTO; p=1 · AR (IC exacto por cluster): APTO; p=2 · 2SLS beta_1 (normal): APTO CONDICIONADO; p=2 · 2SLS beta_1 (t de Student, G-1): APTO CONDICIONADO; p=2 · AR conjunto (chi2, 2 gl): APTO CONDICIONADO; p=2 · AR de subvector beta_1 (proyección): NO APTO; regla F efectivo >= 10 (2SLS condicionado): NO APTO",
+  "ficha": "output/v18/montecarlo/iv_debil/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-LP-IV-TAM",
+  "indicador": "Tamaño empírico al 5 % de lp_iv (filas decisivas)",
+  "valor": null,
+  "min": 0.0104,
+  "max": 0.1176,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (T = 108 trimestres (324 meses de sorpresa), h = 4, 8, 12; R = 5000)",
+  "fuentes": [
+   "output/v18/montecarlo/lp_iv/tabla.csv",
+   "output/v18/montecarlo/lp_iv/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 27 filas decisivas (variante principal del resultado.json); veredicto: AR_aumentado_EHW (h = 8, todas las fuerzas): NO APTO; 2SLS_NeweyWest_h+1 (h = 8, F >= 10): NO APTO; 2SLS_aumentado_EHW (h = 8, F >= 10): NO APTO",
+  "ficha": "output/v18/montecarlo/lp_iv/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-LP-IV-COB",
+  "indicador": "Cobertura empírica al 95 % de lp_iv (filas decisivas)",
+  "valor": null,
+  "min": 0.8824,
+  "max": 0.9896,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (T = 108 trimestres (324 meses de sorpresa), h = 4, 8, 12; R = 5000)",
+  "fuentes": [
+   "output/v18/montecarlo/lp_iv/tabla.csv",
+   "output/v18/montecarlo/lp_iv/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 27 filas decisivas (variante principal del resultado.json); veredicto: AR_aumentado_EHW (h = 8, todas las fuerzas): NO APTO; 2SLS_NeweyWest_h+1 (h = 8, F >= 10): NO APTO; 2SLS_aumentado_EHW (h = 8, F >= 10): NO APTO",
+  "ficha": "output/v18/montecarlo/lp_iv/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-META-BAYES-TAM",
+  "indicador": "Tamaño empírico al 5 % de meta_bayes (filas decisivas)",
+  "valor": null,
+  "min": 0.009666666667,
+  "max": 0.4996666667,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (K = 2 a 10 estudios; R = 3000 por celda)",
+  "fuentes": [
+   "output/v18/montecarlo/meta_bayes/tabla.csv",
+   "output/v18/montecarlo/meta_bayes/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 63 filas decisivas (columna «entra_en_veredicto»); veredicto: NO APTO",
+  "ficha": "output/v18/montecarlo/meta_bayes/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-META-BAYES-COB",
+  "indicador": "Cobertura empírica al 95 % de meta_bayes (filas decisivas)",
+  "valor": null,
+  "min": 0.5003333333,
+  "max": 0.9903333333,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (K = 2 a 10 estudios; R = 3000 por celda)",
+  "fuentes": [
+   "output/v18/montecarlo/meta_bayes/tabla.csv",
+   "output/v18/montecarlo/meta_bayes/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 63 filas decisivas (columna «entra_en_veredicto»); veredicto: NO APTO",
+  "ficha": "output/v18/montecarlo/meta_bayes/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-SA-WEBB-TAM",
+  "indicador": "Tamaño empírico al 5 % de sa_webb (filas decisivas)",
+  "valor": null,
+  "min": 0.0575,
+  "max": 0.092,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/sa_webb/tabla.csv",
+   "output/v18/montecarlo/sa_webb/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/sa_webb/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-SA-WEBB-COB",
+  "indicador": "Cobertura empírica al 95 % de sa_webb (filas decisivas)",
+  "valor": null,
+  "min": 0.908,
+  "max": 0.9425,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (50-150 tratados y 100-300 controles (T = 8, 13, 17); 36 provincias en 8 CCAA (T = 24); R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/sa_webb/tabla.csv",
+   "output/v18/montecarlo/sa_webb/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/sa_webb/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-SDID-CONLEY-TABER-TAM",
+  "indicador": "Tamaño empírico al 5 % de sdid_conley_taber (filas decisivas)",
+  "valor": null,
+  "min": 0.033,
+  "max": 0.4435,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (2-25 tratados y 150-200 controles; T = 17 y 40; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/sdid_conley_taber/tabla.csv",
+   "output/v18/montecarlo/sdid_conley_taber/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/sdid_conley_taber/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-SDID-CONLEY-TABER-COB",
+  "indicador": "Cobertura empírica al 95 % de sdid_conley_taber (filas decisivas)",
+  "valor": null,
+  "min": 0.5565,
+  "max": 0.967,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (2-25 tratados y 150-200 controles; T = 17 y 40; R = 2000)",
+  "fuentes": [
+   "output/v18/montecarlo/sdid_conley_taber/tabla.csv",
+   "output/v18/montecarlo/sdid_conley_taber/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 7 filas decisivas (variante principal del resultado.json); veredicto: APTO",
+  "ficha": "output/v18/montecarlo/sdid_conley_taber/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-SVAR-PROXY-TAM",
+  "indicador": "Tamaño empírico al 5 % de svar_proxy (filas decisivas)",
+  "valor": null,
+  "min": 0.01266666667,
+  "max": 0.08733333333,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (VAR(2) de 6 variables, T = 108 (324 meses de sorpresa), h = 4 y 8; R = 3000)",
+  "fuentes": [
+   "output/v18/montecarlo/svar_proxy/tabla.csv",
+   "output/v18/montecarlo/svar_proxy/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 12 filas decisivas (variante principal del resultado.json); veredicto: AR_delta_NeweyWest4 (h = 8, todas las fuerzas): NO APTO; Wald_delta (h = 8, F >= 10): NO APTO",
+  "ficha": "output/v18/montecarlo/svar_proxy/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-SVAR-PROXY-COB",
+  "indicador": "Cobertura empírica al 95 % de svar_proxy (filas decisivas)",
+  "valor": null,
+  "min": 0.9126666667,
+  "max": 0.9873333333,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (VAR(2) de 6 variables, T = 108 (324 meses de sorpresa), h = 4 y 8; R = 3000)",
+  "fuentes": [
+   "output/v18/montecarlo/svar_proxy/tabla.csv",
+   "output/v18/montecarlo/svar_proxy/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 12 filas decisivas (variante principal del resultado.json); veredicto: AR_delta_NeweyWest4 (h = 8, todas las fuerzas): NO APTO; Wald_delta (h = 8, F >= 10): NO APTO",
+  "ficha": "output/v18/montecarlo/svar_proxy/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-WEBB-TWFE-TAM",
+  "indicador": "Tamaño empírico al 5 % de webb_twfe (filas decisivas)",
+  "valor": null,
+  "min": 0.0425,
+  "max": 0.0955,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (G = 8, 30, 39 clusters; T = 14 (y 30); tratamiento escalonado)",
+  "fuentes": [
+   "output/v18/montecarlo/webb_twfe/tabla.csv",
+   "output/v18/montecarlo/webb_twfe/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (columna «principal»); veredicto: CR1 (normal): APTO CONDICIONADO; CR1 (t de Student, G-1): APTO; wild cluster bootstrap (Webb): APTO",
+  "ficha": "output/v18/montecarlo/webb_twfe/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-MC-WEBB-TWFE-COB",
+  "indicador": "Cobertura empírica al 95 % de webb_twfe (filas decisivas)",
+  "valor": null,
+  "min": 0.9045,
+  "max": 0.9575,
+  "unidad": "proporción",
+  "periodo": "simulación (semilla 20261010)",
+  "cobertura": "simulación sin datos reales (G = 8, 30, 39 clusters; T = 14 (y 30); tratamiento escalonado)",
+  "fuentes": [
+   "output/v18/montecarlo/webb_twfe/tabla.csv",
+   "output/v18/montecarlo/webb_twfe/resultado.json"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "validación Monte Carlo; mínimo y máximo de 9 filas decisivas (columna «principal»); veredicto: CR1 (normal): APTO CONDICIONADO; CR1 (t de Student, G-1): APTO; wild cluster bootstrap (Webb): APTO",
+  "ficha": "output/v18/montecarlo/webb_twfe/resultado.json",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-E1-R4-V3",
+  "indicador": "Coeficiente de E1-R4 con los adelantos de 2011-2012 como regresores (variante), con IC90 de Webb",
+  "valor": 0.00258565843,
+  "min": -0.0257,
+  "max": 0.0394,
+  "unidad": "log (diferencia entre radio y anillo, posterior frente a 2013)",
+  "periodo": "2011-2019",
+  "cobertura": "Barcelona (barrios; 22 tratadas y 55 de control)",
+  "fuentes": [
+   "SERPAVI (MIVAU), alquiler mediano por sección, 2011-2024",
+   "Ajuntament de Barcelona, registro de viviendas de uso turístico (cortes trimestrales con coordenadas, data/manual/v11)",
+   "INE, viviendas turísticas (INE-VUT) por sección; Censo 2021 (viviendas por sección)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "variante [E] de E1-R4; clase de la variante: SUGESTIVO (efecto nulo acotado); IC90 por inversión de Webb; IC95 en tabla.csv",
+  "ficha": "output/v18/estimacion/e1/tabla.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-E2-R1-EV-2021T1",
+  "indicador": "Coeficiente de 2021T1 del estudio de eventos de E2-R1 (base 2019T4)",
+  "valor": -0.057798,
+  "min": null,
+  "max": null,
+  "unidad": "log de la renta media de los contratos nuevos",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 municipios regulados por la Ley 11/2020 y 94 controles de Cataluña, panel trimestral equilibrado 2019T1-2022T1 sin Barcelona ciudad; sin los municipios sellados en v6, V15 y V16",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "estudio de eventos de E2-R1, k = 8 (2021T1); error típico 0.012837",
+  "ficha": "output/v18/estimacion/e2/estudio_eventos.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-E2-R1-B6B2",
+  "indicador": "Coeficiente de E2-R1 con trayectorias trimestrales por tamaño del municipio (ln de la población de 2019 × trimestre), con IC95",
+  "valor": -0.023239,
+  "min": -0.045233,
+  "max": -0.001246,
+  "unidad": "log de la renta media de los contratos nuevos",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 municipios regulados por la Ley 11/2020 y 94 controles de Cataluña, panel trimestral equilibrado 2019T1-2022T1 sin Barcelona ciudad; sin los municipios sellados en v6, V15 y V16",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "robustez a posteriori (B6b-2): ln(población 2019) × efectos de trimestre; principal -0.0384; criterio de la ronda: por debajo de −0,03: no",
+  "ficha": "output/v18/estimacion/e2/robustez_b6.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-E2-R1-PCT",
+  "indicador": "Diferencia porcentual equivalente al coeficiente logarítmico de E2-R1",
+  "valor": -3.770478587,
+  "min": null,
+  "max": null,
+  "unidad": "%",
+  "periodo": "2019T1-2022T1",
+  "cobertura": "49 municipios regulados por la Ley 11/2020 y 94 controles de Cataluña, panel trimestral equilibrado 2019T1-2022T1 sin Barcelona ciudad; sin los municipios sellados en v6, V15 y V16",
+  "fuentes": [
+   "Incasòl, fianzas (Socrata qww9-bvhh, descarga 2026-10-14)",
+   "BOE-A-2020-11363 (Ley 11/2020 de Cataluña) y cataluna_contencion_rentas_v3.csv (v3)",
+   "docs/v18/plan_replicacion.md + plan_replicacion_adenda.md (pre-registro interno plan-replicacion-v18)"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "SUGESTIVO",
+  "nota": "transformación 100·(exp(b)−1) del coeficiente log -0.038434 de E2-R1 (tabla.csv); no es una estimación nueva",
+  "ficha": "output/v18/estimacion/e2/tabla.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-CAT-FICHAS",
+  "indicador": "Fichas del catálogo de la literatura",
+  "valor": 181.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CAT-TEXTO-COMPLETO",
+  "indicador": "Fichas leídas en texto completo",
+  "valor": 52.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CAT-SOLO-RESUMEN",
+  "indicador": "Fichas leídas solo por el resumen",
+  "valor": 104.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CAT-SIN-INDICAR",
+  "indicador": "Fichas sin indicar el grado de lectura",
+  "valor": 25.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CAT-PAQUETE",
+  "indicador": "Fichas con paquete de replicación",
+  "valor": 11.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CAT-VERIFICADA",
+  "indicador": "Fichas con referencia VERIFICADA",
+  "valor": 125.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CAT-NO-VERIFICADA",
+  "indicador": "Fichas con referencia NO VERIFICADA",
+  "valor": 45.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-CAT-DISCREPANTE",
+  "indicador": "Fichas con referencia DISCREPANTE",
+  "valor": 11.0,
+  "min": null,
+  "max": null,
+  "unidad": "fichas",
+  "periodo": "2026",
+  "cobertura": "literatura (todos los países del catálogo)",
+  "fuentes": [
+   "output/v18/f1/catalogo.csv",
+   "output/v18/f1/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "recuento de filas de catalogo.csv (fase 1)",
+  "ficha": "output/v18/f1/catalogo.csv",
+  "tipo_rango": "sin rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-D3-VALOR-TASADO-2015-2019",
+  "indicador": "Cuota de la varianza de la variación anual de Valor tasado MIVAU (€/m², media anual) debida al componente común (año), 2015-2019",
+  "valor": 3.7997,
+  "min": 1.5487,
+  "max": 12.4399,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2015-2019",
+  "cobertura": "España (38 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-D3-VALOR-TASADO-2020-2025",
+  "indicador": "Cuota de la varianza de la variación anual de Valor tasado MIVAU (€/m², media anual) debida al componente común (año), 2020-2025",
+  "valor": 66.2264,
+  "min": 60.5256,
+  "max": 72.9867,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2020-2025",
+  "cobertura": "España (38 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "V18-AUX-D3-IPV-CCAA-2015-2019",
+  "indicador": "Cuota de la varianza de la variación anual de IPV INE por CCAA (índice, media anual) debida al componente común (año), 2015-2019",
+  "valor": 19.2712,
+  "min": 7.4649,
+  "max": 65.0727,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2015-2019",
+  "cobertura": "España (9 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-D3-IPV-CCAA-2020-2025",
+  "indicador": "Cuota de la varianza de la variación anual de IPV INE por CCAA (índice, media anual) debida al componente común (año), 2020-2025",
+  "valor": 91.7739,
+  "min": 89.4178,
+  "max": 96.4722,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2020-2025",
+  "cobertura": "España (9 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "V18-AUX-D3-IPC-ALQUILER-2015-2019",
+  "indicador": "Cuota de la varianza de la variación anual de IPC alquiler INE provincial (índice, media anual) debida al componente común (año), 2015-2019",
+  "valor": 49.4766,
+  "min": 42.8607,
+  "max": 58.622,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2015-2019",
+  "cobertura": "España (41 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-D3-IPC-ALQUILER-2020-2025",
+  "indicador": "Cuota de la varianza de la variación anual de IPC alquiler INE provincial (índice, media anual) debida al componente común (año), 2020-2025",
+  "valor": 45.3994,
+  "min": 39.6832,
+  "max": 54.9512,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2020-2025",
+  "cobertura": "España (41 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2025"
+ },
+ {
+  "id": "V18-AUX-D3-IPVA-2015-2019",
+  "indicador": "Cuota de la varianza de la variación anual de IPVA INE provincial (índice anual) debida al componente común (año), 2015-2019",
+  "valor": 73.9758,
+  "min": 68.2666,
+  "max": 81.5388,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2015-2019",
+  "cobertura": "España (38 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-D3-IPVA-2020-2024",
+  "indicador": "Cuota de la varianza de la variación anual de IPVA INE provincial (índice anual) debida al componente común (año), 2020-2024",
+  "valor": 67.83,
+  "min": 58.3575,
+  "max": 80.1232,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2020-2024",
+  "cobertura": "España (38 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2024"
+ },
+ {
+  "id": "V18-AUX-D3-SERPAVI-2015-2019",
+  "indicador": "Cuota de la varianza de la variación anual de SERPAVI alquiler €/m² mediana provincial debida al componente común (año), 2015-2019",
+  "valor": 75.6563,
+  "min": 69.9787,
+  "max": 83.0992,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2015-2019",
+  "cobertura": "España (38 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-D3-SERPAVI-2020-2024",
+  "indicador": "Cuota de la varianza de la variación anual de SERPAVI alquiler €/m² mediana provincial debida al componente común (año), 2020-2024",
+  "valor": 44.9493,
+  "min": 34.1557,
+  "max": 60.1203,
+  "unidad": "% (IC95 bootstrap por provincias)",
+  "periodo": "2020-2024",
+  "cobertura": "España (38 unidades sin bloques sellados v6)",
+  "fuentes": [
+   "output/v17/d3/varianza_comun_local.csv",
+   "output/v17/d3/informe.md"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "subperiodo de V17-D3 (cuota_comun_anio e IC95 del fichero de origen, en %); el periodo completo es V17-D3-VARIANZA-COMUN-*",
+  "ficha": "output/v17/d3/varianza_comun_local.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2024"
  }
 ]

@@ -38,6 +38,27 @@ def test_consolidado_al_dia_y_valido():
         assert h["cobertura"] and not h["cobertura"].endswith(";")
 
 
+def test_auxiliares_copian_su_origen():
+    aux = {h["id"]: h for h in H.auxiliares()}
+    assert len(aux) == H.N_AUX and all(i.startswith("V18-AUX-") for i in aux)
+    for h in aux.values():
+        assert h["capa"] == "C4" and h["fuentes"] and h["clasificacion_v18"] in check_v18.CLASES
+        assert any(h.get(k) is not None for k in ("valor", "min", "max")), f"{h['id']}: recuento o cifra sin valor"
+        assert not check_v18.CAUSAL.search(f"{h['indicador']} {h['nota']}")
+    e2 = pd.read_csv(H.OUT / "estimacion" / "e2" / "tabla.csv").set_index("id").loc["E2-R1", "coef"]
+    assert aux["V18-AUX-E2-R1-PCT"]["valor"] == pytest.approx(100 * (2.718281828459045 ** e2 - 1), abs=1e-6)
+    assert aux["V18-AUX-E2-R1-EV-2021T1"]["valor"] == pytest.approx(-0.057798)
+    assert aux["V18-AUX-CAT-FICHAS"]["valor"] == len(pd.read_csv(H.OUT / "f1" / "catalogo.csv"))
+    assert aux["V18-AUX-LIT-GL2020-BARRIO-MEDIO"]["valor"] == pytest.approx(1.9)
+    assert not any(i.startswith("V18-AUX-D3-") and i.endswith(("2015-2025", "2015-2024")) for i in aux)   # ya son V17-D3-*
+
+
+def test_min_sig_max_sig():
+    ck = _ck()
+    txt, falta = D.render_texto("{{V18-B5-E1:min_sig}} a {{V18-B5-E1:max_sig}}", ck, pd.read_csv(D.MAG))
+    assert falta == [] and txt == "0,1 a 0,9"
+
+
 def _ck() -> pd.DataFrame:
     filas = [dict(id=f"V18-B5-E{k}", indicador=f"Magnitud preferida de factor {k} (E{k}): unidad", valor=0.5 if k == 1 else None, min=0.1,
                   max=0.9, unidad="u", periodo="2024", cobertura="España", fuentes="x", capa="C4", fecha_dato="2024", ficha="—",

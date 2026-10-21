@@ -4,6 +4,7 @@
    sustituye cada marcador con las funciones de src/v5/render.py contra output/v5/cifras_clave.csv:
    - {{id}}, {{id:campo}} como en render.py (valor, min, max, rango, cita, breve, sig, periodo, cobertura, fuentes, capa…);
    - {{id:clasificacion}}: la clasificacion_v18 de la cifra (K2; columna propia de cifras_clave, al lado de la capa);
+   - {{id:min_sig}}, {{id:max_sig}}: extremos del intervalo con 3 cifras significativas (como «sig»; para intervalos pequeños);
    - {{tabla.impactos}}: la tabla de impactos del resumen ejecutivo (factor | magnitud preferida | intervalo | clasificación |
      confianza | limitación principal), con las cifras V18-B5-E* de cifras_clave y el estado B5 de output/v18/f5/magnitudes.csv.
    Falla (código 1) si algún marcador no existe en cifras_clave, si una cifra pedida con :clasificacion no la tiene o si queda
@@ -155,6 +156,12 @@ def render_texto(txt: str, ck: pd.DataFrame, mag: pd.DataFrame) -> tuple[str, li
                 falta.append(f"{i}:clasificacion")
                 return m.group(0)
             return str(r.clasificacion_v18)
+        if campo in ("min_sig", "max_sig"):   # extremo del intervalo con 3 cifras significativas (como «sig» para el valor)
+            x = r[campo[:3]]
+            if pd.isna(x):
+                falta.append(f"{i}:{campo}")
+                return m.group(0)
+            return f"{float(x):.3g}".replace("-", "−").replace(".", ",")
         r = r.copy()
         r["id"] = i   # render.muestra_rango lee el id de la fila (V17/V18: rango solo si tipo_rango = «rango»)
         return R.texto(r, campo)

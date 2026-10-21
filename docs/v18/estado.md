@@ -73,6 +73,7 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | 2026-10-20 | F5 | modelizador | magnitudes preferidas (B5) y contabilidad de la subida | 350.040 | src/v18/f5_*.py; output/v18/f5/ |
 | 2026-10-20 | F6 | general-purpose | infraestructura del Documento de Trabajo: cifras V18 en cifras_clave, generador, tablas, publicación, control | 270.213 | src/v18/f6_*.py; output/v18/f6/; output/v18/documento/ |
 | 2026-10-20 | F6 | redactor | redacción del Documento de Trabajo (16 secciones) | 496.360 | output/v18/documento/plantilla/ |
+| 2026-10-21 | F6 | general-purpose | cifras V18-AUX y marcadores de los 14 huecos | 234.898 | src/v18/f6_hechos.py; output/v18/documento/plantilla/ |
 
 | Fase | Tokens de subagentes |
 |---|---|
@@ -82,8 +83,8 @@ Generada por src/v18/registro_subagentes.py (fuente: docs/v18/subagentes.csv). T
 | F3 | 985.262 |
 | F4 | 4.734.404 |
 | F5 | 350.040 |
-| F6 | 766.573 |
+| F6 | 1.001.471 |
 
-Total V18: 8.909.713 tokens
+Total V18: 9.144.611 tokens
 
 <!-- fin subagentes -->

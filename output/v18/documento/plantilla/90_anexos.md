@@ -1,6 +1,6 @@
 ## Anexo A. Fichas bibliográficas
 
-La fase 1 fijó los criterios antes de buscar (docs/v18/bib/criterios.md): diseño cuasi experimental o estructural, datos de España o de mercados europeos comparables, y publicación en revista con revisión, documento de banco central o serie reconocida de documentos de trabajo. Se hizo una ficha por estudio, agrupadas por factor (docs/v18/bib/<factor>/), con una tabla de efectos y su unidad. El catálogo está en output/v18/f1/catalogo.csv. [FALTA CIFRA: recuentos del catálogo (fichas, texto completo, solo resumen, con paquete de replicación; VERIFICADA, NO VERIFICADA y DISCREPANTE) en output/v18/f1/informe.md]
+La fase 1 fijó los criterios antes de buscar (docs/v18/bib/criterios.md): diseño cuasi experimental o estructural, datos de España o de mercados europeos comparables, y publicación en revista con revisión, documento de banco central o serie reconocida de documentos de trabajo. Se hizo una ficha por estudio, agrupadas por factor (docs/v18/bib/<factor>/), con una tabla de efectos y su unidad. El catálogo está en output/v18/f1/catalogo.csv: {{V18-AUX-CAT-FICHAS:sig}} fichas, {{V18-AUX-CAT-TEXTO-COMPLETO:sig}} leídas en texto completo, {{V18-AUX-CAT-SOLO-RESUMEN:sig}} solo por el resumen y {{V18-AUX-CAT-SIN-INDICAR:sig}} sin indicar el grado de lectura; {{V18-AUX-CAT-PAQUETE:sig}} con paquete de replicación. Por el estado de la referencia: {{V18-AUX-CAT-VERIFICADA:sig}} VERIFICADA, {{V18-AUX-CAT-NO-VERIFICADA:sig}} NO VERIFICADA y {{V18-AUX-CAT-DISCREPANTE:sig}} DISCREPANTE (detalle por factor en output/v18/f1/informe.md).
 
 Los PDF y los paquetes de replicación están solo en disco, con sha256 en data/bib/CHECKSUMS.sha256, y no se versionan. Al repositorio van la ficha, el enlace, el DOI, la licencia y las notas, con citas breves. Estado: VERIFICADA es DOI comprobado con Crossref o DataCite; el cuartil de Scimago no está verificado (tarea del autor). DISCREPANTE es una ficha de versión de trabajo cuyo DOI corresponde a la versión publicada (otro año o título), y se trata como NO VERIFICADA. No se cita ninguna cifra de la versión publicada sin leerla.
 
@@ -47,7 +47,15 @@ Los valores por estudio están en output/v18/f5/magnitudes_estudios.csv y no en 
 
 ## Anexo B. Reproducciones
 
-La fase 2 reproduce con el paquete de su autor, y sin datos del proyecto, los estudios que lo tienen abierto. El veredicto es «coincide» (la misma cifra al redondeo publicado, o una diferencia menor que la fijada en el plan y dentro del error), «difiere con explicación» o «difiere sin explicación» (parada). Ninguna reproducción difiere sin explicación. [FALTA CIFRA: coeficientes e intervalos reproducidos y publicados de las tres reproducciones (output/v18/reproduccion/*/informe.md y docs/v18/reproduccion.md)]
+La fase 2 reproduce con el paquete de su autor, y sin datos del proyecto, los estudios que lo tienen abierto. El veredicto es «coincide» (la misma cifra al redondeo publicado, o una diferencia menor que la fijada en el plan y dentro del error), «difiere con explicación» o «difiere sin explicación» (parada). Ninguna reproducción difiere sin explicación. Las tres coinciden:
+
+| Estudio (especificación) | Publicado | Reproducido |
+|---|---|---|
+| Borusyak, Hull y Jaravel (2022), conjunto de controles 5; IC95 con el nulo impuesto | {{V18-AUX-REP-BHJ-PUB:sig}} (IC95 {{V18-AUX-REP-BHJ-PUB:min_sig}} a {{V18-AUX-REP-BHJ-PUB:max_sig}}) | {{V18-AUX-REP-BHJ-REP:sig}} (IC95 {{V18-AUX-REP-BHJ-REP:min_sig}} a {{V18-AUX-REP-BHJ-REP:max_sig}}) |
+| Chaves-Fonseca (2026), columna 6 (IV), Madrid | {{V18-AUX-REP-CHAVES-PUB:sig}} (error típico {{V18-AUX-REP-CHAVES-PUB-ET:sig}}) | {{V18-AUX-REP-CHAVES-REP:sig}} (IC95 {{V18-AUX-REP-CHAVES-REP:min_sig}} a {{V18-AUX-REP-CHAVES-REP:max_sig}}) |
+| Mense (2025), columna 3 (IV), Alemania | {{V18-AUX-REP-MENSE-PUB:sig}} (error típico {{V18-AUX-REP-MENSE-PUB-ET:sig}}) | {{V18-AUX-REP-MENSE-REP:sig}} (IC95 {{V18-AUX-REP-MENSE-REP:min_sig}} a {{V18-AUX-REP-MENSE-REP:max_sig}}) |
+
+Los artículos de Chaves-Fonseca y de Mense publican el error típico y no el intervalo; el detalle por columna está en output/v18/reproduccion/*/tabla.csv.
 
 | Estudio | Método reproducido | Veredicto |
 |---|---|---|
@@ -122,7 +130,26 @@ Las pruebas son las de B4 de cada diseño (pretendencias y potencia de Roth, pla
 
 ## Anexo E. Monte Carlo de las herramientas
 
-Cada herramienta nueva se validó antes de usarse con procesos generadores que reproducen la estructura de los diseños de V18 (output/v18/montecarlo/<herramienta>/). Se simula bajo el nulo y bajo la alternativa, con semilla fija y sin ningún dato real de resultado ni muestra sellada. Un resultado es apto si el tamaño al 5 % y la cobertura al 95 % caen en las bandas de la adenda 1.12. [FALTA CIFRA: tamaños empíricos y coberturas por herramienta y condición (output/v18/montecarlo/*/resultado.json)]
+Cada herramienta nueva se validó antes de usarse con procesos generadores que reproducen la estructura de los diseños de V18 (output/v18/montecarlo/<herramienta>/). Se simula bajo el nulo y bajo la alternativa, con semilla fija y sin ningún dato real de resultado ni muestra sellada. Un resultado es apto si el tamaño al 5 % y la cobertura al 95 % caen en las bandas de la adenda 1.12. La tabla da, por herramienta, el mínimo y el máximo entre las filas que deciden su veredicto (columna «principal», «entra_en_veredicto» o «decisivo» de su tabla.csv; si no la hay, la variante principal, con h = 8 en las proyecciones locales y el proxy-SVAR); el valor de cada condición está en output/v18/montecarlo/<herramienta>/tabla.csv y el veredicto en su resultado.json. En meta_bayes la cobertura es la de μ.
+
+| Herramienta | Tamaño al 5 %: mínimo a máximo | Cobertura al 95 %: mínimo a máximo |
+|---|---|---|
+| aleatorizacion | {{V18-AUX-MC-ALEATORIZACION-TAM:min_sig}} a {{V18-AUX-MC-ALEATORIZACION-TAM:max_sig}} | {{V18-AUX-MC-ALEATORIZACION-COB:min_sig}} a {{V18-AUX-MC-ALEATORIZACION-COB:max_sig}} |
+| bhj | {{V18-AUX-MC-BHJ-TAM:min_sig}} a {{V18-AUX-MC-BHJ-TAM:max_sig}} | {{V18-AUX-MC-BHJ-COB:min_sig}} a {{V18-AUX-MC-BHJ-COB:max_sig}} |
+| conley | {{V18-AUX-MC-CONLEY-TAM:min_sig}} a {{V18-AUX-MC-CONLEY-TAM:max_sig}} | {{V18-AUX-MC-CONLEY-COB:min_sig}} a {{V18-AUX-MC-CONLEY-COB:max_sig}} |
+| cs_webb | {{V18-AUX-MC-CS-WEBB-TAM:min_sig}} a {{V18-AUX-MC-CS-WEBB-TAM:max_sig}} | {{V18-AUX-MC-CS-WEBB-COB:min_sig}} a {{V18-AUX-MC-CS-WEBB-COB:max_sig}} |
+| dcdh_aleatorizacion | {{V18-AUX-MC-DCDH-ALEATORIZACION-TAM:min_sig}} a {{V18-AUX-MC-DCDH-ALEATORIZACION-TAM:max_sig}} | {{V18-AUX-MC-DCDH-ALEATORIZACION-COB:min_sig}} a {{V18-AUX-MC-DCDH-ALEATORIZACION-COB:max_sig}} |
+| driscoll_kraay | {{V18-AUX-MC-DRISCOLL-KRAAY-TAM:min_sig}} a {{V18-AUX-MC-DRISCOLL-KRAAY-TAM:max_sig}} | {{V18-AUX-MC-DRISCOLL-KRAAY-COB:min_sig}} a {{V18-AUX-MC-DRISCOLL-KRAAY-COB:max_sig}} |
+| honest_did | {{V18-AUX-MC-HONEST-DID-TAM:min_sig}} a {{V18-AUX-MC-HONEST-DID-TAM:max_sig}} | {{V18-AUX-MC-HONEST-DID-COB:min_sig}} a {{V18-AUX-MC-HONEST-DID-COB:max_sig}} |
+| iv_debil | {{V18-AUX-MC-IV-DEBIL-TAM:min_sig}} a {{V18-AUX-MC-IV-DEBIL-TAM:max_sig}} | {{V18-AUX-MC-IV-DEBIL-COB:min_sig}} a {{V18-AUX-MC-IV-DEBIL-COB:max_sig}} |
+| lp_iv | {{V18-AUX-MC-LP-IV-TAM:min_sig}} a {{V18-AUX-MC-LP-IV-TAM:max_sig}} | {{V18-AUX-MC-LP-IV-COB:min_sig}} a {{V18-AUX-MC-LP-IV-COB:max_sig}} |
+| meta_bayes | {{V18-AUX-MC-META-BAYES-TAM:min_sig}} a {{V18-AUX-MC-META-BAYES-TAM:max_sig}} | {{V18-AUX-MC-META-BAYES-COB:min_sig}} a {{V18-AUX-MC-META-BAYES-COB:max_sig}} |
+| sa_webb | {{V18-AUX-MC-SA-WEBB-TAM:min_sig}} a {{V18-AUX-MC-SA-WEBB-TAM:max_sig}} | {{V18-AUX-MC-SA-WEBB-COB:min_sig}} a {{V18-AUX-MC-SA-WEBB-COB:max_sig}} |
+| sdid_conley_taber | {{V18-AUX-MC-SDID-CONLEY-TABER-TAM:min_sig}} a {{V18-AUX-MC-SDID-CONLEY-TABER-TAM:max_sig}} | {{V18-AUX-MC-SDID-CONLEY-TABER-COB:min_sig}} a {{V18-AUX-MC-SDID-CONLEY-TABER-COB:max_sig}} |
+| svar_proxy | {{V18-AUX-MC-SVAR-PROXY-TAM:min_sig}} a {{V18-AUX-MC-SVAR-PROXY-TAM:max_sig}} | {{V18-AUX-MC-SVAR-PROXY-COB:min_sig}} a {{V18-AUX-MC-SVAR-PROXY-COB:max_sig}} |
+| webb_twfe | {{V18-AUX-MC-WEBB-TWFE-TAM:min_sig}} a {{V18-AUX-MC-WEBB-TWFE-TAM:max_sig}} | {{V18-AUX-MC-WEBB-TWFE-COB:min_sig}} a {{V18-AUX-MC-WEBB-TWFE-COB:max_sig}} |
+
+El BVAR se valida con bandas del 68 % y del 90 % (bandas [0,63; 0,73] y [0,87; 0,93]); en sus filas decisivas la cobertura al 68 % va de {{V18-AUX-MC-BVAR-COB68:min_sig}} a {{V18-AUX-MC-BVAR-COB68:max_sig}} y la del 90 % de {{V18-AUX-MC-BVAR-COB90:min_sig}} a {{V18-AUX-MC-BVAR-COB90:max_sig}}.
 
 | Herramienta | Veredicto | Condición |
 |---|---|---|

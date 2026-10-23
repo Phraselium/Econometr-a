@@ -41,3 +41,23 @@ Resumen del veredicto: documento bien organizado y prudente; cumple las reglas d
 | 5 | «8, 30 y 39 clusters» sin id | Dato del diseño (número de comunidades y provincias de la muestra), declarado como tal |
 | 6 | «cuatro cocientes», «dos series» sin id | Denominadores del diseño de la ficha GSADF (output/v7_2/gsadf/ficha_burbuja.md), citada |
 | 7 | «publicación 2.0» tecleado | Marcador {{proyecto.version_publica}} |
+
+# Ronda 2 (2026-10-23)
+
+**Árbitro: REVISAR (revisión menor); «cuando el PDF esté regenerado y se apliquen los puntos 2 a 8, que son solo de texto, el documento puede aceptarse sin otra ronda».** De los 21 hallazgos de la ronda 1, 16 resueltos y 5 en parte o no verificables (2, 7, 17, 19, 21), cubiertos por los nuevos:
+
+| # | Gravedad | Hallazgo nuevo | Respuesta |
+|---|---|---|---|
+| 1 | Mayor | El PDF del resumen era el de la ronda 1 | Regenerado (`make revision_externa_2_0`): el resumen en español ocupa dos páginas A4 apaisadas y la versión inglesa la tercera. check_final comprueba ahora que el PDF lleva las cifras del resumen vigente |
+| 2 | Mayor | La celda de tipos mezcla escalas | Se separan: rango de la literatura por +100 pb y, aparte, la calibración de V17 con semielasticidades del BCE, de −5,9 % (solo compras con hipoteca) a −22,6 %; mismo texto en V.2 |
+| 3 | Menor | V.4: «la mayor parte queda sin asociar» | «en el valor central» |
+| 4 | Menor | Descripción de la extracción de la magnitud | Uniforme entre los extremos de los estudios que admite la regla de la cuenta (columna magnitud_centro); no es el rango de las priors |
+| 5 | Menor | Razón sobrante en la comparación con González y Ortega | Sustituida por el desfase de ventanas |
+| 6 | Menor | Grado de confianza aplicado a un cociente de una sola fuente (suelo) | Quitado |
+| 7 | Menor | Inglés: «effect», saldo migratorio sin ajustes | Corregido |
+| 8 | Editorial | C3 en las siglas, antecedente de «lo», paréntesis de E2-R1 | Corregidos |
+| — | Ronda 1, 21 | «75 % de hogares … de los hogares» | Corregido |
+
+**Verificador: 6 de 7 discrepancias resueltas; 1 abierta y 1 nueva**, ambas corregidas: el periodo de la fila de Cataluña (la cifra es de la fila 2020T1-2022T2 y se refiere a los trimestres de vigencia dentro de él) y el denominador «34 series» (17 comunidades, dos series cada una). 832 marcadores de cifra, todos con id; publicacion/documento_final y consulta/resumen_final.md idénticos al resumen generado; la frase K9 idéntica en el resumen y en B.2; el inglés sin cifras de E2-R1.
+
+Con esto se cierra la revisión (máximo de dos rondas).

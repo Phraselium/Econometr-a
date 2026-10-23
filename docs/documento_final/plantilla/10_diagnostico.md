@@ -15,6 +15,6 @@
 - Se terminan menos viviendas de las que se forman hogares: entre 2021 y 2024 faltaron {{L3-DEF-2124-SINBAJAS:rango_breve}} [C2]. Es una cota con supuestos explícitos; si se descartan dos de las correcciones de la EPA, {{L3-DEF-2124-SENS:rango_breve}}.
 - El INE proyecta {{E-B1-F:breve}} más entre 2026 y 2035 [C2]. La necesidad anual de vivienda en 2026-2035 es de {{T3-H5b:breve}} [C4], sin restar las viviendas que quedan libres por envejecimiento, que la proyección del INE ya descuenta.
 - Hasta 2030 el saldo entre hogares y viviendas empeora en todos los escenarios definidos [{{T4-H3:capa}}]; cuánto, no se sabe: {{T4-H2:rango_breve}} [C4].
-- Son propietarios de su vivienda principal {{R1C-001:breve}} de los hogares [C1].
+- Viven en una vivienda principal en propiedad: {{R1C-001:breve}} [C1].
 
 **Lo que el diagnóstico no dice.** Que un solo factor sea el principal de la subida: en V8 ningún factor destaca como el principal en ninguno de los diez casos estudiados (como mucho coinciden {{V8-VOTOS-c-P5:sig}} métodos de cuatro, y la regla exige tres), y de la subida de la compra desde 2022, {{V8-QNA-pp-c-P5:breve}} de media no se asocia con ningún factor del modelo [C3s: vale solo bajo las restricciones del modelo]. Tampoco que haya o no haya una burbuja (parte VI).

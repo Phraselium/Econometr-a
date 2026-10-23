@@ -4,7 +4,8 @@
    con output/documento_final/ y con su copia en publicacion/documento_final/ (sin la cabecera que añade `make publicacion`).
 2. Lenguaje y rótulos (documento_final.comprobar): nada causal fuera de los anexos técnicos; la mejor estimación y la contabilidad
    con magnitudes de la literatura van rotuladas como juicio experto.
-3. Coherencia entre puertas: consulta/resumen_final.md lleva el mismo resumen ejecutivo; si la web está construida (web/_site, no
+3. Coherencia entre puertas: consulta/resumen_final.md lleva el mismo resumen ejecutivo; el PDF de revision_externa/2_0 lleva sus
+   cifras (si hay pdftotext); si la web está construida (web/_site, no
    versionada), su portada lleva todas las cifras de la tabla de factores del resumen.
 4. Cifras de juicio experto: las V18-AUX-JE-* de cifras_clave son C4 y su nota dice que son juicio experto.
 """
@@ -13,6 +14,8 @@ from __future__ import annotations
 import html
 import importlib.util
 import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -24,6 +27,7 @@ spec.loader.exec_module(F)
 PUB = RAIZ / "publicacion" / "documento_final"
 CONSULTA = RAIZ / "consulta" / "resumen_final.md"
 WEB = RAIZ / "web" / "_site" / "index.html"
+PDF = RAIZ / "revision_externa" / "2_0" / "resumen_ejecutivo.pdf"
 CIFRA = re.compile(r"(?<![\w,.\-])−?\d{1,3}(?:\.\d{3})*,\d+|(?<![\w,.\-])\d{1,3}(?:\.\d{3})+(?![\d,])")   # decimales y miles: no años ni periodos
 
 
@@ -52,6 +56,12 @@ def coherencia(resumen: str) -> list[str]:
     err = []
     if not CONSULTA.exists() or resumen.split("## Resumen ejecutivo", 1)[-1] not in CONSULTA.read_text(encoding="utf-8"):
         err.append(f"{CONSULTA.relative_to(RAIZ)}: no lleva el resumen ejecutivo del documento final (make consulta)")
+    if PDF.exists() and shutil.which("pdftotext"):   # el PDF de la revisión externa es del resumen vigente
+        txt = subprocess.run(["pdftotext", str(PDF), "-"], capture_output=True, text=True).stdout
+        txt = re.sub(r"\s+", " ", txt)
+        faltan = sorted({c for c in CIFRA.findall(resumen) if c not in txt})
+        if faltan:
+            err.append(f"{PDF.relative_to(RAIZ)}: no es el del resumen vigente (faltan {', '.join(faltan[:8])}; make revision_externa_2_0)")
     if WEB.exists():
         portada = html.unescape(re.sub(r"<[^>]+>", " ", WEB.read_text(encoding="utf-8")))
         tabla = resumen.split("## Resumen ejecutivo", 1)[-1].split("\nNota sobre los topes", 1)[0]

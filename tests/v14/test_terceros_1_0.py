@@ -41,7 +41,7 @@ def _render(tmp_path, ids):
 
 def test_por_defecto_en_proyecto_json(monkeypatch):
     monkeypatch.delenv(T10.ENV, raising=False)
-    assert T10.politica() == T10.POR_DEFECTO == {f: "agregados" for f in T10.FUENTES}   # V14.4
+    assert T10.politica() == T10.POR_DEFECTO == {**{f: "agregados" for f in T10.FUENTES}, "aeat": "redistribuir"}   # V14.4; K16
     assert T10.retiradas() == {}
     assert (RAIZ / T10.NO_PUBLICADAS).read_text(encoding="utf-8").count("\n") == 1
     ret = T10.retiradas({**T10.POR_DEFECTO, "registradores_eri": "excluir", "notariado": "excluir", "aeat": "excluir"})   # V14.3

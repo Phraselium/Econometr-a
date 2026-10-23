@@ -25,7 +25,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 FUENTES = ("registradores_odbl", "registradores_eri", "notariado", "aeat")
 VALORES = ("agregados", "excluir", "redistribuir")
-POR_DEFECTO = {"registradores_odbl": "agregados", "registradores_eri": "agregados", "notariado": "agregados", "aeat": "agregados"}   # V14.4
+POR_DEFECTO = {"registradores_odbl": "agregados", "registradores_eri": "agregados", "notariado": "agregados", "aeat": "redistribuir"}   # V14.4; K16: aeat
 NOMBRE = {"registradores_odbl": "Registradores (datos abiertos)", "registradores_eri": "Registradores (Anuario ERI)",
           "notariado": "Notariado", "aeat": "AEAT"}
 CT_FUENTE = {"registradores_odbl": "Registradores", "registradores_eri": "Registradores", "notariado": "Notariado", "aeat": "AEAT"}

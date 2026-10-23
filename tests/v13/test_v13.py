@@ -60,16 +60,18 @@ def test_paquete_sin_no_redistribuibles():
     assert not any(f.startswith("data/sealed") for f in inc)
     excluidos = {f for f, _ in exc}
     versionados = set(inc) | excluidos   # V14: en el árbol público estos ficheros no se versionan (vienen del depósito)
-    for f in ("data/cache/v12/od_seleccion.csv.gz", "data/raw/v11/aeat_irpf_municipios/irpf_municipios_cv.csv.gz",
-              "data/processed/nacional_q.csv", "data/base/variables.parquet"):
+    for f in ("data/cache/v12/od_seleccion.csv.gz", "data/processed/nacional_q.csv", "data/base/variables.parquet"):
         assert f not in inc, f
         assert f in excluidos or f not in versionados, f
+    # K16 (2026-10-23): la serie de la AEAT se redistribuye (terceros_1_0.aeat = redistribuir) y entra en el paquete
+    assert "data/raw/v11/aeat_irpf_municipios/irpf_municipios_cv.csv.gz" in inc
     if "data/base/publica/hechos.parquet" in versionados:
         assert "data/base/publica/hechos.parquet" in inc
     assert "src/v13/check_v13.py" in inc and not any(f.startswith(".claude/") for f in inc)
     import re
-    from src.v14 import terceros_1_0 as T10   # V14.2: el filtro de la capa pública depende de terceros_1_0 (aeat ≠ redistribuir)
-    assert re.match(T10.variables_excluidas(T10.POR_DEFECTO), "aeat_irpf_renta_bruta_media")
+    from src.v14 import terceros_1_0 as T10   # V14.2: el filtro de la capa pública depende de terceros_1_0
+    assert re.match(T10.variables_excluidas({**T10.POR_DEFECTO, "aeat": "agregados"}), "aeat_irpf_renta_bruta_media")
+    assert T10.variables_excluidas(T10.POR_DEFECTO) is None   # K16: con aeat = redistribuir no se quita ninguna variable
 
 
 def test_inventario_solo_versionados_y_clasificado():

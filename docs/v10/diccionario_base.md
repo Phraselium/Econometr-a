@@ -381,3 +381,7 @@ Las discrepancias entre paneles son claves presentes en varios ficheros procesad
 Aviso de atribución: Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.
 
 <!-- licencias V14.3: fin -->
+
+## Atribución de los datos de la AEAT
+
+Las variables `aeat_irpf_*` (y las tablas que las usan) se redistribuyen con la autorización de reutilización de la AEAT (LICENSE, punto 5; docs/v18/decisiones.md, K16). Fuente: Agencia Estatal de Administración Tributaria (AEAT), Estadística de los declarantes del IRPF por municipios, ejercicios 2013-2024, consultado el 15 de octubre de 2026; y Estadística de los declarantes del IRPF (bienes inmobiliarios, ejercicios 2019-2024; vivienda, ejercicio 2024), consultado el 13 de octubre de 2026. Reutilización autorizada citando la fuente (https://sede.agenciatributaria.gob.es/Sede/condiciones-uso-sede-electronica/aviso-legal/utilizacion-informacion-contenida-web-aeat.html); la AEAT no participa ni patrocina este trabajo.

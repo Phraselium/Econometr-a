@@ -16,17 +16,40 @@ proyecto.json: `version_publica` 2.0, `fecha_version` 2026-10-23, `estado_public
 - **Desviación:** se generó con `--sin-git` en el directorio temporal de la sesión, no con `make arbol_publico DEST=…`, porque el árbol con su repositorio git no cabía junto al paquete en el disco de la sesión (y no se pudo borrar el paquete). El contenido es el mismo; el commit único «Versión 2.0» lo crea `make arbol_publico` en la máquina del autor.
 - El primer intento se detuvo por dos rutas locales en ficheros versionados (docs/v16/preparacion_2_0.md y el valor por defecto del directorio temporal de src/v18/estimacion/e1_adquisicion.py); se corrigieron y el árbol se generó sin avisos.
 
-## Escaneo de series de terceros (`src/v14/escaneo_terceros.py --valores`)
-Resultados fichero a fichero en docs/documento_final/escaneo_2_0/ (el escaneo de la 1.0 en docs/v14/escaneo_terceros.* no se reescribe).
+## Escaneo de series de terceros (`src/v14/escaneo_terceros.py --valores`), tras K16
+Decisión del autor del 2026-10-23 (docs/v18/decisiones.md, K16): `terceros_1_0.aeat` = «redistribuir», con la atribución de LICENSE, punto 5. Paquete y árbol regenerados después: paquete con 5.483 ficheros, 67 versionados excluidos, **0 variables AEAT quitadas**, 1.511 MB, CHECKSUMS.sha256 verificado (sha256 del CHECKSUMS de este ensayo: `d85d813a129d2cee1088457d827fb3ac849c3e2e5e04f0cdc98af78a266958d3`); árbol con 4.461 ficheros, 1.140 versionados excluidos y 26 tablas redactadas (generado con `--sin-git`, por la misma razón de disco). Resultados fichero a fichero: docs/documento_final/escaneo_2_0/escaneo.csv y escaneo_valores.csv.
 
-| Ámbito | Ficheros con hallazgos | Sin revisar (no estaban en la lista de la 1.0) | Coincidencias por valores |
-|---|---|---|---|
-| Repositorio | 99 | 16 | — |
-| Árbol 2.0 | 73 | 16 | 3 |
-| Paquete 2.0 | 75 | 16 | 3 |
+| Ámbito | Ficheros con hallazgos | Pendientes |
+|---|---|---|
+| Repositorio | 99 | 0 |
+| Árbol 2.0 | 73 | 0 |
+| Paquete 2.0 | 76 | 0 |
+| Coincidencias por valores (árbol y paquete) | 8 | 0 |
 
-- **Coincidencias por valores (3): falsos positivos.** Una ficha bibliográfica (docs/v18/bib/inmigracion/sa_2015_iza.md), una tabla de cobertura temporal por variable (output/v15/auditoria/alquiler/cobertura_temporal_variables.csv, años y recuentos) y un informe de estimación (output/v18/estimacion/e6/informe.md). Ninguno contiene una serie de Notariado ni de Registradores.
-- **Hallazgos sin revisar (16), decisión del autor.** Ficheros posteriores a la revisión de la 1.0 que nombran una fuente: claves de metadatos o de sellado (docs/v14/escenarios_resultado.json, docs/v16/sellado_v16.json, docs/v18/sellado_v18.json, output/v16/f2_hechos/control.json, output/v16/potencia/resultado.json, output/v16/replica/v10_a/resultado.json, output/v16/auditoria/tension_social/resultado.json, output/v15/auditoria/precios_compra/resultado.json), la hoja de la revisión externa 2.0 (cabeceras con el nombre de la fuente) y **seis tablas derivadas de la AEAT** (output/v12/b5/aeat_cv_2013_2015.csv, aeat_cv_declarantes_inmuebles.csv y output/v15/auditoria/renta_microdatos/aeat_*.csv, con su resultado.json). Con `terceros_1_0.aeat = agregados` (V14.4) esas tablas entran en el árbol y en el paquete; el autor debe confirmar que son agregados propios y no la serie, o excluirlas, antes de publicar (docs/tareas_autor.md, punto 2).
+**Decisión aplicada a los 16 ficheros que la 1.0 no había revisado.**
+
+| Fichero | Fuente | Decisión |
+|---|---|---|
+| output/v12/b5/aeat_cv_2013_2015.csv | AEAT | entra (redistribuir, con atribución) |
+| output/v12/b5/aeat_cv_declarantes_inmuebles.csv | AEAT | entra (redistribuir, con atribución) |
+| output/v15/auditoria/renta_microdatos/aeat_comprobacion_unidades_2016_2024.csv | AEAT | entra (redistribuir, con atribución) |
+| output/v15/auditoria/renta_microdatos/aeat_estructura_por_ejercicio.csv | AEAT | entra (redistribuir, con atribución) |
+| output/v15/auditoria/renta_microdatos/aeat_hipotesis_recuentos_2015.csv | AEAT | entra (redistribuir, con atribución) |
+| output/v15/auditoria/renta_microdatos/aeat_razones_entre_ejercicios.csv | AEAT | entra (redistribuir, con atribución) |
+| output/v15/auditoria/renta_microdatos/resultado.json | AEAT | entra: diagnósticos propios (redistribuir) |
+| output/v16/auditoria/tension_social/resultado.json | CGPJ | **excluido (vaciado con nota)**: recuentos de lanzamientos casi sin transformar; la licencia del CGPJ no está verificada (su aviso legal no respondió desde la sesión) |
+| docs/v14/escenarios_resultado.json | varias | entra: metadatos de la política, sin series |
+| docs/v16/sellado_v16.json | CGPJ (claves) | entra: fechas del sellado, sin valores |
+| docs/v18/sellado_v18.json | AEAT (claves) | entra: fechas del sellado, sin valores |
+| output/v15/auditoria/precios_compra/resultado.json | Notariado, Registradores | entra: diagnósticos propios de calidad, sin series |
+| output/v16/f2_hechos/control.json | varias | entra: grupo de independencia de cada fuente, sin valores |
+| output/v16/potencia/resultado.json | Registradores | entra: recuentos de unidades, sin valores |
+| output/v16/replica/v10_a/resultado.json | Notariado, Registradores | entra: variaciones calculadas (agregados propios; Notariado con atribución, Registradores con el aviso de la ODbL) |
+| revision_externa/2_0/hoja_revision.xlsx | varias | entra: enunciados publicados y cifras propias, sin series |
+
+Además, con «redistribuir» vuelven sin redactar ni vaciar las tablas de la AEAT que la 1.0 vaciaba (output/v12/f0/aeat_*, output/v5/CB/tablas/aeat_*, output/v15/auditoria/renta_microdatos/coherencia_aeat_adrh_*), las 7 variables `aeat_irpf_*` de la capa pública y las series brutas de data/raw (v11/aeat_irpf_municipios y v5/cb_aeat_*.html).
+
+**Falsos positivos por valores (3, en el árbol y en el paquete), documentados en el escáner (FALSOS_POSITIVOS_VALORES):** docs/v18/bib/inmigracion/sa_2015_iza.md (ficha bibliográfica: años y cifras del estudio citado), output/v15/auditoria/alquiler/cobertura_temporal_variables.csv (años y recuentos de periodos) y output/v18/estimacion/e6/informe.md (años, recuentos y coeficientes propios). Las otras coincidencias por valores son tablas de la AEAT, que ahora se redistribuyen.
 
 ## Revisión externa 2.0 (`make revision_externa_2_0`)
 revision_externa/2_0/: muestra.csv y hoja_revision.xlsx (40 cifras del documento final, estratificadas por capa y clase V18, SEED=20261010: C1 4, C2 4, C3s 1, C4 sin clase V18 4, SUGESTIVO 3, ASOCIACIÓN 4, NO CONCLUYENTE 2, NO ESTIMABLE 4, sin clase propia 14), resumen_ejecutivo.pdf (dos páginas apaisadas en español y una en inglés) y guía de dos páginas (guia.md y guia.pdf).

@@ -87,6 +87,7 @@
 
 
 ## E4-bis. AEAT: E4 leyó solo la cláusula de propiedad intelectual (V14.2)
+- **Cerrada (2026-10-23, docs/v18/decisiones.md K16):** esta lectura es la correcta; el autor la comprobó y fijó aeat = «redistribuir».
 - E4 se basó en la cláusula de propiedad intelectual del aviso legal. Esa cláusula se refiere al sitio web, su diseño gráfico y sus códigos.
 - La cláusula «Utilización de la información contenida en la web» autoriza expresamente la reproducción, la modificación y la distribución de la información, «para usos comerciales y no comerciales», salvo indicación en contrario. Lo hace con condiciones: citar la fuente, mencionar la fecha de actualización y no desnaturalizar.
 - Citas y clasificación: docs/v14/licencias.md.

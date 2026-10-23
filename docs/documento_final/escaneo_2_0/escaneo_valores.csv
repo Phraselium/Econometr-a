@@ -1,0 +1,9 @@
+ambito,fichero,fuente,valores,coinciden,control,fraccion,fraccion_control,revision
+árbol,docs/v18/bib/inmigracion/sa_2015_iza.md,Notariado,12,11,8,0.917,0.667,"ficha bibliográfica: años y cifras del estudio citado, no la serie del Notariado"
+árbol,output/v12/f0/aeat_declarantes_inmuebles_aprox.csv,AEAT,8854,6021,2771,0.68,0.313,"redistribuido: aeat (terceros_1_0 = redistribuir; atribución en LICENSE, punto 5)"
+árbol,output/v15/auditoria/alquiler/cobertura_temporal_variables.csv,Registradores,10,10,7,1.0,0.7,"tabla de cobertura temporal: años y recuentos de periodos, no la serie de Registradores"
+árbol,output/v18/estimacion/e6/informe.md,Notariado,12,10,7,0.833,0.583,"informe de estimación: años, recuentos y coeficientes propios, no la serie del Notariado"
+paquete,docs/v18/bib/inmigracion/sa_2015_iza.md,Notariado,12,11,8,0.917,0.667,"ficha bibliográfica: años y cifras del estudio citado, no la serie del Notariado"
+paquete,output/v12/f0/aeat_declarantes_inmuebles_aprox.csv,AEAT,8854,6021,2771,0.68,0.313,"redistribuido: aeat (terceros_1_0 = redistribuir; atribución en LICENSE, punto 5)"
+paquete,output/v15/auditoria/alquiler/cobertura_temporal_variables.csv,Registradores,10,10,7,1.0,0.7,"tabla de cobertura temporal: años y recuentos de periodos, no la serie de Registradores"
+paquete,output/v18/estimacion/e6/informe.md,Notariado,12,10,7,0.833,0.583,"informe de estimación: años, recuentos y coeficientes propios, no la serie del Notariado"

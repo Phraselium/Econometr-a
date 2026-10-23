@@ -14,17 +14,17 @@ data/base/geo/web/municipios_cv.geojson,data/base/geo,398400,True,a,elaboración
 data/base/geo/web/provincias.geojson,data/base/geo,129512,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
 data/base/geo/web/secciones_valencia.geojson,data/base/geo,231766,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
 data/base/publica/cifras_clave.parquet,data/base/publica,148010,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
-data/base/publica/hechos.parquet,data/base/publica,47911555,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
+data/base/publica/hechos.parquet,data/base/publica,47920691,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
 data/base/publica/regulacion_zonas.parquet,data/base/publica,23945,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
 data/base/publica/territorios.parquet,data/base/publica,583953,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
 data/base/publica/v8_atribucion.parquet,data/base/publica,86998,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
 data/base/publica/v9_efectos.parquet,data/base/publica,12687,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
-data/base/publica/variables.parquet,data/base/publica,23676,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
+data/base/publica/variables.parquet,data/base/publica,24208,True,a,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,
 data/base/regulacion_zonas.parquet,data/base,23945,True,b,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,base completa (incluye variables no redistribuibles); su versión difundible es data/base/publica
 data/base/territorios.parquet,data/base,583953,True,b,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,base completa (incluye variables no redistribuibles); su versión difundible es data/base/publica
 data/base/v8_atribucion.parquet,data/base,86998,True,b,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,base completa (incluye variables no redistribuibles); su versión difundible es data/base/publica
 data/base/v9_efectos.parquet,data/base,12687,True,b,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,base completa (incluye variables no redistribuibles); su versión difundible es data/base/publica
-data/base/variables.parquet,data/base,24163,True,b,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,base completa (incluye variables no redistribuibles); su versión difundible es data/base/publica
+data/base/variables.parquet,data/base,24687,True,b,elaboración propia (derivado de data/raw),CC BY 4.0 (elaboración propia) + licencia de sus fuentes,base completa (incluye variables no redistribuibles); su versión difundible es data/base/publica
 data/bib/CHECKSUMS.sha256,data/bib,32363,True,a,elaboración propia (metadatos),CC BY 4.0,
 data/cache/v12/LEEME.md,data/cache/v12,626,True,b,INE (microdatos EVR/EMCR),INE; no difundible por secreto estadístico,caché interna con celdas pequeñas (data/cache/v12/LEEME.md)
 data/cache/v12/od_seleccion.csv.gz,data/cache/v12,9052025,True,b,INE (microdatos EVR/EMCR),INE; no difundible por secreto estadístico,caché interna con celdas pequeñas (data/cache/v12/LEEME.md)

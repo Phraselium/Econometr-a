@@ -359,10 +359,10 @@ META_V11 = {
     "catastro_viviendas_por_anio_reforma": ("viviendas", "Catastro, otras estadísticas (2019): viviendas por año de reforma", _C, "Catastro: reutilización con reconocimiento", True),
     "obra_nueva_viviendas_inspire": ("viviendas", "Catastro INSPIRE: viviendas por año de construcción (stock superviviente; agregado propio)", _C, "Catastro: reutilización con reconocimiento", True),
     "obra_nueva_neta_catastro": ("unidades urbanas residenciales", "Catastro, estadística URBANA: diferencia anual (cálculo propio)", _C, "Catastro: reutilización con reconocimiento", True),
-    **{f"aeat_irpf_{k}": (u, "AEAT, estadística de declarantes del IRPF por municipios", _C, "AEAT: reutilización con cita", True)
+    **{f"aeat_irpf_{k}": (u, "AEAT, estadística de declarantes del IRPF por municipios", _C, "AEAT: reutilización y redistribución con cita (Fuente: Agencia Estatal de Administración Tributaria (AEAT), Estadística de los declarantes del IRPF por municipios, ejercicios 2013-2024, consultado el 15 de octubre de 2026)", True)
        for k, u in (("declaraciones", "declaraciones"), ("renta_bruta_media", "€"), ("renta_disponible_media", "€"),
                     ("rentas_inmuebles_importe", "€"), ("rentas_inmuebles_media", "€"), ("rentas_trabajo_importe", "€"))},
-    "aeat_irpf_declarantes_inmuebles_aprox": ("declarantes (aprox.)", "AEAT, IRPF por municipios: importe ÷ media de rentas de bienes inmuebles no afectos (incluye alquileres e imputación de inmuebles no alquilados; no identifica caseros)", _C, "AEAT: reutilización con cita", True),
+    "aeat_irpf_declarantes_inmuebles_aprox": ("declarantes (aprox.)", "AEAT, IRPF por municipios: importe ÷ media de rentas de bienes inmuebles no afectos (incluye alquileres e imputación de inmuebles no alquilados; no identifica caseros)", _C, "AEAT: reutilización y redistribución con cita (Fuente: Agencia Estatal de Administración Tributaria (AEAT), Estadística de los declarantes del IRPF por municipios, ejercicios 2013-2024, consultado el 15 de octubre de 2026)", True),
     "ipva_tam_indice": ("índice 2015=100", "INE, IPVA por municipio y distrito (59060, 59061) por tamaño de la vivienda", _C, INE, True),
     "ipva_tam_var_anual": ("%", "INE, IPVA por municipio y distrito (59060, 59061)", _C, INE, True),
     "ine_tmov_receptor_turistas": ("turistas", "INE, turismo receptor medido con teléfonos móviles (52048; experimental)", _C, INE, True),

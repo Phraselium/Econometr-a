@@ -111,6 +111,7 @@ Depósito en Zenodo. Autor: {P['autor']}. Repositorio: {P['repositorio']}. DOI: 
 ## Licencias
 Código: MIT. Textos, tablas y figuras propios: CC BY 4.0 (LICENSE). Datos de terceros: la licencia de su fuente (docs/v5/licencias_datos.md, docs/v13/datos_deposito.md).
 Tablas, bases y cifras construidas con los datos abiertos del Colegio de Registradores: Open Database License (ODbL) 1.0, en la parte construida con esos datos (LICENSE, punto 4; lista en docs/v14/licencias_tablas.csv). {T10.AVISO_ODBL}
+Datos de la AEAT (series y agregados): se redistribuyen con la autorización de reutilización de la AEAT (LICENSE, punto 5). {T10.AVISO_AEAT}
 
 ## Cómo reproducir
 ```bash

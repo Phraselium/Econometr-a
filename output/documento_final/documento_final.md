@@ -904,6 +904,7 @@ Lo publicado no se reescribe: cada error que cambia una cifra, una capa o un tex
 | 2026-10-21 | V18 (cifras V18 de cifras_clave, incorporadas el 2026-10-21; detectado por el árbitro y el verificador del Documento de Trabajo, ronda 1; docs/v18/decisiones.md K12) | src/v18/f6_hechos.py, src/v18/f5_contabilidad.py, src/v18/f5_magnitudes.py → output/v18/f6/hechos.json → output/v5/cifras_clave.csv |
 | 2026-10-21 | V18 (cifras V18 de cifras_clave; árbitro del Documento de Trabajo, ronda 2; docs/v18/decisiones.md K14) | src/v18/f5_contabilidad.py, src/v18/f6_hechos.py → output/v18/f6/hechos.json → output/v5/cifras_clave.csv |
 | 2026-10-23 | V18 (consolidación final, publicación 2.0 preparada; orden del autor; docs/v18/decisiones.md K15) | src/v18/f6_hechos.py → output/v18/f6/hechos.json → output/v5/cifras_clave.csv |
+| 2026-10-23 | 2.0 (preparada; decisión del autor sobre la licencia de la AEAT; docs/v18/decisiones.md K16) | proyecto.json (terceros_1_0.aeat) → paquete de Zenodo y árbol público: data/base/publica/hechos.parquet (variables `aeat_irpf_*`), data/raw/v11/aeat_irpf_municipios, data/raw/v5/cb_aeat_*.html y tablas de output/ con datos de la AEAT |
 
 
 ## Anexo E. Pre-registros internos

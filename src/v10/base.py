@@ -889,7 +889,11 @@ def escribir_diccionario(vt: pd.DataFrame, niv: dict, resumen: dict) -> None:
                    f"{r.niveles} | {r.primer_periodo}–{r.ultimo_periodo} |")
     sys.path.insert(0, str(RAIZ))
     from src.v14 import registradores_origen as RO   # V14.3: licencia por tabla (ODbL de los datos abiertos de Registradores)
-    (DOCS / "diccionario_base.md").write_text("\n".join(lin) + "\n\n" + RO.seccion_diccionario(), encoding="utf-8")
+    from src.v14 import terceros_1_0 as T10   # K16 (2026-10-23): atribución de la AEAT (variables aeat_irpf_*)
+    aeat = ("## Atribución de los datos de la AEAT\n\nLas variables `aeat_irpf_*` (y las tablas que las usan) se redistribuyen con la "
+            "autorización de reutilización de la AEAT (LICENSE, punto 5; docs/v18/decisiones.md, K16). " + T10.AVISO_AEAT + "\n")
+    (DOCS / "diccionario_base.md").write_text("\n".join(lin) + "\n\n" + RO.seccion_diccionario().rstrip("\n") + "\n\n" + aeat,
+                                               encoding="utf-8")
 
 
 if __name__ == "__main__":

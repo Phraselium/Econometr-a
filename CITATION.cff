@@ -16,3 +16,11 @@ license:
   - ODbL-1.0
 keywords: [vivienda, España, precios de la vivienda, alquiler, déficit de vivienda, econometría, reproducibilidad]
 abstract: "Base de evidencia independiente y reproducible sobre la vivienda en España por provincias, con un módulo para València. Cubre el déficit y la necesidad de vivienda 2026-2035, las diferencias territoriales, los precios y el alquiler triangulados, la comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones. Incluye una atribución por factores y periodos de la subida del precio de compra y del alquiler (V8), diseños de identificación pre-registrados (V9), una base de datos única con atlas descriptivo y web (V10) y una contabilidad demográfica, de hogares, titularidad y oferta (V12). Cada resultado se clasifica en capas de evidencia (C1, C2, C3, C3s y C4)."
+references:
+  - type: data
+    title: "Estadística de los declarantes del IRPF por municipios (ejercicios 2013-2024) y Estadística de los declarantes del IRPF (bienes inmobiliarios 2019-2024; vivienda 2024)"
+    authors:
+      - name: "Agencia Estatal de Administración Tributaria (AEAT)"
+    url: "https://sede.agenciatributaria.gob.es/Sede/estadisticas.html"
+    date-accessed: "2026-10-15"
+    notes: "Fuente: Agencia Estatal de Administración Tributaria (AEAT), Estadística de los declarantes del IRPF por municipios, ejercicios 2013-2024, consultado el 15 de octubre de 2026; y Estadística de los declarantes del IRPF (bienes inmobiliarios, ejercicios 2019-2024; vivienda, ejercicio 2024), consultado el 13 de octubre de 2026. Reutilización autorizada citando la fuente (https://sede.agenciatributaria.gob.es/Sede/condiciones-uso-sede-electronica/aviso-legal/utilizacion-informacion-contenida-web-aeat.html); la AEAT no participa ni patrocina este trabajo."

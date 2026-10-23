@@ -33,6 +33,12 @@ ORIGEN_REG = {"ODbL": ("registradores_odbl",), "ERI": ("registradores_eri",), "a
 AVISO_ODBL = ("Contiene información de «Compraventas de inmuebles, uso residencial, por provincia» (Colegio de Registradores, "
               "https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible bajo la "
               "Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.")
+# K16 (2026-10-23): la AEAT autoriza la reutilización y redistribución citando la fuente y la fecha (docs/v18/decisiones.md)
+AVISO_AEAT = ("Fuente: Agencia Estatal de Administración Tributaria (AEAT), Estadística de los declarantes del IRPF por municipios, "
+              "ejercicios 2013-2024, consultado el 15 de octubre de 2026; y Estadística de los declarantes del IRPF (bienes inmobiliarios, "
+              "ejercicios 2019-2024; vivienda, ejercicio 2024), consultado el 13 de octubre de 2026. Reutilización autorizada citando la "
+              "fuente (https://sede.agenciatributaria.gob.es/Sede/condiciones-uso-sede-electronica/aviso-legal/"
+              "utilizacion-informacion-contenida-web-aeat.html); la AEAT no participa ni patrocina este trabajo.")
 RETIRAN = ("directa", "indirecta (el modelo usa la serie)")
 ENV = "VIVIENDA_TERCEROS_1_0"
 NO_PUBLICADAS = "publicacion/cifras_no_publicadas_1_0.csv"
@@ -84,6 +90,11 @@ def _retiradas(clave: tuple) -> dict[str, tuple[str, ...]]:
 def nota_odbl() -> str:
     """Aviso de atribución (ODbL 4.3) para los textos que citan cifras construidas con los datos abiertos de Registradores."""
     return f"*Atribución (Open Database License).* {AVISO_ODBL} Las cifras construidas con esos datos se publican bajo la misma licencia."
+
+
+def nota_aeat() -> str:
+    """Atribución de la AEAT (K16) para la web, el depósito y los metadatos."""
+    return f"*Atribución (AEAT).* {AVISO_AEAT}"
 
 
 def odbl(pol: dict | None = None) -> set[str]:

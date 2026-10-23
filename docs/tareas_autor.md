@@ -14,7 +14,6 @@ En la máquina donde está data/sealed, desde la raíz: `find data/sealed -type 
 
 ## 2. Confirmar dos decisiones abiertas
 - Las dos filas añadidas a docs/v16/escrituras_autorizadas.csv para cifras_clave (V18, fase 6).
-- Los 16 hallazgos del escaneo de terceros que la 1.0 no había revisado (docs/documento_final/publicacion_2_0.md), sobre todo seis tablas derivadas de la AEAT que con `terceros_1_0.aeat = agregados` entran en el árbol y el paquete: confirmar que son agregados propios o excluirlas.
 - La versión pública: proyecto.json dice 2.0, fecha 2026-10-23, preparada y sin publicar. Si prefiere el número de tres cifras (2.0.0) o otra fecha, cámbielo allí y en las puertas escritas a mano (README.md, LEEME_PRIMERO.md, CLAUDE.md, README_REPLICACION.md e historico/INDICE.md; check_v13 exige que coincidan) y regenere con `make metadatos publicacion consulta web`.
 
 ## 3. Publicar las etiquetas en el remoto de Econometr-a
@@ -58,9 +57,12 @@ docs/v14/publicacion_1_0/github_pages.md. La portada lleva el resumen ejecutivo 
 ## 10. Archivar Econometr-a
 Cuando todo lo anterior esté hecho: `gh repo archive Phraselium/Econometr-a --yes` (recomendado frente a pasarlo a privado, que rompe los enlaces de historico/INDICE.md).
 
+**Hecho en la consolidación (2026-10-23; no es un pendiente).**
+- AEAT: «redistribuir» con atribución (K16); los 16 hallazgos del escaneo, clasificados (docs/documento_final/publicacion_2_0.md); el resultado.json de tension_social (CGPJ) se excluye. Si confirma la licencia del CGPJ, puede reincorporarlo quitándolo de TABLAS_SERIE en src/v14/terceros.py.
+
 ## Pendientes que no bloquean la 2.0
 - **Datos que harían estimable lo que hoy no lo es** (docs/v18/tareas_autor.md y parte IX del documento final): descarga masiva del Catastro, clave de AEMET, histórico de InsideAirbnb, fianzas por barrio y por tramo con la renta anterior, perceptores de ayudas, anuncios de portales, SIU, compras por nacionalidad y provincia, ordenanzas fiscales de vacías y promociones públicas por municipio.
 - **Bibliografía:** tabla de cuartiles de Scimago y repetición de la búsqueda sistemática con OpenAlex.
 - **Evaluaciones selladas diferidas:** `evaluate_v7`, `evaluate_v8` y, si alguna estimación llega a IDENTIFICADO, `evaluate_v18`; no antes de 2027 y solo con su orden.
-- **Licencias de terceros:** Anuario ERI de Registradores y Notariado (docs/v14/tareas_autor.md, «Pendientes que no bloquean la 1.0»), siguen igual.
+- **Licencias de terceros:** Anuario ERI de Registradores y Notariado (docs/v14/tareas_autor.md, «Pendientes que no bloquean la 1.0») siguen igual; la del CGPJ, por verificar. La AEAT queda resuelta (K16).
 - **vivienda.duckdb:** está en disco tras la consolidación (docs/documento_final/base_restaurada.md); no se versiona.

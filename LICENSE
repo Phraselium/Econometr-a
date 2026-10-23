@@ -34,5 +34,13 @@ Licencias por parte
    https://opendata.registradores.org/dataset/dataset/compraventas-de-inmuebles-uso-residencial-por-provincia), disponible
    bajo la Open Database License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.
 
-   Las series del Anuario de la Estadística Registral Inmobiliaria (Registradores), del Notariado y de la AEAT no se
-   redistribuyen (proyecto.json, terceros_1_0; docs/v14/licencias.md).
+   Las series del Anuario de la Estadística Registral Inmobiliaria (Registradores) y del Notariado no se redistribuyen
+   (proyecto.json, terceros_1_0; docs/v14/licencias.md).
+
+5. Datos de la Agencia Estatal de Administración Tributaria (AEAT): se redistribuyen con la autorización de reutilización de
+   la AEAT, citando la fuente y la fecha (decisión del autor de 2026-10-23; docs/v18/decisiones.md, K16). Atribución:
+
+   Fuente: Agencia Estatal de Administración Tributaria (AEAT), Estadística de los declarantes del IRPF por municipios,
+   ejercicios 2013-2024, consultado el 15 de octubre de 2026; y Estadística de los declarantes del IRPF (bienes
+   inmobiliarios, ejercicios 2019-2024; vivienda, ejercicio 2024), consultado el 13 de octubre de 2026. La AEAT no participa
+   ni patrocina este trabajo.

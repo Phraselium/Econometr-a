@@ -75,7 +75,9 @@ TABLAS_SERIE = {
     "output/v12/f0/aeat_declarantes_inmuebles_aprox.csv": "aeat", "output/v12/f0/aeat_inmuebles_2013_2015.csv": "aeat",
     "output/v5/CB/tablas/aeat_irpf_capital_inmobiliario_2019_2024.csv": "aeat",
     "output/v5/CB/tablas/aeat_viviendas_arrendadas_ccaa_declarante_2024.csv": "aeat",
-    "output/v5/CB/tablas/cgpj_lanzamientos_ccaa.csv": "cgpj", "output/v5/CB/tablas/cgpj_verbales_posesorios_ocupacion.csv": "cgpj",
+    "output/v5/CB/tablas/cgpj_lanzamientos_ccaa.csv": "cgpj",
+    # K16 (2026-10-23): recuentos del CGPJ casi sin transformar en un resultado.json; licencia del CGPJ no verificada: se excluye
+    "output/v16/auditoria/tension_social/resultado.json": "cgpj", "output/v5/CB/tablas/cgpj_verbales_posesorios_ocupacion.csv": "cgpj",
 }
 # V14.2: agregados propios de la serie (sumas de la Comunitat Valenciana): se publican con «agregados», se vacían con «excluir»
 AGREGADOS_PROPIOS = {"output/v12/b5/aeat_cv_declarantes_inmuebles.csv": "aeat", "output/v12/b5/aeat_cv_2013_2015.csv": "aeat"}

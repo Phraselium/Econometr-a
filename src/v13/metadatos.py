@@ -43,6 +43,14 @@ license:
   - ODbL-1.0
 keywords: [{kw}]
 abstract: "{RESUMEN}"
+references:
+  - type: data
+    title: "Estadística de los declarantes del IRPF por municipios (ejercicios 2013-2024) y Estadística de los declarantes del IRPF (bienes inmobiliarios 2019-2024; vivienda 2024)"
+    authors:
+      - name: "Agencia Estatal de Administración Tributaria (AEAT)"
+    url: "https://sede.agenciatributaria.gob.es/Sede/estadisticas.html"
+    date-accessed: "2026-10-15"
+    notes: "{T10.AVISO_AEAT}"
 """
 
 
@@ -63,7 +71,7 @@ def zenodo() -> str:
         "notes": "Código bajo MIT; textos, tablas y figuras propios bajo CC BY 4.0 (fichero LICENSE). Los datos de terceros conservan sus "
                  "licencias: véase docs/v5/licencias_datos.md y docs/v13/datos_deposito.md. Las tablas, bases y cifras construidas con los "
                  "datos abiertos del Colegio de Registradores se publican bajo la Open Database License (ODbL) 1.0 "
-                 "(https://opendatacommons.org/licenses/odbl/1-0/; lista de ficheros en docs/v14/licencias_tablas.csv). " + T10.AVISO_ODBL,
+                 "(https://opendatacommons.org/licenses/odbl/1-0/; lista de ficheros en docs/v14/licencias_tablas.csv). " + T10.AVISO_ODBL + " " + T10.AVISO_AEAT,
     }
     return json.dumps(d, ensure_ascii=False, indent=2) + "\n"
 

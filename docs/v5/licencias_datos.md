@@ -16,7 +16,7 @@ En cada fuente se distingue entre el **uso** (análisis) y la **redistribución*
 | Generalitat Valenciana | Fianzas, VUT, padrón | Libre con cita | Sí | Licencia del portal de datos abiertos de la GVA (CC BY 4.0). Verificado en v4 y v5 |
 | Ajuntament de València | Distritos, padrón | Libre | Sí | CC BY 4.0 (portal de datos abiertos) |
 | CGPJ, Ministerio del Interior | Lanzamientos, criminalidad | Con cita | Agregados publicados | Condiciones de reutilización de cada portal; no verificadas en detalle |
-| AEAT | Estadística de declarantes del IRPF | Con cita | Agregados publicados | Ley 37/2007; no verificado en detalle |
+| AEAT | Estadística de declarantes del IRPF (por municipios, 2013-2024; bienes inmobiliarios 2019-2024; vivienda 2024) | Reutilización y redistribución con cita de la fuente y la fecha (condiciones de la sede de la AEAT; comprobado por el autor el 2026-10-23) | Series y agregados (terceros_1_0.aeat = redistribuir; K16) | Atribución en LICENSE, punto 5 |
 | BOE | Normas (RD de planes, RD 1020/1993) | Libre | Sí | Dominio público (art. 13 TRLPI) |
 | Congreso de los Diputados | Proposiciones de ley | Libre | Sí | Textos oficiales (art. 13 TRLPI) |
 | Partidos políticos | Programas electorales (PDF de webs oficiales) | Cita breve con fines de investigación (art. 32 TRLPI) | Copias versionadas en data/raw/v5/programas, con URL y hash, porque `make all` las necesita para reproducir los recuentos | Derechos del titular; los entregables solo citan fragmentos ≤40 palabras. **El autor debe confirmar si la copia es admisible; si no, se sustituye por URL + hash y el texto extraído deja de versionarse** |

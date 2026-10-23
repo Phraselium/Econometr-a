@@ -14,6 +14,7 @@ En la máquina donde está data/sealed, desde la raíz: `find data/sealed -type 
 
 ## 2. Confirmar dos decisiones abiertas
 - Las dos filas añadidas a docs/v16/escrituras_autorizadas.csv para cifras_clave (V18, fase 6).
+- Los 16 hallazgos del escaneo de terceros que la 1.0 no había revisado (docs/documento_final/publicacion_2_0.md), sobre todo seis tablas derivadas de la AEAT que con `terceros_1_0.aeat = agregados` entran en el árbol y el paquete: confirmar que son agregados propios o excluirlas.
 - La versión pública: proyecto.json dice 2.0, fecha 2026-10-23, preparada y sin publicar. Si prefiere el número de tres cifras (2.0.0) o otra fecha, cámbielo allí y en las puertas escritas a mano (README.md, LEEME_PRIMERO.md, CLAUDE.md, README_REPLICACION.md e historico/INDICE.md; check_v13 exige que coincidan) y regenere con `make metadatos publicacion consulta web`.
 
 ## 3. Publicar las etiquetas en el remoto de Econometr-a

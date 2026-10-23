@@ -16,6 +16,7 @@ import gzip
 import hashlib
 import json
 import os
+import tempfile
 import re
 import sys
 import time
@@ -31,7 +32,7 @@ ALCANCE_TERRITORIAL = "sin lectura de datos"     # solo descarga y escribe fiche
 RAIZ = Path(__file__).resolve().parents[3]
 DEST = RAIZ / "data" / "raw" / "v18" / "e1e6"
 MANIFIESTO = RAIZ / "data" / "raw" / "v18" / "_manifest_e1e6.csv"
-SCRATCH = Path(os.environ.get("V18_SCRATCH", "/tmp/claude-0/-home-user-Econometr-a/468da938-3e2d-5fba-ac52-e16a4175b9ac/scratchpad/osm"))
+SCRATCH = Path(os.environ.get("V18_SCRATCH", str(Path(tempfile.gettempdir()) / "v18_osm")))   # descargas temporales, fuera del repositorio
 OSM_BASE = "https://download.openstreetmap.fr/extracts/europe/spain/"
 EXTRACTOS = {"catalunya": ["08019"], "comunitat_valenciana": ["46250", "03014"], "andalucia": ["41091", "29067"]}
 BBOX = {"08019": (2.0525, 41.3169, 2.2292, 41.4683), "46250": (-0.4325, 39.2791, -0.2737, 39.5661), "41091": (-6.0329, 37.3002, -5.8192, 37.4530),

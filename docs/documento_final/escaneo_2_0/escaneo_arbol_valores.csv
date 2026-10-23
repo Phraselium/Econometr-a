@@ -1,0 +1,4 @@
+ambito,fichero,fuente,valores,coinciden,control,fraccion,fraccion_control
+árbol,docs/v18/bib/inmigracion/sa_2015_iza.md,Notariado,12,11,8,0.917,0.667
+árbol,output/v15/auditoria/alquiler/cobertura_temporal_variables.csv,Registradores,10,10,7,1.0,0.7
+árbol,output/v18/estimacion/e6/informe.md,Notariado,12,10,7,0.833,0.583

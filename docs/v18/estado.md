@@ -36,8 +36,11 @@ V18: bibliografía, replicación de estudios y estimación del impacto de cada f
 - 2026-10-20 · **Fase 5 cerrada.** Magnitudes preferidas y contabilidad (K10): 100 % «no explicado» en la tabla principal.
 - 2026-10-21 · **Fase 6 cerrada.** Documento de Trabajo en publicacion/documento_v18/ (árbitro: dos rondas; verificador de cifras: dos rondas, 0 discrepancias numéricas); cifras V18 en cifras_clave con ERRATA de sus correcciones (K11-K14); make publicacion, make web y make check limpios. Resumen final: docs/v18/resumen_final.md.
 
+- 2026-10-23 · **Consolidación final (sin análisis nuevo; K15).** Base restaurada con `make base` y comprobada (docs/documento_final/base_restaurada.md). Documento final en publicacion/documento_final/ (`make documento_final`; resumen ejecutivo de dos páginas, partes I-IX y anexos A-E), con su control en make check (src/documento_final/check_final.py). Nueve cifras V18-AUX-JE-* (fila «no explicado» de la cuenta con magnitudes de la literatura, juicio experto; ERRATA del 2026-10-23); ninguna cifra cambia de valor ni de capa. Árbitro (revisor del Banco de España) en dos rondas y verificador de cifras en dos (docs/documento_final/revision/ronda1.md). Publicación 2.0 preparada sin publicar: versión en proyecto.json, paquete de Zenodo, árbol público y escaneo de terceros (docs/documento_final/publicacion_2_0.md), revision_externa/2_0/ y docs/tareas_autor.md.
+  - Tokens de subagentes: árbitro ≈ 0,22 M (dos rondas); verificador ≈ 0,41 M (dos rondas); total ≈ 0,63 M.
+
 ## Siguiente
-- V18 cerrada. Tareas del autor en docs/v18/tareas_autor.md y en el resumen final.
+- Consolidación cerrada. Tareas del autor en docs/tareas_autor.md (publicación 2.0) y docs/v18/tareas_autor.md (datos).
 
 ## Subagentes y tokens
 

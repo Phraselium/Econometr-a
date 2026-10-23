@@ -4,7 +4,7 @@ Ensayo, sin publicar nada: `python3 src/v14/arbol_publico.py --destino <director
 
 ## Rutas locales y datos personales (corregido)
 El control de árbol_publico (patrón PRIVADO) paró la primera ejecución en dos grupos de ficheros, y se corrigieron sin cambiar ninguna cifra:
-- **Rutas absolutas a /home/user/Econometr-a.**
+- **Rutas absolutas a la copia de trabajo local del repositorio.**
   - En docs/v15/inventario_anotaciones.csv e inventario_variables.{csv,md}: pasan a rutas relativas al repositorio.
   - En los scripts de réplica de V16 (src/v16/replica/*.py) y en src/v16/montecarlo/cips_bootstrap_diagnostico.py: la raíz se deduce de la ubicación del fichero.
   - En la guarda de salidas cerradas (.claude/hooks/guarda_salidas_cerradas.py) y su test: lo mismo.

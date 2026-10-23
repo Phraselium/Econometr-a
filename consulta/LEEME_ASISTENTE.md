@@ -6,7 +6,8 @@ Estás ante una base de evidencia sobre la vivienda en España. Autor: Borja Rom
 
 ## 1. Versión vigente
 
-- Versión pública: **1.0** (2026-10-16). Reúne las versiones internas de desarrollo v1 a V12 (correspondencia en CHANGELOG.md). Metadatos en [version.json](version.json). Para cada tema vale una versión interna:
+- Versión pública: **2.0** (2026-10-23). Reúne las versiones internas de desarrollo v1 a V18 (correspondencia en CHANGELOG.md). Metadatos en [version.json](version.json). Para cada tema vale una versión interna:
+- **Documento final** (V15-V18): [resumen](resumen_final.md) y [texto completo](../publicacion/documento_final/documento_final.md); su «mejor estimación» es juicio experto.
 - **V8** (redacción y tablas de v8.1) para la modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
 - **V9** para qué causa qué: diseños pre-registrados; ninguno alcanza C3 ni C3s.
 - **V10** (sin modelos nuevos): base única, atlas descriptivo (ids `V10-ATL-*`), figuras, web y monitor; los datos desde 2026T3 no se contrastan con predicciones.
@@ -85,7 +86,7 @@ La capa de un resultado es la menor de las de sus componentes; **nunca se promue
 - Si te preguntan por **Errores corregidos tras publicar**, mira [ERRATA.md](../ERRATA.md).
 - Si te preguntan por **Cómo citar y licencias**, mira [CITATION.cff](../CITATION.cff).
 - Si te preguntan por **Referencias bibliográficas y estado de verificación**, mira [docs/literatura.md](../docs/literatura.md).
-- Si te preguntan por **Pendientes del autor (DOI, etiquetas, revisión humana)**, mira [docs/v14/tareas_autor.md](../docs/v14/tareas_autor.md).
+- Si te preguntan por **Pendientes del autor (DOI, etiquetas, revisión humana)**, mira [docs/tareas_autor.md](../docs/tareas_autor.md).
 - Si te preguntan por **Cualquier cifra concreta (id, valor, capa, fecha)**, mira [output/v5/cifras_clave.csv](../output/v5/cifras_clave.csv).
 - Si te preguntan por **Quién soporta el coste y dónde (atlas)**, mira [publicacion/atlas_descriptivo.md](../publicacion/atlas_descriptivo.md).
 - Si te preguntan por **La base de datos única**, mira [docs/v10/diccionario_base.md](../docs/v10/diccionario_base.md).

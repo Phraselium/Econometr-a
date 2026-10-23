@@ -13482,5 +13482,176 @@
   "ficha": "docs/v18/plan_replicacion_adenda.md",
   "tipo_rango": "sin rango",
   "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-1995T1-2007T4-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 1995T1-2007T4, España",
+  "valor": 62.1196,
+  "min": 44.7342,
+  "max": 80.3252,
+  "unidad": "pp (100·Δln)",
+  "periodo": "1995T1-2007T4",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-1995T1-2007T4-00-NOEXPL-P) menos las filas de E3 y E7 (E9 no se suma: es la alternativa de E3) que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2007"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-2008T1-2013T4-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2008T1-2013T4, España",
+  "valor": -37.0263,
+  "min": -39.0759,
+  "max": -35.0696,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2008T1-2013T4",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2008T1-2013T4-00-NOEXPL-P) menos las filas de E3 y E7 (E9 no se suma: es la alternativa de E3) que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2013"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-ALTE9-2008T1-2013T4-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2008T1-2013T4, España (con E9 en lugar de E3)",
+  "valor": -48.9614,
+  "min": -51.0707,
+  "max": -46.9022,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2008T1-2013T4",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2008T1-2013T4-00-NOEXPL-P) menos las filas de E9 (alternativa de E3) y E7 que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2013"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-2014T1-2019T4-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2014T1-2019T4, España",
+  "valor": 4.9749,
+  "min": 2.3797,
+  "max": 7.6783,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2014T1-2019T4",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2014T1-2019T4-00-NOEXPL-P) menos las filas de E3 y E7 (E9 no se suma: es la alternativa de E3) que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-ALTE9-2014T1-2019T4-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2014T1-2019T4, España (con E9 en lugar de E3)",
+  "valor": 10.2246,
+  "min": 9.4626,
+  "max": 11.0077,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2014T1-2019T4",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2014T1-2019T4-00-NOEXPL-P) menos las filas de E9 (alternativa de E3) y E7 que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2019"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-2020T1-2022T2-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2020T1-2022T2, España",
+  "valor": -1.8508,
+  "min": -3.06,
+  "max": -0.5924,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2020T1-2022T2",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2020T1-2022T2-00-NOEXPL-P) menos las filas de E3 y E7 (E9 no se suma: es la alternativa de E3) que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-ALTE9-2020T1-2022T2-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2020T1-2022T2, España (con E9 en lugar de E3)",
+  "valor": -1.3746,
+  "min": -1.4998,
+  "max": -1.2482,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2020T1-2022T2",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2020T1-2022T2-00-NOEXPL-P) menos las filas de E9 (alternativa de E3) y E7 que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2022"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-2022T3-2026T2-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2022T3-2026T2, España",
+  "valor": 10.2117,
+  "min": 5.5656,
+  "max": 15.0334,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2022T3-2026T2",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2022T3-2026T2-00-NOEXPL-P) menos las filas de E3 y E7 (E9 no se suma: es la alternativa de E3) que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
+ },
+ {
+  "id": "V18-AUX-JE-NOEXPL-ALTE9-2022T3-2026T2-P",
+  "indicador": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2022T3-2026T2, España (con E9 en lugar de E3)",
+  "valor": 15.3129,
+  "min": 13.9831,
+  "max": 16.6575,
+  "unidad": "pp (100·Δln)",
+  "periodo": "2022T3-2026T2",
+  "cobertura": "España",
+  "fuentes": [
+   "output/v18/f5/contabilidad_ilustracion.csv"
+  ],
+  "capa": "C4",
+  "clasificacion_v18": "NO ESTIMABLE",
+  "nota": "juicio experto con magnitudes de la literatura, no estimación propia; variación observada (fila V18-C5-2022T3-2026T2-00-NOEXPL-P) menos las filas de E9 (alternativa de E3) y E7 que tienen cifra; supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+  "ficha": "output/v18/f5/contabilidad_ilustracion.csv",
+  "tipo_rango": "rango",
+  "fecha_dato": "2026"
  }
 ]

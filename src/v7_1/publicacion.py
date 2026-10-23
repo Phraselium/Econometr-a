@@ -71,6 +71,9 @@ FUENTES: dict[str, str] = {
     # V18 (fase 6): Documento de Trabajo (src/v18/f6_documento.py, desde output/v18/documento/plantilla) y sus tablas
     "publicacion/documento_v18/documento_v18.md": "output/v18/documento/documento_v18.md",
     "publicacion/documento_v18/tablas_v18.xlsx": "output/v18/documento/tablas_v18.xlsx",
+    # Consolidación final (publicación 2.0 preparada): documento final y su resumen ejecutivo (src/documento_final/documento_final.py)
+    "publicacion/documento_final/documento_final.md": "output/documento_final/documento_final.md",
+    "publicacion/documento_final/resumen_ejecutivo.md": "output/documento_final/resumen_ejecutivo.md",
     "metodologia/preregistro_v9.md": "docs/v9/hipotesis.md",
     "metodologia/preregistro_v9_addendum_a1.md": "docs/v9/hipotesis_addendum_a1.md",
     "metodologia/revision_v9_F2.md": "docs/v9/revision_f2.md",
@@ -198,7 +201,7 @@ def construir(base: Path) -> dict[str, list[tuple[str, str, str]]]:
 def regenerar_entregables() -> None:
     """V8.1: una_pagina, lo_que_sabemos y los entregables V8 se regeneran antes de copiarlos (render v5 y render v8; ambos leen output/v5/cifras_clave.csv).
     `make v8` ya ejecuta cifras_clave y render_v8, pero no render v5: sin este paso, una_pagina y lo_que_sabemos podrían quedar con cifras de otra versión de cifras_clave."""
-    for scr in ("src/v5/render.py", "src/v8/render_v8.py", "src/v9/render_v9.py"):
+    for scr in ("src/v5/render.py", "src/v8/render_v8.py", "src/v9/render_v9.py", "src/documento_final/documento_final.py"):
         r = subprocess.run([sys.executable, str(RAIZ / scr)], cwd=RAIZ, capture_output=True, text=True)
         if r.returncode != 0:
             raise SystemExit(f"publicacion: falla {scr} (marcadores sin resolver o error):\n{r.stdout[-800:]}{r.stderr[-800:]}")

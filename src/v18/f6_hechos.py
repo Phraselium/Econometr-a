@@ -13,7 +13,8 @@ Además (auxiliares(), ids V18-AUX-*) copia, sin recalcular, las cifras que el D
 valores publicados de la literatura (output/v18/f5/magnitudes_estudios.csv y fichas de docs/v18/bib), contabilidad provincial,
 comparación con V8 y sensibilidad de B5 (output/v18/f5), reproducciones (output/v18/reproduccion), Monte Carlo
 (output/v18/montecarlo), variantes de E1 y E2 (output/v18/estimacion), recuentos del catálogo (output/v18/f1) y cuotas por
-subperiodo de V17-D3 (output/v17/d3; las del periodo completo ya son V17-D3-VARIANZA-COMUN-* y no se duplican). Las únicas
+subperiodo de V17-D3 (output/v17/d3; las del periodo completo ya son V17-D3-VARIANZA-COMUN-* y no se duplican) y, desde la
+consolidación final (K15), la fila «no explicado» nacional de la ilustración, rotulada juicio experto (V18-AUX-JE-*). Las únicas
 operaciones son selección de filas, recuentos, mínimo y máximo de filas ya publicadas, el cambio de unidad de proporción a %
 y la transformación 100·(exp(b)−1) de E2-R1, marcada como tal.
 Determinista; sin red; solo lee salidas ya generadas (output/v17, output/v18) y fichas (docs/v18/bib).
@@ -40,7 +41,7 @@ BIB = RAIZ / "docs" / "v18" / "bib"
 SALIDA = OUT / "f6" / "hechos.json"
 FECHA = "2026-10-20"
 N_BASE = 487          # cifras de los hechos.json de estimación y de f5 (570 en K12; K14: −87 filas «no explicado» de la ilustración, +4 OBS)
-N_AUX = 163           # cifras V18-AUX-* de auxiliares() (135 de K11, 27 de K12 y 1 de K14: V18-AUX-F1-OOS-GW-P)
+N_AUX = 172           # cifras V18-AUX-* de auxiliares() (135 de K11, 27 de K12, 1 de K14: V18-AUX-F1-OOS-GW-P, y 9 de K15: V18-AUX-JE-*)
 N_ESPERADO = N_BASE + N_AUX
 TIPOS_RANGO = ("rango", "referencias", "sin rango")
 
@@ -585,11 +586,38 @@ def _aux_d3() -> list[dict]:
 
 
 LIT_AUX = re.compile(r"V18-AUX-(LIT|REP)-")   # valores de la literatura (publicados o reproducidos con los datos de sus autores)
+JUICIO = "juicio experto con magnitudes de la literatura, no estimación propia"
+
+
+def _aux_juicio_experto() -> list[dict]:
+    """Consolidación final (K15): la fila «no explicado» nacional de la ilustración, copiada sin recalcular de
+    contabilidad_ilustracion.csv, para la contabilidad rotulada como juicio experto del documento final. K14 la había sacado de
+    cifras_clave porque resta de la variación nacional una magnitud relativa entre provincias (E3); aquí vuelve con ese supuesto
+    escrito en la nota y con el rótulo de juicio experto (la otra salida que dio el árbitro, N4)."""
+    src = OUT / "f5" / "contabilidad_ilustracion.csv"
+    c = pd.read_csv(src)
+    n = c[(c.territorio_tipo == "nacional") & (c.alineacion == "plan") & (c.resultado == "precio")
+          & c.tipo_fila.isin(["no_explicado", "no_explicado_alternativa"])]
+    res = []
+    for r in n.itertuples():
+        alt = r.tipo_fila == "no_explicado_alternativa"
+        resta = "E9 (alternativa de E3) y E7" if alt else "E3 y E7 (E9 no se suma: es la alternativa de E3)"
+        res.append(_cifra(f"V18-AUX-JE-NOEXPL{'-ALTE9' if alt else ''}-{r.periodo}-P",
+                          f"Variación del precio real de compra no explicada con magnitudes de la literatura, {r.periodo}, España"
+                          + (" (con E9 en lugar de E3)" if alt else ""),
+                          r.contrib_med, unidad="pp (100·Δln)", periodo=r.periodo, cobertura="España", fuentes=[_rel(src)],
+                          clase="NO ESTIMABLE",
+                          nota=f"{JUICIO}; variación observada (fila V18-C5-{r.periodo}-00-NOEXPL-P) menos las filas de {resta} que tienen cifra; "
+                          "supone que la magnitud relativa entre provincias de E3 y E9 vale también para el agregado nacional, lo que "
+                          "sus diseños no estiman; mínimo y máximo: percentiles 5 y 95 de la propagación por Monte Carlo sobre las "
+                          "magnitudes; la variación observada se toma sin error; ilustración, no atribución",
+                          ficha=_rel(src), mn=r.p05, mx=r.p95))
+    return res
 
 
 def auxiliares() -> list[dict]:
     res = (_aux_literatura() + _aux_fichas() + _aux_f5() + _aux_reproduccion() + _aux_montecarlo() + _aux_estimacion()
-           + _aux_catalogo() + _aux_d3() + _aux_k12())
+           + _aux_catalogo() + _aux_d3() + _aux_k12() + _aux_juicio_experto())
     # K14 (árbitro, ronda 2, N8): la clase V18 es de un factor o de una estimación propia, no de un valor publicado; los valores de la
     # literatura llevan «literatura (sin clase propia)» en lugar de NO ESTIMABLE
     for h in res:

@@ -52,7 +52,7 @@ def zenodo() -> str:
         "upload_type": "software",
         "description": RESUMEN + " Los datos de terceros sin redistribución clara no se incluyen: `make datos_terceros` los descarga y "
                                  "verifica (docs/v8_1/datos_retirados.md; docs/v13/datos_deposito.md); después, `make all` reproduce sin red. "
-                                 f"La versión pública {P['version_publica']} reúne las versiones internas v1-V12 (CHANGELOG.md).",
+                                 f"La versión pública {P['version_publica']} reúne las versiones internas v1-V18 (CHANGELOG.md).",
         "creators": [{"name": "Romero, Borja", "affiliation": "Economista independiente"}],
         "version": P["version_publica"],
         "publication_date": P["fecha_version"],

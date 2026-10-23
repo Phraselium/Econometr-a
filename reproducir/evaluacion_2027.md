@@ -50,7 +50,7 @@ Si discrepan, se reportan las dos. Esta nota se añade a docs/v7/desviaciones.md
 
 ## 3. Orden exacto de las órdenes
 
-Desde una copia limpia del repositorio en la versión pública 1.0 (contenido de V7: versión interna v7.1), con red y con permisos para publicar:
+Desde una copia limpia del repositorio en la versión pública 2.0 (contenido de V7: versión interna v7.1), con red y con permisos para publicar:
 
 ```bash
 git checkout r7.1/main             # o la etiqueta v7.1 publicada

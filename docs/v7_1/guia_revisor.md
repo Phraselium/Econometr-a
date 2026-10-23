@@ -1,8 +1,8 @@
-# Guía para el revisor externo (versión pública 1.0; déficit y necesidad: versión interna v7.2)
+# Guía para el revisor externo (versión pública {{proyecto.version_publica}}; déficit y necesidad: versión interna v7.2)
 
 **Autor:** Borja Romero, economista (firma individual e independiente).
 
-**Versión del documento:** v7.1 (versión interna, con las correcciones de v7.2). La v6.2 queda como histórica. La correspondencia entre versiones internas y la versión pública 1.0 está en CHANGELOG.md.
+**Versión del documento:** v7.1 (versión interna, con las correcciones de v7.2). La v6.2 queda como histórica. La correspondencia entre versiones internas y la versión pública {{proyecto.version_publica}} está en CHANGELOG.md.
 
 **Tiempo estimado:**
 - 2-3 horas para lo esencial (secciones 1-4);

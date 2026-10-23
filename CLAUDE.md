@@ -1,4 +1,4 @@
-# Vivienda España — versión pública 1.0 (16-10-2026). v1-V12 son versiones internas cerradas (correspondencia en CHANGELOG.md); vigentes por tema: déficit y necesidad v7.1+v7.2, por qué ha subido V8, qué causa qué V9, atlas/base/web V10, demografía y titularidad V12. Trabajo actual: V13 consolidación (docs/v13, src/v13)
+# Vivienda España — versión pública 2.0 (23-10-2026; preparada, sin publicar; la 1.0 era del 16-10-2026). v1-V18 son versiones internas cerradas (correspondencia en CHANGELOG.md); vigentes por tema: déficit y necesidad v7.1+v7.2, por qué ha subido V8, qué causa qué V9, atlas/base/web V10, demografía y titularidad V12; documento final (V15-V18) en publicacion/documento_final. Trabajo actual: V13 consolidación (docs/v13, src/v13)
 
 - Idioma: español. `make all` reproducible SIN red; SEED=20261010 en todo lo aleatorio.
 - Al empezar: leer docs/v13/estado.md, docs/v13/decisiones.md, docs/v13/tareas_autor.md, docs/v12/estado.md, docs/v8/decisiones.md, docs/v7_1/decisiones.md y docs/estado_proyecto/informe_estado.md (inventario v1-v6.2).

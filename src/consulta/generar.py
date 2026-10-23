@@ -31,7 +31,7 @@ CAB_MD = "<!-- Generado por `make consulta` (src/consulta/generar.py). No editar
 CAPAS_VALIDAS = ("C1", "C2", "C3", "C3s", "C4")
 ORDEN_VERSION = ["v4", "v5", "v5.1", "v6", "v6.1", "v6.2", "v6.3", "v7", "v7.1", "v7.2", "V8"]
 FICHEROS = ("LEEME_ASISTENTE.md", "hallazgos.json", "hallazgos.md", "preguntas_frecuentes.md", "glosario.md", "indice_ficheros.md",
-            "version.json")
+            "version.json", "resumen_final.md")
 
 
 # ---------------------------------------------------------------- lectura de fuentes
@@ -575,7 +575,7 @@ MAPA: list[tuple[str, str]] = [
     ("Errores corregidos tras publicar", "ERRATA.md"),
     ("Cómo citar y licencias", "CITATION.cff"),
     ("Referencias bibliográficas y estado de verificación", "docs/literatura.md"),
-    ("Pendientes del autor (DOI, etiquetas, revisión humana)", "docs/v14/tareas_autor.md"),
+    ("Pendientes del autor (DOI, etiquetas, revisión humana)", "docs/tareas_autor.md"),
     ("Cualquier cifra concreta (id, valor, capa, fecha)", "output/v5/cifras_clave.csv"),
     ("Quién soporta el coste y dónde (atlas)", "publicacion/atlas_descriptivo.md"),
     ("La base de datos única", "docs/v10/diccionario_base.md"),
@@ -597,7 +597,8 @@ Estás ante una base de evidencia sobre la vivienda en España. Autor: Borja Rom
 
 ## 1. Versión vigente
 
-- Versión pública: **{version['version']}** ({version['fecha_version']}). Reúne las versiones internas de desarrollo v1 a V12 (correspondencia en CHANGELOG.md). Metadatos en [version.json](version.json). Para cada tema vale una versión interna:
+- Versión pública: **{version['version']}** ({version['fecha_version']}). Reúne las versiones internas de desarrollo v1 a V18 (correspondencia en CHANGELOG.md). Metadatos en [version.json](version.json). Para cada tema vale una versión interna:
+- **Documento final** (V15-V18): [resumen](resumen_final.md) y [texto completo](../publicacion/documento_final/documento_final.md); su «mejor estimación» es juicio experto.
 - **V8** (redacción y tablas de v8.1) para la modelización: por qué ha subido la vivienda, factores, periodos y factor común (SVAR, factor común, instrumentos, multiverso, predicción).
 - **V9** para qué causa qué: diseños pre-registrados; ninguno alcanza C3 ni C3s.
 - **V10** (sin modelos nuevos): base única, atlas descriptivo (ids `V10-ATL-*`), figuras, web y monitor; los datos desde 2026T3 no se contrastan con predicciones.
@@ -645,6 +646,15 @@ La capa de un resultado es la menor de las de sus componentes; **nunca se promue
 
 Todo `consulta/` y `llms.txt` lo genera `make consulta` (src/consulta/generar.py) desde `output/`, `docs/` y `cifras_clave`; nunca se edita a mano. Las preguntas frecuentes están en [preguntas_frecuentes.md](preguntas_frecuentes.md), los términos en [glosario.md](glosario.md) y el mapa de ficheros en [indice_ficheros.md](indice_ficheros.md).
 """
+
+
+# ---------------------------------------------------------------- resumen ejecutivo del documento final
+def resumen_final_md() -> str:
+    """Consolidación final: el resumen ejecutivo del documento final, tal como lo genera src/documento_final/documento_final.py
+    (mismo texto que publicacion/documento_final/ y la portada de la web)."""
+    t = (RAIZ / "output" / "documento_final" / "resumen_ejecutivo.md").read_text(encoding="utf-8")
+    return (CAB_MD + t.replace("# La subida del precio", "# Resumen ejecutivo del documento final. La subida del precio", 1).rstrip("\n")
+            + "\n\nDocumento completo: [publicacion/documento_final/documento_final.md](../publicacion/documento_final/documento_final.md).\n")
 
 
 # ---------------------------------------------------------------- glosario
@@ -773,7 +783,7 @@ def construir_version(cifras: dict[str, dict]) -> dict:
     notas = (RAIZ / "docs/v8/notas_release.md").read_text(encoding="utf-8")
     m = re.search(r"^fecha_verificable:\s*(\S+)", notas, re.M)
     d = re.search(r"^doi:\s*(\S+)", notas, re.M)
-    tareas = (RAIZ / "docs/v14/tareas_autor.md").read_text(encoding="utf-8")
+    tareas = (RAIZ / "docs/tareas_autor.md").read_text(encoding="utf-8")
     pend = [re.sub(r"^\d+\.\s*", "", t.lstrip("# ").strip()) for t in tareas.splitlines() if t.startswith("## ")]
     sha = hashlib.sha256((RAIZ / "output/v5/cifras_clave.csv").read_bytes()).hexdigest()
     return {"_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.", "version": PROYECTO["version_publica"],
@@ -802,6 +812,7 @@ Generado por `make consulta`; no editar a mano. Empieza por la guía para asiste
 ## Empieza aquí
 
 - [Guía para asistentes](consulta/LEEME_ASISTENTE.md): versión vigente, capas, reglas para responder y mapa «si te preguntan X, mira Y»
+- [Resumen ejecutivo del documento final](consulta/resumen_final.md): qué permiten decir V15 a V18, factor por factor, con la mejor estimación rotulada como juicio experto
 - [Preguntas frecuentes](consulta/preguntas_frecuentes.md): respuestas breves con cifra, capa y fuente
 - [Registro de hallazgos](consulta/hallazgos.md): todos los hallazgos vigentes, superados y retirados (también [JSON](consulta/hallazgos.json))
 - [Glosario](consulta/glosario.md): términos técnicos
@@ -856,6 +867,7 @@ def generar() -> dict[str, str]:
         "consulta/glosario.md": glosario_md(),
         "consulta/indice_ficheros.md": indice_md(),
         "consulta/version.json": json.dumps(version, ensure_ascii=False, indent=1) + "\n",
+        "consulta/resumen_final.md": con_aviso(resumen_final_md()),
         "llms.txt": construir_llms(),
     }
 

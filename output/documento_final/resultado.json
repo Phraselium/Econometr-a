@@ -1,0 +1,44 @@
+{
+ "rama": "documento_final",
+ "pregunta": "Documento final (publicación 2.0): qué permiten decir V15-V18",
+ "capa": "la de cada cifra citada (sin cifras nuevas)",
+ "partes": [
+  "01_resumen_ejecutivo.md",
+  "02_executive_summary.md",
+  "03_como_leer.md",
+  "10_diagnostico.md",
+  "20_demografia.md",
+  "21_general_local.md",
+  "22_factibilidad.md",
+  "30_determinantes.md",
+  "31_contabilidad.md",
+  "40_sobrevaloracion.md",
+  "50_medidas.md",
+  "51_discurso.md",
+  "60_que_no_sabemos.md",
+  "90_anexo_a_metodos.md",
+  "91_anexo_b_replicas.md",
+  "92_anexo_c_reproducciones.md",
+  "93_anexo_d_erratas.md",
+  "94_anexo_e_preregistros.md"
+ ],
+ "marcadores": 353,
+ "ids_por_capa": {
+  "C4": 338,
+  "C1": 7,
+  "C2": 4,
+  "C3s": 1
+ },
+ "ids_v18_por_clasificacion": {
+  "NO ESTIMABLE": 125,
+  "literatura (sin clase propia)": 68,
+  "diagnóstico o variante (sin clase propia)": 24,
+  "ASOCIACIÓN": 12,
+  "robustez a posteriori": 6,
+  "NO CONCLUYENTE": 5,
+  "SUGESTIVO": 3,
+  "sin clasificar (coprincipal informativa)": 1
+ },
+ "marcadores_sin_cifra": [],
+ "notas": "Ensamblado determinista; las cifras vienen de cifras_clave; sin análisis nuevo."
+}

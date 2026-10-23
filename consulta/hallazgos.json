@@ -1,6 +1,6 @@
 {
  "_generado": "Generado por `make consulta` (src/consulta/generar.py). No editar a mano.",
- "version": "1.0",
+ "version": "2.0",
  "estados": [
   "vigente",
   "superada",
@@ -15,7 +15,7 @@
   "C3s",
   "C4"
  ],
- "n": 2242,
+ "n": 2251,
  "hallazgos": [
   {
    "id": "compradores_extranjeros",
@@ -42576,6 +42576,249 @@
     null,
     null,
     "min y max según el tipo_rango y la nota de la cifra V18 (intervalo, rango entre estudios o ninguno)"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-1995T1-2007T4-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 1995T1-2007T4, España",
+   "cifra": 62.1196,
+   "rango": [
+    44.7342,
+    80.3252
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "1995T1-2007T4",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2007",
+   "cifra_texto": "62,12 pp (44,73 a 80,33)",
+   "min_max": [
+    44.7342,
+    80.3252,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-2008T1-2013T4-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2008T1-2013T4, España",
+   "cifra": -37.0263,
+   "rango": [
+    -39.0759,
+    -35.0696
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2008T1-2013T4",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2013",
+   "cifra_texto": "-37,03 pp (-39,08 a -35,07)",
+   "min_max": [
+    -39.0759,
+    -35.0696,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-2014T1-2019T4-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2014T1-2019T4, España",
+   "cifra": 4.9749,
+   "rango": [
+    2.3797,
+    7.6783
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2014T1-2019T4",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2019",
+   "cifra_texto": "4,97 pp (2,38 a 7,68)",
+   "min_max": [
+    2.3797,
+    7.6783,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-2020T1-2022T2-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2020T1-2022T2, España",
+   "cifra": -1.8508,
+   "rango": [
+    -3.06,
+    -0.5924
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2020T1-2022T2",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2022",
+   "cifra_texto": "-1,85 pp (-3,06 a -0,592)",
+   "min_max": [
+    -3.06,
+    -0.5924,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-2022T3-2026T2-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2022T3-2026T2, España",
+   "cifra": 10.2117,
+   "rango": [
+    5.5656,
+    15.0334
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2022T3-2026T2",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026",
+   "cifra_texto": "10,21 pp (5,57 a 15,03)",
+   "min_max": [
+    5.5656,
+    15.0334,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-ALTE9-2008T1-2013T4-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2008T1-2013T4, España (con E9 en lugar de E3)",
+   "cifra": -48.9614,
+   "rango": [
+    -51.0707,
+    -46.9022
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2008T1-2013T4",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2013",
+   "cifra_texto": "-48,96 pp (-51,07 a -46,9)",
+   "min_max": [
+    -51.0707,
+    -46.9022,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-ALTE9-2014T1-2019T4-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2014T1-2019T4, España (con E9 en lugar de E3)",
+   "cifra": 10.2246,
+   "rango": [
+    9.4626,
+    11.0077
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2014T1-2019T4",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2019",
+   "cifra_texto": "10,22 pp (9,46 a 11,01)",
+   "min_max": [
+    9.4626,
+    11.0077,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-ALTE9-2020T1-2022T2-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2020T1-2022T2, España (con E9 en lugar de E3)",
+   "cifra": -1.3746,
+   "rango": [
+    -1.4998,
+    -1.2482
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2020T1-2022T2",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2022",
+   "cifra_texto": "-1,37 pp (-1,5 a -1,25)",
+   "min_max": [
+    -1.4998,
+    -1.2482,
+    "rango"
+   ]
+  },
+  {
+   "id": "V18-AUX-JE-NOEXPL-ALTE9-2022T3-2026T2-P",
+   "enunciado": "Variación del precio real de compra no explicada con magnitudes de la literatura, 2022T3-2026T2, España (con E9 en lugar de E3)",
+   "cifra": 15.3129,
+   "rango": [
+    13.9831,
+    16.6575
+   ],
+   "unidad": "pp (100·Δln)",
+   "periodo": "2022T3-2026T2",
+   "ambito": "España",
+   "mercado": "compra",
+   "capa": "C4",
+   "metodo": "ver ficha de origen",
+   "fuente": "output/v18/f5/contabilidad_ilustracion.csv",
+   "ruta": "output/v18/f6/hechos.json",
+   "version": "v18",
+   "estado": "vigente",
+   "tipo": "cifra",
+   "fecha_dato": "2026",
+   "cifra_texto": "15,31 pp (13,98 a 16,66)",
+   "min_max": [
+    13.9831,
+    16.6575,
+    "rango"
    ]
   },
   {

@@ -1,4 +1,4 @@
-# Vivienda en España: lo que sabemos y lo que no (versión pública 1.0)
+# Vivienda en España: lo que sabemos y lo que no (versión pública 2.0)
 
 Actualización de output/v4/lo_que_sabemos.md con las salidas de v5. Cada afirmación lleva su capa:
 - **C1**: hecho con al menos dos fuentes independientes, con todos sus componentes en C1.
@@ -116,7 +116,7 @@ Análisis descriptivo y contable; nada de lo que sigue es causal (`publicacion/a
 
 ## Qué cambió entre versiones y por qué
 
-Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión pública 1.0).
+Sección única del proyecto: [Qué cambió entre versiones y por qué](que_cambio.md) (versión pública 2.0).
 
 ## Problema y opciones con signo estable
 

@@ -4,7 +4,7 @@
 
 Un registro por hallazgo de las versiones vigentes (v5-V8, con v4 donde sigue en cifras_clave): cifras de `output/v5/cifras_clave.csv`, fichas del verificador, conclusiones del historial e hipótesis retiradas. Las superadas y retiradas están al final y **no se citan**. La versión legible por máquina es [hallazgos.json](hallazgos.json). Las capas se leen según [metodologia/capas.md](../metodologia/capas.md): causalidad solo en C3 y C3s.
 
-Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 8; V8: 368; v10: 28; v12: 60; v15: 32; v16: 192; v17: 162; v18: 503; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 2209.
+Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.3: 8; v7: 33; v7.1: 69; v7.2: 8; V8: 368; v10: 28; v12: 60; v15: 32; v16: 192; v17: 162; v18: 512; v9: 69; v1: 8; v2: 7; v3: 3. Total vigentes: 2218.
 
 ## Versión v4
 
@@ -1784,6 +1784,15 @@ Vigentes por versión: v4: 7; v5: 415; v5.1: 39; v6: 146; v6.1: 48; v6.2: 4; v6.
 | `V18-AUX-F1-OOS-RMSE-AR4` | RMSE fuera de muestra a un paso del modelo AR(4) (precio real, trimestral) | 1,28 % | C4 | 1999T1-2026T2 | [hechos.json](../output/v18/f6/hechos.json) |
 | `V18-AUX-F1-OOS-RMSE-ECM` | RMSE fuera de muestra a un paso del modelo F1-ECM (precio real, trimestral) | 1,36 % | C4 | 1999T1-2026T2 | [hechos.json](../output/v18/f6/hechos.json) |
 | `V18-AUX-F1-OOS-RMSE-ECMV1` | RMSE fuera de muestra a un paso del modelo ECM v1 (aprox.) (precio real, trimestral) | 2,05 % | C4 | 1999T1-2026T2 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-1995T1-2007T4-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 1995T1-2007T4, España | 62,12 pp (44,73 a 80,33) | C4 | 1995T1-2007T4 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-2008T1-2013T4-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2008T1-2013T4, España | -37,03 pp (-39,08 a -35,07) | C4 | 2008T1-2013T4 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-2014T1-2019T4-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2014T1-2019T4, España | 4,97 pp (2,38 a 7,68) | C4 | 2014T1-2019T4 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-2020T1-2022T2-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2020T1-2022T2, España | -1,85 pp (-3,06 a -0,592) | C4 | 2020T1-2022T2 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-2022T3-2026T2-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2022T3-2026T2, España | 10,21 pp (5,57 a 15,03) | C4 | 2022T3-2026T2 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-ALTE9-2008T1-2013T4-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2008T1-2013T4, España (con E9 en lugar de E3) | -48,96 pp (-51,07 a -46,9) | C4 | 2008T1-2013T4 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-ALTE9-2014T1-2019T4-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2014T1-2019T4, España (con E9 en lugar de E3) | 10,22 pp (9,46 a 11,01) | C4 | 2014T1-2019T4 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-ALTE9-2020T1-2022T2-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2020T1-2022T2, España (con E9 en lugar de E3) | -1,37 pp (-1,5 a -1,25) | C4 | 2020T1-2022T2 | [hechos.json](../output/v18/f6/hechos.json) |
+| `V18-AUX-JE-NOEXPL-ALTE9-2022T3-2026T2-P` | Variación del precio real de compra no explicada con magnitudes de la literatura, 2022T3-2026T2, España (con E9 en lugar de E3) | 15,31 pp (13,98 a 16,66) | C4 | 2022T3-2026T2 | [hechos.json](../output/v18/f6/hechos.json) |
 | `V18-AUX-LIT-ACCETTURO-2012-BDI` | Valor publicado por Accetturo et al. (2012), distritos de 20 ciudades de Italia (factor E3, literatura) | 0,16 elasticidad log-log | C4 | 2012 | [hechos.json](../output/v18/f6/hechos.json) |
 | `V18-AUX-LIT-ACCETTURO-2012-BDI-ET` | Error típico del valor publicado por Accetturo et al. (2012), distritos de 20 ciudades de Italia (factor E3) | 0,053 elasticidad log-log | C4 | 2012 | [hechos.json](../output/v18/f6/hechos.json) |
 | `V18-AUX-LIT-ALVAREZ-BLANCO-GARCIAPOSADA-2020-BDE-BE2002ART14` | Valor publicado por Álvarez et al. (2020, Banco de España), 50 provincias, 2013T4-2019 (factor E9, literatura) | 2,55 % de crecimiento acumulado po… | C4 | 2013T4-2019 | [hechos.json](../output/v18/f6/hechos.json) |

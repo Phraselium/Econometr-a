@@ -28,6 +28,7 @@ export MKL_NUM_THREADS=1
 .PHONY: check_v15 v15 v15_f0 v15_f1 v15_f2 v15_f3 v15_f4 v15_f5
 .PHONY: check_v17 v17 v17_f0 v17_f1 v17_f2 v17_f3 v17_f4 v17_f5
 .PHONY: check_v18 v18 v18_f0 v18_f1 v18_f2 v18_f3 v18_f4 v18_f5 v18_f6
+.PHONY: documento_final check_final revision_externa_2_0
 .PHONY: check_v16 v16 v16_f0 v16_f1 v16_f2 v16_f3 v16_f4 v16_f5 v16_f6 v16_f7
 .PHONY: all data clean models report distclean check verificador v7 v7_1 v7_2 evaluate_v7 publicacion v8 evaluate_v8 consulta datos_terceros datos_v9 base figuras web atlas v10 v9 validar_v9 datos_v11 v12 metadatos paquete_zenodo datos arbol_publico muestra_revision
 
@@ -64,6 +65,7 @@ check:
 	$(PY) src/v16/check_v16.py
 	$(PY) src/v17/check_v17.py
 	$(PY) src/v18/check_v18.py
+	$(PY) src/documento_final/check_final.py
 	@$(PY) src/v12/git_limpio.py comparar $${TMPDIR:-/tmp}/econometra_check_git.txt
 	@rm -f /tmp/econometra_make_check.lock
 
@@ -94,6 +96,17 @@ v7_1:
 # (src/holdout.py load_full); su salida (output/v7_2/gsadf/reverificacion.csv) está versionada y la lee `make v7_1`.
 v7_2:
 	$(PY) src/v7_2/gsadf_reverifica.py
+
+# Consolidación final (sin análisis nuevo): documento final desde docs/documento_final/plantilla y cifras_clave; `make publicacion`
+# lo copia a publicacion/documento_final/. revision_externa_2_0: muestra de 40 cifras por capa y clase, PDF del resumen y guía.
+documento_final:
+	$(PY) src/documento_final/documento_final.py
+
+check_final:
+	$(PY) src/documento_final/check_final.py
+
+revision_externa_2_0:
+	$(PY) src/documento_final/revision_externa.py
 
 # V7.1: publicacion/, metodologia/ y reproducir/ se generan desde output/ y docs/ (nunca a mano; tests/v7_1/test_publicacion.py)
 publicacion: metadatos

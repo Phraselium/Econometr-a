@@ -1,6 +1,6 @@
 # Vivienda en España: base de evidencia reproducible
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión pública:** 1.0 (16 de octubre de 2026). Las versiones v1 a V12 son versiones internas de desarrollo; su correspondencia con la 1.0 está en [CHANGELOG.md](CHANGELOG.md). La 1.0 no añade análisis: ordena, aligera y prepara el depósito.
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión pública:** 2.0 (23 de octubre de 2026; preparada, pendiente de publicar). Las versiones v1 a V18 son versiones internas de desarrollo; su correspondencia con la 1.0 y la 2.0 está en [CHANGELOG.md](CHANGELOG.md). La 2.0 no añade análisis: integra en un documento final ([publicacion/documento_final/](publicacion/documento_final/documento_final.md)) lo que permiten decir V15 a V18.
 
 **Repositorio:** https://github.com/Phraselium/vivienda-espana-evidencia (la URL se configura en un único sitio, [proyecto.json](proyecto.json)). **DOI:** pendiente (Zenodo).
 
@@ -88,7 +88,7 @@ Detalle: [reproducir/instrucciones.md](reproducir/instrucciones.md). La validaci
 ## Cómo citar
 Metadatos en [CITATION.cff](CITATION.cff) y .zenodo.json, generados desde proyecto.json con `make metadatos`. DOI: pendiente (depósito en Zenodo).
 
-> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 1.0) [software y datos].
+> Romero, B. (2026). *Vivienda en España: base de evidencia reproducible* (versión 2.0) [software y datos].
 
 ## Licencias
 - Código (src/, tests/, Makefile): MIT.

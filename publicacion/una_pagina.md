@@ -1,6 +1,6 @@
 <!-- Generado por `make publicacion` desde output/v5/una_pagina.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Vivienda en España en una página (versión pública 1.0)
+# Vivienda en España en una página (versión pública 2.0)
 
 **Borja Romero, economista.** Esta página resume lo que se sabe con más seguridad. Cada cifra va redondeada y con su rango al lado. Las notas técnicas están en la ficha enlazada.
 

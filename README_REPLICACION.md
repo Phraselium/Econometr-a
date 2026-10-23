@@ -1,6 +1,6 @@
-# Paquete de replicación: vivienda en España (versión pública 1.0; versiones internas v1-V12)
+# Paquete de replicación: vivienda en España (versión pública 2.0; versiones internas v1-V18)
 
-**Autor:** Borja Romero, economista (firma individual, independiente). **Versión pública:** 1.0 (16 de octubre de 2026; reúne las versiones internas v1-V12, con su correspondencia en CHANGELOG.md; déficit y necesidad: v7.1 con las correcciones de v7.2) (consolidación: `make v7` incluye `make v7_1`; `make publicacion` genera publicacion/, metodologia/ y reproducir/). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
+**Autor:** Borja Romero, economista (firma individual, independiente). **Versión pública:** 2.0 (23 de octubre de 2026, preparada y pendiente de publicar; reúne las versiones internas v1-V18, con su correspondencia en CHANGELOG.md; documento final: `make documento_final`; déficit y necesidad: v7.1 con las correcciones de v7.2) (consolidación: `make v7` incluye `make v7_1`; `make publicacion` genera publicacion/, metodologia/ y reproducir/). **Cita:** CITATION.cff. **DOI:** pendiente (Zenodo; .zenodo.json). **Licencia:** MIT para el código y CC BY 4.0 para los textos propios (LICENSE); los datos de terceros conservan su licencia (docs/v5/licencias_datos.md).
 
 Este README sigue el modelo de los editores de datos (AEA Data Editor / Social Science Data Editors). Explica cómo reproducir **todas** las tablas, figuras y documentos del proyecto a partir de los datos incluidos y sin conexión a la red.
 
@@ -60,7 +60,7 @@ make check         # incluye tests/v7_1: regeneración idéntica de publicacion/
 ```
 Tiempos medidos: reproducir/tiempos.md. Evaluación diferida (2027, con red, una sola vez): reproducir/evaluacion_2027.md.
 
-### Árbol público de la versión 1.0 (repositorio vivienda-espana-evidencia)
+### Árbol público de la versión 2.0 (repositorio vivienda-espana-evidencia)
 El repositorio público es un árbol limpio generado con `make arbol_publico` (docs/v14/arbol_1_0.md). No versiona datos.
 ```bash
 make datos            # data/ redistribuible desde el depósito de Zenodo (DOI y URL en proyecto.json), con verificación sha256

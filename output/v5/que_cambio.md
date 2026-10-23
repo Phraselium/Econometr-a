@@ -1,6 +1,6 @@
-# Qué cambió entre versiones y por qué (sección única, versión pública 1.0)
+# Qué cambió entre versiones y por qué (sección única, versión pública 2.0)
 
-**Borja Romero, economista.** Esta es la única sección del proyecto sobre los cambios entre versiones. Los demás entregables remiten aquí. El detalle, conclusión por conclusión, está en el historial de conclusiones (`docs/v6_1/historial_conclusiones.md`). Los errores que cambiaron una cifra publicada están en la fe de erratas (ERRATA.md). Solo es citable la versión pública vigente: hoy, la 1.0 (2026-10-16). Reúne las versiones internas v1 a V12; la correspondencia está en CHANGELOG.md.
+**Borja Romero, economista.** Esta es la única sección del proyecto sobre los cambios entre versiones. Los demás entregables remiten aquí. El detalle, conclusión por conclusión, está en el historial de conclusiones (`docs/v6_1/historial_conclusiones.md`). Los errores que cambiaron una cifra publicada están en la fe de erratas (ERRATA.md). Solo es citable la versión pública vigente: hoy, la 2.0 (2026-10-23). Reúne las versiones internas v1 a V12; la correspondencia está en CHANGELOG.md.
 
 **Cómo leer esta página.** Un cambio de cifra o de lectura entre versiones casi nunca es una contradicción. Se debe a una de cuatro razones:
 - se incorporó una fuente;
@@ -65,16 +65,17 @@ En cada caso se dice cuál fue la razón.
 - **Qué añade v8.** Atribución del precio real de compra y del alquiler real por factores y periodos, con reglas fijadas antes de estimar. Resultado: ningún factor puede designarse como el más relevante en ninguno de los diez casos (máximo de métodos coincidentes: 2,0 de cuatro). La subida reciente es muy común a las comunidades (92,8 % (86,7-94,9 %) de la varianza) y acompaña a la zona euro [C4, asociación]. Detalle en [lo que sabemos](lo_que_sabemos.md).
 - **v8.1, bloque A (coherencia de redacción y tablas).** No se añade ningún análisis ni se cambia ninguna cifra publicada de v1-v8.0. Se añade la lectura del multiverso por variables (18,0 de 200,0 combinaciones, frente a 2,0 de 74,0 por familias), el aviso de colinealidad entre población total y extranjera, el aviso sobre el signo del tipo real, la remisión a las cifras C1 de contratos nuevos y el aviso sobre las dos fuentes de València.
 
-## Versión pública 1.0: un solo número de versión
+## Versión pública 2.0: un solo número de versión
 
-Desde el 2026-10-16 el proyecto se cita con un único número de versión pública, la 1.0. Las versiones v1 a V12 pasan a ser versiones internas de desarrollo. No cambia ninguna cifra: solo la forma de citar.
+Desde el 16 de octubre de 2026 (versión 1.0) el proyecto se cita con un único número de versión pública; la vigente es la 2.0 (2026-10-23). La 1.0 reunió las versiones internas v1 a V12. La 2.0 añade el documento final ([documento final](../documento_final/documento_final.md)), que integra lo que permiten decir V15 a V18 sin análisis nuevo; las versiones v1 a V18 son versiones internas de desarrollo. No cambia ninguna cifra publicada: solo la forma de citar y lo que se integra. <!-- check:cifra-libre (fecha de la versión 1.0) -->
 
 Para cada tema sigue vigente una versión interna:
 - déficit y necesidad de vivienda: v7.1 con las correcciones de v7.2;
 - por qué ha subido el precio: V8;
 - qué causa qué: V9;
 - atlas descriptivo, base de datos y web: V10;
-- demografía, hogares, titularidad y oferta: V12.
+- demografía, hogares, titularidad y oferta: V12;
+- qué permiten decir V15 a V18 (réplicas, auditoría, mejor estimación por factor como juicio experto): el documento final.
 
 ---
 

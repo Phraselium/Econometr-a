@@ -1,12 +1,13 @@
 # Vivienda en España: base de evidencia reproducible
 
-> Base de evidencia sobre precios, alquileres, déficit y necesidad de vivienda en España, con un análisis de por qué ha subido (V8: factores, periodos y factor común). Cada resultado lleva una capa de evidencia (C1, C2, C3, C3s, C4); la causalidad solo se admite en C3 y C3s. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Autor: Borja Romero, economista (firma individual, independiente). Versión pública 1.0 (2026-10-16; versiones internas v1-V12, correspondencia en CHANGELOG.md). Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia.
+> Base de evidencia sobre precios, alquileres, déficit y necesidad de vivienda en España, con un análisis de por qué ha subido (V8: factores, periodos y factor común). Cada resultado lleva una capa de evidencia (C1, C2, C3, C3s, C4); la causalidad solo se admite en C3 y C3s. Se evalúan afirmaciones e instrumentos, nunca partidos ni personas. Autor: Borja Romero, economista (firma individual, independiente). Versión pública 2.0 (2026-10-23; versiones internas v1-V12, correspondencia en CHANGELOG.md). Repositorio: https://github.com/Phraselium/vivienda-espana-evidencia.
 
 Generado por `make consulta`; no editar a mano. Empieza por la guía para asistentes y cita solo cifras de cifras_clave con su id y su fecha.
 
 ## Empieza aquí
 
 - [Guía para asistentes](consulta/LEEME_ASISTENTE.md): versión vigente, capas, reglas para responder y mapa «si te preguntan X, mira Y»
+- [Resumen ejecutivo del documento final](consulta/resumen_final.md): qué permiten decir V15 a V18, factor por factor, con la mejor estimación rotulada como juicio experto
 - [Preguntas frecuentes](consulta/preguntas_frecuentes.md): respuestas breves con cifra, capa y fuente
 - [Registro de hallazgos](consulta/hallazgos.md): todos los hallazgos vigentes, superados y retirados (también [JSON](consulta/hallazgos.json))
 - [Glosario](consulta/glosario.md): términos técnicos

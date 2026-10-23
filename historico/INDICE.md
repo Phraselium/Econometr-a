@@ -1,6 +1,6 @@
 # Índice del histórico (versiones superadas)
 
-Versión pública: **1.0** (16 de octubre de 2026). Reúne las versiones internas v1-V12 (correspondencia en [CHANGELOG.md](../CHANGELOG.md)); lo vigente está en [publicacion/](../publicacion/MANIFIESTO.md), [metodologia/](../metodologia/MANIFIESTO.md) y [reproducir/](../reproducir/MANIFIESTO.md). Aquí se ordena lo superado, de la primera versión a la v6.2 (versiones internas).
+Versión pública: **2.0** (23 de octubre de 2026; preparada, pendiente de publicar). Reúne las versiones internas v1-V18 (correspondencia en [CHANGELOG.md](../CHANGELOG.md)); lo vigente está en [publicacion/](../publicacion/MANIFIESTO.md), [metodologia/](../metodologia/MANIFIESTO.md) y [reproducir/](../reproducir/MANIFIESTO.md). Aquí se ordena lo superado, de la primera versión a la v6.2 (versiones internas).
 
 **Qué se ha movido y qué no.**
 - **Se han movido** con `git mv`, sin modificarlos, los documentos de versiones cerradas que no lee ningún script, test, plantilla ni el Makefile: planes, estados, bloqueos, revisiones internas, auditorías, arbitrajes simulados y síntesis antiguas. Están en historico/docs/ y historico/output/, con la misma ruta relativa que tenían. `git log --follow <fichero>` muestra su historia completa: no se ha reescrito la historia de git.

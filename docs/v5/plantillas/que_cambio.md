@@ -67,11 +67,12 @@ En cada caso se dice cuál fue la razón.
 
 ## Versión pública {{proyecto.version_publica}}: un solo número de versión
 
-Desde el {{proyecto.fecha_version}} el proyecto se cita con un único número de versión pública, la {{proyecto.version_publica}}. Las versiones v1 a V12 pasan a ser versiones internas de desarrollo. No cambia ninguna cifra: solo la forma de citar.
+Desde el 16 de octubre de 2026 (versión 1.0) el proyecto se cita con un único número de versión pública; la vigente es la {{proyecto.version_publica}} ({{proyecto.fecha_version}}). La 1.0 reunió las versiones internas v1 a V12. La 2.0 añade el documento final ([documento final](../documento_final/documento_final.md)), que integra lo que permiten decir V15 a V18 sin análisis nuevo; las versiones v1 a V18 son versiones internas de desarrollo. No cambia ninguna cifra publicada: solo la forma de citar y lo que se integra. <!-- check:cifra-libre (fecha de la versión 1.0) -->
 
 Para cada tema sigue vigente una versión interna:
 - déficit y necesidad de vivienda: v7.1 con las correcciones de v7.2;
 - por qué ha subido el precio: V8;
 - qué causa qué: V9;
 - atlas descriptivo, base de datos y web: V10;
-- demografía, hogares, titularidad y oferta: V12.
+- demografía, hogares, titularidad y oferta: V12;
+- qué permiten decir V15 a V18 (réplicas, auditoría, mejor estimación por factor como juicio experto): el documento final.

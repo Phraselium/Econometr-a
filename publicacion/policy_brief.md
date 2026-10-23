@@ -1,6 +1,6 @@
 <!-- Generado por `make publicacion` desde output/v5/policy_brief.md. No editar a mano: se regenera y un test lo comprueba. -->
 
-# Vivienda en España: necesidad, datos y opciones con la misma vara (policy brief, versión pública 1.0; déficit y necesidad: versión interna v7.2)
+# Vivienda en España: necesidad, datos y opciones con la misma vara (policy brief, versión pública 2.0; déficit y necesidad: versión interna v7.2)
 
 **Borja Romero, economista** (firma individual, independiente). Octubre de 2026. Cada afirmación lleva su capa: [C1] hecho con al menos dos fuentes independientes; [C2] cota con supuestos explícitos; [C4] exploratorio o de fuente única. Ningún resultado alcanza la capa de identificación causal, de modo que el texto describe asociaciones y cotas, no relaciones de causa.
 

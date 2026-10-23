@@ -2,8 +2,8 @@
  "_nota": "Única fuente de la versión pública, la URL del repositorio, la web y el DOI (V13). La leen src/v5/render.py ({{proyecto.<campo>}} en las plantillas), src/consulta/generar.py, src/v10/web.py y src/v13/metadatos.py (CITATION.cff y .zenodo.json). src/v13/check_v13.py (make check) falla si una puerta de entrada declara otra versión vigente o si aparece otra URL del repositorio. V14: zenodo_url_paquete es la URL de descarga del paquete del depósito (la usa `make datos` en el árbol público); repositorio_desarrollo es el repositorio de desarrollo archivado (única otra URL de repositorio admitida). V14.1: hash_sellado es la huella de data/sealed (valor, fecha y comando).",
  "titulo": "Vivienda en España: base de evidencia reproducible",
  "autor": "Borja Romero, economista (firma individual, independiente)",
- "version_publica": "1.0",
- "fecha_version": "2026-10-16",
+ "version_publica": "2.0",
+ "fecha_version": "2026-10-23",
  "repositorio": "https://github.com/Phraselium/vivienda-espana-evidencia",
  "web": "https://phraselium.github.io/vivienda-espana-evidencia/",
  "doi": "PENDIENTE",
@@ -42,7 +42,12 @@
   "demografia_titularidad": {
    "tema": "Demografía, hogares, titularidad, oferta, condiciones por origen y turismo",
    "version_interna": "V12 (datos de V11)"
+  },
+  "documento_final": {
+   "tema": "Documento final: qué permiten decir V15-V18 (réplicas, auditoría de V17, mejor estimación por factor como juicio experto, contabilidad de la subida)",
+   "version_interna": "V15-V18 (consolidación final, sin análisis nuevo)"
   }
  },
- "preregistro_tipo": "interno, sin sello externo"
+ "preregistro_tipo": "interno, sin sello externo",
+ "estado_publicacion": "2.0 preparada y sin publicar (2026-10-23): la publica el autor (docs/tareas_autor.md). La 1.0 (2026-10-16) tampoco llegó a depositarse."
 }

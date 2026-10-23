@@ -2,7 +2,7 @@
 
 # Necesidad de vivienda, territorio y precios en España: hechos, cotas y exploración con datos públicos y una escala de evidencia
 
-*Borja Romero, economista (independiente). Documento de trabajo, versión interna `7.2` (12 de octubre de 2026), incluida en la versión pública 1.0. DOI: pendiente.*
+*Borja Romero, economista (independiente). Documento de trabajo, versión interna `7.2` (12 de octubre de 2026), incluida en la versión pública 2.0. DOI: pendiente.*
 
 *Proyecto reproducible: `make all` sin red; todas las cifras proceden de `output/v5/cifras_clave.csv`.*
 

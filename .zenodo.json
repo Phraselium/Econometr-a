@@ -1,15 +1,15 @@
 {
-  "title": "Vivienda en España: base de evidencia reproducible (1.0)",
+  "title": "Vivienda en España: base de evidencia reproducible (2.0)",
   "upload_type": "software",
-  "description": "Base de evidencia independiente y reproducible sobre la vivienda en España por provincias, con un módulo para València. Cubre el déficit y la necesidad de vivienda 2026-2035, las diferencias territoriales, los precios y el alquiler triangulados, la comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones. Incluye una atribución por factores y periodos de la subida del precio de compra y del alquiler (V8), diseños de identificación pre-registrados (V9), una base de datos única con atlas descriptivo y web (V10) y una contabilidad demográfica, de hogares, titularidad y oferta (V12). Cada resultado se clasifica en capas de evidencia (C1, C2, C3, C3s y C4). Los datos de terceros sin redistribución clara no se incluyen: `make datos_terceros` los descarga y verifica (docs/v8_1/datos_retirados.md; docs/v13/datos_deposito.md); después, `make all` reproduce sin red. La versión pública 1.0 reúne las versiones internas v1-V12 (CHANGELOG.md).",
+  "description": "Base de evidencia independiente y reproducible sobre la vivienda en España por provincias, con un módulo para València. Cubre el déficit y la necesidad de vivienda 2026-2035, las diferencias territoriales, los precios y el alquiler triangulados, la comparación europea, una matriz de instrumentos de política y un verificador de afirmaciones. Incluye una atribución por factores y periodos de la subida del precio de compra y del alquiler (V8), diseños de identificación pre-registrados (V9), una base de datos única con atlas descriptivo y web (V10) y una contabilidad demográfica, de hogares, titularidad y oferta (V12). Cada resultado se clasifica en capas de evidencia (C1, C2, C3, C3s y C4). Los datos de terceros sin redistribución clara no se incluyen: `make datos_terceros` los descarga y verifica (docs/v8_1/datos_retirados.md; docs/v13/datos_deposito.md); después, `make all` reproduce sin red. La versión pública 2.0 reúne las versiones internas v1-V18 (CHANGELOG.md).",
   "creators": [
     {
       "name": "Romero, Borja",
       "affiliation": "Economista independiente"
     }
   ],
-  "version": "1.0",
-  "publication_date": "2026-10-16",
+  "version": "2.0",
+  "publication_date": "2026-10-23",
   "language": "spa",
   "license": "MIT",
   "keywords": [

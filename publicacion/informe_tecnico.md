@@ -2,11 +2,11 @@
 
 # Vivienda en España: necesidad, territorio, precios e instrumentos con datos públicos
 
-## Informe técnico (versión pública 1.0; déficit y necesidad: versión interna v7.2)
+## Informe técnico (versión pública 2.0; déficit y necesidad: versión interna v7.2)
 
 - **Autor:** Borja Romero, economista (independiente).
 - **Fecha:** 10 de octubre de 2026.
-- **Versión del documento:** `5.0` (versión interna; vigente en la versión pública 1.0).
+- **Versión del documento:** `5.0` (versión interna; vigente en la versión pública 2.0).
 - **DOI:** pendiente.
 - **Reproducción:** `make all` sin red, semilla `SEED=20261010`; comprobaciones con `make check`.
 - **Cifras:** todas proceden de `output/v5/cifras_clave.csv` (tabla legible en `output/v5/cifras_clave.md`); este texto se genera desde una plantilla y no contiene cifras tecleadas.

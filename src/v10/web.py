@@ -37,6 +37,7 @@ URL_PREVISTA = _PROYECTO["web"]
 
 PAGINAS = [
     {"url": "index.html", "es": "Inicio", "va": "Inici"},
+    {"url": "documento.html", "es": "Documento final", "va": "Document final"},   # consolidación final (publicación 2.0)
     {"url": "indicadores.html", "es": "Indicadores", "va": "Indicadors"},
     {"url": "mapas.html", "es": "Mapas", "va": "Mapes"},
     {"url": "fichas.html", "es": "Fichas territoriales", "va": "Fitxes territorials"},
@@ -518,6 +519,9 @@ PLANTILLAS = {
 <h1>Vivienda en España: lo que sabemos</h1>
 <p class="lema">Una base de evidencia abierta: datos oficiales, cotas y modelos con su capa de evidencia. Cada cifra indica su fuente, su fecha y su capa.</p>
 <p class="lema" lang="ca-valencia">Una base d'evidència oberta sobre l'habitatge: dades oficials, cotes i models amb la seua capa d'evidència. Cada xifra indica la font, la data i la capa.</p>
+{% if resumen_final %}<h2>Resumen ejecutivo del documento final <span lang="ca-valencia" class="meta">· Resum executiu del document final</span></h2>
+<div class="panel">{{ resumen_final|safe }}<p><a href="documento.html">Documento final completo</a></p></div>
+<h2>Lo que se sabe con más seguridad <span lang="ca-valencia" class="meta">· El que se sap amb més seguretat</span></h2>{% endif %}
 <div class="panel">{{ una_pagina|safe }}</div>
 <h2>Atlas: quién soporta el coste de la vivienda y dónde <span lang="ca-valencia" class="meta">· Qui en suporta el cost i on</span></h2>
 <div class="panel">{{ atlas|safe }}</div>
@@ -743,6 +747,10 @@ document.getElementById("buscarV").addEventListener("input", e => { const q = e.
 <h1>Historial de versiones <span class="meta" lang="ca-valencia">· Historial de versions</span></h1>
 <div>{{ historial|safe }}</div>
 {% endblock %}""",
+"documento.html": """{% extends "base.html" %}{% block contenido %}
+<p class="lema">Documento final del proyecto (publicación 2.0 preparada): qué permiten decir V15 a V18. Todas las cifras salen de cifras_clave.csv con su capa; lo que es juicio experto va rotulado. Se evalúan afirmaciones e instrumentos, nunca a quién los propone.</p>
+<div>{{ documento|safe }}</div>
+{% endblock %}""",
 "informe.html": """{% extends "base.html" %}{% block contenido %}
 <p class="lema">Informe integral de V16. Todas las cifras salen de cifras_clave.csv con su capa; los resultados de V15 y V16 tienen pre-registro interno, sin sello de tiempo externo. Se evalúan afirmaciones e instrumentos, nunca a quién los propone.</p>
 <div>{{ informe|safe }}</div>
@@ -823,6 +831,14 @@ def construir() -> dict:
         "ia": md((RAIZ / "DECLARACION_IA.md").read_text(encoding="utf-8"), ""),
         "errata": md((RAIZ / "ERRATA.md").read_text(encoding="utf-8"), "")}
     paginas["historial.html"] = {"historial": md((RAIZ / "CHANGELOG.md").read_text(encoding="utf-8"), "")}
+    fin = RAIZ / "publicacion" / "documento_final"   # consolidación final (make documento_final; make publicacion)
+    for nombre, clave, campo in (("documento_final.md", "documento.html", "documento"), ("resumen_ejecutivo.md", "index.html", "resumen_final")):
+        if (fin / nombre).exists():
+            t = (fin / nombre).read_text(encoding="utf-8")
+            t = t.split("\n", 2)[-1] if t.startswith("<!--") else t
+            if clave == "index.html":   # en la portada, solo el resumen ejecutivo en español (sin la cabecera del documento)
+                t = "## Resumen ejecutivo" + t.split("## Resumen ejecutivo", 1)[-1].split("\n## Executive summary", 1)[0].split("\n", 1)[-1]
+            paginas.setdefault(clave, {})[campo] = md(t, "publicacion/documento_final/")
     inf = RAIZ / "publicacion" / "informe_integral" / "informe_integral.md"   # V16 (fase 7; make publicacion)
     if inf.exists():
         t = inf.read_text(encoding="utf-8")

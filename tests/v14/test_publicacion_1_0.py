@@ -5,11 +5,12 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 PUB = RAIZ / "docs" / "v14" / "publicacion_1_0"
+PUB_ZENODO = RAIZ / "docs" / "documento_final" / "publicacion_2_0"   # metadatos de la versión vigente (2.0)
 
 
 def test_metadatos_zenodo_coherentes_con_zenodo_json():
     z = json.loads((RAIZ / ".zenodo.json").read_text(encoding="utf-8"))
-    md = (PUB / "zenodo_metadatos.md").read_text(encoding="utf-8")
+    md = (PUB_ZENODO / "zenodo_metadatos.md").read_text(encoding="utf-8")
     assert f"| Título | {z['title']} |" in md
     assert f"| Versión | {z['version']} |" in md
     assert f"| Fecha de publicación | {z['publication_date']} |" in md

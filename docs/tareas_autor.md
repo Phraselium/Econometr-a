@@ -44,7 +44,7 @@ make paquete_zenodo && python3 src/v13/paquete_zenodo.py --zip
 (cd _deposito/vivienda-espana-evidencia-2.0 && sha256sum -c --quiet CHECKSUMS.sha256)
 sha256sum _deposito/vivienda-espana-evidencia-2.0.zip
 ```
-En https://zenodo.org/uploads/new suba el zip, copie los metadatos de docs/v14/publicacion_1_0/zenodo_metadatos.md cambiando la versión a 2.0 y añadiendo el documento final a la descripción, y **reserve el DOI** sin publicar.
+En https://zenodo.org/uploads/new suba el zip, copie los metadatos de docs/documento_final/publicacion_2_0/zenodo_metadatos.md (versión 2.0, con el documento final en la descripción), y **reserve el DOI** sin publicar.
 
 ## 7. Con el DOI: actualizar proyecto.json, regenerar y publicar
 Ponga `doi` y `zenodo_url_paquete` (`https://zenodo.org/records/<id>/files/vivienda-espana-evidencia-2.0.zip?download=1`) en proyecto.json; `make metadatos publicacion consulta web && make check`; commit y push. Vuelva a generar el árbol y el paquete, súbalos, cree la etiqueta `v2.0` y la release en GitHub y publique el depósito. Anote aquí la fecha que muestre Zenodo: `fecha_deposito: PENDIENTE`.
